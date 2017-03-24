@@ -12,7 +12,7 @@
     
     <xsl:include href="query-viaf.xsl"/>
     
-    <xsl:param name="p_file-entities-master"/>
+    <xsl:param name="p_file-entities-master" select="doc('../tei/entities_master.TEIP5.xml')"/>
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
     <xsl:template match="tei:TEI">
