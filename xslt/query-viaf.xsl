@@ -47,9 +47,12 @@
     <!-- query VIAF using SRU -->
     <xsl:template name="t_query-viaf-sru">
         <xsl:param name="p_search-term"/>
+        <!-- available values are 'id' and 'persName' -->
         <xsl:param name="p_input-type"/>
         <xsl:param name="p_records-max" select="3"/>
-        <xsl:variable name="v_viaf-sru">
+        <!-- available values are 'tei' and 'file' -->
+        <xsl:param name="p_output-mode" select="'tei'"/>
+        <xsl:variable name="v_viaf-srw">
             <xsl:choose>
                 <xsl:when test="$p_input-type='id'">
                     <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=local.viafID+any+&quot;',$p_search-term,'&quot;&amp;httpAccept=application/xml'))"/>
@@ -62,16 +65,25 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="v_record-1" select="$v_viaf-sru/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record[1]/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster"/>
+        <xsl:variable name="v_record-1" select="$v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record[1]/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster"/>
         <xsl:variable name="v_viaf-id" select="$v_record-1//viaf:viafID"/>
-        <!-- add VIAF ID -->
-        <xsl:element name="tei:idno">
-            <xsl:attribute name="type" select="'viaf'"/>
-            <xsl:value-of select="$v_viaf-id"/>
-        </xsl:element>
-        <!-- add birth and death dates -->
-        <xsl:apply-templates select="$v_record-1//viaf:birthDate"/>
-        <xsl:apply-templates select="$v_record-1//viaf:deathDate"/>
+        <xsl:choose>
+            <xsl:when test="$p_output-mode = 'tei'">
+                <!-- add VIAF ID -->
+                <xsl:element name="tei:idno">
+                    <xsl:attribute name="type" select="'viaf'"/>
+                    <xsl:value-of select="$v_viaf-id"/>
+                </xsl:element>
+                <!-- add birth and death dates -->
+                <xsl:apply-templates select="$v_record-1//viaf:birthDate"/>
+                <xsl:apply-templates select="$v_record-1//viaf:deathDate"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'file'">
+                <xsl:result-document href="../viaf/viaf_{$v_viaf-id}.SRW.xml">
+                    <xsl:copy-of select="$v_viaf-srw"/>
+                </xsl:result-document>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template name="t_dates-normalise">
