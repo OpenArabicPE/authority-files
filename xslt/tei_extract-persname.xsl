@@ -15,6 +15,7 @@
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
     <xsl:variable name="v_id-file" select="tei:TEI/@xml:id"/>
+    <xsl:variable name="v_url-file" select="base-uri()"/>
     
     
     <!-- This template replicates attributes as they are found in the source -->
@@ -76,7 +77,8 @@
             <xsl:apply-templates select="@* |node()" mode="m_replicate"/>
         </xsl:copy>
         <xsl:element name="tei:listPerson">
-            <xsl:attribute name="xml:id" select="concat('listPerson_',$v_id-file)"/>
+<!--            <xsl:attribute name="xml:id" select="concat('listPerson_',$v_id-file)"/>-->
+            <xsl:attribute name="corresp" select="$v_url-file"/>
             <!-- add missing persons -->
             <xsl:apply-templates select="$v_persName-all/descendant-or-self::tei:persName" mode="m_particDesc"/>
         </xsl:element>
