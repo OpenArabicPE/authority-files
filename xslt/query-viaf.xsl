@@ -17,15 +17,26 @@
     <!-- query VIAF and return RDF -->
     <xsl:template name="t_query-viaf-rdf">
         <xsl:param name="p_viaf-id"/>
+        <!-- available values are 'tei' and 'file' -->
+        <xsl:param name="p_output-mode" select="'tei'"/>
         <xsl:variable name="v_viaf-rdf" select="doc(concat('https://viaf.org/viaf/',$p_viaf-id,'/rdf.xml'))"/>
-        <!-- add VIAF ID -->
-        <xsl:element name="tei:idno">
-            <xsl:attribute name="type" select="'viaf'"/>
-            <xsl:value-of select="$p_viaf-id"/>
-        </xsl:element>
-        <!-- add birth and death dates -->
-        <xsl:apply-templates select="$v_viaf-rdf//rdf:RDF/rdf:Description/schema:birthDate"/>
-        <xsl:apply-templates select="$v_viaf-rdf//rdf:RDF/rdf:Description/schema:deathDate"/>
+        <xsl:choose>
+            <xsl:when test="$p_output-mode = 'tei'">
+                <!-- add VIAF ID -->
+                <xsl:element name="tei:idno">
+                    <xsl:attribute name="type" select="'viaf'"/>
+                    <xsl:value-of select="$p_viaf-id"/>
+                </xsl:element>
+                <!-- add birth and death dates -->
+                <xsl:apply-templates select="$v_viaf-rdf//rdf:RDF/rdf:Description/schema:birthDate"/>
+                <xsl:apply-templates select="$v_viaf-rdf//rdf:RDF/rdf:Description/schema:deathDate"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'file'">
+                <xsl:result-document href="../viaf/viaf_{$p_viaf-id}.rdf">
+                    <xsl:copy-of select="$v_viaf-rdf"/>
+                </xsl:result-document>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="schema:birthDate | viaf:birthDate">
