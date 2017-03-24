@@ -1,0 +1,572 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<searchRetrieveResponse xmlns="http://www.loc.gov/zing/srw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+	<version xsi:type="xsd:string">1.1</version>
+	<numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+	<resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+	<records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+		<record xsi:type="ns1:recordType">
+			<recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+			<recordPacking xsi:type="xsd:string">xml</recordPacking>
+			<recordData xsi:type="ns1:stringOrXmlFragment">
+				<ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ns2="http://viaf.org/viaf/terms#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:void="http://rdfs.org/ns/void#">
+					<ns2:viafID>299037057</ns2:viafID>
+					<ns2:Document about="http://viaf.org/viaf/299037057/">
+						<ns2:inDataset resource="http://viaf.org/viaf/data"/>
+						<ns2:primaryTopic resource="http://viaf.org/viaf/299037057"/>
+					</ns2:Document>
+					<ns2:nameType>Personal</ns2:nameType>
+					<ns2:sources>
+						<ns2:source nsid="0000000403043110">ISNI|0000000403043110</ns2:source>
+						<ns2:source nsid="nr89003446">LC|nr 89003446</ns2:source>
+						<ns2:source nsid="7060">LNL|7060</ns2:source>
+						<ns2:source nsid="000172833">NLI|000172833</ns2:source>
+					</ns2:sources>
+					<ns2:length>122</ns2:length>
+					<ns2:mainHeadings>
+						<ns2:data>
+							<ns2:text>Mukhliṣ, ʻAbd Allāh 1878-1947</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data>
+							<ns2:text>مخلص، عبد الله</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data>
+							<ns2:text>مخلص، عبد الله، 1878-1947</ns2:text>
+							<ns2:sources>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:mainHeadingEl>
+							<ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+								<ns2:subfield code="a">Mukhliṣ, ʻAbd Allāh,</ns2:subfield>
+								<ns2:subfield code="d">1878-1947</ns2:subfield>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+							</ns2:sources>
+							<ns2:id>LC|nr 89003446</ns2:id>
+							<ns2:links>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="double date"/>LNL|7060</ns2:link>
+								<ns2:link>
+									<ns2:match type="lccn"/>NLI|000172833</ns2:link>
+								<ns2:link>
+									<ns2:match type="lccn"/>NLI|000172833</ns2:link>
+							</ns2:links>
+						</ns2:mainHeadingEl>
+						<ns2:mainHeadingEl>
+							<ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+								<ns2:subfield code="a">Mukhliṣ, ʻAbd Allāh,</ns2:subfield>
+								<ns2:subfield code="d">1878-1947</ns2:subfield>
+								<ns2:subfield code="9">lat</ns2:subfield>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:id>NLI|000172833</ns2:id>
+							<ns2:links>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="lccn"/>LC|nr 89003446</ns2:link>
+								<ns2:link>
+									<ns2:match type="double date"/>LNL|7060</ns2:link>
+							</ns2:links>
+						</ns2:mainHeadingEl>
+						<ns2:mainHeadingEl>
+							<ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+								<ns2:subfield code="a">Mukhliṣ, ʻAbd Allāh</ns2:subfield>
+								<ns2:subfield code="d">1878-1947</ns2:subfield>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+							<ns2:id>ISNI|0000000403043110</ns2:id>
+							<ns2:links>
+								<ns2:link>
+									<ns2:match type="forced single date"/>LC|nr 89003446</ns2:link>
+								<ns2:link>
+									<ns2:match type="viafid"/>LNL|7060</ns2:link>
+								<ns2:link>
+									<ns2:match type="viafid"/>NLI|000172833</ns2:link>
+								<ns2:link>
+									<ns2:match type="viafid"/>NLI|000172833</ns2:link>
+							</ns2:links>
+						</ns2:mainHeadingEl>
+						<ns2:mainHeadingEl>
+							<ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+								<ns2:subfield code="a">مخلص، عبد الله</ns2:subfield>
+								<ns2:subfield code="9">ara</ns2:subfield>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:id>NLI|000172833</ns2:id>
+							<ns2:links>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="lccn"/>LC|nr 89003446</ns2:link>
+								<ns2:link>
+									<ns2:match type="double date"/>LNL|7060</ns2:link>
+							</ns2:links>
+						</ns2:mainHeadingEl>
+						<ns2:mainHeadingEl>
+							<ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+								<ns2:subfield code="a">مخلص، عبد الله،</ns2:subfield>
+								<ns2:subfield code="d">1878-1947</ns2:subfield>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+							</ns2:sources>
+							<ns2:id>LNL|7060</ns2:id>
+							<ns2:links>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="forced single date"/>ISNI|0000000403043110</ns2:link>
+								<ns2:link>
+									<ns2:match type="double date"/>LC|nr 89003446</ns2:link>
+								<ns2:link>
+									<ns2:match type="double date"/>NLI|000172833</ns2:link>
+								<ns2:link>
+									<ns2:match type="double date"/>NLI|000172833</ns2:link>
+							</ns2:links>
+						</ns2:mainHeadingEl>
+					</ns2:mainHeadings>
+					<ns2:fixed>
+						<ns2:gender>b</ns2:gender>
+					</ns2:fixed>
+					<ns2:x400s>
+						<ns2:x400>
+							<ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+								<ns2:subfield code="a">عبد الله مخلص</ns2:subfield>
+								<ns2:normalized>عبد الله مخلص</ns2:normalized>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:x400>
+						<ns2:x400>
+							<ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+								<ns2:subfield code="a">عبد اللّه مخلص،</ns2:subfield>
+								<ns2:subfield code="d">1878-1947</ns2:subfield>
+								<ns2:normalized>عبد الله مخلص 1878 1947</ns2:normalized>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+							</ns2:sources>
+						</ns2:x400>
+						<ns2:x400>
+							<ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+								<ns2:subfield code="a">مخلص، عبد الله</ns2:subfield>
+								<ns2:normalized>مخلص عبد الله</ns2:normalized>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+						</ns2:x400>
+						<ns2:x400>
+							<ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+								<ns2:subfield code="a">مخلص، عبد الله</ns2:subfield>
+								<ns2:normalized>مخلص عبد الله</ns2:normalized>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+							</ns2:sources>
+						</ns2:x400>
+						<ns2:x400>
+							<ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+								<ns2:subfield code="a">مخلص، عبد الله بن محمد،</ns2:subfield>
+								<ns2:subfield code="d">1878-1947</ns2:subfield>
+								<ns2:normalized>مخلص عبد الله بن محمد 1878 1947</ns2:normalized>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+						</ns2:x400>
+						<ns2:x400>
+							<ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+								<ns2:subfield code="a">مخلص، عبد الله بن محمد،</ns2:subfield>
+								<ns2:subfield code="d">1878-1947</ns2:subfield>
+								<ns2:normalized>مخلص عبد الله بن محمد 1878 1947</ns2:normalized>
+							</ns2:datafield>
+							<ns2:sources>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+							</ns2:sources>
+						</ns2:x400>
+					</ns2:x400s>
+					<ns2:coauthors>
+						<ns2:data count="2" tag="950">
+							<ns2:text>ابن جابر، محمد شمس الدين، 1299-1378</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="2" tag="950">
+							<ns2:text>ابن الصيرفي، علي بن منجب، 1071-1147</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" tag="950">
+							<ns2:text>كمال، نامق، 1840-1888</ns2:text>
+							<ns2:sources>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" tag="950">
+							<ns2:text>كمال، نامق، 1840-1888</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" tag="950">
+							<ns2:text>كمال، محمد نامق</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" tag="950">
+							<ns2:text>كمال، محمد نامق</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" tag="950">
+							<ns2:text>عسلي، كامل جميل</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" tag="950">
+							<ns2:text>ابن جابر، محمد شمس الدين، ١٢٩٩-١٣٧٨</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" tag="950">
+							<ns2:text>ابن الصيرفي، علي بن منجب، ١٠٧١-١١٤٧</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" tag="950">
+							<ns2:text>ʻAsalī, Kāmil Jamīl</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+					</ns2:coauthors>
+					<ns2:publishers>
+						<ns2:data count="5">
+							<ns2:text>المطبعة السلفية</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="4">
+							<ns2:text>مطبعة الزهرة، ١٩٢٨.</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="4">
+							<ns2:text>المطبعة الوطنية،</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="2">
+							<ns2:text>مطبعة المعهد العلمى الفرنسى</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="2">
+							<ns2:text>دار الكرمل - صامد،</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="2">
+							<ns2:text>المطبعة الادبية،</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="2">
+							<ns2:text>Dār al-Karmal-Ṣāmid</ns2:text>
+							<ns2:sources>
+								<ns2:s>ISNI</ns2:s>
+								<ns2:sid>ISNI|0000000403043110</ns2:sid>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1">
+							<ns2:text>مكتبة الثقافة الدينية،</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+					</ns2:publishers>
+					<ns2:birthDate>1878</ns2:birthDate>
+					<ns2:deathDate>1947</ns2:deathDate>
+					<ns2:dateType>lived</ns2:dateType>
+					<ns2:dates max="200" min="190">
+						<ns2:date count="3" scaled="1.58">190</ns2:date>
+						<ns2:date count="1" scaled="0.00">191</ns2:date>
+						<ns2:date count="8" scaled="3.00">192</ns2:date>
+						<ns2:date count="1" scaled="0.00">193</ns2:date>
+						<ns2:date count="1" scaled="0.00">194</ns2:date>
+						<ns2:date count="1" scaled="0.00">195</ns2:date>
+						<ns2:date count="1" scaled="0.00">196</ns2:date>
+						<ns2:date count="1" scaled="0.00">197</ns2:date>
+						<ns2:date count="3" scaled="1.58">198</ns2:date>
+						<ns2:date count="0" scaled="0.0">199</ns2:date>
+						<ns2:date count="1" scaled="0.00">200</ns2:date>
+					</ns2:dates>
+					<ns2:RecFormats>
+						<ns2:data count="14">
+							<ns2:text>am</ns2:text>
+							<ns2:sources>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+					</ns2:RecFormats>
+					<ns2:countries>
+						<ns2:data count="5" scaled="3">
+							<ns2:text>EG</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="2" scaled="1">
+							<ns2:text>IL</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" scaled="1">
+							<ns2:text>SY</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" scaled="1">
+							<ns2:text>LB</ns2:text>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+						<ns2:data count="1" scaled="1">
+							<ns2:text>JO</ns2:text>
+							<ns2:sources>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+							</ns2:sources>
+						</ns2:data>
+					</ns2:countries>
+					<ns2:languageOfEntity>
+						<ns2:data>
+							<ns2:text>ara</ns2:text>
+							<ns2:sources>
+								<ns2:s>LNL</ns2:s>
+							</ns2:sources>
+						</ns2:data>
+					</ns2:languageOfEntity>
+					<ns2:titles>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+							</ns2:sources>
+							<ns2:title>Turāth Filasṭīn fī kitābāt ʻAbd Allāh Mukhliṣ [part. voc.], 1986:</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:title>الاشارة الى من نال الوزارة</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:title>الرقم التاريخية فى مدينة الرملة</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:title>المسلمون والنصارى</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:title>بديعية العميان : المسماة الحلة السيرا فى مدح خير الورى</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>LC</ns2:s>
+								<ns2:sid>LC|nr 89003446</ns2:sid>
+							</ns2:sources>
+							<ns2:title>تراث فلسطين في كتابات عبد الله مخلص : مع دراسة مفصلة عن حياته وشخصيته العلمية</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:title>جب يوسف الصديق وقبره الشريف : تحقيقات واستنتاجات</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:title>صاحب مختار الصحاح</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>LNL</ns2:s>
+								<ns2:sid>LNL|7060</ns2:sid>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:title>كتاب فاتحة الفتوحات العثمانية : فاتحة الفتوحات العثمانية</ns2:title>
+						</ns2:work>
+						<ns2:work>
+							<ns2:sources>
+								<ns2:s>NLI</ns2:s>
+								<ns2:sid>NLI|000172833</ns2:sid>
+							</ns2:sources>
+							<ns2:title>مئذنة الجامع الابيض فى الرملة</ns2:title>
+						</ns2:work>
+					</ns2:titles>
+					<ns2:history>
+						<ns2:ht recid="NLI|000172833" time="2013-04-17T17:27:37+00:00" type="add"/>
+						<ns2:ht recid="LC|nr 89003446" time="2013-09-16T16:15:07+00:00" type="add"/>
+						<ns2:ht recid="LNL|7060" time="2013-09-16T16:15:07+00:00" type="add"/>
+						<ns2:ht recid="ISNI|0000000403043110" time="2014-05-14T22:19:01+00:00" type="add"/>
+					</ns2:history>
+					<ns2:creationtime>2017-03-19T15:52:01.569698+00:00</ns2:creationtime>
+				</ns2:VIAFCluster>
+			</recordData>
+			<recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+		</record>
+	</records>
+	<echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/" xsi:type="ns3:echoedSearchRetrieveRequestType">
+		<version xsi:type="xsd:string">1.1</version>
+		<query xsi:type="xsd:string">cql.any = &quot;299037057&quot;</query>
+		<xQuery>
+			<ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/" xsi:type="ns4:searchClauseType">
+				<ns4:index xsi:type="xsd:string">cql.any</ns4:index>
+				<ns4:relation xsi:type="ns4:relationType">
+					<ns4:value xsi:type="xsd:string">=</ns4:value>
+				</ns4:relation>
+				<ns4:term xsi:type="xsd:string">299037057</ns4:term>
+			</ns4:searchClause>
+		</xQuery>
+		<maximumRecords xsi:type="xsd:nonNegativeInteger">3</maximumRecords>
+		<recordSchema xsi:type="xsd:string">default</recordSchema>
+	</echoedSearchRetrieveRequest>
+	<extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+		<ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+			<ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+		</ns6:extraData>
+	</extraResponseData>
+</searchRetrieveResponse>
