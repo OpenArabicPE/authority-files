@@ -76,6 +76,7 @@
             <xsl:apply-templates select="@* |node()" mode="m_replicate"/>
         </xsl:copy>
         <xsl:element name="tei:listPerson">
+            <xsl:attribute name="xml:id" select="concat('listPerson_',$v_id-file)"/>
             <!-- add missing persons -->
             <xsl:apply-templates select="$v_persName-all/descendant-or-self::tei:persName" mode="m_particDesc"/>
         </xsl:element>
