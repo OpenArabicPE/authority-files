@@ -10,6 +10,7 @@ date: 2017-03-23 10:59:09 +0100
     + Retrieve summary information from authority records as well as relationships between records from different sources. 
     + Retrieve authority records in different formats from several national libraries.
 - This API does not require authentication.
+- VIAF data is available under the [Open Data Commons Attribution License (ODC-BY)](https://opendatacommons.org/licenses/by/). Please see [OCLC Data licenses & attribution](http://www.oclc.org/en/worldcat/data-strategy.html) for guidelines.
 
 - links:
     + http://www.oclc.org/developer/develop/web-services/viaf.en.html
