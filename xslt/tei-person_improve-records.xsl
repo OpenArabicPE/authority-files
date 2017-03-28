@@ -56,6 +56,19 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="tei:persName">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()"/>
+        </xsl:copy>
+        <xsl:if test="not(parent::tei:person/tei:persName[@type='flattened']=replace(.,'\W',''))">
+            <xsl:copy>
+                <xsl:apply-templates select="@*"/>
+                <xsl:attribute name="type" select="'flattened'"/>
+                <xsl:value-of select="replace(.,'\W','')"/>
+            </xsl:copy>
+        </xsl:if>
+    </xsl:template>
+    
     <!-- decide whether or not to omit existing records -->
 <!--    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death"/>-->
 </xsl:stylesheet>
