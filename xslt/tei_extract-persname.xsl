@@ -11,7 +11,10 @@
     
     <xsl:include href="query-viaf.xsl"/>
     
+    <!-- p_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on -->
     <xsl:param name="p_file-entities-master" select="doc('../tei/entities_master.TEIP5.xml')"/>
+    
+    <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
     <xsl:variable name="v_id-file" select="tei:TEI/@xml:id"/>
@@ -43,6 +46,7 @@
         </xsl:element>
     </xsl:variable>
     
+    <!-- mode m_mark-up-source will at some point provide automatic addition of information from $p_file-entities-master to a TEI file  -->
     <xsl:template match="tei:persName" mode="m_mark-up-source">
         <xsl:variable name="v_self" select="."/>
         <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>
@@ -71,7 +75,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- ammend master file -->
+    <!-- ammend master file with entities found in the current TEI file -->
     <xsl:template match="tei:particDesc/tei:listPerson" mode="m_replicate">
         <xsl:copy>
             <xsl:apply-templates select="@* |node()" mode="m_replicate"/>
@@ -90,7 +94,7 @@
                 <xsl:choose>
                     <!-- test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file -->
                     <xsl:when test="$v_viaf-id and $p_file-entities-master//tei:person[tei:idno[@type='viaf']=$v_viaf-id]"/>
-                    <!-- test if the text string is present in the master file -->
+                    <!-- test if the text string is present in the master file: it would be necessary to normalise the content of persName in some way -->
                     <xsl:when test="$p_file-entities-master//tei:person[tei:persName/text()=$v_self/text()]"/>
                     <!-- name is not present in the master file -->
                     <xsl:otherwise>
@@ -103,6 +107,9 @@
                 </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="tei:persName/text() | tei:surname/text() | tei:forename/text() | tei:addName/text()" mode="m_replicate">
+        <xsl:value-of select="normalize-space(.)"/>
+    </xsl:template>
     
     
     
