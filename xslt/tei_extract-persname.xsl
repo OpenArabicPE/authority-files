@@ -40,7 +40,10 @@
     <!-- variable to collect all persNames -->
     <xsl:variable name="v_persName-all">
         <xsl:element name="tei:list">
-            <xsl:for-each-group select="tei:TEI/tei:text/descendant::tei:persName" group-by=".">
+            <xsl:for-each-group select="tei:TEI/tei:text/descendant::tei:persName" group-by="replace(.,'\W','')">
+                <xsl:sort select="tei:surname[1]"/>
+                <xsl:sort select="tei:forename[1]"/>
+                <xsl:sort select="current-grouping-key()"/>
                 <xsl:copy-of select="."/>
             </xsl:for-each-group>
         </xsl:element>
@@ -110,7 +113,10 @@
     <xsl:template match="tei:persName/text() | tei:surname/text() | tei:forename/text() | tei:addName/text()" mode="m_replicate">
         <xsl:value-of select="normalize-space(.)"/>
     </xsl:template>
-    
+    <xsl:template match="tei:persName/@xml:id | tei:surname/@xml:id | tei:forename/@xml:id | tei:addName/@xml:id " mode="m_replicate"/>
+    <xsl:template match="tei:persName//tei:pb | tei:persName//tei:lb | tei:persName//tei:note" mode="m_replicate">
+        <xsl:text> </xsl:text>
+    </xsl:template>
     
     
 </xsl:stylesheet>
