@@ -79,16 +79,17 @@
     </xsl:template>
     
     <!-- ammend master file with entities found in the current TEI file -->
-    <xsl:template match="tei:particDesc/tei:listPerson" mode="m_replicate">
+    <xsl:template match="tei:particDesc" mode="m_replicate">
         <xsl:copy>
             <xsl:apply-templates select="@* |node()" mode="m_replicate"/>
-        </xsl:copy>
+        
         <xsl:element name="tei:listPerson">
 <!--            <xsl:attribute name="xml:id" select="concat('listPerson_',$v_id-file)"/>-->
             <xsl:attribute name="corresp" select="$v_url-file"/>
             <!-- add missing persons -->
             <xsl:apply-templates select="$v_persName-all/descendant-or-self::tei:persName" mode="m_particDesc"/>
         </xsl:element>
+        </xsl:copy>
     </xsl:template>
     <xsl:template match="tei:persName" mode="m_particDesc">
         <xsl:variable name="v_self" select="."/>
