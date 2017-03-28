@@ -23,6 +23,8 @@
     
     <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
     
+    <xsl:param name="p_viaf-file-path" select="'../viaf/'"/>
+    
   
     <!-- query VIAF and return RDF -->
     <xsl:template name="t_query-viaf-rdf">
@@ -75,9 +77,15 @@
         <xsl:param name="p_output-mode" select="'tei'"/>
         <xsl:variable name="v_viaf-srw">
             <xsl:choose>
+                <!-- check if a local copy of the VIAF result is present  -->
+                <xsl:when test="$p_input-type='id' and doc(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml'))">
+                    <xsl:copy-of select="doc(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml'))"/>
+                </xsl:when>
+                <!-- query VIAF for ID -->
                 <xsl:when test="$p_input-type='id'">
                     <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=local.viafID+any+&quot;',$p_search-term,'&quot;&amp;httpAccept=application/xml'))"/>
                 </xsl:when>
+                <!-- quey VIAF for personal name -->
                 <xsl:when test="$p_input-type='persName'">
                     <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=local.personalNames+any+&quot;',$p_search-term,'&quot;','&amp;maximumRecords=',$p_records-max,'&amp;httpAccept=application/xml'))"/>
                 </xsl:when>
