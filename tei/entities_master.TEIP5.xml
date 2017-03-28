@@ -2,7 +2,9 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
    schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:tei="http://www.tei-c.org/ns/1.0"
+     xmlns:xi="http://www.w3.org/2001/XInclude">
   <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -396,6 +398,23 @@
                   </persName>
                   </person>
                <person>
+                      <persName ref="viaf:32272677" xml:lang="ar">
+                     <forename xml:lang="ar">محمد</forename> 
+                     <surname xml:lang="ar">كرد علي</surname>
+                  </persName>
+                      <persName ref="viaf:32272677" xml:lang="ar-Latn-x-ijmes">
+                     <forename xml:lang="ar-Latn-x-ijmes">Muḥammad</forename> 
+                     <surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname>
+                  </persName>
+                  <tei:idno type="viaf">32272677</tei:idno>
+                  <tei:birth>
+                     <tei:date when="1876-01-01">1876-01-01</tei:date>
+                  </tei:birth>
+                  <tei:death>
+                     <tei:date when="1953-01-01">1953-01-01</tei:date>
+                  </tei:death>
+               </person>
+               <person>
                       <persName ref="viaf:299037057" xml:lang="ar">
                      <forename>عبد الله</forename> 
                      <surname>مخلص</surname>
@@ -435,9 +454,9 @@
                      <forename>اسعد</forename> 
                      <surname>منصور</surname>
                   </persName>
-                  
-                  
                   <tei:idno type="viaf">49102876</tei:idno>
+                  <tei:birth/>
+                  <tei:death/>
                </person>
                <person>
                       <persName ref="viaf:29641421" xml:lang="fr-Arab-AR">
