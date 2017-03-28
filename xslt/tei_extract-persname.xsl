@@ -40,7 +40,7 @@
     <!-- variable to collect all persNames -->
     <xsl:variable name="v_persName-all">
         <xsl:element name="tei:list">
-            <xsl:for-each-group select="tei:TEI/tei:text/descendant::tei:persName" group-by="replace(.,'\W','')">
+            <xsl:for-each-group select="tei:TEI/tei:text/descendant::tei:persName[not(tei:persName)]" group-by=".">
                 <xsl:sort select="tei:surname[1]"/>
                 <xsl:sort select="tei:forename[1]"/>
                 <xsl:sort select="current-grouping-key()"/>
@@ -98,7 +98,7 @@
                     <!-- test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file -->
                     <xsl:when test="$v_viaf-id and $p_file-entities-master//tei:person[tei:idno[@type='viaf']=$v_viaf-id]"/>
                     <!-- test if the text string is present in the master file: it would be necessary to normalise the content of persName in some way -->
-                    <xsl:when test="$p_file-entities-master//tei:person[tei:persName/text()=$v_self/text()]"/>
+                    <xsl:when test="$p_file-entities-master//tei:person[tei:persName[@type='flattened']=replace($v_self,'\W','')]"/>
                     <!-- name is not present in the master file -->
                     <xsl:otherwise>
                         <xsl:element name="tei:person">
