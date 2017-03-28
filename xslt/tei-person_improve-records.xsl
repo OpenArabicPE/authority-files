@@ -22,7 +22,7 @@
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:person">
-                <xsl:sort select="tei:persName[tei:surname][1]/tei:surname"/>
+                <xsl:sort select="tei:persName[tei:surname][1]/tei:surname[1]"/>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
@@ -34,18 +34,28 @@
             <!--<xsl:call-template name="t_query-viaf-rdf">
                 <xsl:with-param name="p_viaf-id" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
             </xsl:call-template>-->
-            <xsl:call-template name="t_query-viaf-sru">
-                <xsl:with-param name="p_output-mode" select="'file'"/>
-                <xsl:with-param name="p_search-term" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
-                <xsl:with-param name="p_input-type" select="'id'"/>
-               <!-- <xsl:with-param name="p_search-term">
+            <!-- check if basic data is already present -->
+            <xsl:if test="not(tei:birth and tei:death and tei:idno)">
+                <!-- add missing fields -->
+                <xsl:call-template name="t_query-viaf-sru">
+                    <xsl:with-param name="p_output-mode" select="'tei'"/>
+                    <xsl:with-param name="p_search-term" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
+                    <xsl:with-param name="p_input-type" select="'id'"/>
+                    <!-- <xsl:with-param name="p_search-term">
                     <xsl:value-of select="normalize-space(tei:persName[1])"/>
                 </xsl:with-param>
                 <xsl:with-param name="p_input-type" select="'persName'"/>-->
-            </xsl:call-template>
+                </xsl:call-template>
+                <!-- try to download the VIAF SRU file -->
+                <xsl:call-template name="t_query-viaf-sru">
+                    <xsl:with-param name="p_output-mode" select="'file'"/>
+                    <xsl:with-param name="p_search-term" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
+                    <xsl:with-param name="p_input-type" select="'id'"/>
+                </xsl:call-template>
+            </xsl:if>
         </xsl:copy>
     </xsl:template>
     
-    <!-- omit existing records -->
-    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death"/>
+    <!-- decide whether or not to omit existing records -->
+<!--    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death"/>-->
 </xsl:stylesheet>
