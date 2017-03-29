@@ -114,7 +114,7 @@
     <xsl:template match="tei:persName/text() | tei:surname/text() | tei:forename/text() | tei:addName/text()" mode="m_replicate">
         <xsl:value-of select="normalize-space(.)"/>
     </xsl:template>
-    <xsl:template match="tei:particDesc/tei:persName/@xml:id | tei:particDesc/tei:surname/@xml:id | tei:particDesc/tei:forename/@xml:id | tei:particDesc/tei:addName/@xml:id " mode="m_replicate"/>
+    <xsl:template match="tei:list/tei:persName/@xml:id | tei:list/tei:surname/@xml:id | tei:list/tei:forename/@xml:id | tei:list/tei:addName/@xml:id " mode="m_replicate"/>
     <xsl:template match="tei:persName//tei:pb | tei:persName//tei:lb | tei:persName//tei:note" mode="m_replicate">
         <xsl:text> </xsl:text>
     </xsl:template>
