@@ -125,7 +125,7 @@
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
                 <xsl:attribute name="who" select="$p_id-editor"/>
-                <xsl:text>Added </xsl:text><tei:gi>listPerson</tei:gi><xsl:text> with </xsl:text><tei:gi>person</tei:gi><xsl:text>s mentioned in </xsl:text><xsl:value-of select="$v_url-file"/><xsl:text> but not previously present in this master file.</xsl:text>
+                <xsl:text>Added </xsl:text><tei:gi>listPerson</tei:gi><xsl:text> with </xsl:text><tei:gi>person</tei:gi><xsl:text>s mentioned in </xsl:text><tei:ref target="{$v_url-file}"><xsl:value-of select="$v_url-file"/></tei:ref><xsl:text> but not previously present in this master file.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
         </xsl:copy>
