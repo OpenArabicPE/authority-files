@@ -4,13 +4,17 @@
    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
      xmlns:tei="http://www.tei-c.org/ns/1.0"
-     xmlns:xi="http://www.w3.org/2001/XInclude">
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>OpenArabicPE: authority file</title>
              <author>
-                 <persName xml:id="pers_TG" xml:lang="en"><forename>Till</forename> <surname>Grallert</surname></persName>
+                 <persName xml:lang="en">
+                  <forename>Till</forename>
+                  <surname>Grallert</surname>
+               </persName>
              </author>
          </titleStmt>
           <publicationStmt xml:lang="en">
@@ -900,8 +904,8 @@
                   </tei:persName>
                   <tei:persName ref="viaf:55208704" xml:lang="fr" type="flattened">ErnestvanBruysslBruyssel</tei:persName>
                    <tei:persName xml:lang="fr-Arab-AR" ref="viaf:55208704">
-                       <forename xml:lang="fr-Arab-AR">ارنست</forename>فان<surname xml:lang="fr-Arab-AR">برويسل</surname>
-                   </tei:persName>
+                     <forename xml:lang="fr-Arab-AR">ارنست</forename>فان<surname xml:lang="fr-Arab-AR">برويسل</surname>
+                  </tei:persName>
                   <tei:persName xml:lang="fr-Arab-AR" ref="viaf:55208704" type="flattened">ارنستفانبرويسل</tei:persName>
                   <tei:idno type="viaf">55208704</tei:idno>
                   <tei:birth>
@@ -918,8 +922,8 @@
                   </tei:persName>
                   <tei:persName ref="viaf:44512503" xml:lang="fr" type="flattened">LucienBouvat</tei:persName>
                    <tei:persName xml:lang="fr-Arab-AR" ref="viaf:44512503">المسيو<forename xml:lang="fr-Arab-AR">لوسين</forename>
-                       <surname xml:lang="fr-Arab-AR">بوفا</surname>
-                   </tei:persName>
+                     <surname xml:lang="fr-Arab-AR">بوفا</surname>
+                  </tei:persName>
                   <tei:persName xml:lang="fr-Arab-AR" ref="viaf:44512503" type="flattened">المسيولوسينبوفا</tei:persName>
                   <tei:idno type="viaf">44512503</tei:idno>
                   <tei:birth>
@@ -996,7 +1000,24 @@
                   <tei:persName xml:lang="ar" type="flattened">الدكتورإميلكنج</tei:persName>
                </tei:person>
             </tei:listPerson>
-          </tei:particDesc>
+            <tei:listPerson corresp="file:/Volumes/Dessau%20HD/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml">
+               <tei:person>
+                  <tei:persName>أبي الفضل أحمد بن أبي طاهر</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <tei:persName>أبي زيد أحمد بن سهل البلخي</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <tei:persName>أحمد أفندي الألفي</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <tei:persName>إبراهيم باشا</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <tei:persName xml:lang="en-Arab-AR">جون بورغوس</tei:persName>
+               </tei:person>
+            </tei:listPerson>
+         </tei:particDesc>
           <tei:settingDesc>
               <tei:listPlace>
                   <tei:place xml:id="place_d1e4075">
@@ -1046,6 +1067,7 @@
           </tei:settingDesc>
       </profileDesc>
       <revisionDesc>
+         <tei:change when="2017-03-29" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in file:/Volumes/Dessau%20HD/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml but not previously present in this master file.</tei:change>
           <change who="#pers_TG" when="2017-03-28">Created this file</change>
       </revisionDesc>
   </teiHeader>
