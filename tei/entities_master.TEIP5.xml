@@ -8,13 +8,24 @@
   <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Title</title>
+            <title>OpenArabicPE: authority file</title>
+             <author>
+                 <persName xml:id="pers_TG" xml:lang="en"><forename>Till</forename> <surname>Grallert</surname></persName>
+             </author>
          </titleStmt>
-         <publicationStmt>
-            <p>Publication Information</p>
-         </publicationStmt>
+          <publicationStmt xml:lang="en">
+              <authority xml:lang="en"> 
+                  <persName xml:lang="en">Till Grallert</persName> 
+              </authority>
+              <pubPlace xml:lang="en">Berlin</pubPlace>
+              <date when="2017" xml:lang="en">2017</date>
+              <availability status="restricted" xml:lang="en">
+                  <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:lang="en">Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
+              </availability>
+              <idno type="url" xml:lang="en">https://github.com/OpenArabicPE/authority-files/blob/master/xml/entities_master.TEIP5.xml</idno>
+          </publicationStmt>
          <sourceDesc>
-            <p>Information about the source</p>
+            <p>This is a born-digital file.</p>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -1034,6 +1045,9 @@
               </tei:listPlace>
           </tei:settingDesc>
       </profileDesc>
+      <revisionDesc>
+          <change who="#pers_TG" when="2017-03-28">Created this file</change>
+      </revisionDesc>
   </teiHeader>
   <text>
       <body>
