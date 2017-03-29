@@ -78,9 +78,9 @@
         <xsl:variable name="v_viaf-srw">
             <xsl:choose>
                 <!-- check if a local copy of the VIAF result is present  -->
-                <!--<xsl:when test="$p_input-type='id' and doc(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml')">
+                <xsl:when test="$p_input-type='id' and doc-available(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml'))">
                     <xsl:copy-of select="doc(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml'))"/>
-                </xsl:when>-->
+                </xsl:when>
                 <!-- query VIAF for ID -->
                 <xsl:when test="$p_input-type='id'">
                     <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=local.viafID+any+&quot;',$p_search-term,'&quot;&amp;httpAccept=application/xml'))"/>
