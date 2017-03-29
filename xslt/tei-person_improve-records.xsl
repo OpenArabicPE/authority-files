@@ -12,6 +12,9 @@
     
     <xsl:include href="query-viaf.xsl"/>
     
+    <!-- identify the author of the change by means of a @xml:id -->
+    <xsl:param name="p_id-editor" select="'pers_TG'"/>
+    
     <xsl:template match="@* | node()">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
@@ -71,4 +74,16 @@
     
     <!-- decide whether or not to omit existing records -->
 <!--    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death"/>-->
+    
+    <!-- document the changes -->
+    <xsl:template match="tei:revisionDesc">
+        <xsl:copy>
+            <xsl:element name="tei:change">
+                <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
+                <xsl:attribute name="who" select="$p_id-editor"/>
+                <xsl:text>Improved </xsl:text><tei:gi>person</tei:gi><xsl:text> nodes that had references to VIAF, by querying VIAF and adding  </xsl:text><tei:gi>birth</tei:gi><xsl:text>, </xsl:text><tei:gi>death</tei:gi><xsl:text>, and </xsl:text><tei:gi>idno</tei:gi><xsl:text>.</xsl:text>
+            </xsl:element>
+            <xsl:apply-templates select="@* | node()"/>
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>
