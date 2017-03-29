@@ -18,7 +18,7 @@
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
     <xsl:variable name="v_id-file" select="tei:TEI/@xml:id"/>
-    <xsl:variable name="v_url-file" select="base-uri()"/>
+    <xsl:variable name="v_url-file" select="concat('../../',substring-after(base-uri(),'OpenArabicPE/'))"/>
     
     
     <!-- This template replicates attributes as they are found in the source -->
@@ -114,7 +114,7 @@
     <xsl:template match="tei:persName/text() | tei:surname/text() | tei:forename/text() | tei:addName/text()" mode="m_replicate">
         <xsl:value-of select="normalize-space(.)"/>
     </xsl:template>
-    <xsl:template match="tei:persName/@xml:id | tei:surname/@xml:id | tei:forename/@xml:id | tei:addName/@xml:id " mode="m_replicate"/>
+    <xsl:template match="tei:particDesc/tei:persName/@xml:id | tei:particDesc/tei:surname/@xml:id | tei:particDesc/tei:forename/@xml:id | tei:particDesc/tei:addName/@xml:id " mode="m_replicate"/>
     <xsl:template match="tei:persName//tei:pb | tei:persName//tei:lb | tei:persName//tei:note" mode="m_replicate">
         <xsl:text> </xsl:text>
     </xsl:template>

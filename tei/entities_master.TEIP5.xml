@@ -11,7 +11,7 @@
          <titleStmt>
             <title>OpenArabicPE: authority file</title>
              <author>
-                 <persName xml:lang="en">
+                 <persName xml:lang="en" xml:id="pers_TG">
                   <forename>Till</forename>
                   <surname>Grallert</surname>
                </persName>
@@ -62,6 +62,10 @@
                      <surname>أرسلان</surname>
                   </persName>
                   <persName ref="viaf:73935498" xml:lang="ar" type="flattened">شكيبأرسلان</persName>
+                  <tei:persName ref="viaf:73935498" xml:lang="ar">أمير<forename xml:lang="ar">شكيب</forename>
+                     <surname xml:lang="ar">أرسلان</surname>
+                  </tei:persName>
+                  <tei:persName ref="viaf:73935498" xml:lang="ar" type="flattened">أميرشكيبأرسلان</tei:persName>
                   <tei:idno type="viaf">73935498</tei:idno>
                   <tei:birth>
                      <tei:date when="1869-12-25">1869-12-25</tei:date>
@@ -583,7 +587,7 @@
                   </tei:death>
                </person>
             </tei:listPerson>
-            <tei:listPerson corresp="file:/Volumes/Dessau%20HD/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml">
+            <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml">
                <tei:person>
                   <tei:persName xml:lang="ar">أبو العباس أحمد بن محمد بن العطار الدنيسري</tei:persName>
                   <tei:persName xml:lang="ar" type="flattened">أبوالعباسأحمدبنمحمدبنالعطارالدنيسري</tei:persName>
@@ -681,12 +685,6 @@
                   <tei:persName xml:lang="ar" type="flattened">يوحنارسكن</tei:persName>
                </tei:person>
                <tei:person>
-                  <tei:persName xml:lang="ar">أمير<forename xml:lang="ar">شكيب</forename>
-                     <surname xml:lang="ar">أرسلان</surname>
-                  </tei:persName>
-                  <tei:persName xml:lang="ar" type="flattened">أميرشكيبأرسلان</tei:persName>
-               </tei:person>
-               <tei:person>
                   <tei:persName xml:lang="it-Arab-AR" ref="viaf:204498809">
                      <forename xml:lang="it-Arab-AR">باولو</forename>
                      <surname xml:lang="it-Arab-AR">لومبروزو</surname>
@@ -697,7 +695,7 @@
                   <tei:death/>
                </tei:person>
             </tei:listPerson>
-            <tei:listPerson corresp="file:/Volumes/Dessau%20HD/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml">
+            <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml">
                <tei:person>
                   <tei:persName xml:lang="ar">أبي الحسن أحمد بن عبد الرحمن بن برد</tei:persName>
                   <tei:persName xml:lang="ar" type="flattened">أبيالحسنأحمدبنعبدالرحمنبنبرد</tei:persName>
@@ -790,7 +788,7 @@
                   <tei:persName xml:lang="ar" type="flattened">الأستاذنالينو</tei:persName>
                </tei:person>
             </tei:listPerson>
-            <tei:listPerson corresp="file:/Volumes/Dessau%20HD/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml">
+            <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml">
                <tei:person>
                   <tei:persName xml:lang="fr">Mithrawahicht</tei:persName>
                   <tei:persName xml:lang="fr" type="flattened">Mithrawahicht</tei:persName>
@@ -1000,7 +998,7 @@
                   <tei:persName xml:lang="ar" type="flattened">الدكتورإميلكنج</tei:persName>
                </tei:person>
             </tei:listPerson>
-            <tei:listPerson corresp="file:/Volumes/Dessau%20HD/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml">
+            <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml">
                <tei:person>
                   <tei:persName>أبي الفضل أحمد بن أبي طاهر</tei:persName>
                </tei:person>
@@ -1067,7 +1065,7 @@
           </tei:settingDesc>
       </profileDesc>
       <revisionDesc>
-         <tei:change when="2017-03-29" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in file:/Volumes/Dessau%20HD/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml but not previously present in this master file.</tei:change>
+         <tei:change when="2017-03-29" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in ../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml but not previously present in this master file.</tei:change>
           <change who="#pers_TG" when="2017-03-28">Created this file</change>
       </revisionDesc>
   </teiHeader>
