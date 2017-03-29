@@ -20,7 +20,7 @@
          </titleStmt>
           <publicationStmt xml:lang="en">
               <authority xml:lang="en"> 
-                  <persName xml:lang="en">Till Grallert</persName> 
+                  <persName xml:lang="en">Till Grallert</persName>
               </authority>
               <pubPlace xml:lang="en">Berlin</pubPlace>
               <date when="2017" xml:lang="en">2017</date>
@@ -777,7 +777,10 @@
                         <tei:persName xml:lang="ar" type="flattened">جص</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
-                        <tei:persName xml:lang="fr-Arab-AR" ref="viaf:24606197"><forename>فريدريك</forename> <surname>باسي</surname></tei:persName>
+                        <tei:persName xml:lang="fr-Arab-AR" ref="viaf:24606197">
+                     <forename>فريدريك</forename> 
+                     <surname>باسي</surname>
+                  </tei:persName>
                    <tei:persName xml:lang="fr-Arab-AR" type="flattened" ref="viaf:24606197">فريدريكباسي</tei:persName>
                         <persName xml:lang="fr" ref="viaf:24606197">
                      <forename>Frédéric</forename>
@@ -841,10 +844,6 @@
                         <tei:persName xml:lang="ar" type="flattened">أبيبكرمحمدبنالحسنبندريدالأزدي</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
-                        <tei:persName xml:lang="ar"><forename>أحمد</forename> بك <surname>كمال</surname></tei:persName>
-                        <tei:persName xml:lang="ar" type="flattened">أحمدبككمال</tei:persName>
-                    </tei:person>
-               <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar">أحمد بن مسكويه</tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">أحمدبنمسكويه</tei:persName>
                     </tei:person>
@@ -878,7 +877,14 @@
                <tei:person xml:lang="en">
                    <tei:persName xml:lang="ar" ref="viaf:90051632">السيوطي</tei:persName>
                    <tei:persName xml:lang="ar" type="flattened" ref="viaf:90051632">السيوطي</tei:persName>
-                    </tei:person>
+                    <tei:idno type="viaf">90051632</tei:idno>
+                  <tei:birth>
+                     <tei:date when="1445-10-03">1445-10-03</tei:date>
+                  </tei:birth>
+                  <tei:death>
+                     <tei:date when="1505-10-18">1505-10-18</tei:date>
+                  </tei:death>
+               </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar">الشيخ أحمد الشنقيطي</tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">الشيخأحمدالشنقيطي</tei:persName>
@@ -888,7 +894,8 @@
                         <tei:persName xml:lang="ar" type="flattened">الصفهاني</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
-                        <tei:persName xml:lang="ar">الملكة <forename xml:lang="en-Arab-AR">فيكتوريا</forename></tei:persName>
+                        <tei:persName xml:lang="ar">الملكة <forename xml:lang="en-Arab-AR">فيكتوريا</forename>
+                  </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">الملكةفيكتوريا</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
@@ -1029,6 +1036,12 @@
                      <surname xml:lang="ar">سيوطي</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">سيوطي</tei:persName>
+                    </tei:person>
+               <tei:person xml:lang="en">
+                        <tei:persName xml:lang="ar">
+                     <forename>أحمد</forename> بك <surname>كمال</surname>
+                  </tei:persName>
+                        <tei:persName xml:lang="ar" type="flattened">أحمدبككمال</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar">الدكتور<forename xml:lang="de-Arab-AR">إميل</forename> 
@@ -1337,31 +1350,7 @@
           </tei:settingDesc>
       </profileDesc>
       <revisionDesc>
-         <tei:change when="2017-03-29" who="pers_TG">Improved <tei:gi xmlns:bgn="http://bibliograph.net/"
-                    xmlns:genont="http://www.w3.org/2006/gen/ont#"
-                    xmlns:pto="http://www.productontology.org/id/"
-                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                    xmlns:re="http://oclcsrw.google.code/redirect"
-                    xmlns:schema="http://schema.org/"
-                    xmlns:umbel="http://umbel.org/umbel#">person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi xmlns:bgn="http://bibliograph.net/"
-                    xmlns:genont="http://www.w3.org/2006/gen/ont#"
-                    xmlns:pto="http://www.productontology.org/id/"
-                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                    xmlns:re="http://oclcsrw.google.code/redirect"
-                    xmlns:schema="http://schema.org/"
-                    xmlns:umbel="http://umbel.org/umbel#">birth</tei:gi>, <tei:gi xmlns:bgn="http://bibliograph.net/"
-                    xmlns:genont="http://www.w3.org/2006/gen/ont#"
-                    xmlns:pto="http://www.productontology.org/id/"
-                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                    xmlns:re="http://oclcsrw.google.code/redirect"
-                    xmlns:schema="http://schema.org/"
-                    xmlns:umbel="http://umbel.org/umbel#">death</tei:gi>, and <tei:gi xmlns:bgn="http://bibliograph.net/"
-                    xmlns:genont="http://www.w3.org/2006/gen/ont#"
-                    xmlns:pto="http://www.productontology.org/id/"
-                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                    xmlns:re="http://oclcsrw.google.code/redirect"
-                    xmlns:schema="http://schema.org/"
-                    xmlns:umbel="http://umbel.org/umbel#">idno</tei:gi>.</tei:change>
+         <tei:change when="2017-03-29" who="pers_TG">Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
          <tei:change when="2017-03-29" who="#pers_TG">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change>
          <tei:change when="2017-03-29" who="pers_TG" xml:lang="en">Added <tei:gi xml:lang="en">listPerson</tei:gi> with <tei:gi xml:lang="en">person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml"
                      xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
