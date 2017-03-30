@@ -27,7 +27,9 @@
             <xsl:apply-templates select="tei:person">
                 <xsl:sort select="tei:persName/following-sibling::tei:idno[@type='viaf']" order="descending"/>
 <!--                <xsl:sort select="tei:persName[following-sibling::tei:idno[@type='viaf']][1]"/>-->
+                <!-- this sort should consider the Arabic "al-" -->
                 <xsl:sort select="tei:persName[tei:surname][1]/tei:surname[1]"/>
+                <xsl:sort select="tei:persName[1]"/>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
