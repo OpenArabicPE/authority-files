@@ -6,6 +6,13 @@
      xmlns:tei="http://www.tei-c.org/ns/1.0"
      xmlns:xi="http://www.w3.org/2001/XInclude"
      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:bgn="http://bibliograph.net/"
+     xmlns:genont="http://www.w3.org/2006/gen/ont#"
+     xmlns:pto="http://www.productontology.org/id/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:re="http://oclcsrw.google.code/redirect"
+     xmlns:schema="http://schema.org/"
+     xmlns:umbel="http://umbel.org/umbel#"
      xml:lang="en">
   <teiHeader xml:lang="en">
       <fileDesc xml:lang="en">
@@ -1138,11 +1145,6 @@
                         <tei:persName xml:lang="ar" type="flattened">محمدعليبكالقباني</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
-                   <tei:persName xml:lang="ar" ref="viaf:123147905332979092816"> 
-                     <forename xml:lang="ar">نجيب</forename> أفندي <surname>شوشاني</surname></tei:persName>
-                        <tei:persName xml:lang="ar" type="flattened">نجيبأفنديشوشاني</tei:persName>
-                    </tei:person>
-               <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar"> 
                      <forename xml:lang="ar">عبد الله</forename> أفندي <surname xml:lang="ar">أمين</surname> 
                   </tei:persName>
@@ -1163,29 +1165,43 @@
                         <tei:persName xml:lang="ar" type="flattened">يوسفبنمحمدالبلوي</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
-                        <tei:persName xml:lang="ar">الأمير <forename xml:lang="ar">محمد</forename> باشا <surname xml:lang="ar">الحسني الجزائري</surname> 
+                        <tei:persName xml:lang="ar" ref="viaf:90069657">الأمير <forename xml:lang="ar">محمد</forename> باشا <surname xml:lang="ar">الحسني الجزائري</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">الأميرمحمدباشاالحسنيالجزائري</tei:persName>
-                    </tei:person>
+                    <tei:idno type="viaf">90069657</tei:idno>
+                  <tei:birth>
+                     <tei:date when="1840">1840</tei:date>
+                  </tei:birth>
+                  <tei:death>
+                     <tei:date when="1913">1913</tei:date>
+                  </tei:death>
+               </tei:person>
                <tei:person xml:lang="en">
-                        <tei:persName xml:lang="ar"> 
+                        <tei:persName xml:lang="ar" ref="viaf:26913373"> 
                      <forename xml:lang="ar">محمود</forename>أفندي<surname xml:lang="ar">الحمزاوي</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">محمودأفنديالحمزاوي</tei:persName>
-                    </tei:person>
+                    <tei:idno type="viaf">26913373</tei:idno>
+                  <tei:birth>
+                     <tei:date when="1821">1821</tei:date>
+                  </tei:birth>
+                  <tei:death>
+                     <tei:date when="1887">1887</tei:date>
+                  </tei:death>
+               </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar" ref="viaf:285129784"> 
                      <forename xml:lang="ar">إسكندر</forename> أفندي <surname xml:lang="ar">الخوري</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">إسكندرأفنديالخوري</tei:persName>
-                    <tei:idno type="viaf">285129784</tei:idno>
-                  <tei:birth>
-                     <tei:date when="1888">1888</tei:date>
+                        <tei:idno type="viaf">285129784</tei:idno>
+                        <tei:birth> 
+                     <tei:date when="1888">1888</tei:date> 
                   </tei:birth>
-                  <tei:death>
-                     <tei:date when="1973">1973</tei:date>
+                        <tei:death> 
+                     <tei:date when="1973">1973</tei:date> 
                   </tei:death>
-               </tei:person>
+                    </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar"> 
                      <forename xml:lang="ar">حنا</forename> أفندي <surname xml:lang="ar">الخوري</surname> 
@@ -1206,44 +1222,44 @@
                     </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar" ref="viaf:305215021"> 
-                     <forename xml:lang="ar">عبد القاد</forename>ر أفندي <surname xml:lang="ar">الدنا</surname> 
+                     <forename xml:lang="ar">عبد القادر</forename> أفندي <surname xml:lang="ar">الدنا</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">عبدالقادرأفنديالدنا</tei:persName>
-                    <tei:idno type="viaf">305215021</tei:idno>
-                  <tei:birth/>
-                  <tei:death/>
-               </tei:person>
+                        <tei:idno type="viaf">305215021</tei:idno>
+                        <tei:birth/>
+                        <tei:death/>
+                    </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar" ref="viaf:37216757"> 
                      <forename xml:lang="ar">عبد الغني</forename>أفندي<surname xml:lang="ar">العريسي</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">عبدالغنيأفنديالعريسي</tei:persName>
-                    <tei:idno type="viaf">37216757</tei:idno>
-                  <tei:birth>
-                     <tei:date when="1890">1890</tei:date>
+                        <tei:idno type="viaf">37216757</tei:idno>
+                        <tei:birth> 
+                     <tei:date when="1890">1890</tei:date> 
                   </tei:birth>
-                  <tei:death>
-                     <tei:date when="1916">1916</tei:date>
+                        <tei:death> 
+                     <tei:date when="1916">1916</tei:date> 
                   </tei:death>
-               </tei:person>
+                    </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar" ref="viaf:118959750"> 
                      <forename xml:lang="ar">صادق</forename>باشا<surname xml:lang="ar">المؤيد</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">صادقباشاالمؤيد</tei:persName>
-                    <tei:idno type="viaf">118959750</tei:idno>
-                  <tei:birth/>
-                  <tei:death/>
-               </tei:person>
+                        <tei:idno type="viaf">118959750</tei:idno>
+                        <tei:birth/>
+                        <tei:death/>
+                    </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar" ref="viaf:311789757"> 
                      <forename xml:lang="ar">حسن</forename> أفندي <surname xml:lang="ar">الناطور</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">حسنأفنديالناطور</tei:persName>
-                    <tei:idno type="viaf">311789757</tei:idno>
-                  <tei:birth/>
-                  <tei:death/>
-               </tei:person>
+                        <tei:idno type="viaf">311789757</tei:idno>
+                        <tei:birth/>
+                        <tei:death/>
+                    </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar"> 
                      <forename xml:lang="ar">محمد</forename> أفندي <surname xml:lang="ar">باقر</surname> 
@@ -1263,11 +1279,18 @@
                         <tei:persName xml:lang="ar" type="flattened">حسنأفنديبيهم</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
-                        <tei:persName xml:lang="ar"> 
+                        <tei:persName xml:lang="ar" ref="viaf:73713049"> 
                      <surname xml:lang="ar">حقي</surname>بك<surname xml:lang="ar">العظم</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">حقيبكالعظم</tei:persName>
-                    </tei:person>
+                    <tei:idno type="viaf">73713049</tei:idno>
+                  <tei:birth>
+                     <tei:date when="1864-01-01">1864-01-01</tei:date>
+                  </tei:birth>
+                  <tei:death>
+                     <tei:date when="1955-01-01">1955-01-01</tei:date>
+                  </tei:death>
+               </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar"> 
                      <forename xml:lang="ar">أمين</forename>
@@ -1289,11 +1312,28 @@
                         <tei:persName xml:lang="ar" type="flattened">الشيخعبدالرحمنسلام</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
-                   <tei:persName xml:lang="ar" ref="viaf:305214837"> 
-                     <forename xml:lang="ar">أحمد</forename> أفندي <forename>حسن</forename> <surname xml:lang="ar">طبارة</surname> 
+                        <tei:persName xml:lang="ar" ref="viaf:123147905332979092816"> 
+                     <forename xml:lang="ar">نجيب</forename> أفندي <surname>شوشاني</surname>
+                  </tei:persName>
+                        <tei:persName xml:lang="ar" type="flattened">نجيبأفنديشوشاني</tei:persName>
+                    <tei:idno type="viaf">123147905332979092816</tei:idno>
+                  <tei:birth/>
+                  <tei:death/>
+               </tei:person>
+               <tei:person xml:lang="en">
+                        <tei:persName xml:lang="ar" ref="viaf:305214837"> 
+                     <forename xml:lang="ar">أحمد</forename> أفندي <forename>حسن</forename> 
+                     <surname xml:lang="ar">طبارة</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">أحمدأفنديحسنطبارة</tei:persName>
-                    </tei:person>
+                    <tei:idno type="viaf">305214837</tei:idno>
+                  <tei:birth>
+                     <tei:date when="1871">1871</tei:date>
+                  </tei:birth>
+                  <tei:death>
+                     <tei:date when="1916">1916</tei:date>
+                  </tei:death>
+               </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar"> 
                      <forename xml:lang="ar">محمود</forename> أفندي <surname xml:lang="ar">فيضي</surname> 
@@ -1331,11 +1371,18 @@
                         <tei:persName xml:lang="ar" type="flattened">جميلأفنديمعلوف</tei:persName>
                     </tei:person>
                <tei:person xml:lang="en">
-                   <tei:persName xml:lang="ar" ref="viaf:60135237"> 
+                        <tei:persName xml:lang="ar" ref="viaf:60135237"> 
                      <forename xml:lang="ar">شبلي</forename> أفندي <surname xml:lang="ar">ملاط</surname> 
                   </tei:persName>
                         <tei:persName xml:lang="ar" type="flattened">شبليأفنديملاط</tei:persName>
-                    </tei:person>
+                    <tei:idno type="viaf">60135237</tei:idno>
+                  <tei:birth>
+                     <tei:date when="1875">1875</tei:date>
+                  </tei:birth>
+                  <tei:death>
+                     <tei:date when="1961">1961</tei:date>
+                  </tei:death>
+               </tei:person>
                <tei:person xml:lang="en">
                         <tei:persName xml:lang="ar"> 
                      <forename xml:lang="ar">جرجي</forename> أفندي <surname xml:lang="ar">يني</surname> 
@@ -1399,15 +1446,11 @@
           </tei:settingDesc>
       </profileDesc>
       <revisionDesc>
+         <tei:change when="2017-03-30" who="pers_TG">Added references to VIAF entities; improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
          <tei:change when="2017-03-29" who="pers_TG">Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
          <tei:change when="2017-03-29" who="#pers_TG">Added the <tei:att>xml:lang</tei:att> attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change>
-         <tei:change when="2017-03-29" who="pers_TG" xml:lang="en">Added <tei:gi xml:lang="en">listPerson</tei:gi> with <tei:gi xml:lang="en">person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml"
-                     xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
-          <tei:change when="2017-03-29" who="pers_TG" xml:lang="en">Added <tei:gi xml:lang="en">listPerson</tei:gi> with <tei:gi xml:lang="en">person</tei:gi>s mentioned in <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml"
-                 xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml</ref>, <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml"
-                 xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml</ref>, <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml"
-                 xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml</ref>, <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml"
-                 xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml</ref> but not previously present in this master file.</tei:change>
+         <tei:change when="2017-03-29" who="pers_TG" xml:lang="en">Added <tei:gi xml:lang="en">listPerson</tei:gi> with <tei:gi xml:lang="en">person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
+          <tei:change when="2017-03-29" who="pers_TG" xml:lang="en">Added <tei:gi xml:lang="en">listPerson</tei:gi> with <tei:gi xml:lang="en">person</tei:gi>s mentioned in <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml</ref>, <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml</ref>, <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml</ref>, <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml</ref> but not previously present in this master file.</tei:change>
           <change who="#pers_TG" when="2017-03-28" xml:lang="en">Created this file</change>
       </revisionDesc>
   </teiHeader>
