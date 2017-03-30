@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>60135237</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/60135237/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/60135237"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="8951">LNL|8951</ns2:source>
+                  <ns2:source nsid="nr93035051">LC|nr 93035051</ns2:source>
+                  <ns2:source nsid="Q12218375">WKP|Q12218375</ns2:source>
+                  <ns2:source nsid="0000000116533598">ISNI|0000000116533598</ns2:source>
+                  <ns2:source nsid="http://d-nb.info/gnd/128434597">DNB|128434597</ns2:source>
+               </ns2:sources>
+               <ns2:length>120</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Mallāṭ, Shiblī 1875-1961</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93035051</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>ملاط، شبلي، 1876-1961</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Mallāṭ, Šiblī &#x98;al-&#x9c; 1876-1961</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|128434597</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>شبلي ملاط</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q12218375</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2="0" tag="100">
+                        <ns2:subfield code="a">Mallāṭ, Shiblī,</ns2:subfield>
+                        <ns2:subfield code="d">1875-1961</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93035051</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|nr 93035051</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|128434597</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q12218375</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|8951</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000116533598</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Mallāṭ, Šiblī &#x98;al-&#x9c;</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|128434597</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>DNB|128434597</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q12218375</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93035051</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|8951</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000116533598</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Mallāṭ, Shiblī</ns2:subfield>
+                        <ns2:subfield code="d">1875-1961</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000116533598</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|128434597</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>WKP|Q12218375</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|8951</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>LC|nr 93035051</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">شبلي ملاط</ns2:subfield>
+                        <ns2:subfield code="9">ar</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q12218375</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>WKP|Q12218375</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|128434597</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93035051</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|8951</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000116533598</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">ملاط، شبلي،</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LNL|8951</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|128434597</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000116533598</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q12218375</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93035051</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Chibli Mallat</ns2:subfield>
+                        <ns2:subfield code="c">journalist uit Libanon (1875-1961)</ns2:subfield>
+                        <ns2:normalized>chibli mallat journalist uit libanon 1875 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q12218375</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Chibli Mallat</ns2:subfield>
+                        <ns2:subfield code="c">journaliste et poète libanais</ns2:subfield>
+                        <ns2:normalized>chibli mallat journaliste et poete libanais</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q12218375</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2="0" tag="400">
+                        <ns2:subfield code="a">Mallat, Chibli,</ns2:subfield>
+                        <ns2:subfield code="d">1875-1961</ns2:subfield>
+                        <ns2:normalized>mallat chibli 1875 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93035051</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mallat, Chibli,</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>mallat chibli 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mallat, Chibli</ns2:subfield>
+                        <ns2:subfield code="d">1875-1961</ns2:subfield>
+                        <ns2:normalized>mallat chibli 1875 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mallat, Chibli</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>mallat chibli 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|128434597</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mallāṭ, Shiblī,</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>mallat shibli 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mallāṭ, Shiblī</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>mallat shibli 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|128434597</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mallāṭ, Šiblī Ibn-Yuʾākīm Ibn-Manṣūr &#x98;al-&#x9c;</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>mallat sibli ibn yuakim ibn mansur 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|128434597</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mallāṭ, Shiblī</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>mallat shibli 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mallāṭ, Šiblī Ibn-Yuʾākīm Ibn-Manṣūr al-</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>mallat sibli ibn yuakim ibn mansur al 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">الملاط، شبلي،</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>الملاط شبلي 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">الملاط، شبلي،</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>الملاط شبلي 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">شبلي الملاط،</ns2:subfield>
+                        <ns2:subfield code="d">1876-1961</ns2:subfield>
+                        <ns2:normalized>شبلي الملاط 1876 1961</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="2" tag="951">
+                     <ns2:text>جريدة الوطن</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>ملاط، تامر، 1856-1914</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>ملاط، تامر، 1856-1914</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="2">
+                     <ns2:text>دار الطباعة والنشر اللبنانية،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000116533598</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1875</ns2:birthDate>
+               <ns2:deathDate>1961</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="199" min="190">
+                  <ns2:date count="1" scaled="0.00">190</ns2:date>
+                  <ns2:date count="1" scaled="0.00">191</ns2:date>
+                  <ns2:date count="4" scaled="2.00">192</ns2:date>
+                  <ns2:date count="1" scaled="0.00">193</ns2:date>
+                  <ns2:date count="1" scaled="0.00">194</ns2:date>
+                  <ns2:date count="2" scaled="1.00">195</ns2:date>
+                  <ns2:date count="1" scaled="0.00">196</ns2:date>
+                  <ns2:date count="1" scaled="0.00">197</ns2:date>
+                  <ns2:date count="1" scaled="0.00">198</ns2:date>
+                  <ns2:date count="2" scaled="1.00">199</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="3">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:countries>
+                  <ns2:data count="3" scaled="2">
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:s>DNB</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:xLinks>
+                  <ns2:xLink type="Wikipedia">https://ar.wikipedia.org/wiki/شبلي_ملاط<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q12218375</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+               </ns2:xLinks>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93035051</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Shiblī al-Mallāṭ, 1999:</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>ديوان شبلي الملاط</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|8951</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>فإذا رميت أصابني سهمي : مفكرات وصفحات مطوية</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="DNB|128434597" time="2009-03-03T12:03:27+00:00" type="add"/>
+                  <ns2:ht recid="LC|nr 93035051" time="2011-04-18T11:37:38+00:00" type="add"/>
+                  <ns2:ht recid="LNL|8951" time="2013-09-16T16:15:07+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000116533598"
+                          time="2014-05-14T22:19:01+00:00"
+                          type="add"/>
+                  <ns2:ht recid="WKP|Q12218375"
+                          time="2016-05-30T07:56:07.466148+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2017-03-13T19:59:48.432534+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "60135237"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">60135237</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
