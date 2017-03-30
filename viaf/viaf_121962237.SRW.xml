@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>121962237</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/121962237/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/121962237"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="http://catalogue.bnf.fr/ark:/12148/cb16701771w">BNF|16701771</ns2:source>
+                  <ns2:source nsid="http://d-nb.info/gnd/118946404">DNB|118946404</ns2:source>
+                  <ns2:source nsid="0000000117021025">ISNI|0000000117021025</ns2:source>
+                  <ns2:source nsid="n84182511">LC|n  84182511</ns2:source>
+                  <ns2:source nsid="314179771">NTA|314179771</ns2:source>
+                  <ns2:source nsid="Q199827">WKP|Q199827</ns2:source>
+                  <ns2:source nsid="002312634">NLI|002312634</ns2:source>
+               </ns2:sources>
+               <ns2:length>325</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>مراد خامس</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Murad V, Sultan of the Turks, 1840-1905</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|002312634</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  84182511</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Murad 1840-1904 Osmanisches Reich, Sultan</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Mourad V sultan ottoman 1840-1904</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16701771</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Murad V. Osmanisches Reich, Sultan 1840-1904</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|118946404</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Murad V, sultan van Turkije, 1840-1904</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|314179771</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="UNIMARC" ind1=" " ind2="|" tag="200">
+                        <ns2:subfield code="7">ba0yba0y</ns2:subfield>
+                        <ns2:subfield code="8">fre</ns2:subfield>
+                        <ns2:subfield code="9">0</ns2:subfield>
+                        <ns2:subfield code="a">Mourad</ns2:subfield>
+                        <ns2:subfield code="d">V</ns2:subfield>
+                        <ns2:subfield code="c">sultan ottoman</ns2:subfield>
+                        <ns2:subfield code="f">1840-1904</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16701771</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>BNF|16701771</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q199827</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|002312634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|n  84182511</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Murad</ns2:subfield>
+                        <ns2:subfield code="b">V,</ns2:subfield>
+                        <ns2:subfield code="c">Sultan of the Turks,</ns2:subfield>
+                        <ns2:subfield code="d">1840-1905</ns2:subfield>
+                        <ns2:subfield code="9">lat</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|002312634</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|002312634</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|118946404</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|16701771</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>LC|n  84182511</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NTA|314179771</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2="0" tag="100">
+                        <ns2:subfield code="a">Murad</ns2:subfield>
+                        <ns2:subfield code="b">V,</ns2:subfield>
+                        <ns2:subfield code="c">Sultan of the Turks,</ns2:subfield>
+                        <ns2:subfield code="d">1840-1905</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  84182511</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|n  84182511</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NLI|002312634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|16701771</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|118946404</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q199827</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NTA|314179771</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Murad</ns2:subfield>
+                        <ns2:subfield code="b">V,</ns2:subfield>
+                        <ns2:subfield code="c">sultan van Turkije,</ns2:subfield>
+                        <ns2:subfield code="d">1840-1904</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|314179771</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NTA|314179771</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NLI|002312634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>LC|n  84182511</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|118946404</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000117021025</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Murad</ns2:subfield>
+                        <ns2:subfield code="b">V.</ns2:subfield>
+                        <ns2:subfield code="c">Osmanisches Reich, Sultan</ns2:subfield>
+                        <ns2:subfield code="d">1840-1904</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|118946404</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>DNB|118946404</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q199827</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|002312634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|n  84182511</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|314179771</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|0000000117021025</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Murad</ns2:subfield>
+                        <ns2:subfield code="d">1840-1904</ns2:subfield>
+                        <ns2:subfield code="c">Osmanisches Reich, Sultan</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000117021025</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|002312634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|n  84182511</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|16701771</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|118946404</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>WKP|Q199827</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>NTA|314179771</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">مراد خامس</ns2:subfield>
+                        <ns2:subfield code="9">ota</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>WKP|Q199827</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>BNF|16701771</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>LC|n  84182511</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>DNB|118946404</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000117021025</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000117021025</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mehemed-Mourad V</ns2:subfield>
+                        <ns2:subfield code="d">1840-1904</ns2:subfield>
+                        <ns2:subfield code="c">sultan ottoman</ns2:subfield>
+                        <ns2:normalized>mehemed mourad v 1840 1904 sultan ottoman</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Mehemed-Mourad V</ns2:subfield>
+                        <ns2:subfield code="c">sultan ottoman</ns2:subfield>
+                        <ns2:subfield code="f">1840-1904</ns2:subfield>
+                        <ns2:normalized>mehemed mourad v sultan ottoman 1840 1904</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16701771</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mourad V</ns2:subfield>
+                        <ns2:normalized>mourad v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mourad V</ns2:subfield>
+                        <ns2:subfield code="d">1840-1904</ns2:subfield>
+                        <ns2:subfield code="c">sultan ottoman</ns2:subfield>
+                        <ns2:normalized>mourad v 1840 1904 sultan ottoman</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Mourad V</ns2:subfield>
+                        <ns2:subfield code="c">sultan ottoman</ns2:subfield>
+                        <ns2:subfield code="f">1840-1904</ns2:subfield>
+                        <ns2:normalized>mourad v sultan ottoman 1840 1904</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16701771</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mourad</ns2:subfield>
+                        <ns2:subfield code="d">1840-1905</ns2:subfield>
+                        <ns2:subfield code="c">Sultan of the Turks</ns2:subfield>
+                        <ns2:subfield code="b">V</ns2:subfield>
+                        <ns2:normalized>mourad 1840 1905 sultan of the turks v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Mourad</ns2:subfield>
+                        <ns2:subfield code="b">V,</ns2:subfield>
+                        <ns2:subfield code="c">Sultan of the Turks,</ns2:subfield>
+                        <ns2:subfield code="d">1840-1905</ns2:subfield>
+                        <ns2:normalized>mourad v sultan of the turks 1840 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|002312634</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2="0" tag="400">
+                        <ns2:subfield code="a">Mourad</ns2:subfield>
+                        <ns2:subfield code="b">V,</ns2:subfield>
+                        <ns2:subfield code="c">Sultan of the Turks,</ns2:subfield>
+                        <ns2:subfield code="d">1840-1905</ns2:subfield>
+                        <ns2:normalized>mourad v sultan of the turks 1840 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  84182511</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murad 5-sè</ns2:subfield>
+                        <ns2:normalized>murad 5 se</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murad V</ns2:subfield>
+                        <ns2:normalized>murad v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murad V.a</ns2:subfield>
+                        <ns2:normalized>murad v a</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murad V.</ns2:subfield>
+                        <ns2:subfield code="c">Sultan des Osmanischen Reiches (1876)</ns2:subfield>
+                        <ns2:normalized>murad v sultan des osmanischen reiches 1876</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murad V</ns2:subfield>
+                        <ns2:subfield code="c">Ottoman Sultan</ns2:subfield>
+                        <ns2:normalized>murad v ottoman sultan</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murad V</ns2:subfield>
+                        <ns2:subfield code="c">Sultan des Osmanischen Reiches (1876)</ns2:subfield>
+                        <ns2:normalized>murad v sultan des osmanischen reiches 1876</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murad V</ns2:subfield>
+                        <ns2:subfield code="c">sultano dell'Impero ottomano</ns2:subfield>
+                        <ns2:normalized>murad v sultano dellimpero ottomano</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murad la 5-a</ns2:subfield>
+                        <ns2:normalized>murad la 5 a</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murads V</ns2:subfield>
+                        <ns2:normalized>murads v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murat V</ns2:subfield>
+                        <ns2:normalized>murat v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murat V</ns2:subfield>
+                        <ns2:subfield code="c">politicus uit Ottomaanse Rijk (1840-1904)</ns2:subfield>
+                        <ns2:normalized>murat v politicus uit ottomaanse rijk 1840 1904</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murat</ns2:subfield>
+                        <ns2:subfield code="d">1840-1905</ns2:subfield>
+                        <ns2:subfield code="c">Sultan of the Turks</ns2:subfield>
+                        <ns2:subfield code="b">V</ns2:subfield>
+                        <ns2:normalized>murat 1840 1905 sultan of the turks v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murat</ns2:subfield>
+                        <ns2:subfield code="b">V,</ns2:subfield>
+                        <ns2:subfield code="c">Sultan of the Turks,</ns2:subfield>
+                        <ns2:subfield code="d">1840-1905</ns2:subfield>
+                        <ns2:normalized>murat v sultan of the turks 1840 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|002312634</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2="0" tag="400">
+                        <ns2:subfield code="a">Murat</ns2:subfield>
+                        <ns2:subfield code="b">V,</ns2:subfield>
+                        <ns2:subfield code="c">Sultan of the Turks,</ns2:subfield>
+                        <ns2:subfield code="d">1840-1905</ns2:subfield>
+                        <ns2:normalized>murat v sultan of the turks 1840 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  84182511</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Murod V</ns2:subfield>
+                        <ns2:normalized>murod v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Myrat V</ns2:subfield>
+                        <ns2:normalized>myrat v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">V Murad</ns2:subfield>
+                        <ns2:normalized>v murad</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">V Мұрат</ns2:subfield>
+                        <ns2:normalized>v мұрат</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">V. Murád oszmán szultán</ns2:subfield>
+                        <ns2:normalized>v murad oszman szultan</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Μουράτ Ε΄</ns2:subfield>
+                        <ns2:normalized>μουρατ ε</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Мурад V</ns2:subfield>
+                        <ns2:normalized>мурад v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Мурат V</ns2:subfield>
+                        <ns2:normalized>мурат v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Մուրադ V</ns2:subfield>
+                        <ns2:normalized>մուրադ v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">מוראט החמישי</ns2:subfield>
+                        <ns2:normalized>מוראט החמישי</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">مراد الخامس</ns2:subfield>
+                        <ns2:normalized>مراد الخامس</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">مراد خامس</ns2:subfield>
+                        <ns2:normalized>مراد خامس</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">مراد پنجم</ns2:subfield>
+                        <ns2:normalized>مراد پنجم</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">موڕادی پێنجەم</ns2:subfield>
+                        <ns2:normalized>موڕادی پێنجەم</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">पाचवा मुराद, ओस्मानी सम्राट</ns2:subfield>
+                        <ns2:normalized>पचव मरद ओसमन समरट</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">পঞ্চম মুরাদ</ns2:subfield>
+                        <ns2:normalized>পঞচম মরদ</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">สุลต่านมูรัดที่ 5</ns2:subfield>
+                        <ns2:normalized>สลตานมรดท 5</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">მურად V</ns2:subfield>
+                        <ns2:normalized>მურად v</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ムラト5世</ns2:subfield>
+                        <ns2:normalized>ムラト5世</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">穆拉德五世</ns2:subfield>
+                        <ns2:normalized>穆拉徳㐅世</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000117021025</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:x500s>
+                  <ns2:x500>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2=" " tag="515">
+                        <ns2:subfield code="5">z</ns2:subfield>
+                        <ns2:subfield code="a">Empire ottoman</ns2:subfield>
+                        <ns2:subfield code="z">1829-1878</ns2:subfield>
+                        <ns2:normalized>empire ottoman 1829 1878</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16701771</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x500>
+               </ns2:x500s>
+               <ns2:birthDate>1840-09-21</ns2:birthDate>
+               <ns2:deathDate>1904-08-29</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="190" min="190">
+                  <ns2:date count="3" scaled="1.58">190</ns2:date>
+               </ns2:dates>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ota</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>TR</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Ottoman Empire</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:xLinks>
+                  <ns2:xLink type="Wikipedia">https://af.wikipedia.org/wiki/Murat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://ar.wikipedia.org/wiki/مراد_الخامس<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://az.wikipedia.org/wiki/V_Murad<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://bg.wikipedia.org/wiki/Мурад_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://bn.wikipedia.org/wiki/পঞ্চম_মুরাদ<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://br.wikipedia.org/wiki/Murat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://bs.wikipedia.org/wiki/Murat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://ca.wikipedia.org/wiki/Murat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://ckb.wikipedia.org/wiki/موڕادی_پێنجەم<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://cs.wikipedia.org/wiki/Murad_V.<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://de.wikipedia.org/wiki/Murad_V.<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://diq.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://el.wikipedia.org/wiki/Μουράτ_Ε΄<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://en.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://eo.wikipedia.org/wiki/Murado_la_5-a<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://es.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://eu.wikipedia.org/wiki/Murad_V.a<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://fa.wikipedia.org/wiki/مراد_پنجم<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://fi.wikipedia.org/wiki/Murat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://fr.wikipedia.org/wiki/Mourad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://he.wikipedia.org/wiki/מוראט_החמישי<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://hr.wikipedia.org/wiki/Murat_V.<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://hu.wikipedia.org/wiki/V._Murád_oszmán_szultán<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://hy.wikipedia.org/wiki/Մուրադ_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://id.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://it.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://ja.wikipedia.org/wiki/ムラト5世<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://ka.wikipedia.org/wiki/მურად_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://kk.wikipedia.org/wiki/V_Мұрат<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://lv.wikipedia.org/wiki/Murads_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://mk.wikipedia.org/wiki/Мурат_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://mr.wikipedia.org/wiki/पाचवा_मुराद,_ओस्मानी_सम्राट<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://ms.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://nl.wikipedia.org/wiki/Murat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://no.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://pl.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://pt.wikipedia.org/wiki/Murat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://ru.wikipedia.org/wiki/Мурад_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://sco.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://sh.wikipedia.org/wiki/Murat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://sr.wikipedia.org/wiki/Мурат_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://sv.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://th.wikipedia.org/wiki/สุลต่านมูรัดที่_5<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://tk.wikipedia.org/wiki/Myrat_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://tr.wikipedia.org/wiki/V._Murad<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://uk.wikipedia.org/wiki/Мурад_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://ur.wikipedia.org/wiki/مراد_خامس<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://uz.wikipedia.org/wiki/Murod_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://vi.wikipedia.org/wiki/Murad_V<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://zh.wikipedia.org/wiki/穆拉德五世<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://zh_min_nan.wikipedia.org/wiki/Murad_5-sè<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q199827</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+               </ns2:xLinks>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  84182511</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Ahmet Saip. Tarih-i Sultan Murat Hamis, 190-?:</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  84182511</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>de. Au pays de l'espionnage, 1902:</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="LC|n  84182511" time="2011-04-18T11:37:38+00:00" type="add"/>
+                  <ns2:ht recid="DNB|118946404" time="2013-05-13T19:14:22+00:00" type="add"/>
+                  <ns2:ht recid="NTA|314179771" time="2013-05-13T19:14:22+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000117021025"
+                          time="2014-05-14T22:19:01+00:00"
+                          type="add"/>
+                  <ns2:ht recid="WKP|Q199827" time="2015-04-14T18:56:54+00:00" type="add"/>
+                  <ns2:ht recid="BNF|16701771" time="2015-07-12T18:51:56+00:00" type="add"/>
+                  <ns2:ht recid="NLI|002312634"
+                          time="2017-02-05T09:43:24.150960+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2017-03-27T22:57:46.058519+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "121962237"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">121962237</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
