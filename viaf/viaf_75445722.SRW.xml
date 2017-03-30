@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>75445722</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/75445722/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/75445722"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="6383">LNL|6383</ns2:source>
+                  <ns2:source nsid="n89188202">LC|n  89188202</ns2:source>
+                  <ns2:source nsid="0000000108018836">ISNI|0000000108018836</ns2:source>
+                  <ns2:source nsid="102945">SELIBR|102945</ns2:source>
+               </ns2:sources>
+               <ns2:length>154</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Yannī, Jirjī, 1854-1941</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Yanni, Jirji</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>يني، جرجي، 1854-1941</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Yanni, Jirji</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000108018836</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LNL|6383</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>LC|n  89188202</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>SELIBR|102945</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Yannī, Jirjī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|n  89188202</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|6383</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000108018836</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000108018836</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000108018836</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SELIBR|102945</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Yannī, Jirjī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>SELIBR|102945</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|6383</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|n  89188202</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000108018836</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000108018836</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000108018836</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">يني، جرجي،</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LNL|6383</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|n  89188202</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000108018836</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000108018836</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000108018836</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SELIBR|102945</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Jannā aṭ-Ṭarābulusī, Ǧirǧī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>janna at tarabulusi girgi 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Jannā aṭ-Ṭarābulusī, Ǧirǧī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>janna at tarabulusi girgi 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī, Jurjī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni jurji 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī al-Ṭarābulusī, Jirjī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni al tarabulusi jirji 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī al-Ṭarābulusī, Jirjī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni al tarabulusi jirji 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī, Jirjī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni jirji 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī, Jirjī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni jirji 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī, Jurjī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni jurji 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī, Ǧirǧī ,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni girgi 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī, Ǧirǧī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni girgi 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī, Ǧurǧī ,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni gurgi 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Yannī, Ǧurǧī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>yanni gurgi 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">aṭ-Ṭarābulusī, Ǧirǧī Yannī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>at tarabulusi girgi yanni 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">aṭ-Ṭarābulusī, Ǧirǧī Yannī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>at tarabulusi girgi yanni 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ǧurǧī Yannā ṭ-Tarābulusī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>gurgi yanna t tarabulusi 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ǧurǧī Yannā ṭ-Tarābulusī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>gurgi yanna t tarabulusi 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">جرجي يني،</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>جرجي يني 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">يني، جرجي</ns2:subfield>
+                        <ns2:normalized>يني جرجي</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">يني، جرجي</ns2:subfield>
+                        <ns2:normalized>يني جرجي</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">يني، جرجي,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>يني جرجي 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">يني، جرجي</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>يني جرجي 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ṭarābulusī, Ǧirǧī Yannī,</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>tarabulusi girgi yanni 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SELIBR</ns2:s>
+                        <ns2:sid>SELIBR|102945</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ṭarābulusī, Ǧirǧī Yannī</ns2:subfield>
+                        <ns2:subfield code="d">1854-1941</ns2:subfield>
+                        <ns2:normalized>tarabulusi girgi yanni 1854 1941</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Ṭarābulusī, Nawfal Niʻmat Allāh, 1812-1887.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Nakhkhūl, Jān.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Abū Fāḍil, Mīshāl.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>سموندس، ب. ل.، 1814-1897</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>سموندس، ب. ل.، 1814-1897</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="2">
+                     <ns2:text>Jarrūs Bris</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>Dār Laḥad Khāṭir</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000108018836</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1854</ns2:birthDate>
+               <ns2:deathDate>1941</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="199" min="188">
+                  <ns2:date count="2" scaled="1.00">188</ns2:date>
+                  <ns2:date count="2" scaled="1.00">189</ns2:date>
+                  <ns2:date count="1" scaled="0.00">190</ns2:date>
+                  <ns2:date count="1" scaled="0.00">191</ns2:date>
+                  <ns2:date count="1" scaled="0.00">192</ns2:date>
+                  <ns2:date count="1" scaled="0.00">193</ns2:date>
+                  <ns2:date count="1" scaled="0.00">194</ns2:date>
+                  <ns2:date count="1" scaled="0.00">195</ns2:date>
+                  <ns2:date count="1" scaled="0.00">196</ns2:date>
+                  <ns2:date count="1" scaled="0.00">197</ns2:date>
+                  <ns2:date count="4" scaled="2.00">198</ns2:date>
+                  <ns2:date count="3" scaled="1.58">199</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="3">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>dm</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:countries>
+                  <ns2:data count="3" scaled="2">
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>EG</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:s>SELIBR</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>The commmercial products of the sea.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Kashf al-lithām ʻan muḥayyā al-ḥukūmah wa-al-aḥkām fī iqlīmay Miṣr wa-barr al-Shām, 1990:</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  89188202</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Tārīkh Sūriyā</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>كتاب تاريخ سوريا</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|6383</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>كتاب عجائب البحر ومحاصيله التجارية، أي، ذكر منافع حاصلات البحر الحيوانية والنباتية والمعدنية لخير الإنسان وتقدم التجارة</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="LC|n  89188202" time="2009-03-03T12:03:35+00:00" type="add"/>
+                  <ns2:ht recid="SELIBR|102945" time="2009-03-03T12:03:43+00:00" type="add"/>
+                  <ns2:ht recid="NII|DA14652021"
+                          time="2010-11-16T05:07:57+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="NLIara|000329687"
+                          time="2011-10-24T04:11:36+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="LNL|6383" time="2013-09-16T16:15:07+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000108018836"
+                          time="2013-09-16T16:15:07+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2017-03-27T20:38:08.861098+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "75445722"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">75445722</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
