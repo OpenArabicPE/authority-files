@@ -25,6 +25,8 @@
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:person">
+                <xsl:sort select="tei:persName/following-sibling::tei:idno[@type='viaf']" order="descending"/>
+<!--                <xsl:sort select="tei:persName[following-sibling::tei:idno[@type='viaf']][1]"/>-->
                 <xsl:sort select="tei:persName[tei:surname][1]/tei:surname[1]"/>
             </xsl:apply-templates>
         </xsl:copy>
