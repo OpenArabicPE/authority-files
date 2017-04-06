@@ -56,6 +56,7 @@
             <xsl:call-template name="t_dates-normalise">
                 <xsl:with-param name="p_input" select="."/>
             </xsl:call-template>
+            <xsl:value-of select="."/>
         </xsl:element>
     </xsl:template>
     
@@ -64,6 +65,7 @@
             <xsl:call-template name="t_dates-normalise">
                 <xsl:with-param name="p_input" select="."/>
             </xsl:call-template>
+            <xsl:value-of select="."/>
         </xsl:element>
     </xsl:template>
     
@@ -121,10 +123,11 @@
             - yyy-mm-dd: the year needs an additional leading 0
             - yyyy-mm-00: this indicates a date range of a full month
         -->
+        <!-- output are ATTRIBUTES! -->
         <xsl:param name="p_input"/>
         <xsl:analyze-string select="$p_input" regex="(\d{{4}})$|(\d{{3,4}})-(\d{{2}})-(\d{{2}})$">
             <xsl:matching-substring>
-                <xsl:element name="tei:date">
+<!--                <xsl:element name="tei:date">-->
                     <xsl:variable name="v_year">
                         <xsl:value-of select="format-number(number(regex-group(2)),'0000')"/>
                     </xsl:variable>
@@ -145,8 +148,8 @@
                             <xsl:attribute name="when" select="regex-group(1)"/>
                         </xsl:when>
                     </xsl:choose>
-                    <xsl:value-of select="$p_input"/>
-                </xsl:element>
+<!--                    <xsl:value-of select="$p_input"/>-->
+                <!--</xsl:element>-->
             </xsl:matching-substring>
         </xsl:analyze-string>
     </xsl:template>
