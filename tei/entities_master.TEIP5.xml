@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
    schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
@@ -69,7 +69,9 @@
                <person xml:lang="en">
                         <persName ref="viaf:96963151" xml:lang="ar">
                      <forename xml:lang="ar">محمد</forename>
-                     <forename xml:lang="ar">جميل</forename>أفندي<surname xml:lang="ar">الشطي</surname>
+                     <forename xml:lang="ar">جميل</forename>
+                            <addName type="title">أفندي</addName>
+                            <surname xml:lang="ar">الشطي</surname>
                   </persName>
                         <persName ref="viaf:96963151" xml:lang="ar" type="flattened">محمدجميلأفنديالشطي</persName>
                         <persName ref="viaf:96963151" xml:lang="ar">
