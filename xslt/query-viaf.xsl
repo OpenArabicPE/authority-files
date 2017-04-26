@@ -24,6 +24,8 @@
     <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
     
     <xsl:param name="p_viaf-file-path" select="'../viaf/'"/>
+    <xsl:variable name="v_string-transcribe-ijmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>
+    <xsl:variable name="v_string-transcribe-arabic" select="'بتحخجدرزسصضطظعفقكلمنهاويوي٠١٢٣٤٥٦٧٨٩'"/>
     
   
     <!-- query VIAF and return RDF -->
@@ -51,6 +53,88 @@
         </xsl:choose>
     </xsl:template>
     
+    <!-- query VIAF using SRU -->
+    <xsl:template name="t_query-viaf-sru">
+        <xsl:param name="p_search-term"/>
+        <!-- available values are 'id' and 'persName' -->
+        <xsl:param name="p_input-type"/>
+        <xsl:param name="p_records-max" select="5"/>
+        <!-- available values are 'tei' and 'file' -->
+        <xsl:param name="p_output-mode" select="'tei'"/>
+        <xsl:variable name="v_viaf-srw">
+            <xsl:choose>
+                <!-- check if a local copy of the VIAF result is present  -->
+                <xsl:when test="$p_input-type='id' and doc-available(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml'))">
+                    <xsl:copy-of select="doc(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml'))"/>
+                </xsl:when>
+                <!-- query VIAF for ID -->
+                <xsl:when test="$p_input-type='id'">
+                    <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=local.viafID+any+&quot;',$p_search-term,'&quot;&amp;httpAccept=application/xml'))"/>
+                </xsl:when>
+                <!-- query VIAF for personal name -->
+                <xsl:when test="$p_input-type='persName'">
+                    <!-- note that, depending on the sort order, we are not necessarily looking for the first entry -->
+                    <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=local.personalNames+any+&quot;',$p_search-term,'&quot;','&amp;sortKeys=name&amp;maximumRecords=',$p_records-max,'&amp;httpAccept=application/xml'))"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=cql.any+all+',$p_search-term,'&amp;sortKeys=name&amp;maximumRecords=',$p_records-max,'&amp;httpAccept=application/xml'))"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <!-- note that, depending on the sort order, we are not necessarily looking for the first entry -->
+        <xsl:variable name="v_record-1">
+            <xsl:choose>
+                <xsl:when test="$p_input-type='id'">
+                    <xsl:copy-of select="$v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster[.//viaf:viafID=$p_search-term]"/>
+                </xsl:when>
+                <xsl:when test="$p_input-type='persName'">
+                    <xsl:choose>
+                        <xsl:when test="count($v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster) = 1">
+                            <xsl:copy-of select="$v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="$v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster[.//viaf:datafield[@dtype='MARC21']/viaf:subfield[@code='a'][contains(.,normalize-space($p_search-term))]]"/>
+                            <!-- <xsl:copy-of select="$v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster[ contains(.//viaf:datafield[@dtype='MARC21']/viaf:subfield[@code='a'][replace(.,'\W','')],replace($p_search-term,'\W',''))]"/>-->
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="v_viaf-id" select="$v_record-1//viaf:viafID"/>
+        <!-- add alternative names: 
+                    the VIAF files contain many duplicates of name records that need to be unified -->
+        <xsl:variable name="v_alternative-names">
+            <xsl:for-each-group select="$v_record-1//viaf:datafield[@dtype='MARC21'][@tag='400']/viaf:subfield[@code='a']" group-by="replace(.,'\W','')">
+                <xsl:apply-templates select="."/>    
+            </xsl:for-each-group>
+        </xsl:variable>
+        <!-- add VIAF ID -->
+        <xsl:choose>
+            <xsl:when test="$p_output-mode = 'tei'">
+                <!-- add alternative names -->
+<!--                <xsl:copy-of select="$v_alternative-names"/>-->
+                <!-- add VIAF ID -->
+                <xsl:apply-templates select="$v_record-1//viaf:viafID"/>
+                <!-- add birth and death dates -->
+                <xsl:apply-templates select="$v_record-1//viaf:birthDate"/>
+                <xsl:apply-templates select="$v_record-1//viaf:deathDate"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'file'">
+                <xsl:choose>
+                    <xsl:when test="$v_viaf-id!=''">
+                        <xsl:result-document href="../viaf/viaf_{$v_viaf-id}.SRW.xml">
+                            <xsl:copy-of select="$v_viaf-srw"/>
+                        </xsl:result-document>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:message><xsl:text>No result for: </xsl:text><xsl:value-of select="normalize-space($p_search-term)"/></xsl:message>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- transform VIAF results to TEI -->
     <xsl:template match="schema:birthDate | viaf:birthDate">
         <xsl:element name="tei:birth">
             <xsl:call-template name="t_dates-normalise">
@@ -69,52 +153,22 @@
         </xsl:element>
     </xsl:template>
     
-    <!-- query VIAF using SRU -->
-    <xsl:template name="t_query-viaf-sru">
-        <xsl:param name="p_search-term"/>
-        <!-- available values are 'id' and 'persName' -->
-        <xsl:param name="p_input-type"/>
-        <xsl:param name="p_records-max" select="3"/>
-        <!-- available values are 'tei' and 'file' -->
-        <xsl:param name="p_output-mode" select="'tei'"/>
-        <xsl:variable name="v_viaf-srw">
-            <xsl:choose>
-                <!-- check if a local copy of the VIAF result is present  -->
-                <xsl:when test="$p_input-type='id' and doc-available(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml'))">
-                    <xsl:copy-of select="doc(concat($p_viaf-file-path,'viaf_',$p_search-term,'.SRW.xml'))"/>
-                </xsl:when>
-                <!-- query VIAF for ID -->
-                <xsl:when test="$p_input-type='id'">
-                    <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=local.viafID+any+&quot;',$p_search-term,'&quot;&amp;httpAccept=application/xml'))"/>
-                </xsl:when>
-                <!-- quey VIAF for personal name -->
-                <xsl:when test="$p_input-type='persName'">
-                    <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=local.personalNames+any+&quot;',$p_search-term,'&quot;','&amp;maximumRecords=',$p_records-max,'&amp;httpAccept=application/xml'))"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:copy-of select="doc(concat('https://viaf.org/viaf/search?query=cql.any+all+',$p_search-term,'&amp;maximumRecords=',$p_records-max,'&amp;httpAccept=application/xml'))"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="v_record-1" select="$v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record[1]/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster"/>
-        <xsl:variable name="v_viaf-id" select="$v_record-1//viaf:viafID"/>
-        <xsl:choose>
-            <xsl:when test="$p_output-mode = 'tei'">
-                <!-- add VIAF ID -->
-                <xsl:element name="tei:idno">
-                    <xsl:attribute name="type" select="'viaf'"/>
-                    <xsl:value-of select="$v_viaf-id"/>
-                </xsl:element>
-                <!-- add birth and death dates -->
-                <xsl:apply-templates select="$v_record-1//viaf:birthDate"/>
-                <xsl:apply-templates select="$v_record-1//viaf:deathDate"/>
-            </xsl:when>
-            <xsl:when test="$p_output-mode = 'file'">
-                <xsl:result-document href="../viaf/viaf_{$v_viaf-id}.SRW.xml">
-                    <xsl:copy-of select="$v_viaf-srw"/>
-                </xsl:result-document>
-            </xsl:when>
-        </xsl:choose>
+    <xsl:template match="viaf:viafID">
+        <xsl:element name="tei:idno">
+            <xsl:attribute name="type" select="'viaf'"/>
+            <xsl:value-of select="."/>
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- additional personal names -->
+    <xsl:template match="viaf:subfield[@code='a']">
+        <!-- check if the name is in Arabic script -->
+        <xsl:if test="contains($v_string-transcribe-arabic,replace(.,'.*(\w).+','$1'))">
+            <xsl:element name="tei:persName">
+                <xsl:attribute name="xml:lang" select="'ar'"/>
+                <xsl:value-of select="normalize-space(.)"/>
+            </xsl:element>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template name="t_dates-normalise">
