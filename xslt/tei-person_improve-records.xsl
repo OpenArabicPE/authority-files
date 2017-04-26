@@ -8,7 +8,7 @@
     
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
-    <xsl:output method="xml" encoding="UTF-8" indent="yes" exclude-result-prefixes="#all"/>
+    <xsl:output method="xml" encoding="UTF-8" indent="yes" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <xsl:include href="query-viaf.xsl"/>
     
@@ -34,32 +34,60 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- improve tei:person records -->
-    <xsl:template match="tei:person[tei:persName[matches(@ref,'viaf:\d+')]]">
+    <!-- improve tei:person records with VIAF references -->
+    <xsl:template match="tei:person[tei:persName[matches(@ref,'viaf:\d+')]] | tei:person[tei:idno[@type='viaf']!='']">
+        <xsl:variable name="v_viaf-id">
+            <xsl:choose>
+                <xsl:when test="tei:idno[@type='viaf']!=''">
+                    <xsl:value-of select="tei:idno[@type='viaf']"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
             <!--<xsl:call-template name="t_query-viaf-rdf">
                 <xsl:with-param name="p_viaf-id" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
             </xsl:call-template>-->
             <!-- check if basic data is already present -->
-            <xsl:if test="not(tei:birth and tei:death and tei:idno)">
+            <xsl:if test="not(tei:birth and tei:death)">
                 <!-- add missing fields -->
                 <xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'tei'"/>
-                    <xsl:with-param name="p_search-term" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
+                    <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
                     <xsl:with-param name="p_input-type" select="'id'"/>
-                    <!-- <xsl:with-param name="p_search-term">
-                    <xsl:value-of select="normalize-space(tei:persName[1])"/>
-                </xsl:with-param>
-                <xsl:with-param name="p_input-type" select="'persName'"/>-->
                 </xsl:call-template>
                 <!-- try to download the VIAF SRU file -->
                 <xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'file'"/>
-                    <xsl:with-param name="p_search-term" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
+                    <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
                     <xsl:with-param name="p_input-type" select="'id'"/>
                 </xsl:call-template>
             </xsl:if>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!-- improve tei:person records without VIAF references -->
+    <xsl:template match="tei:person">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()"/>
+            <!-- check if basic data is already present -->
+            <!--<xsl:if test="not(tei:birth and tei:death)">
+                <!-\- add missing fields -\->
+                <xsl:call-template name="t_query-viaf-sru">
+                    <xsl:with-param name="p_output-mode" select="'tei'"/>
+                    <xsl:with-param name="p_search-term" select="normalize-space(tei:persName[1])"/>
+                    <xsl:with-param name="p_input-type" select="'persName'"/>
+                </xsl:call-template>
+                <!-\- try to download the VIAF SRU file -\->
+                <xsl:call-template name="t_query-viaf-sru">
+                    <xsl:with-param name="p_output-mode" select="'file'"/>
+                    <xsl:with-param name="p_search-term" select="normalize-space(tei:persName[1])"/>
+                    <xsl:with-param name="p_input-type" select="'persName'"/>
+                </xsl:call-template>
+            </xsl:if>-->
         </xsl:copy>
     </xsl:template>
     
@@ -67,7 +95,7 @@
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
-        <xsl:if test="not(parent::tei:person/tei:persName[@type='flattened']=replace(.,'\W',''))">
+        <xsl:if test="not(parent::node()/tei:persName[@type='flattened']=replace(.,'\W',''))">
             <xsl:copy>
                 <xsl:apply-templates select="@*"/>
                 <xsl:attribute name="type" select="'flattened'"/>
