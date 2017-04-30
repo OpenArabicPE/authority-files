@@ -1897,6 +1897,23 @@
                   </tei:persName>
                </tei:person>
             </tei:listPerson>
+            <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml">
+               <tei:person>
+                  <tei:persName>الشيخ إبراهيم الحوراني</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <tei:persName>المغربي</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <tei:persName>محمد باقر الشبيبي</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <tei:persName ref="viaf:15578201">
+                     <forename>خير الدين</forename>
+                     <surname>الزركلي</surname>
+                  </tei:persName>
+               </tei:person>
+            </tei:listPerson>
          </tei:particDesc>
             <tei:settingDesc xml:lang="en">
                 <tei:listPlace xml:lang="en">
@@ -1947,6 +1964,7 @@
             </tei:settingDesc>
         </profileDesc>
         <revisionDesc>
+         <tei:change when="2017-04-30" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
          <tei:change when="2017-04-30" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
             <tei:change when="2017-04-26" who="pers_TG">Improved 
         
