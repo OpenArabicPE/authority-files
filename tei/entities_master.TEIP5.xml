@@ -1650,7 +1650,10 @@
                <tei:person>
                     <tei:persName xml:lang="ar">ابن حزم</tei:persName>
                     <tei:persName type="flattened" xml:lang="ar">ابنحزم</tei:persName>
+                    <tei:persName>ابن حزم الأندلسي</tei:persName>
+                    <tei:persName type="flattened">ابنحزمالأندلسي</tei:persName>
                 </tei:person>
+                
                <tei:person>
                     <tei:persName>ابن خزيمة</tei:persName>
                     <tei:persName type="flattened">ابنخزيمة</tei:persName>
@@ -1867,11 +1870,8 @@
                     <tei:persName>أبو محمد علي ابن أحمد</tei:persName>
                     <tei:persName type="flattened">أبومحمدعليابنأحمد</tei:persName>
                 </tei:person>
-               <tei:person>
-                    <tei:persName>ابن حزم الأندلسي</tei:persName>
-                    <tei:persName type="flattened">ابنحزمالأندلسي</tei:persName>
-                </tei:person>
-               <tei:person>
+                              
+                <tei:person>
                     <tei:persName>الجبرتي</tei:persName>
                     <tei:persName type="flattened">الجبرتي</tei:persName>
                 </tei:person>
@@ -2022,7 +2022,6 @@
                     <tei:persName>سيد محسن الأمين</tei:persName>
                   <tei:persName type="flattened">سيدمحسنالأمين</tei:persName>
                 </tei:person>
-               
                <tei:person>
                     <tei:persName>شيخ الإسلام أحمد تقي الدين بن تيمية</tei:persName>
                   <tei:persName type="flattened">شيخالإسلامأحمدتقيالدينبنتيمية</tei:persName>
@@ -2055,27 +2054,38 @@
                     <tei:persName>محمد علي أفندي المحايري</tei:persName>
                   <tei:persName type="flattened">محمدعليأفنديالمحايري</tei:persName>
                 </tei:person>
-               
             </tei:listPerson> 
             <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml">
                <tei:person>
                   <tei:persName xml:lang="ar" ref="viaf:90635782">ابن بطوطة</tei:persName>
+                  <tei:persName xml:lang="ar" ref="viaf:90635782" type="flattened">ابنبطوطة</tei:persName>
+                  <tei:idno type="viaf">90635782</tei:idno>
+                  <tei:birth when="1304-02-25">1304-02-25</tei:birth>
+                  <tei:death when="1377">1377</tei:death>
                </tei:person>
                <tei:person>
                   <tei:persName ref="viaf:97055208">
                      <forename>أحمد</forename>
                      <surname>رضا</surname>
                   </tei:persName>
+                  <tei:persName ref="viaf:97055208" type="flattened">أحمدرضا</tei:persName>
                     <tei:persName>شيخ <forename>أحمد</forename>
                         <surname>رضا</surname>
                     </tei:persName>
                     <tei:persName type="flattened">شيخأحمدرضا</tei:persName>
-                </tei:person>
+                  <tei:idno type="viaf">97055208</tei:idno>
+                  <tei:birth when="1872-06-04">1872-06-04</tei:birth>
+                  <tei:death when="1953-07-07">1953-07-07</tei:death>
+               </tei:person>
                <tei:person>
                   <tei:persName ref="viaf:50793892">
                      <forename>سليمان</forename>
                      <surname>ظاهر</surname>
                   </tei:persName>
+                  <tei:persName ref="viaf:50793892" type="flattened">سليمانظاهر</tei:persName>
+                  <tei:idno type="viaf">50793892</tei:idno>
+                  <tei:birth when="1873">1873</tei:birth>
+                  <tei:death when="1960">1960</tei:death>
                </tei:person>
             </tei:listPerson>
          </tei:particDesc>
@@ -2128,6 +2138,7 @@
             </tei:settingDesc>
         </profileDesc>
         <revisionDesc>
+         <tei:change when="2017-05-01" who="pers_TG">Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
          <tei:change when="2017-05-01" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
          <tei:change when="2017-05-01" who="pers_TG">Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
          <tei:change when="2017-05-01" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
