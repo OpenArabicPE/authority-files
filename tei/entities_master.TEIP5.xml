@@ -2121,6 +2121,57 @@
                   </tei:persName>
                </tei:person>
             </tei:listPerson>
+            <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_96.TEIP5.xml">
+               <tei:person>
+                  <persName>محمد رضا الشبيبي</persName>
+                  <tei:persName type="flattened">محمدرضاالشبيبي</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <persName>
+                     <forename>قسطاكي</forename>
+                    <surname>المحصي</surname>
+                  </persName>
+                  <tei:persName type="flattened">قسطاكيالمحصي</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <persName>
+                     <forename>عبد الله</forename>
+                    <surname>المخلص</surname>
+                  </persName>
+                  <tei:persName type="flattened">عبداللهالمخلص</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <persName>
+                     <forename>محمد</forename>
+                    <addName type="title">أفندي</addName>
+                    <surname>جابر</surname>
+                  </persName>
+                  <tei:persName type="flattened">محمدأفنديجابر</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <persName>
+                     <forename>إبراهيم</forename>
+                    <addName type="title">أفندي</addName> 
+                     <surname>حلمي</surname> 
+                     <addName type="nisbah">البغدادي</addName>
+                  </persName>
+                  <tei:persName type="flattened">إبراهيمأفنديحلميالبغدادي</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <persName>
+                     <forename>حنا</forename> 
+                     <surname>عنجوري</surname>
+                  </persName>
+                  <tei:persName type="flattened">حناعنجوري</tei:persName>
+               </tei:person>
+               <tei:person>
+                  <persName>
+                     <forename>خليل</forename>
+                    <surname>مردم بك</surname>
+                  </persName>
+                  <tei:persName type="flattened">خليلمردمبك</tei:persName>
+               </tei:person>
+            </tei:listPerson>
          </tei:particDesc>
             <tei:settingDesc xml:lang="en">
                 <tei:listPlace xml:lang="en">
@@ -2171,6 +2222,7 @@
             </tei:settingDesc>
         </profileDesc>
         <revisionDesc>
+         <tei:change when="2017-05-03" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_96.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_96.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
          <tei:change when="2017-05-01" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_93.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_93.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
          <tei:change when="2017-05-01" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
          <tei:change when="2017-05-01" who="pers_TG">Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
