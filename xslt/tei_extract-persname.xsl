@@ -91,16 +91,16 @@
             <xsl:choose>
                 <!-- test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file -->
                 <xsl:when test="$v_viaf-id and $v_file-entities-master//tei:person[tei:idno[@type='viaf']=$v_viaf-id]">
-                     <xsl:message><xsl:value-of select="$v_self"/><xsl:text> is present in master file</xsl:text></xsl:message>
+                     <xsl:message><xsl:text>source #1: VIAF ID for </xsl:text><xsl:value-of select="$v_self"/><xsl:text> is present in master file</xsl:text></xsl:message>
                 </xsl:when>
                 <!-- test if the text string is present in the master file -->
-                <xsl:when test="$v_file-entities-master//tei:persName[@type='flattened']=$v_name-flat">
-                    <xsl:message><xsl:value-of select="$v_self"/><xsl:text> is present in master file but has no VIAF ID and was updated</xsl:text></xsl:message>
+                <xsl:when test="$v_file-entities-master//tei:person[tei:idno[@type='viaf']][tei:persName[@type='flattened']=$v_name-flat]">
+                    <xsl:message><xsl:text>source #2:</xsl:text><xsl:value-of select="$v_self"/><xsl:text> is present in master file but has no VIAF ID and was updated</xsl:text></xsl:message>
                     <xsl:attribute name="ref" select="concat('viaf:',$v_file-entities-master//tei:person[tei:persName[@type='flattened']=$v_name-flat]/tei:idno[@type='viaf'])"/>
                 </xsl:when>
                 <!-- test if a name has a @ref attribute pointing to VIAF  -->
                 <xsl:when test="$v_viaf-id">
-                    <xsl:message><xsl:value-of select="$v_self"/><xsl:text> has a VIAF ID but is not present in master file</xsl:text></xsl:message>
+                    <xsl:message><xsl:text>source #3:</xsl:text><xsl:value-of select="$v_self"/><xsl:text> has a VIAF ID but is not present in master file</xsl:text></xsl:message>
                 </xsl:when>
                 <!-- name has no reference to VIAF and is not present in the master file -->
                 <xsl:otherwise/>
@@ -147,6 +147,7 @@
             <xsl:choose>
                 <!-- test if a person has no VIAF ID and if a person with the same name is present in $v_persons-source with VIAF ID -->
                 <xsl:when test="not(tei:idno[@type='viaf']) and $v_persons-source/descendant-or-self::tei:person[tei:persName[@type='flattened']=$v_name-flat][tei:idno[@type='viaf']]">
+                    <xsl:message><xsl:text>master #1: VIAF ID was added from source to </xsl:text><xsl:value-of select="tei:persName[not(@type='flattened')][1]"/></xsl:message>
                     <xsl:apply-templates select="@* |node()" mode="m_replicate"/>
                     <!-- add idno -->
                     <xsl:copy-of select="$v_persons-source/descendant-or-self::tei:person[tei:persName[@type='flattened']=$v_name-flat]/tei:idno[@type='viaf']"/>
