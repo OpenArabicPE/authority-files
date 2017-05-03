@@ -51,16 +51,23 @@
                 <xsl:sort select="tei:surname[1]"/>
                 <xsl:sort select="tei:forename[1]"/>
                 <xsl:sort select="current-grouping-key()"/>
+                <!-- some variables -->
+                <xsl:variable name="v_self">
+                    <xsl:value-of select="normalize-space(.)"/>
+                </xsl:variable>
+                <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>
+                <xsl:variable name="v_name-flat" select="replace($v_self,'\W','')"/>
+                <!-- construct nodes -->
                 <xsl:element name="tei:person">
                     <xsl:copy-of select="."/>
                     <!-- construct a flattened string -->
                     <xsl:element name="tei:persName">
                         <xsl:attribute name="type" select="'flattened'"/>
-                        <xsl:value-of select="replace(.,'\W','')"/>
+                        <xsl:value-of select="$v_name-flat"/>
                     </xsl:element>
                     <!-- construct the idno child -->
                     <xsl:if test="./@ref">
-                        <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>
+                       <!-- <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>-->
                         <xsl:element name="tei:idno">
                             <xsl:attribute name="type" select="'viaf'"/>
                             <xsl:value-of select="$v_viaf-id"/>
@@ -73,20 +80,22 @@
     
     <!-- mode m_mark-up-source will at some point provide automatic addition of information from $v_file-entities-master to a TEI file  -->
     <xsl:template match="tei:persName" mode="m_mark-up-source">
-        <xsl:variable name="v_self" select="."/>
+        <xsl:variable name="v_self">
+            <xsl:value-of select="normalize-space(.)"/>
+        </xsl:variable>
         <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>
-        <xsl:variable name="v_name-flat" select="replace(.,'\W','')"/>
+        <xsl:variable name="v_name-flat" select="replace($v_self,'\W','')"/>
         <xsl:copy>
             <xsl:apply-templates select="@*" mode="m_replicate"/>
             <!-- check if a reference to VIAF can be provided based on the master file -->
             <xsl:choose>
                 <!-- test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file -->
                 <xsl:when test="$v_viaf-id and $v_file-entities-master//tei:person[tei:idno[@type='viaf']=$v_viaf-id]">
-                    <!-- <xsl:message><xsl:value-of select="$v_self"/><xsl:text> is present in master file</xsl:text></xsl:message>-->
+                     <xsl:message><xsl:value-of select="$v_self"/><xsl:text> is present in master file</xsl:text></xsl:message>
                 </xsl:when>
                 <!-- test if the text string is present in the master file -->
-                <xsl:when test="$v_file-entities-master//tei:person[tei:persName/text()=$v_self/text()]">
-                    <xsl:message><xsl:value-of select="$v_self"/><xsl:text> is present in master file but has no VIAF ID</xsl:text></xsl:message>
+                <xsl:when test="$v_file-entities-master//tei:persName[@type='flattened']=$v_name-flat">
+                    <xsl:message><xsl:value-of select="$v_self"/><xsl:text> is present in master file but has no VIAF ID and was updated</xsl:text></xsl:message>
                     <xsl:attribute name="ref" select="concat('viaf:',$v_file-entities-master//tei:person[tei:persName[@type='flattened']=$v_name-flat]/tei:idno[@type='viaf'])"/>
                 </xsl:when>
                 <!-- test if a name has a @ref attribute pointing to VIAF  -->
@@ -111,7 +120,8 @@
             </xsl:element>
         </xsl:copy>
     </xsl:template>
-    <!-- m_particDesc is exclusively run on a tei:person children of a variable that contain tei:persName and tei:idno children -->
+    <!-- m_particDesc is exclusively run on a tei:person children of a variable that contain tei:persName and tei:idno children.
+    This generates only new entries -->
     <xsl:template match="tei:person" mode="m_particDesc">
         <xsl:variable name="v_name-flat" select="tei:persName[@type='flattened']"/>
         <!-- generate new tei:person elements for all names not in the master file -->
@@ -129,7 +139,7 @@
         </xsl:choose>
     </xsl:template>
     
-    <!-- this NEEDS WORK: existing tei:person should updated with new information if available -->
+    <!-- existing tei:person in the master file should updated with new information if available -->
     <xsl:template match="tei:person" mode="m_replicate">
         <xsl:variable name="v_name-flat" select="tei:persName[@type='flattened']"/>
         <xsl:copy>
