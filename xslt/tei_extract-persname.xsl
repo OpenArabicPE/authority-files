@@ -7,7 +7,8 @@
     
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
-    <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
+    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="no"/>
+    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented"/>
     
     <xsl:include href="query-viaf.xsl"/>
     
@@ -38,7 +39,7 @@
         <xsl:copy>
             <xsl:apply-templates mode="m_mark-up-source"/>
         </xsl:copy>
-        <xsl:result-document href="../tei/{$v_id-file}/entities_master.TEIP5.xml">
+        <xsl:result-document href="../tei/{$v_id-file}/entities_master.TEIP5.xml" format="xml_indented">
             <xsl:apply-templates select="$v_file-entities-master" mode="m_replicate"/>
         </xsl:result-document>
     </xsl:template>
@@ -60,7 +61,7 @@
                     <!-- construct the idno child -->
                     <xsl:if test="./@ref">
                         <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>
-                        <xsl:element name="idno">
+                        <xsl:element name="tei:idno">
                             <xsl:attribute name="type" select="'viaf'"/>
                             <xsl:value-of select="$v_viaf-id"/>
                         </xsl:element>

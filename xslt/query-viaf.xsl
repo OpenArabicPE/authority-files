@@ -21,7 +21,7 @@
     
     <!-- this stylesheet  tries to query external authority files if they are linked through the @ref attribute -->
     
-    <xsl:output method="xml" encoding="UTF-8" indent="yes"/>
+    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented"/>
     
     <xsl:param name="p_viaf-file-path" select="'../viaf/'"/>
     <xsl:variable name="v_string-transcribe-ijmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>
@@ -46,7 +46,7 @@
                 <xsl:apply-templates select="$v_viaf-rdf//rdf:RDF/rdf:Description/schema:deathDate"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'file'">
-                <xsl:result-document href="../viaf/viaf_{$p_viaf-id}.rdf">
+                <xsl:result-document href="../viaf/viaf_{$p_viaf-id}.rdf" format="xml_indented">
                     <xsl:copy-of select="$v_viaf-rdf"/>
                 </xsl:result-document>
             </xsl:when>
@@ -122,7 +122,7 @@
             <xsl:when test="$p_output-mode = 'file'">
                 <xsl:choose>
                     <xsl:when test="$v_viaf-id!=''">
-                        <xsl:result-document href="../viaf/viaf_{$v_viaf-id}.SRW.xml">
+                        <xsl:result-document href="../viaf/viaf_{$v_viaf-id}.SRW.xml" format="xml_indented">
                             <xsl:copy-of select="$v_viaf-srw"/>
                         </xsl:result-document>
                     </xsl:when>
