@@ -23,7 +23,9 @@
     
     <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented"/>
     
+    <!-- the file path is relative to this stylesheet!  -->
     <xsl:param name="p_viaf-file-path" select="'../viaf/'"/>
+    <!-- these variables are used to establish the language of any given string -->
     <xsl:variable name="v_string-transcribe-ijmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>
     <xsl:variable name="v_string-transcribe-arabic" select="'بتحخجدرزسصضطظعفقكلمنهاويوي٠١٢٣٤٥٦٧٨٩'"/>
     
