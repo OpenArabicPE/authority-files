@@ -16,6 +16,11 @@
     <xsl:param name="p_url-master" select="'../tei/entities_master.TEIP5.xml'"/>
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
     
+    <!-- parameter to select whether the master file should be updated  -->
+    <xsl:param name="p_update-master" select="true()"/>
+    <!-- parameter to select whether the source file should be updated  -->
+    <xsl:param name="p_update-source" select="true()"/>
+    
     <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
     
@@ -36,12 +41,16 @@
     </xsl:template>
     
     <xsl:template match="/">
-        <xsl:copy>
-            <xsl:apply-templates mode="m_mark-up-source"/>
-        </xsl:copy>
-        <xsl:result-document href="../tei/{$v_id-file}/entities_master.TEIP5.xml" format="xml_indented">
-            <xsl:apply-templates select="$v_file-entities-master" mode="m_replicate"/>
-        </xsl:result-document>
+        <xsl:if test="$p_update-source = true()">
+            <xsl:copy>
+                <xsl:apply-templates mode="m_mark-up-source"/>
+            </xsl:copy>
+        </xsl:if>
+        <xsl:if test="$p_update-master = true()">
+            <xsl:result-document href="../tei/{$v_id-file}/entities_master.TEIP5.xml" format="xml_indented">
+                <xsl:apply-templates select="$v_file-entities-master" mode="m_replicate"/>
+            </xsl:result-document>
+        </xsl:if>
     </xsl:template>
     
     <!-- variable to collect all persNames in a list containing tei:person with tei:persName and tei:idno children -->
