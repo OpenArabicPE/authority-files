@@ -12,7 +12,7 @@
     
     <xsl:include href="query-viaf.xsl"/>
     
-    <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on -->
+    <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master" select="'../tei/entities_master.TEIP5.xml'"/>
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
     
@@ -20,6 +20,8 @@
     <xsl:param name="p_update-master" select="true()"/>
     <!-- parameter to select whether the source file should be updated  -->
     <xsl:param name="p_update-source" select="true()"/>
+    <!-- toggle debugging messages -->
+    <xsl:param name="p_verbose" select="false()"/>
     
     <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
