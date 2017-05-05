@@ -21,7 +21,7 @@
     
     <!-- this stylesheet  tries to query external authority files if they are linked through the @ref attribute -->
     
-    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented"/>
+    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented" exclude-result-prefixes="#all"/>
     
     <!-- the file path is relative to this stylesheet!  -->
     <xsl:param name="p_viaf-file-path" select="'../viaf/'"/>
