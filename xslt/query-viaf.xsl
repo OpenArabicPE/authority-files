@@ -17,7 +17,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="xs xd xi dc opf" version="2.0">
+    exclude-result-prefixes="#all" version="2.0">
     
     <!-- this stylesheet  tries to query external authority files if they are linked through the @ref attribute -->
     
