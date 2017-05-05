@@ -145,14 +145,14 @@
                     </xsl:copy>
                 </xsl:when>
                 <!-- test if a name has a @ref attribute pointing to VIAF  -->
-                <xsl:when test="$v_viaf-id">
+                <!--<xsl:when test="$v_viaf-id">
                     <xsl:if test="$p_verbose=true()">
                         <xsl:message><xsl:text>t_4 source #3:</xsl:text><xsl:value-of select="$v_self"/><xsl:text> has a VIAF ID but is not present in master file</xsl:text></xsl:message>
                     </xsl:if>
                     <xsl:copy>
                         <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
                     </xsl:copy>
-                </xsl:when>
+                </xsl:when>-->
                 <!-- name has no reference to VIAF and is not present in the master file -->
                 <xsl:otherwise>
                     <xsl:copy>
