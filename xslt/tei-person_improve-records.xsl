@@ -14,28 +14,47 @@
     
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
+    <!-- toggle debugging messages -->
+    <xsl:param name="p_verbose" select="false()"/>
     
-    <xsl:template match="@* | node()">
+    <xsl:template match="@* | node()" name="t_1">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_1: </xsl:text>
+                <xsl:if test="ancestor-or-self::node()">
+                    <xsl:value-of select="ancestor-or-self::node()/@xml:id"/>
+                </xsl:if>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:listPerson">
+    <xsl:template match="tei:listPerson" name="t_2">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_2: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:person">
-                <xsl:sort select="tei:idno[@type='viaf']" order="descending"/>
-<!--                <xsl:sort select="tei:persName[following-sibling::tei:idno[@type='viaf']][1]"/>-->
                 <!-- this sort should consider the Arabic "al-" -->
                 <xsl:sort select="tei:persName[tei:surname][1]/tei:surname[1]"/>
                 <xsl:sort select="tei:persName[1]"/>
+                <xsl:sort select="tei:idno[@type='viaf']" order="descending"/>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
     
     <!-- improve tei:person records with VIAF references -->
-    <xsl:template match="tei:person[tei:persName[matches(@ref,'viaf:\d+')]] | tei:person[tei:idno[@type='viaf']!='']">
+    <xsl:template match="tei:person[tei:persName[matches(@ref,'viaf:\d+')]] | tei:person[tei:idno[@type='viaf']!='']" name="t_3">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_3: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:variable name="v_viaf-id">
             <xsl:choose>
                 <xsl:when test="tei:idno[@type='viaf']!=''">
@@ -60,17 +79,22 @@
                     <xsl:with-param name="p_input-type" select="'id'"/>
                 </xsl:call-template>
                 <!-- try to download the VIAF SRU file -->
-                <xsl:call-template name="t_query-viaf-sru">
+                <!--<xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'file'"/>
                     <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
                     <xsl:with-param name="p_input-type" select="'id'"/>
-                </xsl:call-template>
+                </xsl:call-template>-->
             <!--</xsl:if>-->
         </xsl:copy>
     </xsl:template>
     
     <!-- improve tei:person records without VIAF references -->
-    <xsl:template match="tei:person">
+    <xsl:template match="tei:person" name="t_4">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_4: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
             <!-- check if basic data is already present -->
@@ -91,31 +115,73 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:persName">
+    <xsl:template match="tei:persName" name="t_5">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> copy existing persName</xsl:text>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
+        <!-- add flattened persName string  -->
         <xsl:if test="not(parent::node()/tei:persName[@type='flattened']=replace(.,'\W',''))">
+            <xsl:if test="$p_verbose=true()">
+                <xsl:message>
+                    <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
+                </xsl:message>
+            </xsl:if>
             <xsl:copy>
-                <xsl:apply-templates select="@*"/>
+                <xsl:apply-templates select="@xml:lang"/>
                 <xsl:attribute name="type" select="'flattened'"/>
+                <!-- the flattened string should point back to its origin -->
+                <xsl:attribute name="corresp" select="concat('#',@xml:id)"/>
                 <xsl:value-of select="replace(.,'\W','')"/>
+                
             </xsl:copy>
         </xsl:if>
     </xsl:template>
     
+    <xsl:template match="tei:persName[@type='flattened']" name="t_6">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_6: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
+        <xsl:variable name="v_self" select="."/>
+        <xsl:copy>
+            <!-- check if it has a @corresp attribute -->
+            <xsl:if test="not(@corresp)">
+                <xsl:if test="$p_verbose=true()">
+                    <xsl:message>
+                        <xsl:text>t_6: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> no @corresp</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+                <xsl:attribute name="corresp" select="concat('#',parent::tei:person/tei:persName[replace(normalize-space(.),'\W','')=$v_self][1]/@xml:id)"/>
+            </xsl:if>
+            <xsl:apply-templates select="@* |node() "/>
+        </xsl:copy>
+    </xsl:template>
+    
     <!-- decide whether or not to omit existing records -->
-    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death"/>
+    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death" name="t_7">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_7: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
+    </xsl:template>
     
     <!-- document the changes -->
-    <xsl:template match="tei:revisionDesc">
+    <xsl:template match="tei:revisionDesc" name="t_8">
         <xsl:copy>
+            <xsl:apply-templates select="@*"/>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
                 <xsl:attribute name="who" select="$p_id-editor"/>
                 <xsl:text>Improved </xsl:text><tei:gi>person</tei:gi><xsl:text> nodes that had references to VIAF, by querying VIAF and adding  </xsl:text><tei:gi>birth</tei:gi><xsl:text>, </xsl:text><tei:gi>death</tei:gi><xsl:text>, and </xsl:text><tei:gi>idno</tei:gi><xsl:text>.</xsl:text>
             </xsl:element>
-            <xsl:apply-templates select="@* | node()"/>
+            <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
 </xsl:stylesheet>
