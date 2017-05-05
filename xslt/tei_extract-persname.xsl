@@ -31,24 +31,45 @@
     
     
     <!-- This template replicates attributes as they are found in the source -->
-    <xsl:template match="node() | @* " mode="m_replicate">
+    <xsl:template match="node() | @* " mode="m_replicate" name="t_1">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_1: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="node() | @* " mode="m_mark-up-source">
+    <xsl:template match="node() | @* " mode="m_mark-up-source" name="t_2">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_2: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()" mode="m_mark-up-source"/>
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="/">
+    <!-- run on root -->
+    <xsl:template match="/" name="t_3">
         <xsl:if test="$p_update-source = true()">
+            <xsl:if test="$p_verbose=true()">
+                <xsl:message>
+                    <xsl:text>t_3 source: add mark-up</xsl:text>
+                </xsl:message>
+            </xsl:if>
             <xsl:copy>
                 <xsl:apply-templates mode="m_mark-up-source"/>
             </xsl:copy>
         </xsl:if>
         <xsl:if test="$p_update-master = true()">
+            <xsl:if test="$p_verbose=true()">
+                <xsl:message>
+                    <xsl:text>t_3 master: update entities</xsl:text>
+                </xsl:message>
+            </xsl:if>
             <xsl:result-document href="../tei/{$v_id-file}/entities_master.TEIP5.xml" format="xml_indented">
                 <xsl:apply-templates select="$v_file-entities-master" mode="m_replicate"/>
             </xsl:result-document>
@@ -90,38 +111,65 @@
     </xsl:variable>
     
     <!-- mode m_mark-up-source will at some point provide automatic addition of information from $v_file-entities-master to a TEI file  -->
-    <xsl:template match="tei:persName" mode="m_mark-up-source">
+    <xsl:template match="tei:persName" mode="m_mark-up-source" name="t_4">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_4 source: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:variable name="v_self">
             <xsl:value-of select="normalize-space(.)"/>
         </xsl:variable>
         <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>
         <xsl:variable name="v_name-flat" select="replace($v_self,'\W','')"/>
-        <xsl:copy>
-            <xsl:apply-templates select="@*" mode="m_replicate"/>
             <!-- check if a reference to VIAF can be provided based on the master file -->
             <xsl:choose>
                 <!-- test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file -->
                 <xsl:when test="$v_viaf-id and $v_file-entities-master//tei:person[tei:idno[@type='viaf']=$v_viaf-id]">
-                     <xsl:message><xsl:text>source #1: VIAF ID for </xsl:text><xsl:value-of select="$v_self"/><xsl:text> is present in master file</xsl:text></xsl:message>
+                     <xsl:if test="$p_verbose=true()">
+                         <xsl:message><xsl:text>t_4 source #1: VIAF ID for </xsl:text><xsl:value-of select="$v_self"/><xsl:text> is present in master file</xsl:text></xsl:message>
+                     </xsl:if>
+                    <xsl:copy>
+                        <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
+                    </xsl:copy>
                 </xsl:when>
                 <!-- test if the text string is present in the master file -->
                 <xsl:when test="$v_file-entities-master//tei:person[tei:idno[@type='viaf']][tei:persName[@type='flattened']=$v_name-flat]">
-                    <xsl:message><xsl:text>source #2:</xsl:text><xsl:value-of select="$v_self"/><xsl:text> is present in master file but has no VIAF ID and was updated</xsl:text></xsl:message>
-                    <xsl:attribute name="ref" select="concat('viaf:',$v_file-entities-master//tei:person[tei:persName[@type='flattened']=$v_name-flat]/tei:idno[@type='viaf'])"/>
+                    <xsl:if test="$p_verbose=true()">
+                        <xsl:message><xsl:text>t_4 source #2:</xsl:text><xsl:value-of select="$v_self"/><xsl:text> is present in master file but has no VIAF ID and was updated</xsl:text></xsl:message>
+                    </xsl:if>
+                    <xsl:copy>
+                        <xsl:apply-templates select="@*" mode="m_replicate"/>
+                        <xsl:attribute name="ref" select="concat('viaf:',$v_file-entities-master//tei:person[tei:persName[@type='flattened']=$v_name-flat]/tei:idno[@type='viaf'])"/>
+                        <xsl:apply-templates select="node()" mode="m_replicate"/>
+                    </xsl:copy>
                 </xsl:when>
                 <!-- test if a name has a @ref attribute pointing to VIAF  -->
                 <xsl:when test="$v_viaf-id">
-                    <xsl:message><xsl:text>source #3:</xsl:text><xsl:value-of select="$v_self"/><xsl:text> has a VIAF ID but is not present in master file</xsl:text></xsl:message>
+                    <xsl:if test="$p_verbose=true()">
+                        <xsl:message><xsl:text>t_4 source #3:</xsl:text><xsl:value-of select="$v_self"/><xsl:text> has a VIAF ID but is not present in master file</xsl:text></xsl:message>
+                    </xsl:if>
+                    <xsl:copy>
+                        <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
+                    </xsl:copy>
                 </xsl:when>
                 <!-- name has no reference to VIAF and is not present in the master file -->
-                <xsl:otherwise/>
+                <xsl:otherwise>
+                    <xsl:copy>
+                        <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
+                    </xsl:copy>
+                </xsl:otherwise>
             </xsl:choose>
-            <xsl:apply-templates mode="m_replicate"/>
-        </xsl:copy>
+           <!-- <xsl:apply-templates mode="m_replicate"/>-->
     </xsl:template>
     
     <!-- ammend master file with entities found in the current TEI file -->
-    <xsl:template match="tei:particDesc" mode="m_replicate">
+    <xsl:template match="tei:particDesc" mode="m_replicate" name="t_5">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_5 master: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* |node()" mode="m_replicate"/>
             <!-- build a listPerson with persons present in the source file but missing from the master -->
@@ -133,7 +181,12 @@
     </xsl:template>
     <!-- m_particDesc is exclusively run on a tei:person children of a variable that contain tei:persName and tei:idno children.
     This generates only new entries -->
-    <xsl:template match="tei:person" mode="m_particDesc">
+    <xsl:template match="tei:person" mode="m_particDesc" name="t_6">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_6 master: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:variable name="v_name-flat" select="tei:persName[@type='flattened']"/>
         <!-- generate new tei:person elements for all names not in the master file -->
         <xsl:choose>
@@ -151,7 +204,12 @@
     </xsl:template>
     
     <!-- existing tei:person in the master file should updated with new information if available -->
-    <xsl:template match="tei:person" mode="m_replicate">
+    <xsl:template match="tei:person" mode="m_replicate" name="t_7">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_7 master: </xsl:text><xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:variable name="v_name-flat" select="tei:persName[@type='flattened']"/>
         <xsl:copy>
             <!-- update or  replicate tei:person elements in the master file -->
@@ -180,7 +238,12 @@
     </xsl:template>
     
     <!-- document the changes to master file -->
-    <xsl:template match="tei:revisionDesc" mode="m_replicate">
+    <xsl:template match="tei:revisionDesc" mode="m_replicate" name="t_8">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_8 master: document changes</xsl:text>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
@@ -191,7 +254,12 @@
         </xsl:copy>
     </xsl:template>
     <!-- document the changes to source file -->
-    <xsl:template match="tei:revisionDesc" mode="m_mark-up-source">
+    <xsl:template match="tei:revisionDesc" mode="m_mark-up-source" name="t_9">
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_9 source: document changes</xsl:text>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(),'[Y0001]-[M01]-[D01]')"/>
