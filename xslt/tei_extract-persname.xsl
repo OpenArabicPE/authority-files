@@ -130,7 +130,9 @@
                          <xsl:message><xsl:text>t_4 source #1: VIAF ID for </xsl:text><xsl:value-of select="$v_self"/><xsl:text> is present in master file</xsl:text></xsl:message>
                      </xsl:if>
                     <xsl:copy>
-                        <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
+                        <xsl:apply-templates select="@*" mode="m_replicate"/>
+                        <!-- it would also be possible to supply mark-up of the name's components based on the master file -->
+                        <xsl:apply-templates select="node()" mode="m_replicate"/>
                     </xsl:copy>
                 </xsl:when>
                 <!-- test if the text string is present in the master file -->
@@ -141,6 +143,7 @@
                     <xsl:copy>
                         <xsl:apply-templates select="@*" mode="m_replicate"/>
                         <xsl:attribute name="ref" select="concat('viaf:',$v_file-entities-master//tei:person[tei:persName[@type='flattened']=$v_name-flat]/tei:idno[@type='viaf'])"/>
+                        <!-- it would also be possible to supply mark-up of the name's components based on the master file -->
                         <xsl:apply-templates select="node()" mode="m_replicate"/>
                     </xsl:copy>
                 </xsl:when>
