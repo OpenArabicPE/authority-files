@@ -266,10 +266,12 @@
     <!-- m_particDesc is exclusively run on a tei:person children of a variable that contain tei:persName and tei:idno children.
     This generates only new entries -->
     <xsl:template match="tei:person" mode="m_particDesc" name="t_6">
+        <xsl:variable name="v_name" select="tei:persName[not(@type='flattened')]"/>
+        <xsl:variable name="v_viaf-id" select="tei:idno[@type = 'viaf']"/>
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_6 master: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
+                <xsl:value-of select="$v_name"/>
             </xsl:message>
         </xsl:if>
         <xsl:variable name="v_name-flat" select="tei:persName[@type = 'flattened']"/>
@@ -277,12 +279,31 @@
         <xsl:choose>
             <!-- test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file -->
             <xsl:when
-                test="tei:idno[@type = 'viaf'] and $v_file-entities-master//tei:person[tei:idno[@type = 'viaf'] = tei:idno[@type = 'viaf']]"/>
+                test="tei:idno[@type = 'viaf'] and $v_file-entities-master//tei:person[tei:idno[@type = 'viaf'] = $v_viaf-id]">
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>t_6 master #1: </xsl:text><xsl:value-of select="$v_name"/><xsl:text> has a VIAF ID that is already present in the master file.</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+            </xsl:when>
             <!-- test if the text string is present in the master file: it would be necessary to normalise the content of persName in some way -->
             <xsl:when
-                test="$v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]"/>
+                test="$v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]">
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>t_6 master #2: </xsl:text><xsl:value-of select="$v_name-flat"/><xsl:text> is present in the master file.</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+            </xsl:when>
             <!-- name is not present in the master file and should be copied as is -->
             <xsl:otherwise>
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>t_6 master #3: </xsl:text>
+                        <xsl:value-of select="$v_name"/>
+                        <xsl:message> was added to the master file.</xsl:message>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:copy>
                     <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
                 </xsl:copy>
