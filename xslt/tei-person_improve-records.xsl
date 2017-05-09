@@ -43,7 +43,7 @@
                 <!-- this sort should consider the Arabic "al-" -->
                 <xsl:sort select="tei:persName[tei:surname][1]/tei:surname[1]"/>
                 <xsl:sort select="tei:persName[1]"/>
-                <xsl:sort select="tei:idno[@type='viaf']" order="descending"/>
+                <xsl:sort select="tei:idno[@type='viaf'][1]" order="descending"/>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
