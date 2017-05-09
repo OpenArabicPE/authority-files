@@ -38,7 +38,7 @@
     <!-- parameter to select whether the source file should be updated  -->
     <xsl:param name="p_update-source" select="true()"/>
     <!-- toggle debugging messages -->
-    <xsl:param name="p_verbose" select="false()"/>
+    <xsl:param name="p_verbose" select="true()"/>
 
     <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
@@ -185,7 +185,7 @@
                                 <xsl:message>
                                     <xsl:text>t_4 source #3: </xsl:text>
                                     <xsl:value-of select="$v_self"/>
-                                    <xsl:text> contains no mark-up</xsl:text>
+                                    <xsl:text> contains no mark-up and was updated.</xsl:text>
                                 </xsl:message>
                             </xsl:if>
                             <!-- get @corresp of corresponding flat persName in the master file -->
@@ -206,7 +206,7 @@
                 test="$v_file-entities-master//tei:person[tei:idno[@type = 'viaf']][tei:persName[@type = 'flattened'] = $v_name-flat]">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>t_4 source #2:</xsl:text>
+                        <xsl:text>t_4 source #2: </xsl:text>
                         <xsl:value-of select="$v_self"/>
                         <xsl:text> is present in master file but has no VIAF ID and was updated</xsl:text>
                     </xsl:message>
@@ -230,6 +230,13 @@
                 </xsl:when>-->
             <!-- name has no reference to VIAF and is not present in the master file -->
             <xsl:otherwise>
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>t_4 source #4: </xsl:text>
+                        <xsl:value-of select="$v_self"/>
+                        <xsl:message> not found in master file.</xsl:message>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:copy>
                     <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
                 </xsl:copy>
@@ -298,10 +305,12 @@
                 <!-- test if a person has no VIAF ID and if a person with the same name is present in $v_persons-source with VIAF ID -->
                 <xsl:when
                     test="not(tei:idno[@type = 'viaf']) and $v_persons-source/descendant-or-self::tei:person[tei:persName[@type = 'flattened'] = $v_name-flat][tei:idno[@type = 'viaf']]">
-                    <xsl:message>
-                        <xsl:text>master #1: VIAF ID was added from source to </xsl:text>
-                        <xsl:value-of select="tei:persName[not(@type = 'flattened')][1]"/>
-                    </xsl:message>
+                   <xsl:if test="$p_verbose = true()">
+                       <xsl:message>
+                           <xsl:text>master #1: VIAF ID was added from source to </xsl:text>
+                           <xsl:value-of select="tei:persName[not(@type = 'flattened')][1]"/>
+                       </xsl:message>
+                   </xsl:if>
                     <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
                     <!-- add idno -->
                     <xsl:copy-of
