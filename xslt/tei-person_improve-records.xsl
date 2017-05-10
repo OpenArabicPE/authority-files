@@ -79,11 +79,11 @@
                     <xsl:with-param name="p_input-type" select="'id'"/>
                 </xsl:call-template>
                 <!-- try to download the VIAF SRU file -->
-                <!--<xsl:call-template name="t_query-viaf-sru">
+                <xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'file'"/>
                     <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
                     <xsl:with-param name="p_input-type" select="'id'"/>
-                </xsl:call-template>-->
+                </xsl:call-template>
             <!--</xsl:if>-->
         </xsl:copy>
     </xsl:template>
