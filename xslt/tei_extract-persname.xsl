@@ -216,7 +216,27 @@
                     <xsl:attribute name="ref"
                         select="concat('viaf:', $v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]/tei:idno[@type = 'viaf'])"/>
                     <!-- it would also be possible to supply mark-up of the name's components based on the master file -->
-                    <xsl:apply-templates select="node()" mode="m_replicate"/>
+                    <xsl:choose>
+                        <xsl:when test="not(child::node()[namespace::tei])">
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>t_4 source #4: </xsl:text>
+                                    <xsl:value-of select="$v_self"/>
+                                    <xsl:text> contains no mark-up and was updated.</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                            <!-- get @corresp of corresponding flat persName in the master file -->
+                            <xsl:variable name="v_corresp-xml-id"
+                                select="substring-after($v_file-entities-master//tei:persName[@type = 'flattened'][. = $v_name-flat]/@corresp, '#')"/>
+                            <xsl:apply-templates
+                                select="$v_file-entities-master//tei:persName[@xml:id = $v_corresp-xml-id]/node()"
+                                mode="m_no-ids"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="node()" mode="m_replicate"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+<!--                    <xsl:apply-templates select="node()" mode="m_replicate"/>-->
                 </xsl:copy>
             </xsl:when>
             <!-- test if a name has a @ref attribute pointing to VIAF  -->
