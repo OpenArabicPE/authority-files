@@ -39,3 +39,7 @@ date: 2017-03-28 12:55:59 +0200
     <event when="" notBefore="" notAfter=""></event>
 </person>
 ~~~
+
+# Notes and ideas
+
+Only a fraction of the persons mentioned in early Arabic periodicals can be found in existing authority files. Many of them could be found in the various biographical dictionaries covering this period and one should think a way of referencing these works in a standardised form. (Some dictionaries number the biographies, but not all of them do and it is unclear whether such numbers are stable between editions)
