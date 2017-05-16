@@ -4413,6 +4413,11 @@
                   <tei:persName type="flattened">لسانالدينبنالخطيب</tei:persName>
                </tei:person>
             
+            <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_23.TEIP5.xml">
+                <person>
+                    <persName xml:lang="en" ref="viaf:69017465"><forename>Edward</forename> <surname>Bellamy</surname></persName>
+                </person>
+            </tei:listPerson>
          </particDesc>
             <settingDesc xml:lang="en" xml:id="settingDesc_1.d1e6073">
                 <listPlace xml:lang="en" xml:id="listPlace_1.d1e6075">
@@ -4463,6 +4468,7 @@
             </settingDesc>
         </profileDesc>
         <revisionDesc xml:id="revisionDesc_1.d1e6169">
+         <tei:change when="2017-05-16" who="pers_TG">Added <tei:gi>listPerson</tei:gi> with <tei:gi>person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_23.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_23.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
          <tei:change when="2017-05-15" who="pers_TG">Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
          <tei:change when="2017-05-15" who="pers_TG" xml:id="change_1.d1e7246">Added <tei:gi xml:id="gi_1.d1e7248">listPerson</tei:gi> with <tei:gi xml:id="gi_1.d1e7251">person</tei:gi>s mentioned in <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_22.TEIP5.xml"
                      xml:id="ref_1.d1e7254">../../digital-muqtabas/xml/oclc_4770057679-i_22.TEIP5.xml</tei:ref> but not previously present in this master file.</tei:change>
