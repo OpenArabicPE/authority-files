@@ -129,7 +129,7 @@
             <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
         </xsl:variable>
         <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
-        <xsl:if test="not(parent::node()/tei:persName[@type='flattened'] = $v_name-flat">
+        <xsl:if test="not(parent::node()/tei:persName[@type='flattened'] = $v_name-flat)">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
