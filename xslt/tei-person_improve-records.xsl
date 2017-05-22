@@ -125,7 +125,11 @@
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
         <!-- add flattened persName string  -->
-        <xsl:if test="not(parent::node()/tei:persName[@type='flattened']=replace(.,'\W',''))">
+        <xsl:variable name="v_self">
+            <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
+        </xsl:variable>
+        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
+        <xsl:if test="not(parent::node()/tei:persName[@type='flattened'] = $v_name-flat">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
@@ -136,7 +140,7 @@
                 <xsl:attribute name="type" select="'flattened'"/>
                 <!-- the flattened string should point back to its origin -->
                 <xsl:attribute name="corresp" select="concat('#',@xml:id)"/>
-                <xsl:value-of select="replace(.,'\W','')"/>
+                <xsl:value-of select="$v_name-flat"/>
                 
             </xsl:copy>
         </xsl:if>

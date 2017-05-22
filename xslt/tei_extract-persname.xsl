@@ -124,7 +124,7 @@
                 <xsl:sort select="current-grouping-key()"/>
                 <!-- some variables -->
                 <xsl:variable name="v_self">
-                    <xsl:value-of select="normalize-space(.)"/>
+                    <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
                 </xsl:variable>
                 <xsl:variable name="v_viaf-id"
                     select="replace(tokenize(@ref, ' ')[matches(., 'viaf:\d+')][1], 'viaf:(\d+)', '$1')"/>
@@ -159,7 +159,7 @@
             </xsl:message>
         </xsl:if>
         <xsl:variable name="v_self">
-            <xsl:value-of select="normalize-space(.)"/>
+            <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
         </xsl:variable>
         <xsl:variable name="v_viaf-id"
             select="replace(tokenize(@ref, ' ')[matches(., 'viaf:\d+')][1], 'viaf:(\d+)', '$1')"/>
