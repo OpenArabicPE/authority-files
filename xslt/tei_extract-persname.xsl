@@ -38,7 +38,7 @@
     <!-- parameter to select whether the source file should be updated  -->
     <xsl:param name="p_update-source" select="true()"/>
     <!-- toggle debugging messages -->
-    <xsl:param name="p_verbose" select="true()"/>
+    <xsl:param name="p_verbose" select="false()"/>
 
     <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
