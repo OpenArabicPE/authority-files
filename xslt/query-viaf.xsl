@@ -189,6 +189,7 @@
                     <xsl:attribute name="ref">
                         <xsl:value-of select="concat('viaf:',ancestor::viaf:VIAFCluster/viaf:viafID)"/>
                     </xsl:attribute>
+                    <!-- it would be great to actually pull a name from the record -->
                 </xsl:element>
             </xsl:element>
             <!-- title -->
