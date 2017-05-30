@@ -120,6 +120,8 @@
                 <!-- add birth and death dates -->
                 <xsl:apply-templates select="$v_record-1//viaf:birthDate"/>
                 <xsl:apply-templates select="$v_record-1//viaf:deathDate"/>
+                <!-- add works -->
+                <xsl:apply-templates select="$v_record-1//viaf:titles"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'file'">
                 <xsl:choose>
@@ -181,12 +183,24 @@
     </xsl:template>
     <xsl:template match="viaf:work">
         <xsl:element name="tei:bibl">
-            <xsl:apply-templates/>
+            <!-- author information might be redundant but helpful -->
+            <xsl:element name="tei:author">
+                <xsl:element name="tei:persName">
+                    <xsl:attribute name="ref">
+                        <xsl:value-of select="concat('viaf:',ancestor::viaf:VIAFCluster/viaf:viafID)"/>
+                    </xsl:attribute>
+                </xsl:element>
+            </xsl:element>
+            <!-- title -->
+            <xsl:apply-templates select="descendant::viaf:title"/>
+            <!-- identifiers -->
+            <xsl:apply-templates select="@id"/>
+            <xsl:apply-templates select="descendant::viaf:sid"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="viaf:work/@id">
-        <xsl:variable name="v_authority" select="lower-case(tokenize(.,'|')[1])"/>
-        <xsl:variable name="v_id" select="tokenize(.,'|')[2]"/>
+        <xsl:variable name="v_authority" select="lower-case(tokenize(.,'\|')[1])"/>
+        <xsl:variable name="v_id" select="tokenize(.,'\|')[2]"/>
         <xsl:element name="tei:idno">
             <xsl:attribute name="type" select="$v_authority"/>
             <xsl:value-of select="$v_id"/>
@@ -198,8 +212,8 @@
         </xsl:element>
     </xsl:template>
     <xsl:template match="viaf:sources/viaf:sid">
-        <xsl:variable name="v_authority" select="lower-case(tokenize(.,'|')[1])"/>
-        <xsl:variable name="v_id" select="tokenize(.,'|')[2]"/>
+        <xsl:variable name="v_authority" select="lower-case(tokenize(.,'\|')[1])"/>
+        <xsl:variable name="v_id" select="tokenize(.,'\|')[2]"/>
         <xsl:element name="tei:idno">
             <xsl:attribute name="type" select="$v_authority"/>
             <xsl:value-of select="$v_id"/>
