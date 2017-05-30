@@ -173,6 +173,39 @@
         </xsl:if>
     </xsl:template>
     
+    <!-- transform viaf works to TEI bibls -->
+    <xsl:template match="viaf:titles">
+        <xsl:element name="tei:listBibl">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="viaf:work">
+        <xsl:element name="tei:bibl">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="viaf:work/@id">
+        <xsl:variable name="v_authority" select="lower-case(tokenize(.,'|')[1])"/>
+        <xsl:variable name="v_id" select="tokenize(.,'|')[2]"/>
+        <xsl:element name="tei:idno">
+            <xsl:attribute name="type" select="$v_authority"/>
+            <xsl:value-of select="$v_id"/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="viaf:title">
+        <xsl:element name="tei:title">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="viaf:sources/viaf:sid">
+        <xsl:variable name="v_authority" select="lower-case(tokenize(.,'|')[1])"/>
+        <xsl:variable name="v_id" select="tokenize(.,'|')[2]"/>
+        <xsl:element name="tei:idno">
+            <xsl:attribute name="type" select="$v_authority"/>
+            <xsl:value-of select="$v_id"/>
+        </xsl:element>
+    </xsl:template>
+    
     <xsl:template name="t_dates-normalise">
         <!-- the dates returned by VIAF can be formatted as
             - yyyy-mm-dd: no issue
