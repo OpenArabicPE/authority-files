@@ -191,6 +191,12 @@
                             <!-- get @corresp of corresponding flat persName in the master file -->
                             <xsl:variable name="v_corresp-xml-id"
                                 select="substring-after($v_file-entities-master//tei:persName[@type = 'flattened'][. = $v_name-flat]/@corresp, '#')"/>
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>t_4 source #5: the xml:id in $v_file-entities-master is </xsl:text>
+                                    <xsl:value-of select="$v_corresp-xml-id"/>
+                                </xsl:message>
+                            </xsl:if>
                             <xsl:apply-templates
                                 select="$v_file-entities-master//tei:persName[@xml:id = $v_corresp-xml-id]/node()"
                                 mode="m_no-ids"/>
