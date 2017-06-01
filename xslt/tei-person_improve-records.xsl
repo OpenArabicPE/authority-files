@@ -168,7 +168,7 @@
     </xsl:template>
     
     <!-- decide whether or not to omit existing records -->
-    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death" name="t_7">
+    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death | tei:person/tei:listBibl" name="t_7">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_7: </xsl:text><xsl:value-of select="@xml:id"/>
