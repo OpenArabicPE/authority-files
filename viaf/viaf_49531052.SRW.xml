@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>49531052</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/49531052/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/49531052"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="http://catalogue.bnf.fr/ark:/12148/cb155144407">BNF|15514440</ns2:source>
+                  <ns2:source nsid="0000000033681077">ISNI|0000000033681077</ns2:source>
+                  <ns2:source nsid="n98950925">LC|n  98950925</ns2:source>
+                  <ns2:source nsid="184923875">NTA|184923875</ns2:source>
+               </ns2:sources>
+               <ns2:length>174</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Qazwīnī, Muḥammad al- 1845-1916</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Qazwīnī, Muḥammad b. Mahdī b. Ḥasan al- (Abū al-Muʿizz Muḥammad b. Mahdī b. Ḥasan), 1845-1916</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Qazwīnī, Muḥammad, 1845-1916</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="UNIMARC" ind1=" " ind2="|" tag="200">
+                        <ns2:subfield code="7">ba0yba0a</ns2:subfield>
+                        <ns2:subfield code="8">freara</ns2:subfield>
+                        <ns2:subfield code="9">0</ns2:subfield>
+                        <ns2:subfield code="a">Qazwīnī</ns2:subfield>
+                        <ns2:subfield code="b">Muḥammad al-</ns2:subfield>
+                        <ns2:subfield code="f">1845-1916</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>BNF|15514440</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|n  98950925</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|184923875</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000033681077</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000033681077</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000033681077</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qazwīnī, Muḥammad b. Mahdī b. Ḥasan al-</ns2:subfield>
+                        <ns2:subfield code="q">(Abū al-Muʿizz Muḥammad b. Mahdī b. Ḥasan),</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NTA|184923875</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|n  98950925</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|15514440</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000033681077</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000033681077</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000033681077</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qazwīnī, Muḥammad,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|n  98950925</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|15514440</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|184923875</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000033681077</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000033681077</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000033681077</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qazwīnī, Muḥammad al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000033681077</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>LC|n  98950925</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>BNF|15514440</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>NTA|184923875</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Muḥammad al-Qazwīnī,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>muhammad al qazwini 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Muḥammad al-Qazwīnī</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>muhammad al qazwini 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Ḥillī, Abū al-Muʿizz Muḥammad b. Mahdī b. Ḥasan al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al hilli abu al muizz muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Ḥillī, Muḥammad b. Mahdī b. Ḥasan al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al hilli muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Ḥusaynī, Abū al-Muʿizz Muḥammad b. Mahdī b. Ḥasan al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al husayni abu al muizz muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Ḥusaynī, Muḥammad b. Mahdī b. Ḥasan al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al husayni muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Naǧafī, Abū al-Muʿizz Muḥammad b. Mahdī b. Ḥasan al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al nagafi abu al muizz muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Naǧafī, Muḥammad b. Mahdī b. Ḥasan al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al nagafi muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Abū al-Muʻizz al-Sayyid Muḥammad,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini abu al muizz al sayyid muhammad 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Abū al-Muʿizz Muḥammad al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini abu al muizz muhammad al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Muḥammad al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini muhammad al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Muḥammad b. al-Ḥasan al-,</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini muhammad b al hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Qazwīnī</ns2:subfield>
+                        <ns2:subfield code="b">Abū al-Muʿizz al-Sayyid Muḥammad al-</ns2:subfield>
+                        <ns2:subfield code="f">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini abu al muizz al sayyid muhammad al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Naǧafī, Abū al-Muʿizz Muḥammad b. Mahdī b. Ḥasan al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al nagafi abu al muizz muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Naǧafī, Muḥammad b. Mahdī b. Ḥasan al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al nagafi muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Ḥillī, Abū al-Muʿizz Muḥammad b. Mahdī b. Ḥasan al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al hilli abu al muizz muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Ḥillī, Muḥammad b. Mahdī b. Ḥasan al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al hilli muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Ḥusaynī, Abū al-Muʿizz Muḥammad b. Mahdī b. Ḥasan al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al husayni abu al muizz muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī al-Ḥusaynī, Muḥammad b. Mahdī b. Ḥasan al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini al husayni muhammad b mahdi b hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Abū al-Muʻizz al-Sayyid Muḥammad</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini abu al muizz al sayyid muhammad 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Abū al-Muʿizz Muḥammad al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini abu al muizz muhammad al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Abū al-Muʿizz al-Sayyid Muḥammad al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini abu al muizz al sayyid muhammad al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Muḥammad al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini muhammad al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qazwīnī, Muḥammad b. al-Ḥasan al-</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>qazwini muhammad b al hasan al 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">القزويني, محمّد</ns2:subfield>
+                        <ns2:subfield code="d">1845-1916</ns2:subfield>
+                        <ns2:normalized>القزويني محمد 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="700">
+                        <ns2:subfield code="a">القزويني</ns2:subfield>
+                        <ns2:subfield code="b">محمّد</ns2:subfield>
+                        <ns2:subfield code="f">1845-1916</ns2:subfield>
+                        <ns2:normalized>القزويني محمد 1845 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">قزويني، محمد</ns2:subfield>
+                        <ns2:normalized>قزويني محمد</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">قزويني، محمد</ns2:subfield>
+                        <ns2:normalized>قزويني محمد</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Qazwīnī, Ǧawdat al-</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="951">
+                     <ns2:text>Maǧmaʿ al-Ḏaḵāʾir al-Islāmiyya</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>قزويني، جودت</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>Qazwīnī, Jawdat</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>Ḥusaynī Aškiwarī, Aḥmad, Sayyid.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="5">
+                     <ns2:text>Tawzīʻ Bīsān lil-Nashr wa-al-Tawzīʻ</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="4">
+                     <ns2:text>توزيع بيسان للنشر والتوزيع،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000033681077</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>al-Maṭbaʿa al-ʿIlmiyya</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1845</ns2:birthDate>
+               <ns2:deathDate>1916</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="199" min="197">
+                  <ns2:date count="3" scaled="1.58">197</ns2:date>
+                  <ns2:date count="2" scaled="1.00">198</ns2:date>
+                  <ns2:date count="5" scaled="2.32">199</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="3">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>dm</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:RelatorCodes>
+                  <ns2:data count="1">
+                     <ns2:text>070</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RelatorCodes>
+               <ns2:countries>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>LR</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>IR</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>IQ</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:titles>
+                  <ns2:work id="VIAF|179551103">
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                        <ns2:sid>LC|n  98951303</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Correspondence</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Ḍiyāfat al-iḵwān wa-hadiyyat al-ḵullān</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|184923875</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Ṭurūs al-inšāʾ wa-suṭūr al-imlāʾ al-adab al-ʿirāqī fī nihāyaẗ al-qarn al-tāsiʿ ʿašar wa-bidāyaẗ al-qarn al-ʿišrīn</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  98950925</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|15514440</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>طروس الإنشاء وسطور الإملاء الأدب العراقي في نهاية القرن التاسع عشر وبداية القرن العشرين</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="BNF|15514440" time="2009-03-03T12:03:20+00:00" type="add"/>
+                  <ns2:ht recid="LC|n  98950925" time="2009-03-03T12:03:35+00:00" type="add"/>
+                  <ns2:ht recid="NTA|184923875" time="2012-12-19T19:11:18+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000033681077"
+                          time="2014-05-14T22:19:01+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2017-05-30T17:57:15.415674+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "49531052"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">49531052</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
