@@ -98,21 +98,10 @@
         </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
-            <!-- check if basic data is already present -->
-            <!--<xsl:if test="not(tei:birth and tei:death)">
-                <!-\- add missing fields -\->
-                <xsl:call-template name="t_query-viaf-sru">
-                    <xsl:with-param name="p_output-mode" select="'tei'"/>
-                    <xsl:with-param name="p_search-term" select="normalize-space(tei:persName[1])"/>
-                    <xsl:with-param name="p_input-type" select="'persName'"/>
-                </xsl:call-template>
-                <!-\- try to download the VIAF SRU file -\->
-                <xsl:call-template name="t_query-viaf-sru">
-                    <xsl:with-param name="p_output-mode" select="'file'"/>
-                    <xsl:with-param name="p_search-term" select="normalize-space(tei:persName[1])"/>
-                    <xsl:with-param name="p_input-type" select="'persName'"/>
-                </xsl:call-template>
-            </xsl:if>-->
+            <!-- check if it has duplicate child nodes -->
+            <xsl:for-each-group select="tei:persName" group-by=".">
+                <xsl:apply-templates/>
+            </xsl:for-each-group>
         </xsl:copy>
     </xsl:template>
     
@@ -122,9 +111,9 @@
                 <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> copy existing persName</xsl:text>
             </xsl:message>
         </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates select="@* | node()"/>
-        </xsl:copy>
+            <xsl:copy>
+                <xsl:apply-templates select="@* | node()"/>
+            </xsl:copy>
         <!-- add flattened persName string if this is not already present  -->
         <xsl:variable name="v_self">
             <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
