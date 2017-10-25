@@ -75,6 +75,7 @@
                 <!-- add missing fields -->
                 <xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'tei'"/>
+                    <xsl:with-param name="p_include-bibliograpy-in-output" select="false()"/>
                     <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
                     <xsl:with-param name="p_input-type" select="'id'"/>
                 </xsl:call-template>
