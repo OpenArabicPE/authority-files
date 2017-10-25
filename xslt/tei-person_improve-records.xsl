@@ -156,10 +156,10 @@
                 <xsl:copy>
                     <xsl:apply-templates select="@xml:lang"/>
                     <xsl:attribute name="type" select="'noAddName'"/>
-                    <xsl:apply-templates select="child::node()[not(self::tei:addName)]"/>
+                    <xsl:apply-templates select="child::node()[not(self::tei:addName)]" mode="m_no-ids"/>
                 </xsl:copy>
             </xsl:variable>
-            <xsl:if test="not(parent::node()/tei:persName[@type='noAddName']=$v_no-addname)">
+            <xsl:if test="not(parent::node()/tei:persName=$v_no-addname)">
                 <xsl:copy-of select="$v_no-addname"/>
             </xsl:if>
         </xsl:if>
@@ -193,6 +193,19 @@
                 <xsl:text>t_7: </xsl:text><xsl:value-of select="@xml:id"/>
             </xsl:message>
         </xsl:if>
+    </xsl:template>
+    
+    <!-- replicate everything except @xml:id -->
+    <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids" name="t_10">
+        <xsl:if test="$p_verbose = true()">
+            <xsl:message>
+                <xsl:text>t_10 master: </xsl:text>
+                <xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids"/>
+        </xsl:copy>
     </xsl:template>
     
     <!-- document the changes -->
