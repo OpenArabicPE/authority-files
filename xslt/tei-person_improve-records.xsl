@@ -125,7 +125,7 @@
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
-        <!-- add flattened persName string  -->
+        <!-- add flattened persName string if this is not already present  -->
         <xsl:variable name="v_self">
             <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
         </xsl:variable>
@@ -144,6 +144,24 @@
                 <xsl:value-of select="$v_name-flat"/>
                 
             </xsl:copy>
+        </xsl:if>
+        <!-- add persName without any titles, honorary addresses etc. -->
+        <xsl:if test="child::tei:addName">
+            <xsl:if test="$p_verbose=true()">
+                <xsl:message>
+                    <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create persName without titles</xsl:text>
+                </xsl:message>
+            </xsl:if>
+            <xsl:variable name="v_no-addname">
+                <xsl:copy>
+                    <xsl:apply-templates select="@xml:lang"/>
+                    <xsl:attribute name="type" select="'noAddName'"/>
+                    <xsl:apply-templates select="child::node()[not(self::tei:addName)]"/>
+                </xsl:copy>
+            </xsl:variable>
+            <xsl:if test="not(parent::node()/tei:persName[@type='noAddName']=$v_no-addname)">
+                <xsl:copy-of select="$v_no-addname"/>
+            </xsl:if>
         </xsl:if>
     </xsl:template>
     
