@@ -114,7 +114,7 @@
         </xsl:if>
     </xsl:template>
 
-    <!-- variable to collect all persNames in a list containing tei:person with tei:persName and tei:idno children -->
+    <!-- variable to collect all persNames found in file this transformation is run on in a list containing tei:person with tei:persName and tei:idno children -->
     <xsl:variable name="v_persons-source">
         <xsl:element name="tei:list">
             <xsl:for-each-group
