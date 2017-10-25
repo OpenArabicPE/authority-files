@@ -97,13 +97,15 @@
             </xsl:message>
         </xsl:if>
         <xsl:copy>
-            <xsl:apply-templates select="@* | node()"/>
+            <xsl:apply-templates select="@*"/>
             <!-- check if it has duplicate child nodes -->
             <xsl:for-each-group select="tei:persName" group-by=".">
-                <xsl:apply-templates/>
+                <xsl:apply-templates select="current-group()"/>
             </xsl:for-each-group>
         </xsl:copy>
     </xsl:template>
+    
+<!--    <xsl:template match="tei:persName[@type='flattened']" priority="100"/>-->
     
     <xsl:template match="tei:persName" name="t_5">
         <xsl:if test="$p_verbose=true()">
@@ -150,8 +152,8 @@
             </xsl:variable>
             <xsl:choose>
                 <xsl:when test="parent::node()/tei:persName[@type='flattened']=replace(normalize-space(replace($v_no-addname,'([إ|أ|آ])','ا')), '\W', '')">
-                    <!--<xsl:message><xsl:value-of select="$v_no-addname"/> is already present</xsl:message>
--->                </xsl:when>
+<!--                    <xsl:message><xsl:value-of select="$v_no-addname"/> is already present</xsl:message>-->
+                </xsl:when>
                 <xsl:otherwise>
 <!--                    <xsl:message><xsl:value-of select="$v_no-addname"/> is not present</xsl:message>-->
                     <xsl:copy-of select="$v_no-addname"/>
