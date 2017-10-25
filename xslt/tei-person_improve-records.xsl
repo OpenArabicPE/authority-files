@@ -148,9 +148,15 @@
                     <xsl:apply-templates select="child::node()[not(self::tei:addName)]" mode="m_no-ids"/>
                 </xsl:copy>
             </xsl:variable>
-            <xsl:if test="not(ancestor::tei:person[1]/tei:persName=$v_no-addname)">
-                <xsl:copy-of select="$v_no-addname"/>
-            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="parent::node()/tei:persName[@type='flattened']=replace(normalize-space(replace($v_no-addname,'([إ|أ|آ])','ا')), '\W', '')">
+                    <!--<xsl:message><xsl:value-of select="$v_no-addname"/> is already present</xsl:message>
+-->                </xsl:when>
+                <xsl:otherwise>
+<!--                    <xsl:message><xsl:value-of select="$v_no-addname"/> is not present</xsl:message>-->
+                    <xsl:copy-of select="$v_no-addname"/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:if>
     </xsl:template>
     
