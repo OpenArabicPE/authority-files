@@ -88,6 +88,9 @@
             <xsl:apply-templates select="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="text()" mode="m_no-ids">
+        <xsl:value-of select="normalize-space(.)"/>
+    </xsl:template>
 
     <!-- run on root -->
     <xsl:template match="/" name="t_3">
@@ -118,7 +121,7 @@
     <xsl:variable name="v_persons-source">
         <xsl:element name="tei:list">
             <xsl:for-each-group
-                select="tei:TEI/tei:text/descendant::tei:persName[not(tei:persName)]" group-by=".">
+                select="tei:TEI/tei:text/descendant::tei:persName[not(tei:persName)]" group-by="normalize-space(.)">
                 <xsl:sort select="tei:surname[1]"/>
                 <xsl:sort select="tei:forename[1]"/>
                 <xsl:sort select="current-grouping-key()"/>
@@ -131,12 +134,21 @@
                 <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
                 <!-- construct nodes -->
                 <xsl:element name="tei:person">
-                    <xsl:copy-of select="."/>
+                    <xsl:copy>
+                        <xsl:apply-templates select="@* | node()" mode="m_no-ids"/>
+                    </xsl:copy>
                     <!-- construct a flattened string -->
                     <xsl:element name="tei:persName">
                         <xsl:attribute name="type" select="'flattened'"/>
                         <xsl:value-of select="$v_name-flat"/>
                     </xsl:element>
+                    <!-- construct name without titles, honorary addresses etc. -->
+                    <xsl:if test="child::tei:addName">
+                        <xsl:element name="tei:persName">
+                            <xsl:attribute name="type" select="'noAddName'"/>
+                            <xsl:apply-templates select="child::node()[not(self::tei:addName)]" mode="m_no-ids"/>
+                        </xsl:element>
+                    </xsl:if>
                     <!-- construct the idno child -->
                     <xsl:if test="./@ref">
                         <!-- <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>-->
