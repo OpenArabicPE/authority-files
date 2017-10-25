@@ -7,7 +7,8 @@
     exclude-result-prefixes="#all" version="2.0">
     
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
-    <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
+    <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute on a persName child.
+    It DOES NOT try to find names on VIAF without an ID -->
     <xsl:output method="xml" encoding="UTF-8" indent="yes" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <xsl:include href="query-viaf.xsl"/>
