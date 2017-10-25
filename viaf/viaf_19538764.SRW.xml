@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>19538764</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/19538764/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/19538764"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="Q1337728">WKP|Q1337728</ns2:source>
+                  <ns2:source nsid="0000000054237821">ISNI|0000000054237821</ns2:source>
+                  <ns2:source nsid="nr91044848">LC|nr 91044848</ns2:source>
+                  <ns2:source nsid="http://catalogue.bnf.fr/ark:/12148/cb10214433r">BNF|10214433</ns2:source>
+                  <ns2:source nsid="http://d-nb.info/gnd/1020621141">DNB|1020621141</ns2:source>
+                  <ns2:source nsid="61812">LNL|61812</ns2:source>
+                  <ns2:source nsid="000159600">NLI|000159600</ns2:source>
+               </ns2:sources>
+               <ns2:length>276</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Arslān, Amīn 1868-1943</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1020621141</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>أمين مجيد أرسلان</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Arslān, Amīn, -1943</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 91044848</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>ارسلان، امين</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>أرسلان، أمين، الأمير، 1868-1943</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|61812</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="UNIMARC" ind1=" " ind2="|" tag="200">
+                        <ns2:subfield code="7">ba0yba0a</ns2:subfield>
+                        <ns2:subfield code="8">freara</ns2:subfield>
+                        <ns2:subfield code="9">0</ns2:subfield>
+                        <ns2:subfield code="a">Arslān</ns2:subfield>
+                        <ns2:subfield code="b">Amīn</ns2:subfield>
+                        <ns2:subfield code="f">1868-1943</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>BNF|10214433</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q1337728</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>LC|nr 91044848</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1020621141</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|61812</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000159600</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000159600</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Arslān, Amīn</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1020621141</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>DNB|1020621141</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10214433</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q1337728</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000159600</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000159600</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>LC|nr 91044848</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Arslān, Amīn,</ns2:subfield>
+                        <ns2:subfield code="d">-1943</ns2:subfield>
+                        <ns2:subfield code="9">lat</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|000159600</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q1337728</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>LC|nr 91044848</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1020621141</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10214433</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|61812</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Arslān, Amīn,</ns2:subfield>
+                        <ns2:subfield code="d">-1943</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 91044848</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|nr 91044848</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>BNF|10214433</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>DNB|1020621141</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q1337728</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>NLI|000159600</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>NLI|000159600</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">أرسلان، أمين،</ns2:subfield>
+                        <ns2:subfield code="c">الأمير،</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|61812</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LNL|61812</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10214433</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q1337728</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000159600</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000159600</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">أمين مجيد أرسلان</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>WKP|Q1337728</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>LC|nr 91044848</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>DNB|1020621141</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10214433</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|61812</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000159600</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000159600</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">أمين مجيد أرسلان</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000054237821</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>WKP|Q1337728</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LC|nr 91044848</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>DNB|1020621141</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>BNF|10214433</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LNL|61812</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>NLI|000159600</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>NLI|000159600</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">ارسلان، امين</ns2:subfield>
+                        <ns2:subfield code="9">ara</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|000159600</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q1337728</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000054237821</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>LC|nr 91044848</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1020621141</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10214433</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|61812</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Al-Amīr Amīn Arslān</ns2:subfield>
+                        <ns2:subfield code="f">1868-1943</ns2:subfield>
+                        <ns2:normalized>al amir amin arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Amīn Arslān</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>amin arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1020621141</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Amīn ibn Maǧīd ibn Milḥim ibn Ḥaydar Arslān</ns2:subfield>
+                        <ns2:subfield code="f">1868-1943</ns2:subfield>
+                        <ns2:normalized>amin ibn magid ibn milhim ibn haydar arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Amīr Amīn Arslan</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>amir amin arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1020621141</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Amīn Arslān</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>amin arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Amīn Arslān</ns2:subfield>
+                        <ns2:subfield code="c">écrivain et journaliste libanais</ns2:subfield>
+                        <ns2:normalized>amin arslan ecrivain et journaliste libanais</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Amīr Amīn Arslan</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>amir amin arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Arslan</ns2:subfield>
+                        <ns2:subfield code="b">Emin</ns2:subfield>
+                        <ns2:subfield code="f">1868-1943</ns2:subfield>
+                        <ns2:normalized>arslan emin 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Arslān, Amīn,</ns2:subfield>
+                        <ns2:subfield code="d">d. 1943</ns2:subfield>
+                        <ns2:normalized>arslan amin d 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 91044848</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Arslān, Amīr Amīn</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>arslan amir amin 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1020621141</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Arslān</ns2:subfield>
+                        <ns2:subfield code="b">Amīn Maǧīd</ns2:subfield>
+                        <ns2:subfield code="f">1868-1943</ns2:subfield>
+                        <ns2:normalized>arslan amin magid 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Arslān, Amīn</ns2:subfield>
+                        <ns2:subfield code="d">d. 1943</ns2:subfield>
+                        <ns2:normalized>arslan amin d 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Arslān, Amīr Amīn</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>arslan amir amin 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Emin  Arslan</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>emin arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1020621141</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Emin Arslan</ns2:subfield>
+                        <ns2:subfield code="f">1868-1943</ns2:subfield>
+                        <ns2:normalized>emin arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Emir Emin Arslan</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>emir emin arslan 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1020621141</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Emir Emin Arslan</ns2:subfield>
+                        <ns2:subfield code="c">Writer, editor, journalist, Ottoman diplomat and politician born in Lebanon died in Argentina</ns2:subfield>
+                        <ns2:normalized>emir emin arslan writer editor journalist ottoman diplomat and politician born in lebanon died in argentina</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Emir Emin Arslan</ns2:subfield>
+                        <ns2:subfield code="c">osmanischer Politiker, Botschafter, Schriftsteller und Verleger</ns2:subfield>
+                        <ns2:normalized>emir emin arslan osmanischer politiker botschafter schriftsteller und verleger</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Emir Emin Arslan</ns2:subfield>
+                        <ns2:subfield code="c">politicus uit Libanon (1868-1943)</ns2:subfield>
+                        <ns2:normalized>emir emin arslan politicus uit libanon 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Emir Emin Arslan</ns2:subfield>
+                        <ns2:subfield code="c">writer, editor, journalist, Ottoman diplomat and politician born in Lebanon died in Argentina</ns2:subfield>
+                        <ns2:normalized>emir emin arslan writer editor journalist ottoman diplomat and politician born in lebanon died in argentina</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Emín Arslán</ns2:subfield>
+                        <ns2:normalized>emin arslan</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">أمين أرسلان،</ns2:subfield>
+                        <ns2:subfield code="c">الأمير،</ns2:subfield>
+                        <ns2:subfield code="d">1868-1943</ns2:subfield>
+                        <ns2:normalized>امين ارسلان الامير 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|61812</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">امين ارسلان</ns2:subfield>
+                        <ns2:normalized>امين ارسلان</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054237821</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">امين ارسلان</ns2:subfield>
+                        <ns2:normalized>امين ارسلان</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 91044848</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">امین مجید ارسلان</ns2:subfield>
+                        <ns2:normalized>امین مجید ارسلان</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="700">
+                        <ns2:subfield code="a">أرسلان</ns2:subfield>
+                        <ns2:subfield code="b">أمين</ns2:subfield>
+                        <ns2:subfield code="f">1868-1943</ns2:subfield>
+                        <ns2:normalized>ارسلان امين 1868 1943</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">رسلان، امين</ns2:subfield>
+                        <ns2:normalized>رسلان امين</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:publishers>
+                  <ns2:data count="2">
+                     <ns2:text>مطبعة الهلال</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>مطبعة الجالية</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>Maṭbaʿaẗ al-Hilāl</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1868-07-13</ns2:birthDate>
+               <ns2:deathDate>1943-01-09</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="191" min="191">
+                  <ns2:date count="5" scaled="2.32">191</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="4">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:RelatorCodes>
+                  <ns2:data count="2">
+                     <ns2:text>070</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RelatorCodes>
+               <ns2:countries>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>GQ</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>EG</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>AR</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:s>DNB</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:xLinks>
+                  <ns2:xLink type="Wikipedia">https://ar.wikipedia.org/wiki/أمين_مجيد_أرسلان<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://de.wikipedia.org/wiki/Emir_Emin_Arslan<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://en.wikipedia.org/wiki/Emin_Arslan<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://es.wikipedia.org/wiki/Emín_Arslán<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://fa.wikipedia.org/wiki/امین_مجید_ارسلان<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://fr.wikipedia.org/wiki/Emin_Arslan<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q1337728</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+               </ns2:xLinks>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Asrār al-quṣūr riwāyaẗ siyāsiyyaẗ tārīẖiyyaẗ ġarāmiyyaẗ adabiyyaẗ</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>fī al-ḥarb</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 91044848</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Kitāb ḥuqūq al-milal wa-muʻāhadāt al-duwal, 1912:</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Principes du droit international public (droit des gens)</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>اسرار القصور رواية سياسية تاريخية غرامية أدبية</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>في الحرب</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10214433</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000159600</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>كتاب حقوق الملل ومعاهدات الدول : القسم الرابع فى الحرب</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="LC|nr 91044848" time="2009-03-03T12:03:45+00:00" type="add"/>
+                  <ns2:ht recid="DNB|1020621141" time="2012-11-27T04:00:16+00:00" type="add"/>
+                  <ns2:ht recid="WKP|Q1337728" time="2015-04-14T18:56:54+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000054237821"
+                          time="2015-09-20T14:54:45+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BNF|10214433"
+                          time="2016-06-12T08:11:57.163359+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NLI|000159600"
+                          time="2016-06-12T09:29:16.415924+00:00"
+                          type="add"/>
+                  <ns2:ht recid="LNL|61812"
+                          time="2016-11-13T09:23:53.995952+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2017-10-22T08:24:36.067260+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "19538764"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">19538764</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
