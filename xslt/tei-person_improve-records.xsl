@@ -159,7 +159,7 @@
                     <xsl:apply-templates select="child::node()[not(self::tei:addName)]" mode="m_no-ids"/>
                 </xsl:copy>
             </xsl:variable>
-            <xsl:if test="not(parent::node()/tei:persName=$v_no-addname)">
+            <xsl:if test="not(ancestor::tei:person[1]/tei:persName=$v_no-addname)">
                 <xsl:copy-of select="$v_no-addname"/>
             </xsl:if>
         </xsl:if>
