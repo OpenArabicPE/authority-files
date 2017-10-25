@@ -1,7 +1,7 @@
 ---
 title: "readme: OpenArabicPE/authority-files"
 author: Till Grallert
-date: 2017-03-28 12:55:59 +0200
+date: 2017-10-25 16:21:32 +0300
 ---
 
 # locations and file names
@@ -11,6 +11,22 @@ date: 2017-03-28 12:55:59 +0200
     * sub-folder for viaf data: `viaf/`; this folder will act as a cache for linked data in order to minimise traffic.
     * sub-folder for TEI files: `tei/`
 + copies of SRU results from VIAF queries: `viaf_id.SRW.xml`
+
+# stylesheets
+
+1. `query-viaf.xsl`: this stylesheet provides templates to query VIAF using SRU or RDF APIs. In both cases input can be either a VIAF ID or a literal string. Output options are TEI XML and VIAF SRU XML.
+2. `tei-person_improve-records.xsl`: This stylesheet is meant to be run on authority files containing `<tei:person>` elements with at least one `<tei:persName>` child and will try to enrich the data.
+    - additional data:
+        + `<tei:persName type="flattened">`
+        + `<tei:persName type="noAddName">`
+        + `<tei:birth>`: this element is populated using data from VIAF
+        + `<tei:death>`: this element is populated using data from VIAF
+        + `<tei:idno type="viaf">`
+3. `tei_extract-persname.xsl`: This stylesheet has a twofold purpose. First, it enriches all `<tei:persName>` elements in an input file with `@ref` attributes (if available) using an external authority file. Second, it adds all names not yet available in the external authority file to that file
+    - input: any TEI XML file
+    - output:
+        1. a copy of the input with additional information added to already existing `<tei:persName>` elements
+        2. an updated copy of the authority file
 
 
 # Workflow named entities: persons
