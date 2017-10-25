@@ -63,6 +63,7 @@
         <xsl:param name="p_records-max" select="5"/>
         <!-- available values are 'tei' and 'file' -->
         <xsl:param name="p_output-mode" select="'tei'"/>
+        <xsl:param name="p_include-bibliograpy-in-output" select="false()"/>
         <xsl:variable name="v_viaf-srw">
             <xsl:choose>
                 <!-- check if a local copy of the VIAF result is present  -->
@@ -121,7 +122,9 @@
                 <xsl:apply-templates select="$v_record-1//viaf:birthDate"/>
                 <xsl:apply-templates select="$v_record-1//viaf:deathDate"/>
                 <!-- add works -->
-                <xsl:apply-templates select="$v_record-1//viaf:titles"/>
+                <xsl:if test="$p_include-bibliograpy-in-output=true()">
+                    <xsl:apply-templates select="$v_record-1//viaf:titles"/>
+                </xsl:if>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'file'">
                 <xsl:choose>
