@@ -100,7 +100,7 @@
             <xsl:apply-templates select="@*"/>
             <!-- check if it has duplicate child nodes -->
             <xsl:for-each-group select="tei:persName" group-by=".">
-                <xsl:apply-templates select="current-group()"/>
+                <xsl:apply-templates select="."/>
             </xsl:for-each-group>
         </xsl:copy>
     </xsl:template>
