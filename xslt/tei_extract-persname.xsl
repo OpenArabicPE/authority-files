@@ -77,17 +77,18 @@
         </xsl:copy>
     </xsl:template>
     <!-- replicate everything except @xml:id -->
-    <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids" name="t_10">
+    <xsl:template match="node() | @*[not(name() = 'xml:id')]" mode="m_no-ids" name="t_10">
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_10 master: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
+                <xsl:value-of select="."/>
             </xsl:message>
         </xsl:if>
-        <xsl:copy copy-namespaces="no">
+        <xsl:copy>
             <xsl:apply-templates select="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="@xml:id" mode="m_no-ids"/>
     <xsl:template match="text()" mode="m_no-ids">
         <xsl:value-of select="normalize-space(.)"/>
     </xsl:template>
