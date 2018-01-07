@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>72733868</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/72733868/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/72733868"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="vtls021759783">RERO|vtls021759783</ns2:source>
+                  <ns2:source nsid="000443668">NLI|000443668</ns2:source>
+                  <ns2:source nsid="http://catalogue.bnf.fr/ark:/12148/cb16733854p">BNF|16733854</ns2:source>
+                  <ns2:source nsid="http://d-nb.info/gnd/1032834161">DNB|1032834161</ns2:source>
+                  <ns2:source nsid="n82046781">LC|n  82046781</ns2:source>
+                  <ns2:source nsid="0000000023687694">ISNI|0000000023687694</ns2:source>
+               </ns2:sources>
+               <ns2:length>250</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Anṭākī, ʻAbd al-Masīḥ</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000443668</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Anṭākī, ʿAbd-al-Masīḥ &#x98;al-&#x9c; 1874-1291 H]</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Anṭākī, ʿAbd al-Masīḥ ibn Fatḥ Allāh al- 1874-1923</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Anṭākī, ʿAbd al-Masīḥ, 1874-1923</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="UNIMARC" ind1=" " ind2="|" tag="200">
+                        <ns2:subfield code="7">ba0yba0y</ns2:subfield>
+                        <ns2:subfield code="8">freara</ns2:subfield>
+                        <ns2:subfield code="9">0</ns2:subfield>
+                        <ns2:subfield code="a">Anṭākī</ns2:subfield>
+                        <ns2:subfield code="b">ʿAbd al-Masīḥ ibn Fatḥ Allāh al-</ns2:subfield>
+                        <ns2:subfield code="f">1874-1923</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>BNF|16733854</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>RERO|vtls021759783</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000443668</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Anṭākī, ʻAbd al-Masīḥ</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|n  82046781</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="title"/>RERO|vtls021759783</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>NLI|000443668</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000023687694</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Anṭākī, ʿAbd-al-Masīḥ &#x98;al-&#x9c;</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>DNB|1032834161</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>NLI|000443668</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="partial date and partial title"/>RERO|vtls021759783</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Anṭākī, ʻAbd al-Masīḥ</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000023687694</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>RERO|vtls021759783</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>NLI|000443668</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>BNF|16733854</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>LC|n  82046781</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>DNB|1032834161</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Anṭākī, ʻAbd al-Masīḥ</ns2:subfield>
+                        <ns2:subfield code="9">lat</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000443668</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|000443668</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>RERO|vtls021759783</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|16733854</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>LC|n  82046781</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>DNB|1032834161</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Anṭākī, ʿAbd al-Masīḥ,</ns2:subfield>
+                        <ns2:subfield code="d">1874-1923</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>RERO|vtls021759783</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000443668</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|16733854</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000023687694</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="title"/>LC|n  82046781</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="partial date and partial title"/>DNB|1032834161</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Antaki Bey, Abdelmassii</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>antaki bey abdelmassii 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Antaki Bey, Abdul Maseeh</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>antaki bey abdul maseeh 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Anṭākī, ʼAbd al-Masīḥ</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>antaki abd al masih 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Anṭākī, ʿAbd al-Masīḥ ibn Fatḥ Allāh,</ns2:subfield>
+                        <ns2:subfield code="d">1874-1923</ns2:subfield>
+                        <ns2:normalized>antaki abd al masih ibn fath allah 1874 1923</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Anṭākī, ʼAbd al-Masīḥ</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>antaki abd al masih 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʻAbd al-Masīḥ Anṭākī</ns2:subfield>
+                        <ns2:normalized>abd al masih antaki</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʻAbd al-Masīḥ Anṭākī</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>abd al masih antaki 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʻAbd al-Masīḥ Anṭākī</ns2:subfield>
+                        <ns2:normalized>abd al masih antaki</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000443668</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʻAbd al-Masīḥ Anṭākī</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>abd al masih antaki 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">ʿAbd al-Masīḥ ibn Fatḥ Allāh al-Anṭākī</ns2:subfield>
+                        <ns2:subfield code="f">1874-1923</ns2:subfield>
+                        <ns2:normalized>abd al masih ibn fath allah al antaki 1874 1923</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʿAbd al-Masīḥ ibn Fatḥ Allāh al-Anṭākī</ns2:subfield>
+                        <ns2:subfield code="d">1874-1923</ns2:subfield>
+                        <ns2:normalized>abd al masih ibn fath allah al antaki 1874 1923</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʿAbd-al-Masīḥ Anṭākī Bak</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>abd al masih antaki bak 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʿAbd-al-Masīḥ Anṭākī</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>abd al masih antaki 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʿAbd-al-Masīḥ Anṭākī Bak</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>abd al masih antaki bak 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">ʿAbd-al-Masīḥ Anṭākī</ns2:subfield>
+                        <ns2:subfield code="d">1874-1291 H]</ns2:subfield>
+                        <ns2:normalized>abd al masih antaki 1874 1291 h</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">أنطاكي، عبد المسيح</ns2:subfield>
+                        <ns2:normalized>انطاكي عبد المسيح</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">أنطاكي، عبد المسيح،</ns2:subfield>
+                        <ns2:subfield code="d">1874-1923</ns2:subfield>
+                        <ns2:normalized>انطاكي عبد المسيح 1874 1923</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">الأنطاكي, عبد المسيح إبن فتح الله</ns2:subfield>
+                        <ns2:subfield code="d">1874-1923</ns2:subfield>
+                        <ns2:normalized>الانطاكي عبد المسيح ابن فتح الله 1874 1923</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="700">
+                        <ns2:subfield code="a">الأنطاكي</ns2:subfield>
+                        <ns2:subfield code="b">عبد المسيح إبن فتح الله</ns2:subfield>
+                        <ns2:subfield code="f">1874-1923</ns2:subfield>
+                        <ns2:normalized>الانطاكي عبد المسيح ابن فتح الله 1874 1923</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">انطاكي، عبد المسيح</ns2:subfield>
+                        <ns2:normalized>انطاكي عبد المسيح</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">انطاكي، عبد المسيح</ns2:subfield>
+                        <ns2:normalized>انطاكي عبد المسيح</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">عبد المسيح الأنطاكي</ns2:subfield>
+                        <ns2:normalized>عبد المسيح الانطاكي</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">عبد المسيح الأنطاكي</ns2:subfield>
+                        <ns2:normalized>عبد المسيح الانطاكي</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:x500s>
+                  <ns2:x500 viafLink="242059562">
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2=" " tag="551">
+                        <ns2:subfield code="a">Aleppo</ns2:subfield>
+                        <ns2:normalized>aleppo</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x500>
+               </ns2:x500s>
+               <ns2:coauthors>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Ghazālī, ʻAbd Allāh Muḥammad ʻĪsá</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Ṯābit, Karīm ibn H̱alīl 18..?-1964</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="2">
+                     <ns2:text>‏مكتبة آفاق،‏</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>مطبعة العرب</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>مطبعة الشعب</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>الدار العربية للموسوعات،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>Maṭbaʿaẗ al-šaʿb</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>Maṭbaʿa al-ʿArab</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>Maktabat Āfāq</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>al-Dār al-ʻArabīyah lil-Mawsūʻāt</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>ʻA. Anṭākī.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000023687694</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1874</ns2:birthDate>
+               <ns2:deathDate>1923</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="190" min="189">
+                  <ns2:date count="5" scaled="2.32">189</ns2:date>
+                  <ns2:date count="3" scaled="1.58">190</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="4">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>as</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>dm</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:RelatorCodes>
+                  <ns2:data count="1">
+                     <ns2:text>205</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RelatorCodes>
+               <ns2:ISBNs unique="2">
+                  <ns2:data count="1">
+                     <ns2:text>9789996651748</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>9786144241677</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:ISBNs>
+               <ns2:countries>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>EG</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>KW</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>GQ</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>SY</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>KW</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>al-Āyāt al-ṣubāḥ fī madḥ mawlānā ṣāḥib al-sumūw amīr al-Kuwayt al-shaykh Mubārak Bāshā al-Ṣabāḥ</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Dalīl Miṣr wa al-Sūdān al-nuǧūm al-zahr fī rusūm aʿyān Miṣr tatimmaẗ lil-kitāb</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1032834161</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Riyāḍ al-muzhira baina 'l-Kuwait wa-'l-Muḥammara</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000443668</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>al-Shudhūr, 1897- :</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>al-Shudhūr : wa-hiya majmūʻat arbaʻ wa-ʻishrīn shadhrah</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>al-ʻUmrān.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>الآيات الصباح في مدح مولانا صاحب السمو أمير الكويت الشيخ مبارك باشا الصباح</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021759783</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82046781</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>‏الرياض المزهرة بين الكويت والمحمرة /‏</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16733854</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>دليل مصر و السودان النجوم الزهر في رسوم أعيان مصر تتمّة للكتاب</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="LC|n  82046781" time="2009-03-03T12:03:30+00:00" type="add"/>
+                  <ns2:ht recid="NLI|000443668" time="2013-04-17T17:27:37+00:00" type="add"/>
+                  <ns2:ht recid="DNB|1032834161" time="2013-04-17T17:27:37+00:00" type="add"/>
+                  <ns2:ht recid="NLIlat|000443668"
+                          time="2013-05-13T19:14:22+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="ISNI|0000000023687694"
+                          time="2014-05-14T22:19:01+00:00"
+                          type="add"/>
+                  <ns2:ht recid="RERO|vtls021759783"
+                          time="2015-06-15T20:42:24+00:00"
+                          type="add"/>
+                  <ns2:ht recid="RERO|vtls013525170"
+                          time="2015-06-15T20:42:24+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="BNF|16733854" time="2015-08-04T01:21:49+00:00" type="add"/>
+                  <ns2:ht recid="NTA|120241439"
+                          time="2017-05-30T15:58:55.944988+00:00"
+                          type="delete"/>
+               </ns2:history>
+               <ns2:creationtime>2017-12-31T11:12:40.427325+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "72733868"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">72733868</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
