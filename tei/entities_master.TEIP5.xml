@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!--<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
 <TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:bgn="http://bibliograph.net/" xmlns:genont="http://www.w3.org/2006/gen/ont#" xmlns:pto="http://www.productontology.org/id/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:re="http://oclcsrw.google.code/redirect" xmlns:schema="http://schema.org/" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:umbel="http://umbel.org/umbel#" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<teiHeader xml:id="teiHeader_1.d1e5" xml:lang="en">
 		<fileDesc xml:id="fileDesc" xml:lang="en">
@@ -645,32 +646,35 @@
 						<persName corresp="#persName_192.d1e5848" type="flattened" xml:id="persName_171.d1e1548" xml:lang="ar">فارسفياض</persName>
 					</person>
 					<person xml:id="person_15.d1e735" xml:lang="ar">
-						<persName ref="viaf:32272677" xml:id="persName_75.d1e737" xml:lang="ar">
-							<forename xml:id="forename_43.d1e739" xml:lang="ar">محمد</forename>
-							<surname xml:id="surname_37.d1e742" xml:lang="ar">كرد علي</surname>
-						</persName>
-						<persName corresp="#persName_75.d1e737" type="flattened" xml:id="persName_173.d1e1563" xml:lang="ar">محمدكردعلي</persName>
-						<persName ref="viaf:32272677" xml:id="persName_77.d1e749" xml:lang="ar-Latn-x-ijmes">
-							<forename xml:id="forename_44.d1e751" xml:lang="ar-Latn-x-ijmes">Muḥammad</forename>
-							<surname xml:id="surname_38.d1e754" xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname>
-						</persName>
-						<persName corresp="#persName_77.d1e749" type="flattened" xml:id="persName_175.d1e1575" xml:lang="ar-Latn-x-ijmes">MuḥammadKurdʿAlī</persName>
-						<persName xml:id="persName_145.d1e3232" xml:lang="ar">
-							<addName type="title" xml:id="addName_25.d1e1155" xml:lang="ar">الأستاذ</addName>
-							<surname xml:id="surname_124.d1e3234" xml:lang="ar">كرد علي</surname>
-						</persName>
-						<persName type="noAddName" xml:id="persName_177.d1e1588" xml:lang="ar">
-							<surname xml:id="surname_98.d1e1590" xml:lang="ar">كرد علي</surname>
-						</persName>
-						<persName corresp="#persName_145.d1e3232" type="flattened" xml:id="persName_178.d1e1594" xml:lang="ar">الاستاذكردعلي</persName>
-						<persName type="noAddName" xml:id="persName_179.d1e1597" xml:lang="ar">
-							<surname xml:id="surname_99.d1e1599" xml:lang="ar">كرد علي</surname>
-						</persName>
-						<persName corresp="#" type="flattened" xml:id="persName_180.d1e1603" xml:lang="ar">كردعلي</persName>
-						<tei:idno type="viaf">32272677</tei:idno>
-						<tei:birth resp="viaf" when="1876-01-01">1876-01-01</tei:birth>
-						<tei:death resp="viaf" when="1953-01-01">1953-01-01</tei:death>
-					</person>
+                    <persName ref="viaf:32272677" xml:id="persName_75.d1e737" xml:lang="ar">
+                        <forename xml:id="forename_43.d1e739" xml:lang="ar">محمد</forename> <surname
+                        xml:id="surname_37.d1e742" xml:lang="ar">كرد علي</surname> </persName>
+                    <persName corresp="#persName_75.d1e737" type="flattened"
+                        xml:id="persName_173.d1e1563" xml:lang="ar">محمدكردعلي</persName>
+                    <persName ref="viaf:32272677" xml:id="persName_77.d1e749"
+                        xml:lang="ar-Latn-x-ijmes"> <forename xml:id="forename_44.d1e751"
+                        xml:lang="ar-Latn-x-ijmes">Muḥammad</forename> <surname
+                        xml:id="surname_38.d1e754" xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname> </persName>
+                    <persName corresp="#persName_77.d1e749" type="flattened"
+                        xml:id="persName_175.d1e1575" xml:lang="ar-Latn-x-ijmes"
+                        >MuḥammadKurdʿAlī</persName>
+                    <persName xml:id="persName_145.d1e3232" xml:lang="ar"> <addName type="title"
+                        xml:id="addName_25.d1e1155" xml:lang="ar">الأستاذ</addName> <surname
+                        xml:id="surname_124.d1e3234" xml:lang="ar">كرد علي</surname> </persName>
+                    <persName type="noAddName" xml:id="persName_177.d1e1588" xml:lang="ar"> <surname
+                        xml:id="surname_98.d1e1590" xml:lang="ar">كرد علي</surname> </persName>
+                    <persName corresp="#persName_145.d1e3232" type="flattened"
+                        xml:id="persName_178.d1e1594" xml:lang="ar">الاستاذكردعلي</persName>
+                    <persName type="noAddName" xml:id="persName_179.d1e1597" xml:lang="ar"> <surname
+                        xml:id="surname_99.d1e1599" xml:lang="ar">كرد علي</surname> </persName>
+                    <persName corresp="#" type="flattened" xml:id="persName_180.d1e1603"
+                        xml:lang="ar">كردعلي</persName>
+                    <persName><addName type="nickname">صاحب <title level="j"
+                        xml:id="title_23.d1e2491">المقتبس</title></addName></persName>
+                    <tei:idno type="viaf">32272677</tei:idno>
+                    <tei:birth resp="viaf" when="1876-01-01">1876-01-01</tei:birth>
+                    <tei:death resp="viaf" when="1953-01-01">1953-01-01</tei:death>
+                </person>
 					<person xml:id="person_18.d1e843" xml:lang="ar">
 						<persName ref="viaf:299037057" xml:id="persName_84.d1e845" xml:lang="ar">
 							<forename xml:id="forename_48.d1e847" xml:lang="ar">عبد الله</forename>
