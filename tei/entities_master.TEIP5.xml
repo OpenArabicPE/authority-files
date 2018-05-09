@@ -8148,6 +8148,69 @@
                         <tei:persName type="flattened" xml:id="persName_1924.d1e18522" xml:lang="ar">علييوسف</tei:persName>
                     </tei:person>
                 </tei:listPerson>
+                <tei:listPerson corresp="../../digital-muqtabas/xml/oclc_4770057679-i_2.TEIP5.xml">
+                    <tei:person>
+                        <persName>أبو عبد الله الحميدي</persName>
+                        <tei:persName type="flattened">ابوعبداللهالحميدي</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName>أبي محمد بن حزم</persName>
+                        <tei:persName type="flattened">ابيمحمدبنحزم</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName>أدرين تورنيب</persName>
+                        <tei:persName type="flattened">ادرينتورنيب</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName xml:lang="de-Arab-AR">الإمبراطور غليوم الثاني</persName>
+                        <tei:persName type="flattened">الامبراطورغليومالثاني</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName>السلطان صلاح الدين يوسف</persName>
+                        <tei:persName type="flattened">السلطانصلاحالدينيوسف</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName>القس كوجي</persName>
+                        <tei:persName type="flattened">القسكوجي</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName change="#d2e585" xml:lang="ar">الكنت دي لاندنبرغ</persName>
+                        <tei:persName type="flattened">الكنتديلاندنبرغ</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName change="#d2e585" xml:lang="ar">بلونشلي</persName>
+                        <tei:persName type="flattened">بلونشلي</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName>صاحب
+                            <title level="j">المقتطف</title></persName>
+                        <tei:persName type="flattened">صاحبالمقتطف</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName>صاحب
+                            <title level="j">المنار</title></persName>
+                        <tei:persName type="flattened">صاحبالمنار</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName>غليوم بودي</persName>
+                        <tei:persName type="flattened">غليومبودي</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName xml:lang="fr-Arab-AR">مولير</persName>
+                        <tei:persName type="flattened">مولير</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName xml:lang="fr-Arab-AR">ولتير</persName>
+                        <tei:persName type="flattened">ولتير</tei:persName>
+                    </tei:person>
+                    <tei:person>
+                        <persName ref="viaf:39390702" xml:lang="en-Arab-AR">
+                            <surname>كارلايل</surname>
+                        </persName>
+                        <tei:persName type="flattened">كارلايل</tei:persName>
+                        <tei:idno type="viaf">39390702</tei:idno>
+                    </tei:person>
+                </tei:listPerson>
             </particDesc>
             <settingDesc xml:id="settingDesc_1.d1e6073" xml:lang="en">
                 <listPlace xml:id="listPlace_1.d1e6075" xml:lang="en">
@@ -8198,6 +8261,13 @@
             </settingDesc>
         </profileDesc>
         <revisionDesc xml:id="revisionDesc_1.d1e6169">
+            <tei:change when="2018-05-09" who="#pers_TG" xml:id="d3e593" xml:lang="en">Added 
+                <tei:gi>listPerson</tei:gi>
+                with 
+                <tei:gi>person</tei:gi>
+                s mentioned in 
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_2.TEIP5.xml">../../digital-muqtabas/xml/oclc_4770057679-i_2.TEIP5.xml</tei:ref>
+                but not previously present in this master file.</tei:change>
             <tei:change when="2018-05-09" who="pers_TG">Improved 
                 <tei:gi>person</tei:gi>
                 nodes that had references to VIAF, by querying VIAF and adding  
