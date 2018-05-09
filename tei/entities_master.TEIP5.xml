@@ -673,7 +673,6 @@
                                 <title level="j" xml:id="title_23.d1e2491">المقتبس</title></addName>
                         </persName>
                         <persName type="flattened">صاحبالمقتبس</persName>
-                        <persName type="noAddName"/>
                         <tei:idno type="viaf">32272677</tei:idno>
                         <tei:birth resp="viaf" when="1876-01-01">1876-01-01</tei:birth>
                         <tei:death resp="viaf" when="1953-01-01">1953-01-01</tei:death>
@@ -2212,6 +2211,8 @@
                         <persName corresp="#persName_145.d1e4107" type="flattened" xml:id="persName_658.d1e5257" xml:lang="ar">ابنحزم</persName>
                         <persName xml:id="persName_145.d1e4113" xml:lang="ar">ابن حزم الأندلسي</persName>
                         <persName corresp="#persName_145.d1e4113" type="flattened" xml:id="persName_660.d1e5263" xml:lang="ar">ابنحزمالاندلسي</persName>
+                        <persName>أبي محمد بن حزم</persName>
+                        <tei:persName type="flattened">ابيمحمدبنحزم</tei:persName>
                         <tei:idno type="viaf">44300351</tei:idno>
                         <tei:birth resp="viaf" when="0994-11-07">994-11-07</tei:birth>
                         <tei:death resp="viaf" when="1064-08-15">1064-08-15</tei:death>
@@ -8154,19 +8155,23 @@
                         <tei:persName type="flattened">ابوعبداللهالحميدي</tei:persName>
                     </tei:person>
                     <tei:person>
-                        <persName>أبي محمد بن حزم</persName>
-                        <tei:persName type="flattened">ابيمحمدبنحزم</tei:persName>
-                    </tei:person>
-                    <tei:person>
                         <persName>أدرين تورنيب</persName>
                         <tei:persName type="flattened">ادرينتورنيب</tei:persName>
                     </tei:person>
                     <tei:person>
-                        <persName xml:lang="de-Arab-AR">الإمبراطور غليوم الثاني</persName>
+                        <persName ref="viaf:121621349" xml:lang="de-Arab-AR">
+                            <addName type="title">الإمبراطور</addName>
+                            <forename>غليوم</forename>
+                            <genName>الثاني</genName>
+                        </persName>
                         <tei:persName type="flattened">الامبراطورغليومالثاني</tei:persName>
                     </tei:person>
                     <tei:person>
-                        <persName>السلطان صلاح الدين يوسف</persName>
+                        <persName ref="viaf:90040943">
+                            <addName type="title">السلطان</addName>
+                            <addName type="khitab">صلاح الدين</addName>
+                            <forename>يوسف</forename>
+                        </persName>
                         <tei:persName type="flattened">السلطانصلاحالدينيوسف</tei:persName>
                     </tei:person>
                     <tei:person>
@@ -8182,12 +8187,12 @@
                         <tei:persName type="flattened">بلونشلي</tei:persName>
                     </tei:person>
                     <tei:person>
-                        <persName>صاحب
+                        <persName>صاحب 
                             <title level="j">المقتطف</title></persName>
                         <tei:persName type="flattened">صاحبالمقتطف</tei:persName>
                     </tei:person>
                     <tei:person>
-                        <persName>صاحب
+                        <persName ref="viaf:51716068">صاحب 
                             <title level="j">المنار</title></persName>
                         <tei:persName type="flattened">صاحبالمنار</tei:persName>
                     </tei:person>
@@ -8196,11 +8201,11 @@
                         <tei:persName type="flattened">غليومبودي</tei:persName>
                     </tei:person>
                     <tei:person>
-                        <persName xml:lang="fr-Arab-AR">مولير</persName>
+                        <persName ref="viaf:2474502" xml:lang="fr-Arab-AR">مولير</persName>
                         <tei:persName type="flattened">مولير</tei:persName>
                     </tei:person>
                     <tei:person>
-                        <persName xml:lang="fr-Arab-AR">ولتير</persName>
+                        <persName ref="viaf:36925746" xml:lang="fr-Arab-AR">ولتير</persName>
                         <tei:persName type="flattened">ولتير</tei:persName>
                     </tei:person>
                     <tei:person>
