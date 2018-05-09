@@ -179,7 +179,7 @@
         <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
         <!-- check if a reference to VIAF can be provided based on the master file -->
         <xsl:choose>
-            <!-- test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file -->
+            <!-- 1. test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file. In this case nothing should be changed apart from adding mark-up to the components of persName -->
             <xsl:when
                 test="$v_viaf-id and $v_file-entities-master//tei:person[tei:idno[@type = 'viaf'] = $v_viaf-id]">
                 <xsl:if test="$p_verbose = true()">
@@ -189,7 +189,7 @@
                         <xsl:text> is present in master file</xsl:text>
                     </xsl:message>
                 </xsl:if>
-                <!-- it would also be possible to supply mark-up of the name's components based on the master file -->
+                <!-- attempt to supply mark-up of the name's components based on the master file -->
                 <xsl:copy>
                     <xsl:apply-templates select="@*" mode="m_replicate"/>
                     <xsl:choose>
@@ -220,7 +220,7 @@
                     </xsl:choose>
                 </xsl:copy>
             </xsl:when>
-            <!-- test if the text string is present in the master file -->
+            <!-- 2. test if the text string is present in the master file. If so, mark-up and pointers can be supplied by the master file -->
             <xsl:when
                 test="$v_file-entities-master//tei:person[tei:idno[@type = 'viaf']][tei:persName[@type = 'flattened'] = $v_name-flat]">
                 <xsl:if test="$p_verbose = true()">
@@ -281,7 +281,6 @@
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
-        <!-- <xsl:apply-templates mode="m_replicate"/>-->
     </xsl:template>
 
     <!-- ammend master file with entities found in the current TEI file -->
