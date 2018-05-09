@@ -27,6 +27,11 @@
         name="xml_indented" exclude-result-prefixes="#all"/>
 
     <xsl:include href="query-viaf.xsl"/>
+    
+    <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
+    <!-- identify the author of the change by means of a @xml:id -->
+    <!--    <xsl:param name="p_id-editor" select="'pers_TG'"/>-->
+    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
 
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master"
@@ -37,11 +42,10 @@
     <xsl:param name="p_update-master" select="true()"/>
     <!-- parameter to select whether the source file should be updated  -->
     <xsl:param name="p_update-source" select="true()"/>
-    <!-- toggle debugging messages -->
-    <xsl:param name="p_verbose" select="false()"/>
+    <!-- toggle debugging messages: this is toggled through the parameter file -->
+<!--    <xsl:param name="p_verbose" select="false()"/>-->
 
-    <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
-    <xsl:param name="p_id-editor" select="'pers_TG'"/>
+    
 
     <xsl:variable name="v_id-file"
         select="
@@ -234,6 +238,15 @@
                     <xsl:apply-templates select="@*" mode="m_replicate"/>
                     <xsl:attribute name="ref"
                         select="concat('viaf:', $v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]/tei:idno[@type = 'viaf'])"/>
+                    <!-- document change -->
+                    <xsl:choose>
+                        <xsl:when test="not(@change)">
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates mode="m_documentation" select="@change"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <!-- it would also be possible to supply mark-up of the name's components based on the master file -->
                     <xsl:choose>
                         <xsl:when test="not(child::node()[namespace::tei])">
@@ -407,16 +420,10 @@
             <xsl:element name="tei:change">
                 <xsl:attribute name="when"
                     select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="$p_id-editor"/>
-                <xsl:text>Added </xsl:text>
-                <tei:gi>listPerson</tei:gi>
-                <xsl:text> with </xsl:text>
-                <tei:gi>person</tei:gi>
-                <xsl:text>s mentioned in </xsl:text>
-                <tei:ref target="{$v_url-file}">
-                    <xsl:value-of select="$v_url-file"/>
-                </tei:ref>
-                <xsl:text> but not previously present in this master file.</xsl:text>
+                <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
+                <xsl:attribute name="xml:id" select="$p_id-change"/>
+                <xsl:attribute name="xml:lang" select="'en'"/>
+                <xsl:text>Added </xsl:text><tei:gi>listPerson</tei:gi><xsl:text> with </xsl:text><tei:gi>person</tei:gi><xsl:text>s mentioned in </xsl:text><tei:ref target="{$v_url-file}"><xsl:value-of select="$v_url-file"/></tei:ref><xsl:text> but not previously present in this master file.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="node()" mode="m_replicate"/>
         </xsl:copy>
@@ -433,18 +440,18 @@
             <xsl:element name="tei:change">
                 <xsl:attribute name="when"
                     select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="$p_id-editor"/>
-                <xsl:text>Added references to VIAF IDs to </xsl:text>
-                <tei:gi>persName</tei:gi>
-                <xsl:text>s without such references based on  </xsl:text>
-                <tei:gi>person</tei:gi>
-                <xsl:text>s mentioned in </xsl:text>
-                <tei:ref target="{$p_url-master}">
-                    <xsl:value-of select="$p_url-master"/>
-                </tei:ref>
-                <xsl:text> but not previously present in this master file.</xsl:text>
+                <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
+                <xsl:attribute name="xml:id" select="$p_id-change"/>
+                <xsl:attribute name="xml:lang" select="'en'"/>
+                <xsl:text>Added references to VIAF IDs to </xsl:text><tei:gi>persName</tei:gi><xsl:text>s without such references based on  </xsl:text><tei:gi>person</tei:gi><xsl:text>s mentioned in </xsl:text><tei:ref target="{$p_url-master}"><xsl:value-of select="$p_url-master"/></tei:ref><xsl:text> but not previously present in this master file.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="node()" mode="m_replicate"/>
         </xsl:copy>
+    </xsl:template>
+    <!-- document changes on changed elements by means of the @change attribute linking to the @xml:id of the <tei:change> element -->
+    <xsl:template match="@change" mode="m_documentation">
+        <xsl:attribute name="change">
+            <xsl:value-of select="concat(., ' #', $p_id-change)"/>
+        </xsl:attribute>
     </xsl:template>
 </xsl:stylesheet>
