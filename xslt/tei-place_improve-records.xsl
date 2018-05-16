@@ -111,9 +111,9 @@
             <xsl:if test="not(tei:link)">
                 <xsl:copy-of select="$v_geonames-result-tei/descendant::tei:place[1]/tei:link"/>
             </xsl:if>
-<!--            <xsl:if test="not(tei:idno[@type='geon'])">-->
+            <xsl:if test="not(tei:idno[@type='geon'])">
                  <xsl:copy-of select="$v_geonames-result-tei/descendant::tei:place[1]/tei:idno"/>
-            <!--</xsl:if>-->
+            </xsl:if>
         </xsl:copy>
     </xsl:template>
     
@@ -188,14 +188,14 @@
     </xsl:template>
     
     <!-- decide whether or not to omit existing records -->
-    <xsl:template match="tei:place/tei:idno | tei:place/tei:birth | tei:place/tei:death | tei:place/tei:listBibl" name="t_7">
+    <!--<xsl:template match="tei:place/tei:idno | tei:place/tei:birth | tei:place/tei:death | tei:place/tei:listBibl" name="t_7">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_7: </xsl:text><xsl:value-of select="@xml:id"/>
             </xsl:message>
         </xsl:if>
     </xsl:template>
-    
+    -->
     <!-- replicate everything except @xml:id -->
     <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids" name="t_10">
         <xsl:if test="$p_verbose = true()">
