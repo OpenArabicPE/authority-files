@@ -187,6 +187,13 @@ SRU Browse | Browse Authority Source records by SRU indexes. | /processed/search
     + `srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster/viaf:publishers/viaf:data` retrieves references to names and ISNI numbers
 - birth and death dates
     + `srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster/viaf:birthDate` and `srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster/viaf:deathDate`
+- locations: this is encoded in MARC21 field 551, but many files lack this information alltogether
+    - place of birth: 
+        + `viaf:datafield[@dtype='MARC21'][@tag='551][viaf:subfield[@code='4']='http://d-nb.info/standards/elementset/gnd#placeOfBirth']/viaf:subfield[@code='1']`
+    - place of death
+        - `viaf:datafield[@dtype='MARC21'][@tag='551][viaf:subfield[@code='4']='http://d-nb.info/standards/elementset/gnd#placeOfDeath']/viaf:subfield[@code='1']`
+    - place of activity
+        - `viaf:datafield[@dtype='MARC21'][@tag='551][viaf:subfield[@code='4']='http://d-nb.info/standards/elementset/gnd#placeOfActivity']/viaf:subfield[@code='1']`
 - published works
     + `srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type='ns1:stringOrXmlFragment']/viaf:VIAFCluster/viaf:titles/viaf:work` returns information on titles (`viaf:title`) and the source of this information (`viaf:sources`)
     
