@@ -13,10 +13,10 @@
     
     <xsl:include href="query-geonames.xsl"/>
     
+ 
     <!-- identify the author of the change by means of a @xml:id -->
-    <xsl:param name="p_id-editor" select="'pers_TG'"/>
-    <!-- toggle debugging messages -->
-<!--    <xsl:param name="p_verbose" select="false()"/>-->
+    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    <!--<xsl:param name="p_id-editor" select="'pers_TG'"/>-->
     
     <xsl:template match="@* | node()" name="t_1">
         <xsl:if test="$p_verbose=true()">

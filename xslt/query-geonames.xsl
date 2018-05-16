@@ -19,8 +19,8 @@
     
     <!-- this param establishes the path to the folder holding individual authority files from GeoNames. The file path is relative to this stylesheet!  -->
     <xsl:param name="p_path-authority-files" select="'../data/geonames/'"/>
-    <!-- trigger debugging  -->
-    <xsl:param name="p_verbose" select="true()"/>
+    <!-- trigger debugging: paramter is loaded from OpenArabicPE_parameters.xsl included in parent stylesheet  -->
+<!--    <xsl:param name="p_verbose" select="true()"/>-->
     <!-- these variables are used to establish the language of any given string -->
     <!--    <xsl:variable name="v_string-transcribe-ijmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>
     <xsl:variable name="v_string-transcribe-arabic" select="'بتحخجدرزسصضطظعفقكلمنهاويوي٠١٢٣٤٥٦٧٨٩'"/>-->
