@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Administrative divisions of the Ottoman Empire</title>
+            <author>Till Grallert</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Unpublished</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>The original source was Wikipedia</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <p>This file is meant to encode Ottoman administrative units.</p>
+            <p>All geographic entities should be encoded as individual places
+                  (<tei:gi>place</tei:gi>). Places should be organised as a flat tree into
+                  <tei:gi>listPlace</tei:gi> nodes based on a simple typology of adminUnit (or
+               political unit), settlement, geographic feature. This means that there is a
+                  <tei:gi>listPlace</tei:gi> each for all provinces, districts, counties,
+               settlements, buildings, etc.</p>
+            <p>As the extend, shape, and location of administrative units change over time, they
+               should not be geocoded. Thus the only information each <tei:gi>place</tei:gi> node
+               should carry is a single <tei:gi>placeName</tei:gi> child. Only geographic features
+               and settlements as well as their subunits should be geocoded.</p>
+            <p>Instead of listing all known toponyms as <tei:gi>placeName</tei:gi> children of the
+                  <tei:gi>place</tei:gi> elements, a single toponym is sufficient. Other
+               spellings, languages etc. are then provided through an external
+                  <tei:gi>listNym</tei:gi> and linked trhough the <tei:att>corresp</tei:att> attribute
+               on the <tei:gi>placeName</tei:gi>.</p>
+            <p>The administrative and hierarchical organisation is then provided through separate
+                  <tei:gi>relation</tei:gi> elements, which are organised into
+                  <tei:gi>listRelation</tei:gi> nodes. These relations can be hierarchical or
+               mutual and, most importantly they can be dated (<tei:att>when</tei:att>,
+                  <tei:att>notBefore</tei:att>, <tei:att>notAfter</tei:att>, etc.)</p>
+            <p>In order to provide more human-readability, the <tei:gi>relation</tei:gi> elements
+               can be automatically transformed into nested <tei:gi>place</tei:gi> nodes via
+               XSLT.</p>
+
+
+         </editorialDecl>
+      </encodingDesc>
+      <revisionDesc>
+         <change when="2015-07-19">Moved the content of the file from <gi>sourceDesc</gi> to the <gi>body</gi>.</change>
+         <change when="2015-03-19">Created the file</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <listPlace type="political">
+               <head>Provinces of the Ottoman Empire, c.1876</head>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Constantinople</tei:head>
+                  <tei:note/>
+                  <tei:place>
+                     <tei:placeName>Constantinople</tei:placeName>
+                     <tei:placeName>Vilayet of Constantinople</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Adrianople</tei:head>
+                  <tei:note>sanjaks of Edirne, Tekirdağ, Gelibolu, Filibe, Sliven</tei:note>
+                  <tei:place>
+                     <tei:placeName>Adrianople</tei:placeName>
+                     <tei:placeName>Vilayet of Adrianople</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of the Danube</tei:head>
+                  <tei:note>sanjaks of Ruse, Varna, Vidin, Tulcea, Turnovo, Sofia, Niš</tei:note>
+                  <tei:place>
+                     <tei:placeName>Danube</tei:placeName>
+                     <tei:placeName>Vilayet of the Danube</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Bosnia</tei:head>
+                  <tei:note>sanjaks of Bosna-Serai, Zvornik, Banja Luka, Travnik, Bebkèh, Novi
+                     Pazar</tei:note>
+                  <tei:place>
+                     <tei:placeName>Bosnia</tei:placeName>
+                     <tei:placeName>Vilayet of Bosnia</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Herzegovina</tei:head>
+                  <tei:note>sanjaks of Mostar, Gacko</tei:note>
+                  <tei:place>
+                     <tei:placeName>Herzegovina</tei:placeName>
+                     <tei:placeName>Vilayet of Herzegovina</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Salonica</tei:head>
+                  <tei:note>sanjaks of Salonica, Serres, Drama</tei:note>
+                  <tei:place>
+                     <tei:placeName>Salonica</tei:placeName>
+                     <tei:placeName>Vilayet of Salonica</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Ioannina</tei:head>
+                  <tei:note>sanjaks of Ioannina, Tirhala, Ohrid, Preveze, Berat</tei:note>
+                  <tei:place>
+                     <tei:placeName>Ioannina</tei:placeName>
+                     <tei:placeName>Vilayet of Ioannina</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Monastir</tei:head>
+                  <tei:note>sanjaks of Manastir, Prizren, Üsküb, Dibra</tei:note>
+                  <tei:place>
+                     <tei:placeName>Monastir</tei:placeName>
+                     <tei:placeName>Vilayet of Monastir</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Scutari</tei:head>
+                  <tei:note>sanjak of Scutari</tei:note>
+                  <tei:place>
+                     <tei:placeName>Scutari</tei:placeName>
+                     <tei:placeName>Vilayet of Scutari</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of the Archipelago</tei:head>
+                  <tei:note>sanjaks of Rhodes, Midilli, Sakız, Kos, Cyprus</tei:note>
+                  <tei:place>
+                     <tei:placeName>the</tei:placeName>
+                     <tei:placeName>Vilayet of the Archipelago</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Crete</tei:head>
+                  <tei:note>sanjaks of Chania, Rethymno, Candia, Sfakia, Lasithi</tei:note>
+                  <tei:place>
+                     <tei:placeName>Crete</tei:placeName>
+                     <tei:placeName>Vilayet of Crete</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Hudavendigar</tei:head>
+                  <tei:note>sanjaks of Bursa, Izmid, Karasi, Karahisar-i-Sarip, Kütahya</tei:note>
+                  <tei:place>
+                     <tei:placeName>Hudavendigar</tei:placeName>
+                     <tei:placeName>Vilayet of Hudavendigar</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Aidin</tei:head>
+                  <tei:note>sanjaks of İzmir, Aydın, Saruhan, Menteşe</tei:note>
+                  <tei:place>
+                     <tei:placeName>Aidin</tei:placeName>
+                     <tei:placeName>Vilayet of Aidin</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Ankara</tei:head>
+                  <tei:note>sanjaks of Ankara, Yozgat, Kayseri, Kırşehir</tei:note>
+                  <tei:place>
+                     <tei:placeName>Ankara</tei:placeName>
+                     <tei:placeName>Vilayet of Ankara</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Konya</tei:head>
+                  <tei:note>sanjaks of Konya, Teke, Hamid, Niğde, Burdur</tei:note>
+                  <tei:place>
+                     <tei:placeName>Konya</tei:placeName>
+                     <tei:placeName>Vilayet of Konya</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Kastamonu</tei:head>
+                  <tei:note>sanjaks of Kastamonu, Boli, Sinop, Çankırı</tei:note>
+                  <tei:place>
+                     <tei:placeName>Kastamonu</tei:placeName>
+                     <tei:placeName>Vilayet of Kastamonu</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Trebizond</tei:head>
+                  <tei:note>sanjaks of Trebizond, Gümüşhane, Batumi, Canik</tei:note>
+                  <tei:place>
+                     <tei:placeName>Trebizond</tei:placeName>
+                     <tei:placeName>Vilayet of Trebizond</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Sivas</tei:head>
+                  <tei:note>sanjaks of Sivas, Amasya, Karahisar-ı Şarki</tei:note>
+                  <tei:place>
+                     <tei:placeName>Sivas</tei:placeName>
+                     <tei:placeName>Vilayet of Sivas</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Erzurum</tei:head>
+                  <tei:note>sanjaks of Erzurum, Tchaldir, Bayezit, Kars, Mouch, Erzincan,
+                     Van</tei:note>
+                  <tei:place>
+                     <tei:placeName>Erzurum</tei:placeName>
+                     <tei:placeName>Vilayet of Erzurum</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Diyarbekir</tei:head>
+                  <tei:note>sanjaks of Diyarbakır, Mamuret-ul-Aziz, Mardin, Siirt,
+                     Malatya</tei:note>
+                  <tei:place>
+                     <tei:placeName>Diyarbekir</tei:placeName>
+                     <tei:placeName>Vilayet of Diyarbekir</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Adana</tei:head>
+                  <tei:note>sanjaks of Adana, Kozan, İçel, Paias</tei:note>
+                  <tei:place>
+                     <tei:placeName>Adana</tei:placeName>
+                     <tei:placeName>Vilayet of Adana</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Syria</tei:head>
+                  <tei:note>sanjaks of Damascus, Hama, Beirut, Tripoli, Hauran, Akka, Belka,
+                     Kudus-i-Cherif (Jerusalem)</tei:note>
+                  <tei:place>
+                     <tei:placeName>Syria</tei:placeName>
+                     <tei:placeName>Vilayet of Syria</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Aleppo</tei:head>
+                  <tei:note>sanjaks of Aleppo, Maraş, Urfa, Zor</tei:note>
+                  <tei:place>
+                     <tei:placeName>Aleppo</tei:placeName>
+                     <tei:placeName>Vilayet of Aleppo</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Baghdad</tei:head>
+                  <tei:note>sanjaks of Baghdad, Mosul, Sharazor, Sulaymaniyah, Dialim, Kerbela,
+                     Helleh, Amara</tei:note>
+                  <tei:place>
+                     <tei:placeName>Baghdad</tei:placeName>
+                     <tei:placeName>Vilayet of Baghdad</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Basra</tei:head>
+                  <tei:note>sanjaks of Basra, Muntafiq, Najd, Hejaz</tei:note>
+                  <tei:place>
+                     <tei:placeName>Basra</tei:placeName>
+                     <tei:placeName>Vilayet of Basra</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Emirate">
+                  <tei:head>Emirate of Mecca</tei:head>
+                  <tei:note>Mecca, Medina</tei:note>
+                  <tei:place>
+                     <tei:placeName>Mecca</tei:placeName>
+                     <tei:placeName>Emirate of Mecca</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Yemen</tei:head>
+                  <tei:note>sanjaks of Sana'a, Hudaydah, Asir, Ta'izz</tei:note>
+                  <tei:place>
+                     <tei:placeName>Yemen</tei:placeName>
+                     <tei:placeName>Vilayet of Yemen</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <tei:listPlace type="Vilayet">
+                  <tei:head>Vilayet of Tripolitania</tei:head>
+                  <tei:note>sanjaks of Tripoli, Bengazi, Khoms, Djebal gharbiyeh, Fezzan</tei:note>
+                  <tei:place>
+                     <tei:placeName>Tripolitania</tei:placeName>
+                     <tei:placeName>Vilayet of Tripolitania</tei:placeName>
+                  </tei:place>
+               </tei:listPlace>
+               <listPlace>
+                  <head>"independent" units</head>
+                  <place>
+                     <placeName>Mount Lebanon Mutasarrifate</placeName>
+                  </place>
+                  <place>
+                     <placeName>Principality of Samos</placeName>
+                  </place>
+                  <place>
+                     <placeName>Mount Athos</placeName>
+                     <note>(part of the Sanjak of Salonica)</note>
+                  </place>
+               </listPlace>
+            </listPlace>
+            <listPlace type="political" subtype="districts">
+               <head>Sancaks, c. 1876</head>
+               <place type="district">
+                  <placeName>Sancak of Sliven</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Filibe</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Gelibolu</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Tekirdağ</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Edirne</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Niš</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Sofia</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Turnovo</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Tulcea</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Vidin</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Varna</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Ruse</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Gacko</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Mostar</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Drama</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Serres</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Salonica</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Berat</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Preveze</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Ohrid</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Tirhala</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Ioannina</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Dibra</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Üsküb</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Prizren</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Manastir</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>sanjak of Scutari</placeName>
+               </place>
+
+               <place type="district">
+                  <placeName>Sancak of Lasithi</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Sfakia</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Candia</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Rethymno</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Chania</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Kütahya</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Karahisar-i-Sarip</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Karasi</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Izmid</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Bursa</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Menteşe</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Saruhan</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Aydın</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of İzmir</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Kırşehir</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Kayseri</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Yozgat</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Ankara</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Burdur</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Niğde</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Hamid</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Teke</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Konya</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Çankırı</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Sinop</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Boli</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Kastamonu</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Canik</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Batumi</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Gümüşhane</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Trebizond</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Karahisar-ı Şarki</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Amasya</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Sivas</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Paias</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of İçel</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Kozan</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Adana</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Zor</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Urfa</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Maraş</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Aleppo</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Hejaz</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Najd</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Muntafiq</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Basra</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Ta'izz</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Asir</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Hudaydah</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Sana'a</placeName>
+               </place>
+
+
+               <place type="district">
+                  <placeName>Sancak of Fezzan</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of gharbiyeh</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Djebal</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Khoms</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Bengazi</placeName>
+               </place>
+               <place type="district">
+                  <placeName>Sancak of Tripoli</placeName>
+               </place>
+
+
+            </listPlace>
+            <listPlace type="political">
+               <head>Vilayets and independent sanjaks in 1917</head>
+               <listPlace type="provinces">
+                  <head>Vilayets</head>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Constantinople</tei:head>
+                     <tei:place>
+                        <tei:placeName>Constantinople</tei:placeName>
+                        <tei:placeName>Vilayet of Constantinople</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Adrianople</tei:head>
+                     <tei:place>
+                        <tei:placeName>Adrianople</tei:placeName>
+                        <tei:placeName>Vilayet of Adrianople</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Adana</tei:head>
+                     <tei:place>
+                        <tei:placeName>Adana</tei:placeName>
+                        <tei:placeName>Vilayet of Adana</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Angora</tei:head>
+                     <tei:place>
+                        <tei:placeName>Angora</tei:placeName>
+                        <tei:placeName>Vilayet of Angora</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Aidin</tei:head>
+                     <tei:place>
+                        <tei:placeName>Aidin</tei:placeName>
+                        <tei:placeName>Vilayet of Aidin</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Beirut</tei:head>
+                     <tei:place>
+                        <tei:placeName>Beirut</tei:placeName>
+                        <tei:placeName>Vilayet of Beirut</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Aleppo</tei:head>
+                     <tei:place>
+                        <tei:placeName>Aleppo</tei:placeName>
+                        <tei:placeName>Vilayet of Aleppo</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Bursa</tei:head>
+                     <tei:place>
+                        <tei:placeName>Bursa</tei:placeName>
+                        <tei:placeName>Vilayet of Bursa</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Diarbekr</tei:head>
+                     <tei:place>
+                        <tei:placeName>Diarbekr</tei:placeName>
+                        <tei:placeName>Vilayet of Diarbekr</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Syria</tei:head>
+                     <tei:place>
+                        <tei:placeName>Syria</tei:placeName>
+                        <tei:placeName>Vilayet of Syria</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Sivas</tei:head>
+                     <tei:place>
+                        <tei:placeName>Sivas</tei:placeName>
+                        <tei:placeName>Vilayet of Sivas</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Trebizond</tei:head>
+                     <tei:place>
+                        <tei:placeName>Trebizond</tei:placeName>
+                        <tei:placeName>Vilayet of Trebizond</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Kastamuni</tei:head>
+                     <tei:place>
+                        <tei:placeName>Kastamuni</tei:placeName>
+                        <tei:placeName>Vilayet of Kastamuni</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Konia</tei:head>
+                     <tei:place>
+                        <tei:placeName>Konia</tei:placeName>
+                        <tei:placeName>Vilayet of Konia</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Mamuret ul-Aziz</tei:head>
+                     <tei:place>
+                        <tei:placeName>Mamuret ul-Aziz</tei:placeName>
+                        <tei:placeName>Vilayet of Mamuret ul-Aziz</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Vilayet">
+                     <tei:head>Vilayet of Mosul</tei:head>
+                     <tei:place>
+                        <tei:placeName>Mosul</tei:placeName>
+                        <tei:placeName>Vilayet of Mosul</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+               </listPlace>
+
+               <listPlace type="districts">
+                  <head>Independent Sanjaks</head>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Eskishehir</tei:head>
+                     <tei:place>
+                        <tei:placeName>Eskishehir</tei:placeName>
+                        <tei:placeName>Sanjak of Eskishehir</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Urfa</tei:head>
+                     <tei:place>
+                        <tei:placeName>Urfa</tei:placeName>
+                        <tei:placeName>Sanjak of Urfa</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Izmid</tei:head>
+                     <tei:place>
+                        <tei:placeName>Izmid</tei:placeName>
+                        <tei:placeName>Sanjak of Izmid</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Ichili</tei:head>
+                     <tei:place>
+                        <tei:placeName>Ichili</tei:placeName>
+                        <tei:placeName>Sanjak of Ichili</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Boli</tei:head>
+                     <tei:place>
+                        <tei:placeName>Boli</tei:placeName>
+                        <tei:placeName>Sanjak of Boli</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Teke</tei:head>
+                     <tei:place>
+                        <tei:placeName>Teke</tei:placeName>
+                        <tei:placeName>Sanjak of Teke</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Janyk</tei:head>
+                     <tei:place>
+                        <tei:placeName>Janyk</tei:placeName>
+                        <tei:placeName>Sanjak of Janyk</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Chatalja</tei:head>
+                     <tei:place>
+                        <tei:placeName>Chatalja</tei:placeName>
+                        <tei:placeName>Sanjak of Chatalja</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Zor</tei:head>
+                     <tei:place>
+                        <tei:placeName>Zor</tei:placeName>
+                        <tei:placeName>Sanjak of Zor</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Kara Hissar Sahib</tei:head>
+                     <tei:place>
+                        <tei:placeName>Kara Hissar Sahib</tei:placeName>
+                        <tei:placeName>Sanjak of Kara Hissar Sahib</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Karasi</tei:head>
+                     <tei:place>
+                        <tei:placeName>Karasi</tei:placeName>
+                        <tei:placeName>Sanjak of Karasi</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Dardanelles</tei:head>
+                     <tei:place>
+                        <tei:placeName>Dardanelles</tei:placeName>
+                        <tei:placeName>Sanjak of Dardanelles</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Kaisari</tei:head>
+                     <tei:place>
+                        <tei:placeName>Kaisari</tei:placeName>
+                        <tei:placeName>Sanjak of Kaisari</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Kutahia</tei:head>
+                     <tei:place>
+                        <tei:placeName>Kutahia</tei:placeName>
+                        <tei:placeName>Sanjak of Kutahia</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Marash</tei:head>
+                     <tei:place>
+                        <tei:placeName>Marash</tei:placeName>
+                        <tei:placeName>Sanjak of Marash</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Menteshe</tei:head>
+                     <tei:place>
+                        <tei:placeName>Menteshe</tei:placeName>
+                        <tei:placeName>Sanjak of Menteshe</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+                  <tei:listPlace type="Sanjak">
+                     <tei:head>Sanjak of Nigde</tei:head>
+                     <tei:place>
+                        <tei:placeName>Nigde</tei:placeName>
+                        <tei:placeName>Sanjak of Nigde</tei:placeName>
+                     </tei:place>
+                  </tei:listPlace>
+               </listPlace>
+            </listPlace>
+            <listPlace>
+               <head>Administrative division of the Ottoman Empire</head>
+               <listPlace type="provinces">
+                  <place type="province" xml:id="place000001">
+                     <placeName>Province of Syria</placeName>
+                  </place>
+                  <place type="province" xml:id="place000010">
+                     <placeName>Province of Beirut</placeName>
+                  </place>
+               </listPlace>
+               <listPlace type="districts">
+                  <place type="district" xml:id="place000002">
+                     <placeName>Sancak of Damascus</placeName>
+                  </place>
+                  <place type="district" xml:id="place000003">
+                     <placeName>Sancak of Hama</placeName>
+                  </place>
+                  <place type="district" xml:id="place000004">
+                     <placeName>Sancak of Beirut</placeName>
+                  </place>
+                  <place type="district" xml:id="place000005">
+                     <placeName>Sancak of Tripoli</placeName>
+                  </place>
+                  <place type="district" xml:id="place000006">
+                     <placeName>Sancak of Hauran</placeName>
+                  </place>
+                  <place type="district" xml:id="place000007">
+                     <placeName>Sancak of Akka</placeName>
+                  </place>
+                  <place type="district" xml:id="place000008">
+                     <placeName>Sancak of Belka</placeName>
+                  </place>
+               </listPlace>
+               <listPlace type="settlements">
+                  <place type="settlement" subtype="city" xml:id="place000009">
+                     <placeName>Damascus</placeName>
+                  </place>
+                  <place type="settlement" subtype="city" xml:id="place000011">
+                     <placeName>Beirut</placeName>
+                  </place>
+                  <place type="settlement" subtype="city" xml:id="place000012">
+                     <placeName>Hama</placeName>
+                  </place>
+                  <place type="settlement" subtype="city" xml:id="place000013">
+                     <placeName>Homs</placeName>
+                  </place>
+               </listPlace>
+               <!-- the following listRelation elements build the actual administrative units from their components. They can be dated. -->
+               <listRelation type="provinces">
+                  <relation name="province" active="#place000001"
+                     passive="#place000002 #place000003 #place000004 #place000005 #place000006 #place000007 #place000008"
+                     notBefore="1867" notAfter="1888"/>
+               </listRelation>
+               <listRelation type="districts">
+                  <relation name="district" active="#place000002" passive="#place000009"/>
+               </listRelation>
+               <listRelation type="capitals">
+                  <relation name="capital" active="#place000009" passive="#place000001"/>
+                  <relation name="capital" active="#place000009" passive="#place000002"/>
+               </listRelation>
+            </listPlace>
+      </body>
+   </text>
+</TEI>
