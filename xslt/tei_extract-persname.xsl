@@ -23,7 +23,7 @@
 
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
-    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="no"
+    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="no" name="xml"
         exclude-result-prefixes="#all"/>
     <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes"
         name="xml_indented" exclude-result-prefixes="#all"/>
