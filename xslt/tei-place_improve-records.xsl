@@ -40,11 +40,12 @@
         </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="tei:head"/>
             <xsl:apply-templates select="tei:place">
                 <!-- this sort should consider the Arabic "al-" -->
                 <xsl:sort select="tei:idno[@type='geon'][1]" order="descending"/>
             </xsl:apply-templates>
-            <xsl:apply-templates select="child::node()[not(self::tei:place)]"/>
+            <xsl:apply-templates select="tei:listPlace"/>
         </xsl:copy>
     </xsl:template>
     
