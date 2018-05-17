@@ -251,6 +251,7 @@
                                 <tei:placeName source="#org_geon" type="alt" xml:lang="ar">حلب</tei:placeName>
                                 <placeName xml:lang="ar">حلب الشهباء</placeName>
                                 <placeName xml:lang="ar">الشهباء</placeName>
+                                <placeName xml:lang="ar">عاصمة سورية البيضاء</placeName>
                                 <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Alep</tei:placeName>
                                 <tei:placeName source="#org_geon" type="alt" xml:lang="de">Aleppo</tei:placeName>
                                 <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Halep</tei:placeName>
@@ -261,6 +262,7 @@
                                 <placeName type="simple">Aleppo (Province)</placeName>
                                 <placeName n="1" type="admin" xml:lang="ar-Latn-x-ijmes">ḥalab vilāyeti</placeName>
                                 <placeName n="2" type="admin" xml:lang="ota-Latn-x-ijmes">vilāyet-i ḥalab</placeName>
+                                <placeName xml:lang="ar">ولاية حلب</placeName>
                             </place>
                             <listPlace type="county">
                                 <head>Aintab (kaza)</head>
@@ -269,6 +271,8 @@
                                 </tei:place>
                                 <tei:place type="town">
                                     <placeName xml:lang="ar">عينتاب</placeName>
+                                    <placeName xml:lang="ar">شهرة عينتاب</placeName>
+                                    <placeName xml:lang="ar">عين تاب</placeName>
                                 </tei:place>
                             </listPlace>
                         </listPlace>
@@ -320,7 +324,11 @@
                                 <place type="town">
                                     <placeName type="simple">Tripoli</placeName>
                                     <placeName xml:lang="ar">طرابلس الشام</placeName>
+                                    <placeName xml:lang="ar">طرابلس</placeName>
                                 </place>
+                                <tei:place>
+                                    <placeName xml:lang="ar">عكار</placeName>
+                                </tei:place>
                             </listPlace>
                             <listPlace type="district">
                                 <head>Sancak of Acre</head>
@@ -1367,6 +1375,7 @@
                                     </place>
                                     <tei:place>
                                         <placeName xml:lang="ota">بيره جك</placeName>
+                                        <placeName xml:lang="ota">بيره جيك</placeName>
                                     </tei:place>
                                     <place type="town" xml:id="lgn266045">
                                         <placeName type="simple">Zahle</placeName>
@@ -1399,29 +1408,33 @@
                                     </place>
                                 </listPlace>
                                 <listPlace type="county">
+                                    <head>Kaza of Wādī al-ʿAjm</head>
                                     <place type="county">
                                         <placeName type="simple">Wadi al-Ajm</placeName>
                                         <placeName xml:lang="ar-Latn-x-ijmes">Wādī al-ʿAjm</placeName>
+                                        <placeName xml:lang="ar">قضاء وادي العجم</placeName>
                                     </place>
                                 </listPlace>
                                 <listPlace corresp="#lgn268737" type="county">
                                     <place type="county" xml:id="lgn268737">
-                                        <placeName type="simple">Rasheya</placeName>
+                                        <!--                                        <placeName type="simple">Rasheya</placeName>-->
                                         <placeName type="toponym">Caza de Rachaïya</placeName>
-                                        <placeName xml:lang="ar-Latn-x-ijmes">Rāshayā</placeName>
+                                        <placeName xml:lang="ar-Latn-x-ijmes">Qaḍāʾ Rāshayā</placeName>
                                         <placeName xml:lang="en">Kaza of Rasheya</placeName>
                                         <placeName xml:lang="ar">قضاء راشيا</placeName>
                                         <placeName n="1" source="#org_geon" type="alt">Caza de Rachaiya</placeName>
                                         <placeName n="2" source="#org_geon" type="alt">Caza de Rachaïya</placeName>
                                         <placeName n="3" source="#org_geon" type="alt">Qada' Rashayya</placeName>
                                         <placeName n="4" source="#org_geon" type="alt">Qaḑā’ Rāshayyā</placeName>
-                                        <placeName n="5" source="#org_geon" type="alt">Rashayya</placeName>
-                                        <placeName n="1" source="#org_geon" type="alt">Rachaiya</placeName>
+                                        <!--<placeName n="5" source="#org_geon" type="alt">Rashayya</placeName><placeName n="1" source="#org_geon" type="alt">Rachaiya</placeName>-->
                                         <location>
                                             <geo>33.53333, 35.83333</geo>
                                         </location>
                                         <tei:idno type="geon">268737</tei:idno>
                                     </place>
+                                    <tei:place type="village">
+                                        <placeName xml:lang="ar">راشيا</placeName>
+                                    </tei:place>
                                 </listPlace>
                                 <listPlace type="county">
                                     <place type="town" xml:id="lgn170905">
@@ -1841,6 +1854,9 @@
                             <tei:place>
                                 <placeName xml:lang="ar">البترون</placeName>
                             </tei:place>
+                            <tei:place>
+                                <placeName xml:lang="ar">جونية</placeName>
+                            </tei:place>
                         </listPlace>
                         <listPlace>
                             <head>Other places</head>
@@ -1921,6 +1937,7 @@
                         <head>Arabian Peninsula</head>
                         <tei:place>
                             <placeName xml:lang="ar">المدينة المنورة</placeName>
+                            <placeName xml:lang="ar">المدينة</placeName>
                         </tei:place>
                         <tei:place>
                             <placeName rend="brackets" xml:lang="ar">جزيرة العرب</placeName>
@@ -1931,6 +1948,7 @@
                         </tei:place>
                         <tei:place type="region">
                             <placeName xml:lang="ar">النجف</placeName>
+                            <placeName xml:lang="ar">النجف الأشرف</placeName>
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">جدة</placeName>
@@ -1976,6 +1994,9 @@
                             <placeName xml:lang="ar">الإسكندرية</placeName>
                             <placeName xml:lang="ar">الاسكندرية</placeName>
                         </tei:place>
+                        <tei:place>
+                            <placeName xml:lang="ar">حلوان</placeName>
+                        </tei:place>
                     </listPlace>
                     <listPlace type="region">
                         <head>Yemen</head>
@@ -1996,10 +2017,14 @@
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">مناستر</placeName>
+                            <placeName xml:lang="ar">منشستر</placeName>
                         </tei:place>
                     </listPlace>
                     <listPlace type="region">
                         <head>Anatolia</head>
+                        <tei:place type="region">
+                            <placeName xml:lang="ar">الاناضول</placeName>
+                        </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">ازمير</placeName>
                         </tei:place>
@@ -2136,7 +2161,9 @@
                             <placeName xml:lang="fr-Arab-AR">جنيف</placeName>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="de">Bern</placeName>
                             <placeName xml:lang="de-Arab-AR">برن</placeName>
+                            <placeName xml:lang="ar">بيرن</placeName>
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="de-Arab-AR">زوريخ</placeName>
@@ -2152,7 +2179,9 @@
                         <placeName xml:lang="ar">الجبل السود</placeName>
                     </tei:place>
                     <tei:place>
+                        <placeName xml:lang="en">Denmark</placeName>
                         <placeName xml:lang="ar">الدانيمرك</placeName>
+                        <placeName xml:lang="ar">الدانيمارك</placeName>
                     </tei:place>
                     <tei:place>
                         <placeName xml:lang="ar">بلغاريا</placeName>
@@ -2178,6 +2207,7 @@
                     </listPlace>
                     <tei:place>
                         <placeName xml:lang="ar">اليابان</placeName>
+                        <placeName xml:lang="ar">يابان</placeName>
                     </tei:place>
                     <tei:place>
                         <placeName xml:lang="ar">اليونان</placeName>
@@ -2231,6 +2261,7 @@
                         <head>USA</head>
                         <tei:place type="country">
                             <placeName xml:lang="ar">الولايات المتحدة</placeName>
+                            <placeName xml:lang="ar">الولايات المتحدة الأميركية</placeName>
                             <placeName xml:lang="ar">أميركا</placeName>
                             <placeName xml:lang="ar">أمريكا</placeName>
                         </tei:place>
@@ -2285,28 +2316,43 @@
                         </listPlace>
                         <listPlace type="state">
                             <head>Illinois</head>
+                            <tei:place type="state">
+                                <placeName xml:lang="ar">ولاية ايلينوا</placeName>
+                            </tei:place>
                             <tei:place>
                                 <placeName xml:lang="ar">شيكاغو</placeName>
                             </tei:place>
-                            <listPlace type="state">
-                                <head>Pennsylvania</head>
-                                <tei:place>
-                                    <placeName xml:lang="ar">فيلادلفيا</placeName>
-                                </tei:place>
-                            </listPlace>
-                            <listPlace type="state">
-                                <head>Kansas</head>
-                                <tei:place>
-                                    <placeName xml:lang="ar">ولاية كنساس</placeName>
-                                </tei:place>
-                            </listPlace>
-                            <listPlace type="state">
-                                <head>Iowa</head>
-                                <tei:place>
-                                    <placeName xml:lang="ar">ولاية أيوا</placeName>
-                                    <placeName xml:lang="ar">أيوا</placeName>
-                                </tei:place>
-                            </listPlace>
+                            <tei:place>
+                                <placeName xml:lang="en-Arab-Ar">سبرنجفيلد</placeName>
+                            </tei:place>
+                        </listPlace>
+                        <listPlace type="state">
+                            <head>Pennsylvania</head>
+                            <tei:place>
+                                <placeName xml:lang="ar">فيلادلفيا</placeName>
+                            </tei:place>
+                        </listPlace>
+                        <listPlace type="state">
+                            <head>Kansas</head>
+                            <tei:place>
+                                <placeName xml:lang="ar">ولاية كنساس</placeName>
+                            </tei:place>
+                        </listPlace>
+                        <listPlace type="state">
+                            <head>Iowa</head>
+                            <tei:place>
+                                <placeName xml:lang="ar">ولاية أيوا</placeName>
+                                <placeName xml:lang="ar">أيوا</placeName>
+                            </tei:place>
+                        </listPlace>
+                        <listPlace type="state">
+                            <head>New Jersey</head>
+                            <tei:place>
+                                <placeName xml:lang="ar">ساندي هوك</placeName>
+                            </tei:place>
+                            <tei:place type="state">
+                                <placeName xml:lang="ar">ولاية نيوجرسي</placeName>
+                            </tei:place>
                         </listPlace>
                     </listPlace>
                     <listPlace type="country">
@@ -2389,9 +2435,17 @@
                     </listPlace>
                     <listPlace type="country">
                         <head>Germany</head>
-                        <tei:place>
+                        <tei:place type="country">
                             <placeName xml:lang="ar">ألمانيا</placeName>
                             <placeName xml:lang="ar">الامبراطورية الألمانية</placeName>
+                        </tei:place>
+                        <tei:place type="state">
+                            <placeName xml:lang="en">Saxony</placeName>
+                            <placeName xml:lang="ar">إمارة ساكس</placeName>
+                        </tei:place>
+                        <tei:place type="state">
+                            <placeName xml:lang="en">Prussia</placeName>
+                            <placeName xml:lang="ar">بروسيا</placeName>
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">برلين</placeName>
@@ -2426,6 +2480,9 @@
                         <head>Sweden</head>
                         <tei:place>
                             <placeName xml:lang="ar">جوتلاند</placeName>
+                        </tei:place>
+                        <tei:place>
+                            <placeName xml:lang="ar">استوكهولم</placeName>
                         </tei:place>
                     </listPlace>
                     <listPlace type="country">
