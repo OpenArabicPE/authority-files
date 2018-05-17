@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
+    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented" exclude-result-prefixes="#all"/>
     <!-- This xslt takes a list of place/placeName produced from a query to GeoNames.org and produces a well-formed TEI listPlace element -->
     <!--    <xsl:include href="/BachUni/projekte/XML/Functions/BachFunctions v3.xsl"/>-->
     <xsl:param name="p_limit-output-languages" select="true()"/>
