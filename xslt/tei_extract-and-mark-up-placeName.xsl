@@ -32,8 +32,6 @@
     <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
-        <!--<xsl:param name="p_id-editor" select="'pers_TG'"/>
-    <xsl:param name="p_id-change" select="'testId'"/>-->
 
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master"
