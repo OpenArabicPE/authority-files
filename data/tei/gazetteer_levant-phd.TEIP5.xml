@@ -65,6 +65,7 @@
                         <placeName xml:lang="ar">الولايات العثمانية</placeName>
                         <placeName xml:lang="ar">البلاد العثمانية</placeName>
                         <placeName xml:lang="ar">الدولة العثمانية</placeName>
+                        <placeName xml:lang="ar">المملكة العثمانية</placeName>
                     </tei:place>
                     <listPlace type="town">
                         <place type="town" xml:id="lgn745044">
@@ -77,6 +78,7 @@
                             <placeName xml:lang="ar">الأستانة</placeName>
                             <placeName xml:lang="ar">الاستانة</placeName>
                             <placeName xml:lang="ar">الآستانة</placeName>
+                            <placeName xml:lang="ar">دار السلطنة</placeName>
                             <location>
                                 <geo>41.01384, 28.94966</geo>
                             </location>
@@ -109,6 +111,7 @@
                             <placeName type="simple">Nablus</placeName>
                             <placeName type="toponym">Nablus</placeName>
                             <placeName xml:lang="en">Nablus</placeName>
+                            <placeName xml:lang="ar">نابلس</placeName>
                             <location>
                                 <geo>32.24056, 35.28708</geo>
                             </location>
@@ -130,19 +133,6 @@
                             <idno type="url">http://en.wikipedia.org/wiki/East_Jerusalem</idno>
                             <tei:idno type="geon">7303419</tei:idno>
                         </place>
-                        <place type="town" xml:id="lgn3665474">
-                            <placeName type="simple">Acre</placeName>
-                            <placeName type="toponym">Akkon</placeName>
-                            <placeName xml:lang="en">Acre</placeName>
-                            <placeName xml:lang="en">Akka</placeName>
-                            <placeName xml:lang="ar">عكا</placeName>
-                            <location>
-                                <geo>32.923925, 35.070630</geo>
-                            </location>
-                            <idno type="url">http://en.wikipedia.org/wiki/Acre_(state)</idno>
-                            <idno type="url">http://id.loc.gov/authorities/names/n80113129</idno>
-                            <tei:idno type="geon">3665474</tei:idno>
-                        </place>
                         <place type="town" xml:id="lgn299817">
                             <placeName type="simple">Tarsus</placeName>
                             <placeName type="toponym">Tarsus</placeName>
@@ -157,22 +147,6 @@
                             <idno type="url">http://en.wikipedia.org/wiki/Tarsus%2C_Mersin</idno>
                             <idno type="url">http://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%80%D1%81%D1%83%D1%81</idno>
                             <tei:idno type="geon">299817</tei:idno>
-                        </place>
-                        <place type="town" xml:id="lgn294801">
-                            <placeName type="simple">Haifa</placeName>
-                            <placeName type="toponym">Haifa</placeName>
-                            <placeName n="1" source="#org_geon" type="alt">Caiffa</placeName>
-                            <placeName xml:lang="en">Haifa</placeName>
-                            <location>
-                                <geo>32.81841, 34.9885</geo>
-                            </location>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="ar">حيفا</tei:placeName>
-                            <placeName xml:lang="ar">حيفاء</placeName>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Haïfa</tei:placeName>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Haifa</tei:placeName>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Hayfa</tei:placeName>
-                            <idno type="url">http://en.wikipedia.org/wiki/Haifa</idno>
-                            <tei:idno type="geon">294801</tei:idno>
                         </place>
                         <place type="town" xml:id="lgn293253">
                             <placeName type="simple">Jaffa</placeName>
@@ -203,28 +177,30 @@
                             <placeName type="simple">Tiberia</placeName>
                             <placeName xml:lang="ar">طبرية</placeName>
                         </place>
-                        <place type="town">
-                            <placeName type="simple">Tripoli</placeName>
-                            <placeName xml:lang="ar">طرابلس الشام</placeName>
-                        </place>
                         <listPlace corresp="#lgn170063p" type="province">
                             <head>Province of Aleppo</head>
-                            <place type="town" xml:id="lgn173576">
-                                <placeName type="simple">Latakia</placeName>
-                                <placeName type="toponym">Latakia</placeName>
-                                <placeName xml:lang="en">Latakia</placeName>
-                                <location>
-                                    <geo>35.51484, 35.77684</geo>
-                                </location>
-                                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">اللاذقية</tei:placeName>
-                                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">لاذقية</tei:placeName>
-                                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Lattaquié</tei:placeName>
-                                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Latakia</tei:placeName>
-                                <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Lazkiye</tei:placeName>
-                                <idno type="url">http://en.wikipedia.org/wiki/Latakia</idno>
-                                <idno type="url">http://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B0%D0%BA%D0%B8%D1%8F</idno>
-                                <tei:idno type="geon">173576</tei:idno>
-                            </place>
+                            <listPlace type="district">
+                                <head>Sancak of Latakia</head>
+                                <tei:place type="district">
+                                    <placeName xml:lang="ar">لواء اللاذقية</placeName>
+                                </tei:place>
+                                <place type="town" xml:id="lgn173576">
+                                    <placeName type="simple">Latakia</placeName>
+                                    <placeName type="toponym">Latakia</placeName>
+                                    <placeName xml:lang="en">Latakia</placeName>
+                                    <location>
+                                        <geo>35.51484, 35.77684</geo>
+                                    </location>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">اللاذقية</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">لاذقية</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Lattaquié</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Latakia</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Lazkiye</tei:placeName>
+                                    <idno type="url">http://en.wikipedia.org/wiki/Latakia</idno>
+                                    <idno type="url">http://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D1%82%D0%B0%D0%BA%D0%B8%D1%8F</idno>
+                                    <tei:idno type="geon">173576</tei:idno>
+                                </place>
+                            </listPlace>
                             <place type="town" xml:id="lgn170794">
                                 <placeName type="simple">Dayr al-Zur</placeName>
                                 <placeName type="toponym">Deir ez-Zor</placeName>
@@ -319,6 +295,7 @@
                                 <placeName n="2" source="#org_geon" type="alt">Beirout</placeName>
                                 <placeName xml:lang="en">Beirut</placeName>
                                 <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar">مدينة بيروت</placeName>
                                 <location>
                                     <geo>33.88894, 35.49442</geo>
                                 </location>
@@ -331,10 +308,62 @@
                             <place type="province" xml:id="lgn276781p">
                                 <placeName type="simple">Beirut (Province)</placeName>
                                 <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="ar">ولاية بيروت</placeName>
                             </place>
                             <place type="town">
                                 <placeName type="simple">ʿAbayh</placeName>
                             </place>
+                            <listPlace type="district">
+                                <head>Sancak of Tripoli</head>
+                                <tei:place type="district">
+                                    <placeName xml:lang="ar">لواء طرابلس</placeName>
+                                </tei:place>
+                                <place type="town">
+                                    <placeName type="simple">Tripoli</placeName>
+                                    <placeName xml:lang="ar">طرابلس الشام</placeName>
+                                </place>
+                            </listPlace>
+                            <listPlace type="district">
+                                <head>Sancak of Acre</head>
+                                <tei:place type="district">
+                                    <placeName xml:lang="ar">لواء عكا</placeName>
+                                </tei:place>
+                                <place type="town" xml:id="lgn3665474">
+                                    <placeName type="simple">Acre</placeName>
+                                    <placeName type="toponym">Akkon</placeName>
+                                    <placeName xml:lang="en">Acre</placeName>
+                                    <placeName xml:lang="en">Akka</placeName>
+                                    <placeName xml:lang="ar">عكا</placeName>
+                                    <location>
+                                        <geo>32.923925, 35.070630</geo>
+                                    </location>
+                                    <idno type="url">http://en.wikipedia.org/wiki/Acre_(state)</idno>
+                                    <idno type="url">http://id.loc.gov/authorities/names/n80113129</idno>
+                                    <tei:idno type="geon">3665474</tei:idno>
+                                </place>
+                                <listPlace type="county">
+                                    <head>Kaza of Haifa</head>
+                                    <tei:place>
+                                        <placeName xml:lang="ar">قضاء حيفا</placeName>
+                                    </tei:place>
+                                    <place type="town" xml:id="lgn294801">
+                                        <placeName type="simple">Haifa</placeName>
+                                        <placeName type="toponym">Haifa</placeName>
+                                        <placeName n="1" source="#org_geon" type="alt">Caiffa</placeName>
+                                        <placeName xml:lang="en">Haifa</placeName>
+                                        <location>
+                                            <geo>32.81841, 34.9885</geo>
+                                        </location>
+                                        <tei:placeName source="#org_geon" type="alt" xml:lang="ar">حيفا</tei:placeName>
+                                        <placeName xml:lang="ar">حيفاء</placeName>
+                                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Haïfa</tei:placeName>
+                                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Haifa</tei:placeName>
+                                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Hayfa</tei:placeName>
+                                        <idno type="url">http://en.wikipedia.org/wiki/Haifa</idno>
+                                        <tei:idno type="geon">294801</tei:idno>
+                                    </place>
+                                </listPlace>
+                            </listPlace>
                         </listPlace>
                         <listPlace corresp="#lgn170654p" type="province">
                             <head>Province of Syria</head>
@@ -384,6 +413,7 @@
                                 <placeName n="2" type="admin" xml:lang="en">Province of Syria</placeName>
                                 <placeName xml:lang="ar">سورية</placeName>
                                 <placeName xml:lang="ar">ولاية سوريا</placeName>
+                                <placeName xml:lang="ar">ولاية سورية</placeName>
                             </place>
                             <listPlace corresp="#lgnd170654" type="district">
                                 <head>Sancak of Damascus</head>
@@ -1412,6 +1442,9 @@
                             </listPlace>
                             <listPlace corresp="#lgnd170017" type="district">
                                 <head>Sancak of Ḥamāh</head>
+                                <tei:place type="district">
+                                    <placeName xml:lang="ar">لواء حماة</placeName>
+                                </tei:place>
                                 <place type="town" xml:id="lgn170017">
                                     <placeName type="simple">Hama</placeName>
                                     <placeName type="toponym">Ḩamāh</placeName>
@@ -1635,6 +1668,9 @@
                             </listPlace>
                             <listPlace corresp="#lgn2022932" type="district">
                                 <head>Sancak of Karak</head>
+                                <tei:place type="district">
+                                    <placeName xml:lang="ar">لواء الكرك</placeName>
+                                </tei:place>
                                 <place type="town" xml:id="lgn248382">
                                     <placeName type="simple">Ma'an</placeName>
                                     <placeName type="toponym">Ma‘ān</placeName>
@@ -1648,21 +1684,31 @@
                                     <idno type="url">http://en.wikipedia.org/wiki/Ma%27an</idno>
                                     <tei:idno type="geon">248382</tei:idno>
                                 </place>
-                                <place type="town" xml:id="lgn2022932">
-                                    <placeName type="simple">Kerak</placeName>
-                                    <placeName type="toponym">Karak</placeName>
-                                    <placeName xml:lang="ar-Latn-x-ijmes">Karak</placeName>
-                                    <placeName xml:lang="en">Kerak</placeName>
-                                    <location>
-                                        <geo>31.184791, 35.705195</geo>
-                                    </location>
-                                    <tei:idno type="geon">2022932</tei:idno>
-                                </place>
+                                <listPlace type="county">
+                                    <head>Kaza of Kerak</head>
+                                    <tei:place type="county">
+                                        <placeName xml:lang="ar">قضاء الكرك</placeName>
+                                    </tei:place>
+                                    <place type="town" xml:id="lgn2022932">
+                                        <placeName type="simple">Kerak</placeName>
+                                        <placeName type="toponym">Karak</placeName>
+                                        <placeName xml:lang="ar-Latn-x-ijmes">Karak</placeName>
+                                        <placeName xml:lang="en">Kerak</placeName>
+                                        <placeName xml:lang="ar">الكرك</placeName>
+                                        <location>
+                                            <geo>31.184791, 35.705195</geo>
+                                        </location>
+                                        <tei:idno type="geon">2022932</tei:idno>
+                                    </place>
+                                </listPlace>
                                 <tei:place>
                                     <placeName xml:lang="ar">ببترا</placeName>
                                 </tei:place>
                                 <listPlace corresp="#lgn249382" type="county">
                                     <head>Kaza of Ṭafīla</head>
+                                    <tei:place type="county">
+                                        <placeName xml:lang="ar">قضاء الطفيلة</placeName>
+                                    </tei:place>
                                     <place type="village" xml:id="lgn249382">
                                         <placeName type="simple">al-Ṭafīla</placeName>
                                         <placeName type="toponym">Wādī al Ghuwayr</placeName>
@@ -1794,6 +1840,9 @@
                             </tei:place>
                             <tei:place>
                                 <placeName xml:lang="ar">بعبدا</placeName>
+                            </tei:place>
+                            <tei:place>
+                                <placeName xml:lang="ar">البترون</placeName>
                             </tei:place>
                         </listPlace>
                         <listPlace>
@@ -2191,6 +2240,7 @@
                         <tei:place type="country">
                             <placeName xml:lang="ar">الولايات المتحدة</placeName>
                             <placeName xml:lang="ar">أميركا</placeName>
+                            <placeName xml:lang="ar">أمريكا</placeName>
                         </tei:place>
                         <tei:place type="town">
                             <placeName xml:lang="ar">نيويورك</placeName>
@@ -2237,6 +2287,9 @@
                             <head>California</head>
                             <tei:place>
                                 <placeName xml:lang="ar">كليفورنيا</placeName>
+                            </tei:place>
+                            <tei:place type="town">
+                                <placeName xml:lang="en-Arab-AR">سان فرنسيسكو</placeName>
                             </tei:place>
                         </listPlace>
                         <listPlace type="state">
@@ -2291,6 +2344,7 @@
                         <head>UK</head>
                         <tei:place>
                             <placeName xml:lang="ar">إنكلترا</placeName>
+                            <placeName xml:lang="ar">انكلترا</placeName>
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">اكسفورد</placeName>
@@ -2416,15 +2470,30 @@
                         <head>Argentine</head>
                         <tei:place type="country">
                             <placeName xml:lang="ar">الأرجنتين</placeName>
+                            <placeName xml:lang="ar">الارجنتين</placeName>
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">بونس أيرس</placeName>
+                            <placeName xml:lang="ar">بونس آيرس</placeName>
                         </tei:place>
                     </listPlace>
+                    <tei:place type="country">
+                        <placeName xml:lang="ar">بيرو</placeName>
+                    </tei:place>
+                    <tei:place type="country">
+                        <placeName xml:lang="ar">تشيلي</placeName>
+                    </tei:place>
+                    <tei:place type="country">
+                        <placeName xml:lang="ar">الارغواي</placeName>
+                    </tei:place>
+                    <tei:place>
+                        <placeName xml:lang="ar">بوليفيا</placeName>
+                    </tei:place>
                     <listPlace type="country">
                         <head>Brazil</head>
                         <tei:place>
                             <placeName xml:lang="ar">بلاد برازيل</placeName>
+                            <placeName xml:lang="ar">البرازيل</placeName>
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">سان باولو</placeName>
