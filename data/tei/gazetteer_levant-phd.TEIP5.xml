@@ -59,6 +59,12 @@
          <profileDesc>
             <settingDesc>
             <listPlace>
+                <head>Ottoman Empire</head>
+               <tei:place type="country">
+                   <placeName xml:lang="en">Ottoman Empire</placeName>
+                  <placeName xml:lang="ar">الولايات العثمانية</placeName>
+               </tei:place>
+                
                <place type="town" xml:id="lgn745044">
                   <placeName type="simple">Constantinople</placeName>
                   <placeName type="toponym">İstanbul</placeName>
@@ -67,6 +73,7 @@
                   <placeName xml:lang="en">Consple</placeName>
                   <placeName xml:lang="en">Constple</placeName>
                   <placeName xml:lang="ar">الأستانة</placeName>
+                   <placeName xml:lang="ar">الاستانة</placeName>
                   <location>
                      <geo>41.01384, 28.94966</geo>
                   </location>
@@ -176,6 +183,7 @@
                   </place>
                   <place type="town">
                      <placeName type="simple">Tripoli</placeName>
+                  <placeName xml:lang="ar">طرابلس الشام</placeName>
                   </place>
                   <listPlace corresp="#lgn170063p" type="province">
                      <head>Province of Aleppo</head>
@@ -254,6 +262,16 @@
                         <placeName n="1" type="admin" xml:lang="ar-Latn-x-ijmes">ḥalab vilāyeti</placeName>
                         <placeName n="2" type="admin" xml:lang="ota-Latn-x-ijmes">vilāyet-i ḥalab</placeName>
                      </place>
+               <listPlace type="county">
+                   <head>Aintab (kaza)</head>
+               <tei:place type="county">
+                  <placeName xml:lang="ar">قضاء<placeName xml:lang="ar">عينتاب</placeName>
+                  </placeName>
+               </tei:place>
+                   <tei:place type="town">
+                  <placeName xml:lang="ar">عينتاب</placeName>
+               </tei:place>
+               </listPlace>
                   </listPlace>
                   <listPlace corresp="#lgn276781p" type="province">
                      <head>Province of Beirut</head>
@@ -465,6 +483,9 @@
                               <placeName type="toponym">Al Mazzah</placeName>
                               <placeName xml:lang="ar-Latn-x-ijmes">al-Mazza</placeName>
                            </place>
+                               <tei:place type="village">
+                                   <placeName xml:lang="ar">اليرموك</placeName>
+                               </tei:place>
                            <listPlace corresp="#lgn170654" type="town">
                               <place subtype="mosque" type="building" xml:id="lgn7642661">
                                  <placeName type="toponym">Jāmi‘ at Tawbah</placeName>
@@ -706,6 +727,9 @@
                                     <placeName n="1" type="alt" source="#pers_TG">Jāmiʿ al-Sarāyā</placeName>
                                     <placeName n="2" type="alt" source="#pers_TG">Jāmiʿ Bāb al-Sarāyā</placeName>
                                  </place>
+                                  <tei:place type="neighbourhood">
+                                      <placeName xml:lang="ar">المرقص</placeName>
+                                  </tei:place>
                                  <listPlace corresp="#ltg000001" type="neighbourhood">
                                     <head>Bāb al-Jābiyya</head>
                                     <place type="neighbourhood" xml:id="ltg000001">
@@ -739,7 +763,7 @@
                                        <tei:placeName type="alt" source="#org_geon" xml:lang="ar">جامع التكية السليمانية</tei:placeName>
                                        <tei:idno type="geon">7642725</tei:idno>
                                     </place>
-                                    <place type="neighbourhood" xml:id="lgn171794">
+                                    <place type="neighbourhood">
                                        <placeName type="simple">Baramke</placeName>
                                        <placeName type="toponym">Barāmikah</placeName>
                                        <placeName n="1" type="alt" source="#org_geon">Barmakieh</placeName>
@@ -747,7 +771,6 @@
                                        <location>
                                           <geo>33.508809, 36.290501</geo>
                                        </location>
-                                       <tei:idno type="geon">171794</tei:idno>
                                     </place>
                                     <place subtype="hospital" type="building" xml:id="lwm81310">
                                        <placeName type="simple">Ghuraba Hospital</placeName>
@@ -759,11 +782,13 @@
                                        <placeName type="simple">Bustan al-A'jam</placeName>
                                        <placeName xml:lang="ar-Latn-x-ijmes">Bustān al-Aʿjām</placeName>
                                     </place>
-                                    <place type="building" xml:id="lgn171794a">
+                                    <place type="building">
                                        <placeName type="simple">Baramke station</placeName>
                                        <placeName type="toponym">Maḩaţţat Barāmikah</placeName>
                                        <placeName n="1" type="alt" source="#org_geon">Baramke railway station</placeName>
                                        <placeName xml:lang="ar-Latn-x-ijmes">Maḥaṭṭaṭ Barāmka</placeName>
+                                        <placeName xml:lang="ar">محطة القطار (البرامكة)</placeName>
+                                        <!-- GeoNames provides has an entry, which is wrongly located -->
                                     </place>
                                     <place subtype="barracks" type="building">
                                        <placeName type="simple">Hamidiye barracks</placeName>
@@ -1712,6 +1737,13 @@
                         <placeName type="toponym">Mt Hermon</placeName>
                      </place>
                   </listPlace>
+               <listPlace type="region">
+                   <head>Palestine</head>
+                   <tei:place>
+                       <placeName xml:lang="en">Palestine</placeName>
+                       <placeName xml:lang="ar">فلسطين</placeName>
+                   </tei:place>
+               </listPlace>
                </listPlace>
                <listPlace type="region">
                   <head>Irāq</head>
@@ -1764,7 +1796,32 @@
                      <tei:idno type="geon">98182</tei:idno>
                   </place>
                </listPlace>
+                <listPlace type="region">
+                    <head>Arabian Peninsula</head>
+               <tei:place>
+                  <placeName xml:lang="ar">المدينة المنورة</placeName>
+               </tei:place>
+                    
+                </listPlace>
+                <listPlace type="region">
+                    <head>Libya</head>
+               <tei:place>
+                  <placeName xml:lang="ar">طرابلس الغرب</placeName>
+               </tei:place>
+                    
+                </listPlace>
             </listPlace>
+            <tei:listPlace>
+                <head>generic toponyms</head>
+               <tei:place>
+                  <placeName xml:lang="ar">الحضارة</placeName>
+               </tei:place>
+            </tei:listPlace>
+            <tei:listPlace corresp="../../digital-haqaiq/xml/oclc_644997575-i_17.TEIP5.xml">
+               <tei:place>
+                  <placeName xml:lang="ar">بيرام زاده</placeName>
+               </tei:place>
+            </tei:listPlace>
          </settingDesc>
       </profileDesc>
       <encodingDesc>
