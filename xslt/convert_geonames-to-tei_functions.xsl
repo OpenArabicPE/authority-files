@@ -31,6 +31,9 @@
                     <xsl:when test="starts-with(./fcode, 'ADM')">
                         <xsl:text>county</xsl:text>
                     </xsl:when>
+                    <xsl:when test="./fcode = 'PCLI'">
+                        <xsl:text>country</xsl:text>
+                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="./fcode"/>
                     </xsl:otherwise>
