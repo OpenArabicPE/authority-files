@@ -73,6 +73,7 @@
                 <xsl:call-template name="t_query-geonames">
                     <xsl:with-param name="p_output-mode" select="'file'"/>
                     <xsl:with-param name="p_input" select="$v_geonames-search"/>
+                    <xsl:with-param name="p_place-type" select="@type"/>
                     <xsl:with-param name="p_number-of-results" select="1"/>
                 </xsl:call-template>
         <!-- transform the result to TEI  -->
@@ -80,6 +81,7 @@
              <xsl:call-template name="t_query-geonames">
                     <xsl:with-param name="p_output-mode" select="'tei'"/>
                     <xsl:with-param name="p_input" select="$v_geonames-search"/>
+                 <xsl:with-param name="p_place-type" select="@type"/>
                  <xsl:with-param name="p_number-of-results" select="1"/>
                 </xsl:call-template>
         </xsl:variable>
