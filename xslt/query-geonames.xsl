@@ -141,6 +141,11 @@
             </xsl:choose>
         </xsl:when>
             <!-- return error message if no results are found -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>No results for </xsl:text><xsl:value-of select="$p_input"/>
+                </xsl:message>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
