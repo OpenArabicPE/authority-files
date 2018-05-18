@@ -78,7 +78,7 @@
                                 </xsl:message>
                             </xsl:if>
                             <xsl:copy-of
-                                select="document(concat($p_path-authority-files, 'geon_', $v_geonames-id, '.xml'))"
+                                select="doc(concat($p_path-authority-files, 'geon_', $v_geonames-id, '.xml'))"
                             />
                         </xsl:when>
                         <!-- otherwise query geonames -->
@@ -104,7 +104,7 @@
                                 <xsl:value-of select="$v_api-query-field"/>
                                 <xsl:value-of select="$v_api-options"/>
                             </xsl:variable>
-                            <xsl:copy-of select="document($v_api-call)"/>
+                            <xsl:copy-of select="doc($v_api-call)"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
