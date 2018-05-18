@@ -2024,6 +2024,7 @@
                             <head>Mount Lebanon</head>
                             <tei:place>
                                 <placeName xml:lang="ar">البترون</placeName>
+                                <placeName xml:lang="ar-Latn-FR">Batroun</placeName>
                                 <tei:location>
                                     <tei:geo>34.25528, 35.65806</tei:geo>
                                 </tei:location>
@@ -2039,6 +2040,7 @@
                                 <tei:idno type="geon">277226</tei:idno>
                             </tei:place>
                             <tei:place>
+                                <placeName xml:lang="ar-Latn-FR">Jounieh</placeName>
                                 <placeName xml:lang="ar">جونية</placeName>
                                 <!-- <tei:location><tei:geo>33.41627, 36.15134</tei:geo></tei:location><tei:idno type="geon">8041193</tei:idno>-->
                             </tei:place>
@@ -2367,9 +2369,7 @@
                             <geogName xml:lang="ar">بردى</geogName>
                         </placeName>
                     </tei:place>
-                    <tei:place>
-                        <placeName xml:lang="ar">آسيا الصغرى</placeName>
-                    </tei:place>
+                    
                     <tei:place>
                         <placeName xml:lang="ar">البحر الرومي</placeName>
                     </tei:place>
@@ -2457,7 +2457,7 @@
                     <tei:place>
                         <placeName xml:lang="ar">كوتنغن</placeName>
                     </tei:place>
-                    <tei:place>
+                    <tei:place type="building">
                         <placeName xml:lang="ar">نادي دار العلوم</placeName>
                     </tei:place>
                     <tei:place>
@@ -2502,6 +2502,10 @@
                         <placeName xml:lang="en">Europe</placeName>
                         <placeName xml:lang="ar">أوربا</placeName>
                     </tei:place>
+                    <tei:place type="continent">
+                        <placeName xml:lang="en">Asia Minor</placeName>
+                        <placeName xml:lang="ar">آسيا الصغرى</placeName>
+                    </tei:place>
                 </tei:listPlace>
                 <listPlace>
                     <head>countries</head>
@@ -2521,12 +2525,14 @@
                         <placeName xml:lang="ar">اسوج</placeName>
                     </tei:place>
                     <tei:place>
+                        <placeName xml:lang="en">Belgium</placeName>
                         <placeName xml:lang="ar">البلجيك</placeName>
                     </tei:place>
                     <tei:place>
                         <placeName xml:lang="ar">الجبل السود</placeName>
                     </tei:place>
                     <tei:place>
+                        <placeName xml:lang="en">Algeria</placeName>
                         <placeName xml:lang="ar">الجزائر</placeName>
                     </tei:place>
                     <place>
@@ -2614,18 +2620,20 @@
                         <tei:idno type="geon">798549</tei:idno>
                     </tei:place>
                     <tei:place>
+                        <placeName xml:lang="en">Norway</placeName>
                         <placeName xml:lang="ar">نروج</placeName>
                     </tei:place>
-                    <tei:place>
-                        <placeName xml:lang="ar">هولندة</placeName>
-                    </tei:place>
+   
                     <tei:place type="country">
+                        <placeName xml:lang="en">Uruguay</placeName>
                         <placeName xml:lang="ar">الارغواي</placeName>
                     </tei:place>
                     <tei:place type="country">
+                        <placeName xml:lang="en">Peru</placeName>
                         <placeName xml:lang="ar">بيرو</placeName>
                     </tei:place>
                     <tei:place type="country">
+                        <placeName xml:lang="en">Chile</placeName>
                         <placeName xml:lang="ar">تشيلي</placeName>
                     </tei:place>
                     <listPlace type="country">
@@ -2698,6 +2706,7 @@
                             <tei:idno type="geon">1269750</tei:idno>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="en">Lucknow</placeName>
                             <placeName xml:lang="ar">مدينة لكنأو</placeName>
                         </tei:place>
                     </listPlace>
@@ -2799,6 +2808,7 @@
                                 <placeName xml:lang="en">Lincoln</placeName>
                             </tei:place>
                             <tei:place type="state">
+                                <placeName xml:lang="en">Nebraska</placeName>
                                 <placeName xml:lang="ar">نبراسكا</placeName>
                             </tei:place>
                             <tei:place type="town">
@@ -2818,6 +2828,7 @@
                         <listPlace type="state">
                             <head>Virginia</head>
                             <tei:place>
+                                <placeName xml:lang="en">Virginia</placeName>
                                 <placeName xml:lang="en-Arab-AR">فرجينيا</placeName>
                             </tei:place>
                         </listPlace>
@@ -2840,6 +2851,7 @@
                         <listPlace type="state">
                             <head>Alaska</head>
                             <tei:place>
+                                <placeName xml:lang="en">Alaska</placeName>
                                 <placeName xml:lang="en-Arab-AR">الالاسكا</placeName>
                                 <placeName xml:lang="ar">ولاية الالاسكا</placeName>
                             </tei:place>
@@ -2847,15 +2859,18 @@
                         <listPlace type="state">
                             <head>California</head>
                             <tei:place>
+                                <placeName xml:lang="en">California</placeName>
                                 <placeName xml:lang="ar">كليفورنيا</placeName>
                             </tei:place>
                             <tei:place type="town">
+                                <placeName xml:lang="en">San Francisco</placeName>
                                 <placeName xml:lang="en-Arab-AR">سان فرنسيسكو</placeName>
                             </tei:place>
                         </listPlace>
                         <listPlace type="state">
                             <head>Illinois</head>
                             <tei:place>
+                                <placeName xml:lang="en">Springfield</placeName>
                                 <placeName xml:lang="en-Arab-Ar">سبرنجفيلد</placeName>
                             </tei:place>
                             <tei:place>
@@ -2892,6 +2907,7 @@
                         <listPlace type="state">
                             <head>Kansas</head>
                             <tei:place>
+                                <placeName xml:lang="en">Kansas</placeName>
                                 <placeName xml:lang="ar">ولاية كنساس</placeName>
                             </tei:place>
                         </listPlace>
@@ -2900,6 +2916,7 @@
                             <tei:place>
                                 <placeName xml:lang="ar">ولاية أيوا</placeName>
                                 <placeName xml:lang="ar">أيوا</placeName>
+                                <placeName xml:lang="en">Iowa</placeName>
                             </tei:place>
                         </listPlace>
                         <listPlace type="state">
@@ -2908,6 +2925,7 @@
                                 <placeName xml:lang="ar">ساندي هوك</placeName>
                             </tei:place>
                             <tei:place type="state">
+                                <placeName xml:lang="en">New Jersey</placeName>
                                 <placeName xml:lang="ar">ولاية نيوجرسي</placeName>
                             </tei:place>
                         </listPlace>
@@ -2915,6 +2933,7 @@
                     <listPlace type="country">
                         <head>France</head>
                         <tei:place>
+                            <placeName xml:lang="fr">Lyon</placeName>
                             <placeName xml:lang="fr-Arab-AR">ليون</placeName>
                         </tei:place>
                         <tei:place>
@@ -3023,12 +3042,14 @@
                             <tei:idno type="geon">2464470</tei:idno>
                         </tei:place>
                         <tei:place type="country">
+                            <placeName xml:lang="en">Tunisia</placeName>
                             <placeName xml:lang="ar">المملكة التونسية</placeName>
                         </tei:place>
                     </listPlace>
                     <listPlace type="country">
                         <head>Spain</head>
                         <tei:place>
+                            <placeName xml:lang="en">Spain</placeName>
                             <placeName xml:lang="ar">إسبانيا</placeName>
                         </tei:place>
                         <tei:place>
@@ -3162,18 +3183,22 @@
                     <listPlace type="country">
                         <head>Sweden</head>
                         <tei:place>
+                            <placeName xml:lang="en">Stockholm</placeName>
                             <placeName xml:lang="ar">استوكهولم</placeName>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="en">Gotland</placeName>
                             <placeName xml:lang="ar">جوتلاند</placeName>
                         </tei:place>
                     </listPlace>
                     <listPlace type="country">
                         <head>Russia</head>
                         <tei:place>
+                            <placeName xml:lang="en">Orenburg</placeName>
                             <placeName xml:lang="ru-Arab-AR">أورنبورغ</placeName>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="en">Caucasus</placeName>
                             <placeName xml:lang="ar">القافقاس</placeName>
                         </tei:place>
                         <tei:place>
@@ -3193,6 +3218,8 @@
                             <tei:idno type="geon">587084</tei:idno>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="en">St. Petersburg</placeName>
+                            <placeName xml:lang="en">Leningrad</placeName>
                             <placeName xml:lang="ar">بطرسبرج</placeName>
                         </tei:place>
                         <tei:place>
@@ -3208,16 +3235,15 @@
                             <tei:idno type="geon">2017370</tei:idno>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="en">Kazan</placeName>
                             <placeName xml:lang="ar">قزان</placeName>
-                            <tei:location>
-                                <tei:geo>16.0651, 43.03785</tei:geo>
-                            </tei:location>
-                            <tei:idno type="geon">7363187</tei:idno>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="en">Moscow</placeName>
                             <placeName rend="brackets" xml:lang="ar">موسقو</placeName>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="en">Novgorod</placeName>
                             <placeName rend="brackets" xml:lang="ar">نوفوغوردو</placeName>
                         </tei:place>
                         <tei:place type="area">
@@ -3228,6 +3254,7 @@
                     <listPlace type="country">
                         <head>Argentine</head>
                         <tei:place>
+                            <placeName xml:lang="en">Buoenos Aires</placeName>
                             <placeName xml:lang="ar">بونس أيرس</placeName>
                             <placeName xml:lang="ar">بونس آيرس</placeName>
                         </tei:place>
@@ -3248,6 +3275,7 @@
                     <listPlace type="country">
                         <head>Brazil</head>
                         <tei:place>
+                            <placeName xml:lang="en">Brazil</placeName>
                             <placeName xml:lang="ar">بلاد برازيل</placeName>
                             <placeName xml:lang="ar">البرازيل</placeName>
                         </tei:place>
@@ -3266,6 +3294,11 @@
                     </listPlace>
                     <listPlace type="country">
                         <head>Netherlands</head>
+                        <place type="country">
+                            <placeName xml:lang="en">Holland</placeName>
+                            <placeName xml:lang="en">Netherlands</placeName>
+                            <placeName xml:lang="ar">هولندة</placeName>
+                        </place>
                         <tei:place>
                             <placeName xml:lang="ar">أوترخت</placeName>
                             <tei:placeName source="#org_geon" type="alt" xml:lang="en">Utrecht</tei:placeName>
