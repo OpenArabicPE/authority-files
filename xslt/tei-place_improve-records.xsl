@@ -86,7 +86,12 @@
                 </xsl:call-template>
         </xsl:variable>
         <xsl:copy>
-            <xsl:apply-templates select="@* | node()"/>
+            <xsl:apply-templates select="@*"/>
+            <!-- add @type if it is missing -->
+            <xsl:if test="not(@type)">
+                <xsl:attribute name="type" select="$v_geonames-result-tei/descendant::tei:place[1]/@type"/>
+            </xsl:if>
+            <xsl:apply-templates select="node()"/>
             <!--<xsl:call-template name="t_query-viaf-rdf">
                 <xsl:with-param name="p_viaf-id" select="replace(tei:placeName[matches(@ref,'geon:\d+')][1]/@ref,'geon:(\d+)','$1')"/>
             </xsl:call-template>-->
