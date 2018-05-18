@@ -149,12 +149,9 @@
                             <tei:idno type="geon">268064</tei:idno>
                         </place>
                         <place type="town">
-                            <placeName type="simple">Tiberia</placeName>
+                            <placeName type="simple" xml:lang="en">Tiberias</placeName>
                             <placeName xml:lang="ar">طبرية</placeName>
-                            <tei:location>
-                                <tei:geo>34.01611, 35.73667</tei:geo>
-                            </tei:location>
-                            <tei:idno type="geon">266181</tei:idno>
+                            <placeName xml:lang="ar">طبريا</placeName>
                         </place>
                         <place type="town" xml:id="lgn299817">
                             <placeName type="simple">Tarsus</placeName>
@@ -1118,12 +1115,6 @@
                                                 <placeName xml:lang="ar-Latn-x-ijmes">Muḥī al-Dīn Ibn ʿArabī</placeName>
                                                 <placeName n="1" source="#pers_TG" type="alt">Mosque - Ibn Arabi</placeName>
                                                 <placeName n="2" source="#pers_TG" type="alt">Shaikh Mohiddin Mosque</placeName>
-                                                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">مسجد علي بن العربي</tei:placeName>
-                                                <tei:placeName source="#org_geon" type="alt" xml:lang="en">House of Muhammad al-Mahruqi</tei:placeName>
-                                                <tei:location>
-                                                    <tei:geo>30.04619, 31.25794</tei:geo>
-                                                </tei:location>
-                                                <tei:idno type="geon">8643322</tei:idno>
                                             </place>
                                             <listPlace corresp="#ltg000004" type="neighbourhood">
                                                 <place type="neighbourhood" xml:id="ltg000004">
@@ -2282,10 +2273,10 @@
                         </tei:place>
                         <tei:place type="region">
                             <placeName xml:lang="ar">الحجاز</placeName>
-                            <tei:location>
+                            <!-- <tei:location>
                                 <tei:geo>23.56403, 56.17266</tei:geo>
                             </tei:location>
-                            <tei:idno type="geon">11785447</tei:idno>
+                            <tei:idno type="geon">11785447</tei:idno> -->
                         </tei:place>
                     </listPlace>
                     <listPlace type="region">
@@ -2306,6 +2297,22 @@
                             <tei:idno type="url">http://en.wikipedia.org/wiki/Elephantine</tei:idno>
                             <tei:idno type="geon">359790</tei:idno>
                         </tei:place>
+                        <tei:place>
+                        <placeName xml:lang="ar">كفر الزيات</placeName>
+                        <tei:location>
+                            <tei:geo>30.8248, 30.81805</tei:geo>
+                        </tei:location>
+                        <tei:idno type="geon">354365</tei:idno>
+                    </tei:place>
+                        <tei:place>
+                        <placeName xml:lang="ar">دمنهور</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Damanhur</tei:placeName>
+                        <tei:location>
+                            <tei:geo>31.03408, 30.46823</tei:geo>
+                        </tei:location>
+                        <tei:idno type="url">http://en.wikipedia.org/wiki/Damanhur</tei:idno>
+                        <tei:idno type="geon">358448</tei:idno>
+                    </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">أسوان</placeName>
                             <tei:placeName source="#org_geon" type="alt" xml:lang="en">Aswān</tei:placeName>
@@ -2350,9 +2357,9 @@
                         </tei:place>
                         <tei:place type="town">
                             <placeName xml:lang="en">Cairo</placeName>
-                            <placeName xml:lang="ar">مصر</placeName>
                             <placeName xml:lang="ar">القاهرة</placeName>
                             <placeName xml:lang="ar">قاهرة</placeName>
+                            <placeName xml:lang="ar">مصر</placeName>
                         </tei:place>
                         <tei:place type="building">
                             <placeName xml:lang="ar">دار الكتب المصري</placeName>
@@ -2472,10 +2479,10 @@
                     </tei:place>
                     <tei:place>
                         <placeName rend="brackets" xml:lang="ar">جدره</placeName>
-                        <tei:location>
+                        <!-- <tei:location>
                             <tei:geo>33.12775, 66.9734</tei:geo>
                         </tei:location>
-                        <tei:idno type="geon">1442556</tei:idno>
+                        <tei:idno type="geon">1442556</tei:idno> -->
                     </tei:place>
                     <tei:place>
                         <placeName rend="brackets" xml:lang="ar">حمام الجرب</placeName>
@@ -2494,15 +2501,7 @@
                         <tei:idno type="url">http://en.wikipedia.org/wiki/North_Khorasan_Province</tei:idno>
                         <tei:idno type="geon">6201376</tei:idno>
                     </tei:place>
-                    <tei:place>
-                        <placeName xml:lang="ar">دمنهور</placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Damanhur</tei:placeName>
-                        <tei:location>
-                            <tei:geo>31.03408, 30.46823</tei:geo>
-                        </tei:location>
-                        <tei:idno type="url">http://en.wikipedia.org/wiki/Damanhur</tei:idno>
-                        <tei:idno type="geon">358448</tei:idno>
-                    </tei:place>
+                    
                     
                     <tei:place>
                         <placeName xml:lang="ar">سوق البلاط</placeName>
@@ -2540,13 +2539,7 @@
                         </tei:location>
                         <tei:idno type="geon">6746378</tei:idno>
                     </tei:place>
-                    <tei:place>
-                        <placeName xml:lang="ar">كفر الزيات</placeName>
-                        <tei:location>
-                            <tei:geo>30.8248, 30.81805</tei:geo>
-                        </tei:location>
-                        <tei:idno type="geon">354365</tei:idno>
-                    </tei:place>
+                    
                     <tei:place>
                         <placeName xml:lang="ar">كوتنغن</placeName>
                     </tei:place>
@@ -3128,11 +3121,12 @@
                             <placeName xml:lang="ar">إسبانيا</placeName>
                         </tei:place>
                         <tei:place>
+                            <placeName xml:lang="en">Andalusia</placeName>
                             <placeName xml:lang="ar">الأندلس</placeName>
-                            <tei:location>
+                            <!-- <tei:location>
                                 <tei:geo>30.00736, 31.31218</tei:geo>
                             </tei:location>
-                            <tei:idno type="geon">7911518</tei:idno>
+                            <tei:idno type="geon">7911518</tei:idno> -->
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">غرناطة</placeName>
@@ -3276,11 +3270,11 @@
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">الموسكي</placeName>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">al-Mūskī</tei:placeName>
+                            <!-- <tei:placeName source="#org_geon" type="alt" xml:lang="en">al-Mūskī</tei:placeName>
                             <tei:location>
                                 <tei:geo>30.0486, 31.25634</tei:geo>
                             </tei:location>
-                            <tei:idno type="geon">9179530</tei:idno>
+                            <tei:idno type="geon">9179530</tei:idno> -->
                         </tei:place>
                         <tei:place>
                             <placeName xml:lang="ar">باكو</placeName>
