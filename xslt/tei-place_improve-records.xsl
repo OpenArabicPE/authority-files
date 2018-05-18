@@ -92,7 +92,7 @@
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- add @type if it is missing -->
-            <xsl:if test="not(@type)">
+            <xsl:if test="not(@type) and $v_geonames-result-tei/descendant::tei:place[1]/@type">
                 <xsl:attribute name="type" select="$v_geonames-result-tei/descendant::tei:place[1]/@type"/>
             </xsl:if>
             <xsl:apply-templates select="node()"/>
