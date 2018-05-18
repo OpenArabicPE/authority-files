@@ -112,14 +112,18 @@
             </xsl:message>
         </xsl:if>
         <!-- generate output -->
-        <xsl:if test="$v_xml-geonames != ''">
+        <xsl:choose>
+            <xsl:when test="not($v_xml-geonames/descendant-or-self::totalResultsCount = 0)">
             <xsl:choose>
                 <xsl:when test="$p_output-mode = 'file'">
                     <!-- this is relative to the input XML  -->
-                    <xsl:result-document
+                    <!-- check if the file already exists! -->
+                    <xsl:if test="doc-available(concat('_output/geonames/geon_',$v_xml-geonames/descendant-or-self::geoname[1]/geonameId,'.xml'))">
+                        <xsl:result-document
                         href="_output/geonames/geon_{$v_xml-geonames/descendant-or-self::geoname[1]/geonameId}.xml">
                         <xsl:copy-of select="$v_xml-geonames"/>
                     </xsl:result-document>
+                    </xsl:if>
                 </xsl:when>
                 <xsl:when test="$p_output-mode = 'tei'">
                     <tei:listPlace>
@@ -135,6 +139,8 @@
                     <xsl:value-of select="$p_csv-separator"/>
                 </xsl:when>
             </xsl:choose>
-        </xsl:if>
+        </xsl:when>
+            <!-- return error message if no results are found -->
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
