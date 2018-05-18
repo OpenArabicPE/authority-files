@@ -62,7 +62,7 @@
                 <xsl:text>value of $v_geonames-id: </xsl:text><xsl:value-of select="$v_geonames-id"/>
             </xsl:message>
         </xsl:if>
-        <!-- check tei:place/@type and do not query GeoNames if it is 'building' and if $v_input-data-type='string' -->
+        <!-- check tei:place/@type and do not query GeoNames if it is 'building' or 'street' and if $v_input-data-type='string' -->
         <xsl:choose>
             <xsl:when test="not($p_place-type = 'building' and $v_input-data-type = 'string')">
                 <!-- either copy local file or retrieve results from geonames.org -->
