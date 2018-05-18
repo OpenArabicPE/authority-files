@@ -18,6 +18,8 @@
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <!--<xsl:param name="p_id-editor" select="'pers_TG'"/>-->
     
+    <xsl:variable name="v_sort-place-type" select="'&lt; country &lt; state &lt; province &lt; district &lt; county &lt; town &lt; village'"/>
+    
     <xsl:template match="@* | node()" name="t_1">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
@@ -42,8 +44,8 @@
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:head"/>
             <xsl:apply-templates select="tei:place">
-                <!-- this sort should consider the Arabic "al-" -->
-                <xsl:sort select="tei:idno[@type='geon'][1]" order="descending"/>
+                <!-- this sort should use a private collation by @type from larger entities to smaller-->
+                <xsl:sort select="@type" collation="http://saxon.sf.net/collation?rules={encode-for-uri($v_sort-place-type)}" order="descending"/>
             </xsl:apply-templates>
             <xsl:apply-templates select="tei:listPlace"/>
         </xsl:copy>
