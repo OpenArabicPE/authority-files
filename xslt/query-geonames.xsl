@@ -64,7 +64,7 @@
         </xsl:if>
         <!-- check tei:place/@type and do not query GeoNames if it is 'building' or 'street' and if $v_input-data-type='string' -->
         <xsl:choose>
-            <xsl:when test="not($p_place-type = 'building' and $v_input-data-type = 'string')">
+            <xsl:when test="not($p_place-type = ('building','street','neighbourhood','quarter') and $v_input-data-type = 'string')">
                 <!-- either copy local file or retrieve results from geonames.org -->
         <xsl:variable name="v_xml-geonames">
             <xsl:choose>
