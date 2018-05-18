@@ -25,7 +25,9 @@
     <!--    <xsl:variable name="v_string-transcribe-ijmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>
     <xsl:variable name="v_string-transcribe-arabic" select="'بتحخجدرزسصضطظعفقكلمنهاويوي٠١٢٣٤٥٦٧٨٩'"/>-->
     <xsl:template name="t_query-geonames">
+        <!-- $p_input can be <tei:placeName> nodes or GeoNames IDs -->
         <xsl:param name="p_input"/>
+        <xsl:param name="p_place-type"/>
         <!-- available values are 'tei', 'file', and 'csv' -->
         <xsl:param name="p_output-mode" select="'file'"/>
         <xsl:param name="p_csv-separator" select="';'"/>
@@ -60,7 +62,10 @@
                 <xsl:text>value of $v_geonames-id: </xsl:text><xsl:value-of select="$v_geonames-id"/>
             </xsl:message>
         </xsl:if>
-        <!-- either copy local file or retrieve results from geonames.org -->
+        <!-- check tei:place/@type and do not query GeoNames if it is 'building' and if $v_input-data-type='string' -->
+        <xsl:choose>
+            <xsl:when test="not($p_place-type = 'building' and $v_input-data-type = 'string')">
+                <!-- either copy local file or retrieve results from geonames.org -->
         <xsl:variable name="v_xml-geonames">
             <xsl:choose>
                 <!-- 1. $v_geonames-id contains an ID and local copy of GeoNames result file is available -->
@@ -147,5 +152,14 @@
                 </xsl:message>
             </xsl:otherwise>
         </xsl:choose>
+            </xsl:when>
+            <!-- return message that GeoNames was not queried -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>GeoNames was not queried for </xsl:text><xsl:value-of select="$p_input"/><xsl:text> because it is a building.</xsl:text>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+        
     </xsl:template>
 </xsl:stylesheet>
