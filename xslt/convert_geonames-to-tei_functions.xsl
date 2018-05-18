@@ -130,6 +130,7 @@
     </xsl:template>
     <xsl:template match="lat" mode="m_geon-to-tei">
         <tei:location>
+            <xsl:attribute name="source" select="'#org_geon'"/>
             <tei:geo>
                 <xsl:value-of select="concat(., ', ', following-sibling::lng)"/>
             </tei:geo>
