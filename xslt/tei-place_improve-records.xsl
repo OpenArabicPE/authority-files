@@ -128,7 +128,7 @@
     <xsl:template match="tei:place" name="t_4">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
-                <xsl:text>t_4: no GeoName ID in original data for </xsl:text><xsl:value-of select="@xml:id"/><xsl:text>. Removed duplicare toponyms</xsl:text>
+                <xsl:text>t_4: no GeoName ID in original data for </xsl:text><xsl:value-of select="@xml:id"/><xsl:text>. Removed duplicate toponyms</xsl:text>
             </xsl:message>
         </xsl:if>
         <xsl:copy>
