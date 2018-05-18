@@ -18,17 +18,9 @@
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <!--<xsl:param name="p_id-editor" select="'pers_TG'"/>-->
     
-    <xsl:variable name="v_sort-place-type" select="'&lt; country &lt; state &lt; province &lt; district &lt; county &lt; town &lt; village'"/>
+    <xsl:variable name="v_sort-place-type" select="'&lt; region &lt; country &lt; state &lt; province &lt; district &lt; county &lt; town &lt; village &lt; quarter &lt; neighbourhood &lt; building'"/>
     
     <xsl:template match="@* | node()" name="t_1">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_1: </xsl:text>
-                <xsl:if test="ancestor-or-self::node()">
-                    <xsl:value-of select="ancestor-or-self::node()/@xml:id"/>
-                </xsl:if>
-            </xsl:message>
-        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
@@ -45,7 +37,8 @@
             <xsl:apply-templates select="tei:head"/>
             <xsl:apply-templates select="tei:place">
                 <!-- this sort should use a private collation by @type from larger entities to smaller-->
-                <xsl:sort select="@type" collation="http://saxon.sf.net/collation?rules={encode-for-uri($v_sort-place-type)}" order="descending"/>
+                <xsl:sort select="@type" collation="http://saxon.sf.net/collation?rules={encode-for-uri($v_sort-place-type)}" order="ascending"/>
+                <xsl:sort select="tei:placeName[@xml:lang='ar'][1]" order="ascending"/>
             </xsl:apply-templates>
             <xsl:apply-templates select="tei:listPlace"/>
         </xsl:copy>
@@ -53,12 +46,7 @@
     
     <!-- improve tei:place records with GeoNames references -->
     <!-- tei:place[tei:placeName[matches(@ref,'geon:\d+')]] | tei:place[tei:idno[@type='geon']!=''] -->
-    <xsl:template match="tei:place" name="t_3">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_3: </xsl:text><xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
+    <xsl:template match="tei:place" name="t_3" priority="100">
         <xsl:variable name="v_geonames-search">
             <xsl:choose>
                 <xsl:when test="tei:idno[@type='geon']!=''">
@@ -68,7 +56,7 @@
                     <xsl:value-of select="replace(tei:placeName[matches(@ref,'geon:\d+')][1]/@ref,'geon:(\d+)','$1')"/>
                 </xsl:when>
                 <!-- check Arabic toponyms first -->
-                <xsl:when test="tei:placName[@xml:lang='ar']">
+                <xsl:when test="tei:placeName[@xml:lang='ar']">
                     <xsl:copy-of select="tei:placeName[@xml:lang='ar'][1]"/>
                 </xsl:when>
                 <xsl:otherwise>
@@ -76,6 +64,11 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <xsl:if test="$p_verbose=true()">
+            <xsl:message>
+                <xsl:text>t_3: query GeoNames for </xsl:text><xsl:value-of select="$v_geonames-search"/>
+            </xsl:message>
+        </xsl:if>
         <!-- try to download the GeoNames XML file -->
                 <xsl:call-template name="t_query-geonames">
                     <xsl:with-param name="p_output-mode" select="'file'"/>
@@ -125,20 +118,20 @@
     </xsl:template>
     
     <!-- improve tei:place records without GeoNames references -->
-   <!-- <xsl:template match="tei:place" name="t_4">
+    <xsl:template match="tei:place" name="t_4">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
-                <xsl:text>t_4: </xsl:text><xsl:value-of select="@xml:id"/>
+                <xsl:text>t_4: no GeoName ID in original data for </xsl:text><xsl:value-of select="@xml:id"/><xsl:text>. Removed duplicare toponyms</xsl:text>
             </xsl:message>
         </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <!-\- check if it has duplicate child nodes -\->
+            <!-- check if it has duplicate child nodes -->
             <xsl:for-each-group select="tei:placeName" group-by=".">
                 <xsl:apply-templates select="."/>
             </xsl:for-each-group>
         </xsl:copy>
-    </xsl:template>-->
+    </xsl:template>
     
 <!--    <xsl:template match="tei:placeName[@type='flattened']" priority="100"/>-->
     
