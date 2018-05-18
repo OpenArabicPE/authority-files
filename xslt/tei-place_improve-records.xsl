@@ -52,7 +52,8 @@
     </xsl:template>
     
     <!-- improve tei:place records with GeoNames references -->
-    <xsl:template match="tei:place[tei:placeName[matches(@ref,'geon:\d+')]] | tei:place[tei:idno[@type='geon']!='']" name="t_3">
+    <!-- tei:place[tei:placeName[matches(@ref,'geon:\d+')]] | tei:place[tei:idno[@type='geon']!=''] -->
+    <xsl:template match="tei:place" name="t_3">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_3: </xsl:text><xsl:value-of select="@xml:id"/>
@@ -65,6 +66,10 @@
                 </xsl:when>
                 <xsl:when test="tei:placeName[matches(@ref,'geon:\d+')]">
                     <xsl:value-of select="replace(tei:placeName[matches(@ref,'geon:\d+')][1]/@ref,'geon:(\d+)','$1')"/>
+                </xsl:when>
+                <!-- check Arabic toponyms first -->
+                <xsl:when test="tei:placName[@xml:lang='ar']">
+                    <xsl:copy-of select="tei:placeName[@xml:lang='ar'][1]"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:copy-of select="tei:placeName[1]"/>
@@ -120,7 +125,7 @@
     </xsl:template>
     
     <!-- improve tei:place records without GeoNames references -->
-    <xsl:template match="tei:place" name="t_4">
+   <!-- <xsl:template match="tei:place" name="t_4">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_4: </xsl:text><xsl:value-of select="@xml:id"/>
@@ -128,12 +133,12 @@
         </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <!-- check if it has duplicate child nodes -->
+            <!-\- check if it has duplicate child nodes -\->
             <xsl:for-each-group select="tei:placeName" group-by=".">
                 <xsl:apply-templates select="."/>
             </xsl:for-each-group>
         </xsl:copy>
-    </xsl:template>
+    </xsl:template>-->
     
 <!--    <xsl:template match="tei:placeName[@type='flattened']" priority="100"/>-->
     
