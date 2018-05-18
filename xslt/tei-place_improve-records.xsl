@@ -55,6 +55,10 @@
                 <xsl:when test="tei:placeName[matches(@ref,'geon:\d+')]">
                     <xsl:value-of select="replace(tei:placeName[matches(@ref,'geon:\d+')][1]/@ref,'geon:(\d+)','$1')"/>
                 </xsl:when>
+                <!-- check English toponyms first -->
+                <xsl:when test="tei:placeName[@xml:lang='en']">
+                    <xsl:copy-of select="tei:placeName[@xml:lang='en'][1]"/>
+                </xsl:when>
                 <!-- check Arabic toponyms first -->
                 <xsl:when test="tei:placeName[@xml:lang='ar']">
                     <xsl:copy-of select="tei:placeName[@xml:lang='ar'][1]"/>
