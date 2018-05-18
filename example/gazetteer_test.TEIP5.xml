@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
+<?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Reference list of locations in Ottoman Syria</title>
+                <respStmt>
+                    <resp>Prepared by</resp>
+                    <persName>Till Grallert</persName>
+                </respStmt>
+            </titleStmt>
+            <editionStmt>
+                <edition>
+                    <date when="2012-11-24">Nov 2012</date>
+                </edition>
+                <respStmt>
+                    <resp>Contributed data</resp>
+                    <persName xml:id="pers_TG">
+                        <forename>Till</forename>
+                        <surname>Grallert</surname>
+                    </persName>
+                    <orgName xml:id="org_geon">GeoNames.org</orgName>
+                    <orgName xml:id="org_wiki">Wikimapia</orgName>
+                    <!-- all contributors should be included here and their contributions should be marked with the @resp attributed
+                  and a reference to the contributor's xml:id -->
+                </respStmt>
+            </editionStmt>
+            <publicationStmt>
+                <p>The file was originally created in November 2012 and is continuously updated through
+               manual and automated input by the original author.</p>
+                <p>This software is licensed as: Distributed under a Creative Commons
+               Attribution-ShareAlike 3.0 Unported License
+               http://creativecommons.org/licenses/by-sa/3.0/ All rights reserved. Redistribution
+               and use in source and binary forms, with or without modification, are permitted
+               provided that the following conditions are met: * Redistributions of source code must
+               retain the above copyright notice, this list of conditions and the following
+               disclaimer. * Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the documentation
+               and/or other materials provided with the distribution. This software is provided by
+               the copyright holders and contributors &quot;as is&quot; and any express or implied warranties,
+               including, but not limited to, the implied warranties of merchantability and fitness
+               for a particular purpose are disclaimed. In no event shall the copyright holder or
+               contributors be liable for any direct, indirect, incidental, special, exemplary, or
+               consequential damages (including, but not limited to, procurement of substitute goods
+               or services; loss of use, data, or profits; or business interruption) however caused
+               and on any theory of liability, whether in contract, strict liability, or tort
+               (including negligence or otherwise) arising in any way out of the use of this
+               software, even if advised of the possibility of such damage. </p>
+                <p>Author: Till Grallert</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>This is a born-digital file.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <settingDesc>
+                <listPlace>
+                    <head>Ottoman Empire</head>
+                    <tei:place type="country">
+                        <placeName xml:lang="en">Ottoman Empire</placeName>
+                        <placeName xml:lang="ar">الولايات العثمانية</placeName>
+                        <placeName xml:lang="ar">البلاد العثمانية</placeName>
+                        <placeName xml:lang="ar">الدولة العثمانية</placeName>
+                        <placeName xml:lang="ar">المملكة العثمانية</placeName>
+                    </tei:place>
+                    
+                        <tei:place>
+                            <placeName xml:lang="en">St. Petersburg</placeName>
+                            <placeName xml:lang="en">Leningrad</placeName>
+                            <placeName xml:lang="ar">بطرسبرج</placeName>
+                        </tei:place>
+                        <tei:place>
+                            <placeName xml:lang="ar">روسيا</placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Russia</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Russie</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Russland</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Rusya</tei:placeName>
+                            <tei:location>
+                                <tei:geo>60, 100</tei:geo>
+                            </tei:location>
+                            <tei:idno type="url">http://en.wikipedia.org/wiki/Russia</tei:idno>
+                            <tei:idno type="geon">2017370</tei:idno>
+                        </tei:place>
+                        <tei:place>
+                            <placeName xml:lang="en">Kazan</placeName>
+                            <placeName xml:lang="ar">قزان</placeName>
+                        </tei:place>
+                        <tei:place>
+                            <placeName xml:lang="en">Moscow</placeName>
+                            <placeName rend="brackets" xml:lang="ar">موسقو</placeName>
+                        </tei:place>
+                    <tei:place>
+                            <placeName xml:lang="en">Moscow</placeName>
+                            <placeName rend="brackets" xml:lang="ar">موسقو</placeName>
+                        </tei:place>
+                        <tei:place>
+                            <placeName xml:lang="en">Novgorod</placeName>
+                            <placeName rend="brackets" xml:lang="ar">نوفوغوردو</placeName>
+                        </tei:place>
+                        <tei:place type="area">
+                            <placeName xml:lang="ru-Arab-AR">القريم</placeName>
+                            <placeName xml:lang="en">Crimea</placeName>
+                        </tei:place>
+                    </listPlace>
+                    <listPlace type="country">
+                        <head>Argentine</head>
+                        <tei:place>
+                            <placeName xml:lang="en">Buoenos Aires</placeName>
+                            <placeName xml:lang="ar">بونس أيرس</placeName>
+                            <placeName xml:lang="ar">بونس آيرس</placeName>
+                        </tei:place>
+                        <tei:place type="country">
+                            <placeName xml:lang="ar">الأرجنتين</placeName>
+                            <placeName xml:lang="ar">الارجنتين</placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Argentina</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Argentine</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Argentinien</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Arjantin</tei:placeName>
+                            <tei:location>
+                                <tei:geo>-34, -64</tei:geo>
+                            </tei:location>
+                            <tei:idno type="url">http://en.wikipedia.org/wiki/Argentina</tei:idno>
+                            <tei:idno type="geon">3865483</tei:idno>
+                        </tei:place>
+                    </listPlace>
+                    <listPlace type="country">
+                        <head>Brazil</head>
+                        <tei:place>
+                            <placeName xml:lang="en">Brazil</placeName>
+                            <placeName xml:lang="ar">بلاد برازيل</placeName>
+                            <placeName xml:lang="ar">البرازيل</placeName>
+                        </tei:place>
+                        <tei:place>
+                            <placeName xml:lang="ar">سان باولو</placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">São Paulo</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">São Paulo</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">São Paulo</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Sao Paulo</tei:placeName>
+                            <tei:location>
+                                <tei:geo>-23.5475, -46.63611</tei:geo>
+                            </tei:location>
+                            <tei:idno type="url">http://en.wikipedia.org/wiki/S%C3%A3o_Paulo</tei:idno>
+                            <tei:idno type="geon">3448439</tei:idno>
+                        </tei:place>
+                    </listPlace>
+                    <listPlace type="country">
+                        <head>Netherlands</head>
+                        <place type="country">
+                            <placeName xml:lang="en">Holland</placeName>
+                            <placeName xml:lang="en">Netherlands</placeName>
+                            <placeName xml:lang="ar">هولندة</placeName>
+                        </place>
+                        <tei:place>
+                            <placeName xml:lang="ar">أوترخت</placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Utrecht</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Utrecht</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Utrecht</tei:placeName>
+                            <tei:location>
+                                <tei:geo>52.09083, 5.12222</tei:geo>
+                            </tei:location>
+                            <tei:idno type="url">http://en.wikipedia.org/wiki/Utrecht</tei:idno>
+                            <tei:idno type="geon">2745912</tei:idno>
+                        </tei:place>
+                        <tei:place>
+                            <placeName xml:lang="ar">ليدن</placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Leiden</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Leyde</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Leiden</tei:placeName>
+                            <tei:location>
+                                <tei:geo>52.15833, 4.49306</tei:geo>
+                            </tei:location>
+                            <tei:idno type="url">http://en.wikipedia.org/wiki/Leiden</tei:idno>
+                            <tei:idno type="geon">2751773</tei:idno>
+                        </tei:place>
+                    </listPlace>
+                    <listPlace type="country">
+                        <head>Mexico</head>
+                        <tei:place>
+                            <placeName xml:lang="ar">جبال مكيس</placeName>
+                        </tei:place>
+                    </listPlace>
+            </settingDesc>
+        </profileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p>The TEI file was produced by Till Grallert to provide a list of geo-tagged toponyms
+               extracted from a database of sources (Sente XML) and enriched with geo information
+               from geonames.org</p>
+            </projectDesc>
+            <editorialDecl>
+                <p>The relation between places, toponyms and their geographic location was recorded
+               using TEI P5 XML. Individual 
+                    <tei:gi>place</tei:gi>
+                    nodes are nested inside 
+                    <tei:gi>listPlace</tei:gi>
+                    nodes following administrative and topographic structures. Thus the quarters of the
+               city of Damascus are recorded as 
+                    <tei:gi>place</tei:gi>
+                    nodes nested inside a
+                    <tei:gi>listPlace</tei:gi>
+                    that corresponds to the city. The city of Damascus is then part of
+               a 
+                    <tei:gi>listPlace</tei:gi>
+                    for the county, the district, and the province. Future
+               improvements could record different sets of relations in parallel 
+                    <tei:gi>listPlace</tei:gi>
+                    nodes that all link to a flat tree of places.</p>
+                <p>The transscription of Arabic and Ottoman toponyms follows the IJMES paradigm.</p>
+                <p>Languages: According to TEI P5 
+                    <att>xml:lang</att>
+                    should follow BCP 47 
+                    <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>
+                    , which specifies for Arabic in Latin transcription &quot;ar-Latn&quot;. The specific type of
+               transcription should be added as a private use subtag, i.e. &quot;ar-Latn-x-ijmes&quot; for the
+               IJMES transcription of Arabic in Latin script. The tag for Ottoman Turkish is &quot;ota&quot;.
+               For transcription in Latin script following an adapted IJMES transcription, it would
+               be &quot;ota-Latn-x-ijmes&quot;. The English variant of Latinised Arabic would be &quot;ar-Latn-EN&quot;
+               and the French &quot;ar-Latn-FR&quot;</p>
+                <p>the structur of the element 
+                    <gi>geo</gi>
+                    is lat, long</p>
+                <p>The pattern of 
+                    <att>xml:id</att>
+                    s is the following:
+                    <list>
+                        <item>
+                            - no 
+                            <att>xml:id</att>
+                            : no reference to this place
+               could be found in online databases</item>
+                        <item>- xml:id starting with lgn [location geonames]
+               refer to geoname.org/xml:id</item>
+                        <item>- xml:id starting with lwm [location wikimapia] refer to
+               wikimapia.org/xml:id</item>
+                        <item>- in case of Ottoman provinces named after their capital cities,
+               a &quot;p&quot; is amended to the end of the xml:id.</item>
+                    </list>
+                </p>
+            </editorialDecl>
+        </encodingDesc>
+        <revisionDesc>
+            <tei:change when="2018-05-18" who="#pers_TG">Improved 
+                <tei:gi>person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding  
+                <tei:gi>birth</tei:gi>
+                , 
+                <tei:gi>death</tei:gi>
+                , and 
+                <tei:gi>idno</tei:gi>
+                .</tei:change>
+            <tei:change when="2018-05-18" who="#pers_TG">Improved 
+                <tei:gi>person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding  
+                <tei:gi>birth</tei:gi>
+                , 
+                <tei:gi>death</tei:gi>
+                , and 
+                <tei:gi>idno</tei:gi>
+                .</tei:change>
+            <tei:change when="2018-05-17" who="#pers_TG">Improved 
+                <tei:gi>person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding  
+                <tei:gi>birth</tei:gi>
+                , 
+                <tei:gi>death</tei:gi>
+                , and 
+                <tei:gi>idno</tei:gi>
+                .</tei:change>
+            <change when="2018-05-16" who="#pers_TG">Automatically fixed mark-up by adding 
+                <gi>idno</gi>
+                pointing to Geonames or Wikimapia to 
+                <gi>place</gi>
+                nodes and 
+                <att>source</att>
+                to 
+                <tag>placeName type=&quot;alt&quot;</tag>
+                pointing to the source for this information.</change>
+            <change when="2012-11-24">originally created</change>
+            <change when="2012-11-29">added places</change>
+            <change when="2013-02-25">added and corrected places</change>
+            <change when="2013-04-15">added and corrected places</change>
+            <change when="2013-06-25">added and corrected places</change>
+            <change when="2013-10-10">created a hierarchy of quarters and neighbourhoods in
+            Damascus</change>
+            <change when="2014-10-10">corrected the language codes</change>
+            <change when="2014-10-15">expanded the project description and editorial declarations</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <p/>
+        </body>
+    </text>
+</TEI>
