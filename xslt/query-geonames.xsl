@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet exclude-result-prefixes="#all" version="2.0" xmlns:bgn="http://bibliograph.net/"
+<xsl:stylesheet exclude-result-prefixes="#all" version="3.0" xmlns:bgn="http://bibliograph.net/"
     xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:genont="http://www.w3.org/2006/gen/ont#"
     xmlns:opf="http://www.idpf.org/2007/opf" xmlns:pto="http://www.productontology.org/id/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -15,10 +15,13 @@
         name="xml_indented" omit-xml-declaration="no"/>
     <xsl:include href="convert_geonames-to-tei_functions.xsl"/>
     <xsl:include href="../data/api-credentials/api-credentials.xsl"/>
+    <!-- trigger debugging: paramter is loaded from OpenArabicPE_parameters.xsl included in parent stylesheet  -->
+    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <!-- this param establishes the path to the folder holding individual authority files from GeoNames. The file path is relative to this stylesheet!  -->
     <xsl:param name="p_path-authority-files" select="'../data/geonames/'"/>
-    <!-- trigger debugging: paramter is loaded from OpenArabicPE_parameters.xsl included in parent stylesheet  -->
-    <!--    <xsl:param name="p_verbose" select="true()"/>-->
+    
+    
+    <!-- NOTE: doc-available() resolves relative to the stylesheets URI, doc() relative to the base-uri() of the context node. To get the same result with doc-available(), one has to use resolve-uri() -->
     <!-- these variables are used to establish the language of any given string -->
     <!--    <xsl:variable name="v_string-transcribe-ijmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>
     <xsl:variable name="v_string-transcribe-arabic" select="'بتحخجدرزسصضطظعفقكلمنهاويوي٠١٢٣٤٥٦٧٨٩'"/>-->
@@ -130,7 +133,7 @@
                                     <xsl:value-of select="concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml',': ' )"/>
                                     <xsl:copy-of select="doc-available(concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml'))"/>
                                 </xsl:message>
-                                <xsl:if test="doc-available(concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml')) = false()">
+                                <xsl:if test="doc-available(resolve-uri(concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml'))) = false()">
                                     <xsl:result-document
                                         href="{concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml')}">
                                         <xsl:copy-of select="$v_xml-geonames"/>
