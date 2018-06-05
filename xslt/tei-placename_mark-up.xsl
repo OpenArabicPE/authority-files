@@ -163,7 +163,8 @@
             </xsl:message>
         </xsl:if>
         <xsl:variable name="v_self">
-            <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
+            <xsl:value-of select="normalize-space(.)"/>
+<!--            <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>-->
         </xsl:variable>
         <xsl:variable name="v_geonames-id"
             select="replace(tokenize(@ref, ' ')[matches(., 'geon:\d+')][1], 'geon:(\d+)', '$1')"/>
