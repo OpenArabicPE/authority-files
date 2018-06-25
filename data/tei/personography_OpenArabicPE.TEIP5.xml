@@ -1,6 +1,8 @@
 <?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!--<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+<?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:bgn="http://bibliograph.net/" xmlns:genont="http://www.w3.org/2006/gen/ont#" xmlns:pto="http://www.productontology.org/id/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:re="http://oclcsrw.google.code/redirect" xmlns:schema="http://schema.org/" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:umbel="http://umbel.org/umbel#" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <teiHeader xml:id="teiHeader_1.d1e5" xml:lang="en">
@@ -3865,7 +3867,7 @@
                         >انستاسماريالالياويالكرملي</persName>
                     <persName xml:id="persName_742.d1e89100" xml:lang="ar"> <forename
                         xml:id="forename_255.d1e89101" xml:lang="ar">بطرس</forename> <addName
-                        type="patronym" xml:id="addName_98.d1e89104" xml:lang="ar">بن <forename
+                        type="nasab" xml:id="addName_98.d1e89104" xml:lang="ar">بن <forename
                         xml:id="forename_256.d1e89106" xml:lang="ar">جبرائيل</forename></addName>
                         <forename xml:id="forename_257.d1e89109" xml:lang="ar">يوسف</forename>
                         <surname xml:id="surname_198.d1e89112" xml:lang="ar">عواد</surname> </persName>
@@ -4003,7 +4005,7 @@
                         xml:id="persName_1009.d1e7879" xml:lang="ar">نقولارزقالله</persName>
                     <persName xml:id="persName_786.d1e6275" xml:lang="ar"> <forename
                         xml:id="forename_269.d1e6276" xml:lang="ar">نقولا</forename> <addName
-                        type="title" xml:id="addName_97.d1e6279" xml:lang="ar">أفندي</addName>
+                        type="title" xml:lang="ar">أفندي</addName>
                         <surname xml:id="surname_211.d1e6282" xml:lang="ar">رزق الله</surname> </persName>
                     <persName corresp="#persName_786.d1e6275" type="flattened"
                         xml:id="persName_1011.d1e7894" xml:lang="ar">نقولاافنديرزقالله</persName>
@@ -5026,12 +5028,6 @@
                         xml:id="persName_1285.d1e9953" xml:lang="ar">رزقافنديحداد</persName>
                     <persName corresp="#persName_1284.d1e9944" type="flattened"
                         xml:id="persName_1286.d1e9956" xml:lang="ar">رزقحداد</persName>
-                </tei:person>
-                <tei:person xml:id="person_342.d1e7851" xml:lang="ar">
-                    <persName xml:id="persName_894.d1e7853" xml:lang="ar"> <surname
-                        xml:id="surname_281.d1e7855" xml:lang="ar">شيخو</surname> </persName>
-                    <persName corresp="#persName_894.d1e7853" type="flattened"
-                        xml:id="persName_1288.d1e9968" xml:lang="ar">شيخو</persName>
                 </tei:person>
                 <tei:person xml:id="person_342.d1e7429" xml:lang="ar">
                     <persName xml:id="persName_866.d1e7431" xml:lang="ar"> <forename
@@ -8091,19 +8087,16 @@
                     <tei:persName corresp="#persName_1774.d1e16253" type="flattened"
                         xml:id="persName_1775.d1e16262" xml:lang="ar">يوسفشيت</tei:persName>
                 </tei:person>
-                <tei:person xml:id="person_341.d1e16267" xml:lang="ar">
-                    <persName xml:id="persName_1775.d1e16269" xml:lang="ar"> <forename
-                        xml:id="forename_940.d1e16271" xml:lang="ar">الاب لويس</forename> <surname
-                        xml:id="surname_827.d1e16274" xml:lang="ar">شيخرو</surname> </persName>
-                    <tei:persName corresp="#persName_1775.d1e16269" type="flattened"
-                        xml:id="persName_1776.d1e16278" xml:lang="ar">الابلويسشيخرو</tei:persName>
-                </tei:person>
                 <tei:person xml:id="person_341.d1e16282" xml:lang="ar">
-                    <persName xml:id="persName_1776.d1e16284" xml:lang="ar"> <forename
+                    <persName xml:id="persName_1776.d1e16284" xml:lang="ar" ref="viaf:77068906"> <forename
                         xml:id="forename_941.d1e16286" xml:lang="ar">الاب بولس</forename> <surname
                         xml:id="surname_828.d1e16289" xml:lang="ar">شيخو</surname> </persName>
                     <tei:persName corresp="#persName_1776.d1e16284" type="flattened"
                         xml:id="persName_1777.d1e16293" xml:lang="ar">الاببولسشيخو</tei:persName>
+                    <persName xml:id="persName_894.d1e7853" xml:lang="ar"> <surname
+                        xml:id="surname_281.d1e7855" xml:lang="ar">شيخو</surname> </persName>
+                    <persName corresp="#persName_894.d1e7853" type="flattened"
+                        xml:id="persName_1288.d1e9968" xml:lang="ar">شيخو</persName>
                 </tei:person>
                 <tei:person xml:id="person_341.d1e16297" xml:lang="ar">
                     <persName xml:id="persName_1777.d1e16299" xml:lang="ar"> <forename
