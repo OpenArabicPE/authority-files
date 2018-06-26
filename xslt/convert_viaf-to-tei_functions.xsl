@@ -114,13 +114,15 @@
     
     <xsl:template name="t_dates-normalise">
         <!-- the dates returned by VIAF can be formatted as
+            - yyyy: no issue
+            - yyy: needs a leading 0
             - yyyy-mm-dd: no issue
             - yyy-mm-dd: the year needs an additional leading 0
             - yyyy-mm-00: this indicates a date range of a full month
         -->
         <!-- output are ATTRIBUTES! -->
         <xsl:param name="p_input"/>
-        <xsl:analyze-string select="$p_input" regex="(\d{{4}})$|(\d{{3,4}})-(\d{{2}})-(\d{{2}})$">
+        <xsl:analyze-string select="$p_input" regex="(\d{{3,4}})$|(\d{{3,4}})-(\d{{2}})-(\d{{2}})$">
             <xsl:matching-substring>
 <!--                <xsl:element name="tei:date">-->
                     <xsl:variable name="v_year">
@@ -140,7 +142,7 @@
                             <xsl:attribute name="when" select="concat($v_year,'-',$v_month,'-',regex-group(4))"/>
                         </xsl:when>
                         <xsl:when test="regex-group(1)">
-                            <xsl:attribute name="when" select="regex-group(1)"/>
+                            <xsl:attribute name="when" select="format-number(number(regex-group(1)),'0000')"/>
                         </xsl:when>
                     </xsl:choose>
 <!--                    <xsl:value-of select="$p_input"/>-->
