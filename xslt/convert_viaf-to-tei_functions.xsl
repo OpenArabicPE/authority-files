@@ -17,7 +17,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="#all" version="2.0">
+    exclude-result-prefixes="#all" version="3.0">
     
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
     
@@ -27,16 +27,21 @@
     
      <!-- transform VIAF results to TEI -->
     <xsl:template match="schema:birthDate | viaf:birthDate" mode="m_viaf-to-tei">
-        <xsl:element name="tei:birth">
+        <!-- VIAF can return the value "0" for dates. There should be no output in these cases -->
+        <xsl:if test="not(. = '0')">
+            <xsl:element name="tei:birth">
             <xsl:attribute name="resp" select="'viaf'"/>
             <xsl:call-template name="t_dates-normalise">
                 <xsl:with-param name="p_input" select="."/>
             </xsl:call-template>
             <xsl:value-of select="."/>
         </xsl:element>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="schema:deathDate | viaf:deathDate" mode="m_viaf-to-tei">
+        <!-- VIAF can return the value "0" for dates. There should be no output in these cases -->
+        <xsl:if test="not(. = '0')">
         <xsl:element name="tei:death">
             <xsl:attribute name="resp" select="'viaf'"/>
             <xsl:call-template name="t_dates-normalise">
@@ -44,6 +49,7 @@
             </xsl:call-template>
             <xsl:value-of select="."/>
         </xsl:element>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="viaf:viafID" mode="m_viaf-to-tei">
