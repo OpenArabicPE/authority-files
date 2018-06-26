@@ -43,7 +43,7 @@ date: 2017-10-25 16:21:32 +0300
 
 # TEI mark-up
 
-~~~{.xml}
+```xml
 <person xml:id="">
     <!-- more than one persName in any language -->
     <persName xml:lang="ar"></persName>
@@ -54,7 +54,7 @@ date: 2017-10-25 16:21:32 +0300
     <idno type="viaf"></idno>
     <event when="" notBefore="" notAfter=""></event>
 </person>
-~~~
+```
 
 # Notes and ideas
 
