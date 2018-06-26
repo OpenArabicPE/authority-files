@@ -98,21 +98,6 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="node()" mode="m_documentation">
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:choose>
-                <xsl:when test="not(@change)">
-                    <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates mode="m_documentation" select="@change"/>
-                </xsl:otherwise>
-            </xsl:choose>
-            <xsl:apply-templates/>
-        </xsl:copy>
-    </xsl:template>
-    
     <!-- improve tei:person records without VIAF references -->
     <xsl:template match="tei:person" name="t_4">
         <xsl:if test="$p_verbose=true()">
@@ -248,5 +233,19 @@
         <xsl:attribute name="change">
             <xsl:value-of select="concat(., ' #', $p_id-change)"/>
         </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="node()" mode="m_documentation">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:choose>
+                <xsl:when test="not(@change)">
+                    <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates mode="m_documentation" select="@change"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/>
+        </xsl:copy>
     </xsl:template>
 </xsl:stylesheet>
