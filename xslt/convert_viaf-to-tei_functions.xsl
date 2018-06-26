@@ -100,7 +100,7 @@
     </xsl:template>
     <xsl:template match="viaf:title" mode="m_viaf-to-tei">
         <xsl:element name="tei:title">
-            <xsl:apply-templates mode="m_viaf-to-tei"/>
+            <xsl:value-of select="normalize-space(string())"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="viaf:sources/viaf:sid" mode="m_viaf-to-tei">

@@ -16,9 +16,9 @@
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:param name="p_id-editor" select="'pers_TG'"/>
     <!-- toggle debugging messages -->
-    <xsl:param name="p_verbose" select="false()"/>
+    <xsl:param name="p_verbose" select="true()"/>
     
-    <xsl:template match="@* | node()" name="t_1">
+    <xsl:template match="node() | @*" name="t_1">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_1: </xsl:text>
@@ -67,26 +67,36 @@
             </xsl:choose>
         </xsl:variable>
         <xsl:copy>
-            <xsl:apply-templates select="@* | node()"/>
             <!--<xsl:call-template name="t_query-viaf-rdf">
                 <xsl:with-param name="p_viaf-id" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
             </xsl:call-template>-->
-            <!-- check if basic data is already present -->
-<!--            <xsl:if test="not(tei:birth and tei:death)">-->
-                <!-- add missing fields -->
-                <xsl:call-template name="t_query-viaf-sru">
-                    <xsl:with-param name="p_output-mode" select="'tei'"/>
-                    <xsl:with-param name="p_include-bibliograpy-in-output" select="false()"/>
-                    <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
-                    <xsl:with-param name="p_input-type" select="'id'"/>
-                </xsl:call-template>
                 <!-- try to download the VIAF SRU file -->
                 <xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'file'"/>
                     <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
                     <xsl:with-param name="p_input-type" select="'id'"/>
                 </xsl:call-template>
-            <!--</xsl:if>-->
+            <!-- transform results into TEI -->
+            <xsl:variable name="v_viaf-result-tei">
+                <xsl:call-template name="t_query-viaf-sru">
+                    <xsl:with-param name="p_output-mode" select="'tei'"/>
+                    <xsl:with-param name="p_include-bibliograpy-in-output" select="false()"/>
+                    <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
+                    <xsl:with-param name="p_input-type" select="'id'"/>
+                </xsl:call-template>
+            </xsl:variable>
+            <!-- replicate existing fields -->
+            <xsl:apply-templates select="@* | node()"/>
+            <!-- add missing fields -->
+            <xsl:if test="not(tei:idno[@type='viaf'])">
+                <xsl:copy-of select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='viaf']"/>
+            </xsl:if>
+            <xsl:if test="not(tei:birth)">
+                <xsl:copy-of select="$v_viaf-result-tei/descendant::tei:person/tei:birth"/>
+            </xsl:if>
+            <xsl:if test="not(tei:death)">
+                <xsl:copy-of select="$v_viaf-result-tei/descendant::tei:person/tei:death"/>
+            </xsl:if>
         </xsl:copy>
     </xsl:template>
     
@@ -185,13 +195,13 @@
     </xsl:template>
     
     <!-- decide whether or not to omit existing records -->
-    <xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death | tei:person/tei:listBibl" name="t_7">
+    <!--<xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death | tei:person/tei:listBibl" name="t_7">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_7: </xsl:text><xsl:value-of select="@xml:id"/>
             </xsl:message>
         </xsl:if>
-    </xsl:template>
+    </xsl:template>-->
     
     <!-- replicate everything except @xml:id -->
     <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids" name="t_10">

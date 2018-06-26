@@ -54,6 +54,7 @@
     </xsl:template>
     
     <!-- query VIAF using SRU -->
+    <!-- output can be either a SRU file or a <tei:person> node -->
     <xsl:template name="t_query-viaf-sru">
         <xsl:param name="p_search-term"/>
         <!-- available values are 'id' and 'persName' -->
@@ -112,8 +113,9 @@
         <!-- add VIAF ID -->
         <xsl:choose>
             <xsl:when test="$p_output-mode = 'tei'">
-                <!-- add alternative names -->
-<!--                <xsl:copy-of select="$v_alternative-names"/>-->
+                <tei:person>
+                    <!-- add alternative names -->
+                <xsl:copy-of select="$v_alternative-names"/>
                 <!-- add VIAF ID -->
                 <xsl:apply-templates select="$v_record-1//viaf:viafID" mode="m_viaf-to-tei"/>
                 <!-- add birth and death dates -->
@@ -123,6 +125,7 @@
                 <xsl:if test="$p_include-bibliograpy-in-output=true()">
                     <xsl:apply-templates select="$v_record-1//viaf:titles" mode="m_viaf-to-tei"/>
                 </xsl:if>
+                </tei:person>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'file'">
                 <xsl:choose>
