@@ -66,6 +66,10 @@
                         <placeName xml:lang="ar">البلاد العثمانية</placeName>
                         <placeName xml:lang="ar">الدولة العثمانية</placeName>
                         <placeName xml:lang="ar">المملكة العثمانية</placeName>
+                        <placeName xml:lang="en" type="alt">Turkey</placeName>
+                        <location>
+                            <geo>39, 35</geo>
+                        </location>
                     </tei:place>
                     <listPlace type="town">
                         <tei:place>
@@ -2149,6 +2153,7 @@
                             <tei:location>
                                 <tei:geo>33, 44</tei:geo>
                             </tei:location>
+                            <tei:idno type="url">http://en.wikipedia.org/wiki/Iraq</tei:idno>
                             <tei:idno type="url">http://en.wikipedia.org/wiki/Mesopotamia</tei:idno>
                             <tei:idno type="geon">99237</tei:idno>
                         </tei:place>
@@ -2446,6 +2451,11 @@
                         <head>Anatolia</head>
                         <tei:place type="region">
                             <placeName xml:lang="ar">الاناضول</placeName>
+                            <placeName xml:lang="en">Anatolia</placeName>
+                            <location source="#org_geon">
+                                <geo>39, 35</geo>
+                            </location>
+                            <idno type="geon">323835</idno>
                         </tei:place>
                         <tei:place type="town">
                             <placeName xml:lang="ar">ازمير</placeName>
