@@ -111,6 +111,7 @@
                         <place type="region">
                             <placeName xml:lang="ar-Latn-x-ijmes">Bilād al-Shām</placeName>
                             <placeName xml:lang="ar">بلاد الشام</placeName>
+                            <placeName xml:lang="en">Greater Syria</placeName>
                             <tei:location source="#org_geon">
                                 <tei:geo>32.8686, 44.84908</tei:geo>
                             </tei:location>
@@ -124,22 +125,17 @@
                             </tei:location>
                             <tei:idno type="geon">278960</tei:idno>
                         </tei:place>
-                        <place type="town" xml:id="lgn7303419">
+                        <place type="town">
                             <placeName type="simple">Jerusalem</placeName>
-                            <placeName type="toponym">East Jerusalem</placeName>
-                            <placeName xml:lang="en">East Jerusalem</placeName>
                             <placeName xml:lang="ar-Latn-x-ijmes">al-Quds</placeName>
                             <placeName xml:lang="ar-Latn-x-ijmes">al-Quds al-Sharīf</placeName>
                             <location>
-                                <geo>31.78336, 35.23388</geo>
+                                <geo>31.76904, 35.21633</geo>
                             </location>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="ar">القدس الشرقية</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="ar">القدس الشريف</tei:placeName>
                             <placeName xml:lang="ar">القدس</placeName>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Jérusalem-Est</tei:placeName>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ostjerusalem</tei:placeName>
-                            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Doğu Kudüs</tei:placeName>
-                            <idno type="url">http://en.wikipedia.org/wiki/East_Jerusalem</idno>
-                            <tei:idno type="geon">7303419</tei:idno>
+                            <idno type="url">http://en.wikipedia.org/wiki/Jerusalem</idno>
+                            <tei:idno type="geon">281184</tei:idno>
                         </place>
                         <tei:place type="town">
                             <tei:placeName source="#org_geon" type="alt" xml:lang="ar">النبطية</tei:placeName>
@@ -157,7 +153,6 @@
                             <placeName xml:lang="ar">صور</placeName>
                             <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Sour</tei:placeName>
                             <tei:placeName source="#org_geon" type="alt" xml:lang="de">Sur</tei:placeName>
-                            <!-- <tei:location><tei:geo>22.56667, 59.52889</tei:geo></tei:location><tei:idno type="url">http://en.wikipedia.org/wiki/Sur%2C_Oman</tei:idno><tei:idno type="geon">286245</tei:idno>-->
                             <tei:location source="#org_geon">
                                 <tei:geo>33.27333, 35.19389</tei:geo>
                             </tei:location>
@@ -590,7 +585,10 @@
                                 <place type="town">
                                     <placeName type="simple">Barza</placeName>
                                     <placeName type="toponym">Barzeh</placeName>
-                                    <!-- <tei:location><tei:geo>44.21694, 16.37028</tei:geo></tei:location><tei:idno type="geon">3281461</tei:idno>-->
+                                    <location source="#org_geon">
+                                        <geo>33.55181, 36.31479</geo>
+                                    </location>
+                                    <idno type="geon">171742</idno>
                                 </place>
                                 <place type="town" xml:id="lgn172059">
                                     <placeName type="simple">Zabadani</placeName>
@@ -610,7 +608,10 @@
                                     <placeName n="1" source="#pers_TG" type="alt" xml:lang="en">Kadem esh-Sherif</placeName>
                                     <placeName n="2" source="#pers_TG" type="alt" xml:lang="en">Kadem i-Sherif</placeName>
                                     <placeName n="3" source="#pers_TG" type="alt" xml:lang="en">Kadem</placeName>
-                                    <!--  <tei:placeName source="#org_geon" type="alt" xml:lang="ar">محاوي صير القضام</tei:placeName><tei:location><tei:geo>33.07389, 36.02365</tei:geo></tei:location><tei:idno type="geon">11172356</tei:idno>-->
+                                    <location source="#org_geon">
+                                        <geo>33.47234, 36.28798</geo>
+                                    </location>
+                                    <idno type="geon">173394</idno>
                                 </place>
                                 <place type="village" xml:id="lgn171331">
                                     <placeName type="simple">Bludan</placeName>
@@ -659,6 +660,10 @@
                                     <placeName n="1" source="#pers_TG" type="alt" xml:lang="en">Qaddam railway station</placeName>
                                     <placeName n="2" source="#pers_TG" type="alt" xml:lang="fr">Gare Kadem</placeName>
                                     <placeName n="3" source="#pers_TG" type="alt" xml:lang="en">Kadem station</placeName>
+                                    <location source="#org_geon">
+                                        <geo>33.47619, 36.29229</geo>
+                                    </location>
+                                    <idno type="geon">173393</idno>
                                 </place>
                                 <place type="area">
                                     <placeName type="simple">Ayn Fija</placeName>
@@ -686,6 +691,10 @@
                                     <place type="village">
                                         <placeName type="simple">Kfar Susa</placeName>
                                         <placeName type="toponym">Kafar Sousah</placeName>
+                                        <location source="#org_geon">
+                                            <geo>33.50157, 36.27759</geo>
+                                        </location>
+                                        <idno type="geon">11395650</idno>
                                     </place>
                                     <place type="village">
                                         <placeName type="simple">Mezze</placeName>
@@ -700,6 +709,10 @@
                                     <tei:place type="village">
                                         <placeName xml:lang="ar">اليرموك</placeName>
                                         <!-- <tei:location><tei:geo>33.29681, 44.33633</tei:geo></tei:location><tei:idno type="geon">387281</tei:idno>-->
+                                        <location source="#org_geon">
+                                            <geo>33.47078, 36.30571</geo>
+                                        </location>
+                                        <idno type="geon">8422856</idno>
                                     </tei:place>
                                     <place type="village">
                                         <placeName type="simple">Jobar</placeName>
@@ -716,11 +729,11 @@
                                         <placeName type="toponym">Nāḩiyat Jaramānā</placeName>
                                         <placeName xml:lang="ar-Latn-x-ijmes">Jaramānā</placeName>
                                         <placeName xml:lang="ar">ناحية جرمانا</placeName>
-                                        <placeName n="1" source="#pers_TG" type="alt">Nahiyat Jaramana</placeName>
-                                        <placeName n="3" source="#pers_TG" type="alt">nahyt jrmana</placeName>
-                                        <placeName n="4" source="#pers_TG" type="alt">Nāḥiyat Jaramānā</placeName>
-                                        <placeName n="5" source="#pers_TG" type="alt">Jaramana</placeName>
-                                        <placeName n="6" source="#pers_TG" type="alt">Jaramāna</placeName>
+                                        <placeName n="1" source="#org_geon" type="alt">Nahiyat Jaramana</placeName>
+                                        <placeName n="3" source="#org_geon" type="alt">nahyt jrmana</placeName>
+                                        <placeName n="4" source="#org_geon" type="alt">Nāḥiyat Jaramānā</placeName>
+                                        <placeName n="5" source="#org_geon" type="alt">Jaramana</placeName>
+                                        <placeName n="6" source="#org_geon" type="alt">Jaramāna</placeName>
                                         <tei:location>
                                             <tei:geo>33.49227, 36.35075</tei:geo>
                                         </tei:location>
@@ -776,11 +789,6 @@
                                             <placeName xml:lang="ar-Latn-x-ijmes">Maḥallat al-Yahūd</placeName>
                                             <!-- <tei:placeName source="#org_geon" type="alt" xml:lang="en">Dews Island</tei:placeName><tei:location><tei:geo>36.20544, -75.8388</tei:geo></tei:location><tei:idno type="geon">4463601</tei:idno>-->
                                         </place>
-                                        <place type="neighbourhood">
-                                            <placeName type="simple">Bahsa</placeName>
-                                            <placeName xml:lang="ar-Latn-x-ijmes">Baḥṣa</placeName>
-                                            <!-- <tei:location><tei:geo>34.61528, 36.08389</tei:geo></tei:location><tei:idno type="geon">6279634</tei:idno>-->
-                                        </place>
                                         <place type="building">
                                             <placeName notAfter="1868" type="simple">British consulate</placeName>
                                             <placeName>Bayt Saʿīd Efendi al-Quwatlī</placeName>
@@ -804,7 +812,7 @@
                                             <placeName type="simple">Citadel</placeName>
                                             <placeName xml:lang="ar-Latn-x-ijmes">al-Qalaʿ</placeName>
                                             <placeName xml:lang="ar">قلعة دمشق</placeName>
-                                            <!-- <tei:location><tei:geo>37.06565, -118.61108</tei:geo></tei:location><tei:idno type="geon">5337548</tei:idno>-->
+                                           <idno type="geon">7642380</idno>
                                         </place>
                                         <place type="area">
                                             <placeName type="simple">Burj al-Rus</placeName>
@@ -833,7 +841,13 @@
                                                 <placeName type="toponym">Al ‘Amārah</placeName>
                                                 <placeName xml:lang="ar-Latn-x-ijmes">ʿAmāra</placeName>
                                                 <placeName n="1" source="#pers_TG" type="alt">al-ʿAmāra</placeName>
+                                                <placeName n="2" source="#pers_TG" type="alt">al-ʿAmāra al-Barrāniyya</placeName>
                                                 <!-- <tei:placeName source="#org_geon" type="alt" xml:lang="en">Amhara</tei:placeName><tei:location><tei:geo>11.5, 38.5</tei:geo></tei:location><tei:idno type="url">http://en.wikipedia.org/wiki/Amhara_Region</tei:idno><tei:idno type="geon">444180</tei:idno>-->
+                                                <idno type="geon">7642458</idno>
+                                            </place>
+                                            <place type="quarter">
+                                                <placeName xml:lang="ar-Latn-x-ijmes">al-ʿAmāra al-Juwwāniyya</placeName>
+                                                <idno type="geon">173263</idno>
                                             </place>
                                             <place type="neighbourhood">
                                                 <placeName xml:lang="ar-Latn-x-ijmes">Mazz al-Qaṣab</placeName>
@@ -844,6 +858,7 @@
                                             <place type="neighbourhood">
                                                 <placeName type="simple">Bab al-Salam</placeName>
                                                 <placeName xml:lang="ar-Latn-x-ijmes">Bāb al-Salām</placeName>
+                                                <idno type="geon">7642459</idno>
                                             </place>
                                             <place type="neighbourhood">
                                                 <placeName type="simple">'Uqayba</placeName>
@@ -982,6 +997,7 @@
                                             <place type="neighbourhood" xml:id="lgn7642463">
                                                 <placeName type="simple">Bahsa</placeName>
                                                 <placeName xml:lang="ar-Latn-x-ijmes">Baḥṣa</placeName>
+                                                <placeName xml:lang="ar">بحصة</placeName>
                                                 <placeName xml:lang="en">Bahsa</placeName>
                                                 <location>
                                                     <geo>33.51262, 36.29969</geo>
@@ -990,7 +1006,7 @@
                                                 <tei:idno type="geon">7642463</tei:idno>
                                             </place>
                                             <place subtype="administration" type="building">
-                                                <placeName type="simple">New Serai</placeName>
+                                                <placeName type="simple">New Serail</placeName>
                                                 <placeName xml:lang="ar-Latn-x-ijmes">al-Sarāyi al-Jadīd</placeName>
                                             </place>
                                             <place subtype="mosque" type="building">
@@ -1048,6 +1064,9 @@
                                                     <placeName xml:lang="ar-Latn-x-ijmes">Ghurabāʾ Hospital</placeName>
                                                     <placeName n="1" type="alt">Ḥamīdiyya Hospital</placeName>
                                                     <placeName n="2" type="alt">Mustashfā al-Ḥamīdī</placeName>
+                                                    <location>
+                                                        <geo>33.51142, 36.29164</geo>
+                                                    </location>
                                                 </place>
                                                 <place sameAs="#lwm81310" subtype="garden" type="building">
                                                     <placeName type="simple">Bustan al-A'jam</placeName>
