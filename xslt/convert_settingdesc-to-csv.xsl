@@ -16,9 +16,9 @@
     </xsl:template>
     
     <xsl:template match="tei:settingDesc">
-        <xsl:text>location</xsl:text><xsl:value-of select="$p_separator"/>
-        <xsl:text>lat</xsl:text><xsl:value-of select="$p_separator"/>
-        <xsl:text>long</xsl:text><xsl:value-of select="$v_new-line"/>
+        <xsl:text>schema:name</xsl:text><xsl:value-of select="$p_separator"/>
+        <xsl:text>schema:latitude</xsl:text><xsl:value-of select="$p_separator"/>
+        <xsl:text>schema:longitude</xsl:text><xsl:value-of select="$v_new-line"/>
         <xsl:for-each-group select="descendant::tei:placeName[following-sibling::tei:location/tei:geo]" group-by="normalize-space(string())">
             <xsl:sort select="current-grouping-key()" order="ascending"/>
             <xsl:value-of select="current-grouping-key()"/><xsl:value-of select="$p_separator"/>
