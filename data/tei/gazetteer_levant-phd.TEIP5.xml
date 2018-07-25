@@ -126,7 +126,7 @@
                             <tei:idno type="geon">278960</tei:idno>
                         </tei:place>
                         <place type="town">
-                            <placeName type="simple">Jerusalem</placeName>
+                            <placeName type="simple" xml:lang="en">Jerusalem</placeName>
                             <placeName xml:lang="ar-Latn-x-ijmes">al-Quds</placeName>
                             <placeName xml:lang="ar-Latn-x-ijmes">al-Quds al-Sharīf</placeName>
                             <location>
@@ -218,9 +218,13 @@
                             <place type="town">
                                 <placeName xml:lang="en">Alexandretta</placeName>
                                 <tei:placeName source="#org_geon" type="alt" xml:lang="ar">إسكندرونة</tei:placeName>
+                                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">الإسكندرونة</tei:placeName>
                                 <tei:placeName source="#org_geon" type="alt" xml:lang="fr">İskenderun</tei:placeName>
-                                <tei:placeName source="#org_geon" type="alt" xml:lang="de">İskenderun</tei:placeName>
+                                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Iskenderun</tei:placeName>
                                 <tei:placeName source="#org_geon" type="alt" xml:lang="tr">İskenderun</tei:placeName>
+                                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">Iskandarūna</tei:placeName>
+                                <tei:placeName source="#org_wiki" type="alt" xml:lang="de">Alexandrette</tei:placeName>
+                                <tei:placeName source="#org_wiki" type="alt" xml:lang="fr">Alexandrette</tei:placeName>
                                 <tei:location source="#org_geon">
                                     <tei:geo>36.58718, 36.17347</tei:geo>
                                 </tei:location>
@@ -681,13 +685,13 @@
                                 <listPlace corresp="#lgn170654c" type="county">
                                     <place type="county" xml:id="lgn170654c">
                                         <placeName type="simple">Damascus (kaza)</placeName>
-                                        <placeName type="toponym">Damascus</placeName>
-                                        <placeName xml:lang="ar-Latn-x-ijmes">Dimashq</placeName>
+                                        <placeName type="toponym">Kaza of Damascus</placeName>
+                                        <placeName xml:lang="ar-Latn-x-ijmes">Qaḍāʾ Dimashq</placeName>
                                         <placeName xml:lang="ota-Latn-x-ijmes">Şām-i şerīf ḳażāsı</placeName>
                                         <placeName xml:lang="tr">Şam-i şerif kazası</placeName>
-                                        <placeName xml:lang="de">Damaskus</placeName>
+                                        <!--<placeName xml:lang="de">Damaskus</placeName>
                                         <placeName xml:lang="fr">Damas</placeName>
-                                    </place>
+-->                                    </place>
                                     <place type="village">
                                         <placeName type="simple">Kfar Susa</placeName>
                                         <placeName type="toponym">Kafar Sousah</placeName>
@@ -1868,7 +1872,7 @@
                                     <location>
                                         <geo>32.33385, 35.75238</geo>
                                     </location>
-                                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">‘Ajlūn</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar-Latn-EN">‘Ajlūn</tei:placeName>
                                     <tei:placeName source="#org_geon" type="alt" xml:lang="ar">عجلون</tei:placeName>
                                     <tei:idno type="geon">250799</tei:idno>
                                 </place>
