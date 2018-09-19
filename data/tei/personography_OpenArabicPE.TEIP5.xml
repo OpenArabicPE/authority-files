@@ -21,7 +21,6 @@
             <publicationStmt xml:id="publicationStmt" xml:lang="en">
                 <authority xml:id="authority_1.d1e32" xml:lang="en">
                     <persName xml:id="persName_3.d1e34" xml:lang="en">Till Grallert</persName>
-                    <persName change="#d4e18775" type="noAddName" xml:lang="en"/>
                     <persName corresp="#persName_3.d1e34" type="flattened" xml:id="persName_4.d1e36" xml:lang="en">TillGrallert</persName>
                 </authority>
                 <pubPlace xml:id="pubPlace_1.d1e41" xml:lang="en">Berlin</pubPlace>
@@ -40,7 +39,6 @@
                 <listPerson xml:id="listPerson_1.d1e68" xml:lang="ar">
                     <person xml:id="person_6.d1e315" xml:lang="ar">
                         <persName ref="viaf:89743196" xml:id="persName_31.d1e317" xml:lang="ar">ابن المقفع</persName>
-                        <persName change="#d4e18775" type="noAddName" xml:lang="ar"/>
                         <persName corresp="#persName_31.d1e317" type="flattened" xml:id="persName_6.d1e74" xml:lang="ar">ابنالمقفع</persName>
                         <persName ref="viaf:89743196" xml:id="persName_33.d1e323" xml:lang="ar">
                             <forename xml:id="forename_17.d1e325" xml:lang="ar">عبد الله</forename>ابن المقفع</persName>
@@ -8419,29 +8417,60 @@
                 </tei:listPerson>
                 <listPerson xml:lang="ar">
                     <person>
-                        <persName ref="viaf:299025643">
+                        <persName ref="viaf:17087051">
                             <forename>محمد</forename>
-                            <forename>عارف</forename>
-                            <surname>المنير الحسيني</surname>
+                            <addName type="kunyah">أبو الخير</addName>
+                            <surname>الطباع</surname>
                         </persName>
+                        <persName change="#d4e19992" corresp="#" type="flattened">محمدابوالخيرالطباع</persName>
+                        <persName change="#d4e19992" type="noAddName">
+                            <forename>محمد</forename>
+                            <surname>الطباع</surname>
+                        </persName>
+                        <tei:idno change="#d4e19992" type="viaf">17087051</tei:idno>
                     </person>
                     <person>
                         <persName ref="viaf:267054449">
                             <forename>مختار</forename>
                             <surname>المؤيد</surname>
                         </persName>
+                        <persName change="#d4e19992" corresp="#" type="flattened">مختارالمؤيد</persName>
+                        <persName change="#d4e19992" type="noAddName">
+                            <forename>مختار</forename>
+                            <surname>المؤيد</surname>
+                        </persName>
+                        <tei:idno change="#d4e19992" type="viaf">267054449</tei:idno>
+                        <tei:birth change="#d4e19992" resp="viaf" when="1822">1822</tei:birth>
+                        <tei:death change="#d4e19992" resp="viaf" when="1921">1921</tei:death>
                     </person>
                     <person>
-                        <persName ref="viaf:17087051">
+                        <persName ref="viaf:299025643">
                             <forename>محمد</forename>
-                            <addName type="kunyah">أبو الخير</addName>
-                            <surname>الطباع</surname>
+                            <forename>عارف</forename>
+                            <surname>المنير الحسيني</surname>
                         </persName>
+                        <persName change="#d4e19992" corresp="#" type="flattened">محمدعارفالمنيرالحسيني</persName>
+                        <persName change="#d4e19992" type="noAddName">
+                            <forename>محمد</forename>
+                            <forename>عارف</forename>
+                            <surname>المنير الحسيني</surname>
+                        </persName>
+                        <tei:idno change="#d4e19992" type="viaf">299025643</tei:idno>
+                        <tei:death change="#d4e19992" resp="viaf" when="1342">1342</tei:death>
                     </person>
                 </listPerson>
             </particDesc>
         </profileDesc>
         <revisionDesc xml:id="revisionDesc_1.d1e6169">
+            <tei:change when="2018-09-19" who="#pers_TG" xml:id="d4e19992" xml:lang="en">Improved 
+                <tei:gi>person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding  
+                <tei:gi>birth</tei:gi>
+                , 
+                <tei:gi>death</tei:gi>
+                , and 
+                <tei:gi>idno</tei:gi>
+                .</tei:change>
             <tei:change when="2018-09-19" who="#pers_TG" xml:id="d4e18775" xml:lang="en">Improved 
                 <tei:gi>person</tei:gi>
                 nodes that had references to VIAF, by querying VIAF and adding  
