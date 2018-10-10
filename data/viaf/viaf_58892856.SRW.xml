@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>58892856</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/58892856/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/58892856"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="0000000054910094">ISNI|0000000054910094</ns2:source>
+                  <ns2:source nsid="070411190">NTA|070411190</ns2:source>
+                  <ns2:source nsid="http://d-nb.info/gnd/127689761">DNB|127689761</ns2:source>
+                  <ns2:source nsid="no2008080536">LC|no2008080536</ns2:source>
+                  <ns2:source nsid="vtls000196164">RERO|vtls000196164</ns2:source>
+               </ns2:sources>
+               <ns2:length>150</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Cherif, Saleh, Sjeik</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Tūnisī, Ṣāliḥ al-Sharīf, 1869-1920</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Saleh Cherif</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|127689761</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Tūnisī, Ṣāliḥ al-Sharīf</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2008080536</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Cherif, Saleh</ns2:subfield>
+                        <ns2:subfield code="c">Sjeik</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000054910094</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>RERO|vtls000196164</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>DNB|127689761</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>NTA|070411190</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LC|no2008080536</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Cherif, Saleh,</ns2:subfield>
+                        <ns2:subfield code="c">Sjeik</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NTA|070411190</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>DNB|127689761</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>RERO|vtls000196164</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>LC|no2008080536</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Saleh Cherif</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|127689761</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>DNB|127689761</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>NTA|070411190</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Tūnisī, Ṣāliḥ al-Sharīf</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2008080536</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|no2008080536</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>RERO|vtls000196164</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NTA|070411190</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Tūnisī, Ṣāliḥ al-Sharīf,</ns2:subfield>
+                        <ns2:subfield code="d">1869-1920</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>RERO|vtls000196164</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000054910094</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>NTA|070411190</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>LC|no2008080536</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>u</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Attunisi, Salih Aschscharif,</ns2:subfield>
+                        <ns2:subfield code="d">1869-1920</ns2:subfield>
+                        <ns2:normalized>attunisi salih aschscharif 1869 1920</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Saleh Scherif</ns2:subfield>
+                        <ns2:normalized>saleh scherif</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Saleh, Scherif,</ns2:subfield>
+                        <ns2:subfield code="d">1869-1920</ns2:subfield>
+                        <ns2:normalized>saleh scherif 1869 1920</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Saleh, Sherif,</ns2:subfield>
+                        <ns2:subfield code="d">1869-1920</ns2:subfield>
+                        <ns2:normalized>saleh sherif 1869 1920</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Scherif Saleh,</ns2:subfield>
+                        <ns2:subfield code="d">1869-1920</ns2:subfield>
+                        <ns2:normalized>scherif saleh 1869 1920</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Scherif, Saleh</ns2:subfield>
+                        <ns2:normalized>scherif saleh</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Šarīf al-Tūnisī, Ṣāliḥ al-</ns2:subfield>
+                        <ns2:normalized>sarif al tunisi salih al</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Šarīf, Ṣāliḥ</ns2:subfield>
+                        <ns2:normalized>sarif salih</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Šarīf al-Tūnisī, Ṣāliḥ al-</ns2:subfield>
+                        <ns2:normalized>sarif al tunisi salih al</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Šarīf, Ṣāliḥ</ns2:subfield>
+                        <ns2:normalized>sarif salih</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">تونسي، صالح الشريف،</ns2:subfield>
+                        <ns2:subfield code="d">1869-1920</ns2:subfield>
+                        <ns2:normalized>تونسي صالح الشريف 1869 1920</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ṣāliḥ, Šarīf,</ns2:subfield>
+                        <ns2:subfield code="d">1869-1920</ns2:subfield>
+                        <ns2:normalized>salih sarif 1869 1920</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="4" tag="950">
+                     <ns2:text>Ṣafāʾiḥī, Ismāʿīl</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Sefaihi, Ismā'īl</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Ṣafāyiḥī, Ismāʿīl al-</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Schabinger von Schowingen, Karl Emil</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Hartmann, Karl A. Martin 1854-1926</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>Ṣafāiḥī</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|127689761</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="5">
+                     <ns2:text>Librairie nouvelle</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000054910094</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>Libr. nouv.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|127689761</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1869</ns2:birthDate>
+               <ns2:deathDate>1920</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="192" min="191">
+                  <ns2:date count="11" scaled="3.46">191</ns2:date>
+                  <ns2:date count="3" scaled="1.58">192</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="12">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|127689761</ns2:sid>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:RelatorCodes>
+                  <ns2:data count="1">
+                     <ns2:text>aut</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|127689761</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RelatorCodes>
+               <ns2:countries>
+                  <ns2:data count="7" scaled="3">
+                     <ns2:text>DE</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|127689761</ns2:sid>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" scaled="2">
+                     <ns2:text>CH</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>SE</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2008080536</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Bayān tawaḥḥush Faransā fī al-quṭr al-Tūnisī al-Jazāʼirī wa-al-istinjād ilayh, 1920?:</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Schlagende Beweise für die Notwendigkeit des Abzugs der Franzosen aus Tunis</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|310320070">
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>XR</ns2:s>
+                        <ns2:sid>XR|VIAFWORK251332307</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Tunesien und Algerien</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Tunisia ed Algeria : protesta contro il dispotismo francese</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|127689761</ns2:sid>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>La Tunisie et l'Algérie</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Die Wahrheit über den Glaubenskrieg</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|070411190</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Zeitgemässe Gedanken</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls000196164</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>بيان توحش فرنسا في القطر التونسي الجزائري والاستنجاد اليه</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="BIBSYS|x04065656"
+                          time="2012-11-27T04:00:16+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="NTA|070411190" time="2012-12-19T19:11:18+00:00" type="add"/>
+                  <ns2:ht recid="DNB|102677964"
+                          time="2013-02-15T19:30:59+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="LC|no2008080536" time="2014-03-10T20:04:09+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000054910094"
+                          time="2014-12-15T16:26:32+00:00"
+                          type="add"/>
+                  <ns2:ht recid="DNB|182433609"
+                          time="2016-11-20T10:08:03.046650+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="DNB|127689761"
+                          time="2017-03-13T20:05:34.844023+00:00"
+                          type="add"/>
+                  <ns2:ht recid="DNB|1053670079"
+                          time="2017-03-13T21:38:23.250741+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="SELIBR|106505"
+                          time="2017-03-13T21:38:23.258292+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="RERO|vtls000196164"
+                          time="2017-12-26T12:27:39.318228+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2018-10-07T14:43:18.352245+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "58892856"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">58892856</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
