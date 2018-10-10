@@ -37,7 +37,7 @@
 
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master"
-        select="'../tei/entities_master.TEIP5.xml'"/>
+        select="'../data/tei/personography_OpenArabicPE.TEIP5.xml'"/>
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
 
     <!-- parameter to select whether the master file should be updated  -->
