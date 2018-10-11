@@ -19,7 +19,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="#all" version="2.0">
     
-    <!-- PROBLEM: in some instance this stylesheet produces empty <persName> nodes in the source file upon adding GeoNames references to them -->
+    <!-- PROBLEM: in some instance this stylesheet produces empty <placeName> nodes in the source file upon adding GeoNames references to them -->
     
     <!-- this stylesheet queries an external authority files for every <placeName> and attempts to provide links via the @ref attribute -->
     <!-- The now unnecessary code to updated the master file needs to be removed -->
