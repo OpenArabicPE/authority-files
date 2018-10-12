@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>52431747</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/52431747/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/52431747"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="http://d-nb.info/gnd/11602528X">DNB|11602528X</ns2:source>
+                  <ns2:source nsid="0000000055350754">ISNI|0000000055350754</ns2:source>
+                  <ns2:source nsid="nr96030297">LC|nr 96030297</ns2:source>
+                  <ns2:source nsid="LNC10-000209883">LNB|LNC10-000209883</ns2:source>
+                  <ns2:source nsid="kup19980000073794">NKC|kup19980000073794</ns2:source>
+                  <ns2:source nsid="149175469">NTA|149175469</ns2:source>
+                  <ns2:source nsid="171143388">SUDOC|171143388</ns2:source>
+                  <ns2:source nsid="Q3481182">WKP|Q3481182</ns2:source>
+                  <ns2:source nsid="000530217">NLI|000530217</ns2:source>
+                  <ns2:source nsid="000012683">UIY|000012683</ns2:source>
+               </ns2:sources>
+               <ns2:length>940</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Gestur, Pálsson, 1852-1891</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 96030297</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000530217</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|11602528X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Gestur Pálsson</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Pálsson, Gestur, 1852-1891</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Gestur Pálsson écrivain islandais</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur Pálsson</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|11602528X</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>DNB|11602528X</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur Pálsson,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 96030297</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|nr 96030297</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur Pálsson,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>SUDOC|171143388</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur Pálsson</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000055350754</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur Pálsson</ns2:subfield>
+                        <ns2:subfield code="c">écrivain islandais</ns2:subfield>
+                        <ns2:subfield code="9">fr</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>WKP|Q3481182</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur Pálsson,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LNB|LNC10-000209883</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur Pálsson,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                        <ns2:subfield code="9">lat</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000530217</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|000530217</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="4" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur</ns2:subfield>
+                        <ns2:subfield code="1">Pálsson</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>UIY|000012683</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="100">
+                        <ns2:subfield code="a">Gestur,</ns2:subfield>
+                        <ns2:subfield code="c">Pálsson,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NTA|149175469</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NKC|kup19980000073794</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Pálsson, Gestur,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                        <ns2:subfield code="7">kup19980000073794</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NKC|kup19980000073794</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNB|LNC10-000209883</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 96030297</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000055350754</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>UIY|000012683</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|171143388</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|149175469</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000530217</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>WKP|Q3481182</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|11602528X</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Gestur Pálsson</ns2:subfield>
+                        <ns2:subfield code="c">Icelandic writer</ns2:subfield>
+                        <ns2:normalized>gestur palsson icelandic writer</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Gestur Pálsson</ns2:subfield>
+                        <ns2:subfield code="c">isländischer Schriftsteller und Journalist</ns2:subfield>
+                        <ns2:normalized>gestur palsson islandischer schriftsteller und journalist</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Gestur Pálsson</ns2:subfield>
+                        <ns2:subfield code="c">schrijver uit IJsland (1852-1891)</ns2:subfield>
+                        <ns2:normalized>gestur palsson schrijver uit ijsland 1852 1891</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Gestur Pálsson</ns2:subfield>
+                        <ns2:subfield code="c">scrittore islandese</ns2:subfield>
+                        <ns2:normalized>gestur palsson scrittore islandese</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Gesturs Palssons,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                        <ns2:normalized>gesturs palssons 1852 1891</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Gesturs Palssons</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                        <ns2:normalized>gesturs palssons 1852 1891</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Pálsson, Gestur</ns2:subfield>
+                        <ns2:normalized>palsson gestur</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Pálsson, Gestur,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                        <ns2:normalized>palsson gestur 1852 1891</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 96030297</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Pálsson, Gestur</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                        <ns2:normalized>palsson gestur 1852 1891</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|11602528X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Pálsson, Gestur</ns2:subfield>
+                        <ns2:normalized>palsson gestur</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Pálsson, Gestur,</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                        <ns2:normalized>palsson gestur 1852 1891</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000530217</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Pálsson, Gestur</ns2:subfield>
+                        <ns2:subfield code="d">1852-1891</ns2:subfield>
+                        <ns2:normalized>palsson gestur 1852 1891</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="28" tag="950">
+                     <ns2:text>Sigvaldi S. Kaldalóns 1881-1946</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="7" tag="950">
+                     <ns2:text>Küchler, Carl</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="4" tag="950">
+                     <ns2:text>Eggert Stefánsson 1890-1962</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Vetti, O. S. 1861-1942</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Jónas Hallgrímsson 1807-1845</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Jóhann Sigurjónsson 1880-1919</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Ingólfur B. Kristjánsson 1957</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Halla Eyjólfsdóttir 1866-1937</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Guðrún A. Kristinsdóttir 1930</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Grímur Thomsen 1820-1896</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>Wiehe, H.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>Lejas-Krūmiņš, Teodors, 1871-1947</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>Einar, Hjörleifsson Kvaran, 1859-1938.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="6">
+                     <ns2:text>Sigfús Eymundsson</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="6">
+                     <ns2:text>Hlusta.is</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="5">
+                     <ns2:text>Leiftur</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="4">
+                     <ns2:text>J. Otto</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3">
+                     <ns2:text>Zář</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3">
+                     <ns2:text>Reclamm Jur</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000055350754</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3">
+                     <ns2:text>Reclam</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3">
+                     <ns2:text>Bókaverzlun Sigfúsar Eymundssonar</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>logrjettu</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>Ytraberg</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>apg. K. Orlowskis</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1852-09-25</ns2:birthDate>
+               <ns2:deathDate>1891-08-19</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="201" min="187">
+                  <ns2:date count="3" scaled="1.58">187</ns2:date>
+                  <ns2:date count="6" scaled="2.58">188</ns2:date>
+                  <ns2:date count="13" scaled="3.70">189</ns2:date>
+                  <ns2:date count="13" scaled="3.70">190</ns2:date>
+                  <ns2:date count="5" scaled="2.32">191</ns2:date>
+                  <ns2:date count="11" scaled="3.46">192</ns2:date>
+                  <ns2:date count="6" scaled="2.58">193</ns2:date>
+                  <ns2:date count="6" scaled="2.58">194</ns2:date>
+                  <ns2:date count="5" scaled="2.32">195</ns2:date>
+                  <ns2:date count="2" scaled="1.00">196</ns2:date>
+                  <ns2:date count="11" scaled="3.46">197</ns2:date>
+                  <ns2:date count="5" scaled="2.32">198</ns2:date>
+                  <ns2:date count="18" scaled="4.17">199</ns2:date>
+                  <ns2:date count="10" scaled="3.32">200</ns2:date>
+                  <ns2:date count="7" scaled="2.81">201</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="12">
+                     <ns2:text>aa</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="8">
+                     <ns2:text>ab</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="55">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="4">
+                     <ns2:text>cm</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="6">
+                     <ns2:text>im</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="25">
+                     <ns2:text>ja</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3">
+                     <ns2:text>jm</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:RelatorCodes>
+                  <ns2:data count="1">
+                     <ns2:text>aut</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>editeur scientifique</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RelatorCodes>
+               <ns2:ISBNs unique="7">
+                  <ns2:data count="1">
+                     <ns2:text>9789979831310</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>9789979608189</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>9789140617170</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>9788777043031</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>9788700832527</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>9788202140243</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>9782909027173</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:ISBNs>
+               <ns2:countries>
+                  <ns2:data count="79" scaled="6">
+                     <ns2:text>IS</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="11" scaled="4">
+                     <ns2:text>DE</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="6" scaled="3">
+                     <ns2:text>CZ</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="5" scaled="3">
+                     <ns2:text>DK</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" scaled="2">
+                     <ns2:text>GB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>NO</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>FR</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>CA</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>LV</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>IT</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ice</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>IS</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:s>WKP</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:xLinks>
+                  <ns2:xLink type="Wikipedia">https://de.wikipedia.org/wiki/Gestur_Pálsson<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://eo.wikipedia.org/wiki/Gestur_Pálsson<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://is.wikipedia.org/wiki/Gestur_Pálsson<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://it.wikipedia.org/wiki/Gestur_Pálsson<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+                  <ns2:xLink type="Wikipedia">https://sv.wikipedia.org/wiki/Gestur_Pálsson<ns2:sources>
+                        <ns2:s>WKP</ns2:s>
+                        <ns2:sid>WKP|Q3481182</ns2:sid>
+                     </ns2:sources>
+                  </ns2:xLink>
+               </ns2:xLinks>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Aðfangadagskvöld í Winnipeg</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Betlikerlingin</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Blautfisksverzlun og bróðurkærleiki</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Bréf Verðandi-manna til Hannesar Hafsteins.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|11602528X</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Drei Novellen vom polarkreis,...</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Dvě islandské povídky</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Fall Sáls ; Við leiði Jóhanns D. Meilbye d. vorið 1895.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Fimm sönglög fyrir karlakór</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Fire fortællinger</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Ein Frühlingstraum</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 96030297</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000530217</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Gestur Pálsson, 1892:</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Grásleppu Gvendur</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|11602528X</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Grausame Geschicke. -</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|309545043">
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>XR</ns2:s>
+                        <ns2:sid>XR|VIAFWORKLCno2012083689</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Grimur kaupmaður deyr.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Grimur se meurt</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Hanso balanca ; La ribelo en la bieno Brekka</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Islandske småsogor</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Íslensk og erlend sönglög</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|309545046">
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>XR</ns2:s>
+                        <ns2:sid>XR|VIAFWORKLCno2012083715</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Kærleiksheimilið.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Das Kind</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Klibiķis, 1901:</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNB</ns2:s>
+                        <ns2:sid>LNB|LNC10-000209883</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Klibiķis : stahsts is maspilsehtneeku dsihwes</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Kruté osudy : Črty z Islandu</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>L'Année Scandinave 1993</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Das Liebesheim : Novelle</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Lífið í Reykjavík : fyrirlestur</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Mannskaðar á Íslandi</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Menschen im Frühling : nordische Liebesgeschichten</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Mentunarástandið á Íslandi : fyrirlestur</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Minni Íslands : í samsæti Íslendinga í Kaupmannahöfn : 26. september 1875</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Det modernes gjennombrudd i Norden</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Næstu harðindin</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Nýi skáldskapurinn.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Polnisch Blut.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Pólskt blóð : þýzk-pólsk saga</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Ritsafn : ...</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|309543223">
+                     <ns2:sources>
+                        <ns2:s>XR</ns2:s>
+                        <ns2:sid>XR|VIAFWORKLCno2011019732</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Short stories. Selections.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Sigurd der Bootsführer</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|309545047">
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>XR</ns2:s>
+                        <ns2:sid>XR|VIAFWORKLCno2012083717</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Sigurður formaður.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Skáldrit : sem til eru</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Smásögur</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Sögur og kvæði</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Sole di mezzanotte</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Söngvar Kaldalóns</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Stéttaskipting í Reykjavík</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|308079833">
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|149175469</ns2:sid>
+                        <ns2:s>XR</ns2:s>
+                        <ns2:sid>XR|VIAFWORK236097458</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Þrjár sögur</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Þýðingar skólapilta á nítjándu öld.</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|312520856">
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                        <ns2:s>XR</ns2:s>
+                        <ns2:sid>XR|VIAFWORKLCno2012083688</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Tilhugalif.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>To noveller</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Tólf sönglög</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|171143388</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Undir ljúfum lögum</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|309545042">
+                     <ns2:sources>
+                        <ns2:s>UIY</ns2:s>
+                        <ns2:sid>UIY|000012683</ns2:sid>
+                        <ns2:s>XR</ns2:s>
+                        <ns2:sid>XR|VIAFWORKLCno2012083687</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Vordraumur.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NKC</ns2:s>
+                        <ns2:sid>NKC|kup19980000073794</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Žertem i do opravdy : drobné kresby</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="DNB|11602528X" time="2009-03-03T12:03:24+00:00" type="add"/>
+                  <ns2:ht recid="LC|nr 96030297" time="2009-03-03T12:03:41+00:00" type="add"/>
+                  <ns2:ht recid="NKC|kup19980000073794"
+                          time="2009-05-07T09:11:03+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BIBSYS|x01088340"
+                          time="2012-11-27T04:00:16+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="NTA|149175469" time="2012-12-19T19:11:18+00:00" type="add"/>
+                  <ns2:ht recid="NLIlat|000530217"
+                          time="2013-05-13T19:14:22+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="SUDOC|171143388" time="2013-09-16T16:15:07+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000055350754"
+                          time="2014-05-14T22:19:01+00:00"
+                          type="add"/>
+                  <ns2:ht recid="LNB|LNC10-000209883"
+                          time="2015-02-16T15:07:12+00:00"
+                          type="add"/>
+                  <ns2:ht recid="WKP|Q3481182" time="2015-04-14T18:56:54+00:00" type="add"/>
+                  <ns2:ht recid="NLI|000530217"
+                          time="2017-02-05T10:08:59.616941+00:00"
+                          type="add"/>
+                  <ns2:ht recid="UIY|000012683"
+                          time="2018-03-18T09:25:32.143053+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2018-10-07T14:36:14.026683+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "52431747"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">52431747</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
