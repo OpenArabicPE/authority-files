@@ -6,9 +6,9 @@
     xmlns:xi="http://www.w3.org/2001/XInclude" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="#all" version="2.0">
     
-    <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
-    <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute on a persName child.
-    It DOES NOT try to find names on VIAF without an ID -->
+    <!-- This stylesheet takes a TEI personography as input. It resorts the persons by names, queries VIAF for additional information (based on VIAF IDs already present in the personography), and adds normalized versions of names for each person. -->
+    <!-- Note 1: It DOES NOT try to find names on VIAF without an ID -->
+    <!-- Note 2: all <persName>s in the personography must have an @xml:id prior to running this stylesheet -->
     <xsl:output method="xml" encoding="UTF-8" indent="yes" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <xsl:include href="query-viaf.xsl"/>
@@ -40,9 +40,12 @@
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:person">
                 <!-- this sort should consider the Arabic "al-" -->
-                <xsl:sort select="tei:persName[tei:surname][1]/tei:surname[1]"/>
+                <xsl:sort select="descendant::tei:surname[1]"/>
+                    <xsl:sort select="descendant::tei:forename[1]"/>
+                    <xsl:sort select="descendant::tei:addName[@type='noAddName'][not(.='')][1]"/>
+                    <xsl:sort select="descendant::tei:addName[@type='flattened'][1]"/>
                 <xsl:sort select="tei:persName[1]"/>
-                <xsl:sort select="tei:idno[@type='viaf'][1]" order="descending"/>
+                <xsl:sort select="tei:idno[@type='viaf'][1]" order="ascending"/>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
@@ -65,9 +68,6 @@
             </xsl:choose>
         </xsl:variable>
         <xsl:copy>
-            <!--<xsl:call-template name="t_query-viaf-rdf">
-                <xsl:with-param name="p_viaf-id" select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
-            </xsl:call-template>-->
                 <!-- try to download the VIAF SRU file -->
                 <xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'file'"/>
@@ -78,6 +78,7 @@
             <xsl:variable name="v_viaf-result-tei">
                 <xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'tei'"/>
+                    <!-- chose whether to included bibliographic data. Default is 'false()' as this inflates the resulting file and can be retrieved on demand at a later stage -->
                     <xsl:with-param name="p_include-bibliograpy-in-output" select="false()"/>
                     <xsl:with-param name="p_search-term" select="$v_viaf-id"/>
                     <xsl:with-param name="p_input-type" select="'id'"/>
@@ -114,7 +115,6 @@
         </xsl:copy>
     </xsl:template>
     
-<!--    <xsl:template match="tei:persName[@type='flattened']" priority="100"/>-->
     
     <xsl:template match="tei:persName" name="t_5">
         <xsl:if test="$p_verbose=true()">
@@ -130,7 +130,7 @@
             <xsl:value-of select="normalize-space(replace(string(),'([إ|أ|آ])','ا'))"/>
         </xsl:variable>
         <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
-        <xsl:if test="not(parent::node()/tei:persName[@type='flattened'] = $v_name-flat)">
+        <xsl:if test="$v_name-flat!='' and not(parent::node()/tei:persName[@type='flattened'] = $v_name-flat)">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
@@ -147,7 +147,8 @@
             </xsl:copy>
         </xsl:if>
         <!-- add persName without any titles, honorary addresses etc. -->
-        <xsl:if test="node()[not(self::tei:addName | self::tei:roleName | self::tei:nameLink | self::tei:genName)]">
+        <!-- test if there are <addName> children -->
+        <xsl:if test="tei:addName | self::tei:roleName | self::tei:nameLink | self::tei:genName">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create persName without titles</xsl:text>
@@ -199,14 +200,6 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- decide whether or not to omit existing records -->
-    <!--<xsl:template match="tei:person/tei:idno | tei:person/tei:birth | tei:person/tei:death | tei:person/tei:listBibl" name="t_7">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_7: </xsl:text><xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
-    </xsl:template>-->
     
     <!-- replicate everything except @xml:id -->
     <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids" name="t_10">
@@ -220,6 +213,9 @@
             <xsl:apply-templates select="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids"/>
         </xsl:copy>
     </xsl:template>
+    
+    <!-- remove empty nodes -->
+    <xsl:template match="node()[.='']"/>
     
     <!-- document the changes -->
     <xsl:template match="tei:revisionDesc" name="t_8">
