@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><!--<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
+<?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!--<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
 <?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml"
@@ -1052,12 +1053,7 @@
                         <persName change="#d4e16401 #d2e18656" corresp="#persName_94.d2e538" type="flattened" xml:id="persName_96.d2e548" xml:lang="ar">عبدالجليل</persName>
                         <persName corresp="#persName_145.d1e3415" type="flattened" xml:id="persName_553.d1e4580" xml:lang="ar">عبدالجليلبنوهبونيصفالاسطول</persName>
                     </person>
-                    <!-- <person xml:id="person_35.d1e4399" xml:lang="ar">
-                        <persName xml:id="persName_145.d1e4401" xml:lang="ar">
-                            <forename xml:id="forename_183.d1e3865" xml:lang="ar">عبد الحميد</forename>
-                        </persName>
-                        <persName corresp="#persName_145.d1e4401" type="flattened" xml:id="persName_640.d1e5159" xml:lang="ar">عبدالحميد</persName>
-                    </person> -->
+                    <!-- <person xml:id="person_35.d1e4399" xml:lang="ar"><persName xml:id="persName_145.d1e4401" xml:lang="ar"><forename xml:id="forename_183.d1e3865" xml:lang="ar">عبد الحميد</forename></persName><persName corresp="#persName_145.d1e4401" type="flattened" xml:id="persName_640.d1e5159" xml:lang="ar">عبدالحميد</persName></person>-->
                     <person xml:id="person_35.d1e3702" xml:lang="ar">
                         <persName ref="viaf:9880442" xml:id="persName_145.d1e3704" xml:lang="ar">
                             <roleName type="rank">السلطان</roleName>
@@ -4797,6 +4793,13 @@
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_431.d2e9060" xml:lang="ar">القصار</surname>
                         </persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1528.d2e9055" type="flattened" xml:id="persName_1529.d2e9063" xml:lang="ar">عبدالرحمنالقصار</tei:persName>
+                        <persName>
+                            <forename>عبد الرحمان</forename>
+                            <addName type="nasab">بن عبد الحميد</addName>
+                            <surname>القصار</surname>
+                        </persName>
+                        <birth calendar="#cal_islamic" datingMethod="#cal_islamic" notAfter="1869-04-12" notBefore="1868-04-24" resp="#pers_TG" when-custom="1285">1285</birth>
+                        <death calendar="#cal_islamic" datingMethod="#cal_islamic" resp="#pers_TG" when="1929-06-27" when-custom="1348-01-19">١٩ محرم ١٣٤٨</death>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e13415" xml:lang="ar">
                         <persName xml:id="persName_1587.d1e13417" xml:lang="ar">
@@ -9656,253 +9659,445 @@
                 , and 
                 <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17898" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2018-09-19" who="#pers_TG" xml:id="d4e19992" xml:lang="en">Improved                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17904" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17907" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17910" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17913" xml:lang="en">idno</tei:gi>
+            <tei:change when="2018-09-19" who="#pers_TG" xml:id="d4e19992" xml:lang="en">Improved                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17904" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17907" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17910" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17913" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2018-09-19" who="#pers_TG" xml:id="d4e18775" xml:lang="en">Improved                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17919" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17922" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17925" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17928" xml:lang="en">idno</tei:gi>
+            <tei:change when="2018-09-19" who="#pers_TG" xml:id="d4e18775" xml:lang="en">Improved                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17919" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17922" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17925" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17928" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change change="#d2e18656 #d2e23203" when="2018-06-26" who="#pers_TG" xml:id="change_1.d2e17932" xml:lang="en">Improved                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17934" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17937" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17940" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17943" xml:lang="en">idno</tei:gi>
+            <tei:change change="#d2e18656 #d2e23203" when="2018-06-26" who="#pers_TG" xml:id="change_1.d2e17932" xml:lang="en">Improved                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17934" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17937" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17940" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17943" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <change when="2018-05-09" who="#pers_TG" xml:id="d2e19579" xml:lang="en">Added automated                  <tei:att change="#d2e18656" xml:id="att_1.d2e17949" xml:lang="en">xml:id</tei:att>
-                s for every element that is a descendant of                  <tei:gi change="#d2e18656" xml:id="gi_1.d2e17952" xml:lang="en">tei:text</tei:gi>
-                and had no existing                  <tei:att change="#d2e18656" xml:id="att_1.d2e17955" xml:lang="en">xml:id</tei:att>
+            <change when="2018-05-09" who="#pers_TG" xml:id="d2e19579" xml:lang="en">Added automated                  
+                <tei:att change="#d2e18656" xml:id="att_1.d2e17949" xml:lang="en">xml:id</tei:att>
+                s for every element that is a descendant of                  
+                <tei:gi change="#d2e18656" xml:id="gi_1.d2e17952" xml:lang="en">tei:text</tei:gi>
+                and had no existing                  
+                <tei:att change="#d2e18656" xml:id="att_1.d2e17955" xml:lang="en">xml:id</tei:att>
                 following the pattern &quot;name()_generate-id()&quot;.</change>
-            <tei:change change="#d2e19579 #d2e23203" when="2018-05-09" who="pers_TG" xml:id="change_1.d2e18883" xml:lang="en">Improved                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18885" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18888" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18891" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18894" xml:lang="en">idno</tei:gi>
+            <tei:change change="#d2e19579 #d2e23203" when="2018-05-09" who="pers_TG" xml:id="change_1.d2e18883" xml:lang="en">Improved                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18885" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18888" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18891" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18894" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2018-05-09" who="#pers_TG" xml:id="d3e593" xml:lang="en">Added                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18900" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18903" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref change="#d2e19579 #d2e23203" target="../../digital-muqtabas/xml/oclc_4770057679-i_2.TEIP5.xml" xml:id="ref_1.d2e18906" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_2.TEIP5.xml</tei:ref>
+            <tei:change when="2018-05-09" who="#pers_TG" xml:id="d3e593" xml:lang="en">Added                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18900" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18903" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref change="#d2e19579 #d2e23203" target="../../digital-muqtabas/xml/oclc_4770057679-i_2.TEIP5.xml" xml:id="ref_1.d2e18906" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_2.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change change="#d2e19579 #d2e23203" when="2018-05-09" who="pers_TG" xml:id="change_1.d2e18910" xml:lang="en">Improved                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18912" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18915" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18918" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18921" xml:lang="en">idno</tei:gi>
+            <tei:change change="#d2e19579 #d2e23203" when="2018-05-09" who="pers_TG" xml:id="change_1.d2e18910" xml:lang="en">Improved                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18912" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18915" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18918" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18921" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change change="#d2e19579 #d2e23203" when="2018-01-07" who="pers_TG" xml:id="change_1.d2e18925" xml:lang="en">Improved                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18927" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18930" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18933" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18936" xml:lang="en">idno</tei:gi>
+            <tei:change change="#d2e19579 #d2e23203" when="2018-01-07" who="pers_TG" xml:id="change_1.d2e18925" xml:lang="en">Improved                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18927" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18930" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18933" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18936" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change change="#d2e19579 #d2e23203" when="2017-11-09" who="pers_TG" xml:id="change_1.d2e18940" xml:lang="en">Improved                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18942" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18945" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18948" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18951" xml:lang="en">idno</tei:gi>
+            <tei:change change="#d2e19579 #d2e23203" when="2017-11-09" who="pers_TG" xml:id="change_1.d2e18940" xml:lang="en">Improved                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18942" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18945" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18948" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18951" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change change="#d2e19579 #d2e23203" when="2017-10-25" who="pers_TG" xml:id="change_1.d2e18956" xml:lang="en">Improved                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18958" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18961" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18964" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18967" xml:lang="en">idno</tei:gi>
+            <tei:change change="#d2e19579 #d2e23203" when="2017-10-25" who="pers_TG" xml:id="change_1.d2e18956" xml:lang="en">Improved                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18958" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18961" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18964" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18967" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change change="#d2e19579 #d2e23203" when="2017-10-25" who="#pers_TG" xml:id="change_1.d2e18971" xml:lang="en">Added the                  <tei:att change="#d2e19579 #d2e23203" xml:id="att_1.d2e18973" xml:lang="en">xml:lang</tei:att>
+            <tei:change change="#d2e19579 #d2e23203" when="2017-10-25" who="#pers_TG" xml:id="change_1.d2e18971" xml:lang="en">Added the                  
+                <tei:att change="#d2e19579 #d2e23203" xml:id="att_1.d2e18973" xml:lang="en">xml:lang</tei:att>
                 attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change>
-            <tei:change when="2017-10-25" who="pers_TG" xml:id="change_1.d1e18641" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e18643" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e18646" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../newspaper_thamarat-al-funun/index/thamarat_index.TEIP5.xml" xml:id="ref_1.d1e18649" xml:lang="en">../../newspaper_thamarat-al-funun/index/thamarat_index.TEIP5.xml</tei:ref>
+            <tei:change when="2017-10-25" who="pers_TG" xml:id="change_1.d1e18641" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e18643" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e18646" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../newspaper_thamarat-al-funun/index/thamarat_index.TEIP5.xml" xml:id="ref_1.d1e18649" xml:lang="en">../../newspaper_thamarat-al-funun/index/thamarat_index.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-06-13" who="pers_TG" xml:id="change_1.d1e10637" xml:lang="en">Improved                  <tei:gi xml:id="gi_1.d1e10639" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi xml:id="gi_1.d1e10642" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi xml:id="gi_1.d1e10645" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi xml:id="gi_1.d1e10648" xml:lang="en">idno</tei:gi>
+            <tei:change when="2017-06-13" who="pers_TG" xml:id="change_1.d1e10637" xml:lang="en">Improved                  
+                <tei:gi xml:id="gi_1.d1e10639" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi xml:id="gi_1.d1e10642" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi xml:id="gi_1.d1e10645" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi xml:id="gi_1.d1e10648" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2017-06-01" who="pers_TG" xml:id="change_1.d1e10653" xml:lang="en">Improved                  <tei:gi xml:id="gi_1.d1e10655" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi xml:id="gi_1.d1e10658" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi xml:id="gi_1.d1e10661" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi xml:id="gi_1.d1e10664" xml:lang="en">idno</tei:gi>
+            <tei:change when="2017-06-01" who="pers_TG" xml:id="change_1.d1e10653" xml:lang="en">Improved                  
+                <tei:gi xml:id="gi_1.d1e10655" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi xml:id="gi_1.d1e10658" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi xml:id="gi_1.d1e10661" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi xml:id="gi_1.d1e10664" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2017-05-30" who="pers_TG" xml:id="change_1.d1e111181" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e111183" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e111186" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-haqaiq/xml/oclc_644997575-i_5.TEIP5.xml" xml:id="ref_1.d1e111189" xml:lang="en">../../digital-haqaiq/xml/oclc_644997575-i_5.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-30" who="pers_TG" xml:id="change_1.d1e111181" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e111183" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e111186" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-haqaiq/xml/oclc_644997575-i_5.TEIP5.xml" xml:id="ref_1.d1e111189" xml:lang="en">../../digital-haqaiq/xml/oclc_644997575-i_5.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-30" who="pers_TG" xml:id="change_1.d1e111193" xml:lang="en">Improved                  <tei:gi xml:id="gi_1.d1e111195" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi xml:id="gi_1.d1e111198" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi xml:id="gi_1.d1e111201" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi xml:id="gi_1.d1e111204" xml:lang="en">idno</tei:gi>
+            <tei:change when="2017-05-30" who="pers_TG" xml:id="change_1.d1e111193" xml:lang="en">Improved                  
+                <tei:gi xml:id="gi_1.d1e111195" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi xml:id="gi_1.d1e111198" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi xml:id="gi_1.d1e111201" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi xml:id="gi_1.d1e111204" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2017-05-26" who="pers_TG" xml:id="change_1.d1e111208" xml:lang="en">Improved                  <tei:gi xml:id="gi_1.d1e111210" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi xml:id="gi_1.d1e111213" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi xml:id="gi_1.d1e111216" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi xml:id="gi_1.d1e111219" xml:lang="en">idno</tei:gi>
+            <tei:change when="2017-05-26" who="pers_TG" xml:id="change_1.d1e111208" xml:lang="en">Improved                  
+                <tei:gi xml:id="gi_1.d1e111210" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi xml:id="gi_1.d1e111213" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi xml:id="gi_1.d1e111216" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi xml:id="gi_1.d1e111219" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2017-05-26" who="pers_TG" xml:id="change_1.d1e8519" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e8521" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e8524" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_4.TEIP5.xml" xml:id="ref_1.d1e8527" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_4.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-26" who="pers_TG" xml:id="change_1.d1e8519" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e8521" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e8524" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_4.TEIP5.xml" xml:id="ref_1.d1e8527" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_4.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-22" who="pers_TG" xml:id="change_1.d1e8531" xml:lang="en">Improved                  <tei:gi xml:id="gi_1.d1e8533" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi xml:id="gi_1.d1e8536" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi xml:id="gi_1.d1e8539" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi xml:id="gi_1.d1e8542" xml:lang="en">idno</tei:gi>
+            <tei:change when="2017-05-22" who="pers_TG" xml:id="change_1.d1e8531" xml:lang="en">Improved                  
+                <tei:gi xml:id="gi_1.d1e8533" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi xml:id="gi_1.d1e8536" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi xml:id="gi_1.d1e8539" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi xml:id="gi_1.d1e8542" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2017-05-22" who="pers_TG" xml:id="change_1.d1e8345" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e8347" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e8350" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_53.TEIP5.xml" xml:id="ref_1.d1e8353" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_53.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-22" who="pers_TG" xml:id="change_1.d1e8345" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e8347" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e8350" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_53.TEIP5.xml" xml:id="ref_1.d1e8353" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_53.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-22" who="pers_TG" xml:id="change_1.d1e8357" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e8359" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e8362" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_24.TEIP5.xml" xml:id="ref_1.d1e8365" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_24.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-22" who="pers_TG" xml:id="change_1.d1e8357" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e8359" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e8362" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_24.TEIP5.xml" xml:id="ref_1.d1e8365" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_24.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-16" who="pers_TG" xml:id="change_1.d1e8369" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e8371" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e8374" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_24.TEIP5.xml" xml:id="ref_1.d1e8377" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_24.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-16" who="pers_TG" xml:id="change_1.d1e8369" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e8371" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e8374" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_24.TEIP5.xml" xml:id="ref_1.d1e8377" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_24.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-16" who="pers_TG" xml:id="change_1.d1e8381" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e8383" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e8386" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_23.TEIP5.xml" xml:id="ref_1.d1e8389" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_23.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-16" who="pers_TG" xml:id="change_1.d1e8381" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e8383" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e8386" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_23.TEIP5.xml" xml:id="ref_1.d1e8389" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_23.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-15" who="pers_TG" xml:id="change_1.d1e8393" xml:lang="en">Improved                  <tei:gi xml:id="gi_1.d1e8395" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi xml:id="gi_1.d1e8398" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi xml:id="gi_1.d1e8401" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi xml:id="gi_1.d1e8404" xml:lang="en">idno</tei:gi>
+            <tei:change when="2017-05-15" who="pers_TG" xml:id="change_1.d1e8393" xml:lang="en">Improved                  
+                <tei:gi xml:id="gi_1.d1e8395" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi xml:id="gi_1.d1e8398" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi xml:id="gi_1.d1e8401" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi xml:id="gi_1.d1e8404" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2017-05-15" who="pers_TG" xml:id="change_1.d1e7246" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e7248" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e7251" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_22.TEIP5.xml" xml:id="ref_1.d1e7254" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_22.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-15" who="pers_TG" xml:id="change_1.d1e7246" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e7248" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e7251" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_22.TEIP5.xml" xml:id="ref_1.d1e7254" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_22.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e7258" xml:lang="en">Improved                  <tei:gi xml:id="gi_1.d1e7260" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi xml:id="gi_1.d1e7263" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi xml:id="gi_1.d1e7266" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi xml:id="gi_1.d1e7269" xml:lang="en">idno</tei:gi>
+            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e7258" xml:lang="en">Improved                  
+                <tei:gi xml:id="gi_1.d1e7260" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi xml:id="gi_1.d1e7263" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi xml:id="gi_1.d1e7266" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi xml:id="gi_1.d1e7269" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6937" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e6939" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e6942" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_20.TEIP5.xml" xml:id="ref_1.d1e6945" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_20.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6937" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e6939" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e6942" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_20.TEIP5.xml" xml:id="ref_1.d1e6945" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_20.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6949" xml:lang="en">Improved                  <tei:gi xml:id="gi_1.d1e6951" xml:lang="en">person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <tei:gi xml:id="gi_1.d1e6954" xml:lang="en">birth</tei:gi>
-                ,                  <tei:gi xml:id="gi_1.d1e6957" xml:lang="en">death</tei:gi>
-                , and                  <tei:gi xml:id="gi_1.d1e6960" xml:lang="en">idno</tei:gi>
+            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6949" xml:lang="en">Improved                  
+                <tei:gi xml:id="gi_1.d1e6951" xml:lang="en">person</tei:gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <tei:gi xml:id="gi_1.d1e6954" xml:lang="en">birth</tei:gi>
+                ,                  
+                <tei:gi xml:id="gi_1.d1e6957" xml:lang="en">death</tei:gi>
+                , and                  
+                <tei:gi xml:id="gi_1.d1e6960" xml:lang="en">idno</tei:gi>
                 .</tei:change>
-            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6964" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e6966" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e6969" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_21.TEIP5.xml" xml:id="ref_1.d1e6972" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_21.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6964" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e6966" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e6969" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_21.TEIP5.xml" xml:id="ref_1.d1e6972" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_21.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6976" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e6978" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e6981" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_20.TEIP5.xml" xml:id="ref_1.d1e6984" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_20.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6976" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e6978" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e6981" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_20.TEIP5.xml" xml:id="ref_1.d1e6984" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_20.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6988" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e6990" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e6993" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_19.TEIP5.xml" xml:id="ref_1.d1e6996" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_19.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e6988" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e6990" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e6993" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_19.TEIP5.xml" xml:id="ref_1.d1e6996" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_19.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e7001" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e7003" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e7006" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_17.TEIP5.xml" xml:id="ref_1.d1e7009" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_17.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e7001" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e7003" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e7006" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_17.TEIP5.xml" xml:id="ref_1.d1e7009" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_17.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e7013" xml:lang="en">Added                  <tei:gi xml:id="gi_1.d1e7015" xml:lang="en">listPerson</tei:gi>
-                with                  <tei:gi xml:id="gi_1.d1e7018" xml:lang="en">person</tei:gi>
-                s mentioned in                  <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_16.TEIP5.xml" xml:id="ref_1.d1e7021" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_16.TEIP5.xml</tei:ref>
+            <tei:change when="2017-05-10" who="pers_TG" xml:id="change_1.d1e7013" xml:lang="en">Added                  
+                <tei:gi xml:id="gi_1.d1e7015" xml:lang="en">listPerson</tei:gi>
+                with                  
+                <tei:gi xml:id="gi_1.d1e7018" xml:lang="en">person</tei:gi>
+                s mentioned in                  
+                <tei:ref target="../../digital-muqtabas/xml/oclc_4770057679-i_16.TEIP5.xml" xml:id="ref_1.d1e7021" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_16.TEIP5.xml</tei:ref>
                 but not previously present in this master file.</tei:change>
-            <change when="2017-05-09" who="pers_TG" xml:id="change_1.d1e7025" xml:lang="en">Improved                  <gi xml:id="gi_1.d1e7027" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <gi xml:id="gi_2.d1e7030" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_3.d1e7033" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_4.d1e7036" xml:lang="en">idno</gi>
+            <change when="2017-05-09" who="pers_TG" xml:id="change_1.d1e7025" xml:lang="en">Improved                  
+                <gi xml:id="gi_1.d1e7027" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <gi xml:id="gi_2.d1e7030" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_3.d1e7033" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_4.d1e7036" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-05-09" who="pers_TG" xml:id="change_1.d1e6171" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6173" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6176" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/tei/entities_OpenRefine.TEIP5.xml" xml:id="ref_1.d1e6179" xml:lang="en">../../digital-muqtabas/tei/entities_OpenRefine.TEIP5.xml</ref>
+            <change when="2017-05-09" who="pers_TG" xml:id="change_1.d1e6171" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6173" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6176" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/tei/entities_OpenRefine.TEIP5.xml" xml:id="ref_1.d1e6179" xml:lang="en">../../digital-muqtabas/tei/entities_OpenRefine.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-05-03" who="pers_TG" xml:id="change_1.d1e6183" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6185" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6188" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_96.TEIP5.xml" xml:id="ref_1.d1e6191" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_96.TEIP5.xml</ref>
+            <change when="2017-05-03" who="pers_TG" xml:id="change_1.d1e6183" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6185" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6188" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_96.TEIP5.xml" xml:id="ref_1.d1e6191" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_96.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6195" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6197" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6200" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_93.TEIP5.xml" xml:id="ref_1.d1e6203" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_93.TEIP5.xml</ref>
+            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6195" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6197" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6200" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_93.TEIP5.xml" xml:id="ref_1.d1e6203" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_93.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6207" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6209" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6212" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml" xml:id="ref_1.d1e6215" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml</ref>
+            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6207" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6209" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6212" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml" xml:id="ref_1.d1e6215" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6219" xml:lang="en">Improved                  <gi xml:id="gi_1.d1e6221" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <gi xml:id="gi_1.d1e6224" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_1.d1e6227" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_1.d1e6230" xml:lang="en">idno</gi>
+            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6219" xml:lang="en">Improved                  
+                <gi xml:id="gi_1.d1e6221" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <gi xml:id="gi_1.d1e6224" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_1.d1e6227" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_1.d1e6230" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6235" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6237" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6240" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml" xml:id="ref_1.d1e6243" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml</ref>
+            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6235" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6237" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6240" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml" xml:id="ref_1.d1e6243" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6247" xml:lang="en">Improved                  <gi xml:id="gi_1.d1e6249" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                   <gi xml:id="gi_1.d1e6252" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_1.d1e6255" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_1.d1e6258" xml:lang="en">idno</gi>
+            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6247" xml:lang="en">Improved                  
+                <gi xml:id="gi_1.d1e6249" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                   
+                <gi xml:id="gi_1.d1e6252" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_1.d1e6255" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_1.d1e6258" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6262" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6264" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6267" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml" xml:id="ref_1.d1e6270" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml</ref>
+            <change when="2017-05-01" who="pers_TG" xml:id="change_1.d1e6262" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6264" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6267" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml" xml:id="ref_1.d1e6270" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-04-30" who="pers_TG" xml:id="change_1.d1e6274" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6276" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6279" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml" xml:id="ref_1.d1e6282" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml</ref>
+            <change when="2017-04-30" who="pers_TG" xml:id="change_1.d1e6274" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6276" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6279" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml" xml:id="ref_1.d1e6282" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-04-30" who="pers_TG" xml:id="change_1.d1e6286" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6288" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6291" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml" xml:id="ref_1.d1e6294" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml</ref>
+            <change when="2017-04-30" who="pers_TG" xml:id="change_1.d1e6286" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6288" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6291" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml" xml:id="ref_1.d1e6294" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-04-26" who="pers_TG" xml:id="change_1.d1e6298" xml:lang="en">Improved                  <gi xml:id="gi_1.d1e6300" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                  <gi xml:id="gi_1.d1e6303" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_1.d1e6306" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_1.d1e6309" xml:lang="en">idno</gi>
+            <change when="2017-04-26" who="pers_TG" xml:id="change_1.d1e6298" xml:lang="en">Improved                  
+                <gi xml:id="gi_1.d1e6300" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                  
+                <gi xml:id="gi_1.d1e6303" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_1.d1e6306" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_1.d1e6309" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-04-05" who="pers_TG" xml:id="change_1.d1e6314" xml:lang="en">Improved                  <gi xml:id="gi_1.d1e6316" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                  <gi xml:id="gi_1.d1e6319" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_1.d1e6322" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_1.d1e6325" xml:lang="en">idno</gi>
+            <change when="2017-04-05" who="pers_TG" xml:id="change_1.d1e6314" xml:lang="en">Improved                  
+                <gi xml:id="gi_1.d1e6316" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                  
+                <gi xml:id="gi_1.d1e6319" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_1.d1e6322" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_1.d1e6325" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-04-05" who="pers_TG" xml:id="change_1.d1e6329" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6331" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6334" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_1.TEIP5.xml" xml:id="ref_1.d1e6337" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_1.TEIP5.xml</ref>
+            <change when="2017-04-05" who="pers_TG" xml:id="change_1.d1e6329" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6331" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6334" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_1.TEIP5.xml" xml:id="ref_1.d1e6337" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_1.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6341" xml:lang="en">Improved                  <gi xml:id="gi_1.d1e6343" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                  <gi xml:id="gi_1.d1e6346" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_1.d1e6349" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_1.d1e6352" xml:lang="en">idno</gi>
+            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6341" xml:lang="en">Improved                  
+                <gi xml:id="gi_1.d1e6343" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                  
+                <gi xml:id="gi_1.d1e6346" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_1.d1e6349" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_1.d1e6352" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6356" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6358" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6361" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_39.TEIP5.xml" xml:id="ref_1.d1e6364" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_39.TEIP5.xml</ref>
+            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6356" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6358" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6361" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_39.TEIP5.xml" xml:id="ref_1.d1e6364" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_39.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6368" xml:lang="en">Improved                  <gi xml:id="gi_1.d1e6370" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                  <gi xml:id="gi_1.d1e6373" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_1.d1e6376" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_1.d1e6379" xml:lang="en">idno</gi>
+            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6368" xml:lang="en">Improved                  
+                <gi xml:id="gi_1.d1e6370" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                  
+                <gi xml:id="gi_1.d1e6373" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_1.d1e6376" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_1.d1e6379" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6383" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6385" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6388" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_38.TEIP5.xml" xml:id="ref_1.d1e6391" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_38.TEIP5.xml</ref>
+            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6383" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6385" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6388" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_38.TEIP5.xml" xml:id="ref_1.d1e6391" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_38.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6396" xml:lang="en">Added references to VIAF entities; improved                  <gi xml:id="gi_1.d1e6398" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                  <gi xml:id="gi_1.d1e6401" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_1.d1e6404" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_1.d1e6407" xml:lang="en">idno</gi>
+            <change when="2017-03-30" who="pers_TG" xml:id="change_1.d1e6396" xml:lang="en">Added references to VIAF entities; improved                  
+                <gi xml:id="gi_1.d1e6398" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                  
+                <gi xml:id="gi_1.d1e6401" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_1.d1e6404" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_1.d1e6407" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-03-29" who="pers_TG" xml:id="change_1.d1e6411" xml:lang="en">Improved                  <gi xml:id="gi_1.d1e6413" xml:lang="en">person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding                  <gi xml:id="gi_1.d1e6416" xml:lang="en">birth</gi>
-                ,                  <gi xml:id="gi_1.d1e6419" xml:lang="en">death</gi>
-                , and                  <gi xml:id="gi_1.d1e6422" xml:lang="en">idno</gi>
+            <change when="2017-03-29" who="pers_TG" xml:id="change_1.d1e6411" xml:lang="en">Improved                  
+                <gi xml:id="gi_1.d1e6413" xml:lang="en">person</gi>
+                nodes that had references to VIAF, by querying VIAF and adding                  
+                <gi xml:id="gi_1.d1e6416" xml:lang="en">birth</gi>
+                ,                  
+                <gi xml:id="gi_1.d1e6419" xml:lang="en">death</gi>
+                , and                  
+                <gi xml:id="gi_1.d1e6422" xml:lang="en">idno</gi>
                 .</change>
-            <change when="2017-03-29" who="#pers_TG" xml:id="change_1.d1e6426" xml:lang="en">Added the                  <att xml:id="att_1.d1e6428" xml:lang="en">xml:lang</att>
+            <change when="2017-03-29" who="#pers_TG" xml:id="change_1.d1e6426" xml:lang="en">Added the                  
+                <att xml:id="att_1.d1e6428" xml:lang="en">xml:lang</att>
                 attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</change>
-            <change when="2017-03-29" who="pers_TG" xml:id="change_1.d1e6432" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6434" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6437" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml" xml:id="ref_1.d1e6440" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml</ref>
+            <change when="2017-03-29" who="pers_TG" xml:id="change_1.d1e6432" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6434" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6437" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml" xml:id="ref_1.d1e6440" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_37.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
-            <change when="2017-03-29" who="pers_TG" xml:id="change_1.d1e6444" xml:lang="en">Added                  <gi xml:id="gi_1.d1e6446" xml:lang="en">listPerson</gi>
-                with                  <gi xml:id="gi_1.d1e6449" xml:lang="en">person</gi>
-                s mentioned in                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml" xml:id="ref_1.d1e6452" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml</ref>
-                ,                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml" xml:id="ref_2.d1e6455" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml</ref>
-                ,                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml" xml:id="ref_3.d1e6458" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml</ref>
-                ,                  <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml" xml:id="ref_4.d1e6462" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml</ref>
+            <change when="2017-03-29" who="pers_TG" xml:id="change_1.d1e6444" xml:lang="en">Added                  
+                <gi xml:id="gi_1.d1e6446" xml:lang="en">listPerson</gi>
+                with                  
+                <gi xml:id="gi_1.d1e6449" xml:lang="en">person</gi>
+                s mentioned in                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml" xml:id="ref_1.d1e6452" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_25.TEIP5.xml</ref>
+                ,                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml" xml:id="ref_2.d1e6455" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_26.TEIP5.xml</ref>
+                ,                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml" xml:id="ref_3.d1e6458" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_27.TEIP5.xml</ref>
+                ,                  
+                <ref target="../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml" xml:id="ref_4.d1e6462" xml:lang="en">../../digital-muqtabas/xml/oclc_4770057679-i_28.TEIP5.xml</ref>
                 but not previously present in this master file.</change>
             <change when="2017-03-28" who="#pers_TG" xml:id="change_1.d1e6466" xml:lang="en">Created this file</change>
         </revisionDesc>
