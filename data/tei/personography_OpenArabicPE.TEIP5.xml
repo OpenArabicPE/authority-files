@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><!--<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<!--<?xml-model href="https://rawgit.com/OpenArabicPE/OpenArabicPE_ODD/v0.1/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>-->
 <?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml"
@@ -856,9 +855,9 @@
                     <person xml:id="person_35.d1e1441" xml:lang="ar">
                         <persName xml:id="persName_138.d1e1443" xml:lang="ar">
                             <forename xml:id="forename_77.d1e1445" xml:lang="ar">أحمد</forename>
-                            <addName type="title" xml:id="addName_27.d1e1448" xml:lang="ar">أفندي</addName>ناجي الجمالي</persName>
-                        <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_7.d2e83" xml:lang="ar">
-                            <forename change="#d2e18656" xml:id="forename_3.d2e85" xml:lang="ar">أحمد</forename>
+                            <addName type="title" xml:id="addName_27.d1e1448" xml:lang="ar">أفندي</addName>
+                            <surname>ناجي</surname>
+                            <addName type="nisbah">الجمالي</addName>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" corresp="#persName_9.d2e93" type="flattened" xml:id="persName_9.d2e93" xml:lang="ar">احمد</persName>
                         <persName type="noAddName" xml:id="persName_216.d1e1912" xml:lang="ar">
@@ -892,16 +891,6 @@
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_222.d2e1961" xml:lang="ar">أحمد</forename>
                             <addName change="#d2e18656 #d2e23203" type="khitab" xml:id="addName_37.d2e1964" xml:lang="ar">تقي الدين</addName>
                             <addName change="#d2e18656 #d2e23203" type="nasab" xml:id="addName_38.d2e1967" xml:lang="ar">بن تيمية</addName>
-                        </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                        </persName>
-                        <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_440.d2e1970" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:id="forename_223.d2e1972" xml:lang="ar">أحمد</forename>
-                        </persName>
-                        <persName change="#d4e18667" corresp="#persName_440.d2e1970" type="flattened" xml:lang="ar">احمد</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
                         </persName>
                         <persName corresp="#persName_147.d1e5046" type="flattened" xml:id="persName_856.d1e6627" xml:lang="ar">شيخالاسلاماحمدتقيالدينبنتيمية</persName>
                         <tei:idno change="#d4e16401 #d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e1978" xml:lang="ar">12338225</tei:idno>
