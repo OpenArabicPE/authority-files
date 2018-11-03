@@ -1,10 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml"
-    schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:bgn="http://bibliograph.net/" xmlns:genont="http://www.w3.org/2006/gen/ont#" xmlns:pto="http://www.productontology.org/id/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:re="http://oclcsrw.google.code/redirect" xmlns:schema="http://schema.org/" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:umbel="http://umbel.org/umbel#" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="../../../OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:bgn="http://bibliograph.net/" xmlns:genont="http://www.w3.org/2006/gen/ont#" xmlns:pto="http://www.productontology.org/id/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:re="http://oclcsrw.google.code/redirect" xmlns:schema="http://schema.org/" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:umbel="http://umbel.org/umbel#" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xml:lang="en">
     <teiHeader xml:id="teiHeader_1.d1e5" xml:lang="en">
         <fileDesc xml:id="fileDesc" xml:lang="en">
             <titleStmt xml:id="titleStmt_1.d1e9" xml:lang="en">
@@ -91,9 +87,9 @@
                     </tei:person>
                     <person xml:id="person_35.d1e2255" xml:lang="ar">
                         <persName xml:id="persName_145.d1e2257" xml:lang="fr">Mithrawahicht</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e2257" type="flattened" xml:lang="fr">Mithrawahicht</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e2257" type="flattened" xml:lang="fr" xml:id="persName_20.d2e198">Mithrawahicht</persName>
                         <persName xml:id="persName_145.d1e2373" xml:lang="arc-Arab-AR">ميتراوهيشت</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e2373" type="flattened" xml:lang="arc-Arab-AR">ميتراوهيشت</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e2373" type="flattened" xml:lang="arc-Arab-AR" xml:id="persName_22.d2e204">ميتراوهيشت</persName>
                     </person>
                     <person xml:id="person_35.d1e1456" xml:lang="ar">
                         <persName xml:id="persName_138.d1e1458" xml:lang="ar">أ. ز. أ</persName>
@@ -110,10 +106,10 @@
                     </tei:person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_33.d2e1482" xml:lang="ar">
                         <persName change="#d2e18656 #d2e23203" xml:id="persName_285.d2e1483" xml:lang="ar">
-                            <addName change="#d2e23203" type="kunyah" xml:lang="ar">أبو الضيا</addName>
+                            <addName change="#d2e23203 #d2e23017" type="kunyah" xml:lang="ar" xml:id="addName_8.d2e241">أبو الضيا</addName>
                         </persName>
-                        <persName change="#d2e23203" xml:lang="ar">
-                            <addName change="#d2e23203" type="kunyah" xml:lang="ar">أبو الضياء</addName>
+                        <persName change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="persName_29.d2e245">
+                            <addName change="#d2e23203 #d2e23017" type="kunyah" xml:lang="ar" xml:id="addName_9.d2e247">أبو الضياء</addName>
                         </persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_287.d2e1486" type="flattened" xml:id="persName_287.d2e1486" xml:lang="ar">ابوالضيا</tei:persName>
                     </tei:person>
@@ -391,7 +387,7 @@
                     </person>
                     <person xml:id="person_35.d1e4189" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4191" xml:lang="ar">الرازي</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4191" type="flattened" xml:lang="ar">الرازي</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4191" type="flattened" xml:lang="ar" xml:id="persName_138.d2e906">الرازي</persName>
                     </person>
                     <person xml:id="person_35.d1e2301" xml:lang="ar">
                         <persName xml:id="persName_145.d1e2303" xml:lang="ar">السيد المرتضى أبي القاسم علي بن الطاهر أبي أحمد الحسين</persName>
@@ -415,7 +411,7 @@
                     </person>
                     <person xml:id="person_35.d1e2319" xml:lang="ar">
                         <persName xml:id="persName_145.d1e2321" xml:lang="ar">الصفهاني</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e2321" type="flattened" xml:lang="ar">الصفهاني</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e2321" type="flattened" xml:lang="ar" xml:id="persName_150.d2e961">الصفهاني</persName>
                     </person>
                     <tei:person xml:id="person_342.d1e8118" xml:lang="ar">
                         <persName xml:id="persName_913.d1e8120" xml:lang="ar">الطبيب مصطفى السعادة</persName>
@@ -423,15 +419,15 @@
                     </tei:person>
                     <person xml:id="person_35.d1e4228" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4230" xml:lang="ar">الطوسي</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4230" type="flattened" xml:lang="ar">الطوسي</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4230" type="flattened" xml:lang="ar" xml:id="persName_154.d2e980">الطوسي</persName>
                     </person>
                     <person xml:id="person_35.d1e5463" xml:lang="ar">
                         <persName xml:id="persName_161.d1e5465" xml:lang="ar">الغلاييني</persName>
-                        <persName change="#d4e18870" corresp="#persName_161.d1e5465" type="flattened" xml:lang="ar">الغلاييني</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_161.d1e5465" type="flattened" xml:lang="ar" xml:id="persName_156.d2e989">الغلاييني</persName>
                     </person>
                     <person xml:id="person_35.d1e4247" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4249" xml:lang="ar">الفرنسيس</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4249" type="flattened" xml:lang="ar">الفرنسيس</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4249" type="flattened" xml:lang="ar" xml:id="persName_158.d2e998">الفرنسيس</persName>
                     </person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_97.d2e2660" xml:lang="ar">
                         <persName change="#d2e18656 #d2e23203" xml:id="persName_613.d2e2661" xml:lang="ar">القاسمي</persName>
@@ -460,30 +456,30 @@
                     </tei:person>
                     <person xml:id="person_35.d1e4283" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4285" xml:lang="ar">باكون</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4285" type="flattened" xml:lang="ar">باكون</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4285" type="flattened" xml:lang="ar" xml:id="persName_168.d2e1065">باكون</persName>
                     </person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_101.d2e2742" xml:lang="ar">
                         <persName change="#d2e18656 #d2e23203" xml:id="persName_636.d2e2743" xml:lang="ar">برودون</persName>
                     </tei:person>
                     <tei:person xml:id="person_342.d1e7748" xml:lang="ar">
                         <persName xml:id="persName_887.d1e7750" xml:lang="ar">بلو</persName>
-                        <persName change="#d4e18870" corresp="#persName_887.d1e7750" type="flattened" xml:lang="ar">بلو</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_887.d1e7750" type="flattened" xml:lang="ar" xml:id="persName_171.d2e1081">بلو</persName>
                     </tei:person>
                     <tei:person change="#d2e19579 #d2e23203" xml:id="person_341.d2e18716" xml:lang="ar">
                         <persName change="#d2e585 #d2e19579" xml:id="persName_1904.d2e18718" xml:lang="ar">بلونشلي</persName>
-                        <persName change="#d4e18870" corresp="#persName_1904.d2e18718" type="flattened" xml:lang="ar">بلونشلي</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_1904.d2e18718" type="flattened" xml:lang="ar" xml:id="persName_173.d2e1090">بلونشلي</persName>
                     </tei:person>
                     <tei:person xml:id="person_342.d1e7757" xml:lang="ar">
                         <persName xml:id="persName_888.d1e7759" xml:lang="ar">بوست</persName>
-                        <persName change="#d4e18870" corresp="#persName_888.d1e7759" type="flattened" xml:lang="ar">بوست</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_888.d1e7759" type="flattened" xml:lang="ar" xml:id="persName_175.d2e1099">بوست</persName>
                     </tei:person>
                     <person xml:id="person_35.d1e4680" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4682" xml:lang="ar">بيلي</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4682" type="flattened" xml:lang="ar">بيلي</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4682" type="flattened" xml:lang="ar" xml:id="persName_177.d2e1108">بيلي</persName>
                     </person>
                     <person xml:id="person_35.d1e5501" xml:lang="ar">
                         <persName xml:id="persName_164.d1e5503" xml:lang="ar">ج</persName>
-                        <persName change="#d4e18870" corresp="#persName_164.d1e5503" type="flattened" xml:lang="ar">ج</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_164.d1e5503" type="flattened" xml:lang="ar" xml:id="persName_179.d2e1117">ج</persName>
                     </person>
                     <person xml:id="person_35.d1e3620" xml:lang="ar">
                         <persName xml:id="persName_145.d1e3622" xml:lang="ar">جعفر بن علي بن عم أبي جعفر المنصور</persName>
@@ -499,7 +495,7 @@
                     </tei:person>
                     <tei:person xml:id="person_342.d1e8339" xml:lang="ar">
                         <persName xml:id="persName_931.d1e8341" xml:lang="en-Arab-AR">جونسون</persName>
-                        <persName change="#d4e18870" corresp="#persName_931.d1e8341" type="flattened" xml:lang="en-Arab-AR">جونسون</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_931.d1e8341" type="flattened" xml:lang="en-Arab-AR" xml:id="persName_187.d2e1154">جونسون</persName>
                     </tei:person>
                     <person xml:id="person_35.d1e5574" xml:lang="ar">
                         <persName xml:id="persName_170.d1e5576" xml:lang="ar">حسني عبد الهادي</persName>
@@ -569,7 +565,7 @@
                     </person>
                     <person xml:id="person_35.d1e5735" xml:lang="ar">
                         <persName xml:id="persName_184.d1e5737" xml:lang="ar">ش</persName>
-                        <persName change="#d4e18870" corresp="#persName_184.d1e5737" type="flattened" xml:lang="ar">ش</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_184.d1e5737" type="flattened" xml:lang="ar" xml:id="persName_219.d2e1317">ش</persName>
                     </person>
                     <tei:person xml:id="person_342.d1e6641" xml:lang="ar">
                         <persName xml:id="persName_821.d1e6643" xml:lang="ar">شحادة شحادة</persName>
@@ -589,7 +585,7 @@
                     </person>
                     <person xml:id="person_35.d1e1584" xml:lang="ar">
                         <persName xml:id="persName_138.d1e1586" xml:lang="ar">صابيء</persName>
-                        <persName change="#d4e18870" corresp="#persName_138.d1e1586" type="flattened" xml:lang="ar">صابيء</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_138.d1e1586" type="flattened" xml:lang="ar" xml:id="persName_229.d2e1363">صابيء</persName>
                     </person>
                     <person xml:id="person_35.d1e3629" xml:lang="ar">
                         <persName xml:id="persName_145.d1e3631" xml:lang="ar">صاحب الفلاكة</persName>
@@ -636,12 +632,12 @@
                     </tei:person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_16.d2e676" xml:lang="ar">
                         <persName change="#d2e18656 #d2e23203" xml:id="persName_124.d2e679" xml:lang="ar">عبيد الله</persName>
-                        <persName change="#d4e18870 #d2e23203" corresp="#persName_124.d2e679" type="flattened" xml:lang="ar">عبيدالله</persName>
+                        <persName change="#d4e18870 #d2e23203 #d2e23017" corresp="#persName_124.d2e679" type="flattened" xml:lang="ar" xml:id="persName_246.d2e1469">عبيدالله</persName>
                         <persName change="#d2e18656 #d2e23203" xml:id="persName_124.d2e677" xml:lang="ar">
                             <addName change="#d2e18656 #d2e23203" type="nickname" xml:id="addName_17.d2e687" xml:lang="ar">صاحب جريدة 
                                 <title change="#d2e18656 #d2e23203" level="j" xml:id="title_2.d2e689" xml:lang="ar">العرب</title></addName>
                         </persName>
-                        <persName change="#d4e18870" type="noAddName"/>
+                        <persName change="#d4e18870 #d2e23017" type="noAddName" xml:id="persName_248.d2e1480"/>
                         <persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_124.d2e677" type="flattened" xml:id="persName_127.d2e693" xml:lang="ar">عبيداللهعبيداللهصاحبجريدةالعرب</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_129.d2e696" type="flattened" xml:id="persName_129.d2e696" xml:lang="ar">صاحبجريدةالعرب</tei:persName>
                     </tei:person>
@@ -667,7 +663,7 @@
                     </tei:person>
                     <person xml:id="person_35.d1e4408" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4410" xml:lang="ar">ف</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4410" type="flattened" xml:lang="ar">ف</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4410" type="flattened" xml:lang="ar" xml:id="persName_259.d2e1541">ف</persName>
                     </person>
                     <person xml:id="person_35.d1e5071" xml:lang="ar">
                         <persName xml:id="persName_147.d1e5073" xml:lang="ar">ف. فارجابيد</persName>
@@ -697,7 +693,7 @@
                     </tei:person>
                     <person xml:id="person_35.d1e4431" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4433" xml:lang="ar">لوك</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4433" type="flattened" xml:lang="ar">لوك</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4433" type="flattened" xml:lang="ar" xml:id="persName_272.d2e1608">لوك</persName>
                     </person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_125.d2e3215" xml:lang="ar">
                         <persName change="#d2e18656 #d2e23203" xml:id="persName_811.d2e3216" xml:lang="ar">م</persName>
@@ -723,7 +719,7 @@
                     </person>
                     <person xml:id="person_35.d1e3657" xml:lang="ar">
                         <persName xml:id="persName_145.d1e3659" xml:lang="ar">محمد</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e3659" type="flattened" xml:lang="ar">محمد</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e3659" type="flattened" xml:lang="ar" xml:id="persName_282.d2e1669">محمد</persName>
                     </person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_129.d2e3259" xml:lang="ar">
                         <persName change="#d2e18656 #d2e23203" xml:id="persName_827.d2e3260" xml:lang="ar">محمد أبو السعود مراد</persName>
@@ -803,7 +799,7 @@
                     </tei:person>
                     <tei:person xml:id="person_342.d1e8227" xml:lang="ar">
                         <persName xml:id="persName_924.d1e8229" xml:lang="en-Arab-AR">ملتون</persName>
-                        <persName change="#d4e18870" corresp="#persName_924.d1e8229" type="flattened" xml:lang="en-Arab-AR">ملتون</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_924.d1e8229" type="flattened" xml:lang="en-Arab-AR" xml:id="persName_316.d2e1852">ملتون</persName>
                     </tei:person>
                     <tei:person xml:id="person_342.d1e8236" xml:lang="ar">
                         <persName xml:id="persName_925.d1e8238" xml:lang="ar">موسى 
@@ -829,11 +825,11 @@
                     </tei:person>
                     <person xml:id="person_35.d1e4449" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4451" xml:lang="ar">هيكو</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4451" type="flattened" xml:lang="ar">هيكو</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4451" type="flattened" xml:lang="ar" xml:id="persName_326.d2e1915">هيكو</persName>
                     </person>
                     <person xml:id="person_35.d1e4471" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4473" xml:lang="ar">ولامارتين</persName>
-                        <persName change="#d4e18870" corresp="#persName_145.d1e4473" type="flattened" xml:lang="ar">ولامارتين</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_145.d1e4473" type="flattened" xml:lang="ar" xml:id="persName_328.d2e1925">ولامارتين</persName>
                     </person>
                     <person xml:id="person_35.d1e3321" xml:lang="ar">
                         <persName ref="viaf:39260868" xml:id="persName_145.d1e3323" xml:lang="ar">يوسف بن يحيى البويطي</persName>
@@ -846,18 +842,18 @@
                             <addName change="#d2e18656 #d2e23203" type="honorific" xml:id="addName_45.d2e2522" xml:lang="ar">الشيخ</addName>
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_268.d2e2525" xml:lang="ar">أبو بكر</forename>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أبو بكر</forename>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_332.d2e1955">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_3.d2e1957">أبو بكر</forename>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_575.d2e2528" type="flattened" xml:lang="ar">ابوبكر</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_575.d2e2528" type="flattened" xml:lang="ar" xml:id="persName_333.d2e1961">ابوبكر</persName>
                         <persName corresp="#persName_138.d1e1535" type="flattened" xml:id="persName_264.d1e2237" xml:lang="ar">الشيخابوبكر</persName>
                     </person>
                     <person xml:id="person_35.d1e1441" xml:lang="ar">
                         <persName xml:id="persName_138.d1e1443" xml:lang="ar">
                             <forename xml:id="forename_77.d1e1445" xml:lang="ar">أحمد</forename>
                             <addName type="title" xml:id="addName_27.d1e1448" xml:lang="ar">أفندي</addName>
-                            <surname>ناجي</surname>
-                            <addName type="nisbah">الجمالي</addName>
+                            <surname change="#d2e23017" xml:id="surname_2.d2e1978">ناجي</surname>
+                            <addName type="nisbah" change="#d2e23017" xml:id="addName_24.d2e1981">الجمالي</addName>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" corresp="#persName_9.d2e93" type="flattened" xml:id="persName_9.d2e93" xml:lang="ar">احمد</persName>
                         <persName type="noAddName" xml:id="persName_216.d1e1912" xml:lang="ar">
@@ -1045,9 +1041,9 @@
                     <!-- <person xml:id="person_35.d1e4399" xml:lang="ar"><persName xml:id="persName_145.d1e4401" xml:lang="ar"><forename xml:id="forename_183.d1e3865" xml:lang="ar">عبد الحميد</forename></persName><persName corresp="#persName_145.d1e4401" type="flattened" xml:id="persName_640.d1e5159" xml:lang="ar">عبدالحميد</persName></person>-->
                     <person xml:id="person_35.d1e3702" xml:lang="ar">
                         <persName ref="viaf:9880442" xml:id="persName_145.d1e3704" xml:lang="ar">
-                            <roleName type="rank">السلطان</roleName>
+                            <roleName type="rank" change="#d2e23017" xml:id="roleName_1.d2e2437">السلطان</roleName>
                             <forename xml:id="forename_152.d1e3706" xml:lang="ar">عبد الحميد</forename>
-                            <roleName type="epithet">المخلوع</roleName>
+                            <roleName type="epithet" change="#d2e23017" xml:id="roleName_2.d2e2443">المخلوع</roleName>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_509.d2e2219" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_225.d2e2221" xml:lang="ar">عبد الحميد</forename>
@@ -1055,7 +1051,7 @@
                         <persName change="#d4e16401 #d2e18656" corresp="#persName_509.d2e2219" type="flattened" xml:id="persName_511.d2e2229" xml:lang="ar">عبدالحميد</persName>
                         <persName corresp="#persName_145.d1e3704" type="flattened" xml:id="persName_674.d1e5330" xml:lang="ar">السلطانعبدالحميدالمخلوع</persName>
                         <persName ref="viaf:9880442" xml:id="persName_145.d1e3713" xml:lang="ar">
-                            <roleName type="rank">سلطان</roleName>
+                            <roleName type="rank" change="#d2e23017" xml:id="roleName_3.d2e2461">سلطان</roleName>
                             <forename xml:id="forename_153.d1e3715" xml:lang="ar">عبد الحميد</forename>
                         </persName>
                         <persName corresp="#persName_145.d1e3713" type="flattened" xml:id="persName_676.d1e5338" xml:lang="ar">سلطانعبدالحميد</persName>
@@ -1069,8 +1065,8 @@
                         <persName corresp="#persName_145.d1e3732" type="flattened" xml:id="persName_680.d1e5359" xml:lang="ar">عبدالحميدالثاني</persName>
                         <persName xml:id="persName_145.d1e3738" xml:lang="ar">
                             <forename xml:id="forename_194.d1e4097" xml:lang="ar">عبد الحميد</forename>
-                            <roleName type="title">خان</roleName>
-                            <roleName type="honorific">الغازي</roleName>
+                            <roleName type="title" change="#d2e23017" xml:id="roleName_4.d2e2495">خان</roleName>
+                            <roleName type="honorific" change="#d2e23017" xml:id="roleName_5.d2e2498">الغازي</roleName>
                         </persName>
                         <persName corresp="#persName_145.d1e3738" type="flattened" xml:id="persName_682.d1e5368" xml:lang="ar">عبدالحميدخانالغازي</persName>
                         <tei:idno change="#d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e2340" xml:lang="ar">9880442</tei:idno>
@@ -1081,18 +1077,18 @@
                         <persName xml:id="persName_145.d1e2932" xml:lang="ar">
                             <forename xml:id="forename_122.d1e2934" xml:lang="ar">عبد العزيز</forename>
                             <addName type="title" xml:id="addName_54.d1e2937" xml:lang="ar">أفندي</addName>
-                            <surname>محمد</surname>
+                            <surname change="#d2e23017" xml:id="surname_3.d2e2526">محمد</surname>
                         </persName>
                         <persName type="noAddName" xml:id="persName_418.d1e3388" xml:lang="ar">
                             <forename xml:id="forename_207.d1e3390" xml:lang="ar">عبد العزيز</forename>
-                            <surname>محمد</surname>
+                            <surname change="#d2e23017" xml:id="surname_4.d2e2535">محمد</surname>
                         </persName>
                         <persName corresp="#persName_145.d1e2932" type="flattened" xml:id="persName_419.d1e3394" xml:lang="ar">عبدالعزيزافنديمحمد</persName>
                         <persName corresp="#persName_418.d1e3388" type="flattened" xml:id="persName_420.d1e3397" xml:lang="ar">عبدالعزيزمحمد</persName>
                     </person>
                     <person xml:id="person_35.d1e3983" xml:lang="ar">
                         <persName ref="viaf:122114473" xml:id="persName_145.d1e3985" xml:lang="ar">
-                            <roleName type="rank">السلطان</roleName>
+                            <roleName type="rank" change="#d2e23017" xml:id="roleName_6.d2e2550">السلطان</roleName>
                             <forename xml:id="forename_158.d1e3987" xml:lang="ar">عبد العزيز</forename>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_539.d2e2355" xml:lang="ar">
@@ -1161,14 +1157,14 @@
                     </person>
                     <person xml:id="person_35.d1e1575" xml:lang="ar">
                         <persName xml:id="persName_138.d1e1577" xml:lang="ar">
-                            <roleName type="epithet">شيخ الإمام</roleName>
-                            <addName type="kunyah">أبي 
+                            <roleName type="epithet" change="#d2e23017" xml:id="roleName_7.d2e2716">شيخ الإمام</roleName>
+                            <addName type="kunyah" change="#d2e23017" xml:id="addName_41.d2e2719">أبي 
                                 <forename xml:id="forename_93.d1e1644" xml:lang="ar">عبد الله</forename></addName>
                             <forename xml:id="forename_94.d1e1647" xml:lang="ar">محمد</forename>
-                            <addName type="nasab">بن 
+                            <addName type="nasab" change="#d2e23017" xml:id="addName_42.d2e2727">بن 
                                 <forename xml:id="forename_95.d1e1650" xml:lang="ar">عبد الله</forename></addName>
-                            <surname>الخطيب</surname>
-                            <addName type="nisbah">الإسكافي</addName>
+                            <surname change="#d2e23017" xml:id="surname_5.d2e2732">الخطيب</surname>
+                            <addName type="nisbah" change="#d2e23017" xml:id="addName_43.d2e2736">الإسكافي</addName>
                         </persName>
                         <persName corresp="#persName_138.d1e1577" type="flattened" xml:id="persName_268.d1e2265" xml:lang="ar">شيخالامامابيعبداللهمحمدبنعبداللهالخطيبالاسكافي</persName>
                     </person>
@@ -1206,7 +1202,7 @@
                     </tei:person>
                     <tei:person change="#d2e19579 #d2e23203" xml:id="person_341.d2e18608" xml:lang="ar">
                         <persName change="#d2e19579" ref="viaf:121621349" xml:id="persName_1896.d2e18610" xml:lang="de-Arab-AR">
-                            <roleName type="rank">الإمبراطور</roleName>
+                            <roleName type="rank" change="#d2e23017" xml:id="roleName_8.d2e2821">الإمبراطور</roleName>
                             <forename change="#d2e19579 #d2e23203" xml:id="forename_1086.d2e18615" xml:lang="de-Arab-AR">غليوم</forename>
                             <genName change="#d2e19579 #d2e23203" xml:id="genName_4.d2e18618" xml:lang="de-Arab-AR">الثاني</genName>
                         </persName>
@@ -1226,16 +1222,16 @@
                     </tei:person>
                     <person xml:id="person_35.d1e1381" xml:lang="ar">
                         <persName ref="viaf:39242139" xml:id="persName_138.d1e1383" xml:lang="ar">
-                            <roleName type="honorific">الشيخ</roleName>
+                            <roleName type="honorific" change="#d2e23017" xml:id="roleName_9.d2e2870">الشيخ</roleName>
                             <forename xml:id="forename_92.d1e1623" xml:lang="ar">فرج الله</forename>
-                            <surname>زكي</surname>
+                            <surname change="#d2e23017" xml:id="surname_6.d2e2876">زكي</surname>
                         </persName>
                         <persName corresp="#persName_138.d1e1383" type="flattened" xml:id="persName_262.d1e2219" xml:lang="ar">الشيخفرجاللهزكي</persName>
                         <tei:idno change="#d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e2580" xml:lang="ar">39242139</tei:idno>
                     </person>
                     <person xml:id="person_35.d1e1925" xml:lang="ar">
                         <persName ref="viaf:95738652" xml:id="persName_144.d1e1927" xml:lang="ar">
-                            <roleName type="rank">الملكة</roleName>
+                            <roleName type="rank" change="#d2e23017" xml:id="roleName_10.d2e2892">الملكة</roleName>
                             <forename xml:id="forename_89.d1e1929" xml:lang="en-Arab-AR">فيكتوريا</forename>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_623.d2e2699" xml:lang="ar">
@@ -1376,22 +1372,22 @@
                             <forename xml:id="forename_123.d1e2950" xml:lang="ar">محمد</forename>
                             <forename xml:id="forename_124.d1e2953" xml:lang="ar">علي</forename>
                             <addName type="title" xml:id="addName_55.d1e2956" xml:lang="ar">بك</addName>
-                            <surname>
-                                <addName type="nisbah">القباني</addName>
+                            <surname change="#d2e23017" xml:id="surname_7.d2e3248">
+                                <addName type="nisbah" change="#d2e23017" xml:id="addName_52.d2e3250">القباني</addName>
                             </surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_209.d2e1132" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_148.d2e1134" xml:lang="ar">محمد</forename>
                             <forename change="#d2e18656" xml:id="forename_149.d2e1137" xml:lang="ar">علي</forename>
-                            <surname>
-                                <addName type="nisbah">القباني</addName>
+                            <surname change="#d2e23017" xml:id="surname_8.d2e3263">
+                                <addName type="nisbah" change="#d2e23017" xml:id="addName_53.d2e3265">القباني</addName>
                             </surname>
                         </persName>
                         <persName type="noAddName" xml:id="persName_422.d1e3415" xml:lang="ar">
                             <forename xml:id="forename_210.d1e3417" xml:lang="ar">محمد</forename>
                             <forename xml:id="forename_211.d1e3420" xml:lang="ar">علي</forename>
-                            <surname>
-                                <addName type="nisbah">القباني</addName>
+                            <surname change="#d2e23017" xml:id="surname_9.d2e3278">
+                                <addName type="nisbah" change="#d2e23017" xml:id="addName_54.d2e3280">القباني</addName>
                             </surname>
                         </persName>
                         <persName corresp="#persName_145.d1e2948" type="flattened" xml:id="persName_423.d1e3424" xml:lang="ar">محمدعليبكالقباني</persName>
@@ -1489,11 +1485,11 @@
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_275.d2e2593" xml:lang="ar">نديم</forename>
                             <addName type="title" xml:id="addName_68.d1e4220" xml:lang="ar">باشا</addName>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">محمود</forename>
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">نديم</forename>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_555.d2e3498">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_150.d2e3500">محمود</forename>
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_151.d2e3503">نديم</forename>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_593.d2e2599" type="flattened" xml:lang="ar">محمودنديم</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_593.d2e2599" type="flattened" xml:lang="ar" xml:id="persName_556.d2e3507">محمودنديم</persName>
                         <persName type="noAddName" xml:id="persName_694.d1e5457" xml:lang="ar">
                             <addName change="#d2e18656 #d2e23203" type="rank" xml:id="addName_48.d2e2609" xml:lang="ar">الصدر</addName>
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_278.d2e2612" xml:lang="ar">محمود</forename>
@@ -1507,15 +1503,15 @@
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_176.d2e1285" xml:lang="ar">مدحت</forename>
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_27.d2e1288" xml:lang="ar">باشا</addName>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">مدحت</forename>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_561.d2e3541">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_155.d2e3543">مدحت</forename>
                         </persName>
                         <persName change="#d4e16401 #d2e18656 #d2e23203" type="noAddName" xml:id="persName_239.d2e1291" xml:lang="ar">
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_177.d2e1293" xml:lang="ar">مدحت</forename>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_239.d2e1291" type="flattened" xml:lang="ar">مدحت</persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">مدحت</forename>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_239.d2e1291" type="flattened" xml:lang="ar" xml:id="persName_563.d2e3553">مدحت</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_564.d2e3556">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_157.d2e3558">مدحت</forename>
                         </persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_238.d2e1283" type="flattened" xml:id="persName_240.d2e1296" xml:lang="ar">مدحتباشا</tei:persName>
                         <tei:idno change="#d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e1299" xml:lang="ar">10758777</tei:idno>
@@ -1682,13 +1678,13 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_85.d2e5109" xml:lang="ar">البغدادي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">علي</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">البغدادي</addName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_607.d2e3942">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_184.d2e3944">علي</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_19.d2e3947">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_71.d2e3949">البغدادي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1077.d2e5113" type="flattened" xml:lang="ar">عليالبغدادي</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1077.d2e5113" type="flattened" xml:lang="ar" xml:id="persName_608.d2e3954">عليالبغدادي</persName>
                         <persName corresp="#persName_144.d1e1856" type="flattened" xml:id="persName_292.d1e2427" xml:lang="ar">الشيختاجالدينعليبنانجببنالساعيالبغدادي</persName>
                     </person>
                     <tei:person xml:id="person_341.d1e12278" xml:lang="ar">
@@ -1737,13 +1733,13 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_146.d2e7856" xml:lang="ar">الشنقيطي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">الشنقيطي</addName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_618.d2e4061">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_187.d2e4063">أحمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_25.d2e4066">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_79.d2e4068">الشنقيطي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1387.d2e7860" type="flattened" xml:lang="ar">احمدالشنقيطي</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1387.d2e7860" type="flattened" xml:lang="ar" xml:id="persName_619.d2e4073">احمدالشنقيطي</persName>
                         <persName corresp="#persName_145.d1e2312" type="flattened" xml:id="persName_343.d1e2800" xml:lang="ar">الشيخاحمدالشنقيطي</persName>
                     </person>
                     <person xml:id="person_35.d1e2211" xml:lang="ar">
@@ -1754,10 +1750,10 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_161.d2e8658" xml:lang="ar">الفارابي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">حكيم</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">الفارابي</addName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_622.d2e4097">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_189.d2e4099">حكيم</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_27.d2e4102">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_82.d2e4104">الفارابي</addName>
                             </surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_1483.d2e8662" xml:lang="ar">
@@ -1766,11 +1762,11 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_162.d2e8669" xml:lang="ar">الفارابي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1483.d2e8662" type="flattened" xml:lang="ar">حكيمالفارابي</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">حكيم</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">الفارابي</addName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1483.d2e8662" type="flattened" xml:lang="ar" xml:id="persName_624.d2e4121">حكيمالفارابي</persName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_625.d2e4124">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_191.d2e4126">حكيم</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_29.d2e4129">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_84.d2e4131">الفارابي</addName>
                             </surname>
                         </persName>
                         <persName corresp="#persName_145.d1e2213" type="flattened" xml:id="persName_349.d1e2839" xml:lang="ar">حكيمابينصرالفارابي</persName>
@@ -1807,12 +1803,12 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_174.d2e9028" xml:lang="ar">القسطلي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">القسطلي</addName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_634.d2e4209">
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_34.d2e4211">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_91.d2e4213">القسطلي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1524.d2e9032" type="flattened" xml:lang="ar">القسطلي</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1524.d2e9032" type="flattened" xml:lang="ar" xml:id="persName_635.d2e4218">القسطلي</persName>
                         <persName corresp="#persName_145.d1e3463" type="flattened" xml:id="persName_567.d1e4653" xml:lang="ar">ابوعمرالقسطلي</persName>
                     </person>
                     <person xml:id="person_35.d1e4980" xml:lang="ar">
@@ -1848,10 +1844,10 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_190.d2e9721" xml:lang="ar">المتنبي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">المتنبي</addName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_644.d2e4301">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_200.d2e4303">أحمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_38.d2e4306">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_98.d2e4308">المتنبي</addName>
                             </surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_1604.d2e9725" xml:lang="ar">
@@ -1860,11 +1856,11 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_191.d2e9732" xml:lang="ar">المتنبي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1604.d2e9725" type="flattened" xml:lang="ar">احمدالمتنبي</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">المتنبي</addName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1604.d2e9725" type="flattened" xml:lang="ar" xml:id="persName_646.d2e4325">احمدالمتنبي</persName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_647.d2e4328">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_202.d2e4330">أحمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_40.d2e4333">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_100.d2e4335">المتنبي</addName>
                             </surname>
                         </persName>
                         <persName corresp="#persName_145.d1e3427" type="flattened" xml:id="persName_559.d1e4616" xml:lang="ar">ابوالطيباحمدبنالحسينالمتنبي</persName>
@@ -1894,13 +1890,13 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_210.d2e10569" xml:lang="ar">النعساني</addName></surname>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_211.d2e10573" xml:lang="ar">الحلبي</addName>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">النعساني</addName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_654.d2e4400">
+                            <forename xml:lang="ar" change="#d2e23017" xml:id="forename_204.d2e4402">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_44.d2e4405">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_106.d2e4407">النعساني</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1690.d2e10576" type="flattened" xml:lang="ar">محمدالنعساني</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1690.d2e10576" type="flattened" xml:lang="ar" xml:id="persName_655.d2e4412">محمدالنعساني</persName>
                         <persName change="#d4e18775 #d2e18656" type="noAddName" xml:id="persName_1691.d2e10587" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_913.d2e10589" xml:lang="ar">محمد</forename>
                             <forename change="#d2e18656" xml:id="forename_914.d2e10592" xml:lang="ar">بدر الدين</forename>
@@ -1917,13 +1913,13 @@
                             </surname>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_216.d2e10754" xml:lang="ar">الحلبي</addName>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">فاتح</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">الهبراوي</addName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_660.d2e4452">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_208.d2e4454">فاتح</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_46.d2e4457">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_110.d2e4459">الهبراوي</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1706.d2e10757" type="flattened" xml:lang="ar">فاتحالهبراوي</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1706.d2e10757" type="flattened" xml:lang="ar" xml:id="persName_661.d2e4464">فاتحالهبراوي</persName>
                         <persName corresp="#persName_933.d1e8360" type="flattened" xml:id="persName_1376.d1e10503" xml:lang="ar">فاتحافنديالهبراويالحلبي</persName>
                         <persName corresp="#persName_1375.d1e10500" type="flattened" xml:id="persName_1377.d1e10506" xml:lang="ar">فاتحالهبراويالحلبي</persName>
                     </tei:person>
@@ -1937,13 +1933,13 @@
                                 <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_239.d2e12325" xml:lang="ar">داغستاني</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أبو بكر</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">
-                                <addName change="#d2e18656 #d2e23203" type="nisbah" xml:lang="ar">داغستاني</addName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_665.d2e4496">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_211.d2e4498">أبو بكر</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_48.d2e4501">
+                                <addName change="#d2e18656 #d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_114.d2e4503">داغستاني</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1881.d2e12329" type="flattened" xml:lang="ar">ابوبكرداغستاني</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1881.d2e12329" type="flattened" xml:lang="ar" xml:id="persName_666.d2e4508">ابوبكرداغستاني</persName>
                         <persName corresp="#persName_138.d1e1544" type="flattened" xml:id="persName_266.d1e2246" xml:lang="ar">الشيخابوبكربنعمرداغستاني</persName>
                     </person>
                     <person xml:id="person_35.d1e1863" xml:lang="ar">
@@ -2100,11 +2096,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_63.d2e3845" xml:lang="ar">بك</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_29.d2e3848" xml:lang="ar">أمين</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">قسم</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">أمين</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_702.d2e4863">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_228.d2e4865">قسم</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_69.d2e4868">أمين</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_948.d2e3851" type="flattened" xml:lang="ar">قسمامين</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_948.d2e3851" type="flattened" xml:lang="ar" xml:id="persName_703.d2e4872">قسمامين</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_949.d2e3859" type="flattened" xml:id="persName_949.d2e3859" xml:lang="ar">قسمبكامين</tei:persName>
                     </tei:person>
                     <person xml:id="person_14.d1e646" xml:lang="ar">
@@ -2379,11 +2375,11 @@
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_374.d2e4316" xml:lang="ar">عبد الباقي</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_65.d2e4319" xml:lang="ar">الأفغاني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">عبد الباقي</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الأفغاني</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_754.d2e5486">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_270.d2e5488">عبد الباقي</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_106.d2e5491">الأفغاني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_997.d2e4322" type="flattened" xml:lang="ar">عبدالباقيالافغاني</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_997.d2e4322" type="flattened" xml:lang="ar" xml:id="persName_755.d2e5495">عبدالباقيالافغاني</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_998.d2e4330" type="flattened" xml:id="persName_998.d2e4330" xml:lang="ar">الشيخعبدالباقيالافغاني</tei:persName>
                         <persName change="#d2e18656 #d2e23203" xml:id="persName_998.d2e4332" xml:lang="ar">
                             <addName change="#d2e18656 #d2e23203" type="honorific" xml:id="addName_73.d2e4334" xml:lang="ar">الشيخ</addName>
@@ -2633,12 +2629,12 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_78.d2e4808" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_101.d2e4811" xml:lang="ar">البارودي</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">محمد</forename>
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">علي</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">البارودي</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_800.d2e6077">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_304.d2e6079">محمد</forename>
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_305.d2e6082">علي</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_140.d2e6085">البارودي</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1047.d2e4814" type="flattened" xml:lang="ar">محمدعليالبارودي</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1047.d2e4814" type="flattened" xml:lang="ar" xml:id="persName_801.d2e6089">محمدعليالبارودي</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1048.d2e4825" type="flattened" xml:id="persName_1048.d2e4825" xml:lang="ar">محمدعليافنديالبارودي</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e11717" xml:lang="ar">
@@ -2661,10 +2657,10 @@
                                 <forename change="#d2e18656 #d2e23203" xml:id="forename_415.d2e4855" xml:lang="ar">عبادة</forename></addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_105.d2e4859" xml:lang="ar">البحتري</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">البحتري</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_805.d2e6139">
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_144.d2e6141">البحتري</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1051.d2e4862" type="flattened" xml:lang="ar">البحتري</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1051.d2e4862" type="flattened" xml:lang="ar" xml:id="persName_806.d2e6145">البحتري</persName>
                         <persName corresp="#persName_145.d1e3454" type="flattened" xml:id="persName_565.d1e4644" xml:lang="ar">ابوعبادةالبحتري</persName>
                     </person>
                     <tei:person xml:id="person_341.d1e11732" xml:lang="ar">
@@ -2734,7 +2730,7 @@
                         </persName>
                         <persName corresp="#persName_870.d1e7489" type="flattened" xml:id="persName_1217.d1e9427" xml:lang="ar">البستاني</persName>
                     </tei:person>
-                    <person>
+                    <person change="#d2e23017" xml:id="person_167.d2e6302">
                         <persName ref="viaf:79119650" xml:id="persName_3.d2e104" xml:lang="ar">
                             <forename change="#d2e53 #d2e193" xml:id="forename_1.d2e106" xml:lang="ar">بطرس</forename>
                             <surname change="#d2e53 #d2e193" xml:id="surname_1.d2e109" xml:lang="ar">البستاني</surname>
@@ -2778,15 +2774,15 @@
                         <tei:birth change="#d2e18656 #d2e23203" resp="viaf" when="0971" xml:id="birth_1.d2e5045" xml:lang="ar">971</tei:birth>
                         <tei:death change="#d2e18656 #d2e23203" resp="viaf" when="1010" xml:id="death_1.d2e5047" xml:lang="ar">1010</tei:death>
                     </tei:person>
-                    <person>
+                    <person change="#d2e23017" xml:id="person_168.d2e6405">
                         <persName ref="viaf:21245607" xml:id="persName_5.d2e125" xml:lang="ar">
                             <forename change="#d2e53 #d2e193" xml:id="forename_3.d2e127" xml:lang="ar">سليم</forename>
                             <surname change="#d2e53 #d2e193" xml:id="surname_3.d2e130" xml:lang="ar">البستاني</surname>
                         </persName>
-                        <persName>
-                            <forename>سليم</forename>
-                            <roleName type="title">افندي</roleName>
-                            <surname>البستاني</surname>
+                        <persName change="#d2e23017" xml:id="persName_831.d2e6416">
+                            <forename change="#d2e23017" xml:id="forename_323.d2e6418">سليم</forename>
+                            <roleName type="title" change="#d2e23017" xml:id="roleName_12.d2e6421">افندي</roleName>
+                            <surname change="#d2e23017" xml:id="surname_162.d2e6424">البستاني</surname>
                         </persName>
                         <persName xml:id="persName_6.d2e134" xml:lang="ar-Latn-x-ijmes">
                             <forename change="#d2e53 #d2e193" xml:id="forename_4.d2e136" xml:lang="ar-Latn-x-ijmes">Salīm</forename>
@@ -2858,27 +2854,27 @@
                     </tei:person>
                     <person xml:id="person_35.d1e2473" xml:lang="ar">
                         <persName ref="viaf:2147904944379090892" xml:id="persName_145.d1e2475" xml:lang="en">
-                            <addName change="#d2e23203" type="kunyah" xml:lang="en">أبي زيد</addName>
-                            <forename change="#d2e23203" xml:lang="en">أحمد</forename>
-                            <addName change="#d2e23203" type="nasab" xml:lang="en">بن سهل</addName>
-                            <surname change="#d2e23203" xml:lang="en">البلخي</surname>
+                            <addName change="#d2e23203 #d2e23017" type="kunyah" xml:lang="en" xml:id="addName_138.d2e6592">أبي زيد</addName>
+                            <forename change="#d2e23203 #d2e23017" xml:lang="en" xml:id="forename_336.d2e6595">أحمد</forename>
+                            <addName change="#d2e23203 #d2e23017" type="nasab" xml:lang="en" xml:id="addName_139.d2e6598">بن سهل</addName>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="en" xml:id="surname_173.d2e6601">البلخي</surname>
                         </persName>
-                        <persName change="#d4e18870" type="noAddName" xml:lang="en">
-                            <forename change="#d2e23203" xml:lang="en">أحمد</forename>
-                            <surname change="#d2e23203" xml:lang="en">البلخي</surname>
+                        <persName change="#d4e18870 #d2e23017" type="noAddName" xml:lang="en" xml:id="persName_847.d2e6605">
+                            <forename change="#d2e23203 #d2e23017" xml:lang="en" xml:id="forename_337.d2e6607">أحمد</forename>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="en" xml:id="surname_174.d2e6610">البلخي</surname>
                         </persName>
-                        <persName change="#d2e23203" xml:lang="ar">
-                            <addName change="#d2e23203" type="kunyah" xml:lang="ar">أبو زيد</addName>
-                            <surname change="#d2e23203" xml:lang="ar">البلخي</surname>
+                        <persName change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="persName_848.d2e6614">
+                            <addName change="#d2e23203 #d2e23017" type="kunyah" xml:lang="ar" xml:id="addName_140.d2e6616">أبو زيد</addName>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_175.d2e6619">البلخي</surname>
                         </persName>
-                        <persName change="#d4e18870 #d2e23203" corresp="#" type="flattened" xml:lang="ar">ابوزيدالبلخي</persName>
-                        <persName change="#d4e18870 #d2e23203" type="noAddName" xml:lang="ar">
-                            <surname change="#d2e23203" xml:lang="ar">البلخي</surname>
+                        <persName change="#d4e18870 #d2e23203 #d2e23017" corresp="#" type="flattened" xml:lang="ar" xml:id="persName_849.d2e6623">ابوزيدالبلخي</persName>
+                        <persName change="#d4e18870 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_850.d2e6626">
+                            <surname change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_176.d2e6628">البلخي</surname>
                         </persName>
                         <persName corresp="#persName_145.d1e2475" type="flattened" xml:id="persName_406.d1e3301" xml:lang="en">ابيزيداحمدبنسهلالبلخي</persName>
-                        <tei:idno change="#d4e18870 #d2e23203" type="viaf" xml:lang="ar">2147904944379090892</tei:idno>
-                        <tei:birth change="#d4e18870 #d2e23203" resp="viaf" when="0849" xml:lang="ar">849</tei:birth>
-                        <tei:death change="#d4e18870 #d2e23203" resp="viaf" when="0934-01-01" xml:lang="ar">934-01-01</tei:death>
+                        <tei:idno change="#d4e18870 #d2e23203 #d2e23017" type="viaf" xml:lang="ar" xml:id="idno_2.d2e6636">2147904944379090892</tei:idno>
+                        <tei:birth change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="0849" xml:lang="ar" xml:id="birth_1.d2e6639">849</tei:birth>
+                        <tei:death change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="0934-01-01" xml:lang="ar" xml:id="death_1.d2e6642">934-01-01</tei:death>
                     </person>
                     <person xml:id="person_35.d1e3031" xml:lang="ar">
                         <persName xml:id="persName_145.d1e3033" xml:lang="ar">
@@ -2900,11 +2896,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_88.d2e5301" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_140.d2e5304" xml:lang="ar">البيطار</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">عبد الرزاق</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">البيطار</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_857.d2e6696">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_343.d2e6698">عبد الرزاق</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_180.d2e6701">البيطار</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1100.d2e5307" type="flattened" xml:lang="ar">عبدالرزاقالبيطار</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1100.d2e5307" type="flattened" xml:lang="ar" xml:id="persName_858.d2e6705">عبدالرزاقالبيطار</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1101.d2e5315" type="flattened" xml:id="persName_1101.d2e5315" xml:lang="ar">الشيخعبدالرزاقافنديالبيطار</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e11914" xml:lang="ar">
@@ -3027,11 +3023,11 @@
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_91.d2e5549" xml:lang="ar">الجزائري</addName>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_92.d2e5552" xml:lang="ar">المالكي</addName>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_877.d2e6983">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_359.d2e6985">أحمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_196.d2e6988">الحسني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1121.d2e5555" type="flattened" xml:lang="ar">احمدالحسني</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1121.d2e5555" type="flattened" xml:lang="ar" xml:id="persName_878.d2e6992">احمدالحسني</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1122.d2e5563" type="flattened" xml:id="persName_1122.d2e5563" xml:lang="ar">احمدبنمحيالدينالحسنيالجزائريالمالكي</tei:persName>
                     </tei:person>
                     <person xml:id="person_35.d1e4989" xml:lang="ar">
@@ -3041,12 +3037,12 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_93.d2e5574" xml:lang="ar">بك</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_160.d2e5577" xml:lang="ar">الحسني</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">مختار</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_880.d2e7016">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_362.d2e7018">أحمد</forename>
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_363.d2e7021">مختار</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_198.d2e7024">الحسني</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1123.d2e5580" type="flattened" xml:lang="ar">احمدمختارالحسني</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1123.d2e5580" type="flattened" xml:lang="ar" xml:id="persName_881.d2e7028">احمدمختارالحسني</persName>
                         <persName corresp="#persName_147.d1e4991" type="flattened" xml:id="persName_848.d1e6590" xml:lang="ar">احمدمختاربكالحسني</persName>
                     </person>
                     <tei:person xml:id="person_341.d1e12081" xml:lang="ar">
@@ -3069,37 +3065,37 @@
                             <addName type="title" xml:id="addName_40.d1e2524" xml:lang="ar">باشا</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_162.d2e5603" xml:lang="ar">الحسني</surname>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_95.d2e5606" xml:lang="ar">الجزائري</addName></persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_886.d2e7082">
+                            <forename xml:lang="ar" change="#d2e23017" xml:id="forename_367.d2e7084">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_202.d2e7087">الحسني</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_1126.d2e5609" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_479.d2e5611" xml:lang="ar">محمد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_163.d2e5614" xml:lang="ar">الحسني</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1126.d2e5609" type="flattened" xml:lang="ar">محمدالحسني</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1126.d2e5609" type="flattened" xml:lang="ar" xml:id="persName_888.d2e7100">محمدالحسني</persName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_889.d2e7103">
+                            <forename change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="forename_369.d2e7105">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_204.d2e7108">الحسني</surname>
                         </persName>
                         <persName change="#d4e18775 #d2e18656" type="noAddName" xml:id="persName_1127.d2e5617" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_480.d2e5619" xml:lang="ar">محمد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_164.d2e5622" xml:lang="ar">الحسني</surname>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_96.d2e5625" xml:lang="ar">الجزائري</addName>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_891.d2e7125">
+                            <forename change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="forename_371.d2e7127">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_206.d2e7130">الحسني</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" corresp="#persName_1127.d2e5617" type="flattened" xml:id="persName_1128.d2e5628" xml:lang="ar">محمدالحسنيالجزائري</persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_1129.d2e5630" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_481.d2e5632" xml:lang="ar">محمد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_165.d2e5635" xml:lang="ar">الحسني</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1129.d2e5630" type="flattened" xml:lang="ar">محمدالحسني</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1129.d2e5630" type="flattened" xml:lang="ar" xml:id="persName_894.d2e7146">محمدالحسني</persName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_895.d2e7149">
+                            <forename change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="forename_373.d2e7151">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_208.d2e7154">الحسني</surname>
                         </persName>
                         <persName type="noAddName" xml:id="persName_447.d1e3620" xml:lang="ar">
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_97.d2e5640" xml:lang="ar">الأمير</addName>
@@ -3107,37 +3103,37 @@
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_166.d2e5646" xml:lang="ar">الحسني</surname>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_98.d2e5649" xml:lang="ar">الجزائري</addName>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_897.d2e7174">
+                            <forename xml:lang="ar" change="#d2e23017" xml:id="forename_375.d2e7176">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_210.d2e7179">الحسني</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_1131.d2e5652" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_483.d2e5654" xml:lang="ar">محمد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_167.d2e5657" xml:lang="ar">الحسني</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1131.d2e5652" type="flattened" xml:lang="ar">محمدالحسني</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1131.d2e5652" type="flattened" xml:lang="ar" xml:id="persName_899.d2e7192">محمدالحسني</persName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_900.d2e7195">
+                            <forename change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="forename_377.d2e7197">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_212.d2e7200">الحسني</surname>
                         </persName>
                         <persName change="#d4e18775 #d2e18656" type="noAddName" xml:id="persName_1132.d2e5660" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_484.d2e5662" xml:lang="ar">محمد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_168.d2e5665" xml:lang="ar">الحسني</surname>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_99.d2e5668" xml:lang="ar">الجزائري</addName>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_902.d2e7217">
+                            <forename change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="forename_379.d2e7219">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_214.d2e7222">الحسني</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" corresp="#persName_1127.d2e5617" type="flattened" xml:id="persName_1133.d2e5671" xml:lang="ar">محمدالحسنيالجزائري</persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_1134.d2e5673" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_485.d2e5675" xml:lang="ar">محمد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_169.d2e5678" xml:lang="ar">الحسني</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1134.d2e5673" type="flattened" xml:lang="ar">محمدالحسني</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسني</surname>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1134.d2e5673" type="flattened" xml:lang="ar" xml:id="persName_905.d2e7238">محمدالحسني</persName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_906.d2e7241">
+                            <forename change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="forename_381.d2e7243">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_216.d2e7246">الحسني</surname>
                         </persName>
                         <persName corresp="#persName_145.d1e2519" type="flattened" xml:id="persName_448.d1e3628" xml:lang="ar">الاميرمحمدباشاالحسنيالجزائري</persName>
                         <persName corresp="#persName_450.d1e3639" type="flattened" xml:id="persName_450.d1e3639" xml:lang="ar">الاميرمحمدالحسنيالجزائري</persName>
@@ -3152,11 +3148,11 @@
                                 <forename change="#d2e18656 #d2e23203" xml:id="forename_487.d2e5702" xml:lang="ar">محي الدين</forename></addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_170.d2e5706" xml:lang="ar">الحسيني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الحسيني</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_910.d2e7283">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_384.d2e7285">أحمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_218.d2e7288">الحسيني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1138.d2e5709" type="flattened" xml:lang="ar">احمدالحسيني</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1138.d2e5709" type="flattened" xml:lang="ar" xml:id="persName_911.d2e7292">احمدالحسيني</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1139.d2e5717" type="flattened" xml:id="persName_1139.d2e5717" xml:lang="ar">احمدبنمحيالدينالحسيني</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e12111" xml:lang="ar">
@@ -3456,15 +3452,15 @@
                         <persName corresp="#persName_126.d1e1271" type="flattened" xml:id="persName_51.d1e484" xml:lang="ar">زكيافنديالخطيب</persName>
                         <persName corresp="#persName_50.d1e475" type="flattened" xml:id="persName_52.d1e487" xml:lang="ar">زكيالخطيب</persName>
                     </person>
-                    <person change="#d2e23203" xml:lang="ar">
-                        <persName change="#d2e23203" ref="viaf:300091608" xml:lang="ar">
-                            <forename change="#d2e23203" xml:lang="ar">فؤاد</forename>
-                            <surname change="#d2e23203" xml:lang="ar">الخطيب</surname>
+                    <person change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="person_181.d2e7976">
+                        <persName change="#d2e23203 #d2e23017" ref="viaf:300091608" xml:lang="ar" xml:id="persName_970.d2e7978">
+                            <forename change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_427.d2e7980">فؤاد</forename>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_260.d2e7983">الخطيب</surname>
                         </persName>
-                        <persName change="#d4e18870 #d2e23203" corresp="#" type="flattened" xml:lang="ar">فؤادالخطيب</persName>
-                        <tei:idno change="#d4e18870 #d2e23203" type="viaf" xml:lang="ar">300091608</tei:idno>
-                        <tei:birth change="#d4e18870 #d2e23203" resp="viaf" when="1880" xml:lang="ar">1880</tei:birth>
-                        <tei:death change="#d4e18870 #d2e23203" resp="viaf" when="1957" xml:lang="ar">1957</tei:death>
+                        <persName change="#d4e18870 #d2e23203 #d2e23017" corresp="#" type="flattened" xml:lang="ar" xml:id="persName_971.d2e7987">فؤادالخطيب</persName>
+                        <tei:idno change="#d4e18870 #d2e23203 #d2e23017" type="viaf" xml:lang="ar" xml:id="idno_2.d2e7990">300091608</tei:idno>
+                        <tei:birth change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1880" xml:lang="ar" xml:id="birth_1.d2e7993">1880</tei:birth>
+                        <tei:death change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1957" xml:lang="ar" xml:id="death_1.d2e7996">1957</tei:death>
                     </person>
                     <person xml:id="person_35.d1e3809" xml:lang="ar">
                         <persName ref="viaf:38333734" xml:id="persName_145.d1e3811" xml:lang="ar">
@@ -3794,23 +3790,23 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_121.d2e6916" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_262.d2e6919" xml:lang="ar">الرافعي</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">عبد الحميد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الرافعي</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1042.d2e8764">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_478.d2e8766">عبد الحميد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_305.d2e8769">الرافعي</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656 #d2e23203" type="noAddName" xml:id="persName_1274.d2e6922" xml:lang="ar">
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_593.d2e6924" xml:lang="ar">عبد الحميد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_263.d2e6927" xml:lang="ar">الرافعي</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1274.d2e6922" type="flattened" xml:lang="ar">عبدالحميدالرافعي</persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">عبد الحميد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الرافعي</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1274.d2e6922" type="flattened" xml:lang="ar" xml:id="persName_1044.d2e8782">عبدالحميدالرافعي</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1045.d2e8785">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_480.d2e8787">عبد الحميد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_307.d2e8790">الرافعي</surname>
                         </persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1275.d2e6930" type="flattened" xml:id="persName_1275.d2e6930" xml:lang="ar">عبدالحميدافنديالرافعي</tei:persName>
-                        <tei:idno change="#d4e18870 #d2e23203" type="viaf" xml:lang="ar">280763829</tei:idno>
-                        <tei:birth change="#d4e18870 #d2e23203" resp="viaf" when="1859" xml:lang="ar">1859</tei:birth>
-                        <tei:death change="#d4e18870 #d2e23203" resp="viaf" when="1932" xml:lang="ar">1932</tei:death>
+                        <tei:idno change="#d4e18870 #d2e23203 #d2e23017" type="viaf" xml:lang="ar" xml:id="idno_2.d2e8798">280763829</tei:idno>
+                        <tei:birth change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1859" xml:lang="ar" xml:id="birth_1.d2e8801">1859</tei:birth>
+                        <tei:death change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1932" xml:lang="ar" xml:id="death_1.d2e8804">1932</tei:death>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e12733" xml:lang="ar">
                         <persName xml:id="persName_1542.d1e12735" xml:lang="ar">
@@ -3962,11 +3958,11 @@
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_284.d2e7234" xml:lang="ar">الساسي</surname>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_127.d2e7237" xml:lang="ar">المغربي</addName>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الساسي</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1078.d2e9166">
+                            <forename xml:lang="ar" change="#d2e23017" xml:id="forename_505.d2e9168">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_327.d2e9171">الساسي</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1311.d2e7240" type="flattened" xml:lang="ar">محمدالساسي</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1311.d2e7240" type="flattened" xml:lang="ar" xml:id="persName_1079.d2e9175">محمدالساسي</persName>
                         <persName change="#d4e18775 #d2e18656" type="noAddName" xml:id="persName_1312.d2e7248" xml:lang="ar">
                             <forename change="#d2e18656" xml:id="forename_623.d2e7250" xml:lang="ar">محمد</forename>
                         </persName>
@@ -3985,11 +3981,11 @@
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_627.d2e7289" xml:lang="ar">تقي الدين</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_288.d2e7292" xml:lang="ar">السبكي</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">تقي الدين</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">السبكي</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1086.d2e9221">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_509.d2e9223">تقي الدين</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_330.d2e9226">السبكي</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1320.d2e7295" type="flattened" xml:lang="ar">تقيالدينالسبكي</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1320.d2e7295" type="flattened" xml:lang="ar" xml:id="persName_1087.d2e9230">تقيالدينالسبكي</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1319.d2e7284" type="flattened" xml:id="persName_1321.d2e7303" xml:lang="ar">القاضيتقيالدينالسبكي</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e12839" xml:lang="ar">
@@ -4286,11 +4282,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_148.d2e8009" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_349.d2e8012" xml:lang="ar">الصابوني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الصابوني</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1153.d2e9921">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_555.d2e9923">أحمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_375.d2e9926">الصابوني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1406.d2e8015" type="flattened" xml:lang="ar">احمدالصابوني</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1406.d2e8015" type="flattened" xml:lang="ar" xml:id="persName_1154.d2e9930">احمدالصابوني</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1407.d2e8023" type="flattened" xml:id="persName_1407.d2e8023" xml:lang="ar">احمدافنديالصابوني</tei:persName>
                     </tei:person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_193.d2e8026" xml:lang="ar">
@@ -4300,11 +4296,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_150.d2e8035" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_351.d2e8038" xml:lang="ar">الصابوني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">أحمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الصابوني</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1156.d2e9954">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_557.d2e9956">أحمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_377.d2e9959">الصابوني</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1408.d2e8041" type="flattened" xml:lang="ar">احمدالصابوني</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1408.d2e8041" type="flattened" xml:lang="ar" xml:id="persName_1157.d2e9963">احمدالصابوني</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1409.d2e8049" type="flattened" xml:id="persName_1409.d2e8049" xml:lang="ar">الشيخاحمدافنديالصابوني</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e13066" xml:lang="ar">
@@ -4716,32 +4712,32 @@
                         <tei:birth change="#d2e18656 #d2e23203" resp="viaf" when="1887" xml:id="birth_1.d2e8918" xml:lang="ar">1887</tei:birth>
                         <tei:death change="#d2e18656 #d2e23203" resp="viaf" when="1916" xml:id="death_1.d2e8920" xml:lang="ar">1916</tei:death>
                     </person>
-                    <person xml:lang="ar">
-                        <persName change="#d2e23203" xml:lang="ar">
-                            <addName change="#d2e23203" type="honorific" xml:lang="ar">الشيخ</addName>
-                            <forename change="#d2e23203" xml:lang="ar">محمد</forename>
-                            <addName change="#d2e23203" type="title" xml:lang="ar">أفندي</addName>
-                            <surname change="#d2e23203" xml:lang="ar">
-                                <addName change="#d2e23203" type="nisbah" xml:lang="ar">القاسمي</addName>
-                                <addName change="#d2e23203" type="nickname" xml:lang="ar">الحلاق</addName>
+                    <person xml:lang="ar" change="#d2e23017" xml:id="person_216.d2e10934">
+                        <persName change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="persName_1252.d2e10936">
+                            <addName change="#d2e23203 #d2e23017" type="honorific" xml:lang="ar" xml:id="addName_213.d2e10938">الشيخ</addName>
+                            <forename change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_623.d2e10941">محمد</forename>
+                            <addName change="#d2e23203 #d2e23017" type="title" xml:lang="ar" xml:id="addName_214.d2e10944">أفندي</addName>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_437.d2e10947">
+                                <addName change="#d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_215.d2e10949">القاسمي</addName>
+                                <addName change="#d2e23203 #d2e23017" type="nickname" xml:lang="ar" xml:id="addName_216.d2e10952">الحلاق</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18870 #d2e23203" corresp="#" type="flattened" xml:lang="ar">الشيخمحمدافنديالقاسميالحلاق</persName>
-                        <persName change="#d4e18870 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e23203" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e23203" xml:lang="ar">
-                                <addName change="#d2e23203" type="nisbah" xml:lang="ar">القاسمي</addName>
-                                <addName change="#d2e23203" type="nickname" xml:lang="ar">الحلاق</addName>
+                        <persName change="#d4e18870 #d2e23203 #d2e23017" corresp="#" type="flattened" xml:lang="ar" xml:id="persName_1253.d2e10957">الشيخمحمدافنديالقاسميالحلاق</persName>
+                        <persName change="#d4e18870 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1254.d2e10960">
+                            <forename change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_624.d2e10962">محمد</forename>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_438.d2e10965">
+                                <addName change="#d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_217.d2e10967">القاسمي</addName>
+                                <addName change="#d2e23203 #d2e23017" type="nickname" xml:lang="ar" xml:id="addName_218.d2e10970">الحلاق</addName>
                             </surname>
                         </persName>
-                        <persName change="#d2e23203" xml:lang="ar">
-                            <forename change="#d2e23203" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e23203" xml:lang="ar">
-                                <addName change="#d2e23203" type="nisbah" xml:lang="ar">القاسمي</addName>
-                                <addName change="#d2e23203" type="nickname" xml:lang="ar">الحلاق</addName>
+                        <persName change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="persName_1255.d2e10975">
+                            <forename change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_625.d2e10977">محمد</forename>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_439.d2e10980">
+                                <addName change="#d2e23203 #d2e23017" type="nisbah" xml:lang="ar" xml:id="addName_219.d2e10982">القاسمي</addName>
+                                <addName change="#d2e23203 #d2e23017" type="nickname" xml:lang="ar" xml:id="addName_220.d2e10985">الحلاق</addName>
                             </surname>
                         </persName>
-                        <persName change="#d4e18870 #d2e23203" corresp="#" type="flattened" xml:lang="ar">محمدالقاسميالحلاق</persName>
+                        <persName change="#d4e18870 #d2e23203 #d2e23017" corresp="#" type="flattened" xml:lang="ar" xml:id="persName_1256.d2e10990">محمدالقاسميالحلاق</persName>
                     </person>
                     <tei:person xml:id="person_341.d1e13324" xml:lang="ar">
                         <persName xml:id="persName_1581.d1e13326" xml:lang="ar">
@@ -4807,13 +4803,13 @@
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_431.d2e9060" xml:lang="ar">القصار</surname>
                         </persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1528.d2e9055" type="flattened" xml:id="persName_1529.d2e9063" xml:lang="ar">عبدالرحمنالقصار</tei:persName>
-                        <persName>
-                            <forename>عبد الرحمان</forename>
-                            <addName type="nasab">بن عبد الحميد</addName>
-                            <surname>القصار</surname>
+                        <persName change="#d2e23017" xml:id="persName_1267.d2e11135">
+                            <forename change="#d2e23017" xml:id="forename_637.d2e11137">عبد الرحمان</forename>
+                            <addName type="nasab" change="#d2e23017" xml:id="addName_221.d2e11140">بن عبد الحميد</addName>
+                            <surname change="#d2e23017" xml:id="surname_449.d2e11143">القصار</surname>
                         </persName>
-                        <birth calendar="#cal_islamic" datingMethod="#cal_islamic" notAfter="1869-04-12" notBefore="1868-04-24" resp="#pers_TG" when-custom="1285">1285</birth>
-                        <death calendar="#cal_islamic" datingMethod="#cal_islamic" resp="#pers_TG" when="1929-06-27" when-custom="1348-01-19">١٩ محرم ١٣٤٨</death>
+                        <birth calendar="#cal_islamic" datingMethod="#cal_islamic" notAfter="1869-04-12" notBefore="1868-04-24" resp="#pers_TG" when-custom="1285" change="#d2e23017" xml:id="birth_1.d2e11147">1285</birth>
+                        <death calendar="#cal_islamic" datingMethod="#cal_islamic" resp="#pers_TG" when="1929-06-27" when-custom="1348-01-19" change="#d2e23017" xml:id="death_1.d2e11150">١٩ محرم ١٣٤٨</death>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e13415" xml:lang="ar">
                         <persName xml:id="persName_1587.d1e13417" xml:lang="ar">
@@ -5017,11 +5013,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_179.d2e9471" xml:lang="ar">بك</addName>
                             <surname change="#d2e18656" xml:id="surname_464.d2e9474" xml:lang="ar">المؤيد</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656" xml:lang="ar">شفيق</forename>
-                            <surname change="#d2e18656" xml:lang="ar">المؤيد</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1313.d2e11623">
+                            <forename change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="forename_676.d2e11625">شفيق</forename>
+                            <surname change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="surname_479.d2e11628">المؤيد</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1579.d2e9477" type="flattened" xml:lang="ar">شفيقالمؤيد</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1579.d2e9477" type="flattened" xml:lang="ar" xml:id="persName_1314.d2e11632">شفيقالمؤيد</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1578.d2e9466" type="flattened" xml:id="persName_1580.d2e9485" xml:lang="ar">شفيقبكالمؤيد</tei:persName>
                     </tei:person>
                     <person xml:id="person_35.d1e2888" xml:lang="ar">
@@ -5067,11 +5063,11 @@
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_830.d2e9620" xml:lang="ar">عليش</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_473.d2e9623" xml:lang="ar">المالكي</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">عليش</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">المالكي</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1324.d2e11742">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_683.d2e11744">عليش</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_486.d2e11747">المالكي</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1596.d2e9626" type="flattened" xml:lang="ar">عليشالمالكي</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1596.d2e9626" type="flattened" xml:lang="ar" xml:id="persName_1325.d2e11751">عليشالمالكي</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1595.d2e9615" type="flattened" xml:id="persName_1597.d2e9634" xml:lang="ar">الشيخعليشالمالكي</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e13612" xml:lang="ar">
@@ -5088,11 +5084,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_187.d2e9657" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_476.d2e9660" xml:lang="ar">المبارك</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">عبد القادر</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">المبارك</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1328.d2e11790">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_686.d2e11792">عبد القادر</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_489.d2e11795">المبارك</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1599.d2e9663" type="flattened" xml:lang="ar">عبدالقادرالمبارك</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1599.d2e9663" type="flattened" xml:lang="ar" xml:id="persName_1329.d2e11799">عبدالقادرالمبارك</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1600.d2e9671" type="flattened" xml:id="persName_1600.d2e9671" xml:lang="ar">السيدعبدالقادرافنديالمبارك</tei:persName>
                     </tei:person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_219.d2e9673" xml:lang="ar">
@@ -5172,11 +5168,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_194.d2e9843" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_491.d2e9846" xml:lang="ar">المدرج</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">صالح</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">المدرج</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1343.d2e11975">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_698.d2e11977">صالح</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_501.d2e11980">المدرج</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1618.d2e9849" type="flattened" xml:lang="ar">صالحالمدرج</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1618.d2e9849" type="flattened" xml:lang="ar" xml:id="persName_1344.d2e11984">صالحالمدرج</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1619.d2e9857" type="flattened" xml:id="persName_1619.d2e9857" xml:lang="ar">الشيخصالحافنديالمدرج</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e13734" xml:lang="ar">
@@ -5363,21 +5359,21 @@
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_520.d2e10224" xml:lang="ar">المنير</surname>
                             <addName change="#d2e18656 #d2e23203" type="nisbah" xml:id="addName_200.d2e10227" xml:lang="ar">الحسيني</addName>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">محمد</forename>
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">عارف</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">المنير</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1380.d2e12409">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_728.d2e12411">محمد</forename>
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_729.d2e12414">عارف</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_526.d2e12417">المنير</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656 #d2e23203" type="noAddName" xml:id="persName_1660.d2e10230" xml:lang="ar">
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_882.d2e10232" xml:lang="ar">محمد</forename>
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_883.d2e10235" xml:lang="ar">عارف</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_521.d2e10238" xml:lang="ar">المنير</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_1660.d2e10230" type="flattened" xml:lang="ar">محمدعارفالمنير</persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">محمد</forename>
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">عارف</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">المنير</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_1660.d2e10230" type="flattened" xml:lang="ar" xml:id="persName_1382.d2e12433">محمدعارفالمنير</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1383.d2e12436">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_732.d2e12438">محمد</forename>
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_733.d2e12441">عارف</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_528.d2e12444">المنير</surname>
                         </persName>
                         <persName change="#d4e19992 #d2e18656 #d2e23203" corresp="#persName_1659.d2e10216" type="flattened" xml:id="persName_1661.d2e10241" xml:lang="ar">محمدعارفالمنيرالحسيني</persName>
                         <persName change="#d2e18656" xml:id="persName_1662.d2e10243" xml:lang="ar">
@@ -5423,12 +5419,12 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_204.d2e10322" xml:lang="ar">بك</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_527.d2e10325" xml:lang="ar">الميداني</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">محمد</forename>
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">علي</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">الميداني</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1392.d2e12556">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_741.d2e12558">محمد</forename>
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_742.d2e12561">علي</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_535.d2e12564">الميداني</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1669.d2e10328" type="flattened" xml:lang="ar">محمدعليالميداني</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1669.d2e10328" type="flattened" xml:lang="ar" xml:id="persName_1393.d2e12568">محمدعليالميداني</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1668.d2e10314" type="flattened" xml:id="persName_1670.d2e10339" xml:lang="ar">محمدعليبكالميداني</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e13976" xml:lang="ar">
@@ -5538,21 +5534,21 @@
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_908.d2e10535" xml:lang="ar">سعيد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_544.d2e10538" xml:lang="ar">النعسان</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">محمد</forename>
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">سعيد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">النعسان</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1411.d2e12819">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_759.d2e12821">محمد</forename>
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_760.d2e12824">سعيد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_552.d2e12827">النعسان</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_1687.d2e10541" xml:lang="ar">
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_909.d2e10543" xml:lang="ar">محمد</forename>
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_910.d2e10546" xml:lang="ar">سعيد</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_545.d2e10549" xml:lang="ar">النعسان</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1687.d2e10541" type="flattened" xml:lang="ar">محمدسعيدالنعسان</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">محمد</forename>
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">سعيد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">النعسان</surname>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1687.d2e10541" type="flattened" xml:lang="ar" xml:id="persName_1413.d2e12843">محمدسعيدالنعسان</persName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1414.d2e12846">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_763.d2e12848">محمد</forename>
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_764.d2e12851">سعيد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_554.d2e12854">النعسان</surname>
                         </persName>
                         <persName corresp="#persName_147.d1e5018" type="flattened" xml:id="persName_852.d1e6609" xml:lang="ar">الشيخمحمدسعيدالنعسان</persName>
                         <tei:idno change="#d4e16401 #d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e10555" xml:lang="ar">68787170</tei:idno>
@@ -5778,20 +5774,20 @@
                         </persName>
                         <tei:persName corresp="#persName_1648.d1e14342" type="flattened" xml:id="persName_1649.d1e14351" xml:lang="ar">روبرتبال</tei:persName>
                     </tei:person>
-                    <person change="#d2e23203" xml:lang="ar">
-                        <persName ref="viaf:52431747" xml:lang="da-Arab-AR">
-                            <forename xml:lang="da-Arab-AR">جستور</forename>
-                            <surname xml:lang="da-Arab-AR">بالسوم</surname>
+                    <person change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="person_240.d2e13371">
+                        <persName ref="viaf:52431747" xml:lang="da-Arab-AR" change="#d2e23017" xml:id="persName_1455.d2e13373">
+                            <forename xml:lang="da-Arab-AR" change="#d2e23017" xml:id="forename_796.d2e13375">جستور</forename>
+                            <surname xml:lang="da-Arab-AR" change="#d2e23017" xml:id="surname_585.d2e13378">بالسوم</surname>
                         </persName>
-                        <persName change="#d4e18870" corresp="#" type="flattened" xml:lang="da-Arab-AR">جستوربالسوم</persName>
-                        <persName xml:lang="da">
-                            <forename change="#d2e23203" xml:lang="da">Gestur</forename>
-                            <surname change="#d2e23203" xml:lang="da">Pálsson</surname>
+                        <persName change="#d4e18870 #d2e23017" corresp="#" type="flattened" xml:lang="da-Arab-AR" xml:id="persName_1456.d2e13382">جستوربالسوم</persName>
+                        <persName xml:lang="da" change="#d2e23017" xml:id="persName_1457.d2e13385">
+                            <forename change="#d2e23203 #d2e23017" xml:lang="da" xml:id="forename_797.d2e13387">Gestur</forename>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="da" xml:id="surname_586.d2e13390">Pálsson</surname>
                         </persName>
-                        <persName change="#d4e18870" corresp="#" type="flattened" xml:lang="da">GesturPálsson</persName>
-                        <tei:idno change="#d4e18870 #d2e23203" type="viaf" xml:lang="ar">52431747</tei:idno>
-                        <tei:birth change="#d4e18870 #d2e23203" resp="viaf" when="1852-09-25" xml:lang="ar">1852-09-25</tei:birth>
-                        <tei:death change="#d4e18870 #d2e23203" resp="viaf" when="1891-08-19" xml:lang="ar">1891-08-19</tei:death>
+                        <persName change="#d4e18870 #d2e23017" corresp="#" type="flattened" xml:lang="da" xml:id="persName_1458.d2e13394">GesturPálsson</persName>
+                        <tei:idno change="#d4e18870 #d2e23203 #d2e23017" type="viaf" xml:lang="ar" xml:id="idno_2.d2e13397">52431747</tei:idno>
+                        <tei:birth change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1852-09-25" xml:lang="ar" xml:id="birth_2.d2e13401">1852-09-25</tei:birth>
+                        <tei:death change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1891-08-19" xml:lang="ar" xml:id="death_2.d2e13404">1891-08-19</tei:death>
                     </person>
                     <person xml:id="person_35.d1e1895" xml:lang="ar">
                         <persName xml:id="persName_144.d1e1897" xml:lang="ar">
@@ -5892,11 +5888,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_221.d2e11209" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_595.d2e11212" xml:lang="ar">بهجت</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">محمد</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">بهجت</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1477.d2e13628">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_812.d2e13630">محمد</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_601.d2e13633">بهجت</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_1756.d2e11215" type="flattened" xml:lang="ar">محمدبهجت</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_1756.d2e11215" type="flattened" xml:lang="ar" xml:id="persName_1478.d2e13637">محمدبهجت</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_1757.d2e11223" type="flattened" xml:id="persName_1757.d2e11223" xml:lang="ar">محمدافنديبهجت</tei:persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e14492" xml:lang="ar">
@@ -7253,20 +7249,20 @@
                         </persName>
                         <tei:persName corresp="#persName_1751.d1e15905" type="flattened" xml:id="persName_1752.d1e15914" xml:lang="ar">يوسفسنو</tei:persName>
                     </tei:person>
-                    <person change="#d2e23203" xml:lang="ar">
-                        <persName ref="viaf:68935764" xml:lang="fr-Arab-AR">
-                            <forename xml:lang="fr-Arab-AR">شارل</forename>
-                            <surname xml:lang="fr-Arab-AR">سنيوبوس</surname>
+                    <person change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="person_280.d2e16738">
+                        <persName ref="viaf:68935764" xml:lang="fr-Arab-AR" change="#d2e23017" xml:id="persName_1762.d2e16740">
+                            <forename xml:lang="fr-Arab-AR" change="#d2e23017" xml:id="forename_1004.d2e16742">شارل</forename>
+                            <surname xml:lang="fr-Arab-AR" change="#d2e23017" xml:id="surname_795.d2e16745">سنيوبوس</surname>
                         </persName>
-                        <persName change="#d4e18870" corresp="#" type="flattened" xml:lang="fr-Arab-AR">شارلسنيوبوس</persName>
-                        <persName xml:lang="fr">
-                            <forename change="#d2e23203" xml:lang="fr">Charles</forename>
-                            <surname change="#d2e23203" xml:lang="fr">Seignobos</surname>
+                        <persName change="#d4e18870 #d2e23017" corresp="#" type="flattened" xml:lang="fr-Arab-AR" xml:id="persName_1763.d2e16749">شارلسنيوبوس</persName>
+                        <persName xml:lang="fr" change="#d2e23017" xml:id="persName_1764.d2e16752">
+                            <forename change="#d2e23203 #d2e23017" xml:lang="fr" xml:id="forename_1005.d2e16754">Charles</forename>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="fr" xml:id="surname_796.d2e16757">Seignobos</surname>
                         </persName>
-                        <persName change="#d4e18870" corresp="#" type="flattened" xml:lang="fr">CharlesSeignobos</persName>
-                        <tei:idno change="#d4e18870 #d2e23203" type="viaf" xml:lang="ar">68935764</tei:idno>
-                        <tei:birth change="#d4e18870 #d2e23203" resp="viaf" when="1854-09-10" xml:lang="ar">1854-09-10</tei:birth>
-                        <tei:death change="#d4e18870 #d2e23203" resp="viaf" when="1942-04-24" xml:lang="ar">1942-04-24</tei:death>
+                        <persName change="#d4e18870 #d2e23017" corresp="#" type="flattened" xml:lang="fr" xml:id="persName_1765.d2e16761">CharlesSeignobos</persName>
+                        <tei:idno change="#d4e18870 #d2e23203 #d2e23017" type="viaf" xml:lang="ar" xml:id="idno_2.d2e16764">68935764</tei:idno>
+                        <tei:birth change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1854-09-10" xml:lang="ar" xml:id="birth_2.d2e16768">1854-09-10</tei:birth>
+                        <tei:death change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1942-04-24" xml:lang="ar" xml:id="death_2.d2e16771">1942-04-24</tei:death>
                     </person>
                     <tei:person xml:id="person_341.d1e15918" xml:lang="ar">
                         <persName xml:id="persName_1752.d1e15920" xml:lang="ar">
@@ -7980,16 +7976,16 @@
                         </persName>
                         <tei:persName corresp="#persName_1818.d1e16921" type="flattened" xml:id="persName_1819.d1e16930" xml:lang="ar">ابوحفىعمر</tei:persName>
                     </tei:person>
-                    <person change="#d2e23203" xml:lang="ar">
-                        <persName change="#d2e23203" ref="viaf:337149106226468491192" xml:lang="ar">
-                            <forename change="#d2e23203" xml:lang="ar">محمد</forename>
-                            <forename change="#d2e23203" xml:lang="ar">صادق</forename>
-                            <surname change="#d2e23203" xml:lang="ar">عنبر</surname>
+                    <person change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="person_294.d2e18393">
+                        <persName change="#d2e23203 #d2e23017" ref="viaf:337149106226468491192" xml:lang="ar" xml:id="persName_1900.d2e18395">
+                            <forename change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_1104.d2e18397">محمد</forename>
+                            <forename change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_1105.d2e18400">صادق</forename>
+                            <surname change="#d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_896.d2e18403">عنبر</surname>
                         </persName>
-                        <persName change="#d4e18870 #d2e23203" corresp="#" type="flattened" xml:lang="ar">محمدصادقعنبر</persName>
-                        <tei:idno change="#d4e18870 #d2e23203" type="viaf" xml:lang="ar">337149106226468491192</tei:idno>
-                        <tei:birth change="#d4e18870 #d2e23203" resp="viaf" when="1872" xml:lang="ar">1872</tei:birth>
-                        <tei:death change="#d4e18870 #d2e23203" resp="viaf" when="1938" xml:lang="ar">1938</tei:death>
+                        <persName change="#d4e18870 #d2e23203 #d2e23017" corresp="#" type="flattened" xml:lang="ar" xml:id="persName_1901.d2e18407">محمدصادقعنبر</persName>
+                        <tei:idno change="#d4e18870 #d2e23203 #d2e23017" type="viaf" xml:lang="ar" xml:id="idno_2.d2e18410">337149106226468491192</tei:idno>
+                        <tei:birth change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1872" xml:lang="ar" xml:id="birth_2.d2e18413">1872</tei:birth>
+                        <tei:death change="#d4e18870 #d2e23203 #d2e23017" resp="viaf" when="1938" xml:lang="ar" xml:id="death_2.d2e18416">1938</tei:death>
                     </person>
                     <person xml:id="person_35.d1e5315" xml:lang="ar">
                         <persName xml:id="persName_151.d1e5317" xml:lang="ar">
@@ -8227,18 +8223,18 @@
                             <nameLink change="#d2e18656 #d2e23203" xml:id="nameLink_5.d2e15357" xml:lang="fr-Arab-AR">دي</nameLink>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_927.d2e15360" xml:lang="fr-Arab-AR">فلوري</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="fr-Arab-AR">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="fr-Arab-AR">موريس</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="fr-Arab-AR">فلوري</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="fr-Arab-AR" xml:id="persName_1951.d2e18958">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="fr-Arab-AR" xml:id="forename_1133.d2e18960">موريس</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="fr-Arab-AR" xml:id="surname_931.d2e18963">فلوري</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656" type="noAddName" xml:id="persName_2234.d2e15363" xml:lang="fr-Arab-AR">
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_1290.d2e15365" xml:lang="fr-Arab-AR">موريس</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_928.d2e15368" xml:lang="fr-Arab-AR">فلوري</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_2234.d2e15363" type="flattened" xml:lang="fr-Arab-AR">موريسفلوري</persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="fr-Arab-AR">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="fr-Arab-AR">موريس</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="fr-Arab-AR">فلوري</surname>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_2234.d2e15363" type="flattened" xml:lang="fr-Arab-AR" xml:id="persName_1953.d2e18976">موريسفلوري</persName>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="fr-Arab-AR" xml:id="persName_1954.d2e18979">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="fr-Arab-AR" xml:id="forename_1135.d2e18981">موريس</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="fr-Arab-AR" xml:id="surname_933.d2e18984">فلوري</surname>
                         </persName>
                         <persName corresp="#persName_173.d1e5614" type="flattened" xml:id="persName_939.d1e7254" xml:lang="ar">دكتورموريسديفلوري</persName>
                         <tei:idno change="#d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e15374" xml:lang="ar">59145461</tei:idno>
@@ -8400,11 +8396,11 @@
                             <addName change="#d2e18656 #d2e23203" type="title" xml:id="addName_279.d2e15651" xml:lang="ar">أفندي</addName>
                             <surname change="#d2e18656" xml:id="surname_950.d2e15654" xml:lang="ar">قصاب</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656" xml:lang="ar">سليم</forename>
-                            <surname change="#d2e18656" xml:lang="ar">قصاب</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_1990.d2e19356">
+                            <forename change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="forename_1156.d2e19358">سليم</forename>
+                            <surname change="#d2e18656 #d2e23017" xml:lang="ar" xml:id="surname_956.d2e19361">قصاب</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_2271.d2e15657" type="flattened" xml:lang="ar">سليمقصاب</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_2271.d2e15657" type="flattened" xml:lang="ar" xml:id="persName_1991.d2e19365">سليمقصاب</persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_2272.d2e15665" type="flattened" xml:id="persName_2272.d2e15665" xml:lang="ar">سليمافنديقصاب</tei:persName>
                     </tei:person>
                     <person xml:id="person_35.d1e3684" xml:lang="ar">
@@ -8762,7 +8758,7 @@
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_1005.d2e16319" xml:lang="ar">ماتينيون</surname>
                         </persName>
                         <persName change="#d2e19579" type="noAddName" xml:id="persName_1096.d2e8723" xml:lang="ar">ماتينيون</persName>
-                        <persName change="#d4e18870" corresp="#persName_1096.d2e8723" type="flattened" xml:lang="ar">ماتينيون</persName>
+                        <persName change="#d4e18870 #d2e23017" corresp="#persName_1096.d2e8723" type="flattened" xml:lang="ar" xml:id="persName_2073.d2e20184">ماتينيون</persName>
                         <persName corresp="#persName_840.d1e6914" type="flattened" xml:id="persName_1111.d1e8694" xml:lang="ar">الدكتورماتينيون</persName>
                     </tei:person>
                     <tei:person xml:id="person_341.d1e17647" xml:lang="ar">
@@ -8784,10 +8780,10 @@
                             <addName change="#d2e18656 #d2e23203" type="honorific" xml:id="addName_288.d2e16354" xml:lang="fr-Arab-AR">المسيو</addName>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_1008.d2e16357" xml:lang="fr-Arab-AR">ماسبرو</surname>
                         </persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="fr-Arab-AR">
-                            <surname change="#d2e18656 #d2e23203" xml:lang="fr-Arab-AR">ماسبرو</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="fr-Arab-AR" xml:id="persName_2078.d2e20233">
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="fr-Arab-AR" xml:id="surname_1012.d2e20235">ماسبرو</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_2362.d2e16360" type="flattened" xml:lang="fr-Arab-AR">ماسبرو</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_2362.d2e16360" type="flattened" xml:lang="fr-Arab-AR" xml:id="persName_2079.d2e20239">ماسبرو</persName>
                         <persName corresp="#persName_929.d1e8319" type="flattened" xml:id="persName_1367.d1e10461" xml:lang="fr-Arab-AR">المسيوماسبرو</persName>
                     </tei:person>
                     <person xml:id="person_35.d1e4265" xml:lang="ar">
@@ -8935,10 +8931,10 @@
                     <person xml:id="person_35.d1e4337" xml:lang="ar">
                         <persName xml:id="persName_145.d1e4339" xml:lang="fr-Arab-AR">د. س. 
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_1031.d2e16618" xml:lang="fr-Arab-AR">مرجليوث</surname></persName>
-                        <persName change="#d4e18667" type="noAddName" xml:lang="fr-Arab-AR">
-                            <surname change="#d2e18656 #d2e23203" xml:lang="fr-Arab-AR">مرجليوث</surname>
+                        <persName change="#d4e18667 #d2e23017" type="noAddName" xml:lang="fr-Arab-AR" xml:id="persName_2111.d2e20574">
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="fr-Arab-AR" xml:id="surname_1035.d2e20576">مرجليوث</surname>
                         </persName>
-                        <persName change="#d4e18667" corresp="#persName_2394.d2e16621" type="flattened" xml:lang="fr-Arab-AR">مرجليوث</persName>
+                        <persName change="#d4e18667 #d2e23017" corresp="#persName_2394.d2e16621" type="flattened" xml:lang="fr-Arab-AR" xml:id="persName_2112.d2e20580">مرجليوث</persName>
                         <persName corresp="#persName_145.d1e4339" type="flattened" xml:id="persName_712.d1e5536" xml:lang="ar">دسمرجليوث</persName>
                     </person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_316.d2e16628" xml:lang="ar">
@@ -9251,7 +9247,7 @@
                             <surname xml:id="surname_947.d1e18094" xml:lang="ar">نجا</surname>
                         </persName>
                         <tei:persName corresp="#persName_1895.d1e18089" type="flattened" xml:id="persName_1896.d1e18098" xml:lang="ar">عمرنجا</tei:persName>
-                        <tei:idno change="#d4e18870 #d2e23203" type="viaf" xml:lang="ar">305962156</tei:idno>
+                        <tei:idno change="#d4e18870 #d2e23203 #d2e23017" type="viaf" xml:lang="ar" xml:id="idno_2.d2e21307">305962156</tei:idno>
                     </tei:person>
                     <tei:person change="#d2e18656 #d2e23203" xml:id="person_328.d2e17185" xml:lang="ar">
                         <persName change="#d2e18656 #d2e23203" ref="viaf:305215027" xml:id="persName_2464.d2e17186" xml:lang="ar">
@@ -9260,18 +9256,18 @@
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_1413.d2e17194" xml:lang="ar">مصطفى</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_1076.d2e17197" xml:lang="ar">نجا</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">مصطفى</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">نجا</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_2183.d2e21328">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_1258.d2e21330">مصطفى</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_1081.d2e21333">نجا</surname>
                         </persName>
                         <persName change="#d4e16401 #d2e18656 #d2e23203" type="noAddName" xml:id="persName_2465.d2e17200" xml:lang="ar">
                             <forename change="#d2e18656 #d2e23203" xml:id="forename_1414.d2e17202" xml:lang="ar">مصطفى</forename>
                             <surname change="#d2e18656 #d2e23203" xml:id="surname_1077.d2e17205" xml:lang="ar">نجا</surname>
                         </persName>
-                        <persName change="#d4e18667 #d2e23203" corresp="#persName_2465.d2e17200" type="flattened" xml:lang="ar">مصطفىنجا</persName>
-                        <persName change="#d4e18667 #d2e23203" type="noAddName" xml:lang="ar">
-                            <forename change="#d2e18656 #d2e23203" xml:lang="ar">مصطفى</forename>
-                            <surname change="#d2e18656 #d2e23203" xml:lang="ar">نجا</surname>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" corresp="#persName_2465.d2e17200" type="flattened" xml:lang="ar" xml:id="persName_2185.d2e21346">مصطفىنجا</persName>
+                        <persName change="#d4e18667 #d2e23203 #d2e23017" type="noAddName" xml:lang="ar" xml:id="persName_2186.d2e21349">
+                            <forename change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="forename_1260.d2e21351">مصطفى</forename>
+                            <surname change="#d2e18656 #d2e23203 #d2e23017" xml:lang="ar" xml:id="surname_1083.d2e21354">نجا</surname>
                         </persName>
                         <tei:persName change="#d4e16401 #d2e18656 #d2e23203" corresp="#persName_2466.d2e17208" type="flattened" xml:id="persName_2466.d2e17208" xml:lang="ar">الاستاذالشيخمصطفىنجا</tei:persName>
                         <tei:idno change="#d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e17211" xml:lang="ar">305215027</tei:idno>
@@ -9640,35 +9636,35 @@
                 </tei:listPerson>
             </particDesc>
         </profileDesc>
-        <revisionDesc xml:id="revisionDesc_1.d1e6169">
-            <tei:change change="d2e23203" when="2018-10-12" who="#pers_TG" xml:lang="en">Added the 
-                <tei:att xml:lang="en">xml:lang</tei:att>
+        <revisionDesc xml:id="revisionDesc_1.d1e6169"><change when="2018-11-03" who="#pers_TG" xml:id="d2e23017" xml:lang="en">Added automated <tei:att xml:lang="en">xml:id</tei:att>s for every element that is a descendant of <tei:gi xml:lang="en">tei:text</tei:gi> and had no existing <tei:att xml:lang="en">xml:id</tei:att> following the pattern "name()_generate-id()".</change>
+            <tei:change change="d2e23203 #d2e23017" when="2018-10-12" who="#pers_TG" xml:lang="en" xml:id="change_1.d2e22199">Added the 
+                <tei:att xml:lang="en" change="#d2e23017" xml:id="att_1.d2e22201">xml:lang</tei:att>
                 attribute to all nodes that lacked this attribute. The value is based on the closest ancestor.</tei:change>
             <tei:change when="2018-10-12" who="#pers_TG" xml:id="d4e18870" xml:lang="en">Improved 
-                <tei:gi change="#d2e23203" xml:lang="en">person</tei:gi>
+                <tei:gi change="#d2e23203 #d2e23017" xml:lang="en" xml:id="gi_1.d2e22207">person</tei:gi>
                 nodes that had references to VIAF, by querying VIAF and adding  
-                <tei:gi change="#d2e23203" xml:lang="en">birth</tei:gi>
+                <tei:gi change="#d2e23203 #d2e23017" xml:lang="en" xml:id="gi_1.d2e22210">birth</tei:gi>
                 , 
-                <tei:gi change="#d2e23203" xml:lang="en">death</tei:gi>
+                <tei:gi change="#d2e23203 #d2e23017" xml:lang="en" xml:id="gi_1.d2e22213">death</tei:gi>
                 , and 
-                <tei:gi change="#d2e23203" xml:lang="en">idno</tei:gi>
+                <tei:gi change="#d2e23203 #d2e23017" xml:lang="en" xml:id="gi_1.d2e22216">idno</tei:gi>
                 .</tei:change>
             <tei:change when="2018-10-11" who="#pers_TG" xml:id="d4e18667" xml:lang="en">Improved 
-                <tei:gi change="#d2e23203" xml:lang="en">person</tei:gi>
+                <tei:gi change="#d2e23203 #d2e23017" xml:lang="en" xml:id="gi_1.d2e22222">person</tei:gi>
                 nodes that had references to VIAF, by querying VIAF and adding  
-                <tei:gi change="#d2e23203" xml:lang="en">birth</tei:gi>
+                <tei:gi change="#d2e23203 #d2e23017" xml:lang="en" xml:id="gi_1.d2e22225">birth</tei:gi>
                 , 
-                <tei:gi change="#d2e23203" xml:lang="en">death</tei:gi>
+                <tei:gi change="#d2e23203 #d2e23017" xml:lang="en" xml:id="gi_1.d2e22228">death</tei:gi>
                 , and 
-                <tei:gi change="#d2e23203" xml:lang="en">idno</tei:gi>
+                <tei:gi change="#d2e23203 #d2e23017" xml:lang="en" xml:id="gi_1.d2e22231">idno</tei:gi>
                 .</tei:change>
             <change when="2018-10-11" who="#pers_TG" xml:id="d2e18656" xml:lang="en">Added automated 
-                <tei:att xml:lang="en">xml:id</tei:att>
+                <tei:att xml:lang="en" change="#d2e23017" xml:id="att_1.d2e22237">xml:id</tei:att>
                 s for every element that is a descendant of 
-                <tei:gi xml:lang="en">tei:text</tei:gi>
+                <tei:gi xml:lang="en" change="#d2e23017" xml:id="gi_1.d2e22240">tei:text</tei:gi>
                 and had no existing 
-                <tei:att xml:lang="en">xml:id</tei:att>
-                following the pattern &quot;name()_generate-id()&quot;.</change>
+                <tei:att xml:lang="en" change="#d2e23017" xml:id="att_1.d2e22243">xml:id</tei:att>
+                following the pattern "name()_generate-id()".</change>
             <tei:change when="2018-10-10" who="#pers_TG" xml:id="d4e16401" xml:lang="en">Improved 
                 <tei:gi change="#d2e18656 #d2e23203" xml:id="gi_1.d2e17889" xml:lang="en">person</tei:gi>
                 nodes that had references to VIAF, by querying VIAF and adding  
@@ -9711,7 +9707,7 @@
                 <tei:gi change="#d2e18656" xml:id="gi_1.d2e17952" xml:lang="en">tei:text</tei:gi>
                 and had no existing                  
                 <tei:att change="#d2e18656" xml:id="att_1.d2e17955" xml:lang="en">xml:id</tei:att>
-                following the pattern &quot;name()_generate-id()&quot;.</change>
+                following the pattern "name()_generate-id()".</change>
             <tei:change change="#d2e19579 #d2e23203" when="2018-05-09" who="pers_TG" xml:id="change_1.d2e18883" xml:lang="en">Improved                  
                 <tei:gi change="#d2e19579 #d2e23203" xml:id="gi_1.d2e18885" xml:lang="en">person</tei:gi>
                 nodes that had references to VIAF, by querying VIAF and adding                   
