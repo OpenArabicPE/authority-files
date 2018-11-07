@@ -399,10 +399,6 @@
                         <persName xml:id="persName_145.d1e4209" xml:lang="ar">السيد محمد الخضر بن الحسين التونسي</persName>
                         <persName corresp="#persName_145.d1e4209" type="flattened" xml:id="persName_692.d1e5446" xml:lang="ar">السيدمحمدالخضربنالحسينالتونسي</persName>
                     </person>
-                    <tei:person xml:id="person_342.d1e7569" xml:lang="ar">
-                        <persName xml:id="persName_876.d1e7571" xml:lang="ar">الشيخ سليمان ظاهر</persName>
-                        <persName corresp="#persName_876.d1e7571" type="flattened" xml:id="persName_1195.d1e9309" xml:lang="ar">الشيخسليمانظاهر</persName>
-                    </tei:person>
                     <person xml:id="person_35.d1e3584" xml:lang="ar">
                         <persName xml:id="persName_145.d1e3586" xml:lang="ar">الشيخ عبد الله الاحمد الرواف النجدي</persName>
                         <persName corresp="#persName_145.d1e3586" type="flattened" xml:id="persName_595.d1e4799" xml:lang="ar">الشيخعبداللهالاحمدالروافالنجدي</persName>
@@ -4088,9 +4084,11 @@
                             <surname xml:id="surname_9.d1e193" xml:lang="ar">الشرتوني</surname>
                         </persName>
                         <persName corresp="#persName_17.d1e188" type="flattened" xml:id="persName_63.d1e587" xml:lang="ar">سعيدالشرتوني</persName>
-                        <persName ref="viaf:96962923" xml:id="persName_19.d1e200" xml:lang="ar"><addName type="honorific">الشيخ</addName> 
+                        <persName ref="viaf:96962923" xml:id="persName_19.d1e200" xml:lang="ar">
+                            <addName type="honorific">الشيخ</addName>
                             <forename xml:id="forename_10.d1e202" xml:lang="ar">سعيد</forename>
-                            <surname xml:id="surname_10.d1e205" xml:lang="ar">الشرتوني</surname></persName>
+                            <surname xml:id="surname_10.d1e205" xml:lang="ar">الشرتوني</surname>
+                        </persName>
                         <persName corresp="#persName_19.d1e200" type="flattened" xml:id="persName_65.d1e598" xml:lang="ar">الشيخسعيدالشرتوني</persName>
                         <persName ref="viaf:96962923" xml:id="persName_21.d1e212" xml:lang="ar">
                             <forename xml:id="forename_11.d1e214" xml:lang="ar">سعيد</forename>
@@ -6481,7 +6479,11 @@
                             <surname xml:id="surname_757.d1e15212" xml:lang="ar">داغر</surname>
                         </persName>
                         <tei:persName corresp="#persName_1705.d1e15207" type="flattened" xml:id="persName_1706.d1e15216" xml:lang="ar">اسعدداغر</tei:persName>
-                        <persName xml:lang="ar"><forename>أسعد</forename> <forename>خليل</forename> <surname>داغر</surname></persName>
+                        <persName xml:lang="ar">
+                            <forename>أسعد</forename>
+                            <forename>خليل</forename>
+                            <surname>داغر</surname>
+                        </persName>
                         <tei:idno change="#d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e12301" xml:lang="ar">37246447</tei:idno>
                         <tei:birth change="#d2e18656 #d2e23203" resp="viaf" when="1886" xml:id="birth_1.d2e12303" xml:lang="ar">1886</tei:birth>
                         <tei:death change="#d2e18656 #d2e23203" resp="viaf" when="1958" xml:id="death_1.d2e12305" xml:lang="ar">1958</tei:death>
@@ -7741,6 +7743,12 @@
                             <surname xml:id="surname_163.d1e5182" xml:lang="ar">ظاهر</surname>
                         </persName>
                         <persName corresp="#persName_147.d1e5177" type="flattened" xml:id="persName_899.d1e6944" xml:lang="ar">سليمانظاهر</persName>
+                        <persName xml:id="persName_876.d1e7571" xml:lang="ar">
+                            <addName type="honorific">الشيخ</addName>
+                            <forename>سليمان</forename>
+                            <surname>ظاهر</surname>
+                        </persName>
+                        <persName corresp="#persName_876.d1e7571" type="flattened" xml:id="persName_1195.d1e9309" xml:lang="ar">الشيخسليمانظاهر</persName>
                         <tei:idno change="#d2e18656 #d2e23203" type="viaf" xml:id="idno_2.d2e14565" xml:lang="ar">50793892</tei:idno>
                         <tei:birth change="#d2e18656 #d2e23203" resp="viaf" when="1873" xml:id="birth_1.d2e14567" xml:lang="ar">1873</tei:birth>
                         <tei:death change="#d2e18656 #d2e23203" resp="viaf" when="1960" xml:id="death_1.d2e14569" xml:lang="ar">1960</tei:death>
@@ -9002,11 +9010,12 @@
                         <tei:persName corresp="#persName_1883.d1e17907" type="flattened" xml:id="persName_1884.d1e17916" xml:lang="ar">ابراهيممطر</tei:persName>
                     </tei:person>
                     <person xml:id="person_27.d1e1199" xml:lang="ar">
-                        <!--<persName ref="viaf:102460074" xml:id="persName_118.d1e1201" xml:lang="ar"><forename xml:id="forename_65.d1e1203" xml:lang="ar">خليل</forename><surname xml:id="surname_61.d1e1206" xml:lang="ar">مطران</surname></persName>-->
-                        <persName corresp="#persName_118.d1e1201" type="flattened" xml:id="persName_187.d1e1678" xml:lang="ar">خليلمطران</persName>
+                        <persName type="flattened" xml:id="persName_187.d1e1678" xml:lang="ar">خليلمطران</persName>
                         <persName ref="viaf:102460074" xml:id="persName_120.d1e1213" xml:lang="ar">
-                            <forename xml:id="forename_66.d1e1215" xml:lang="ar">خليل</forename>افندي 
-                            <surname xml:id="surname_62.d1e1218" xml:lang="ar">مطران</surname></persName>
+                            <forename xml:id="forename_66.d1e1215" xml:lang="ar">خليل</forename>
+                            <addName type="title">افندي</addName>
+                            <surname xml:id="surname_62.d1e1218" xml:lang="ar">مطران</surname>
+                        </persName>
                         <persName corresp="#persName_120.d1e1213" type="flattened" xml:id="persName_189.d1e1689" xml:lang="ar">خليلافنديمطران</persName>
                         <persName ref="viaf:102460074" xml:id="persName_122.d1e1225" xml:lang="ar">
                             <forename xml:id="forename_67.d1e1227" xml:lang="ar">خليل</forename>
@@ -9533,11 +9542,11 @@
                         <tei:death change="#d2e18656 #d2e23203" resp="viaf" when="1954" xml:id="death_1.d2e17678" xml:lang="ar">1954</tei:death>
                     </tei:person>
                     <person xml:id="person_9.d1e438" xml:lang="ar">
-                        <persName ref="viaf:51840827" xml:id="persName_45.d1e440" xml:lang="en-Arab-AR">
-                            <forename xml:id="forename_24.d1e442" xml:lang="en-Arab-AR">يوحنا</forename>
-                            <surname xml:id="surname_22.d1e445" xml:lang="en-Arab-AR">ورتبات</surname>
+                        <persName ref="viaf:51840827" xml:id="persName_45.d1e440" xml:lang="fr-Arab-AR">
+                            <forename xml:id="forename_24.d1e442" xml:lang="fr-Arab-AR">يوحنا</forename>
+                            <surname xml:id="surname_22.d1e445" xml:lang="fr-Arab-AR">ورتبات</surname>
                         </persName>
-                        <persName corresp="#persName_45.d1e440" type="flattened" xml:id="persName_210.d1e1863" xml:lang="en-Arab-AR">يوحناورتبات</persName>
+                        <persName corresp="#persName_45.d1e440" type="flattened" xml:id="persName_210.d1e1863" xml:lang="fr-Arab-AR">يوحناورتبات</persName>
                         <persName xml:id="persName_905.d1e8011" xml:lang="fr-Arab-AR">
                             <surname xml:id="surname_107.d1e1769" xml:lang="fr-Arab-AR">ورتبات</surname>
                         </persName>
@@ -9646,18 +9655,27 @@
                 </tei:listPerson>
                 <listPerson>
                     <person>
-                        <persName ref="viaf:77068906" xml:lang="ar"><forename>لويس</forename> <surname>شيخو</surname></persName>
-                        <persName xml:lang="ar"><forename><abbr>ل</abbr></forename> . <surname><abbr>ش</abbr></surname></persName>
+                        <persName ref="viaf:77068906" xml:lang="ar">
+                            <forename>لويس</forename>
+                            <surname>شيخو</surname>
+                        </persName>
+                        <persName xml:lang="ar">
+                            <forename>
+                                <abbr>ل</abbr>
+                            </forename>. 
+                            <surname>
+                                <abbr>ش</abbr></surname>
+                        </persName>
                         <note n="732" type="articleCount"/>
                         <note n="2" type="journalCount"/>
                     </person>
-                    <!-- <person>
-                        <persName xml:lang="ar">جرجي زيدان</persName>
-                        <note n="193" type="articleCount"/>
-                        <note n="5" type="journalCount"/>
-                    </person> -->
+                    <!-- <person><persName xml:lang="ar">جرجي زيدان</persName><note n="193" type="articleCount"/><note n="5" type="journalCount"/></person>-->
                     <person>
-                        <persName xml:lang="fr-Arab-AR" ref="viaf:54215409"><forename>هنري</forename> <surname>لامنس</surname> <addName>اليسوعي</addName></persName>
+                        <persName ref="viaf:54215409" xml:lang="fr-Arab-AR">
+                            <forename>هنري</forename>
+                            <surname>لامنس</surname>
+                            <addName type="nisbah">اليسوعي</addName>
+                        </persName>
                         <persName xml:lang="fr">
                             <forename>Henri</forename>
                             <surname>Lammens</surname>
@@ -9665,128 +9683,85 @@
                         <note n="177" type="articleCount"/>
                         <note n="2" type="journalCount"/>
                     </person>
-                    <!-- <person>
-                        <persName xml:lang="ar">عبد الله النديم الإدريسي</persName>
-                        <note n="173" type="articleCount"/>
-                        <note n="1" type="journalCount"/>
-                    </person> -->
-                    <!-- <person>
-                        <persName xml:lang="ar">أنستاس الكرملي</persName>
-                        <note n="121" type="articleCount"/>
-                        <note n="2" type="journalCount"/>
-                    </person> -->
+                    <!-- <person><persName xml:lang="ar">عبد الله النديم الإدريسي</persName><note n="173" type="articleCount"/><note n="1" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">أنستاس الكرملي</persName><note n="121" type="articleCount"/><note n="2" type="journalCount"/></person>-->
                     <person>
-                        <persName xml:lang="ar" ref="viaf:64154472"><forename>إبراهيم</forename> <surname>اليازجي</surname></persName>
+                        <persName ref="viaf:64154472" xml:lang="ar">
+                            <forename>إبراهيم</forename>
+                            <surname>اليازجي</surname>
+                        </persName>
                         <note n="121" type="articleCount"/>
                         <note n="4" type="journalCount"/>
                     </person>
-                    <!-- <person>
-                        <persName xml:lang="ar">محمد عبده</persName>
-                        <note n="116" type="articleCount"/>
-                        <note n="2" type="journalCount"/>
-                    </person> -->
-                    <!-- <person>
-                        <persName xml:lang="ar">عيسى إسكندر المعلوف</persName>
-                        <note n="112" type="articleCount"/>
-                        <note n="6" type="journalCount"/>
-                    </person> -->
-                    <!-- <person>
-                        <persName xml:lang="ar">نقولا حداد</persName>
-                        <note n="91" type="articleCount"/>
-                        <note n="4" type="journalCount"/>
-                    </person> -->
+                    <!-- <person><persName xml:lang="ar">محمد عبده</persName><note n="116" type="articleCount"/><note n="2" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">عيسى إسكندر المعلوف</persName><note n="112" type="articleCount"/><note n="6" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">نقولا حداد</persName><note n="91" type="articleCount"/><note n="4" type="journalCount"/></person>-->
                     <person>
-                        <persName xml:lang="ar" ref="viaf:68779589" xml:lang="ar"><forename>أمين</forename> <forename>المعلوف</forename></persName>
+                        <persName ref="viaf:68779589" xml:lang="ar">
+                            <forename>أمين</forename>
+                            <forename>المعلوف</forename>
+                        </persName>
                         <note n="57" type="articleCount"/>
                         <note n="2" type="journalCount"/>
                     </person>
                     <person>
-                        <persName ref="viaf:89370173" xml:lang="ar"><forename>أنطون</forename> <surname>رباط</surname> <addName>اليسوعي</addName></persName>
+                        <persName ref="viaf:89370173" xml:lang="ar">
+                            <forename>أنطون</forename>
+                            <surname>رباط</surname>
+                            <addName type="nisbah">اليسوعي</addName>
+                        </persName>
                         <note n="55" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
-                    <!-- <person>
-                        <persName xml:lang="ar">شبلي شميل</persName>
-                        <note n="49" type="articleCount"/>
-                        <note n="6" type="journalCount"/>
-                    </person> -->
-                    <!-- <person>
-                        <persName xml:lang="ar">سعيد الشرتوني</persName>
-                        <note n="48" type="articleCount"/>
-                        <note n="4" type="journalCount"/>
-                    </person> -->
-                    <!-- <person>
-                        <persName xml:lang="ar">كاظم الدجيلي</persName>
-                        <note n="48" type="articleCount"/>
-                        <note n="5" type="journalCount"/>
-                    </person> -->
-                    <!-- <person>
-                        <persName xml:lang="ar">أسعد خليل داغر</persName>
-                        <note n="46" type="articleCount"/>
-                        <note n="1" type="journalCount"/>
-                    </person> -->
-                    <!-- <person>
-                        <persName xml:lang="ar">جرجي يني</persName>
-                        <note n="46" type="articleCount"/>
-                        <note n="2" type="journalCount"/>
-                    </person> -->
+                    <!-- <person><persName xml:lang="ar">شبلي شميل</persName><note n="49" type="articleCount"/><note n="6" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">سعيد الشرتوني</persName><note n="48" type="articleCount"/><note n="4" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">كاظم الدجيلي</persName><note n="48" type="articleCount"/><note n="5" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">أسعد خليل داغر</persName><note n="46" type="articleCount"/><note n="1" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">جرجي يني</persName><note n="46" type="articleCount"/><note n="2" type="journalCount"/></person>-->
                     <person>
                         <persName xml:lang="ar">أمين أبو خاطر</persName>
                         <note n="45" type="articleCount"/>
                         <note n="3" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="fr-Arab-AR" ref="viaf:305214880"><forename>إميل</forename> <surname>ريغو</surname> <addName>اليسوعي</addName></persName>
+                        <persName ref="viaf:305214880" xml:lang="fr-Arab-AR">
+                            <forename>إميل</forename>
+                            <surname>ريغو</surname>
+                            <addName>اليسوعي</addName>
+                        </persName>
                         <note n="44" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
-                    <!-- <person>
-                        <persName xml:lang="ar">محمد رضا الشبيبي</persName>
-                        <note n="44" type="articleCount"/>
-                        <note n="5" type="journalCount"/>
-                    </person> -->
+                    <!-- <person><persName xml:lang="ar">محمد رضا الشبيبي</persName><note n="44" type="articleCount"/><note n="5" type="journalCount"/></person>-->
                     <person>
-                        <persName xml:lang="ar" ref="viaf:56492532"><forename>محمد</forename> <forename>توفيق</forename> <surname>صدقي</surname></persName>
+                        <persName ref="viaf:56492532" xml:lang="ar">
+                            <forename>محمد</forename>
+                            <forename>توفيق</forename>
+                            <surname>صدقي</surname>
+                        </persName>
                         <note n="42" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
-                    <!-- <person>
-                        <persName xml:lang="ar">معروف الرصافي</persName>
-                        <note n="39" type="articleCount"/>
-                        <note n="6" type="journalCount"/>
-                    </person> -->
-                    <!-- <person>
-                        <persName xml:lang="ar">حافظ إبراهيم</persName>
-                        <note n="38" type="articleCount"/>
-                        <note n="6" type="journalCount"/>
-                    </person> -->
+                    <!-- <person><persName xml:lang="ar">معروف الرصافي</persName><note n="39" type="articleCount"/><note n="6" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">حافظ إبراهيم</persName><note n="38" type="articleCount"/><note n="6" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">سليمان ظاهر</persName><note n="38" type="articleCount"/><note n="3" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">يوحنا ورتبات</persName><note n="38" type="articleCount"/><note n="2" type="journalCount"/></person>-->
                     <person>
-                        <persName xml:lang="ar">سليمان ظاهر</persName>
-                        <note n="38" type="articleCount"/>
-                        <note n="3" type="journalCount"/>
-                    </person>
-                    <person>
-                        <persName xml:lang="ar">يوحنا ورتبات</persName>
-                        <note n="38" type="articleCount"/>
-                        <note n="2" type="journalCount"/>
-                    </person>
-                    <person>
-                        <persName xml:lang="ar">سبستيان رنزفال اليسوعي</persName>
+                        <persName xml:lang="fr-Arab-AR">
+                            <forename>سبستيان</forename>
+                            <surname>رنزفال</surname>
+                            <addName>اليسوعي</addName>
+                        </persName>
                         <note n="36" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
+                    <!-- <person><persName xml:lang="ar">مصطفى صادق الرافعي</persName><note n="34" type="articleCount"/><note n="6" type="journalCount"/></person>-->
+                    <!-- <person><persName xml:lang="ar">خليل مطران</persName><note n="33" type="articleCount"/><note n="3" type="journalCount"/></person>-->
                     <person>
-                        <persName xml:lang="ar">مصطفى صادق الرافعي</persName>
-                        <note n="34" type="articleCount"/>
-                        <note n="6" type="journalCount"/>
-                    </person>
-                    <person>
-                        <persName xml:lang="ar">خليل مطران</persName>
-                        <note n="33" type="articleCount"/>
-                        <note n="3" type="journalCount"/>
-                    </person>
-                    <person>
-                        <persName xml:lang="ar">إبراهيم حرفوش</persName>
+                        <persName ref="viaf:305215055" xml:lang="ar">
+                            <forename>إبراهيم</forename>
+                            <surname>حرفوش</surname>
+                        </persName>
                         <note n="32" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
@@ -9796,57 +9771,79 @@
                         <note n="1" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">جبر ضومط</persName>
+                        <persName ref="viaf:65382270" xml:lang="ar">
+                            <forename>جبر</forename>
+                            <surname>ضومط</surname>
+                        </persName>
                         <note n="31" type="articleCount"/>
                         <note n="3" type="journalCount"/>
                     </person>
+                    <!-- <person><persName xml:lang="ar">محمد كرد علي</persName><note n="31" type="articleCount"/><note n="4" type="journalCount"/></person>-->
                     <person>
-                        <persName xml:lang="ar">محمد كرد علي</persName>
-                        <note n="31" type="articleCount"/>
-                        <note n="4" type="journalCount"/>
-                    </person>
-                    <person>
-                        <persName xml:lang="ar">أحمد عارف الزين</persName>
+                        <persName ref="viaf:306137154" xml:lang="ar">
+                            <forename>أحمد</forename>
+                            <forename>عارف</forename>
+                            <surname>الزين</surname>
+                        </persName>
                         <note n="30" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">لويس معلوف اليسوعي</persName>
+                        <persName ref="viaf:22683375" xml:lang="ar">
+                            <forename>لويس</forename>
+                            <surname>معلوف</surname>
+                            <addName>اليسوعي</addName>
+                        </persName>
                         <note n="30" type="articleCount"/>
                         <note n="2" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">ديمتري نقولا</persName>
+                        <persName ref="viaf:313300453" xml:lang="ar">
+                            <forename>ديمتري</forename>
+                            <surname>نقولا</surname>
+                        </persName>
                         <note n="29" type="articleCount"/>
                         <note n="2" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">محمد علي حامد حشيشو</persName>
+                        <persName ref="viaf:305212826" xml:lang="ar">
+                            <forename>محمد</forename>
+                            <forename>علي</forename>
+                            <forename>حامد</forename>
+                            <surname>حشيشو</surname>
+                        </persName>
                         <note n="29" type="articleCount"/>
                         <note n="2" type="journalCount"/>
                     </person>
-                    <person>
-                        <persName xml:lang="ar">شكيب أرسلان</persName>
-                        <note n="28" type="articleCount"/>
-                        <note n="6" type="journalCount"/>
-                    </person>
+                    <!-- <person><persName xml:lang="ar">شكيب أرسلان</persName><note n="28" type="articleCount"/><note n="6" type="journalCount"/></person>-->
                     <person>
                         <persName xml:lang="ar">صالح بن يحيى</persName>
                         <note n="28" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">لويس رنزفال</persName>
+                        <persName ref="viaf:305215046" xml:lang="ar">
+                            <forename>لويس</forename>
+                            <surname>رنزفال</surname>
+                        </persName>
                         <note n="28" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">موريس كولنجت</persName>
+                        <persName xml:lang="fr-Arab-AR">
+                            <forename>موريس</forename>
+                            <surname>كولنجت</surname>
+                        </persName>
                         <note n="28" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">ولي الدين يكن</persName>
+                        <persName ref="viaf:36771043" xml:lang="ar">
+                            <forename>
+                                <addName type="">ولي الدين</addName>
+                            </forename>
+                            <surname>يكن</surname>
+                        </persName>
                         <note n="28" type="articleCount"/>
                         <note n="4" type="journalCount"/>
                     </person>
@@ -9861,7 +9858,10 @@
                         <note n="6" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">عبد الفتاح عبادة</persName>
+                        <persName ref="viaf:137144782701217235169" xml:lang="ar">
+                            <forename>عبد الفتاح</forename>
+                            <surname>عبادة</surname>
+                        </persName>
                         <note n="27" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
@@ -18826,7 +18826,11 @@
                         <note n="1" type="journalCount"/>
                     </person>
                     <person>
-                        <persName xml:lang="ar">نوير رنزفال اليسوعي</persName>
+                        <persName xml:lang="ar">
+                            <forename>نوير</forename>
+                            <surname>رنزفال</surname>
+                            <addName>اليسوعي</addName>
+                        </persName>
                         <note n="1" type="articleCount"/>
                         <note n="1" type="journalCount"/>
                     </person>
