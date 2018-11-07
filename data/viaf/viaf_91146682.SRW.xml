@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>91146682</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/91146682/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/91146682"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="000313442">NLI|000313442</ns2:source>
+                  <ns2:source nsid="no2009107162">LC|no2009107162</ns2:source>
+                  <ns2:source nsid="0000000065353481">ISNI|0000000065353481</ns2:source>
+               </ns2:sources>
+               <ns2:length>73</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Shakhāshīrī, Andrāwus Ḥannā</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>شخاشيري، أندراوس حنا</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Shakhāshīrī, Andrāwus Ḥannā</ns2:subfield>
+                        <ns2:subfield code="9">lat</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|000313442</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000065353481</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000065353481</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000065353481</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>LC|no2009107162</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Shakhāshīrī, Andrāwus Ḥannā</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|no2009107162</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NLI|000313442</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NLI|000313442</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000065353481</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000065353481</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000065353481</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Shakhāshīrī, Andrāwus Ḥannā</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000065353481</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>NLI|000313442</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>NLI|000313442</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>LC|no2009107162</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">شخاشيري، أندراوس حنا</ns2:subfield>
+                        <ns2:subfield code="9">ara</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|000313442</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000065353481</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000065353481</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000065353481</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>LC|no2009107162</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>u</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">شخاشيري، اندراوس حنا</ns2:subfield>
+                        <ns2:normalized>شخاشيري اندراوس حنا</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">شخاشيري، اندراوس حنا</ns2:subfield>
+                        <ns2:normalized>شخاشيري اندراوس حنا</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>‏مشاقة، ميخائيل.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>ʻAbduh, Milḥim Khalīl.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Ṣalībā, Luwīs.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Mushāqah, Mīkhāʼīl, 1799-1888.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>‏عبده، ملحم خليل.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>‏صليبا، لويس.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>مشاقة، ميخائيل</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>ʻAbdū, Mulḥam Khalīl.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Mishāqah, Mikhāʼīl, 1799-1888.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>‏عبده، ملحم خليل</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="2">
+                     <ns2:text>‏دار ومكتبة بيبليون،‏</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>التكوين للدراسات والترجمة والنشر،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>Dār wa-Maktabat Bīblīyūn</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000065353481</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>0</ns2:birthDate>
+               <ns2:deathDate>0</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="200" min="190">
+                  <ns2:date count="3" scaled="1.58">190</ns2:date>
+                  <ns2:date count="1" scaled="0.00">191</ns2:date>
+                  <ns2:date count="1" scaled="0.00">192</ns2:date>
+                  <ns2:date count="1" scaled="0.00">193</ns2:date>
+                  <ns2:date count="1" scaled="0.00">194</ns2:date>
+                  <ns2:date count="1" scaled="0.00">195</ns2:date>
+                  <ns2:date count="1" scaled="0.00">196</ns2:date>
+                  <ns2:date count="1" scaled="0.00">197</ns2:date>
+                  <ns2:date count="1" scaled="0.00">198</ns2:date>
+                  <ns2:date count="1" scaled="0.00">199</ns2:date>
+                  <ns2:date count="5" scaled="2.32">200</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="2">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>dm</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:countries>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>EG</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>SY</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Mashhad al-ʻiyān bi-ḥawādith Sūrīyah wa-Lubnān, 2007:</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Ṣidām al-adyān wa-al-madhāhib fī Lubnān shuhādah min al-māḍī . . . ʻibrah lil-āti</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>تاريخ بلاد الشام في القرن التاسع عشر : روايات تاريخية معاصرة لحوادث عام ١٨٦٠م ومقدماتها في سورية ولبنان</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>‏صدام الأديان والمذاهب في لبنان شهادة من الماضي . . . عبرة للآتي</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000313442</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no2009107162</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>‏مشهد العيان بحوادث سورية ولبنان :‏ ‏رواية معاصرة للفتن الطائفية في القرن 19 وخلفياتها وتداعياتها /‏</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="LC|no2009107162" time="2009-08-21T09:43:14+00:00" type="add"/>
+                  <ns2:ht recid="NLIara|000313442"
+                          time="2013-05-13T19:14:22+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="NLI|000313442" time="2013-05-13T19:14:22+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000065353481"
+                          time="2013-09-16T16:15:07+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2018-08-12T13:48:24.083230+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "91146682"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">91146682</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>

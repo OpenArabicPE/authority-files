@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>89370173</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/89370173/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/89370173"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="5926">LNL|5926</ns2:source>
+                  <ns2:source nsid="185468101">SUDOC|185468101</ns2:source>
+                  <ns2:source nsid="http://catalogue.bnf.fr/ark:/12148/cb105920231">BNF|10592023</ns2:source>
+                  <ns2:source nsid="001800634">NLI|001800634</ns2:source>
+                  <ns2:source nsid="ADV11100310">BAV|ADV11100310</ns2:source>
+                  <ns2:source nsid="0000000062479206">ISNI|0000000062479206</ns2:source>
+                  <ns2:source nsid="161351891">NTA|161351891</ns2:source>
+               </ns2:sources>
+               <ns2:length>80</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Rabbath, Antoine, 1867-1913</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|001800634</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|185468101</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10592023</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Rabbath, Antoine, Père, 1867-1913</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Rabbath, Antoine 1867-1913 Père</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>ربّاط، أنطون، الأب، 1867-1913</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|5926</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Rabbath, Antoine, S.I.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BAV</ns2:s>
+                        <ns2:sid>BAV|ADV11100310</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="UNIMARC" ind1=" " ind2="|" tag="200">
+                        <ns2:subfield code="7">ba0yba0y</ns2:subfield>
+                        <ns2:subfield code="8">fre</ns2:subfield>
+                        <ns2:subfield code="9">0</ns2:subfield>
+                        <ns2:subfield code="a">Rabbath</ns2:subfield>
+                        <ns2:subfield code="b">Antoine</ns2:subfield>
+                        <ns2:subfield code="f">1867-1913</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10592023</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>BNF|10592023</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|001800634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|185468101</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|5926</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="title"/>BAV|ADV11100310</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|161351891</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Rabbath, Antoine</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                        <ns2:subfield code="c">Père</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000062479206</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>NLI|001800634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>SUDOC|185468101</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>BNF|10592023</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LNL|5926</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>BAV|ADV11100310</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>NTA|161351891</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Rabbath, Antoine,</ns2:subfield>
+                        <ns2:subfield code="c">Père,</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NTA|161351891</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|001800634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|185468101</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10592023</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|5926</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>BAV|ADV11100310</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000062479206</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Rabbath, Antoine,</ns2:subfield>
+                        <ns2:subfield code="c">S.I.</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BAV</ns2:s>
+                        <ns2:sid>BAV|ADV11100310</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>BAV|ADV11100310</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="title"/>BNF|10592023</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>SUDOC|185468101</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>NTA|161351891</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Rabbath, Antoine,</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|185468101</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>SUDOC|185468101</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|5926</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10592023</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|001800634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>BAV|ADV11100310</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|161351891</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Rabbath, Antoine,</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                        <ns2:subfield code="9">lat</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|001800634</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|001800634</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LNL|5926</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10592023</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|185468101</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|161351891</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">ربّاط، أنطون،</ns2:subfield>
+                        <ns2:subfield code="c">الأب،</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|5926</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LNL|5926</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|001800634</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|10592023</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|185468101</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000062479206</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|161351891</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Rabbāṭ, Anṭūn,</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                        <ns2:normalized>rabbat antun 1867 1913</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|5926</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Rabbāṭ, Anṭūn</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                        <ns2:normalized>rabbat antun 1867 1913</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">أنطون ربّاط،</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                        <ns2:subfield code="c">الأب،</ns2:subfield>
+                        <ns2:normalized>انطون رباط 1867 1913 الاب</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">أنطون ربّاط،</ns2:subfield>
+                        <ns2:subfield code="c">الأب،</ns2:subfield>
+                        <ns2:subfield code="d">1867-1913</ns2:subfield>
+                        <ns2:normalized>انطون رباط الاب 1867 1913</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|5926</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Tournebize, François 1856-1926</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10592023</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>موصلي، إلياس حنا، إزدهر 1668</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|5926</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>موصلي، إلياس حنا، إزدهر 1668</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="4">
+                     <ns2:text>Picard et Fils ; Harrassowitz ; Luzac et Co.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="4">
+                     <ns2:text>AMS Press</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|185468101</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="4">
+                     <ns2:text>A. Picard et fils [ etc. ]</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10592023</ns2:sid>
+                        <ns2:s>BAV</ns2:s>
+                        <ns2:sid>BAV|ADV11100310</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000062479206</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1867-06-23</ns2:birthDate>
+               <ns2:deathDate>1913-05-11</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="197" min="190">
+                  <ns2:date count="6" scaled="2.58">190</ns2:date>
+                  <ns2:date count="3" scaled="1.58">191</ns2:date>
+                  <ns2:date count="2" scaled="1.00">192</ns2:date>
+                  <ns2:date count="2" scaled="1.00">193</ns2:date>
+                  <ns2:date count="2" scaled="1.00">194</ns2:date>
+                  <ns2:date count="2" scaled="1.00">195</ns2:date>
+                  <ns2:date count="2" scaled="1.00">196</ns2:date>
+                  <ns2:date count="4" scaled="2.00">197</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="8">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|5926</ns2:sid>
+                        <ns2:s>BAV</ns2:s>
+                        <ns2:sid>BAV|ADV11100310</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|185468101</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10592023</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:RelatorCodes>
+                  <ns2:data count="1">
+                     <ns2:text>070</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10592023</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RelatorCodes>
+               <ns2:ISBNs unique="3">
+                  <ns2:data count="2">
+                     <ns2:text>9780404052041</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|185468101</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>9780404052034</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|185468101</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>9780404052027</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:ISBNs>
+               <ns2:countries>
+                  <ns2:data count="5" scaled="3">
+                     <ns2:text>FR</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BAV</ns2:s>
+                        <ns2:sid>BAV|ADV11100310</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10592023</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>US</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|185468101</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|5926</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>mul</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>fre</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>SY</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:occupation>
+                  <ns2:data>
+                     <ns2:text>المولفون</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:occupation>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BAV</ns2:s>
+                        <ns2:sid>BAV|ADV11100310</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|185468101</ns2:sid>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|10592023</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|161351891</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Documents inédits pour servir à l'histoire du christianisme en Orient : Volume 1</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|5926</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>رحلة أول شرقي إلى أمركة : وهي سياحة الخوري الياس إبن القسيس حنا الموصلي من عيلة بيت عمون الكلداني، 1668 الى 1683</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="BAV|ADV11100310" time="2009-07-24T08:25:27+00:00" type="add"/>
+                  <ns2:ht recid="NTA|161351891" time="2012-12-19T19:11:18+00:00" type="add"/>
+                  <ns2:ht recid="LNL|5926" time="2013-09-16T16:15:07+00:00" type="add"/>
+                  <ns2:ht recid="DNB|153039833"
+                          time="2014-01-15T05:38:27+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="ISNI|0000000062479206"
+                          time="2014-05-14T22:19:01+00:00"
+                          type="add"/>
+                  <ns2:ht recid="SUDOC|185468101" time="2015-06-15T20:42:24+00:00" type="add"/>
+                  <ns2:ht recid="BNF|10592023"
+                          time="2015-11-02T07:05:44.017161+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NLI|001800634"
+                          time="2017-02-05T10:11:47.768984+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2018-11-04T13:05:37.799668+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "89370173"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">89370173</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
