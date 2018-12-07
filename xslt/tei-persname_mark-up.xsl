@@ -23,12 +23,7 @@
 
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
-    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="no" name="xml"
-        exclude-result-prefixes="#all"/>
-    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes"
-        name="xml_indented" exclude-result-prefixes="#all"/>
-
-    <xsl:include href="query-viaf.xsl"/>
+    <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="no" exclude-result-prefixes="#all"/>
     
     <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <!-- identify the author of the change by means of a @xml:id -->
@@ -53,23 +48,23 @@
 
     <!-- This template replicates everything -->
     <xsl:template match="node() | @*" mode="m_replicate" name="t_1">
-        <xsl:if test="$p_verbose = true()">
+        <!--<xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_1: </xsl:text>
                 <xsl:value-of select="@xml:id"/>
             </xsl:message>
-        </xsl:if>
+        </xsl:if>-->
         <xsl:copy>
             <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="node() | @*" mode="m_mark-up-source" name="t_2">
-        <xsl:if test="$p_verbose = true()">
+        <!--<xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_2: </xsl:text>
                 <xsl:value-of select="@xml:id"/>
             </xsl:message>
-        </xsl:if>
+        </xsl:if>-->
         <xsl:copy>
             <xsl:apply-templates select="@* | node()" mode="m_mark-up-source"/>
         </xsl:copy>
