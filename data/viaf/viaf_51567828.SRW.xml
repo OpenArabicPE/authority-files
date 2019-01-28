@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>51567828</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/51567828/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/51567828"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="074558994">NTA|074558994</ns2:source>
+                  <ns2:source nsid="90731130">BIBSYS|90731130</ns2:source>
+                  <ns2:source nsid="http://d-nb.info/gnd/1163412473">DNB|1163412473</ns2:source>
+                  <ns2:source nsid="22808847X">SUDOC|22808847X</ns2:source>
+                  <ns2:source nsid="0000000374380096">ISNI|0000000374380096</ns2:source>
+                  <ns2:source nsid="000284546">NLI|000284546</ns2:source>
+                  <ns2:source nsid="nr93048867">LC|nr 93048867</ns2:source>
+                  <ns2:source nsid="vtls021782898">RERO|vtls021782898</ns2:source>
+                  <ns2:source nsid="vtls000015396">EGAXA|vtls000015396</ns2:source>
+               </ns2:sources>
+               <ns2:length>568</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Qāsimī, Muḥammad Saʿīd al- 1843-1900</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1163412473</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Qāsimī, Muḥammad Saʿīd, 1843-1900</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000284546</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>القاسمي، محمد سعيد، 1843-1900</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>al-Qasimi, M. S.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qāsimī, Muḥammad Saʻīd,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|nr 93048867</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|074558994</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1163412473</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|22808847X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NLI|000284546</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>RERO|vtls021782898</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>EGAXA|vtls000015396</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qāsimī, Muḥammad Saʻīd,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:subfield code="9">lat</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000284546</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NLI|000284546</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|074558994</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1163412473</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|22808847X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93048867</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>RERO|vtls021782898</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>EGAXA|vtls000015396</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qāsimī, Muḥammad Saʿīd al-,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NTA|074558994</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="standard number"/>BIBSYS|90731130</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1163412473</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|22808847X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000284546</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93048867</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>RERO|vtls021782898</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>EGAXA|vtls000015396</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qāsimī, Muḥammad Saʿīd al-,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>SUDOC|22808847X</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|074558994</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1163412473</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000284546</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93048867</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>RERO|vtls021782898</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>EGAXA|vtls000015396</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qāsimī, Muḥammad Saʿīd &#x98;al-&#x9c;</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1163412473</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>DNB|1163412473</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|074558994</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|22808847X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000284546</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93048867</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>RERO|vtls021782898</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>EGAXA|vtls000015396</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qāsimī, Muḥammad Saʿīd al-</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000374380096</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>NTA|074558994</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="suggested"/>BIBSYS|90731130</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>DNB|1163412473</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>SUDOC|22808847X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>NLI|000284546</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LC|nr 93048867</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>RERO|vtls021782898</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>EGAXA|vtls000015396</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Qāsimī, Muḥammad Saʿīd,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>RERO|vtls021782898</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|074558994</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1163412473</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|22808847X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NLI|000284546</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93048867</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>EGAXA|vtls000015396</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">al-Qasimi, M. S.</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>BIBSYS|90731130</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="joint author"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="standard number"/>NTA|074558994</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">القاسمي، محمد سعيد،</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>EGAXA|vtls000015396</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="double date"/>NTA|074558994</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|1163412473</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>SUDOC|22808847X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000374380096</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>NLI|000284546</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>LC|nr 93048867</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>RERO|vtls021782898</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">&lt;&lt;al-&gt;&gt;Kasimi, Muhammad Sa'id,</ns2:subfield>
+                        <ns2:subfield code="d">d. 1900</ns2:subfield>
+                        <ns2:normalized>al kasimi muhammad said d 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000284546</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">&lt;&lt;al-&gt;&gt;Qasimi, Muhammad Sa'id,</ns2:subfield>
+                        <ns2:subfield code="d">d. 1900</ns2:subfield>
+                        <ns2:normalized>al qasimi muhammad said d 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000284546</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">&lt;&lt;al-&gt;&gt;Qasimy, Muhammad Sa'id,</ns2:subfield>
+                        <ns2:subfield code="d">d. 1900</ns2:subfield>
+                        <ns2:normalized>al qasimy muhammad said d 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000284546</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Al-Qasimi, M.S.,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>al qasimi m s 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Al-Qasimi, M.S.</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>al qasimi m s 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Al-Qasimy, M.S.,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>al qasimy m s 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Al-Qasimy, M.S.</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>al qasimy m s 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ḥallāq, Muḥammad Saʻīd ibn Qāsim</ns2:subfield>
+                        <ns2:normalized>hallaq muhammad said ibn qasim</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NLI</ns2:s>
+                        <ns2:sid>NLI|000284546</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ḥallāq, Muḥammad Saʻīd ibn Qāsim,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>hallaq muhammad said ibn qasim 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ḥallāq, Muḥammad Saʿīd Ibn-Qāsim</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>hallaq muhammad said ibn qasim 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1163412473</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Muḥammad Saʿīd al-Qāsimī</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>muhammad said al qasimi 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1163412473</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qasimi, M.S. al-,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>qasimi m s al 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qasimi, M.S. al-</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>qasimi m s al 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qasimy, M. S.</ns2:subfield>
+                        <ns2:normalized>qasimy m s</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qasimy, M. S.,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>qasimy m s 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qasimy, M.S. al-,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>qasimy m s al 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qasimy, M.S. al-</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>qasimy m s al 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qasimy, M.S.,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>qasimy m s 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Qasimy, M.S.</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>qasimy m s 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|1163412473</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">al-Qasimi, Muhammad Sa'id</ns2:subfield>
+                        <ns2:subfield code="d">d. 1900</ns2:subfield>
+                        <ns2:normalized>al qasimi muhammad said d 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">al-Qasimy, M. S.</ns2:subfield>
+                        <ns2:normalized>al qasimy m s</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">al-Qasimy, Muhammad Sa'id</ns2:subfield>
+                        <ns2:subfield code="d">d. 1900</ns2:subfield>
+                        <ns2:normalized>al qasimy muhammad said d 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">القاسمي, محمد سعيد</ns2:subfield>
+                        <ns2:normalized>القاسمي محمد سعيد</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">القاسمي, محمد سعيد,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>القاسمي محمد سعيد 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">القاسمي، محمد سعيد بن قاسم،</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>القاسمي محمد سعيد بن قاسم 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">قاسمي، محمد سعيد</ns2:subfield>
+                        <ns2:normalized>قاسمي محمد سعيد</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">قاسمي، محمد سعيد</ns2:subfield>
+                        <ns2:normalized>قاسمي محمد سعيد</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">قاسمي، محمد سعيد،</ns2:subfield>
+                        <ns2:subfield code="d">1843- 1900</ns2:subfield>
+                        <ns2:normalized>قاسمي محمد سعيد 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">قاسمي، محمد سعيد،</ns2:subfield>
+                        <ns2:subfield code="d">1843- 1900</ns2:subfield>
+                        <ns2:normalized>قاسمي محمد سعيد 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">قاسمي، محمد سعيد،</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>قاسمي محمد سعيد 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">محمد سعيد القاسمي</ns2:subfield>
+                        <ns2:normalized>محمد سعيد القاسمي</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">محمد سعيد القاسمي،</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>محمد سعيد القاسمي 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">محمد سعيد بن قاسم القاسمي،</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>محمد سعيد بن قاسم القاسمي 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ḥallāq, Muḥammad Saʻīd ibn Qāsim</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>hallaq muhammad said ibn qasim 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Ḥallāq, Muḥammad Saʿīd ibn Qāsim,</ns2:subfield>
+                        <ns2:subfield code="d">1843-1900</ns2:subfield>
+                        <ns2:normalized>hallaq muhammad said ibn qasim 1843 1900</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="8" tag="950">
+                     <ns2:text>ʿAbd al-Karīm, Aḥmad ʿIzzat.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="4" tag="950">
+                     <ns2:text>Budayrī al-Ḥallāq, Aḥmad al-</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>عبد الكريم، أحمد عزت، 1909-1980</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Yūsuf, Muḥammad Khayr Ramaḍān</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Qāsimī, Ẓāfir al-, 1914-1984.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>البديري, أحمد (....-1761).</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>ʿAẓm, Ḵalīl al-, 1870-1926</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>al-Qāsimī, Jamāl al-Dīn</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>al-Qasimi, Zafer</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>al-Azem, K.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>Qāsimī, Ẓāfir</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>القاسمي، ظافر</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="6">
+                     <ns2:text>Mouton</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="3">
+                     <ns2:text>دار طلاس،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>دار سعد الدين للطباعة والنشر والتوزيع،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>دار البشائر الإسلامية،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>Ṭalās</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>Dār Saʻd al-Dīn lil-Ṭibāʻah wa-al-Nashr wa-al-Tawzīʻ</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>Dār al-Bashāʼir al-Islāmīyah</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>مطبوعات الجمعية المصرية للدراسات التاريخية،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>مطبعة لجنة البيان العربي</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>Maṭbaʿaẗ laǧnat al-bayān al-ʿarabī</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000374380096</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1843</ns2:birthDate>
+               <ns2:deathDate>1900</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="200" min="195">
+                  <ns2:date count="4" scaled="2.00">195</ns2:date>
+                  <ns2:date count="7" scaled="2.81">196</ns2:date>
+                  <ns2:date count="2" scaled="1.00">197</ns2:date>
+                  <ns2:date count="4" scaled="2.00">198</ns2:date>
+                  <ns2:date count="3" scaled="1.58">199</ns2:date>
+                  <ns2:date count="3" scaled="1.58">200</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="10">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2">
+                     <ns2:text>dm</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:RelatorCodes>
+                  <ns2:data count="2">
+                     <ns2:text>editeur scientifique</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RelatorCodes>
+               <ns2:countries>
+                  <ns2:data count="5" scaled="3">
+                     <ns2:text>SY</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>FR</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>EG</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>sy</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>SY</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Dictionnaire des métiers damascains</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Ḥawādiṯ Dimašq al-yawmiyya : 1154-1175 h., 1741-1762 m. / ǧamaʿahā Aḥmad al-Budayrī al-Ḥallāq ; naqqaḥahā Muḥammad Saʿīd al-Qāsimī ; waqafa ʿalā taḥqīqihā wa našrihā Aḥmad ʿIzzat ʿAbd al-Karīm</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>BIBSYS</ns2:s>
+                        <ns2:sid>BIBSYS|90731130</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Le Monde d'outre-mer passé et présent. Deuxième série, Documents</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|074558994</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Qāmūs al-ṣināʿāt al-šāmiyya</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Safīnat al-faraj fīmā habba wa-dabba wa-daraj</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>RERO</ns2:s>
+                        <ns2:sid>RERO|vtls021782898</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>حوادث دمشق اليومية : 1154-1175 h., 1741-1762 m.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>حوادث دمشق اليومية، ٤٥١١-٥٧١١ ه - ١٤٧١-٢٦٧١ م</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 93048867</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>سفينة الفرج فيما هب ودب ودرج</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls000015396</ns2:sid>
+                        <ns2:s>SUDOC</ns2:s>
+                        <ns2:sid>SUDOC|22808847X</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>قاموس الصناعات الشامية</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="NII|DA10831426"
+                          time="2010-06-24T11:33:09+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="LC|nr 93048867" time="2012-11-26T09:56:13+00:00" type="add"/>
+                  <ns2:ht recid="NTA|074558994" time="2012-12-19T19:11:18+00:00" type="add"/>
+                  <ns2:ht recid="NLI|000284546" time="2013-04-17T17:27:37+00:00" type="add"/>
+                  <ns2:ht recid="NLIlat|000284546"
+                          time="2013-05-13T19:14:22+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="EGAXA|vtls000015396"
+                          time="2013-05-13T19:14:22+00:00"
+                          type="add"/>
+                  <ns2:ht recid="ISNI|0000000374380096"
+                          time="2013-10-13T19:17:13+00:00"
+                          type="add"/>
+                  <ns2:ht recid="DNB|152996508"
+                          time="2014-10-21T12:48:43+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="RERO|vtls013532540"
+                          time="2015-06-15T20:42:24+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="RERO|vtls021782898"
+                          time="2015-06-15T20:42:24+00:00"
+                          type="add"/>
+                  <ns2:ht recid="RERO|vtls021932237"
+                          time="2016-02-13T18:45:57.118233+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="LNL|13574"
+                          time="2016-11-13T08:50:11.140666+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="BIBSYS|90731130"
+                          time="2017-05-01T15:28:58.956286+00:00"
+                          type="add"/>
+                  <ns2:ht recid="SUDOC|22808847X"
+                          time="2018-07-10T12:41:53.224654+00:00"
+                          type="add"/>
+                  <ns2:ht recid="DNB|1163412473"
+                          time="2018-07-29T11:08:55.328492+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2019-01-20T10:09:34.796993+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "51567828"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">51567828</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>

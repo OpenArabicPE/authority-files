@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>57953733</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/57953733/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/57953733"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="vtls001019815">EGAXA|vtls001019815</ns2:source>
+                  <ns2:source nsid="n82032120">LC|n  82032120</ns2:source>
+                  <ns2:source nsid="7049">LNL|7049</ns2:source>
+                  <ns2:source nsid="0000000061624571">ISNI|0000000061624571</ns2:source>
+               </ns2:sources>
+               <ns2:length>94</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Zalzal, Bishārah</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>زلزل، بشارة، ت. 1905</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>زلزل، بشارة بن جبرائيل، ت. 1323 هـ.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls001019815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Zalzal, Bishārah</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|n  82032120</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>EGAXA|vtls001019815</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000061624571</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000061624571</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000061624571</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Zalzal, Bishārah</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|0000000061624571</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>EGAXA|vtls001019815</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>LNL|7049</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LC|n  82032120</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">زلزل، بشارة بن جبرائيل،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1323 هـ.</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls001019815</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>EGAXA|vtls001019815</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>LNL|7049</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000061624571</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000061624571</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|0000000061624571</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="lccn"/>LC|n  82032120</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">زلزل، بشارة،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1905</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LNL|7049</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>EGAXA|vtls001019815</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="partial date and publisher"/>ISNI|0000000061624571</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="partial date and publisher"/>ISNI|0000000061624571</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="partial date and publisher"/>ISNI|0000000061624571</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Bishārah Zalzal</ns2:subfield>
+                        <ns2:normalized>bisharah zalzal</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">Bishārah Zalzal</ns2:subfield>
+                        <ns2:normalized>bisharah zalzal</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Zalzal, Bishārah,</ns2:subfield>
+                        <ns2:subfield code="d">d.1905</ns2:subfield>
+                        <ns2:normalized>zalzal bisharah d 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Zalzal, Bishārah</ns2:subfield>
+                        <ns2:subfield code="d">d.1905</ns2:subfield>
+                        <ns2:normalized>zalzal bisharah d 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">بشارة بن جبرائيل زلزل،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1323 هـ</ns2:subfield>
+                        <ns2:normalized>بشارة بن جبراييل زلزل ت 1323 ه</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">بشارة بن جبرائيل زلزل،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1323 هـ.</ns2:subfield>
+                        <ns2:normalized>بشارة بن جبراييل زلزل ت 1323 ه</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls001019815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">بشارة زلزل،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1323 هـ</ns2:subfield>
+                        <ns2:normalized>بشارة زلزل ت 1323 ه</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">بشارة زلزل،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1323 هـ.</ns2:subfield>
+                        <ns2:normalized>بشارة زلزل ت 1323 ه</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>EGAXA</ns2:s>
+                        <ns2:sid>EGAXA|vtls001019815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">بشارة زلزل،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1905</ns2:subfield>
+                        <ns2:normalized>بشارة زلزل ت 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">زلزل، بشارة</ns2:subfield>
+                        <ns2:normalized>زلزل بشارة</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">زلزل، بشارة</ns2:subfield>
+                        <ns2:normalized>زلزل بشارة</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="0" ind2=" " tag="400">
+                        <ns2:subfield code="a">زلزل، بشارة بن جبرائيل،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1905</ns2:subfield>
+                        <ns2:normalized>زلزل بشارة بن جبراييل ت 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">زلزل، بشارة بن جبرائيل،</ns2:subfield>
+                        <ns2:subfield code="d">ت. 1905</ns2:subfield>
+                        <ns2:normalized>زلزل بشارة بن جبراييل ت 1905</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:coauthors>
+                  <ns2:data count="3" tag="950">
+                     <ns2:text>Yāzijī, Ibrāhīm, 1847-1906.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="2" tag="950">
+                     <ns2:text>يازجي، إبراهيم.</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" tag="950">
+                     <ns2:text>يازجي، إبراهيم</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:coauthors>
+               <ns2:publishers>
+                  <ns2:data count="2">
+                     <ns2:text>مطبعة مجلة الجامعة،</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|0000000061624571</ns2:sid>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>0</ns2:birthDate>
+               <ns2:deathDate>1905</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="189" min="129">
+                  <ns2:date count="2" scaled="1.00">129</ns2:date>
+                  <ns2:date count="1" scaled="0.00">130</ns2:date>
+                  <ns2:date count="1" scaled="0.00">131</ns2:date>
+                  <ns2:date count="1" scaled="0.00">132</ns2:date>
+                  <ns2:date count="1" scaled="0.00">133</ns2:date>
+                  <ns2:date count="1" scaled="0.00">134</ns2:date>
+                  <ns2:date count="1" scaled="0.00">135</ns2:date>
+                  <ns2:date count="1" scaled="0.00">136</ns2:date>
+                  <ns2:date count="1" scaled="0.00">137</ns2:date>
+                  <ns2:date count="1" scaled="0.00">138</ns2:date>
+                  <ns2:date count="1" scaled="0.00">139</ns2:date>
+                  <ns2:date count="1" scaled="0.00">140</ns2:date>
+                  <ns2:date count="1" scaled="0.00">141</ns2:date>
+                  <ns2:date count="1" scaled="0.00">142</ns2:date>
+                  <ns2:date count="1" scaled="0.00">143</ns2:date>
+                  <ns2:date count="1" scaled="0.00">144</ns2:date>
+                  <ns2:date count="1" scaled="0.00">145</ns2:date>
+                  <ns2:date count="1" scaled="0.00">146</ns2:date>
+                  <ns2:date count="1" scaled="0.00">147</ns2:date>
+                  <ns2:date count="1" scaled="0.00">148</ns2:date>
+                  <ns2:date count="1" scaled="0.00">149</ns2:date>
+                  <ns2:date count="1" scaled="0.00">150</ns2:date>
+                  <ns2:date count="1" scaled="0.00">151</ns2:date>
+                  <ns2:date count="1" scaled="0.00">152</ns2:date>
+                  <ns2:date count="1" scaled="0.00">153</ns2:date>
+                  <ns2:date count="1" scaled="0.00">154</ns2:date>
+                  <ns2:date count="1" scaled="0.00">155</ns2:date>
+                  <ns2:date count="1" scaled="0.00">156</ns2:date>
+                  <ns2:date count="1" scaled="0.00">157</ns2:date>
+                  <ns2:date count="1" scaled="0.00">158</ns2:date>
+                  <ns2:date count="1" scaled="0.00">159</ns2:date>
+                  <ns2:date count="1" scaled="0.00">160</ns2:date>
+                  <ns2:date count="1" scaled="0.00">161</ns2:date>
+                  <ns2:date count="1" scaled="0.00">162</ns2:date>
+                  <ns2:date count="1" scaled="0.00">163</ns2:date>
+                  <ns2:date count="1" scaled="0.00">164</ns2:date>
+                  <ns2:date count="1" scaled="0.00">165</ns2:date>
+                  <ns2:date count="1" scaled="0.00">166</ns2:date>
+                  <ns2:date count="1" scaled="0.00">167</ns2:date>
+                  <ns2:date count="1" scaled="0.00">168</ns2:date>
+                  <ns2:date count="1" scaled="0.00">169</ns2:date>
+                  <ns2:date count="1" scaled="0.00">170</ns2:date>
+                  <ns2:date count="1" scaled="0.00">171</ns2:date>
+                  <ns2:date count="1" scaled="0.00">172</ns2:date>
+                  <ns2:date count="1" scaled="0.00">173</ns2:date>
+                  <ns2:date count="1" scaled="0.00">174</ns2:date>
+                  <ns2:date count="1" scaled="0.00">175</ns2:date>
+                  <ns2:date count="1" scaled="0.00">176</ns2:date>
+                  <ns2:date count="1" scaled="0.00">177</ns2:date>
+                  <ns2:date count="1" scaled="0.00">178</ns2:date>
+                  <ns2:date count="1" scaled="0.00">179</ns2:date>
+                  <ns2:date count="1" scaled="0.00">180</ns2:date>
+                  <ns2:date count="1" scaled="0.00">181</ns2:date>
+                  <ns2:date count="1" scaled="0.00">182</ns2:date>
+                  <ns2:date count="1" scaled="0.00">183</ns2:date>
+                  <ns2:date count="1" scaled="0.00">184</ns2:date>
+                  <ns2:date count="1" scaled="0.00">185</ns2:date>
+                  <ns2:date count="1" scaled="0.00">186</ns2:date>
+                  <ns2:date count="1" scaled="0.00">187</ns2:date>
+                  <ns2:date count="2" scaled="1.00">188</ns2:date>
+                  <ns2:date count="2" scaled="1.00">189</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="2">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1">
+                     <ns2:text>as</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:countries>
+                  <ns2:data count="2" scaled="1">
+                     <ns2:text>EG</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data count="1" scaled="1">
+                     <ns2:text>LB</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:occupation>
+                  <ns2:data>
+                     <ns2:text>المولفون</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>الاطباء</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:occupation>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>al-Bayān.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|n  82032120</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>البيان.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>كتاب تنوير الأذهان في علم حياة الحيوان والإنسان وتفاوت الأمم في المدنية والعمران</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LNL</ns2:s>
+                        <ns2:sid>LNL|7049</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>مراثي فرع دوحة الأدب وسليل بيت المكرمة والحسب فقيد الوطن المرحوم المأسوف عليه الشيخ خليل إبن العلامة الطيب الذكر الشيخ ناصيف اليازجي الشهير تغمدهما الله برحمته ورضوانه</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="LC|n  82032120" time="2009-03-03T12:03:30+00:00" type="add"/>
+                  <ns2:ht recid="EGAXA|vtls001019815"
+                          time="2009-07-24T08:25:17+00:00"
+                          type="add"/>
+                  <ns2:ht recid="LNL|7049" time="2013-09-16T16:15:07+00:00" type="add"/>
+                  <ns2:ht recid="ISNI|0000000061624571"
+                          time="2014-05-14T22:19:01+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2018-08-12T13:35:07.816432+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "57953733"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">57953733</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
