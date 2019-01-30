@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+   <version xsi:type="xsd:string">1.1</version>
+   <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
+   <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
+   <records xmlns:ns1="http://www.loc.gov/zing/srw/" xsi:type="ns1:recordsType">
+      <record xsi:type="ns1:recordType">
+         <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
+         <recordPacking xsi:type="xsd:string">xml</recordPacking>
+         <recordData xsi:type="ns1:stringOrXmlFragment">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
+               <ns2:viafID>305411080</ns2:viafID>
+               <ns2:Document about="http://viaf.org/viaf/305411080/">
+                  <ns2:inDataset resource="http://viaf.org/viaf/data"/>
+                  <ns2:primaryTopic resource="http://viaf.org/viaf/305411080"/>
+               </ns2:Document>
+               <ns2:nameType>Personal</ns2:nameType>
+               <ns2:sources>
+                  <ns2:source nsid="http://d-nb.info/gnd/119461412">DNB|119461412</ns2:source>
+                  <ns2:source nsid="000000042367354X">ISNI|000000042367354X</ns2:source>
+                  <ns2:source nsid="nr95003815">LC|nr 95003815</ns2:source>
+                  <ns2:source nsid="239280776">NTA|239280776</ns2:source>
+                  <ns2:source nsid="FRBNF167970814">BNF|16797081</ns2:source>
+               </ns2:sources>
+               <ns2:length>60</ns2:length>
+               <ns2:mainHeadings>
+                  <ns2:data>
+                     <ns2:text>Zahrāwī, ʻAbd al-Ḥamīd, 1855 or 1856-1916</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Zahrāwī, ʿAbd-al-Ḥamīd az- 1871-1916</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|000000042367354X</ns2:sid>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|119461412</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Zahrāwī, ʿAbd al-Ḥamīd ibn Muḥammad Šākir ibn Ibrāhīm al- 1871-1916</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16797081</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:data>
+                     <ns2:text>Zahrāwī, ʿAbd al-Ḥamīd al-</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|239280776</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="UNIMARC" ind1=" " ind2="|" tag="200">
+                        <ns2:subfield code="7">ba0yba0a</ns2:subfield>
+                        <ns2:subfield code="8">freara</ns2:subfield>
+                        <ns2:subfield code="9">0</ns2:subfield>
+                        <ns2:subfield code="a">Zahrāwī</ns2:subfield>
+                        <ns2:subfield code="b">ʿAbd al-Ḥamīd ibn Muḥammad Šākir ibn Ibrāhīm al-</ns2:subfield>
+                        <ns2:subfield code="f">1871-1916</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16797081</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>BNF|16797081</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|000000042367354X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|119461412</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Zahrāwī, ʻAbd al-Ḥamīd,</ns2:subfield>
+                        <ns2:subfield code="d">1855 or 1856-1916</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>LC|nr 95003815</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|000000042367354X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>NTA|239280776</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>DNB|119461412</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Zahrāwī, ʿAbd al-Ḥamīd al-</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|239280776</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>NTA|239280776</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>ISNI|000000042367354X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="exact title"/>LC|nr 95003815</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Zahrāwī, ʿAbd-al-Ḥamīd &#x98;az-&#x9c;</ns2:subfield>
+                        <ns2:subfield code="d">1871-1916</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:sid>DNB|119461412</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>DNB|119461412</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="forced single date"/>LC|nr 95003815</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>ISNI|000000042367354X</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>BNF|16797081</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+                  <ns2:mainHeadingEl>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="100">
+                        <ns2:subfield code="a">Zahrāwī, ʿAbd-al-Ḥamīd az-</ns2:subfield>
+                        <ns2:subfield code="d">1871-1916</ns2:subfield>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:sid>ISNI|000000042367354X</ns2:sid>
+                     </ns2:sources>
+                     <ns2:id>ISNI|000000042367354X</ns2:id>
+                     <ns2:links>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>LC|nr 95003815</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>BNF|16797081</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="double date"/>DNB|119461412</ns2:link>
+                        <ns2:link>
+                           <ns2:match type="viafid"/>NTA|239280776</ns2:link>
+                     </ns2:links>
+                  </ns2:mainHeadingEl>
+               </ns2:mainHeadings>
+               <ns2:fixed>
+                  <ns2:gender>b</ns2:gender>
+               </ns2:fixed>
+               <ns2:x400s>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="400">
+                        <ns2:subfield code="a">Zahraoui</ns2:subfield>
+                        <ns2:subfield code="b">Abdelhamid Muhammad Chaker</ns2:subfield>
+                        <ns2:subfield code="f">1871-1916</ns2:subfield>
+                        <ns2:normalized>zahraoui abdelhamid muhammad chaker 1871 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16797081</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">Zahrāwī, ʻAbd al-Ḥamīd,</ns2:subfield>
+                        <ns2:subfield code="d">1855 or 6-1916</ns2:subfield>
+                        <ns2:normalized>zahrawi abd al hamid 1855 or 6 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1=" " ind2="|" tag="700">
+                        <ns2:subfield code="a">الزهراوي</ns2:subfield>
+                        <ns2:subfield code="b">عبد الحميد بن محمد شاكر بن إبراهيم</ns2:subfield>
+                        <ns2:subfield code="f">1871-1916</ns2:subfield>
+                        <ns2:normalized>الزهراوي عبد الحميد بن محمد شاكر بن ابراهيم 1871 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                        <ns2:sid>BNF|16797081</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">زهراوي، عبد الحميد</ns2:subfield>
+                        <ns2:normalized>زهراوي عبد الحميد</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">زهراوي، عبد الحميد،</ns2:subfield>
+                        <ns2:subfield code="d">1855 او 6-1916</ns2:subfield>
+                        <ns2:normalized>زهراوي عبد الحميد 1855 او 6 1916</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+                  <ns2:x400>
+                     <ns2:datafield dtype="MARC21" ind1="1" ind2=" " tag="400">
+                        <ns2:subfield code="a">عبد الحميد الزهراوي</ns2:subfield>
+                        <ns2:normalized>عبد الحميد الزهراوي</ns2:normalized>
+                     </ns2:datafield>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:x400>
+               </ns2:x400s>
+               <ns2:publishers>
+                  <ns2:data count="1">
+                     <ns2:text>al-Maṭbaʻag al-ʻUmūmīyah</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:publishers>
+               <ns2:birthDate>1871</ns2:birthDate>
+               <ns2:deathDate>1916-05-06</ns2:deathDate>
+               <ns2:dateType>lived</ns2:dateType>
+               <ns2:dates max="196" min="190">
+                  <ns2:date count="3" scaled="1.58">190</ns2:date>
+                  <ns2:date count="1" scaled="0.00">191</ns2:date>
+                  <ns2:date count="2" scaled="1.00">192</ns2:date>
+                  <ns2:date count="1" scaled="0.00">193</ns2:date>
+                  <ns2:date count="1" scaled="0.00">194</ns2:date>
+                  <ns2:date count="1" scaled="0.00">195</ns2:date>
+                  <ns2:date count="3" scaled="1.58">196</ns2:date>
+               </ns2:dates>
+               <ns2:RecFormats>
+                  <ns2:data count="4">
+                     <ns2:text>am</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|239280776</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:RecFormats>
+               <ns2:countries>
+                  <ns2:data count="3" scaled="2">
+                     <ns2:text>EG</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|239280776</ns2:sid>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:countries>
+               <ns2:languageOfEntity>
+                  <ns2:data>
+                     <ns2:text>ara</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>BNF</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:languageOfEntity>
+               <ns2:nationalityOfEntity>
+                  <ns2:data>
+                     <ns2:text>SY</ns2:text>
+                     <ns2:sources>
+                        <ns2:s>DNB</ns2:s>
+                        <ns2:s>ISNI</ns2:s>
+                        <ns2:s>BNF</ns2:s>
+                     </ns2:sources>
+                  </ns2:data>
+               </ns2:nationalityOfEntity>
+               <ns2:titles>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|239280776</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>al-Fiqh wa-al-taṣawwuf.</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                        <ns2:s>NTA</ns2:s>
+                        <ns2:sid>NTA|239280776</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Ḵadīǧa Umm al-muʾminīn</ns2:title>
+                  </ns2:work>
+                  <ns2:work>
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|nr 95003815</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Khadījah.</ns2:title>
+                  </ns2:work>
+                  <ns2:work id="VIAF|180844064">
+                     <ns2:sources>
+                        <ns2:s>LC</ns2:s>
+                        <ns2:sid>LC|no 97009126</ns2:sid>
+                     </ns2:sources>
+                     <ns2:title>Works. 1995</ns2:title>
+                  </ns2:work>
+               </ns2:titles>
+               <ns2:history>
+                  <ns2:ht recid="DNB|119461412" time="2014-05-14T22:19:01+00:00" type="add"/>
+                  <ns2:ht recid="LNL|5689" time="2014-05-14T22:19:01+00:00" type="delete"/>
+                  <ns2:ht recid="EGAXA|vtls000885988"
+                          time="2014-05-14T22:19:01+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="ISNI|000000042367354X"
+                          time="2014-10-21T12:48:43+00:00"
+                          type="add"/>
+                  <ns2:ht recid="ISNI|0000000049673733"
+                          time="2014-10-21T12:48:43+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="LC|nr 95003815"
+                          time="2016-11-13T09:41:52.965517+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NTA|239280776"
+                          time="2016-11-13T09:41:53.013468+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BNF|16797081"
+                          time="2018-04-09T12:41:02.229667+00:00"
+                          type="add"/>
+               </ns2:history>
+               <ns2:creationtime>2019-01-28T02:41:36.230151+00:00</ns2:creationtime>
+            </ns2:VIAFCluster>
+         </recordData>
+         <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
+      </record>
+   </records>
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
+      <version xsi:type="xsd:string">1.1</version>
+      <query xsi:type="xsd:string">local.viafID any "305411080"</query>
+      <xQuery>
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
+            <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
+            <ns4:relation xsi:type="ns4:relationType">
+               <ns4:value xsi:type="xsd:string">any</ns4:value>
+            </ns4:relation>
+            <ns4:term xsi:type="xsd:string">305411080</ns4:term>
+         </ns4:searchClause>
+      </xQuery>
+      <recordSchema xsi:type="xsd:string">default</recordSchema>
+   </echoedSearchRetrieveRequest>
+   <extraResponseData xmlns:ns5="http://www.loc.gov/zing/srw/" xsi:type="ns5:extraDataType">
+      <ns6:extraData xmlns="http://oclc.org/srw/extraData" xmlns:ns6="http://oclc.org/srw/extraData">
+         <ns6:databaseTitle>VIAF: The Virtual International Authority File</ns6:databaseTitle>
+      </ns6:extraData>
+   </extraResponseData>
+</searchRetrieveResponse>
