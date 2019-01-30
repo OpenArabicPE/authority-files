@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0"
+<xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:bgn="http://bibliograph.net/" xmlns:genont="http://www.w3.org/2006/gen/ont#" xmlns:pto="http://www.productontology.org/id/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:re="http://oclcsrw.google.code/redirect" xmlns:schema="http://schema.org/" xmlns:umbel="http://umbel.org/umbel#"
@@ -9,12 +9,16 @@
     <!-- This stylesheet takes a TEI personography as input. It resorts the persons by names, queries VIAF for additional information (based on VIAF IDs already present in the personography), and adds normalized versions of names for each person. -->
     <!-- Note 1: It DOES NOT try to find names on VIAF without an ID -->
     <!-- Note 2: all <persName>s in the personography must have an @xml:id prior to running this stylesheet -->
-    <xsl:output method="xml" encoding="UTF-8" indent="yes" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
+    <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <xsl:include href="query-viaf.xsl"/>
     <!-- identify the author of the change by means of a @xml:id -->
     <!-- toggle debugging messages -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    
+    <!-- variables for OpenArabicPE IDs -->
+    <xsl:variable name="v_oape-id-count" select="xs:int(//tei:person/tei:idno[@type='oape'])"/>
+    <xsl:variable name="v_oape-id-highest" select="if($v_oape-id-count gt 0) then(max(//tei:person/tei:idno[@type='oape'])) else(0)"/>
     
     <xsl:template match="node() | @*" name="t_1">
         <xsl:if test="$p_verbose=true()">
@@ -84,12 +88,14 @@
                     <xsl:with-param name="p_input-type" select="'id'"/>
                 </xsl:call-template>
             </xsl:variable>
-            <!-- replicate existing fields -->
+            <!-- replicate existing data -->
             <xsl:apply-templates select="@* | node()"/>
             <!-- add missing fields -->
             <xsl:if test="not(tei:idno[@type='viaf'])">
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='viaf']" mode="m_documentation"/>
             </xsl:if>
+            <!-- our own OpenArabicPE ID -->
+            <xsl:apply-templates select="." mode="m_generate-id"/>
             <xsl:if test="not(tei:birth)">
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:birth" mode="m_documentation"/>
             </xsl:if>
@@ -109,10 +115,26 @@
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- check if it has duplicate child nodes -->
-            <xsl:for-each-group select="tei:persName" group-by=".">
+            <!--<xsl:for-each-group select="tei:persName" group-by=".">
                 <xsl:apply-templates select="."/>
-            </xsl:for-each-group>
+            </xsl:for-each-group>-->
+            <!-- replicate all existing children -->
+            <xsl:apply-templates select="node()"/>
+             <!-- our own OpenArabicPE ID -->
+            <xsl:apply-templates select="." mode="m_generate-id"/>
         </xsl:copy>
+    </xsl:template>
+    
+    <!-- mode to generate OpenArabicPE IDs -->
+    <xsl:template match="tei:person" mode="m_generate-id">
+        <xsl:if test="not(tei:idno[@type='oape'])">
+                <xsl:element name="idno">
+                    <xsl:attribute name="type" select="'oape'"/>
+                    <!-- basis is the highest existing ID -->
+                    <!-- add preceding tei:person without OpenArabicPE ID -->
+                    <xsl:value-of select="$v_oape-id-highest + count(preceding::tei:person[not(tei:idno[@type='oape'])]) + 1"/>
+                </xsl:element>
+            </xsl:if>
     </xsl:template>
     
     
