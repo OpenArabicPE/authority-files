@@ -25,7 +25,7 @@ date: 2019-01-30
         + `<tei:idno type="viaf">`
         + `<tei:idno type="oape">`: nummerical ID for the OpenArabicPE project
     <!-- - output: the output is save at `./_output/person_improved` -->
-2. `tei-persname_mark-up.xsl`: this stylesheet will run on any TEI XML file as input and try to add information from an authority file  to `<tei:persName>` nodes. Everything else is replicated as is. The matching is done via `@ref` and the string value of the name.
+2. `tei-persname_mark-up.xsl`: this stylesheet will run on any TEI XML file as input and try to add information from an authority file  to `<tei:persName>` nodes. Everything else is replicated as is. The matching is done via `@ref` and the string value of the name. If a match is found in the authority file, the stylesheet will add a `@ref` with multiple valued pointing to the `<tei:idno>`s of the authority using custom URL schemes (`viaf:`, `oape:pers:`). If the input `<tei:persName>` contains no other TEI mark-up, the stylesheet will use the mark-up found in the authority file.
 3. `tei_extract-persname.xsl`: This stylesheet has a twofold purpose. First, it enriches all `<tei:persName>` elements in an input file with `@ref` attributes (if available) using an external authority file. Second, it adds all names not yet available in the external authority file to that file
     - input: any TEI XML file
     - output:
