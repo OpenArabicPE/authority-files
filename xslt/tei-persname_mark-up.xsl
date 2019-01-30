@@ -22,7 +22,7 @@
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
     
     <!-- This template replicates everything -->
-    <xsl:template match="node() | @*" mode="m_mark-up-source" name="t_2">
+    <xsl:template match="node() | @*" name="t_2">
         <!--<xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_2: </xsl:text>
@@ -30,7 +30,7 @@
             </xsl:message>
         </xsl:if>-->
         <xsl:copy>
-            <xsl:apply-templates mode="m_mark-up-source" select="@* | node()"/>
+            <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
     <!-- replicate everything except @xml:id and @xml:change -->
@@ -49,21 +49,8 @@
     <!--<xsl:template match="text()" mode="m_copy-from-authority-file">
         <xsl:value-of select="normalize-space(.)"/>
     </xsl:template>-->
-    <!-- run on root -->
-    <xsl:template match="/" name="t_3">
-        <!-- updated the source files with data from the authority file -->
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_3 source: add mark-up</xsl:text>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates mode="m_mark-up-source"/>
-        </xsl:copy>
-    </xsl:template>
-   
-    <!-- mode m_mark-up-source will at some point provide automatic addition of information from $v_file-entities-master to a TEI file  -->
-    <xsl:template match="tei:persName" mode="m_mark-up-source" name="t_4">
+    
+    <xsl:template match="tei:persName" name="t_4">
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_4 source: </xsl:text>
@@ -92,7 +79,7 @@
                 <!-- attempt to supply mark-up of the name's components based on the master file -->
                 <xsl:copy>
                     <!-- replicate attributes -->
-                    <xsl:apply-templates mode="m_mark-up-source" select="@*"/>
+                    <xsl:apply-templates select="@*"/>
                     <xsl:choose>
                         <!-- test if the persName already has children. If not try to add some based on the persName without non-word characters and the authority file -->
                         <xsl:when test="not(child::node()[namespace::tei])">
@@ -148,12 +135,12 @@
                                             <xsl:text> has not been updated.</xsl:text>
                                         </xsl:message>
                                     </xsl:if>
-                                    <xsl:apply-templates mode="m_mark-up-source" select="node()"/>
+                                    <xsl:apply-templates select="node()"/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:apply-templates mode="m_mark-up-source" select="node()"/>
+                            <xsl:apply-templates select="node()"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:copy>
@@ -169,7 +156,7 @@
                     </xsl:message>
                 </xsl:if>
                 <xsl:copy>
-                    <xsl:apply-templates mode="m_mark-up-source" select="@*"/>
+                    <xsl:apply-templates select="@*"/>
                     <xsl:attribute name="ref"
                         select="concat('viaf:', $v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]/tei:idno[@type = 'viaf'])"/>
                     <!-- document change -->
@@ -199,7 +186,7 @@
                             />
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:apply-templates mode="m_mark-up-source" select="node()"/>
+                            <xsl:apply-templates select="node()"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:copy>
@@ -223,20 +210,15 @@
                     </xsl:message>
                 </xsl:if>
                 <xsl:copy>
-                    <xsl:apply-templates mode="m_mark-up-source" select="@* | node()"/>
+                    <xsl:apply-templates select="@* | node()"/>
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     <!-- document the changes to source file -->
-    <xsl:template match="tei:revisionDesc" mode="m_mark-up-source" name="t_9">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_9 source: document changes</xsl:text>
-            </xsl:message>
-        </xsl:if>
+    <xsl:template match="tei:revisionDesc">
         <xsl:copy>
-            <xsl:apply-templates mode="m_mark-up-source" select="@*"/>
+            <xsl:apply-templates select="@*"/>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when"
                     select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
@@ -253,7 +235,7 @@
                 </tei:ref>
                 <xsl:text> but not previously present in this master file.</xsl:text>
             </xsl:element>
-            <xsl:apply-templates mode="m_mark-up-source" select="node()"/>
+            <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
     <!-- document changes on changed elements by means of the @change attribute linking to the @xml:id of the <tei:change> element -->
