@@ -63,8 +63,8 @@
                         <xsl:text> is present in authority file and will be updated</xsl:text>
                     </xsl:message>
                 </xsl:if>
-                <xsl:variable name="v_corresponding-person" select="$v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]"/>
-                <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
+                <xsl:variable name="v_corresponding-person" select="$v_file-entities-master/descendant::tei:person[tei:persName[@type = 'flattened'] = $v_name-flat][1]"/>
+                <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person/descendant::tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>
                     <!-- add references to IDs -->
