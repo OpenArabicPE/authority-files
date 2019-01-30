@@ -40,7 +40,7 @@
             <xsl:apply-templates mode="m_copy-from-authority-file" select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="@xml:id | @xml:change" mode="m_copy-from-authority-file" priority="100"/>
+    <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
 
     <!-- lock for persNames that have no @ref attribute -->
     <xsl:template match="tei:persName[not(@ref)]"  name="t_2">
@@ -118,11 +118,12 @@
                 <xsl:text>t_3: found a persName with @ref</xsl:text>
             </xsl:message>
         </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
+         <!-- normalize the spelling of the name in question -->
+        <xsl:variable name="v_self" select="normalize-space(replace(., '([إ|أ|آ])', 'ا'))"/>
+        <!-- version of the persName without non-word characters -->
+        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
+        <xsl:variable name="v_ref">
             <xsl:choose>
-                <!-- when both VIAF and OpenArabicPE Ids are present, nothing should be done -->
-                <xsl:when test="contains(@ref,'oape:pers:') and contains(@ref,'viaf:')"/>
                 <xsl:when test="contains(@ref,'oape:pers:') or contains(@ref,'viaf:')">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
@@ -131,18 +132,41 @@
                     </xsl:if>
                     <xsl:variable name="v_corresponding-person" select="oape:get-person-from-authority-file(@ref)"/>
                     <!-- add references to IDs -->
-                    <xsl:attribute name="ref">
                       <xsl:value-of select="concat('oape:pers:',$v_corresponding-person/descendant::tei:idno[@type='oape'][1])"/>
                         <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type='viaf']">
                             <xsl:text> </xsl:text>
                             <xsl:value-of select="concat('viaf:',$v_corresponding-person/descendant::tei:idno[@type='viaf'][1])"/>
                         </xsl:if>
-                    </xsl:attribute>
+                    
                 </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@ref"/>
+                </xsl:otherwise>
             </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="v_corresponding-person" select="oape:get-person-from-authority-file($v_ref)"/>
+        <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+             <xsl:attribute name="ref" select="$v_ref"/>
             <!-- replicate content -->
             <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
-            <xsl:apply-templates select="node()"/>
+            <xsl:choose>
+                        <!-- test if the persName already has children. If not try to add some based on the persName without non-word characters and the authority file -->
+                        <xsl:when test="not(child::node()[namespace::tei])">
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>t_3: </xsl:text>
+                                    <xsl:value-of select="$v_self"/>
+                                    <xsl:text> contains no mark-up which will be updated from the authority file</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                            <xsl:apply-templates select="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()" mode="m_copy-from-authority-file"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="node()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
         </xsl:copy>
     </xsl:template>
     
