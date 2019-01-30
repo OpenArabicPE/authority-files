@@ -138,7 +138,7 @@
     </xsl:template>
     
     
-    <xsl:template match="tei:persName" name="t_5">
+    <xsl:template match="tei:person/tei:persName" name="t_5">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> copy existing persName</xsl:text>
@@ -152,13 +152,13 @@
             <xsl:value-of select="normalize-space(replace(string(),'([إ|أ|آ])','ا'))"/>
         </xsl:variable>
         <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
-        <xsl:if test="$v_name-flat!='' and not(parent::node()/tei:persName[@type='flattened'] = $v_name-flat)">
+        <xsl:if test="not($v_name-flat='') and not(parent::node()/tei:persName[@type='flattened'] = $v_name-flat)">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
                 </xsl:message>
             </xsl:if>
-            <xsl:copy>
+            <xsl:element name="persName">
                 <xsl:apply-templates select="@xml:lang"/>
                 <xsl:attribute name="type" select="'flattened'"/>
                 <!-- the flattened string should point back to its origin -->
@@ -166,11 +166,11 @@
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                 <xsl:value-of select="$v_name-flat"/>
-            </xsl:copy>
+            </xsl:element>
         </xsl:if>
         <!-- add persName without any titles, honorary addresses etc. -->
         <!-- test if there are <addName> children -->
-        <xsl:if test="tei:addName | self::tei:roleName | self::tei:nameLink | self::tei:genName">
+        <xsl:if test="tei:surname and tei:forename and (tei:addName | tei:roleName | tei:nameLink | tei:genName)">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create persName without titles</xsl:text>
@@ -199,25 +199,19 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="tei:persName[@type='flattened']" name="t_6">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_6: </xsl:text><xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:variable name="v_self" select="."/>
-        <xsl:copy>
-            <!-- check if it has a @corresp attribute -->
-            <xsl:if test="not(@corresp)">
-                <xsl:if test="$p_verbose=true()">
+    <!-- fix flattened persNames without @corresp attribute -->
+    <xsl:template match="tei:persName[@type='flattened'][not(@corresp)]" name="t_6">
+         <xsl:if test="$p_verbose=true()">
                     <xsl:message>
                         <xsl:text>t_6: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> no @corresp</xsl:text>
                     </xsl:message>
                 </xsl:if>
+        <xsl:variable name="v_self" select="."/>
+        <xsl:copy>
+            <!-- add @corresp -->
                 <xsl:attribute name="corresp" select="concat('#',parent::tei:person/tei:persName[replace(normalize-space(string()),'\W','')=$v_self][1]/@xml:id)"/>
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-            </xsl:if>
             <xsl:apply-templates select="@* |node() "/>
         </xsl:copy>
     </xsl:template>
