@@ -235,15 +235,9 @@
                 <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
                 <xsl:attribute name="xml:id" select="$p_id-change"/>
                 <xsl:attribute name="xml:lang" select="'en'"/>
-                <xsl:text>Added references to VIAF IDs to </xsl:text>
-                <tei:gi>persName</tei:gi>
-                <xsl:text>s without such references based on  </xsl:text>
-                <tei:gi>person</tei:gi>
-                <xsl:text>s mentioned in </xsl:text>
-                <tei:ref target="{$p_url-master}">
-                    <xsl:value-of select="$p_url-master"/>
-                </tei:ref>
-                <xsl:text> but not previously present in this authority file.</xsl:text>
+                <xsl:text>Added references to local authority file (</xsl:text><tei:ref target="{$p_url-master}"><xsl:value-of select="$p_url-master"/></tei:ref><xsl:text>) and VIAF to </xsl:text>
+                <tei:gi>persName</tei:gi><xsl:text>s without such references based on </xsl:text><tei:gi>person</tei:gi><xsl:text>s in the local authority file. If the source </xsl:text>
+                <tei:gi>persName</tei:gi><xsl:text> did not contain any further TEI mark-up, this has been added from the local authority file.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
