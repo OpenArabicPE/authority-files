@@ -64,6 +64,7 @@
                     </xsl:message>
                 </xsl:if>
                 <xsl:variable name="v_corresponding-person" select="$v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]"/>
+                <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>
                     <!-- add references to IDs -->
@@ -76,7 +77,22 @@
                     </xsl:attribute>
                     <!-- replicate content -->
                     <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
-                    <xsl:apply-templates select="node()"/>
+                    <xsl:choose>
+                        <!-- test if the persName already has children. If not try to add some based on the persName without non-word characters and the authority file -->
+                        <xsl:when test="not(child::node()[namespace::tei])">
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>t_2: </xsl:text>
+                                    <xsl:value-of select="$v_self"/>
+                                    <xsl:text> contains no mark-up which will be updated from the authority file</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                            <xsl:apply-templates select="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()" mode="m_copy-from-authority-file"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="node()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:copy>
             </xsl:when>
             <!-- fallback -->
