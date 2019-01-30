@@ -9,24 +9,18 @@
     <!-- PROBLEM: in some instance this stylesheet produces empty <persName> nodes in the source file upon adding VIAF references to them -->
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
+    
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml"
         omit-xml-declaration="no"/>
+    
     <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master" select="'../data/tei/personography_OpenArabicPE.TEIP5.xml'"/>
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
-    <!-- parameter to select whether the source file should be updated  -->
-    <xsl:param name="p_update-source" select="true()"/>
-    <xsl:variable name="v_id-file"
-        select="
-            if (tei:TEI/@xml:id) then
-                (tei:TEI/@xml:id)
-            else
-                ('_output')"/>
-    <xsl:variable name="v_url-file"
-        select="concat('../../', substring-after(base-uri(), 'OpenArabicPE/'))"/>
+    
     <!-- This template replicates everything -->
     <xsl:template match="node() | @*" mode="m_mark-up-source" name="t_2">
         <!--<xsl:if test="$p_verbose = true()">
