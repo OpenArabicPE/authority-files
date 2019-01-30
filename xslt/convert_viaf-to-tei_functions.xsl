@@ -19,7 +19,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="#all" version="3.0">
     
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" omit-xml-declaration="no"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no" omit-xml-declaration="no"/>
     
     <!-- these variables are used to establish the language of any given string -->
     <xsl:variable name="v_string-transcribe-ijmes" select="'btḥḫjdrzsṣḍṭẓʿfqklmnhāūīwy0123456789'"/>

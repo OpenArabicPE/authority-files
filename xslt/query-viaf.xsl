@@ -12,7 +12,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <!-- this stylesheet  tries to query external authority files if they are linked through the @ref attribute -->
-    <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="yes" method="xml"
+    <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml"
         name="xml_indented" omit-xml-declaration="no"/>
     <xsl:include href="convert_viaf-to-tei_functions.xsl"/>
     
