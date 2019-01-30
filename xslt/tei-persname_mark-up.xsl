@@ -67,6 +67,15 @@
                 <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person/descendant::tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>
+                    <!-- document change -->
+                    <xsl:choose>
+                        <xsl:when test="not(@change)">
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates mode="m_documentation" select="@change"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <!-- add references to IDs -->
                     <xsl:attribute name="ref">
                       <xsl:value-of select="concat('oape:pers:',$v_corresponding-person/descendant::tei:idno[@type='oape'][1])"/>
@@ -137,7 +146,6 @@
                             <xsl:text> </xsl:text>
                             <xsl:value-of select="concat('viaf:',$v_corresponding-person/descendant::tei:idno[@type='viaf'][1])"/>
                         </xsl:if>
-                    
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="@ref"/>
@@ -148,6 +156,15 @@
         <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
+            <!-- document change -->
+                    <xsl:choose>
+                        <xsl:when test="not(@change)">
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates mode="m_documentation" select="@change"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
              <xsl:attribute name="ref" select="$v_ref"/>
             <!-- replicate content -->
             <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
