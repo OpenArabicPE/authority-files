@@ -26,6 +26,7 @@
     <xsl:variable name="v_string-transcribe-arabic" select="'بتحخجدرزسصضطظعفقكلمنهاويوي٠١٢٣٤٥٦٧٨٩'"/>
     
      <!-- transform VIAF results to TEI -->
+    <!-- date of birth -->
     <xsl:template match="schema:birthDate | viaf:birthDate" mode="m_viaf-to-tei">
         <!-- VIAF can return the value "0" for dates. There should be no output in these cases -->
         <xsl:if test="not(. = '0')">
@@ -39,6 +40,7 @@
         </xsl:if>
     </xsl:template>
     
+    <!-- date of death -->
     <xsl:template match="schema:deathDate | viaf:deathDate" mode="m_viaf-to-tei">
         <!-- VIAF can return the value "0" for dates. There should be no output in these cases -->
         <xsl:if test="not(. = '0')">
@@ -52,11 +54,24 @@
         </xsl:if>
     </xsl:template>
     
+    <!-- VIAF ID -->
     <xsl:template match="viaf:viafID" mode="m_viaf-to-tei">
         <xsl:element name="tei:idno">
             <xsl:attribute name="type" select="'viaf'"/>
             <xsl:value-of select="."/>
         </xsl:element>
+    </xsl:template>
+    
+    <!-- other IDs -->
+    <!-- <ns2:sid>WKP|Q6527</ns2:sid> -->
+    <xsl:template match="viaf:mainHeadings/viaf:data/viaf:sources/viaf:sid">
+        <!-- Wikidata -->
+        <xsl:if test="matches(.,'WKP\s\|\sQ\d+')">
+            <xsl:element name="tei:idno">
+            <xsl:attribute name="type" select="'wiki'"/>
+            <xsl:value-of select="replace(.,'WKP\s\|\s(Q\d+)','$1')"/>
+        </xsl:element>
+        </xsl:if>
     </xsl:template>
     
     <!-- additional personal names -->

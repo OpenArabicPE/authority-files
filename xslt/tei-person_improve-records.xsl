@@ -91,14 +91,20 @@
             <!-- replicate existing data -->
             <xsl:apply-templates select="@* | node()"/>
             <!-- add missing fields -->
+            <!-- VIAF ID -->
             <xsl:if test="not(tei:idno[@type='viaf'])">
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='viaf']" mode="m_documentation"/>
             </xsl:if>
+            <xsl:if test="not(tei:idno[@type='wiki'])">
+                <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='wiki']" mode="m_documentation"/>
+            </xsl:if>
             <!-- our own OpenArabicPE ID -->
             <xsl:apply-templates select="." mode="m_generate-id"/>
+            <!-- birth -->
             <xsl:if test="not(tei:birth)">
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:birth" mode="m_documentation"/>
             </xsl:if>
+            <!-- death -->
             <xsl:if test="not(tei:death)">
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:death" mode="m_documentation"/>
             </xsl:if>
