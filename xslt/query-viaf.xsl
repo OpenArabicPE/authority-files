@@ -67,7 +67,7 @@
                     />
                 </xsl:when>
                 <!-- else query VIAF for ID -->
-                <xsl:when test="$p_input-type = 'id'">
+                <xsl:when test="$p_input-type = 'id' and matches($p_search-term,'^\d+$')">
                     <xsl:copy-of
                         select="doc(concat('https://viaf.org/viaf/search?query=local.viafID+any+&quot;',$p_search-term,'&quot;&amp;httpAccept=application/xml'))"
                     />
