@@ -61,14 +61,22 @@ date: 2019-01-30
     <!-- more than one persName in any language -->
     <persName xml:lang="ar"></persName>
     <!-- birth and death can be retrieved from VIAF -->
-    <birth></birth>
-    <death></death>
+    <birth resp="viaf" when=""></birth>
+    <death>Executed in <placeName>Damascus</placeName></death>
     <!-- potential children -->
     <idno type="viaf"></idno>
+    <idno type="oape"></idno>
     <event when="" notBefore="" notAfter=""></event>
+    <education from="" to=""><orgName>Maktab ʿAnbar</orgName></education>
+    <state from="" to="">Member of the <orgName>Arab Academy of Sciences</orgName></state>
 </person>
 ```
 
 # Notes and ideas
 
 Only a fraction of the persons mentioned in early Arabic periodicals can be found in existing authority files. Many of them could be found in the various biographical dictionaries covering this period and one should think a way of referencing these works in a standardised form. (Some dictionaries number the biographies, but not all of them do and it is unclear whether such numbers are stable between editions)
+
+I have currently access to digital versions of
+
+- Khayr al-Dīn Ziriklī
+- Yūsuf Ilyān Sarkīs
