@@ -54,6 +54,23 @@ date: 2019-01-30
     + naming scheme: `viaf_id.SRW.xml`
     + licence: VIAF data is available under the [Open Data Commons Attribution License (ODC-BY)](https://opendatacommons.org/licenses/by/).
 
+# references to authority files
+
+- VIAF:
+    + ID pattern: `\d+`
+    - mark-up: `viaf:ID`, `<idno type="viaf">ID</idno>`
+    - resolves to: `https://viaf.org/ID`
+- GeoNames:
+    + ID pattern: `\d+`
+    + mark-up: `geon:ID`, `<idno type="geon">ID</idno>`
+- Wikidata:
+    + ID pattern: `Q\d+`
+    + mark-up: `wiki:ID`
+    + resolves to: https://www.wikidata.org/wiki/
+- local authority: OpenArabicPE
+    + ID pattern: `\d+`
+    + persons: (`oape:pers:`, `<idno type="oape">`)
+
 # TEI mark-up
 
 ```xml
