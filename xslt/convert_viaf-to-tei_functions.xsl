@@ -64,12 +64,22 @@
     
     <!-- other IDs -->
     <!-- <ns2:sid>WKP|Q6527</ns2:sid> -->
-    <xsl:template match="viaf:mainHeadings/viaf:data/viaf:sources/viaf:sid">
+    <xsl:template match="viaf:sources/viaf:sid" mode="m_viaf-to-tei">
+        <!--<xsl:if test="$p_verbose = true()">
+            <xsl:message>
+                <xsl:text>Convert IDs to TEI</xsl:text>
+            </xsl:message>
+        </xsl:if>-->
         <!-- Wikidata -->
-        <xsl:if test="matches(.,'WKP\s\|\sQ\d+')">
+        <xsl:if test="contains(.,'WKP')">
+            <xsl:if test="$p_verbose = true()">
+                <xsl:message>
+                    <xsl:text>Add Wikidata ID</xsl:text>
+                </xsl:message>
+            </xsl:if>
             <xsl:element name="tei:idno">
             <xsl:attribute name="type" select="'wiki'"/>
-            <xsl:value-of select="replace(.,'WKP\s\|\s(Q\d+)','$1')"/>
+            <xsl:value-of select="replace(.,'.+?(Q\d+)','$1')"/>
         </xsl:element>
         </xsl:if>
     </xsl:template>
@@ -124,14 +134,14 @@
             <xsl:value-of select="normalize-space(string())"/>
         </xsl:element>
     </xsl:template>
-    <xsl:template match="viaf:sources/viaf:sid" mode="m_viaf-to-tei">
+    <!--<xsl:template match="viaf:sources/viaf:sid" mode="m_viaf-to-tei">
         <xsl:variable name="v_authority" select="lower-case(tokenize(.,'\|')[1])"/>
         <xsl:variable name="v_id" select="tokenize(.,'\|')[2]"/>
         <xsl:element name="tei:idno">
             <xsl:attribute name="type" select="$v_authority"/>
             <xsl:value-of select="$v_id"/>
         </xsl:element>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template name="t_dates-normalise">
         <!-- the dates returned by VIAF can be formatted as

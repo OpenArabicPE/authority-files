@@ -91,7 +91,7 @@
             <xsl:choose>
                 <xsl:when test="$p_input-type = 'id'">
                     <xsl:copy-of
-                        select="$v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type = 'ns1:stringOrXmlFragment']/viaf:VIAFCluster[.//viaf:viafID = $p_search-term]"
+                        select="$v_viaf-srw/descendant-or-self::srw:searchRetrieveResponse/srw:records/srw:record/srw:recordData[@xsi:type = 'ns1:stringOrXmlFragment']/viaf:VIAFCluster"
                     />
                 </xsl:when>
                 <xsl:when test="$p_input-type = 'persName'">
@@ -128,6 +128,11 @@
                     <xsl:copy-of select="$v_alternative-names"/>
                     <!-- add VIAF ID -->
                     <xsl:apply-templates mode="m_viaf-to-tei" select="$v_record-1//viaf:viafID"/>
+                    <!-- add other IDs -->
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>Try to parse other IDs</xsl:message>
+                    </xsl:if>
+                    <xsl:apply-templates mode="m_viaf-to-tei" select="$v_record-1/descendant::viaf:mainHeadings/viaf:data/viaf:sources/viaf:sid"/>
                     <!-- add birth and death dates -->
                     <xsl:apply-templates mode="m_viaf-to-tei" select="$v_record-1//viaf:birthDate"/>
                     <xsl:apply-templates mode="m_viaf-to-tei" select="$v_record-1//viaf:deathDate"/>

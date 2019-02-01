@@ -21,14 +21,6 @@
     <xsl:variable name="v_oape-id-highest" select="if($v_oape-id-count gt 0) then(max(//tei:person/tei:idno[@type='oape'])) else(0)"/>
     
     <xsl:template match="node() | @*" name="t_1">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_1: </xsl:text>
-                <xsl:if test="ancestor-or-self::node()">
-                    <xsl:value-of select="ancestor-or-self::node()/@xml:id"/>
-                </xsl:if>
-            </xsl:message>
-        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
@@ -96,6 +88,9 @@
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='viaf']" mode="m_documentation"/>
             </xsl:if>
             <xsl:if test="not(tei:idno[@type='wiki'])">
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message><xsl:text>This person has no Wikidata ID</xsl:text></xsl:message>
+                </xsl:if>
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='wiki']" mode="m_documentation"/>
             </xsl:if>
             <!-- our own OpenArabicPE ID -->
