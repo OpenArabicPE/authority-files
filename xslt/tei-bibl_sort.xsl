@@ -31,7 +31,7 @@
             <xsl:apply-templates select="@*"/>
             <!--<xsl:apply-templates select="tei:bibl">
                 <xsl:sort select="descendant::tei:title[@level = ('m','j')][1]"/>
-                <xsl:sort select="tei:idno[@type='oclc'][1]" order="descending"/>
+                <xsl:sort select="tei:idno[@type='OCLC'][1]" order="descending"/>
                 <xsl:sort select="descendant::tei:title[@level = 'a'][1]"/>
                 <!-\- sort by author -\->
                 <xsl:sort select="descendant::tei:author[1]/tei:persName[1]"/>
@@ -47,7 +47,7 @@
                 </xsl:element>
                 <xsl:apply-templates select="tei:bibl[descendant::tei:title[@level = 'm']]">
                 <xsl:sort select="descendant::tei:title[@level = 'm'][1]"/>
-                <xsl:sort select="tei:idno[@type='oclc'][1]" order="descending"/>
+                <xsl:sort select="tei:idno[@type='OCLC'][1]" order="descending"/>
                 <xsl:sort select="descendant::tei:title[@level = 'a'][1]"/>
                 <!-- sort by author -->
                 <xsl:sort select="descendant::tei:author[1]/tei:persName[1]"/>
@@ -62,7 +62,7 @@
                 </xsl:element>
             <xsl:apply-templates select="tei:bibl[descendant::tei:title[@level = 'j']]">
                 <xsl:sort select="descendant::tei:title[@level = 'j'][1]"/>
-                <xsl:sort select="tei:idno[@type='oclc'][1]" order="descending"/>
+                <xsl:sort select="tei:idno[@type='OCLC'][1]" order="descending"/>
                 <xsl:sort select="descendant::tei:title[@level = 'a'][1]"/>
                 <!-- sort by author -->
                 <xsl:sort select="descendant::tei:author[1]/tei:persName[1]"/>
@@ -79,7 +79,7 @@
                 </xsl:element>
             <xsl:apply-templates select="tei:bibl[descendant::tei:title[not(@level = ('m','j'))]]">
                 <xsl:sort select="descendant::tei:title[1]"/>
-                <xsl:sort select="tei:idno[@type='oclc'][1]" order="descending"/>
+                <xsl:sort select="tei:idno[@type='OCLC'][1]" order="descending"/>
                 <xsl:sort select="descendant::tei:title[@level = 'a'][1]"/>
                 <!-- sort by author -->
                 <xsl:sort select="descendant::tei:author[1]/tei:persName[1]"/>

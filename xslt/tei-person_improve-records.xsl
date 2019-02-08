@@ -41,13 +41,13 @@
                     <xsl:sort select="descendant::tei:addName[@type='noAddName'][not(.='')][1]"/>
                     <xsl:sort select="descendant::tei:addName[@type='flattened'][1]"/>
                 <xsl:sort select="tei:persName[1]"/>
-                <xsl:sort select="tei:idno[@type='viaf'][1]" order="ascending"/>
+                <xsl:sort select="tei:idno[@type='VIAF'][1]" order="ascending"/>
             </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
     
     <!-- improve tei:person records with VIAF references -->
-    <xsl:template match="tei:person[tei:persName[matches(@ref,'viaf:\d+')]] | tei:person[tei:idno[@type='viaf']!='']" name="t_3">
+    <xsl:template match="tei:person[tei:persName[matches(@ref,'viaf:\d+')]] | tei:person[tei:idno[@type='VIAF']!='']" name="t_3">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_3: </xsl:text><xsl:value-of select="@xml:id"/>
@@ -55,8 +55,8 @@
         </xsl:if>
         <xsl:variable name="v_viaf-id">
             <xsl:choose>
-                <xsl:when test="tei:idno[@type='viaf']!=''">
-                    <xsl:value-of select="tei:idno[@type='viaf']"/>
+                <xsl:when test="tei:idno[@type='VIAF']!=''">
+                    <xsl:value-of select="tei:idno[@type='VIAF']"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
@@ -84,8 +84,8 @@
             <xsl:apply-templates select="@* | node()"/>
             <!-- add missing fields -->
             <!-- VIAF ID -->
-            <xsl:if test="not(tei:idno[@type='viaf'])">
-                <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='viaf']" mode="m_documentation"/>
+            <xsl:if test="not(tei:idno[@type='VIAF'])">
+                <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='VIAF']" mode="m_documentation"/>
             </xsl:if>
             <xsl:if test="not(tei:idno[@type='wiki'])">
                 <xsl:if test="$p_verbose = true()">

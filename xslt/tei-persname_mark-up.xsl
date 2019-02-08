@@ -79,9 +79,9 @@
                     <!-- add references to IDs -->
                     <xsl:attribute name="ref">
                       <xsl:value-of select="concat('oape:pers:',$v_corresponding-person/descendant::tei:idno[@type='oape'][1])"/>
-                        <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type='viaf']">
+                        <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type='VIAF']">
                             <xsl:text> </xsl:text>
-                            <xsl:value-of select="concat('viaf:',$v_corresponding-person/descendant::tei:idno[@type='viaf'][1])"/>
+                            <xsl:value-of select="concat('viaf:',$v_corresponding-person/descendant::tei:idno[@type='VIAF'][1])"/>
                         </xsl:if>
                     </xsl:attribute>
                     <!-- replicate content -->
@@ -142,9 +142,9 @@
                     <xsl:variable name="v_corresponding-person" select="oape:get-person-from-authority-file(@ref)"/>
                     <!-- add references to IDs -->
                       <xsl:value-of select="concat('oape:pers:',$v_corresponding-person/descendant::tei:idno[@type='oape'][1])"/>
-                        <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type='viaf']">
+                        <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type='VIAF']">
                             <xsl:text> </xsl:text>
-                            <xsl:value-of select="concat('viaf:',$v_corresponding-person/descendant::tei:idno[@type='viaf'][1])"/>
+                            <xsl:value-of select="concat('viaf:',$v_corresponding-person/descendant::tei:idno[@type='VIAF'][1])"/>
                         </xsl:if>
                 </xsl:when>
                 <xsl:otherwise>
