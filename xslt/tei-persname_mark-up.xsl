@@ -156,8 +156,10 @@
         <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
+             <xsl:attribute name="ref" select="$v_ref"/>
             <!-- document change -->
-                    <xsl:choose>
+                    <xsl:if test="(@ref != $v_ref) or not(child::node()[namespace::tei])">
+                        <xsl:choose>
                         <xsl:when test="not(@change)">
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                         </xsl:when>
@@ -165,7 +167,7 @@
                             <xsl:apply-templates mode="m_documentation" select="@change"/>
                         </xsl:otherwise>
                     </xsl:choose>
-             <xsl:attribute name="ref" select="$v_ref"/>
+                    </xsl:if>
             <!-- replicate content -->
             <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
             <xsl:choose>
