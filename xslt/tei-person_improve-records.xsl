@@ -17,7 +17,7 @@
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     
     <!-- variables for OpenArabicPE IDs -->
-    <xsl:variable name="v_oape-id-count" select="xs:int(//tei:person/tei:idno[@type='oape'])"/>
+    <xsl:variable name="v_oape-id-count" select="count(//tei:person/tei:idno[@type='oape'])"/>
     <xsl:variable name="v_oape-id-highest" select="if($v_oape-id-count gt 0) then(max(//tei:person/tei:idno[@type='oape'])) else(0)"/>
     
     <xsl:template match="node() | @*" name="t_1">
