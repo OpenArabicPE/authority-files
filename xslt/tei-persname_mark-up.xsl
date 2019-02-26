@@ -124,7 +124,7 @@
     <xsl:template match="tei:persName[@ref]"  name="t_3">
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
-                <xsl:text>t_3: found a persName with @ref</xsl:text>
+                <xsl:text>t_3: found a persName with @ref </xsl:text><xsl:value-of select="@ref"/>
             </xsl:message>
         </xsl:if>
          <!-- normalize the spelling of the name in question -->
@@ -197,7 +197,7 @@
                     <xsl:text>oape</xsl:text>
                 </xsl:when>
                 <xsl:when test="contains($p_idno,'viaf:')">
-                    <xsl:text>viaf</xsl:text>
+                    <xsl:text>VIAF</xsl:text>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
