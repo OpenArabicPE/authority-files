@@ -17,6 +17,7 @@
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master" select="'../data/tei/personography_OpenArabicPE.TEIP5.xml'"/>
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
+    
     <!-- This template replicates everything -->
     <xsl:template match="node() | @*">
         <xsl:copy>
@@ -251,7 +252,7 @@
             select="$v_file-entities-master//tei:person[tei:idno[@type = $v_authority] = $v_idno]"/>
     </xsl:function>
     <!-- get OpenArabicPE ID from authority file with an @xml:id -->
-    <xsl:function name="oape:get-id">
+    <xsl:function name="oape:get-id-for-person">
         <xsl:param name="p_xml-id"/>
         <xsl:param name="p_authority"/>
         <xsl:value-of
