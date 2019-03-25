@@ -152,19 +152,8 @@
                 <xsl:value-of select="@ref"/>
             </xsl:message>
         </xsl:if>
-        <!-- normalize the spelling of the name in question -->
-        <xsl:variable name="v_self" select="normalize-space(replace(., '([إ|أ|آ])', 'ا'))"/>
-        <!-- version of the placeName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
         <xsl:variable name="v_corresponding-place"
             select="oape:get-place-from-authority-file(@ref)"/>
-        <xsl:variable name="v_corresponding-xml-id"
-            select="substring-after($v_corresponding-place//tei:placeName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_3: missing reference to either GeoNames or local authority file will be added</xsl:text>
-            </xsl:message>
-        </xsl:if>
         <xsl:variable name="v_ref">
             <xsl:choose>
                 <xsl:when test="contains(@ref, 'oape:place:') or contains(@ref, 'geon:')">
@@ -191,9 +180,14 @@
         </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:attribute name="ref" select="$v_ref"/>
-            <!-- document change -->
-            <xsl:if test="(@ref != $v_ref) or not(child::node()[namespace::tei])">
+            <xsl:if test="@ref != $v_ref">
+                 <xsl:if test="$p_verbose = true()">
+                     <xsl:message>
+                         <xsl:text>t_3: missing reference to either GeoNames or local authority file will be added</xsl:text>
+                     </xsl:message>
+                 </xsl:if>
+                <xsl:attribute name="ref" select="$v_ref"/>
+                <!-- document change -->
                 <xsl:choose>
                     <xsl:when test="not(@change)">
                         <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
@@ -222,7 +216,7 @@
         <!-- test if the flattened name is present in the authority file -->
         <xsl:choose>
             <xsl:when
-                test="$v_file-entities-master//tei:place[tei:placeName[@type = 'flattened'] = $v_name-flat]">
+                test="$v_file-entities-master//tei:place/tei:placeName[replace(., '([إ|أ|آ])', 'ا') = $v_self]">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
                         <xsl:text>t_2: </xsl:text>
@@ -231,9 +225,9 @@
                     </xsl:message>
                 </xsl:if>
                 <xsl:variable name="v_corresponding-place"
-                    select="$v_file-entities-master/descendant::tei:place[tei:placeName[@type = 'flattened'] = $v_name-flat][1]"/>
-                <xsl:variable name="v_corresponding-xml-id"
-                    select="substring-after($v_corresponding-place/descendant::tei:placeName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
+                    select="$v_file-entities-master/descendant::tei:placeName[replace(., '([إ|أ|آ])', 'ا') = $v_self][1]/parent::tei:place"/>
+                <!--<xsl:variable name="v_corresponding-xml-id"
+                    select="substring-after($v_corresponding-place/descendant::tei:placeName[replace(., '([إ|أ|آ])', 'ا') = $v_self][1]/@corresp, '#')"/>-->
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>
                     <!-- document change -->
