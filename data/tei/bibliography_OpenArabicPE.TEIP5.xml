@@ -5138,7 +5138,7 @@
                         <editor xml:lang="ar">
                             <persName ref="viaf:311789687" xml:lang="ar">
                                 <forename xml:lang="ar">جرجي</forename>
-                                أفندي 
+                                <roleName type="title">أفندي</roleName>
                                 <forename xml:lang="ar">نقولا</forename>
                                 <surname xml:lang="ar">باز</surname></persName>
                         </editor>ويساعد في تحريرها نخبة من الكاتبين والكاتبات وهي تصدر مرة في الشهر 
@@ -5188,11 +5188,8 @@
                     <tei:bibl change="#d2e58">
                         <title level="j" xml:lang="ar">الحياة</title>
                     </tei:bibl>
-                    <bibl change="#d2e58">قالت مجلة 
-                        <title level="j" xml:lang="ar">الحياة البيتة</title></bibl>
-                    <bibl change="#d2e58">تحت هذا العنوان نشرت مجلة 
-                        <title level="j" rend="quotation-marks" xml:lang="ar">الحياة البيتية</title>
-                        الفرنسوية مقالة لطيفة قالت فيها ما تعريبه</bibl>
+                    <bibl change="#d2e58">
+                        <title level="j" rend="quotation-marks" xml:lang="ar">الحياة البيتية</title>الفرنسوية</bibl>
                     <tei:bibl change="#d2e58">
                         <title level="j" xml:lang="ar">الديبا</title>
                     </tei:bibl>
@@ -5206,7 +5203,7 @@
                         <title level="j" xml:lang="en-Arab-AR">الديلي كرونيكل</title>
                     </tei:bibl>
                     <tei:bibl change="#d2e58">
-                        <title level="j" xml:lang="ar">الديلي ميرور</title>
+                        <title level="j" xml:lang="en-Arab-AR">الديلي ميرور</title>
                     </tei:bibl>
                     <tei:bibl change="#d2e58">
                         <title level="j" xml:lang="en-Arab-AR">الديلي ميل</title>
@@ -5278,7 +5275,9 @@
                         <title level="j">العالم الإسلامي</title>
                     </tei:bibl>
                     <bibl change="#d2e58">
-                        <title level="j" xml:lang="ar">العالم الجديد</title>— مجلة شهرية تصدر باللغة العربية في 
+                        <title level="j" xml:lang="ar">العالم الجديد</title>— 
+                        <title level="j" type="sub">مجلة شهرية تصدر باللغة العربية</title>
+                        في 
                         <pubPlace xml:lang="ar">
                             <placeName ref="geon:5128581" xml:lang="ar">نيويورك</placeName></pubPlace>وتبحث في شؤون اجتماعية 
                         <pb corresp="file:../epub/26523/OEBPS/xhtml/P3516.xhtml" ed="shamela" n="n53-p77"/>
@@ -5287,8 +5286,9 @@
                         فرأيناهما حافلين بالموضوعات والمباحث النافعة لمنشئها 
                         <editor xml:lang="ar">
                             <persName xml:lang="ar">سلوم أفندي مكرزل</persName></editor>وقيمة اشتراكها دولاران ونصف وهي في 
-                        <num resp="#pers_TG" subtype="d2" type="auto-markup" value="20" xml:lang="ar">عشرين</num>
-                        صفحة كبيرة</bibl>
+                        <biblScope from="1" to="20" unit="page">
+                            <num resp="#pers_TG" subtype="d2" type="auto-markup" value="20" xml:lang="ar">عشرين</num>
+                            صفحة</biblScope>كبيرة</bibl>
                     <bibl change="#d2e58">مجلة 
                         <title level="j" xml:lang="ar">العالمين</title>
                         الفرنسوية</bibl>
@@ -5424,8 +5424,6 @@
                     <tei:bibl change="#d2e58">
                         <title level="j" xml:lang="ar">المجلة الآسياوية</title>
                     </tei:bibl>
-                    <bibl change="#d2e58">قالت 
-                        <title level="j" xml:lang="ar">المجلة الآسيوية</title></bibl>
                     <bibl change="#d2e58">
                         <author xml:lang="ar">
                             <persName xml:lang="ar">الأستاذ أغناس غولدسهير</persName>
@@ -5499,11 +5497,12 @@
                     <bibl change="#d2e58">
                         <title level="j" xml:lang="ar">المصوَّر</title>
                     </bibl>
-                    <bibl change="#d2e58">في مجلة 
+                    <bibl change="#d2e58">
                         <title level="j" xml:lang="ar">المطالعات البيتية</title>
-                        ما تعريبه</bibl>
-                    <bibl change="#d2e58">ذكرت مجلة 
-                        <title level="j" xml:lang="ar">المعين الاجتماعي</title></bibl>
+                    </bibl>
+                    <bibl change="#d2e58">
+                        <title level="j" xml:lang="ar">المعين الاجتماعي</title>
+                    </bibl>
                     <bibl change="#d2e58">
                         <title level="j" xml:lang="ar">المفيد</title>ل 
                         <persName ref="viaf:37216757" xml:lang="ar">
@@ -7870,11 +7869,6 @@
                                 <orig xml:lang="en-Arab-AR">النيو</orig>
                                 <corr xml:lang="en-Arab-AR">النيوز</corr>
                             </choice>اوف دي ورلد</title>
-                    </bibl>
-                    <bibl change="#d2e58">
-                        <title level="j">
-                            <del resp="#org_MS">المقتبس</del>
-                        </title>
                     </bibl>
                     <bibl change="#d2e58">
                         <title level="a" xml:lang="ar">رحلة إلى اليمن 
