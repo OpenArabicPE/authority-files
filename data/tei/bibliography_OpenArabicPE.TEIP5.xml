@@ -27,8 +27,16 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc xml:lang="en">
-            <change xml:id="d2e60" who="#pers_TG" when="2019-03-28">Removed duplicates inside <tei:gi>listBibl</tei:gi> and sorted all <tei:gi>bibl</tei:gi> by their <tei:gi>title</tei:gi> children.</change>
-            <change xml:id="d2e58" who="#pers_TG" when="2019-03-28">Grouped bibliographic references into five <tei:gi>listBibl</tei:gi> by genre.</change>
+            <change when="2019-03-28" who="#pers_TG" xml:id="d2e60">Removed duplicates inside 
+                <tei:gi>listBibl</tei:gi>
+                and sorted all 
+                <tei:gi>bibl</tei:gi>
+                by their 
+                <tei:gi>title</tei:gi>
+                children.</change>
+            <change when="2019-03-28" who="#pers_TG" xml:id="d2e58">Grouped bibliographic references into five 
+                <tei:gi>listBibl</tei:gi>
+                by genre.</change>
             <change when="2018-05-25" who="#pers_TG">Created file by collecting all referenced works from al-Muqtabas</change>
         </revisionDesc>
     </teiHeader>
@@ -4242,6 +4250,8 @@
                                 <orig xml:lang="en-Arab-AR">النيو</orig>
                                 <corr xml:lang="en-Arab-AR">النيوز</corr>
                             </choice>اوف دي ورلد</title>
+                        <title xml:lang="en">News of the world</title>
+                        <textLang mainLang="en"/>
                     </tei:bibl>
                     <bibl change="#d2e58 #d2e60">تقويم 
                         <title level="j" xml:lang="ar">
@@ -4249,10 +4259,8 @@
                             <foreign xml:lang="ota">سالنامة</foreign>
                             ) ولاية بيروت</title>السنوي ل 
                         <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1326" xml:lang="ar">سنة ١٣٢٦هـ</date></bibl>
-                    <bibl change="#d2e58 #d2e60">نشرت مجلة 
-                        <title level="j" ref="oclc:265304396" xml:lang="ar">
-                            العلم في القرن ال 
-                            <num resp="#pers_TG" subtype="d2" type="auto-markup" value="20" xml:lang="ar">عشرين</num></title>مقالة بحث فيها كاتبها في أصول سكان جنوبي الجزائر والصحراء 
+                    <bibl change="#d2e58 #d2e60">مجلة 
+                        <title level="j" ref="oclc:265304396" xml:lang="ar">العلم في القرن العشرين</title>
                         <tei:idno type="OCLC">265304396</tei:idno></bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">(
@@ -4266,13 +4274,14 @@
                         <title level="j" xml:lang="ar">أدلة الترقي</title>
                         الفرنسوية</bibl>
                     <bibl change="#d2e58 #d2e60">
-                        <title level="j" xml:lang="ota">أرناؤود</title>. جريدة أسبوعية أرناؤودية لها قسم تركي. 
+                        <title level="j" xml:lang="ota">أرناؤود</title>. جريدة أسبوعية 
+                        <textLang otherLangs="ota">أرناؤودية لها قسم تركي</textLang>
+                        . 
                         <respStmt xml:lang="ar">
                             <resp xml:lang="ar">صاحبها</resp>
                             <persName xml:lang="ar">درويش بك هيما الأرناؤودي</persName></respStmt>المشهور وهو من الذين اشتغلوا للحرية في الدور السابق. وخطة هذه الجريدة المخالفة الشديدة للحكومات بعبارة قاسية قارضة جداً. أكثر قرائها من الأرناؤود ومنتشرة في الولايات الأرناؤودية انتشاراً كبيراً.</bibl>
-                    <bibl change="#d2e58 #d2e60">نشرت مجلة 
-                        <title level="j" xml:lang="ar">أميركا الشمالية</title>
-                        بحثاً</bibl>
+                    <bibl change="#d2e58 #d2e60">مجلة 
+                        <title level="j" xml:lang="ar">أميركا الشمالية</title></bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ota">إقدام</title>
                     </tei:bibl>
@@ -4327,13 +4336,12 @@
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الأرز</title>
                     </bibl>
-                    <bibl change="#d2e58 #d2e60">كتب 
-                        <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:lang="ar">أحد</num>
-                        العارفين في مجلة 
+                    <bibl change="#d2e58 #d2e60">مجلة 
                         <title level="j" xml:lang="ar">الأسبوع الأدبي</title>
                         في 
                         <pubPlace xml:lang="ar">
-                            <placeName ref="geon:2660646" xml:lang="ar">جنيف</placeName></pubPlace>مقالاً في معنى تربية البنين والبنات في مدرسة واحدة</bibl>
+                            <placeName ref="geon:2660646" xml:lang="ar">جنيف</placeName></pubPlace>
+                    </bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="m" xml:lang="ar">وقاية الشبان من المرض الإفرنجي والسيلان</title>— هو كتاب وضعه 
                         <author xml:lang="ar">
@@ -4345,19 +4353,11 @@
                         <biblScope from="1" to="172" unit="page" xml:lang="ar">
                             <num resp="#pers_TG" type="auto-markup" value="172" xml:lang="ar">١٧٢</num>
                             صفحة</biblScope>من قطع الوسط</bibl>
-                    <bibl change="#d2e58 #d2e60">كتب 
-                        <author xml:lang="fr-Arab-AR">
-                            <persName>
-                                <addName type="title">المسيو</addName>
-                                <persName>إبيل</persName></persName>
-                        </author>في مجلة 
-                        <title level="j">الأفكار الحديثة</title>
-                        مقالة تحت هذا العنوان</bibl>
-                    <bibl change="#d2e58 #d2e60">في مجلة 
+                    <bibl change="#d2e58 #d2e60">مجلة 
+                        <title level="j">الأفكار الحديثة</title></bibl>
+                    <bibl change="#d2e58 #d2e60">مجلة 
                         <title level="j" xml:lang="ar">الأقرباء</title>
-                        الإنكليزية 
-                        <num resp="#pers_TG" subtype="d1" type="auto-markup" value="3" xml:lang="ar">ثلاث</num>
-                        مقالات في إعداد عقل الطفل</bibl>
+                        <textLang mainLang="en">الإنكليزية</textLang></bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ar">الأقلام</title>
                     </bibl>
@@ -4366,8 +4366,6 @@
                     </bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الأنتروبوس</title>
-                    </bibl>
-                    <bibl change="#d2e58 #d2e60">
                         <title level="j">الأنثروبوس</title>
                     </bibl>
                     <tei:bibl change="#d2e58 #d2e60">
@@ -4422,10 +4420,6 @@
                         <title level="j" xml:lang="fr-Arab-AR">الإيكو دي باري</title>
                         <title level="j" xml:lang="fr-Arab-AR">الإيكودي باري</title>
                     </tei:bibl>
-                    <tei:bibl change="#d2e58 #d2e60">
-                        <title level="j" xml:lang="fr-Arab-AR">الإيكو دي باري</title>
-                        <title level="j" xml:lang="fr-Arab-AR">الإيكودي باري</title>
-                    </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الاتحاد</title>
                     </bibl>
@@ -4441,7 +4435,7 @@
                         </editor>من قدماء الصحافيين</bibl>
                     <bibl change="#d2e58 #d2e60">مجلة 
                         <title level="j" xml:lang="ar">الاجتماع</title>
-                        الاميركية</bibl>
+                        <textLang mainLang="en">الاميركية</textLang></bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الاحياء</title>
                     </bibl>
@@ -4488,48 +4482,31 @@
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الايكو</title>
                     </bibl>
-                    <bibl change="#d2e58 #d2e60">جاء في 
-                        <biblScope unit="issue">العدد الأخير</biblScope>
-                        من مجلة 
+                    <bibl change="#d2e58 #d2e60">مجلة 
                         <title level="j">البابيروس</title>
                         التي ينشئها صديقي 
                         <author>
                             <persName>ميخائيل مونان</persName></author>الكاتب 
                         <lb/>
-                        الأمريكي البليغ مقالة من قلمه تحت عنوان صورتان يقابل فيها بين كلام لكاريل في 
-                        <lb/>
-                        الحرب وكلام ل 
-                        <persName ref="viaf:49228757" xml:lang="de-Arab-AR">
-                            <forename>كارل</forename>
-                            <surname>مركس</surname></persName>
-                        <note n="1" type="footnote">هو شيخ الاشتراكيين وزعيمهم 
-                            <q rend="brackets">
-                                <date when="1818">
-                                    <num value="1818">١٨١٨</num></date>_ 
-                                <date when="1883">
-                                    <num value="1883">١٨٨٣</num></date>
-                            </q>وكتابه 
-                            <title level="m" rend="quotation-marks">رأْس المال</title>
-                            <lb/>
-                            شبه انجيل عند اصحاب هذا المبدإ. يروى عنهُ انهُ عزم مرة على السفر الى اميركا بعد ان 
-                            <lb/>
-                            نفي من وطنه المانيا ومن فرنسا 
-                            <gap resp="#org_MS"/></note>
-                    </bibl>
-                    <bibl change="#d2e58 #d2e60">في المجلة 
+                        الأمريكي البليغ   </bibl>
+                    <bibl change="#d2e58 #d2e60">المجلة 
                         <title level="j" xml:lang="ar">الباريزية</title>
-                        بحث في حال الأشراف والفقراء في انكلترا</bibl>
+                        <textLang mainLang="fr"/></bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="en-Arab-AR">البال مال غازت</title>
+                        <textLang mainLang="en"/>
                     </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">البتي</title>
+                        <textLang mainLang="fr"/>
                     </bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="fr-Arab-AR">البتي باريزين</title>
+                        <textLang mainLang="fr"/>
                     </tei:bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="fr-Arab-AR">البتي جرنال</title>
+                        <textLang mainLang="fr"/>
                     </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">البرهان</title>
@@ -4560,7 +4537,7 @@
                     </bibl>
                     <bibl change="#d2e58 #d2e60">مجلة 
                         <title level="j" xml:lang="ar">التربية</title>
-                        الفرنسوية</bibl>
+                        <textLang mainLang="fr">الفرنسوية</textLang></bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">التربيونا</title>
                     </bibl>
@@ -4580,7 +4557,8 @@
                         <title level="j">التواريخ</title>
                     </bibl>
                     <bibl change="#d2e58 #d2e60">جريدة 
-                        <title level="j" xml:lang="en-Arab-AR">التيمس</title></bibl>
+                        <title level="j" xml:lang="en-Arab-AR">التيمس</title>
+                        <textLang mainLang="en"/></bibl>
                     <bibl change="#d2e58 #d2e60">وجريدة 
                         <title level="j" xml:lang="ar">الثبات</title>
                         لصاحبها 
@@ -4702,7 +4680,9 @@
                         <title level="j">الحياة البيتة</title>
                     </bibl>
                     <bibl change="#d2e58 #d2e60">
-                        <title level="j" rend="quotation-marks" xml:lang="ar">الحياة البيتية</title>الفرنسوية</bibl>
+                        <title level="j" rend="quotation-marks" xml:lang="ar">الحياة البيتية</title>
+                        <textLang mainLang="fr">الفرنسوية</textLang>
+                    </bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الخالدات</title>
                     </bibl>
@@ -4729,21 +4709,27 @@
                     </bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="en-Arab-AR">الديلي اكسبرس</title>
+                        <textLang mainLang="en"/>
                     </tei:bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="en-Arab-AR">الديلي تلغراف</title>
+                        <textLang mainLang="en"/>
                     </tei:bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="en-Arab-AR">الديلي كرونيكل</title>
+                        <textLang mainLang="en"/>
                     </tei:bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="en-Arab-AR">الديلي ميرور</title>
+                        <textLang mainLang="en"/>
                     </tei:bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="en-Arab-AR">الديلي ميل</title>
+                        <textLang mainLang="en"/>
                     </tei:bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="en-Arab-AR">الديلي نيوز</title>
+                        <textLang mainLang="en"/>
                     </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الرأي العام</title>
@@ -4768,7 +4754,7 @@
                     </bibl>
                     <bibl change="#d2e58 #d2e60">المجلة 
                         <title level="j" xml:lang="ar">الزرقاء</title>
-                        الفرنسوية</bibl>
+                        <textLang mainLang="fr">الفرنسوية</textLang></bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الزمان</title>
                     </bibl>
@@ -4800,16 +4786,14 @@
                         <title level="j" xml:lang="en-Arab-AR">الستاندارد</title>
                         <title level="j" xml:lang="en-Arab-AR">الستندارد</title>
                     </tei:bibl>
-                    <tei:bibl change="#d2e58 #d2e60">
-                        <title level="j" xml:lang="en-Arab-AR">الستاندارد</title>
-                        <title level="j" xml:lang="en-Arab-AR">الستندارد</title>
-                    </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">السجلات</title>
                     </bibl>
                     <bibl change="#d2e60">إدارة جريدة 
                         <title level="j" xml:lang="ar">السلام</title>
-                        التي تطبع بالعربية في 
+                        التي تطبع ب
+                        <textLang mainLang="ar">العربية</textLang>
+                        في 
                         <pubPlace xml:lang="ar">
                             <placeName ref="geon:3435910" xml:lang="ar">بونس أيرس</placeName></pubPlace>عاصمة 
                         <placeName ref="geon:3865483" xml:lang="ar">الأرجنتين</placeName>
@@ -4866,7 +4850,7 @@
                     </bibl>
                     <bibl change="#d2e58 #d2e60">مجلة 
                         <title level="j" xml:lang="ar">الطبيعة</title>
-                        الفرنسية</bibl>
+                        <textLang mainLang="fr">الفرنسية</textLang></bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">الظان</title>
                     </bibl>
@@ -4902,7 +4886,7 @@
                     </bibl>
                     <bibl change="#d2e58 #d2e60">مجلة 
                         <title level="j" xml:lang="ar">العالمين</title>
-                        الفرنسوية</bibl>
+                        <textLang mainLang="fr">الفرنسوية</textLang></bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">العثماني</title>
                     </bibl>
@@ -4961,8 +4945,7 @@
                         <title level="j" xml:lang="ar">العلم العام</title>
                         الأميركية مقالة في النوم</bibl>
                     <bibl change="#d2e58 #d2e60">
-                        <title level="j" ref="oclc:265304396">العلم في القرن ال
-                            <num resp="#pers_TG" subtype="d2" type="auto-markup" value="20">عشرين</num></title>
+                        <title level="j" ref="oclc:265304396">العلم في القرن العشرين</title>
                     </bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">العلماء</title>
@@ -4973,10 +4956,9 @@
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">العملة</title>
                     </bibl>
-                    <bibl change="#d2e58 #d2e60">كتبت في 
+                    <bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ar">العهد</title>
-                        <biblScope unit="issue" xml:lang="ar">الأخير</biblScope>
-                        رسائل</bibl>
+                    </bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ota">رسملي كتاب</title>. مجلة أدبية فنية علمية تصويرية بحجم المقتبس الشهري تصدر مرة في الشهر متقنة الطبع جميلة الرسوم على نمط مجلة 
                         <title level="j">الفرنسوية</title>
@@ -5076,13 +5058,13 @@
                     </tei:bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="fr-Arab-AR">الماتين</title>
+                        <title level="j" xml:lang="fr-Arab-AR">المايتن</title>
+                        <textLang mainLang="fr"/>
                     </tei:bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="fr-Arab-AR">الماتيني</title>
                     </tei:bibl>
-                    <bibl change="#d2e58 #d2e60">
-                        <title level="j">المايتن</title>
-                    </bibl>
+                    <bibl change="#d2e58 #d2e60"/>
                     <bibl change="#d2e58 #d2e60">مجلة 
                         <title level="j" xml:lang="ar">المباحث</title>
                         في 
@@ -5105,46 +5087,36 @@
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">المتقتبس</title>
                     </bibl>
-                    <bibl change="#d2e58 #d2e60">ملخصة من مقالة في 
-                        <title level="j" ref="oclc:472961924" xml:lang="ar">المجلة</title>
-                        الباريسية 
+                    <bibl change="#d2e58 #d2e60">
+                        <title level="j" ref="oclc:472961924" xml:lang="ar">المجلة</title>الباريسية 
                         <tei:idno type="OCLC">472961924</tei:idno></bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ar">المجلة الآسياوية</title>
-                    </tei:bibl>
-                    <bibl change="#d2e58 #d2e60">
                         <title level="j">المجلة الآسيوية</title>
-                    </bibl>
+                    </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <author xml:lang="ar">
                             <persName xml:lang="ar">الأستاذ أغناس غولدسهير</persName>
                         </author>المجري من أفراد علماء المشرقيات في أوروبا اليوم عرف بأبحاث كثيرة كتب بعضها بالألمانيبة وبعضها متلق بالملل والنحل وأمامنها الآن من أبحاثه الأخيرة رسالة في مسألة السامري وعجل الذهب وروايات الكتب السماوية والتاريخية فيها وقد نشرها في 
                         <title level="j" xml:lang="ar">المجلة الإفريقية</title>
                         باللغة الإفرنسية أولاً ثم أفردها على حدة فجاءت شاهدة بسعة اطلاعه</bibl>
-                    <bibl change="#d2e58 #d2e60">كتب أحدهم في 
+                    <bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ar">المجلة الاستعمارية النيابية</title>
-                        مقالاً</bibl>
+                    </bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ar">المجلة التونسية</title>
                     </tei:bibl>
-                    <bibl change="#d2e58 #d2e60">من مبحث في 
-                        <title level="j">المجلة الجديدة</title>
-                        الفرنسية</bibl>
                     <bibl change="#d2e58 #d2e60">
-                        <author xml:lang="ar">
-                            <persName xml:lang="ar">فون كريمر</persName>
-                        </author>فإنه نشر مقالات كثيرة في ( 
-                        <title level="j" xml:lang="ar">المجلة الجرمانية الآسياوية</title>
-                        ) عن أبي العلاء وأفكاره وشعره نظماً 
-                        <date when="1877" xml:lang="ar">
-                            سنة 
-                            <num resp="#pers_TG" type="auto-markup" value="1877" xml:lang="ar">١٨٧٧</num>
-                            م</date>
+                        <title level="j">المجلة الجديدة</title>
+                        <textLang mainLang="fr">الفرنسية</textLang>
                     </bibl>
-                    <bibl change="#d2e58 #d2e60">نشر 
-                        <num resp="#pers_TG" subtype="d1" type="auto-markup" value="1" xml:lang="ar">أحد</num>
-                        ضباط الإنكليز في الجيش الهندي مقالة في 
-                        <title level="j" xml:lang="ar">المجلة المدرسية</title></bibl>
+                    <bibl change="#d2e58 #d2e60">
+                        <title level="j" xml:lang="ar">المجلة الجرمانية الآسياوية</title>
+                        <textLang mainLang="de"/>
+                    </bibl>
+                    <bibl change="#d2e58 #d2e60">
+                        <title level="j" xml:lang="ar">المجلة المدرسية</title>
+                    </bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j">المجلة المصرية</title>
                     </tei:bibl>
@@ -5350,7 +5322,9 @@
                         <title level="j" xml:lang="ar">النجاح</title>
                         ما مثاله معرباً</bibl>
                     <bibl change="#d2e58 #d2e60">
-                        <title level="j" xml:lang="ar">النجف</title>— هي أول مجلة فارسية ظهرت في 
+                        <title level="j" xml:lang="ar">النجف</title>— هي أول مجلة 
+                        <textLang mainLang="fa">فارسية</textLang>
+                        ظهرت في 
                         <pubPlace xml:lang="ar">
                             <placeName ref="geon:99237" xml:lang="ar">العراق</placeName></pubPlace>أنشأها 
                         <editor xml:lang="ar">
@@ -5638,6 +5612,7 @@
                         في الخارج</bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ota">ثروت فنون</title>
+                        <textLang mainLang="ota"/>
                     </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ota">جادالوز</title>. أسست قبل شهرين صاحبها (جادالوز) ومديرها المسؤول 
@@ -12294,9 +12269,6 @@
                         <title level="j">المجمع الطبي
                             البريطاني</title>
                     </bibl>
-                    <tei:bibl change="#d2e58 #d2e60">
-                        <title level="j" xml:lang="ar">المجمع الطبي البريطاني</title>
-                    </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j">المحروسة</title>
                     </bibl>
@@ -12774,6 +12746,7 @@
                         في الخارج</bibl>
                     <tei:bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ota">ثروت فنون</title>
+                        <textLang mainLang="ota"/>
                     </tei:bibl>
                     <bibl change="#d2e58 #d2e60">
                         <title level="j" xml:lang="ota">جادالوز</title>. أسست قبل شهرين صاحبها (جادالوز) ومديرها المسؤول 
