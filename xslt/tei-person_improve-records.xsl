@@ -19,6 +19,9 @@
     <!-- variables for OpenArabicPE IDs -->
     <xsl:variable name="v_oape-id-count" select="count(//tei:person/tei:idno[@type='oape'])"/>
     <xsl:variable name="v_oape-id-highest" select="if($v_oape-id-count gt 0) then(max(//tei:person/tei:idno[@type='oape'])) else(0)"/>
+    <!-- parameters for string-replacements -->
+    <xsl:param name="p_string-match" select="'([إ|أ|آ])'"/>
+    <xsl:param name="p_string-replace" select="'ا'"/>
     
     <xsl:template match="node() | @*" name="t_1">
         <xsl:copy>
@@ -149,11 +152,16 @@
                 <xsl:apply-templates select="@* | node()"/>
             </xsl:copy>
         <!-- add flattened persName string if this is not already present  -->
-        <xsl:variable name="v_self">
+        <!--<xsl:variable name="v_self">
             <xsl:value-of select="normalize-space(replace(string(),'([إ|أ|آ])','ا'))"/>
         </xsl:variable>
-        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
-        <xsl:if test="not($v_name-flat='') and not(parent::node()/tei:persName[@type='flattened'] = $v_name-flat)">
+        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>-->
+        <xsl:variable name="v_name-flat">
+            <xsl:call-template name="t_normalise-name">
+                <xsl:with-param name="p_input" select="string()"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:if test="not($v_name-flat='') and not(parent::tei:person/tei:persName[@type='flattened'] = $v_name-flat)">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
@@ -163,7 +171,9 @@
                 <xsl:apply-templates select="@xml:lang"/>
                 <xsl:attribute name="type" select="'flattened'"/>
                 <!-- the flattened string should point back to its origin -->
-                <xsl:attribute name="corresp" select="concat('#',@xml:id)"/>
+                <xsl:if test="@xml:id">
+                    <xsl:attribute name="corresp" select="concat('#',@xml:id)"/>
+                </xsl:if>
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                 <xsl:value-of select="$v_name-flat"/>
@@ -188,10 +198,11 @@
             </xsl:variable>
             <xsl:choose>
                 <!-- if there is already a child similar to the noAddName variant, this should not added to the output -->
-                <xsl:when test="parent::node()/tei:persName = $v_no-addname"/>
-                <xsl:when test="parent::node()/tei:persName[@type='flattened']=replace(normalize-space(replace($v_no-addname,'([إ|أ|آ])','ا')), '\W', '')">
-<!--                    <xsl:message><xsl:value-of select="$v_no-addname"/> is already present</xsl:message>-->
+                <xsl:when test="parent::node()/tei:persName = $v_no-addname">
+                    <!--                    <xsl:message><xsl:value-of select="$v_no-addname"/> is already present</xsl:message>-->
                 </xsl:when>
+<!--                <xsl:when test="parent::node()/tei:persName[@type='flattened']=replace(normalize-space(replace($v_no-addname,'([إ|أ|آ])','ا')), '\W', '')"/>-->
+                
                 <xsl:otherwise>
 <!--                    <xsl:message><xsl:value-of select="$v_no-addname"/> is not present</xsl:message>-->
                     <xsl:copy-of select="$v_no-addname"/>
@@ -210,13 +221,18 @@
         <xsl:variable name="v_self" select="."/>
         <xsl:copy>
             <!-- add @corresp -->
-                <xsl:attribute name="corresp" select="concat('#',parent::tei:person/tei:persName[replace(normalize-space(string()),'\W','')=$v_self][1]/@xml:id)"/>
+                <xsl:attribute name="corresp" select="concat('#',parent::tei:person/tei:persName[not(@type='flattened')][replace(normalize-space(replace(string(),$p_string-match,$p_string-replace)),'\W','')=$v_self][1]/@xml:id)"/>
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
             <xsl:apply-templates select="@* |node() "/>
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template name="t_normalise-name">
+        <xsl:param name="p_input"/>
+        <xsl:variable name="v_self" select="normalize-space(replace($p_input,$p_string-match,$p_string-replace))"/>
+        <xsl:value-of select="replace($v_self, '\W', '')"/>
+    </xsl:template>
     
     <!-- replicate everything except @xml:id -->
     <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids" name="t_10">
