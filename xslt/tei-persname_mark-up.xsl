@@ -180,7 +180,7 @@
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="ref" select="$v_ref"/>
             <!-- document change -->
-            <xsl:if test="(@ref != $v_ref) or not(child::node()[namespace::tei])">
+            <xsl:if test="(@ref != $v_ref) or (not(child::node()[namespace::tei]) and $v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()[namespace::tei])">
                 <xsl:choose>
                     <xsl:when test="not(@change)">
                         <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
