@@ -11,6 +11,7 @@
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml"
         omit-xml-declaration="no"/>
+    <xsl:include href="functions.xsl"/>
     <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
@@ -44,10 +45,8 @@
                 <xsl:text>t_2: found a persName without @ref</xsl:text>
             </xsl:message>
         </xsl:if>
-        <!-- normalize the spelling of the name in question -->
-        <xsl:variable name="v_self" select="normalize-space(replace(., '([إ|أ|آ])', 'ا'))"/>
-        <!-- version of the persName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
+        <!-- flatened version of the persName without non-word characters -->
+        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
         <!-- test if the flattened name is present in the authority file -->
         <xsl:choose>
             <xsl:when
@@ -55,7 +54,7 @@
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
                         <xsl:text>t_2: </xsl:text>
-                        <xsl:value-of select="$v_self"/>
+                        <xsl:value-of select="normalize-space(.)"/>
                         <xsl:text> is present in authority file and will be updated</xsl:text>
                     </xsl:message>
                 </xsl:if>
@@ -93,7 +92,7 @@
                             <xsl:if test="$p_verbose = true()">
                                 <xsl:message>
                                     <xsl:text>t_2: </xsl:text>
-                                    <xsl:value-of select="$v_self"/>
+                                    <xsl:value-of select="normalize-space(.)"/>
                                     <xsl:text> contains no mark-up which will be updated from the authority file</xsl:text>
                                 </xsl:message>
                             </xsl:if>
@@ -121,7 +120,7 @@
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
                         <xsl:text>t_2: </xsl:text>
-                        <xsl:value-of select="$v_self"/>
+                        <xsl:value-of select="normalize-space(.)"/>
                         <xsl:message> not found in authority file.</xsl:message>
                     </xsl:message>
                 </xsl:if>
@@ -139,10 +138,8 @@
                 <xsl:value-of select="@ref"/>
             </xsl:message>
         </xsl:if>
-        <!-- normalize the spelling of the name in question -->
-        <xsl:variable name="v_self" select="normalize-space(replace(., '([إ|أ|آ])', 'ا'))"/>
-        <!-- version of the persName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
+        <!-- flattened version of the persName without non-word characters -->
+        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
         <xsl:variable name="v_corresponding-person"
             select="oape:get-person-from-authority-file(@ref)"/>
         <xsl:variable name="v_corresponding-xml-id"
@@ -198,7 +195,7 @@
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
                             <xsl:text>t_3: </xsl:text>
-                            <xsl:value-of select="$v_self"/>
+                            <xsl:value-of select="normalize-space(.)"/>
                             <xsl:text> contains no mark-up which will be updated from the authority file</xsl:text>
                         </xsl:message>
                     </xsl:if>

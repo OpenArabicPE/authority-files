@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0"
+<xsl:stylesheet xmlns="http://www.tei-c.org/ns/1.0" 
+    xmlns:oape="https://openarabicpe.github.io/ns"
+    xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:bgn="http://bibliograph.net/" xmlns:genont="http://www.w3.org/2006/gen/ont#" xmlns:pto="http://www.productontology.org/id/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:re="http://oclcsrw.google.code/redirect" xmlns:schema="http://schema.org/" xmlns:umbel="http://umbel.org/umbel#"
@@ -12,6 +14,7 @@
     <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <xsl:include href="query-viaf.xsl"/>
+    <xsl:include href="functions.xsl"/>
     <!-- identify the author of the change by means of a @xml:id -->
     <!-- toggle debugging messages -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
@@ -19,9 +22,7 @@
     <!-- variables for OpenArabicPE IDs -->
     <xsl:variable name="v_oape-id-count" select="count(//tei:person/tei:idno[@type='oape'])"/>
     <xsl:variable name="v_oape-id-highest" select="if($v_oape-id-count gt 0) then(max(//tei:person/tei:idno[@type='oape'])) else(0)"/>
-    <!-- parameters for string-replacements -->
-    <xsl:param name="p_string-match" select="'([إ|أ|آ])'"/>
-    <xsl:param name="p_string-replace" select="'ا'"/>
+    
     
     <xsl:template match="node() | @*" name="t_1">
         <xsl:copy>
@@ -152,15 +153,7 @@
                 <xsl:apply-templates select="@* | node()"/>
             </xsl:copy>
         <!-- add flattened persName string if this is not already present  -->
-        <!--<xsl:variable name="v_self">
-            <xsl:value-of select="normalize-space(replace(string(),'([إ|أ|آ])','ا'))"/>
-        </xsl:variable>
-        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>-->
-        <xsl:variable name="v_name-flat">
-            <xsl:call-template name="t_normalise-name">
-                <xsl:with-param name="p_input" select="string()"/>
-            </xsl:call-template>
-        </xsl:variable>
+        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
         <xsl:if test="not($v_name-flat='') and not(parent::tei:person/tei:persName[@type='flattened'] = $v_name-flat)">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
@@ -221,17 +214,11 @@
         <xsl:variable name="v_self" select="."/>
         <xsl:copy>
             <!-- add @corresp -->
-                <xsl:attribute name="corresp" select="concat('#',parent::tei:person/tei:persName[not(@type='flattened')][replace(normalize-space(replace(string(),$p_string-match,$p_string-replace)),'\W','')=$v_self][1]/@xml:id)"/>
+                <xsl:attribute name="corresp" select="concat('#',parent::tei:person/tei:persName[not(@type='flattened')][oape:string-normalise-name(string())=$v_self][1]/@xml:id)"/>
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
             <xsl:apply-templates select="@* |node() "/>
         </xsl:copy>
-    </xsl:template>
-    
-    <xsl:template name="t_normalise-name">
-        <xsl:param name="p_input"/>
-        <xsl:variable name="v_self" select="normalize-space(replace($p_input,$p_string-match,$p_string-replace))"/>
-        <xsl:value-of select="replace($v_self, '\W', '')"/>
     </xsl:template>
     
     <!-- replicate everything except @xml:id -->
