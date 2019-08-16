@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
                 <title>Title</title>
+                <author xml:id="pers_TG">
+                    <persName>
+                        <forename>Till</forename>
+                        <surname>Grallert</surname>
+                    </persName>
+                </author>
             </titleStmt>
             <publicationStmt>
                 <p>Publication Information</p>
@@ -14,6 +17,9 @@
                 <p>this file is born-digital</p>
             </sourceDesc>
         </fileDesc>
+        <revisionDesc><tei:change when="2019-08-16" who="#pers_TG" xml:id="d5e42" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/gazetteer_levant-phd.TEIP5.xml">../data/tei/gazetteer_levant-phd.TEIP5.xml</tei:ref>) and to GeoNames IDs to <tei:gi>placeName</tei:gi>s without such references based on  <tei:gi>place</tei:gi>s mentioned in the authority file.</tei:change>
+            <change when="2019-08-16" who="#pers_TG">Created this file</change>
+        </revisionDesc>
     </teiHeader>
     <text xml:lang="ar">
         <body xml:lang="ar">
@@ -55,9 +61,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:98182" xml:lang="ar">بغداد</placeName>
-                                    <placeName ref="geon:98182" xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
-                                    <placeName ref="geon:98182" xml:lang="en">Baghdad</placeName>
+                                    <placeName ref="oape:place:216 geon:98182" xml:lang="ar" change="#d5e42">بغداد</placeName>
+                                    <placeName ref="oape:place:216 geon:98182" xml:lang="ar-Latn-x-ijmes" change="#d5e42">Baghdād</placeName>
+                                    <placeName ref="oape:place:216 geon:98182" xml:lang="en" change="#d5e42">Baghdad</placeName>
                                 </pubPlace>
                                 <date datingMethod="#cal_islamic" when="1911-06-30" when-custom="1329-07-01"/>
                             </imprint>
@@ -87,9 +93,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:360630" xml:lang="ar">القاهرة</placeName>
-                                    <placeName ref="geon:360630" xml:lang="ar-Latn-x-ijmes">al-Qāhira</placeName>
-                                    <placeName ref="geon:360630" xml:lang="en">Cairo</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar" change="#d5e42">القاهرة</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar-Latn-x-ijmes" change="#d5e42">al-Qāhira</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="en" change="#d5e42">Cairo</placeName>
                                 </pubPlace>
                                 <date when="1904-08-01" xml:lang="ar">1 أغسطس 1904</date>
                             </imprint>
@@ -121,9 +127,9 @@
                                     <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Maʿārif</orgName>
                                 </publisher>
                                 <pubPlace>
-                                    <placeName ref="geon:360630" xml:lang="ar">القاهرة</placeName>
-                                    <placeName ref="geon:360630" xml:lang="ar-Latn-x-ijmes">al-Qāhira</placeName>
-                                    <placeName ref="geon:360630" xml:lang="en">Cairo</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar" change="#d5e42">القاهرة</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar-Latn-x-ijmes" change="#d5e42">al-Qāhira</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="en" change="#d5e42">Cairo</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1910-03-01" xml:lang="ar">1 مارس 1910</date>
@@ -151,9 +157,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:360630" xml:lang="ar">القاهرة</placeName>
-                                    <placeName ref="geon:360630" xml:lang="ar-Latn-x-ijmes">al-Qāhira</placeName>
-                                    <placeName ref="geon:360630" xml:lang="en">Cairo</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar" change="#d5e42">القاهرة</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar-Latn-x-ijmes" change="#d5e42">al-Qāhira</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="en" change="#d5e42">Cairo</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1892-08-24" xml:lang="ar">24 أغسطس 1892</date>
@@ -194,9 +200,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:276781" xml:lang="ar">بيروت</placeName>
-                                    <placeName ref="geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
-                                    <placeName ref="geon:276781" xml:lang="en">Beirut</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar" change="#d5e42">بيروت</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes" change="#d5e42">Bayrūt</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="en" change="#d5e42">Beirut</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1876-06-01" xml:lang="ar">1 يونيو 1876</date>
@@ -230,9 +236,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:360630" xml:lang="ar">القاهرة</placeName>
-                                    <placeName ref="geon:360630" xml:lang="ar-Latn-x-ijmes">al-Qāhira</placeName>
-                                    <placeName ref="geon:360630" xml:lang="en">Cairo</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar" change="#d5e42">القاهرة</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar-Latn-x-ijmes" change="#d5e42">al-Qāhira</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="en" change="#d5e42">Cairo</placeName>
                                 </pubPlace>
                                 <date when="1884" xml:lang="ar">1884</date>
                             </imprint>
@@ -269,9 +275,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:276781" xml:lang="ar">بيروت</placeName>
-                                    <placeName ref="geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
-                                    <placeName ref="geon:276781" xml:lang="en">Beirut</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar" change="#d5e42">بيروت</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes" change="#d5e42">Bayrūt</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="en" change="#d5e42">Beirut</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1898-01-01" xml:lang="ar">1 يناير 1898</date>
@@ -302,9 +308,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:361058" xml:lang="ar">الاسكندرية</placeName>
+                                    <placeName ref="oape:place:225 geon:361058" xml:lang="ar" change="#d5e42">الاسكندرية</placeName>
                                     <placeName xml:lang="ar-Latn-x-ijmes">al-Iskandariyya</placeName>
-                                    <placeName ref="geon:361058" xml:lang="en">Alexandria</placeName>
+                                    <placeName ref="oape:place:225 geon:361058" xml:lang="en" change="#d5e42">Alexandria</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date calendar="#cal_gregorian" datingMethod="#cal_gregorian" when="1899-03-15" xml:lang="ar">15 مارس 1899</date>
@@ -381,9 +387,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:360630" xml:lang="ar">القاهرة</placeName>
-                                    <placeName ref="geon:360630" xml:lang="ar-Latn-x-ijmes">al-Qāhira</placeName>
-                                    <placeName ref="geon:360630" xml:lang="en">Cairo</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar" change="#d5e42">القاهرة</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar-Latn-x-ijmes" change="#d5e42">al-Qāhira</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="en" change="#d5e42">Cairo</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1892-09-01" xml:lang="ar">1 سبتمبر 1892</date>
@@ -417,9 +423,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:360630" xml:lang="ar">القاهرة</placeName>
-                                    <placeName ref="geon:360630" xml:lang="ar-Latn-x-ijmes">al-Qāhira</placeName>
-                                    <placeName ref="geon:360630" xml:lang="en">Cairo</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar" change="#d5e42">القاهرة</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="ar-Latn-x-ijmes" change="#d5e42">al-Qāhira</placeName>
+                                    <placeName ref="oape:place:226 geon:360630" xml:lang="en" change="#d5e42">Cairo</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1897-03-01" xml:lang="ar">1 مارس 1897</date>
@@ -447,7 +453,7 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName ref="geon:268064">صيدا</placeName>
+                                    <placeName ref="oape:place:9 geon:268064" change="#d5e42">صيدا</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1909-02-05" xml:lang="ar">05 فبراير 1909</date>
@@ -520,7 +526,7 @@
                             <imprint>
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="en">Paris</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:322 geon:2988507">Paris</placeName>
                                 </pubPlace>
                             </imprint>
                         </monogr>
@@ -542,7 +548,7 @@
                             <imprint>
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="en">Paris</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:322 geon:2988507">Paris</placeName>
                                 </pubPlace>
                             </imprint>
                         </monogr>
@@ -577,27 +583,9 @@
                             <imprint>
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="en">London</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:331 geon:2643743">London</placeName>
                                 </pubPlace>
                             </imprint>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
-                        <monogr xml:lang="ar">
-                            <title level="j" xml:lang="ar">المفيد</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Mufīd</title>
-                            <textLang mainLang="ar"/>
-                            <editor xml:lang="ar">
-                                <persName/>
-                            </editor>
-                            <imprint xml:lang="ar">
-                                <publisher/>
-                                <pubPlace/>
-                                <!-- this is seems to be the first issue -->
-                                <date when="" xml:lang="ar"/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
                     </biblStruct>
                     <biblStruct xml:lang="ar">
@@ -618,9 +606,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="ar">بغداد</placeName>
-                                    <placeName xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
-                                    <placeName xml:lang="en">Baghdad</placeName>
+                                    <placeName xml:lang="ar" change="#d5e42" ref="oape:place:216 geon:98182">بغداد</placeName>
+                                    <placeName xml:lang="ar-Latn-x-ijmes" change="#d5e42" ref="oape:place:216 geon:98182">Baghdād</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:216 geon:98182">Baghdad</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="" xml:lang="ar"/>
@@ -671,9 +659,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="en">Beirut</placeName>
-                                    <placeName xml:lang="ar">بيروت</placeName>
-                                    <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:26 geon:276781">Beirut</placeName>
+                                    <placeName xml:lang="ar" change="#d5e42" ref="oape:place:26 geon:276781">بيروت</placeName>
+                                    <placeName xml:lang="ar-Latn-x-ijmes" change="#d5e42" ref="oape:place:26 geon:276781">Bayrūt</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1911" xml:lang="ar"/>
@@ -694,7 +682,7 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="en">Paris</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:322 geon:2988507">Paris</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1861" xml:lang="ar"/>
@@ -771,7 +759,7 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="en">Paris</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:322 geon:2988507">Paris</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1906"/>
@@ -805,8 +793,8 @@
                             </editor>
                             <imprint>
                                 <pubPlace>
-                                    <placeName xml:lang="ar">القاهرة</placeName>
-                                    <placeName xml:lang="en">Cairo</placeName>
+                                    <placeName xml:lang="ar" change="#d5e42" ref="oape:place:226 geon:360630">القاهرة</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:226 geon:360630">Cairo</placeName>
                                 </pubPlace>
                                 <date type="start" when="1889-12-01" xml:lang="en">1889</date>
                                 <!-- <date type="end" when="1913" xml:lang="en">1914</date>-->
@@ -829,7 +817,7 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="en">London</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:331 geon:2643743">London</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date when="1785"/>
@@ -852,8 +840,8 @@
                             </editor>
                             <imprint>
                                 <pubPlace>
-                                    <placeName xml:lang="ar">al-Qāhira</placeName>
-                                    <placeName xml:lang="en">Cairo</placeName>
+                                    <placeName xml:lang="ar" change="#d5e42" ref="oape:place:226 geon:360630">al-Qāhira</placeName>
+                                    <placeName xml:lang="en" change="#d5e42" ref="oape:place:226 geon:360630">Cairo</placeName>
                                 </pubPlace>
                                 <date when="1898-09-15" xml:lang="en">1898</date>
                                 <date from="1898-09-15" to="1906" xml:lang="en">1898-1906</date>
@@ -891,10 +879,10 @@
                                     <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Ahliyya</orgName>
                                 </publisher>
                                 <pubPlace xml:lang="en">
-                                    <placeName ref="geon:276781" xml:lang="ar">بيروت</placeName>
-                                    <placeName ref="geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
-                                    <placeName ref="geon:276781" xml:lang="en">Beirut</placeName>
-                                    <placeName ref="geon:276781" xml:lang="fr">Beyrouth</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar" change="#d5e42">بيروت</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes" change="#d5e42">Bayrūt</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="en" change="#d5e42">Beirut</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="fr" change="#d5e42">Beyrouth</placeName>
                                 </pubPlace>
                                 <date calendar="#cal_gregorian" when="1908-09-22" xml:lang="en">22 September 1908, Tuesday</date>
                                 <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-09-22" when-custom="1326-08-25" xml:lang="ar-Latn-x-ijmes">25 Shaʿbān 1326, Tuesday</date>
