@@ -17,7 +17,7 @@
                 <p>this file is born-digital</p>
             </sourceDesc>
         </fileDesc>
-        <revisionDesc><tei:change when="2019-08-16" who="#pers_TG" xml:id="d5e42" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/gazetteer_levant-phd.TEIP5.xml">../data/tei/gazetteer_levant-phd.TEIP5.xml</tei:ref>) and to GeoNames IDs to <tei:gi>placeName</tei:gi>s without such references based on  <tei:gi>place</tei:gi>s mentioned in the authority file.</tei:change>
+        <revisionDesc><tei:change when="2019-08-16" who="#pers_TG" xml:id="d3e53" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml">../data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>) and VIAF to <tei:gi>persName</tei:gi>s without such references based on <tei:gi>person</tei:gi>s in the local authority file. If the source <tei:gi>persName</tei:gi> did not contain any further TEI mark-up, this has been added from the local authority file.</tei:change><tei:change when="2019-08-16" who="#pers_TG" xml:id="d5e42" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/gazetteer_levant-phd.TEIP5.xml">../data/tei/gazetteer_levant-phd.TEIP5.xml</tei:ref>) and to GeoNames IDs to <tei:gi>placeName</tei:gi>s without such references based on  <tei:gi>place</tei:gi>s mentioned in the authority file.</tei:change>
             <change when="2019-08-16" who="#pers_TG">Created this file</change>
         </revisionDesc>
     </teiHeader>
@@ -51,7 +51,7 @@
                                     al-Karamlī</persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName xml:id="persName_195.d1e5884" xml:lang="ar">
+                                <persName xml:id="persName_195.d1e5884" xml:lang="ar" change="#d3e53" ref="oape:pers:396">
                                     <forename xml:id="forename_224.d1e5885" xml:lang="ar">كاظم</forename>
                                     <surname xml:id="surname_195.d1e5888" xml:lang="ar">
                                         <addName type="nisbah">الدجيلي</addName>
@@ -594,7 +594,7 @@
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿIlm</title>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName xml:lang="ar" change="#d3e53" ref="oape:pers:3339 viaf:118641865">
                                     <roleName type="nobility">السيد</roleName>
                                     <forename>محمد</forename>
                                     <forename>علي</forename>
@@ -622,7 +622,11 @@
                             <title level="j" xml:lang="ar">الحياة</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥayāt</title>
                             <editor>
-                                <persName xml:lang="ar">محمد فريد وجدي</persName>
+                                <persName xml:lang="ar" change="#d3e53" ref="oape:pers:980 viaf:53094077">
+                            <forename xml:lang="ar">محمد</forename>
+                            <forename xml:lang="ar">فريد</forename>
+                            <surname xml:lang="ar">وجدي</surname>
+                        </persName>
                                 <persName xml:lang="ar-Latn-x-ijmes">Muḥammad Farīd Wajdī</persName>
                             </editor>
                             <imprint>
@@ -643,14 +647,14 @@
                             <idno type="OCLC">1034548778</idno>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName ref="viaf:37216757" xml:lang="ar">
+                                <persName ref="oape:pers:459 viaf:37216757" xml:lang="ar" change="#d3e53">
                                     <forename xml:lang="ar">عبد الغني</forename>
                                     <roleName type="title">أفندي</roleName>
                                     <surname xml:lang="ar">العريسي</surname>
                                 </persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName xml:lang="ar" change="#d3e53" ref="oape:pers:606">
                                     <forename xml:lang="ar">حسن</forename>
                                     <roleName type="title">أفندي</roleName>
                                     <surname xml:lang="ar">بيهم</surname>
@@ -778,7 +782,7 @@
                             <textLang mainLang="ar"/>
                             <editor>
                                 <persName xml:lang="ar-Latn-x-ijmes">Shaykh ʿAlī Yūsuf</persName>
-                                <persName xml:lang="ar">
+                                <persName xml:lang="ar" change="#d3e53" ref="oape:pers:3707">
                                     <roleName type="honorific">شيخ</roleName>
                                     <forename>علي</forename>
                                     <surname>يوسف</surname>
@@ -835,7 +839,10 @@
                             <idno type="OCLC">1034555409</idno>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName xml:lang="ar">إبراهيم اليازجي</persName>
+                                <persName xml:lang="ar" change="#d3e53" ref="oape:pers:2808 viaf:64154472">
+                            <forename xml:lang="ar">إبراهيم</forename>
+                            <surname xml:lang="ar">اليازجي</surname>
+                        </persName>
                                 <persName xml:lang="ar-Latn-x-ijmes">Ibrāhīm al-Yāzijī</persName>
                             </editor>
                             <imprint>
