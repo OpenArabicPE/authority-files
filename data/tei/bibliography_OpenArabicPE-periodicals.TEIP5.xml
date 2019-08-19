@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -20,7 +17,7 @@
                 <p>this file is born-digital</p>
             </sourceDesc>
         </fileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2019-08-19" who="#pers_TG" xml:lang="en" xml:id="d2e69">Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag>.</tei:change>
             <tei:change when="2019-08-16" who="#pers_TG" xml:id="d3e53" xml:lang="en">Added references to local authority file (
                 <tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml">../data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>
                 ) and VIAF to 
@@ -43,8 +40,7 @@
     <text xml:lang="ar">
         <body xml:lang="ar">
             <div type="item" xml:lang="ar">
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
                             <title level="j" type="sub" xml:lang="ar">مجلة شهرية ادبية علمية
@@ -52,7 +48,7 @@
                             <title corresp="sakhrit:jid:14" level="j" xml:lang="ar-Latn-x-ijmes">Lughat al-ʿArab</title>
                             <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla shahriyya
                                 adabiyya ʿilmiyya tārīkhiyya</title>
-                            <idno type="jid" xml:lang="ar">14</idno>
+                            <idno type="oape" change="#d2e69">1</idno><idno type="jid" xml:lang="ar">14</idno>
                             <idno type="OCLC">472450345</idno>
                             <idno type="URI">http://waqfeya.com/book.php?bid=6509</idno>
                             <idno type="URI">http://shamela.ws/index.php/book/36540</idno>
@@ -90,14 +86,12 @@
                             <biblScope from="1" to="1" unit="issue"/>
                             <!-- <biblScope from="505" unit="page">505</biblScope>-->
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:33" level="j" xml:lang="ar">المنار</title>
                             <title corresp="sakhrit:jid:33" level="j" xml:lang="ar-Latn-x-ijmes">al-Manār</title>
-                            <idno type="jid" xml:lang="ar">33</idno>
+                            <idno type="oape" change="#d2e69">2</idno><idno type="jid" xml:lang="ar">33</idno>
                             <idno type="OCLC">1588981</idno>
                             <idno type="URI">http://waqfeya.com/book.php?bid=7374</idno>
                             <idno type="URI">http://shamela.ws/index.php/book/6947</idno>
@@ -120,16 +114,14 @@
                             </imprint>
                             <biblScope unit="issue" xml:lang="ar">العدد رقم 12</biblScope>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:40" level="j" xml:lang="ar">الزهور</title>
                             <title corresp="sakhrit:jid:40" level="j" xml:lang="ar">مجلة أدبية فنية علمية</title>
                             <title corresp="sakhrit:jid:40" level="j" xml:lang="ar-Latn-x-ijmes">al-Zuhūr</title>
                             <title corresp="sakhrit:jid:40" level="j" xml:lang="ar-Latn-x-ijmes">Majalla adabiyya fanniyya ʿilmiyya</title>
-                            <idno type="jid" xml:lang="ar">40</idno>
+                            <idno type="oape" change="#d2e69">3</idno><idno type="jid" xml:lang="ar">40</idno>
                             <idno type="OCLC">1034545644</idno>
                             <idno type="URI">http://waqfeya.com/book.php?bid=6507</idno>
                             <idno type="URI">http://shamela.ws/index.php/book/36534</idno>
@@ -156,14 +148,12 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:106" level="j" xml:lang="ar">الأستاذ</title>
                             <title corresp="sakhrit:jid:106" level="j" xml:lang="ar-Latn-x-ijmes">al-Ustādh</title>
-                            <idno type="jid" xml:lang="ar">106</idno>
+                            <idno type="oape" change="#d2e69">4</idno><idno type="jid" xml:lang="ar">106</idno>
                             <idno type="OCLC">1036721166</idno>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
@@ -185,16 +175,14 @@
                             </imprint>
                             <biblScope unit="issue" xml:lang="ar">العدد رقم 1</biblScope>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:107" level="j" xml:lang="ar">المقتطف</title>
                             <title corresp="sakhrit:jid:107" level="j" xml:lang="ar">جريدة علمية وصناعية</title>
                             <title corresp="sakhrit:jid:107" level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtaṭaf</title>
                             <title corresp="sakhrit:jid:107" level="j" xml:lang="ar-Latn-x-ijmes">Jarīda ʿilmiyya wa-ṣināʿiyya</title>
-                            <idno type="jid" xml:lang="ar">107</idno>
+                            <idno type="oape" change="#d2e69">5</idno><idno type="jid" xml:lang="ar">107</idno>
                             <idno type="OCLC">931941685</idno>
                             <idno type="VIAF">189371777</idno>
                             <textLang mainLang="ar"/>
@@ -228,11 +216,10 @@
                             </imprint>
                             <biblScope unit="issue" xml:lang="ar">العدد رقم 1</biblScope>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
+                    </biblStruct><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:107" level="j" xml:lang="ar">المقتطف</title>
-                            <idno type="jid" xml:lang="ar">107</idno>
+                            <idno type="oape" change="#d2e69">6</idno><idno type="jid" xml:lang="ar">107</idno>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
                                 <persName ref="oape:pers:780 viaf:62958224" xml:lang="ar">
@@ -263,17 +250,15 @@
                             </imprint>
                             <!-- <biblScope unit="issue">العدد رقم 1</biblScope>-->
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:108" level="j" xml:lang="ar">المشرق</title>
                             <title level="j" type="sub">مجلة كاثوليكية تصدر مرة في الشهر برسوم وتصاوير عند اللزوم</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Mashriq</title>
                             <title level="j" xml:lang="ar-Latn-FR">Al-Machriq</title>
                             <title level="j" type="sub" xml:lang="ar-Latn-FR">revue catholique orientale bi-mensuelle</title>
-                            <idno type="jid" xml:lang="ar">108</idno>
+                            <idno type="oape" change="#d2e69">7</idno><idno type="jid" xml:lang="ar">108</idno>
                             <idno type="OCLC">473817521</idno>
                             <idno type="ISSN">1010-710X</idno>
                             <textLang mainLang="ar"/>
@@ -304,10 +289,8 @@
                             <biblScope from="1" to="1" unit="volume"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar">العدد رقم 1</biblScope>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:114" level="j" type="short" xml:lang="ar">الجامعة</title>
                             <title corresp="sakhrit:jid:114" level="j" xml:lang="ar">الجامعة العثمانية</title>
@@ -316,7 +299,7 @@
                             <title corresp="sakhrit:jid:114" level="j" xml:lang="ar-Latn-x-ijmes">al-Jāmiʿ a-ʿuthmāniyya</title>
                             <title corresp="sakhrit:jid:114" level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla siyāsiyya adabiyya ʿilmiyya
                                 tahdhībiyya</title>
-                            <idno type="jid" xml:lang="ar">114</idno>
+                            <idno type="oape" change="#d2e69">8</idno><idno type="jid" xml:lang="ar">114</idno>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
                                 <persName ref="oape:pers:2801 viaf:2749071" xml:lang="ar">
@@ -339,10 +322,8 @@
                             <biblScope from="1" to="1" unit="volume"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar">العدد رقم 1</biblScope>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct>
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct>
                         <monogr xml:lang="en">
                             <title level="j" xml:lang="ar">المقتبس</title>
                             <title level="j" type="sub" xml:lang="ar">مجلة أدبية علمية اجتماعية تصدر بالقاهرة في غرة كل شهر عربي</title>
@@ -350,7 +331,7 @@
                             <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla adabiyya ʿilmiyya ijtimāʿiyya tuṣadir bi-l-Qāhira fī gharrat kull shahr ʿarabī</title>
                             <title level="j" xml:lang="fr">Al-Moktabas</title>
                             <title level="j" type="sub" xml:lang="fr">Revue mensuelle, littéraire, scientifique &amp; Sociologique</title>
-                            <idno type="OCLC" xml:lang="en">4770057679</idno>
+                            <idno type="oape" change="#d2e69">9</idno><idno type="OCLC" xml:lang="en">4770057679</idno>
                             <idno type="OCLC" xml:lang="en">79440195</idno>
                             <idno type="aucr" xml:lang="en">07201136864</idno>
                             <idno type="shamela" xml:lang="en">26523</idno>
@@ -388,14 +369,12 @@
                             <biblScope from="1" to="1" unit="issue"/>
                             <biblScope from="1" to="56" unit="page"/>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:134" level="j" xml:lang="ar">الهلال</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Hilāl</title>
-                            <idno type="jid" xml:lang="ar">134</idno>
+                            <idno type="oape" change="#d2e69">10</idno><idno type="jid" xml:lang="ar">134</idno>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
                                 <persName ref="oape:pers:713 viaf:76496271" xml:lang="ar">
@@ -415,16 +394,14 @@
                             </imprint>
                             <biblScope unit="issue" xml:lang="ar">العدد رقم 1</biblScope>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:161" level="j" xml:lang="ar">البيان</title>
                             <title level="j" type="sub" xml:lang="ar">مجلة علمية أدبية طبية صناعية</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Bayān</title>
                             <title level="j" type="sub" xml:lang="ar">Majalla ʿilmiyya adabiyya ṭibbiyya ṣināʿiyya</title>
-                            <idno type="jid" xml:lang="ar">161</idno>
+                            <idno type="oape" change="#d2e69">11</idno><idno type="jid" xml:lang="ar">161</idno>
                             <idno type="OCLC">792754974</idno>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
@@ -453,14 +430,12 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl xml:lang="ar">
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl xml:lang="ar"><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title corresp="sakhrit:jid:278" level="j" xml:lang="ar">العرفان</title>
                             <title level="j" xml:lang="ar">al-ʿIrfān</title>
-                            <idno type="jid" xml:lang="ar">278</idno>
+                            <idno type="oape" change="#d2e69">12</idno><idno type="jid" xml:lang="ar">278</idno>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
                                 <persName ref="oape:pers:2805 viaf:306137154" xml:lang="ar">
@@ -481,223 +456,12 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
-                <listBibl>
-                    <biblStruct xml:lang="en">
-                        <monogr xml:lang="en">
-                            <title level="j" xml:lang="ar">الحقائق</title>
-                            <title level="j" type="sub" xml:lang="ar">مجلة علمية دينية اخلاقية اجتماعية</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥaqāʾiq</title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿilmiyya dīniyya akhlāqiyya ijtimāʿiyya</title>
-                            <idno type="OCLC" xml:lang="en">644997575</idno>
-                            <idno type="OCLC" xml:lang="en">145393412</idno>
-                            <idno type="OCLC" xml:lang="en">145289742</idno>
-                            <idno type="epub" xml:lang="en">urn:uuid:381100bcebe62d09ade63dd41b7ddd38</idno>
-                            <idno type="shamela" xml:lang="en">29676</idno>
-                            <idno type="zenodo" xml:lang="en">52619834</idno>
-                            <editor ref="oape:pers:270 viaf:4795364" xml:lang="en">
-                                <persName ref="oape:pers:270 viaf:4795364" xml:lang="ar">
-                                    <forename xml:lang="ar">عبد القادر</forename>
-                                    <surname xml:lang="ar">الإسكندراني</surname>
-                                </persName>
-                                <persName ref="oape:pers:270 viaf:4795364" xml:lang="ar-Latn-x-ijmes">
-                                    <forename xml:lang="ar-Latn-x-ijmes">ʿAbd al-Qādir</forename>
-                                    <surname xml:lang="ar-Latn-x-ijmes">al-Iskandarānī</surname>
-                                </persName>
-                            </editor>
-                            <imprint xml:lang="en">
-                                <publisher xml:lang="en">
-                                    <orgName xml:lang="ar">شركة الحقائق</orgName>
-                                    <orgName xml:lang="ar-Latn-x-ijmes">Sharikat al-Ḥaqāiq</orgName>
-                                </publisher>
-                                <publisher xml:lang="en">
-                                    <orgName xml:lang="ar">مطبعة المقاصد</orgName>
-                                    <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Maqāṣid</orgName>
-                                </publisher>
-                                <pubPlace xml:lang="en">
-                                    <placeName ref="oape:place:61 geon:170654" xml:lang="ar">دمشق</placeName>
-                                    <placeName ref="oape:place:61 geon:170654" xml:lang="en">Damascus</placeName>
-                                </pubPlace>
-                                <date datingMethod="#cal_gregorian" when="1910-08-07"/>
-                                <date datingMethod="#cal_islamic" when="1910-08-07" when-custom="1328-07-30"/>
-                                <date datingMethod="#cal_ottomanfiscal" when="1910-08-07" when-custom="1326-05-25"/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume"/>
-                            <biblScope from="1" to="1" unit="issue"/>
-                            <biblScope from="1" to="32" unit="page"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">المجلة</title>
-                            <title level="j" xml:lang="ar">المجلة الباريسية</title>
-                            <title level="j" xml:lang="fr">La Revue</title>
-                            <idno type="OCLC">472961924</idno>
-                            <idno type="ISSN">1153-6012</idno>
-                            <textLang mainLang="fr"/>
-                            <editor>
-                                <persName xml:lang="en">
-                                    <forename/>
-                                    <surname/>
-                                </persName>
-                            </editor>
-                            <imprint>
-                                <publisher/>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:322 geon:2988507" xml:lang="en">Paris</placeName>
-                                </pubPlace>
-                            </imprint>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">مجلة المجلات</title>
-                            <title level="j" xml:lang="fr">Revue des Revues</title>
-                            <idno type="OCLC">472961896</idno>
-                            <idno type="OCLC">504227281</idno>
-                            <idno type="ISSN">1153-6004</idno>
-                            <textLang mainLang="fr"/>
-                            <editor>
-                                <persName xml:lang="en">
-                                    <forename/>
-                                    <surname/>
-                                </persName>
-                            </editor>
-                            <imprint>
-                                <publisher/>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:322 geon:2988507" xml:lang="en">Paris</placeName>
-                                </pubPlace>
-                            </imprint>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">مجلة المجلات</title>
-                            <title level="j" xml:lang="ar">مجلة المجلات الأميركية</title>
-                            <title level="j" xml:lang="en">American Review of Reviews</title>
-                            <idno type="OCLC">19000299</idno>
-                            <idno type="OCLC">565522016</idno>
-                            <textLang mainLang="en"/>
-                            <imprint>
-                                <publisher/>
-                                <pubPlace/>
-                            </imprint>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">مجلة المجلات</title>
-                            <title level="j" xml:lang="ar">مجلة المجلات الإنكليزية</title>
-                            <title level="j" xml:lang="en">The Review of Reviews</title>
-                            <idno type="OCLC">297351216</idno>
-                            <textLang mainLang="en"/>
-                            <editor>
-                                <persName xml:lang="en">
-                                    <forename>William</forename>
-                                    <surname>Stead</surname>
-                                </persName>
-                            </editor>
-                            <imprint>
-                                <publisher/>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:331 geon:2643743" xml:lang="en">London</placeName>
-                                </pubPlace>
-                            </imprint>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
-                        <monogr xml:lang="ar">
-                            <title level="j" xml:lang="ar">العلم</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿIlm</title>
-                            <textLang mainLang="ar"/>
-                            <editor xml:lang="ar">
-                                <persName change="#d3e53" ref="oape:pers:3339 viaf:118641865" xml:lang="ar">
-                                    <roleName type="nobility">السيد</roleName>
-                                    <forename>محمد</forename>
-                                    <forename>علي</forename>
-                                    <surname>
-                                        <addName type="khitab">هبة الدين</addName>
-                                    </surname>
-                                </persName>
-                            </editor>
-                            <imprint xml:lang="ar">
-                                <publisher/>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="en">Baghdad</placeName>
-                                </pubPlace>
-                                <!-- this is seems to be the first issue -->
-                                <date when="" xml:lang="ar"/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">الحياة</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥayāt</title>
-                            <editor>
-                                <persName change="#d3e53" ref="oape:pers:980 viaf:53094077" xml:lang="ar">
-                                    <forename xml:lang="ar">محمد</forename>
-                                    <forename xml:lang="ar">فريد</forename>
-                                    <surname xml:lang="ar">وجدي</surname>
-                                </persName>
-                                <persName xml:lang="ar-Latn-x-ijmes">Muḥammad Farīd Wajdī</persName>
-                            </editor>
-                            <imprint>
-                                <pubPlace>
-                                    <placeName xml:lang="en">Suez</placeName>
-                                </pubPlace>
-                                <date type="start" when="1899-06-09" xml:lang="en">1899</date>
-                                <!-- <date type="end" when="1915" xml:lang="en">1915</date>-->
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">المفيد</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Mufīd</title>
-                            <idno type="OCLC">1034548778</idno>
-                            <textLang mainLang="ar"/>
-                            <editor>
-                                <persName change="#d3e53" ref="oape:pers:459 viaf:37216757" xml:lang="ar">
-                                    <forename xml:lang="ar">عبد الغني</forename>
-                                    <roleName type="title">أفندي</roleName>
-                                    <surname xml:lang="ar">العريسي</surname>
-                                </persName>
-                            </editor>
-                            <editor xml:lang="ar">
-                                <persName change="#d3e53" ref="oape:pers:606" xml:lang="ar">
-                                    <forename xml:lang="ar">حسن</forename>
-                                    <roleName type="title">أفندي</roleName>
-                                    <surname xml:lang="ar">بيهم</surname>
-                                </persName>
-                            </editor>
-                            <imprint xml:lang="ar">
-                                <publisher/>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="ar">بيروت</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
-                                </pubPlace>
-                                <!-- this is seems to be the first issue -->
-                                <date when="1911" xml:lang="ar"/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
+                    </biblStruct></listBibl>
+                <listBibl><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="fr-Arab-AR">الطان</title>
                             <title level="j" xml:lang="fr">Le Temps</title>
-                            <idno type="OCLC">263593774</idno>
+                            <idno type="oape" change="#d2e69">21</idno><idno type="OCLC">263593774</idno>
                             <textLang mainLang="fr"/>
                             <editor>
                                 <persName/>
@@ -713,126 +477,13 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
-                        <monogr xml:lang="ar">
-                            <title level="j" xml:lang="ar">العالمين</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿĀlamayn</title>
-                            <title level="j" xml:lang="fr"/>
-                            <textLang mainLang="fr"/>
-                            <editor>
-                                <persName/>
-                            </editor>
-                            <imprint xml:lang="ar">
-                                <publisher/>
-                                <pubPlace/>
-                                <!-- this is seems to be the first issue -->
-                                <date when=""/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥasnāʾ</title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majallat Nisāʾiyya Adabiyya Akhlāqiyya Ijtimāʿiyya</title>
-                            <title level="j" xml:lang="ar">الحسناء</title>
-                            <title level="j" type="sub" xml:lang="ar">مجلة نسائية ادبية اخلاقية اجتماعية</title>
-                            <idno type="OCLC">792756327</idno>
-                            <idno type="OCLC">792755433</idno>
-                            <idno type="OCLC">1034555587</idno>
-                            <idno type="OCLC">1034550210</idno>
-                            <idno type="OCLC">672047031</idno>
-                            <editor>
-                                <persName xml:lang="ar-Lang-x-ijmes">Jirjī Niqūlā Bāz</persName>
-                                <persName ref="oape:pers:579 viaf:311789687" xml:lang="ar">
-                                    <forename>جرجي</forename>
-                                    <forename>نقولا</forename>
-                                    <surname>باز</surname>
-                                </persName>
-                            </editor>
-                            <imprint>
-                                <publisher>
-                                    <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat Jarīdat Ḥadīqat al-Akhbār</orgName>
-                                    <orgName xml:lang="ar">مطبعة جريدة حديقة الاخبار</orgName>
-                                </publisher>
-                                <pubPlace>
-                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
-                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar">بيروت</placeName>
-                                </pubPlace>
-                                <date when="1909-06-20" xml:lang="ar-Latn-x-ijmes">20 Jun 1909</date>
-                                <date calendar="#cal_julian" datingMethod="#cal_julian" when="1909-06-20" when-custom="1909-06-07" xml:lang="ar-Latn-x-ijmes">7 Ḥazīrān 1909, Sunday</date>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="issue"/>
-                            <biblScope from="1" to="1" unit="volume"/>
-                            <biblScope from="1" to="32" unit="page"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
-                        <monogr xml:lang="ar">
-                            <title level="j" xml:lang="ar">مجلة العالم الإسلامي</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">Majallat al-ʿĀlam al-Islamī</title>
-                            <title level="j" xml:lang="fr">Revue du Monde Musulman</title>
-                            <idno type="OCLC">1681243</idno>
-                            <textLang mainLang="fr"/>
-                            <editor>
-                                <persName/>
-                            </editor>
-                            <imprint xml:lang="ar">
-                                <publisher/>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:322 geon:2988507" xml:lang="en">Paris</placeName>
-                                </pubPlace>
-                                <!-- this is seems to be the first issue -->
-                                <date when="1906"/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">المؤيد</title>
-                            <title level="j" type="sub" xml:lang="ar">جريدة اسبوعية سياسية تجارية</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muʾayyad</title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda usbūʿiyya siyāsiyya tujjāriyya</title>
-                            <idno type="OCLC">792755902</idno>
-                            <textLang mainLang="ar"/>
-                            <editor>
-                                <persName xml:lang="ar-Latn-x-ijmes">Shaykh ʿAlī Yūsuf</persName>
-                                <persName change="#d3e53" ref="oape:pers:3707" xml:lang="ar">
-                                    <roleName type="honorific">شيخ</roleName>
-                                    <forename>علي</forename>
-                                    <surname>يوسف</surname>
-                                </persName>
-                            </editor>
-                            <editor>
-                                <persName xml:lang="ar-Latn-x-ijmes">Aḥmad Mādī</persName>
-                                <persName xml:lang="ar">
-                                    <forename>أحمد</forename>
-                                    <surname>مادي</surname>
-                                </persName>
-                            </editor>
-                            <imprint>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:226 geon:360630" xml:lang="ar">القاهرة</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:226 geon:360630" xml:lang="en">Cairo</placeName>
-                                </pubPlace>
-                                <date type="start" when="1889-12-01" xml:lang="en">1889</date>
-                                <!-- <date type="end" when="1913" xml:lang="en">1914</date>-->
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
+                    </biblStruct><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="en-Arab-AR">التيمس</title>
                             <title level="j" xml:lang="en">The Times</title>
                             <title level="j" xml:lang="en">London times</title>
                             <title level="j" xml:lang="en">Times of London</title>
-                            <idno type="OCLC">992611467</idno>
+                            <idno type="oape" change="#d2e69">26</idno><idno type="OCLC">992611467</idno>
                             <textLang mainLang="en"/>
                             <editor>
                                 <persName/>
@@ -848,41 +499,42 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct>
+                    </biblStruct><biblStruct>
                         <monogr>
-                            <title level="j" xml:lang="ar">الضياء</title>
-                            <title level="j" type="sub" xml:lang="ar">مجلة علمية أدبية صحية صناعية</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḍiyāʾ</title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿilmiyya adabiyya ṣiḥḥiyya ṣināʿiyya</title>
-                            <idno type="OCLC">1034555409</idno>
+                            <title level="j" xml:lang="ar">الآثار</title>
+                            <title level="j" type="sub" xml:lang="ar">مجلة عامة مصورة</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Āthār</title>
+                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿāmma muṣawwara</title>
+                            <title level="j" xml:lang="ar">مجلة الآثار</title>
+                            <idno type="oape" change="#d2e69">33</idno><idno type="OCLC">1034551122</idno>
                             <textLang mainLang="ar"/>
-                            <editor>
-                                <persName change="#d3e53" ref="oape:pers:2808 viaf:64154472" xml:lang="ar">
-                                    <forename xml:lang="ar">إبراهيم</forename>
-                                    <surname xml:lang="ar">اليازجي</surname>
-                                </persName>
-                                <persName xml:lang="ar-Latn-x-ijmes">Ibrāhīm al-Yāzijī</persName>
+                            <!--شهرية-->
+                            <editor xml:lang="ar">
+                                <persName xml:lang="ar">
+                                    <forename>عيسى</forename>أفندي 
+                                    <forename>اسكندر</forename>
+                                    <surname>المعلوف</surname></persName>
                             </editor>
                             <imprint>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:226 geon:360630" xml:lang="ar">al-Qāhira</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:226 geon:360630" xml:lang="en">Cairo</placeName>
+                                <publisher/>
+                                <pubPlace xml:lang="ar">
+                                    <placeName ref="geon:266045" xml:lang="ar">زحلة</placeName>
+                                    <placeName xml:lang="ar-Latn-x-ijmes">Zaḥla</placeName>
                                 </pubPlace>
-                                <date when="1898-09-15" xml:lang="en">1898</date>
-                                <date from="1898-09-15" to="1906" xml:lang="en">1898-1906</date>
+                                <date when="1911"/>
+                                <date from="1911" to="1928"/>
                             </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="volume"/>
+                            <biblScope from="1" to="1" unit="issue"/>
+                            <biblScope from="1" to="32" unit="page"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct>
+                    </biblStruct><biblStruct>
                         <monogr>
                             <title level="j" xml:lang="ar">الاتحاد العثماني</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
                             <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
                             <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
-                            <idno type="OCLC" xml:lang="en">42900564</idno>
+                            <idno type="oape" change="#d2e69">28</idno><idno type="OCLC" xml:lang="en">42900564</idno>
                             <idno type="OCLC" xml:lang="en">506290085</idno>
                             <idno type="OCLC" xml:lang="en">792755286</idno>
                             <textLang mainLang="ar"/>
@@ -917,158 +569,12 @@
                             <biblScope from="1" to="1" unit="issue"/>
                             <biblScope from="1" to="4" unit="page"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">الحقوق</title>
-                            <title level="j" type="sub" xml:lang="ar">مجلة حقوقية</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥuqūq</title>
-                            <textLang mainLang="ar"/>
-                            <!--   نصف شهرية  -->
-                            <editor xml:lang="ar">
-                                <persName xml:lang="ar">سليم بك المعوشي</persName>
-                            </editor>
-                            <editor xml:lang="ar">
-                                <persName xml:lang="ar">ملحم بك خلف</persName>
-                            </editor>
-                            <imprint>
-                                <publisher/>
-                                <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:273607" xml:lang="ar">لبنان</placeName>
-                                    <placeName xml:lang="ar-Latn-x-ijmes">Lubnān</placeName>
-                                    <placeName xml:lang="en">Lebanon</placeName>
-                                </pubPlace>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume"/>
-                            <biblScope from="1" to="1" unit="issue"/>
-                            <biblScope from="1" to="32" unit="page" xml:lang="ar"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">الحقيقة</title>
-                            <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية أدبية</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥaqīqa</title>
-                            <title level="j" type="sub" xml:lang="ar">Jarīda yawmiyya siyāsiyya adabiyya</title>
-                            <idno type="OCLC">1034550756</idno>
-                            <textLang mainLang="ar"/>
-                            <editor>
-                                <persName xml:lang="ar">شيخ أحمد عباس الأزهري</persName>
-                            </editor>
-                            <editor xml:lang="ar">
-                                <persName ref="viaf:311789757" xml:lang="ar">
-                                    <forename xml:lang="ar">حسن</forename>
-                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
-                                    <surname xml:lang="ar">الناطور</surname>
-                                </persName>
-                            </editor>
-                            <imprint>
-                                <publisher/>
-                                <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="ar">بيروت</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName>
-                                </pubPlace>
-                                <date when="1909"/>
-                                <date from="1909" to="1921"/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume"/>
-                            <biblScope from="1" to="1" unit="issue"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <!-- جريدة -->
-                        <monogr>
-                            <title level="j" xml:lang="ar">الوطن</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Waṭan</title>
-                            <textLang mainLang="ar"/>
-                            <editor xml:lang="ar">
-                                <persName ref="viaf:60135237" xml:lang="ar">
-                                    <forename xml:lang="ar">شبلي</forename>
-                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
-                                    <surname xml:lang="ar">ملاط</surname>
-                                </persName>
-                            </editor>
-                            <editor xml:lang="ar">
-                                <persName ref="viaf:123147905332979092816" xml:lang="ar">
-                                    <forename xml:lang="ar">نجيب</forename>
-                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
-                                    <surname>شوشاني</surname>
-                                </persName>
-                            </editor>
-                            <editor>
-                                <persName xml:lang="ar">
-                                    <forename>فيليكس</forename>
-                                    <roleName type="title">أفندي</roleName>
-                                    <surname>فارس</surname>
-                                </persName>
-                            </editor>
-                            <imprint>
-                                <publisher/>
-                                <pubPlace>
-                                    <placeName>بيروت</placeName>
-                                </pubPlace>
-                                <date when="1908"/>
-                                <date from="1908"/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume"/>
-                            <biblScope from="1" to="1" unit="issue"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
-                        <monogr xml:lang="ar">
-                            <title level="j" xml:lang="ar">طبيب العائلة</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">Ṭabīb al-ʿĀʾila</title>
-                            <textLang mainLang="ar"/>
-                            <editor>
-                                <persName/>
-                            </editor>
-                            <imprint xml:lang="ar">
-                                <publisher/>
-                                <pubPlace/>
-                                <!-- this is seems to be the first issue -->
-                                <date/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
-                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct>
-                        <monogr>
-                            <title level="j" xml:lang="ar">الآثار</title>
-                            <title level="j" type="sub" xml:lang="ar">مجلة عامة مصورة</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Āthār</title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿāmma muṣawwara</title>
-                            <title level="j" xml:lang="ar">مجلة الآثار</title>
-                            <idno type="OCLC">1034551122</idno>
-                            <textLang mainLang="ar"/>
-                            <!--شهرية-->
-                            <editor xml:lang="ar">
-                                <persName xml:lang="ar">
-                                    <forename>عيسى</forename>أفندي 
-                                    <forename>اسكندر</forename>
-                                    <surname>المعلوف</surname></persName>
-                            </editor>
-                            <imprint>
-                                <publisher/>
-                                <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:266045" xml:lang="ar">زحلة</placeName>
-                                    <placeName xml:lang="ar-Latn-x-ijmes">Zaḥla</placeName>
-                                </pubPlace>
-                                <date when="1911"/>
-                                <date from="1911" to="1928"/>
-                            </imprint>
-                            <biblScope from="1" to="1" unit="volume"/>
-                            <biblScope from="1" to="1" unit="issue"/>
-                            <biblScope from="1" to="32" unit="page"/>
-                        </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar-Latn-x-ijmes">
+                    </biblStruct><biblStruct xml:lang="ar-Latn-x-ijmes">
                         <monogr xml:lang="ar-Latn-x-ijmes">
                             <title level="j" xml:lang="ar">الجنان</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jinān</title>
                             <!-- Gale edition -->
-                            <idno type="OCLC" xml:lang="en">987291181</idno>
+                            <idno type="oape" change="#d2e69">34</idno><idno type="OCLC" xml:lang="en">987291181</idno>
                             <!-- HathiTrust -->
                             <idno type="OCLC" xml:lang="en">672061050</idno>
                             <!-- Google, vol. 9 -->
@@ -1118,8 +624,163 @@
                             <biblScope from="1" to="1" unit="issue" xml:lang="en">1</biblScope>
                             <biblScope from="1" to="36" unit="page" xml:lang="en">1-36</biblScope>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥasnāʾ</title>
+                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majallat Nisāʾiyya Adabiyya Akhlāqiyya Ijtimāʿiyya</title>
+                            <title level="j" xml:lang="ar">الحسناء</title>
+                            <title level="j" type="sub" xml:lang="ar">مجلة نسائية ادبية اخلاقية اجتماعية</title>
+                            <idno type="oape" change="#d2e69">23</idno><idno type="OCLC">792756327</idno>
+                            <idno type="OCLC">792755433</idno>
+                            <idno type="OCLC">1034555587</idno>
+                            <idno type="OCLC">1034550210</idno>
+                            <idno type="OCLC">672047031</idno>
+                            <editor>
+                                <persName xml:lang="ar-Lang-x-ijmes">Jirjī Niqūlā Bāz</persName>
+                                <persName ref="oape:pers:579 viaf:311789687" xml:lang="ar">
+                                    <forename>جرجي</forename>
+                                    <forename>نقولا</forename>
+                                    <surname>باز</surname>
+                                </persName>
+                            </editor>
+                            <imprint>
+                                <publisher>
+                                    <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat Jarīdat Ḥadīqat al-Akhbār</orgName>
+                                    <orgName xml:lang="ar">مطبعة جريدة حديقة الاخبار</orgName>
+                                </publisher>
+                                <pubPlace>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                    <placeName ref="oape:place:26 geon:276781" xml:lang="ar">بيروت</placeName>
+                                </pubPlace>
+                                <date when="1909-06-20" xml:lang="ar-Latn-x-ijmes">20 Jun 1909</date>
+                                <date calendar="#cal_julian" datingMethod="#cal_julian" when="1909-06-20" when-custom="1909-06-07" xml:lang="ar-Latn-x-ijmes">7 Ḥazīrān 1909, Sunday</date>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="issue"/>
+                            <biblScope from="1" to="1" unit="volume"/>
+                            <biblScope from="1" to="32" unit="page"/>
+                        </monogr>
+                    </biblStruct><biblStruct xml:lang="en">
+                        <monogr xml:lang="en">
+                            <title level="j" xml:lang="ar">الحقائق</title>
+                            <title level="j" type="sub" xml:lang="ar">مجلة علمية دينية اخلاقية اجتماعية</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥaqāʾiq</title>
+                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿilmiyya dīniyya akhlāqiyya ijtimāʿiyya</title>
+                            <idno type="oape" change="#d2e69">13</idno><idno type="OCLC" xml:lang="en">644997575</idno>
+                            <idno type="OCLC" xml:lang="en">145393412</idno>
+                            <idno type="OCLC" xml:lang="en">145289742</idno>
+                            <idno type="epub" xml:lang="en">urn:uuid:381100bcebe62d09ade63dd41b7ddd38</idno>
+                            <idno type="shamela" xml:lang="en">29676</idno>
+                            <idno type="zenodo" xml:lang="en">52619834</idno>
+                            <editor ref="oape:pers:270 viaf:4795364" xml:lang="en">
+                                <persName ref="oape:pers:270 viaf:4795364" xml:lang="ar">
+                                    <forename xml:lang="ar">عبد القادر</forename>
+                                    <surname xml:lang="ar">الإسكندراني</surname>
+                                </persName>
+                                <persName ref="oape:pers:270 viaf:4795364" xml:lang="ar-Latn-x-ijmes">
+                                    <forename xml:lang="ar-Latn-x-ijmes">ʿAbd al-Qādir</forename>
+                                    <surname xml:lang="ar-Latn-x-ijmes">al-Iskandarānī</surname>
+                                </persName>
+                            </editor>
+                            <imprint xml:lang="en">
+                                <publisher xml:lang="en">
+                                    <orgName xml:lang="ar">شركة الحقائق</orgName>
+                                    <orgName xml:lang="ar-Latn-x-ijmes">Sharikat al-Ḥaqāiq</orgName>
+                                </publisher>
+                                <publisher xml:lang="en">
+                                    <orgName xml:lang="ar">مطبعة المقاصد</orgName>
+                                    <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Maqāṣid</orgName>
+                                </publisher>
+                                <pubPlace xml:lang="en">
+                                    <placeName ref="oape:place:61 geon:170654" xml:lang="ar">دمشق</placeName>
+                                    <placeName ref="oape:place:61 geon:170654" xml:lang="en">Damascus</placeName>
+                                </pubPlace>
+                                <date datingMethod="#cal_gregorian" when="1910-08-07"/>
+                                <date datingMethod="#cal_islamic" when="1910-08-07" when-custom="1328-07-30"/>
+                                <date datingMethod="#cal_ottomanfiscal" when="1910-08-07" when-custom="1326-05-25"/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume"/>
+                            <biblScope from="1" to="1" unit="issue"/>
+                            <biblScope from="1" to="32" unit="page"/>
+                        </monogr>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">الحقوق</title>
+                            <title level="j" type="sub" xml:lang="ar">مجلة حقوقية</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥuqūq</title>
+                            <textLang mainLang="ar"/>
+                            <!--   نصف شهرية  -->
+                            <editor xml:lang="ar">
+                                <persName xml:lang="ar">سليم بك المعوشي</persName>
+                            </editor>
+                            <editor xml:lang="ar">
+                                <persName xml:lang="ar">ملحم بك خلف</persName>
+                            </editor>
+                            <imprint>
+                                <publisher/>
+                                <pubPlace xml:lang="ar">
+                                    <placeName ref="geon:273607" xml:lang="ar">لبنان</placeName>
+                                    <placeName xml:lang="ar-Latn-x-ijmes">Lubnān</placeName>
+                                    <placeName xml:lang="en">Lebanon</placeName>
+                                </pubPlace>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume"/>
+                            <biblScope from="1" to="1" unit="issue"/>
+                            <biblScope from="1" to="32" unit="page" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">الحقيقة</title>
+                            <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية أدبية</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥaqīqa</title>
+                            <title level="j" type="sub" xml:lang="ar">Jarīda yawmiyya siyāsiyya adabiyya</title>
+                            <idno type="oape" change="#d2e69">30</idno><idno type="OCLC">1034550756</idno>
+                            <textLang mainLang="ar"/>
+                            <editor>
+                                <persName xml:lang="ar">شيخ أحمد عباس الأزهري</persName>
+                            </editor>
+                            <editor xml:lang="ar">
+                                <persName ref="viaf:311789757" xml:lang="ar">
+                                    <forename xml:lang="ar">حسن</forename>
+                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
+                                    <surname xml:lang="ar">الناطور</surname>
+                                </persName>
+                            </editor>
+                            <imprint>
+                                <publisher/>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="ar">بيروت</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName>
+                                </pubPlace>
+                                <date when="1909"/>
+                                <date from="1909" to="1921"/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume"/>
+                            <biblScope from="1" to="1" unit="issue"/>
+                        </monogr>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">الحياة</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥayāt</title>
+                            <editor>
+                                <persName change="#d3e53" ref="oape:pers:980 viaf:53094077" xml:lang="ar">
+                                    <forename xml:lang="ar">محمد</forename>
+                                    <forename xml:lang="ar">فريد</forename>
+                                    <surname xml:lang="ar">وجدي</surname>
+                                </persName>
+                                <persName xml:lang="ar-Latn-x-ijmes">Muḥammad Farīd Wajdī</persName>
+                            </editor>
+                            <imprint>
+                                <pubPlace>
+                                    <placeName xml:lang="en">Suez</placeName>
+                                </pubPlace>
+                                <date type="start" when="1899-06-09" xml:lang="en">1899</date>
+                                <!-- <date type="end" when="1915" xml:lang="en">1915</date>-->
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct xml:lang="ar">
                         <!-- daily newspaper -->
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">الرأي العام</title>
@@ -1142,8 +803,35 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
+                    </biblStruct><biblStruct xml:lang="ar">
+                        <!-- there are numeorus other newspapers of the same title. at least one from India and another from Egypt are referenced in al-Manār -->
+                        <monogr xml:lang="ar">
+                            <title level="j" xml:lang="ar">الرياض</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Riyāḍ</title>
+                            <textLang mainLang="ar"/>
+                            <editor>
+                                <persName xml:lang="ar">
+                                    <forename>سليمان</forename>
+                                    <surname>الدخيل</surname>
+                                </persName>
+                            </editor>
+                            <imprint xml:lang="ar">
+                                <publisher>
+                                    <orgName xml:lang="ar">مطبعة الشابندر</orgName>
+                                </publisher>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="en">Baghdad</placeName>
+                                </pubPlace>
+                                <!-- this is seems to be the first issue -->
+                                <date when="1910"/>
+                                <date calendar="#cal_islamic" datingMethod="#cal_islamic" notAfter="1911-01-01" notBefore="1910-01-13" when-custom="1328">سنة ١٣٢٨</date>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <!-- جريدة -->
                             <title level="j" xml:lang="ar">الزوراء</title>
@@ -1165,15 +853,40 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">الضياء</title>
+                            <title level="j" type="sub" xml:lang="ar">مجلة علمية أدبية صحية صناعية</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḍiyāʾ</title>
+                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿilmiyya adabiyya ṣiḥḥiyya ṣināʿiyya</title>
+                            <idno type="oape" change="#d2e69">27</idno><idno type="OCLC">1034555409</idno>
+                            <textLang mainLang="ar"/>
+                            <editor>
+                                <persName change="#d3e53" ref="oape:pers:2808 viaf:64154472" xml:lang="ar">
+                                    <forename xml:lang="ar">إبراهيم</forename>
+                                    <surname xml:lang="ar">اليازجي</surname>
+                                </persName>
+                                <persName xml:lang="ar-Latn-x-ijmes">Ibrāhīm al-Yāzijī</persName>
+                            </editor>
+                            <imprint>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:226 geon:360630" xml:lang="ar">al-Qāhira</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:226 geon:360630" xml:lang="en">Cairo</placeName>
+                                </pubPlace>
+                                <date when="1898-09-15" xml:lang="en">1898</date>
+                                <date from="1898-09-15" to="1906" xml:lang="en">1898-1906</date>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <!-- مجلة -->
                             <title level="j" xml:lang="ar">الطبيب</title>
                             <title level="j" type="sub" xml:lang="ar">مجلة طبية علمية صناعية</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ṭabīb</title>
                             <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ṭibbiyya ʿilmiyya ṣināʿiyya</title>
-                            <idno type="OCLC">173830042</idno>
+                            <idno type="oape" change="#d2e69">37</idno><idno type="OCLC">173830042</idno>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
                                 <persName ref="oape:pers:2808 viaf:64154472" xml:lang="ar">
@@ -1203,8 +916,44 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="en">
+                    </biblStruct><biblStruct xml:lang="ar">
+                        <monogr xml:lang="ar">
+                            <title level="j" xml:lang="ar">العالمين</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿĀlamayn</title>
+                            <title level="j" xml:lang="fr"/>
+                            <textLang mainLang="fr"/>
+                            <editor>
+                                <persName/>
+                            </editor>
+                            <imprint xml:lang="ar">
+                                <publisher/>
+                                <pubPlace/>
+                                <!-- this is seems to be the first issue -->
+                                <date when=""/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct xml:lang="ar">
+                        <monogr xml:lang="ar">
+                            <!-- جريدة -->
+                            <title level="j" xml:lang="ar">العرب</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿArab</title>
+                            <textLang mainLang="ar"/>
+                            <editor>
+                                <persName ref="oape:pers:125">عبيد الله</persName>
+                            </editor>
+                            <imprint xml:lang="ar">
+                                <publisher/>
+                                <!-- <placeName>آيدين</placeName>? -->
+                                <pubPlace/>
+                                <!-- this is seems to be the first issue -->
+                                <date/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct xml:lang="en">
                         <monogr xml:lang="en">
                             <title level="j" xml:lang="ar">العصر الجديد</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿAṣr al-Jadīd</title>
@@ -1240,28 +989,35 @@
                             <biblScope from="53" to="53" unit="issue"/>
                             <biblScope from="1" to="4" unit="page"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
+                    </biblStruct><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
-                            <!-- جريدة -->
-                            <title level="j" xml:lang="ar">العرب</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿArab</title>
+                            <title level="j" xml:lang="ar">العلم</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿIlm</title>
                             <textLang mainLang="ar"/>
-                            <editor>
-                                <persName ref="oape:pers:125">عبيد الله</persName>
+                            <editor xml:lang="ar">
+                                <persName change="#d3e53" ref="oape:pers:3339 viaf:118641865" xml:lang="ar">
+                                    <roleName type="nobility">السيد</roleName>
+                                    <forename>محمد</forename>
+                                    <forename>علي</forename>
+                                    <surname>
+                                        <addName type="khitab">هبة الدين</addName>
+                                    </surname>
+                                </persName>
                             </editor>
                             <imprint xml:lang="ar">
                                 <publisher/>
-                                <!-- <placeName>آيدين</placeName>? -->
-                                <pubPlace/>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="en">Baghdad</placeName>
+                                </pubPlace>
                                 <!-- this is seems to be the first issue -->
-                                <date/>
+                                <date when="" xml:lang="ar"/>
                             </imprint>
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
+                    </biblStruct><biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">الكلية</title>
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Kulliyya</title>
@@ -1278,37 +1034,225 @@
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                    <biblStruct xml:lang="ar">
-                        <!-- there are numeorus other newspapers of the same title. at least one from India and another from Egypt are referenced in al-Manār -->
-                        <monogr xml:lang="ar">
-                            <title level="j" xml:lang="ar">الرياض</title>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Riyāḍ</title>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">المؤيد</title>
+                            <title level="j" type="sub" xml:lang="ar">جريدة اسبوعية سياسية تجارية</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muʾayyad</title>
+                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda usbūʿiyya siyāsiyya tujjāriyya</title>
+                            <idno type="oape" change="#d2e69">25</idno><idno type="OCLC">792755902</idno>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName xml:lang="ar">
-                                    <forename>سليمان</forename>
-                                    <surname>الدخيل</surname>
+                                <persName xml:lang="ar-Latn-x-ijmes">Shaykh ʿAlī Yūsuf</persName>
+                                <persName change="#d3e53" ref="oape:pers:3707" xml:lang="ar">
+                                    <roleName type="honorific">شيخ</roleName>
+                                    <forename>علي</forename>
+                                    <surname>يوسف</surname>
                                 </persName>
                             </editor>
-                            <imprint xml:lang="ar">
-                                <publisher>
-                                    <orgName xml:lang="ar">مطبعة الشابندر</orgName>
-                                </publisher>
+                            <editor>
+                                <persName xml:lang="ar-Latn-x-ijmes">Aḥmad Mādī</persName>
+                                <persName xml:lang="ar">
+                                    <forename>أحمد</forename>
+                                    <surname>مادي</surname>
+                                </persName>
+                            </editor>
+                            <imprint>
                                 <pubPlace>
-                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
-                                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="en">Baghdad</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:226 geon:360630" xml:lang="ar">القاهرة</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:226 geon:360630" xml:lang="en">Cairo</placeName>
                                 </pubPlace>
-                                <!-- this is seems to be the first issue -->
-                                <date when="1910"/>
-                                <date calendar="#cal_islamic" datingMethod="#cal_islamic" notAfter="1911-01-01" notBefore="1910-01-13" when-custom="1328">سنة ١٣٢٨</date>
+                                <date type="start" when="1889-12-01" xml:lang="en">1889</date>
+                                <!-- <date type="end" when="1913" xml:lang="en">1914</date>-->
                             </imprint>
                             <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                             <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                         </monogr>
-                    </biblStruct>
-                </listBibl>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">المجلة</title>
+                            <title level="j" xml:lang="ar">المجلة الباريسية</title>
+                            <title level="j" xml:lang="fr">La Revue</title>
+                            <idno type="oape" change="#d2e69">14</idno><idno type="OCLC">472961924</idno>
+                            <idno type="ISSN">1153-6012</idno>
+                            <textLang mainLang="fr"/>
+                            <editor>
+                                <persName xml:lang="en">
+                                    <forename/>
+                                    <surname/>
+                                </persName>
+                            </editor>
+                            <imprint>
+                                <publisher/>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:322 geon:2988507" xml:lang="en">Paris</placeName>
+                                </pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">المفيد</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Mufīd</title>
+                            <idno type="oape" change="#d2e69">20</idno><idno type="OCLC">1034548778</idno>
+                            <textLang mainLang="ar"/>
+                            <editor>
+                                <persName change="#d3e53" ref="oape:pers:459 viaf:37216757" xml:lang="ar">
+                                    <forename xml:lang="ar">عبد الغني</forename>
+                                    <roleName type="title">أفندي</roleName>
+                                    <surname xml:lang="ar">العريسي</surname>
+                                </persName>
+                            </editor>
+                            <editor xml:lang="ar">
+                                <persName change="#d3e53" ref="oape:pers:606" xml:lang="ar">
+                                    <forename xml:lang="ar">حسن</forename>
+                                    <roleName type="title">أفندي</roleName>
+                                    <surname xml:lang="ar">بيهم</surname>
+                                </persName>
+                            </editor>
+                            <imprint xml:lang="ar">
+                                <publisher/>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="ar">بيروت</placeName>
+                                    <placeName change="#d5e42" ref="oape:place:26 geon:276781" xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                </pubPlace>
+                                <!-- this is seems to be the first issue -->
+                                <date when="1911" xml:lang="ar"/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct>
+                        <!-- جريدة -->
+                        <monogr>
+                            <title level="j" xml:lang="ar">الوطن</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Waṭan</title>
+                            <textLang mainLang="ar"/>
+                            <editor xml:lang="ar">
+                                <persName ref="viaf:60135237" xml:lang="ar">
+                                    <forename xml:lang="ar">شبلي</forename>
+                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
+                                    <surname xml:lang="ar">ملاط</surname>
+                                </persName>
+                            </editor>
+                            <editor xml:lang="ar">
+                                <persName ref="viaf:123147905332979092816" xml:lang="ar">
+                                    <forename xml:lang="ar">نجيب</forename>
+                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
+                                    <surname>شوشاني</surname>
+                                </persName>
+                            </editor>
+                            <editor>
+                                <persName xml:lang="ar">
+                                    <forename>فيليكس</forename>
+                                    <roleName type="title">أفندي</roleName>
+                                    <surname>فارس</surname>
+                                </persName>
+                            </editor>
+                            <imprint>
+                                <publisher/>
+                                <pubPlace>
+                                    <placeName>بيروت</placeName>
+                                </pubPlace>
+                                <date when="1908"/>
+                                <date from="1908"/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume"/>
+                            <biblScope from="1" to="1" unit="issue"/>
+                        </monogr>
+                    </biblStruct><biblStruct xml:lang="ar">
+                        <monogr xml:lang="ar">
+                            <title level="j" xml:lang="ar">طبيب العائلة</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">Ṭabīb al-ʿĀʾila</title>
+                            <textLang mainLang="ar"/>
+                            <editor>
+                                <persName/>
+                            </editor>
+                            <imprint xml:lang="ar">
+                                <publisher/>
+                                <pubPlace/>
+                                <!-- this is seems to be the first issue -->
+                                <date/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct xml:lang="ar">
+                        <monogr xml:lang="ar">
+                            <title level="j" xml:lang="ar">مجلة العالم الإسلامي</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">Majallat al-ʿĀlam al-Islamī</title>
+                            <title level="j" xml:lang="fr">Revue du Monde Musulman</title>
+                            <idno type="oape" change="#d2e69">24</idno><idno type="OCLC">1681243</idno>
+                            <textLang mainLang="fr"/>
+                            <editor>
+                                <persName/>
+                            </editor>
+                            <imprint xml:lang="ar">
+                                <publisher/>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:322 geon:2988507" xml:lang="en">Paris</placeName>
+                                </pubPlace>
+                                <!-- this is seems to be the first issue -->
+                                <date when="1906"/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">مجلة المجلات</title>
+                            <title level="j" xml:lang="fr">Revue des Revues</title>
+                            <idno type="oape" change="#d2e69">15</idno><idno type="OCLC">472961896</idno>
+                            <idno type="OCLC">504227281</idno>
+                            <idno type="ISSN">1153-6004</idno>
+                            <textLang mainLang="fr"/>
+                            <editor>
+                                <persName xml:lang="en">
+                                    <forename/>
+                                    <surname/>
+                                </persName>
+                            </editor>
+                            <imprint>
+                                <publisher/>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:322 geon:2988507" xml:lang="en">Paris</placeName>
+                                </pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">مجلة المجلات</title>
+                            <title level="j" xml:lang="ar">مجلة المجلات الأميركية</title>
+                            <title level="j" xml:lang="en">American Review of Reviews</title>
+                            <idno type="oape" change="#d2e69">16</idno><idno type="OCLC">19000299</idno>
+                            <idno type="OCLC">565522016</idno>
+                            <textLang mainLang="en"/>
+                            <imprint>
+                                <publisher/>
+                                <pubPlace/>
+                            </imprint>
+                        </monogr>
+                    </biblStruct><biblStruct>
+                        <monogr>
+                            <title level="j" xml:lang="ar">مجلة المجلات</title>
+                            <title level="j" xml:lang="ar">مجلة المجلات الإنكليزية</title>
+                            <title level="j" xml:lang="en">The Review of Reviews</title>
+                            <idno type="oape" change="#d2e69">17</idno><idno type="OCLC">297351216</idno>
+                            <textLang mainLang="en"/>
+                            <editor>
+                                <persName xml:lang="en">
+                                    <forename>William</forename>
+                                    <surname>Stead</surname>
+                                </persName>
+                            </editor>
+                            <imprint>
+                                <publisher/>
+                                <pubPlace>
+                                    <placeName change="#d5e42" ref="oape:place:331 geon:2643743" xml:lang="en">London</placeName>
+                                </pubPlace>
+                            </imprint>
+                        </monogr>
+                    </biblStruct></listBibl>
             </div>
         </body>
     </text>
