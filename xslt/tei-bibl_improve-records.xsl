@@ -9,20 +9,19 @@
     xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-    <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
-    <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute on a persName child.
-    It DOES NOT try to find names on VIAF without an ID -->
+    
+    <!-- this stylesheet improves local bibliographies by adding an OpenArabicPE ID to records missing such an ID. In the future, it is planned to query OCLC for more details on individual titles. -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml"
         omit-xml-declaration="no"/>
 <!--    <xsl:include href="query-geonames.xsl"/>-->
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <!-- variables for OpenArabicPE IDs -->
-    <xsl:variable name="v_oape-id-count" select="count(//tei:place/tei:idno[@type = 'oape'])"/>
+    <xsl:variable name="v_oape-id-count" select="count(//tei:monogr/tei:idno[@type = 'oape'])"/>
     <xsl:variable name="v_oape-id-highest"
         select="
             if ($v_oape-id-count gt 0) then
-                (max(//tei:place/tei:idno[@type = 'oape']))
+                (max(//tei:monogr/tei:idno[@type = 'oape']))
             else
                 (0)"/>
     <!-- identity transform -->
@@ -148,24 +147,49 @@
             <xsl:apply-templates mode="m_generate-id" select="."/>
         </xsl:copy>
     </xsl:template>-->
+    <xsl:template match="tei:monogr">
+        <xsl:message>
+            <xsl:value-of select="$v_oape-id-highest"/>
+        </xsl:message>
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="tei:title"/>
+            <!-- check for <idno> -->
+            <xsl:choose>
+                <xsl:when test="tei:idno">
+                    <xsl:apply-templates select="tei:idno"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:call-template name="t_generate-oape-id"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates select="child::node()[not(self::tei:title | self::tei:idno)]"/>
+        </xsl:copy>
+    </xsl:template>
     <!-- mode to generate OpenArabicPE IDs -->
     <xsl:template match="tei:monogr/tei:idno">
         <!-- for the first idno child check if the parent has an OpenArabicPE ID. If not, generate one -->
         <xsl:if test="not(preceding-sibling::tei:idno) and not(parent::tei:monogr/tei:idno[@type = 'oape'])">
-            <xsl:element name="idno">
-                <xsl:attribute name="type" select="'oape'"/>
-                <xsl:attribute name="change" select="concat('#',$p_id-change)"/>
-                <!-- basis is the highest existing ID -->
-                <!-- add preceding tei:place without OpenArabicPE ID -->
-                <xsl:value-of
-                    select="$v_oape-id-highest + count(preceding::tei:monogr[not(tei:idno[@type = 'oape'])]) + 1"
-                />
-            </xsl:element>
+            <xsl:call-template name="t_generate-oape-id"/>
         </xsl:if>
         <!-- reproduce content -->
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template name="t_generate-oape-id">
+        <xsl:param name="p_oape-id" select="$v_oape-id-highest + count(preceding::tei:monogr[not(tei:idno[@type = 'oape'])]) + 1"/>
+        <xsl:message>
+            <xsl:value-of select="$p_oape-id"/>
+        </xsl:message>
+        <xsl:element name="idno">
+                <xsl:attribute name="type" select="'oape'"/>
+                <xsl:attribute name="change" select="concat('#',$p_id-change)"/>
+                <!-- basis is the highest existing ID -->
+                <!-- add preceding tei:place without OpenArabicPE ID -->
+                <xsl:value-of select="$p_oape-id"/>
+            </xsl:element>
     </xsl:template>
     
     <!-- document the changes -->
