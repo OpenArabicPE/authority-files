@@ -148,10 +148,10 @@
         </xsl:copy>
     </xsl:template>-->
     <xsl:template match="tei:monogr">
-        <xsl:message>
+        <!--<xsl:message>
             <xsl:value-of select="$v_oape-id-highest"/>
         </xsl:message>
-        <xsl:copy>
+-->        <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:title"/>
             <!-- check for <idno> -->
