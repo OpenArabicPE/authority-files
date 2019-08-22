@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -20,16 +17,16 @@
                 <p>this file is born-digital</p>
             </sourceDesc>
         </fileDesc>
-        <revisionDesc>
+        <revisionDesc><tei:change when="2019-08-22" who="#pers_TG" xml:id="d5e89" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/gazetteer_levant-phd.TEIP5.xml">../data/tei/gazetteer_levant-phd.TEIP5.xml</tei:ref>) and to GeoNames IDs to <tei:gi>placeName</tei:gi>s without such references based on  <tei:gi>place</tei:gi>s mentioned in the authority file.</tei:change>
             <tei:change when="2019-08-20" who="#pers_TG" xml:id="d2e78" xml:lang="en">Improved 
                 <tei:gi>biblStruct</tei:gi>
                 nodes by adding a private ID scheme with 
-                <tei:tag>idno type=&quot;oape&quot;</tei:tag>
+                <tei:tag>idno type="oape"</tei:tag>
                 .</tei:change>
             <tei:change when="2019-08-19" who="#pers_TG" xml:id="d2e69" xml:lang="en">Improved 
                 <tei:gi>biblStruct</tei:gi>
                 nodes by adding a private ID scheme with 
-                <tei:tag>idno type=&quot;oape&quot;</tei:tag>
+                <tei:tag>idno type="oape"</tei:tag>
                 .</tei:change>
             <tei:change when="2019-08-16" who="#pers_TG" xml:id="d3e53" xml:lang="en">Added references to local authority file (
                 <tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml">../data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>
@@ -585,8 +582,8 @@
                             <imprint>
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:266045" xml:lang="ar">زحلة</placeName>
-                                    <placeName xml:lang="ar-Latn-x-ijmes">Zaḥla</placeName>
+                                    <placeName ref="oape:place:166 geon:266045" xml:lang="ar" change="#d5e89">زحلة</placeName>
+                                    <placeName xml:lang="ar-Latn-x-ijmes" change="#d5e89" ref="oape:place:166 geon:266045">Zaḥla</placeName>
                                 </pubPlace>
                                 <date when="1911"/>
                                 <date from="1911" to="1928"/>
@@ -684,10 +681,10 @@
                                     <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Maʿārif</orgName>
                                 </publisher>
                                 <pubPlace xml:lang="en">
-                                    <placeName xml:lang="ar">بيروت</placeName>
-                                    <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
-                                    <placeName xml:lang="en">Beirut</placeName>
-                                    <placeName xml:lang="fr">Beyrouth</placeName>
+                                    <placeName xml:lang="ar" change="#d5e89" ref="oape:place:26 geon:276781">بيروت</placeName>
+                                    <placeName xml:lang="ar-Latn-x-ijmes" change="#d5e89" ref="oape:place:26 geon:276781">Bayrūt</placeName>
+                                    <placeName xml:lang="en" change="#d5e89" ref="oape:place:26 geon:276781">Beirut</placeName>
+                                    <placeName xml:lang="fr" change="#d5e89" ref="oape:place:26 geon:276781">Beyrouth</placeName>
                                 </pubPlace>
                                 <date datingMethod="#cal_gregorian" type="official" when="1870-01-01" xml:lang="en">1 Jan 1870</date>
                             </imprint>
@@ -795,7 +792,7 @@
                             <imprint>
                                 <publisher/>
                                 <pubPlace xml:lang="ar">
-                                    <placeName ref="geon:273607" xml:lang="ar">لبنان</placeName>
+                                    <placeName ref="oape:place:203 geon:273607" xml:lang="ar" change="#d5e89">لبنان</placeName>
                                     <placeName xml:lang="ar-Latn-x-ijmes">Lubnān</placeName>
                                     <placeName xml:lang="en">Lebanon</placeName>
                                 </pubPlace>
@@ -930,9 +927,9 @@
                             <imprint xml:lang="ar">
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="ar">بغداد</placeName>
-                                    <placeName xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
-                                    <placeName xml:lang="en">Baghdad</placeName>
+                                    <placeName xml:lang="ar" change="#d5e89" ref="oape:place:216 geon:98182">بغداد</placeName>
+                                    <placeName xml:lang="ar-Latn-x-ijmes" change="#d5e89" ref="oape:place:216 geon:98182">Baghdād</placeName>
+                                    <placeName xml:lang="en" change="#d5e89" ref="oape:place:216 geon:98182">Baghdad</placeName>
                                 </pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date/>
@@ -1073,10 +1070,10 @@
                                     <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-ʿilmiyya</orgName>
                                 </publisher>
                                 <pubPlace xml:lang="en">
-                                    <placeName ref="geon:170654" xml:lang="ar">الشام</placeName>
+                                    <placeName ref="oape:place:61 geon:170654" xml:lang="ar" change="#d5e89">الشام</placeName>
                                     <placeName xml:lang="ar-Latn-x-ijmes">al-Shām</placeName>
-                                    <placeName ref="geon:170654" xml:lang="en">Damascus</placeName>
-                                    <placeName ref="geon:170654" xml:lang="fr">Damas</placeName>
+                                    <placeName ref="oape:place:61 geon:170654" xml:lang="en" change="#d5e89">Damascus</placeName>
+                                    <placeName ref="oape:place:61 geon:170654" xml:lang="fr" change="#d5e89">Damas</placeName>
                                 </pubPlace>
                                 <date calendar="#cal_gregorian" when="1909-10-05" xml:lang="en">5 October 1909, Tuesday</date>
                                 <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1909-10-05" when-custom="1327-09-20" xml:lang="ar-Latn-x-ijmes">20 Ramaḍān 1327, Tuesday</date>
@@ -1256,7 +1253,7 @@
                             <imprint>
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName>بيروت</placeName>
+                                    <placeName change="#d5e89" ref="oape:place:26 geon:276781">بيروت</placeName>
                                 </pubPlace>
                                 <date when="1908"/>
                                 <date from="1908"/>
@@ -1341,7 +1338,7 @@
                             <imprint>
                                 <publisher/>
                                 <pubPlace>
-                                    <placeName xml:lang="en">New York</placeName>
+                                    <placeName xml:lang="en" change="#d5e89" ref="oape:place:303 geon:5128581">New York</placeName>
                                 </pubPlace>
                             </imprint>
                         </monogr>
