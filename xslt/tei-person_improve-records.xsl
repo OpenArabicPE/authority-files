@@ -180,6 +180,7 @@
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create persName without titles</xsl:text>
                 </xsl:message>
             </xsl:if>
+            <!-- this variable generates a persName with nothing but forenames and surnames -->
             <xsl:variable name="v_no-addname">
                 <xsl:copy>
                     <xsl:apply-templates select="@xml:lang"/>
@@ -191,13 +192,17 @@
             </xsl:variable>
             <xsl:choose>
                 <!-- if there is already a child similar to the noAddName variant, this should not added to the output -->
-                <xsl:when test="parent::node()/tei:persName = $v_no-addname">
-                    <!--                    <xsl:message><xsl:value-of select="$v_no-addname"/> is already present</xsl:message>-->
+                <!-- the following condition produces erroneous results and I have no idea why -->
+                <xsl:when test="parent::tei:person/tei:persName = $v_no-addname">
+                     <xsl:if test="$p_verbose=true()">
+                         <xsl:message><xsl:value-of select="$v_no-addname"/> is already present</xsl:message>
+                     </xsl:if>
                 </xsl:when>
 <!--                <xsl:when test="parent::node()/tei:persName[@type='flattened']=replace(normalize-space(replace($v_no-addname,'([إ|أ|آ])','ا')), '\W', '')"/>-->
-                
                 <xsl:otherwise>
-<!--                    <xsl:message><xsl:value-of select="$v_no-addname"/> is not present</xsl:message>-->
+                    <xsl:if test="$p_verbose=true()">
+                        <xsl:message><xsl:copy-of select="$v_no-addname"/> is not present</xsl:message>
+                    </xsl:if>
                     <xsl:copy-of select="$v_no-addname"/>
                 </xsl:otherwise>
             </xsl:choose>
@@ -236,6 +241,29 @@
     
     <!-- remove empty nodes -->
     <xsl:template match="node()[.='']"/>
+    <!-- remove duplicate persName[@type='noAddName'] that have no persName[@type='flattened'] pointing to them -->
+    <xsl:template match="tei:persName[@type='noAddName']">
+        <xsl:variable name="v_ref" select="concat('#',@xml:id)"/>
+        <xsl:choose>
+            <!-- check if there is no persName[@type='flattened'] pointing to them -->
+            <xsl:when test="not(parent::tei:person/tei:persName[@type='flattened']/@corresp=$v_ref)">
+                <!--  check if there are duplicates -->
+                <xsl:choose>
+                    <xsl:when test="following-sibling::tei:persName[@type='noAddName'] = ."/>
+                    <xsl:otherwise>
+                        <xsl:copy>
+                            <xsl:apply-templates select="@* | node()"/>
+                        </xsl:copy>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy>
+                    <xsl:apply-templates select="@* | node()"/>
+                </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
     
     <!-- document the changes -->
     <xsl:template match="tei:revisionDesc" name="t_8">
