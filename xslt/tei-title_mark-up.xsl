@@ -89,7 +89,7 @@
             select="$v_file-entities-master//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:value-of select="false()"/>
+                <xsl:value-of select="'false()'"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
@@ -107,7 +107,7 @@
         <xsl:variable name="v_ref">
             <xsl:choose>
                 <!-- protect existing values of @ref for which there is no entry in the bibliography -->
-                <xsl:when test="$v_corresponding-bibl = false()">
+                <xsl:when test="$v_corresponding-bibl = 'false()'">
                     <xsl:value-of select="@ref"/>
                 </xsl:when>
                 <xsl:when test="contains(@ref, 'oape:bibl:') or contains(@ref, 'oclc:')">
