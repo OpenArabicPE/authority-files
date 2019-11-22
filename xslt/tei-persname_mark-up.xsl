@@ -18,39 +18,52 @@
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master" select="'../data/tei/personography_OpenArabicPE.TEIP5.xml'"/>
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
+    <xsl:param name="p_add-mark-up-to-input" select="true()"/>
     
-    <!-- This template replicates everything -->
+    <!-- idendity transform -->
     <xsl:template match="node() | @*">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
-    <!-- replicate everything except @xml:id and @xml:change -->
-    <xsl:template match="node() | @*" mode="m_copy-from-authority-file" name="t_10">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_10 master: </xsl:text>
-                <xsl:value-of select="."/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates mode="m_copy-from-authority-file" select="@* | node()"/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
-    <!-- lock for persNames that have no @ref attribute -->
-    <xsl:template match="tei:persName[not(@ref)]" name="t_2">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_2: found a persName without @ref</xsl:text>
-            </xsl:message>
-        </xsl:if>
+    
+    <xsl:template match="tei:persName">
         <!-- flatened version of the persName without non-word characters -->
         <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
         <!-- test if the flattened name is present in the authority file -->
+        <xsl:variable name="v_corresponding-person">
+            <xsl:choose>
+                <!-- test if this node already points to an authority file -->
+                <xsl:when test="@ref">
+                    <xsl:copy-of select="oape:get-person-from-authority-file(@ref)"/>
+                </xsl:when>
+                <!-- test if the name is found in the authority file -->
+                <xsl:when test="$v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]">
+                    <xsl:copy-of select="$v_file-entities-master/descendant::tei:person[tei:persName[@type = 'flattened'] = $v_name-flat][1]"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- one cannot use a boolean value if the default result is non-boolean -->
+                    <xsl:value-of select="'false()'"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
         <xsl:choose>
-            <xsl:when
-                test="$v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]">
+            <!-- fallback: name is not found in the authority file -->
+            <xsl:when test="$v_corresponding-person = 'false()'">
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>t_2: </xsl:text>
+                        <xsl:value-of select="normalize-space(.)"/>
+                        <xsl:message> not found in authority file.</xsl:message>
+                    </xsl:message>
+                </xsl:if>
+                <xsl:copy>
+                    <xsl:apply-templates select="@* | node()"/>
+                </xsl:copy>
+            </xsl:when>
+            <!-- name is found in the authority file. it will be linked and potentially updated -->
+            <xsl:otherwise>
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
                         <xsl:text>t_2: </xsl:text>
@@ -58,14 +71,33 @@
                         <xsl:text> is present in authority file and will be updated</xsl:text>
                     </xsl:message>
                 </xsl:if>
-                <xsl:variable name="v_corresponding-person"
-                    select="$v_file-entities-master/descendant::tei:person[tei:persName[@type = 'flattened'] = $v_name-flat][1]"/>
-                <xsl:variable name="v_corresponding-xml-id"
-                    select="substring-after($v_corresponding-person/descendant::tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
+                <!-- get @xml:id of corresponding entry in authority file -->
+                <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')">
+                    <!--<xsl:choose>
+                <!-\- test if there is a corresponding entry in the authority file -\->
+                        <xsl:when test="$v_corresponding-person != false()">
+                            <xsl:value-of"/>
+                        </xsl:when>
+                    </xsl:choose>-->
+                </xsl:variable>
+                <!-- construct @ref pointing to the corresponding entry -->
+                <xsl:variable name="v_ref">
+                    <xsl:value-of
+                        select="concat('oape:pers:', $v_corresponding-person/descendant::tei:idno[@type = 'oape'][1])"/>
+                    <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type = 'VIAF']">
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of
+                            select="concat('viaf:', $v_corresponding-person/descendant::tei:idno[@type = 'VIAF'][1])"
+                        />
+                    </xsl:if>
+                </xsl:variable>   
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>
+                    <!-- add references to IDs -->
+                    <xsl:attribute name="ref" select="$v_ref"/>
                     <!-- document change -->
-                    <xsl:choose>
+                    <xsl:if test="not(@ref = $v_ref) or not(node() = $v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node())">
+                        <xsl:choose>
                         <xsl:when test="not(@change)">
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                         </xsl:when>
@@ -73,20 +105,13 @@
                             <xsl:apply-templates mode="m_documentation" select="@change"/>
                         </xsl:otherwise>
                     </xsl:choose>
-                    <!-- add references to IDs -->
-                    <xsl:attribute name="ref">
-                        <xsl:value-of
-                            select="concat('oape:pers:', $v_corresponding-person/descendant::tei:idno[@type = 'oape'][1])"/>
-                        <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type = 'VIAF']">
-                            <xsl:text> </xsl:text>
-                            <xsl:value-of
-                                select="concat('viaf:', $v_corresponding-person/descendant::tei:idno[@type = 'VIAF'][1])"
-                            />
-                        </xsl:if>
-                    </xsl:attribute>
+                    </xsl:if>
                     <!-- replicate content -->
                     <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
                     <xsl:choose>
+                        <xsl:when test="$p_add-mark-up-to-input = false()">
+                            <xsl:apply-templates select="node()"/>
+                        </xsl:when>
                         <!-- test if the persName already has children. If not try to add some based on the persName without non-word characters and the authority file -->
                         <xsl:when test="not(child::node()[namespace::tei])">
                             <xsl:if test="$p_verbose = true()">
@@ -105,119 +130,19 @@
                                     />
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <xsl:apply-templates select="node()"/>
+                                    <xsl:apply-templates/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:apply-templates select="node()"/>
+                            <xsl:apply-templates/>
                         </xsl:otherwise>
                     </xsl:choose>
-                </xsl:copy>
-            </xsl:when>
-            <!-- fallback -->
-            <xsl:otherwise>
-                <xsl:if test="$p_verbose = true()">
-                    <xsl:message>
-                        <xsl:text>t_2: </xsl:text>
-                        <xsl:value-of select="normalize-space(.)"/>
-                        <xsl:message> not found in authority file.</xsl:message>
-                    </xsl:message>
-                </xsl:if>
-                <xsl:copy>
-                    <xsl:apply-templates select="@* | node()"/>
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <!-- look for persNames that have a @ref attribute -->
-    <xsl:template match="tei:persName[@ref]" name="t_3">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_3: found a persName with @ref </xsl:text>
-                <xsl:value-of select="@ref"/>
-            </xsl:message>
-        </xsl:if>
-        <!-- flattened version of the persName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
-        <xsl:variable name="v_corresponding-person"
-            select="oape:get-person-from-authority-file(@ref)"/>
-        <xsl:variable name="v_corresponding-xml-id"
-            select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_3: missing reference to either VIAF or local authority file will be added</xsl:text>
-            </xsl:message>
-        </xsl:if>
-        <xsl:variable name="v_ref">
-            <xsl:choose>
-                <xsl:when test="contains(@ref, 'oape:pers:') or contains(@ref, 'viaf:')">
-                    <!-- add references to IDs -->
-                    <xsl:value-of
-                        select="concat('oape:pers:', $v_corresponding-person/descendant::tei:idno[@type = 'oape'][1])"/>
-                    <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type = 'VIAF']">
-                        <xsl:text> </xsl:text>
-                        <xsl:value-of
-                            select="concat('viaf:', $v_corresponding-person/descendant::tei:idno[@type = 'VIAF'][1])"
-                        />
-                    </xsl:if>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="@ref"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_3: @ref </xsl:text>
-                <xsl:value-of select="$v_ref"/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:attribute name="ref" select="$v_ref"/>
-            <!-- document change -->
-            <xsl:if test="(@ref != $v_ref) or (not(child::node()[namespace::tei]) and $v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()[namespace::tei])">
-                <xsl:choose>
-                    <xsl:when test="not(@change)">
-                        <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:apply-templates mode="m_documentation" select="@change"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:if>
-            <!-- replicate content -->
-            <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
-            <xsl:choose>
-                <!-- test if the persName already has children. If not try to add some based on the persName without non-word characters and the authority file -->
-                <xsl:when test="not(child::node()[namespace::tei])">
-                    <xsl:if test="$p_verbose = true()">
-                        <xsl:message>
-                            <xsl:text>t_3: </xsl:text>
-                            <xsl:value-of select="normalize-space(.)"/>
-                            <xsl:text> contains no mark-up which will be updated from the authority file</xsl:text>
-                        </xsl:message>
-                    </xsl:if>
-                    <xsl:choose>
-                        <xsl:when
-                            test="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()">
-                            <!-- this assumes there will be marked-up content in the authority file for this content, which is not necessarily the case. -->
-                            <xsl:apply-templates mode="m_copy-from-authority-file"
-                                select="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()"
-                            />
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:apply-templates select="node()"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates select="node()"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:copy>
-    </xsl:template>
+    <!-- this function queries a local authority file with an OpenArabicPE or VIAF ID and returns a <tei:person> -->
     <xsl:function name="oape:get-person-from-authority-file">
         <xsl:param name="p_idno"/>
         <xsl:variable name="v_authority">
@@ -256,6 +181,15 @@
             select="$v_file-entities-master//tei:person[tei:persName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority]"
         />
     </xsl:function>
+    
+    <!-- copy from authority file should not include @xml:id and @change -->
+    <xsl:template match="node() | @*" mode="m_copy-from-authority-file">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()" mode="m_copy-from-authority-file"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file"/>
+    
     <!-- document the changes to source file -->
     <xsl:template match="tei:revisionDesc">
         <xsl:copy>
