@@ -56,6 +56,8 @@ date: 2019-01-30
 
 # references to authority files
 
+URI schemes used across the entire project
+
 - VIAF:
     + ID pattern: `\d+`
     - mark-up: `viaf:ID`, `<idno type="viaf">ID</idno>`
@@ -72,22 +74,123 @@ date: 2019-01-30
     + persons: (`oape:pers:`, `<idno type="oape">`)
 
 # TEI mark-up
+## prosopography
 
 ```xml
-<person xml:id="">
-    <!-- more than one persName in any language -->
-    <persName xml:lang="ar"></persName>
-    <!-- birth and death can be retrieved from VIAF -->
-    <birth resp="viaf" when=""></birth>
-    <death>Executed in <placeName>Damascus</placeName></death>
-    <!-- potential children -->
-    <idno type="viaf"></idno>
-    <idno type="oape"></idno>
-    <event when="" notBefore="" notAfter=""></event>
-    <education from="" to=""><orgName>Maktab ʿAnbar</orgName></education>
-    <state from="" to="">Member of the <orgName>Arab Academy of Sciences</orgName></state>
-</person>
+<listPerson>
+    <person xml:id="">
+        <!-- more than one persName in any language -->
+        <persName xml:lang="ar"></persName>
+        <!-- birth and death can be retrieved from VIAF -->
+        <birth resp="viaf" when=""></birth>
+        <death>Executed in <placeName>Damascus</placeName></death>
+        <!-- identifiers -->
+        <idno type="viaf"></idno>
+        <idno type="oape"></idno>
+        <!-- potential children, these should all have some source information -->
+        <event when="" notBefore="" notAfter=""></event>
+        <education from="" to=""><orgName>Maktab ʿAnbar</orgName></education>
+        <state from="" to="">Member of the <orgName>Arab Academy of Sciences</orgName></state>
+    </person>
+    <person>
+        <!-- -->
+    </person>
+</listPerson>
 ```
+## gazetteer
+
+```xml
+<listPlace>
+    <head><!-- some short title --></head>
+    <place type="town">
+        <!-- more than one placeName in any language, can be retrieved from GeoNames -->
+        <placeName source="#org_geon" type="alt" xml:lang="ar">النبطية</placeName>
+        <placeName xml:lang="ar-Latn-x-ijmes">al-Nabaṭiyya</placeName>
+        <placeName xml:lang="en">Nabatiye</placeName>
+        <!-- location can be retrieved from GeoNames -->
+        <location source="#org_geon">
+            <geo>33.37717, 35.48383</geo>
+        </location>
+        <!-- identifiers -->
+        <idno type="geon">7870014</idno>
+        <idno type="oape">7</idno>
+        <!-- potential children, these should all have some source information -->
+    </place>
+</listPlace>
+```
+
+## bibliography
+
+Each publication is encoded as a `<biblStruct>` with a type attribute (even though the type could be guessed from the internal structure of the `<biblStruct>` and the values of `@level` on `<title>`).
+
+- values of `@type`:
+    + "book"
+    + "journal"
+    + "newspaper"
+
+```xml
+<!-- many periodicals underwent various changes in editorship, title, frequency etc. and should,
+    therefore, be wrapped in a <listBibl>.  -->
+<!-- the sequence is recorded explicitly by means of @next and @prev attributes  -->
+<listBibl xml:lang="ar">
+    <biblStruct xml:lang="ar">
+        <monogr xml:lang="ar">
+            <!-- titles in Arabic and transcription -->
+            <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
+            <title level="j" type="sub" xml:lang="ar">مجلة شهرية ادبية علمية تاريخية</title>
+            <title corresp="sakhrit:jid:14" level="j" xml:lang="ar-Latn-x-ijmes">Lughat al-ʿArab</title>
+            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla shahriyya adabiyya ʿilmiyya tārīkhiyya</title>
+            <!-- identifiers -->
+            <idno change="#d2e69" type="oape">1</idno>
+            <idno type="jid" xml:lang="ar">14</idno>
+            <idno type="OCLC">472450345</idno>
+            <textLang mainLang="ar"/>
+            <editor xml:lang="ar">
+                <!-- persNames link back to the prosopography -->
+                <!-- only one is needed. Additional names could be looked up automatically -->
+                <persName ref="oape:pers:227 viaf:39370998" xml:lang="ar"> <roleName type="rank" xml:lang="ar">الأب</roleName> <forename xml:lang="ar">أنستاس</forename> <forename xml:lang="ar">ماري</forename> <surname xml:lang="ar"> <addName type="nisbah" xml:lang="ar">الكرملي</addName> </surname></persName>
+                <persName xml:lang="ar-Latn-x-ijmes">al-Abb Anastās Mārī al-Karamlī</persName>
+            </editor>
+            <editor xml:lang="ar">
+                <persName change="#d3e53" ref="oape:pers:396" xml:id="persName_195.d1e5884" xml:lang="ar"> <forename xml:id="forename_224.d1e5885" xml:lang="ar">كاظم</forename> <surname xml:id="surname_195.d1e5888" xml:lang="ar"> <addName type="nisbah">الدجيلي</addName> </surname> </persName>
+            </editor>
+            <imprint xml:lang="ar">
+                <publisher/>
+                <pubPlace xml:lang="ar">
+                    <!-- persNames link back to the prosopography -->
+                    <!-- only one is needed. Additional toponyms could be looked up automatically -->
+                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
+                    <placeName change="#d5e42"
+                    ref="oape:place:216 geon:98182" xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
+                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="en">Baghdad</placeName>
+                </pubPlace>
+                <date datingMethod="#cal_islamic" when="1911-06-30" when-custom="1329-07-01"/>
+            </imprint>
+            <biblScope from="1" to="1" unit="volume"/>
+            <biblScope from="1" to="1" unit="issue"/>
+            <!-- <biblScope from="505" unit="page">505</biblScope>-->
+        </monogr>
+        <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
+        <note type="param" n="p_weekdays-published">Tuesday, Friday</note>
+        <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
+            - daily: this includes any publication cycle that is at least weekly
+            - fortnightly:
+            - monthly: -->
+        <note type="param" n="p_step">daily</note>
+    </biblStruct>
+</listBibl>
+```
+
+## encoding the source of bits of information
+### `@source`
+
+Almost all elements can carry the global `@source` attribute (att.global.source). It "specifies the source from which some aspect of this element is drawn" and holds "1–∞ occurrences of teidata.pointer separated by whitespace". "the location may be provided using any form of URI, for example an absolute URI, a relative URI, or private scheme URI that is expanded to an absolute URI as documented in a prefixDef." ([TEI guidelines](https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.source.html))
+
+`teidata.pointer` is defined as `xsd:anyURI`
+
+### `@resp`
+
+The global `@resp` adheres to the same content model as `@source` but "indicates the agency responsible for the intervention or interpretation, for example an editor or transcriber."
 
 # Notes and ideas
 
