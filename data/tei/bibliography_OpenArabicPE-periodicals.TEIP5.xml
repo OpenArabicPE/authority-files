@@ -18,18 +18,18 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
-            <change when="2020-01-09" who="#pers_TG" xml:id="d2e102" xml:lang="en"
-                >Improved <gi>biblStruct<gi> nodes by adding a private ID scheme with <tag>idno type="oape"<tag>.<change>
-            <change when="2019-08-22" who="#pers_TG" xml:id="d5e89" xml:lang="en">Added references to local authority file ( <ref target="../data/tei/gazetteer_levant-phd.TEIP5.xml"
-                >../data/tei/gazetteer_levant-phd.TEIP5.xml<ref> ) and to GeoNames IDs to <gi>placeName<gi> s without such references based on <gi>place<gi> s mentioned in the authority file.<change>
-            <change when="2019-08-20" who="#pers_TG" xml:id="d2e78" xml:lang="en"
-                >Improved <gi>biblStruct<gi> nodes by adding a private ID scheme with <tag>idno type="oape"<tag> .<change>
-            <change when="2019-08-19" who="#pers_TG" xml:id="d2e69" xml:lang="en"
-                >Improved <gi>biblStruct<gi> nodes by adding a private ID scheme with <tag>idno type="oape"<tag> .<change>
-            <change when="2019-08-16" who="#pers_TG" xml:id="d3e53" xml:lang="en">Added references to local authority file ( <ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml"
-                >../data/tei/personography_OpenArabicPE.TEIP5.xml<ref> ) and VIAF to <gi>persName<gi> s without such references based on <gi>person<gi> s in the local authority file. If the source <gi>persName<gi> did not contain any further TEI mark-up, this has been added from the local authority file.<change>
-            <change when="2019-08-16" who="#pers_TG" xml:id="d5e42" xml:lang="en">Added references to local authority file ( <ref target="../data/tei/gazetteer_levant-phd.TEIP5.xml"
-                >../data/tei/gazetteer_levant-phd.TEIP5.xml<ref> ) and to GeoNames IDs to <gi>placeName<gi> s without such references based on <gi>place<gi> s mentioned in the authority file.<change>
+            <tei:change when="2020-01-09" who="#pers_TG" xml:id="d2e102" xml:lang="en"
+                >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag>.</tei:change>
+            <tei:change when="2019-08-22" who="#pers_TG" xml:id="d5e89" xml:lang="en">Added references to local authority file ( <tei:ref target="../data/tei/gazetteer_levant-phd.TEIP5.xml"
+                >../data/tei/gazetteer_levant-phd.TEIP5.xml</tei:ref> ) and to GeoNames IDs to <tei:gi>placeName</tei:gi> s without such references based on <tei:gi>place</tei:gi> s mentioned in the authority file.</tei:change>
+            <tei:change when="2019-08-20" who="#pers_TG" xml:id="d2e78" xml:lang="en"
+                >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag> .</tei:change>
+            <tei:change when="2019-08-19" who="#pers_TG" xml:id="d2e69" xml:lang="en"
+                >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag> .</tei:change>
+            <tei:change when="2019-08-16" who="#pers_TG" xml:id="d3e53" xml:lang="en">Added references to local authority file ( <tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml"
+                >../data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref> ) and VIAF to <tei:gi>persName</tei:gi> s without such references based on <tei:gi>person</tei:gi> s in the local authority file. If the source <tei:gi>persName</tei:gi> did not contain any further TEI mark-up, this has been added from the local authority file.</tei:change>
+            <tei:change when="2019-08-16" who="#pers_TG" xml:id="d5e42" xml:lang="en">Added references to local authority file ( <tei:ref target="../data/tei/gazetteer_levant-phd.TEIP5.xml"
+                >../data/tei/gazetteer_levant-phd.TEIP5.xml</tei:ref> ) and to GeoNames IDs to <tei:gi>placeName</tei:gi> s without such references based on <tei:gi>place</tei:gi> s mentioned in the authority file.</tei:change>
             <change when="2019-08-16" who="#pers_TG">Created this file</change>
         </revisionDesc>
     </teiHeader>
@@ -289,140 +289,140 @@
                 </listBibl>
                 <!-- add the newspaper *al-Muqtabas*, also published as *al-Qabas* -->
                 <listBibl xml:lang="ar">
-                    <biblStruct next="oape:bibl:53" prev="oape:bibl:51">
-                        <monogr>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Qabas<title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya<title>
-                            <title level="j" xml:lang="ar">القبس<title>
-                            <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية<title>
+                    <tei:biblStruct next="oape:bibl:53" prev="oape:bibl:51">
+                        <tei:monogr>
+                            <tei:title level="j" xml:lang="ar-Latn-x-ijmes">al-Qabas</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</tei:title>
+                            <tei:title level="j" xml:lang="ar">القبس</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية</tei:title>
                             <idno change="#d2e102" type="oape">52</idno>
-                            <idno type="OCLC">792756309<idno>
-                            <idno type="OCLC">1034542938<idno>
-                            <idno type="eap">EAP119/1/20/1<idno>
-                            <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=7596;r=29795<idno>
+                            <tei:idno type="OCLC">792756309</tei:idno>
+                            <tei:idno type="OCLC">1034542938</tei:idno>
+                            <tei:idno type="eap">EAP119/1/20/1</tei:idno>
+                            <tei:idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=7596;r=29795</tei:idno>
                             <textLang mainLang="ar"/>
-                            <editor> <persName xml:lang="ar"> <forename xml:lang="ar">شكري<forename> <surname xml:lang="ar">العسلي<surname> <persName> </editor>
-                            <editor> <persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <forename xml:lang="ar">محمد<forename> <surname xml:lang="ar">كرد علي<surname>
-                                <persName> </editor>
-                            <imprint>
-                                <pubPlace> <placeName xml:lang="ar-Latn-x-ijmes">Dimashq<placeName> <placeName xml:lang="ar">دمشق<placeName> <pubPlace>
-                                <date from="1913-09-30" to="1914-01-29"/>
-                                <!--<date calendar="#cal_julian" datingMethod="#cal_julian" when="1913-09-30" when-custom="1913-09-17" xml:lang="ar-Latn-x-ijmes">17 Aylūl 1913, Tuesday<date>-->
-                            <imprint>
-                            <biblScope from="1" to="1" unit="volume"/>
-                            <biblScope from="1301-1" to="1400-100" unit="issue"/>
-                            <biblScope from="1" to="4" unit="page">1-4<biblScope>
-                        <monogr>
-                    <biblStruct>
-                    <biblStruct next="oape:bibl:51">
-                        <monogr>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas<title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya<title>
-                            <title level="j" xml:lang="ar">المقتبس<title>
-                            <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية<title>
+                            <editor> <tei:persName xml:lang="ar"> <tei:forename xml:lang="ar">شكري</tei:forename> <tei:surname xml:lang="ar">العسلي</tei:surname> </tei:persName> </editor>
+                            <editor> <tei:persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <tei:forename xml:lang="ar">محمد</tei:forename> <tei:surname xml:lang="ar">كرد علي</tei:surname>
+                                </tei:persName> </editor>
+                            <tei:imprint>
+                                <tei:pubPlace> <tei:placeName xml:lang="ar-Latn-x-ijmes">Dimashq</tei:placeName> <tei:placeName xml:lang="ar">دمشق</tei:placeName> </tei:pubPlace>
+                                <tei:date from="1913-09-30" to="1914-01-29"/>
+                                <!--<tei:date calendar="#cal_julian" datingMethod="#cal_julian" when="1913-09-30" when-custom="1913-09-17" xml:lang="ar-Latn-x-ijmes">17 Aylūl 1913, Tuesday</tei:date>-->
+                            </tei:imprint>
+                            <tei:biblScope from="1" to="1" unit="volume"/>
+                            <tei:biblScope from="1301-1" to="1400-100" unit="issue"/>
+                            <tei:biblScope from="1" to="4" unit="page">1-4</tei:biblScope>
+                        </tei:monogr>
+                    </tei:biblStruct>
+                    <tei:biblStruct next="oape:bibl:51">
+                        <tei:monogr>
+                            <tei:title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</tei:title>
+                            <tei:title level="j" xml:lang="ar">المقتبس</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية</tei:title>
                             <idno change="#d2e102" type="oape">50</idno>
-                            <idno type="OCLC">70845599<idno>
-                            <idno type="OCLC">1034546909<idno>
-                            <idno type="aub">Mic-Na:142-1<idno>
-                            <idno type="eap">EAP119/1/19/1<idno>
-                            <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919<idno>
+                            <tei:idno type="OCLC">70845599</tei:idno>
+                            <tei:idno type="OCLC">1034546909</tei:idno>
+                            <tei:idno type="aub">Mic-Na:142-1</tei:idno>
+                            <tei:idno type="eap">EAP119/1/19/1</tei:idno>
+                            <tei:idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919</tei:idno>
                             <textLang mainLang="ar"/>
-                            <editor> <persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <forename xml:lang="ar">محمد<forename> <surname xml:lang="ar">كرد علي<surname>
-                                <persName> </editor>
-                            <imprint>
-                                <publisher> <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas<orgName> <orgName xml:lang="ar">مطبعة المقتبس<orgName> <publisher>
-                                <pubPlace> <placeName xml:lang="ar-Latn-x-ijmes">Dimashq<placeName> <placeName xml:lang="ar">دمشق<placeName> <pubPlace>
-                                <date from="1908-12-17" to="1910-04-25"/>
+                            <editor> <tei:persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <tei:forename xml:lang="ar">محمد</tei:forename> <tei:surname xml:lang="ar">كرد علي</tei:surname>
+                                </tei:persName> </editor>
+                            <tei:imprint>
+                                <tei:publisher> <tei:orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas</tei:orgName> <tei:orgName xml:lang="ar">مطبعة المقتبس</tei:orgName> </tei:publisher>
+                                <tei:pubPlace> <tei:placeName xml:lang="ar-Latn-x-ijmes">Dimashq</tei:placeName> <tei:placeName xml:lang="ar">دمشق</tei:placeName> </tei:pubPlace>
+                                <tei:date from="1908-12-17" to="1910-04-25"/>
                                 <!-- add Ottoman fiscal date -->
-                                <!--                            <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-12-17" when-custom="1326-11-24">24 Dhu I 1326<date>-->
-                            <imprint>
-                            <biblScope from="1" to="2" unit="volume"/>
-                            <biblScope from="1" to="352" unit="issue"/>
-                            <biblScope from="1" to="4" unit="page"/>
-                        <monogr>
-                    <biblStruct>
-                    <biblStruct next="oape:bibl:52" prev="oape:bibl:50">
-                        <monogr>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas<title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya<title>
-                            <title level="j" xml:lang="ar">المقتبس<title>
-                            <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية<title>
+                                <!--                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-12-17" when-custom="1326-11-24">24 Dhu I 1326</tei:date>-->
+                            </tei:imprint>
+                            <tei:biblScope from="1" to="2" unit="volume"/>
+                            <tei:biblScope from="1" to="352" unit="issue"/>
+                            <tei:biblScope from="1" to="4" unit="page"/>
+                        </tei:monogr>
+                    </tei:biblStruct>
+                    <tei:biblStruct next="oape:bibl:52" prev="oape:bibl:50">
+                        <tei:monogr>
+                            <tei:title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</tei:title>
+                            <tei:title level="j" xml:lang="ar">المقتبس</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية</tei:title>
                             <idno change="#d2e102" type="oape">51</idno>
-                            <idno type="OCLC">70845599<idno>
-                            <idno type="OCLC">1034546909<idno>
-                            <idno type="aub">Mic-Na:142-1<idno>
-                            <idno type="eap">EAP119/1/19/1<idno>
-                            <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919<idno>
+                            <tei:idno type="OCLC">70845599</tei:idno>
+                            <tei:idno type="OCLC">1034546909</tei:idno>
+                            <tei:idno type="aub">Mic-Na:142-1</tei:idno>
+                            <tei:idno type="eap">EAP119/1/19/1</tei:idno>
+                            <tei:idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919</tei:idno>
                             <textLang mainLang="ar"/>
-                            <editor> <persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <forename xml:lang="ar">محمد<forename> <surname xml:lang="ar">كرد علي<surname>
-                                <persName> </editor>
-                            <editor> <persName xml:lang="ar"> <forename xml:lang="ar">احمد<forename> <surname xml:lang="ar">كرد علي<surname> <persName> </editor>
-                            <imprint>
-                                <publisher> <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas<orgName> <orgName xml:lang="ar">مطبعة المقتبس<orgName> <publisher>
-                                <pubPlace> <placeName xml:lang="ar-Latn-x-ijmes">Dimashq<placeName> <placeName xml:lang="ar">دمشق<placeName> <pubPlace>
-                                <date from="1910-04-26" to="1913-09-24"/>
+                            <editor> <tei:persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <tei:forename xml:lang="ar">محمد</tei:forename> <tei:surname xml:lang="ar">كرد علي</tei:surname>
+                                </tei:persName> </editor>
+                            <editor> <tei:persName xml:lang="ar"> <tei:forename xml:lang="ar">احمد</tei:forename> <tei:surname xml:lang="ar">كرد علي</tei:surname> </tei:persName> </editor>
+                            <tei:imprint>
+                                <tei:publisher> <tei:orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas</tei:orgName> <tei:orgName xml:lang="ar">مطبعة المقتبس</tei:orgName> </tei:publisher>
+                                <tei:pubPlace> <tei:placeName xml:lang="ar-Latn-x-ijmes">Dimashq</tei:placeName> <tei:placeName xml:lang="ar">دمشق</tei:placeName> </tei:pubPlace>
+                                <tei:date from="1910-04-26" to="1913-09-24"/>
                                 <!-- add Ottoman fiscal date -->
-                                <!--                            <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-12-17" when-custom="1326-11-24">24 Dhu I 1326<date>-->
-                            <imprint>
-                            <biblScope from="3" to="5" unit="volume"/>
-                            <biblScope from="353" to="1300" unit="issue"/>
-                            <biblScope from="1" to="4" unit="page"/>
-                        <monogr>
-                    <biblStruct>
-                    <biblStruct next="oape:bibl:54" prev="oape:bibl:52">
-                        <monogr>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas<title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya<title>
-                            <title level="j" xml:lang="ar">المقتبس<title>
-                            <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية<title>
+                                <!--                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-12-17" when-custom="1326-11-24">24 Dhu I 1326</tei:date>-->
+                            </tei:imprint>
+                            <tei:biblScope from="3" to="5" unit="volume"/>
+                            <tei:biblScope from="353" to="1300" unit="issue"/>
+                            <tei:biblScope from="1" to="4" unit="page"/>
+                        </tei:monogr>
+                    </tei:biblStruct>
+                    <tei:biblStruct next="oape:bibl:54" prev="oape:bibl:52">
+                        <tei:monogr>
+                            <tei:title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</tei:title>
+                            <tei:title level="j" xml:lang="ar">المقتبس</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية</tei:title>
                             <idno change="#d2e102" type="oape">53</idno>
-                            <idno type="OCLC">70845599<idno>
-                            <idno type="OCLC">1034546909<idno>
-                            <idno type="aub">Mic-Na:142-1<idno>
-                            <idno type="eap">EAP119/1/19/1<idno>
-                            <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919<idno>
+                            <tei:idno type="OCLC">70845599</tei:idno>
+                            <tei:idno type="OCLC">1034546909</tei:idno>
+                            <tei:idno type="aub">Mic-Na:142-1</tei:idno>
+                            <tei:idno type="eap">EAP119/1/19/1</tei:idno>
+                            <tei:idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919</tei:idno>
                             <textLang mainLang="ar"/>
-                            <editor> <persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <forename xml:lang="ar">محمد<forename> <surname xml:lang="ar">كرد علي<surname>
-                                <persName> </editor>
-                            <editor> <persName xml:lang="ar"> <forename xml:lang="ar">احمد<forename> <surname xml:lang="ar">كرد علي<surname> <persName> </editor>
-                            <imprint>
-                                <publisher> <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas<orgName> <orgName xml:lang="ar">مطبعة المقتبس<orgName> <publisher>
-                                <pubPlace> <placeName xml:lang="ar-Latn-x-ijmes">Dimashq<placeName> <placeName xml:lang="ar">دمشق<placeName> <pubPlace>
-                                <date from="1914-02-01" to="1916-06-15"/>
+                            <editor> <tei:persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <tei:forename xml:lang="ar">محمد</tei:forename> <tei:surname xml:lang="ar">كرد علي</tei:surname>
+                                </tei:persName> </editor>
+                            <editor> <tei:persName xml:lang="ar"> <tei:forename xml:lang="ar">احمد</tei:forename> <tei:surname xml:lang="ar">كرد علي</tei:surname> </tei:persName> </editor>
+                            <tei:imprint>
+                                <tei:publisher> <tei:orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas</tei:orgName> <tei:orgName xml:lang="ar">مطبعة المقتبس</tei:orgName> </tei:publisher>
+                                <tei:pubPlace> <tei:placeName xml:lang="ar-Latn-x-ijmes">Dimashq</tei:placeName> <tei:placeName xml:lang="ar">دمشق</tei:placeName> </tei:pubPlace>
+                                <tei:date from="1914-02-01" to="1916-06-15"/>
                                 <!-- add Ottoman fiscal date -->
-                                <!--                            <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-12-17" when-custom="1326-11-24">24 Dhu I 1326<date>-->
-                            <imprint>
-                            <biblScope from="5" to="7" unit="volume"/>
-                            <biblScope from="1401" to="1929" unit="issue"/>
-                            <biblScope from="1" to="4" unit="page"/>
-                        <monogr>
-                    <biblStruct>
-                    <biblStruct prev="oape:bibl:53">
-                        <monogr>
-                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas<title>
-                            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya<title>
-                            <title level="j" xml:lang="ar">المقتبس<title>
-                            <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية<title>
+                                <!--                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-12-17" when-custom="1326-11-24">24 Dhu I 1326</tei:date>-->
+                            </tei:imprint>
+                            <tei:biblScope from="5" to="7" unit="volume"/>
+                            <tei:biblScope from="1401" to="1929" unit="issue"/>
+                            <tei:biblScope from="1" to="4" unit="page"/>
+                        </tei:monogr>
+                    </tei:biblStruct>
+                    <tei:biblStruct prev="oape:bibl:53">
+                        <tei:monogr>
+                            <tei:title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</tei:title>
+                            <tei:title level="j" xml:lang="ar">المقتبس</tei:title>
+                            <tei:title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية</tei:title>
                             <idno change="#d2e102" type="oape">54</idno>
-                            <idno type="OCLC">70845599<idno>
-                            <idno type="OCLC">1034546909<idno>
-                            <idno type="aub">Mic-Na:142-1<idno>
-                            <idno type="eap">EAP119/1/19/1<idno>
-                            <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919<idno>
+                            <tei:idno type="OCLC">70845599</tei:idno>
+                            <tei:idno type="OCLC">1034546909</tei:idno>
+                            <tei:idno type="aub">Mic-Na:142-1</tei:idno>
+                            <tei:idno type="eap">EAP119/1/19/1</tei:idno>
+                            <tei:idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919</tei:idno>
                             <textLang mainLang="ar"/>
-                            <editor> <persName xml:lang="ar"> <forename xml:lang="ar">احمد<forename> <surname xml:lang="ar">كرد علي<surname> <persName> </editor>
-                            <imprint>
-                                <publisher> <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas<orgName> <orgName xml:lang="ar">مطبعة المقتبس<orgName> <publisher>
-                                <pubPlace> <placeName xml:lang="ar-Latn-x-ijmes">Dimashq<placeName> <placeName xml:lang="ar">دمشق<placeName> <pubPlace>
-                                <date from="1916-06-17" to="1916-11-08"/>
+                            <editor> <tei:persName xml:lang="ar"> <tei:forename xml:lang="ar">احمد</tei:forename> <tei:surname xml:lang="ar">كرد علي</tei:surname> </tei:persName> </editor>
+                            <tei:imprint>
+                                <tei:publisher> <tei:orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas</tei:orgName> <tei:orgName xml:lang="ar">مطبعة المقتبس</tei:orgName> </tei:publisher>
+                                <tei:pubPlace> <tei:placeName xml:lang="ar-Latn-x-ijmes">Dimashq</tei:placeName> <tei:placeName xml:lang="ar">دمشق</tei:placeName> </tei:pubPlace>
+                                <tei:date from="1916-06-17" to="1916-11-08"/>
                                 <!-- add Ottoman fiscal date -->
-                                <!--                            <date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-12-17" when-custom="1326-11-24">24 Dhu I 1326<date>-->
-                            <imprint>
-                            <biblScope from="7" to="7" unit="volume"/>
-                            <biblScope from="1930" to="2046" unit="issue"/>
-                            <biblScope from="1" to="2" unit="page"/>
-                        <monogr>
-                    <biblStruct>
+                                <!--                            <tei:date calendar="#cal_islamic" datingMethod="#cal_islamic" when="1908-12-17" when-custom="1326-11-24">24 Dhu I 1326</tei:date>-->
+                            </tei:imprint>
+                            <tei:biblScope from="7" to="7" unit="volume"/>
+                            <tei:biblScope from="1930" to="2046" unit="issue"/>
+                            <tei:biblScope from="1" to="2" unit="page"/>
+                        </tei:monogr>
+                    </tei:biblStruct>
                 </listBibl>
                 <listBibl xml:lang="ar">
                     <biblStruct xml:lang="ar">
