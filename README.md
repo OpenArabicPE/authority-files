@@ -40,6 +40,32 @@ date: 2019-01-30
 2. `query-geonames.xsl`: this stylesheet provides templates to query VIAF using SRU or RDF APIs. In both cases input can be either a GeoNames ID or a literal string. Output options are TEI XML, GeoNames XML or CSV.
 3. `convert_viaf-to-tei-functions.xsl`
 
+## bibliography
+
+- conversion between `<tei:biblStruct>` and `<mods:mods>` (including particularities of Zotero generated MODS)
+    + IDs?
+        * Zotero IDs are not included in the MODS output
+    + Problems:
+- XSLT to enrich Zotero-exports (file: `zotero_export-DRU8DnvU.xml`) with pre-exisiting data
+    + based on matching:
+        * title
+        * editors
+    + pre-existing data: copy everything except data edited in ZOtero
+- XSLT to copy data from biblio-biographic dictionaries, such as Zirikli to the bibliography
+    + based on matching:
+        * title
+        * IDs
+    + Output should be wrapped as
+
+    ```xml
+    <note>
+        <!-- information about and links to the sourc -->
+        <note type="bibliographic"><ref target="pointer-to-source"><bibl>bibliographic reference for the source</bibl></ref></note>
+        <!-- the source -->
+        <quote></quote>
+    </note>
+    ```
+
 
 
 # Workflow named entities: persons
@@ -177,6 +203,13 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
             - fortnightly:
             - monthly: -->
         <note type="param" n="p_step">daily</note>
+        <!-- the two above parameters have been converted to the following  -->
+        <note type="tagList">
+            <list>
+                <item>frequency_monthly</item>
+                <item>days_monday</item>
+            </list>
+        </note>
     </biblStruct>
 </listBibl>
 ```
