@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
@@ -33,7 +33,7 @@
     </teiHeader>
     <text xml:lang="ar">
         <body xml:lang="ar">
-            <div type="item" xml:lang="ar">
+            <div type="item" subtype="list" xml:lang="ar">
                 <listBibl xml:lang="ar">
                     <biblStruct xml:lang="ar">
                         <monogr xml:lang="ar">
@@ -47,7 +47,7 @@
                             <idno type="URI">http://waqfeya.com/book.php?bid=6509</idno>
                             <idno type="URI">http://shamela.ws/index.php/book/36540</idno>
                             <textLang mainLang="ar"/>
-                            <editor xml:lang="ar"> <persName ref="oape:pers:227 viaf:39370998" xml:lang="ar"> <roleName type="rank" xml:lang="ar">الأب</roleName> <forename xml:lang="ar"
+                            <editor xml:lang="ar"> <persName ref="oape:pers:227 viaf:39370998" xml:lang="ar"> <roleName type="rank" subtype="religious" xml:lang="ar">الأب</roleName> <forename xml:lang="ar"
                                 >أنستاس</forename> <forename xml:lang="ar">ماري</forename> <surname xml:lang="ar"> <addName type="nisbah" xml:lang="ar">الكرملي</addName> </surname> </persName>
                                 <persName xml:lang="ar-Latn-x-ijmes">al-Abb Anastās Mārī al-Karamlī</persName> </editor>
                             <editor xml:lang="ar"> <persName change="#d3e53" ref="oape:pers:396" xml:id="persName_195.d1e5884" xml:lang="ar"> <forename xml:id="forename_224.d1e5885" xml:lang="ar"
@@ -209,9 +209,9 @@
                             <idno type="OCLC">473817521</idno>
                             <idno type="ISSN">1010-710X</idno>
                             <textLang mainLang="ar"/>
-                            <editor xml:lang="ar"> <persName ref="oape:pers:771 viaf:77068906" xml:lang="ar"> <roleName type="rank" xml:lang="ar">الاب</roleName> <forename xml:lang="ar"
+                            <editor xml:lang="ar"> <persName ref="oape:pers:771 viaf:77068906" xml:lang="ar"> <roleName type="rank" subtype="religious" xml:lang="ar">الاب</roleName> <forename xml:lang="ar"
                                 >لويس</forename> <surname xml:lang="ar">شيخو</surname> </persName> </editor>
-                            <editor xml:lang="ar"> <persName ref="oape:pers:2810" xml:lang="ar"> <roleName type="rank" xml:lang="ar">الأب</roleName> <forename xml:lang="ar">لويس</forename> <surname
+                            <editor xml:lang="ar"> <persName ref="oape:pers:2810" xml:lang="ar"> <roleName type="rank" subtype="religious" xml:lang="ar">الأب</roleName> <forename xml:lang="ar">لويس</forename> <surname
                                 xml:lang="ar">خليل</surname> </persName> </editor>
                             <imprint xml:lang="ar">
                                 <publisher/>
