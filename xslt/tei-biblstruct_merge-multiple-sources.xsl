@@ -96,20 +96,20 @@
     <!-- update existing <biblStruct -->
     <xsl:template match="tei:biblStruct">
         <xsl:variable name="v_base" select="."/>
-        <xsl:variable name="v_source" select="if($p_enrich-master = true()) then($v_file-current) else($v_file-master)"/>
+        <xsl:variable name="v_file-source" select="if($p_enrich-master = true()) then($v_file-current) else($v_file-master)"/>
         <xsl:variable name="v_additional-info">
             <!-- select a biblStruct in the external file that matches $v_base by title, editors etc. -->
             <xsl:choose>
                 <!-- multiple matches -->
-                <xsl:when test="count($v_source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) gt 1">
+                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) gt 1">
                     <!-- better message needed -->
                     <xsl:message terminate="no">
                         <xsl:text>more than one match in the external file</xsl:text>
                      </xsl:message>
                 </xsl:when>
                 <!-- single match -->
-                <xsl:when test="count($v_source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) = 1">
-                    <xsl:copy-of select="$v_source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]"/>
+                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) = 1">
+                    <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
@@ -120,8 +120,9 @@
                     <xsl:text>additional information available</xsl:text>
                 </xsl:message>
                 <!-- establish source and target for enrichment -->
-                <xsl:variable name="v_target" select="if($p_enrich-master = false()) then($v_base) else($v_additional-info)"/>
-                <xsl:variable name="v_source" select="if($p_enrich-master = true()) then($v_base) else($v_additional-info)"/>
+                <!-- if running on the master file, the source should be the current file and the target should be the master -->
+                <xsl:variable name="v_source" select="if($p_enrich-master = false()) then($v_base) else($v_additional-info)"/>
+                <xsl:variable name="v_target" select="if($p_enrich-master = true()) then($v_base) else($v_additional-info)"/>
                 <xsl:variable name="v_combined">
                     <xsl:copy-of select="$v_source"/>
                     <xsl:copy-of select="$v_target"/>
