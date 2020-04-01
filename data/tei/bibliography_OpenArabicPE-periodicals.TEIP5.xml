@@ -613,6 +613,9 @@
                             <biblScope from="1" to="1" unit="issue"/>
                             <biblScope from="1" to="32" unit="page"/>
                         </monogr>
+                        <note type="tagList" xml:lang="en"><list>
+                            <item xml:lang="en">frequency_monthly</item>
+                            </list></note>
                     </biblStruct>
                 </listBibl>
                 <listBibl xml:lang="ar">
@@ -775,6 +778,9 @@
                             <biblScope from="1" to="1" unit="issue"/>
                             <biblScope from="1" to="32" unit="page" xml:lang="ar"/>
                         </monogr>
+                        <note type="tagList"><list>
+                            <item xml:lang="en">frequency_fortnightly</item>
+                            </list></note>
                     </biblStruct>
                 </listBibl>
                 <listBibl xml:lang="ar">
@@ -1023,6 +1029,22 @@
                                 <publisher/>
                                 <pubPlace> <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName> <placeName change="#d5e42" ref="oape:place:216 geon:98182"
                                     xml:lang="ar-Latn-x-ijmes">Baghdād</placeName> <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="en">Baghdad</placeName> </pubPlace>
+                                <!-- this is seems to be the first issue -->
+                                <date/>
+                            </imprint>
+                            <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                            <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                        </monogr>
+                    </biblStruct>
+                    <biblStruct xml:lang="ar">
+                        <monogr xml:lang="ar">
+                            <title level="j" xml:lang="ar">العلم</title>
+                            <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿIlm</title>
+                            <textLang mainLang="ar"/>
+                            <editor xml:lang="ar"> <persName xml:lang="ar">السيد هبة الدين الشهرستاني</persName></editor>
+                            <imprint xml:lang="ar">
+                                <publisher/>
+                                <pubPlace> <placeName ref="geon:98862" xml:lang="ar">النجف الأشرف</placeName></pubPlace>
                                 <!-- this is seems to be the first issue -->
                                 <date/>
                             </imprint>
@@ -1373,9 +1395,6 @@
                 </listBibl>
                 <listBibl>
                     <biblStruct xml:lang="ar" zot:genre="journalArticle">
-                        <analytic xml:lang="ar">
-                            <title level="j" xml:lang="ar">باب النسائيات</title>
-                        </analytic>
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">الديوان</title>
                             <textLang mainLang="ar"/>
@@ -1389,7 +1408,9 @@
                     </biblStruct>
                     <biblStruct xml:lang="en" zot:genre="journalArticle">
                         <monogr xml:lang="en">
+                            <title level="j" xml:lang="en">النيوز اوف دي ورلد</title>
                             <title level="j" xml:lang="en">النيو اوف دي ورلد</title>
+                            <title level="j" xml:lang="en">News of the World</title>
                             <textLang mainLang="en"/>
                             <imprint>
                                 <date/>
@@ -1413,6 +1434,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">العلم في القرن العشرين</title>
                             <title level="j" xml:lang="ar">العلم في القرن ال عشرين</title>
+                            <tei:idno type="OCLC">265304396</tei:idno>
                             <textLang mainLang="ar"/>
                             <imprint>
                                 <date/>
@@ -1421,10 +1443,11 @@
                             </imprint>
                         </monogr>
                     </biblStruct>
-                    <biblStruct xml:lang="ar" zot:genre="journalArticle">
-                        <monogr xml:lang="ar">
+                    <biblStruct xml:lang="fr" zot:genre="journalArticle">
+                        <monogr xml:lang="fr">
                             <title level="j" xml:lang="ar">مستندات الترقي</title>
-                            <textLang mainLang="ar"/>
+                            <title level="j" xml:lang="fr">Les Documents du Progrès</title>
+                            <textLang mainLang="fr"/>
                             <imprint>
                                 <date/>
                                 <pubPlace/>
@@ -1435,7 +1458,7 @@
                     <biblStruct xml:lang="ar" zot:genre="journalArticle">
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">أدلة الترقي</title>
-                            <textLang mainLang="ar"/>
+                            <textLang mainLang="fr"/>
                             <imprint>
                                 <date/>
                                 <pubPlace/>
@@ -1446,12 +1469,17 @@
                     <biblStruct xml:lang="" zot:genre="journalArticle">
                         <monogr xml:lang="">
                             <title level="j" xml:lang="">أرناؤود</title>
+                            <textLang otherLangs="ota">أرناؤودية لها قسم تركي</textLang>
+                            <editor><persName xml:lang="ar">درويش بك هيما الأرناؤودي</persName></editor>
                             <imprint>
                                 <date/>
                                 <pubPlace/>
                                 <publisher/>
                             </imprint>
                         </monogr>
+                        <note type="tagList"><list>
+                            <item xml:lang="en">frequency_weekly</item>
+                            </list></note>
                     </biblStruct>
                     <biblStruct xml:lang="ar" zot:genre="journalArticle">
                         <monogr xml:lang="ar">
@@ -1476,7 +1504,8 @@
                     </biblStruct>
                     <biblStruct xml:lang="en" zot:genre="journalArticle">
                         <monogr xml:lang="en">
-                            <title level="j" xml:lang="en">إيفنن نيوز</title>
+                            <title level="j" xml:lang="en-Arab-AR">إيفنن نيوز</title>
+                            <title level="j" xml:lang="en">Evening News</title>
                             <textLang mainLang="en"/>
                             <imprint>
                                 <date/>
@@ -4864,7 +4893,7 @@
                     <biblStruct xml:lang="ar" zot:genre="journalArticle">
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">مجلة الملكية</title>
-                            <textLang mainLang="ar"/>
+                            <textLang mainLang="ota">التركية</textLang>
                             <imprint>
                                 <date/>
                                 <pubPlace/>
@@ -6277,11 +6306,12 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">تنوير الأفكار</title>
                             <title level="j" xml:lang="ar">مجلة دينية أدبية سياسية</title>
+                            <editor type="owner"><persName xml:lang="ar">عبد الهادي أفندي الأعظمي</persName></editor>
                             <editor xml:lang="ar"> <persName xml:lang="ar">نعمان أفندي الأعظمي</persName> </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
                                 <date/>
-                                <pubPlace/>
+                                <pubPlace><placeName ref="geon:98182" xml:lang="ar">بغداد</placeName></pubPlace>
                                 <publisher/>
                             </imprint>
                         </monogr>
