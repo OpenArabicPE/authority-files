@@ -1783,17 +1783,22 @@
                     </biblStruct>
                     <biblStruct xml:lang="ar" zot:genre="journalArticle">
                         <monogr xml:lang="ar">
-                            <title level="j" xml:lang="ar">الإنسانية</title>
                             <ref>Tarrazi:4:132</ref>
+                            <title level="j" xml:lang="ar">الإنسانية</title>
                             <title level="j" xml:lang="ar">مجلة علمية أخلاقية اجتماعية انتقادية عمرانية</title>
                             <editor source="BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792" xml:lang="ar"> <persName xml:lang="ar"
                                 >الشيخ حسن الرزق</persName> </editor>
                             <textLang mainLang="ar"/>
-                            <imprint source="BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792">
-                                <pubPlace> <placeName>Hama</placeName> </pubPlace>
+                            <imprint>
+                                <pubPlace source="BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792"> <placeName ref="geon:170017" xml:lang="ar"
+                                    >حماة</placeName></pubPlace>
                             </imprint>
                             <biblScope unit="page"/>
+                            <biblScope from="1" to="32" unit="page"/>
                         </monogr>
+                        <note type="tagList"><list>
+                            <item xml:lang="en">frequency_fortnightly</item>
+                            </list></note>
                     </biblStruct>
                     <biblStruct xml:lang="fr" zot:genre="journalArticle">
                         <monogr xml:lang="fr">
@@ -3713,11 +3718,14 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">النعمة</title>
                             <title level="j" xml:lang="ar">مجلة دينية علمية إخبارية</title>
+                            <tei:idno type="OCLC">792755094</tei:idno>
                             <textLang mainLang="ar"/>
+                            <editor><persName ref="viaf:40250618" xml:lang="ar"> <forename xml:lang="ar">عيسى</forename> أفندي <forename xml:lang="ar">اسكندر</forename> <surname xml:lang="ar"
+                                >معلوف</surname></persName></editor>
                             <imprint>
                                 <date/>
-                                <pubPlace/>
-                                <publisher/>
+                                <pubPlace><placeName ref="geon:170654" xml:lang="ar">دمشق</placeName></pubPlace>
+                                <publisher><orgName xml:lang="ar">البطريركية الأنطاكية الأرثوذكسية</orgName></publisher>
                             </imprint>
                         </monogr>
                     </biblStruct>
@@ -6316,20 +6324,38 @@
                             </imprint>
                         </monogr>
                     </biblStruct>
-                    <biblStruct xml:lang="ar" zot:genre="journalArticle">
-                        <monogr xml:lang="ar">
-                            <title level="j" xml:lang="ar">الهداية</title>
-                            <title level="j" xml:lang="ar">مجلة دينية علمية أدبية اجتماعية</title>
-                            <editor xml:lang="ar"> <persName xml:lang="ar">الشيخ عبد العزيز جاويش</persName> </editor>
-                            <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6161.d2e50639" type="publisher"> <persName>طه الراوي</persName> </editor>
-                            <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4869.d2e61765" type="publisher"> <persName>ابن عون</persName> </editor>
-                            <textLang mainLang="ar"/>
-                            <imprint>
-                                <pubPlace source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6161.d2e50639"> <placeName>Baghdad</placeName> </pubPlace>
-                            </imprint>
-                            <biblScope from="1" to="72" unit="page"/>
-                        </monogr>
-                    </biblStruct>
+                    <listBibl>
+                        <biblStruct xml:lang="ar" zot:genre="journalArticle">
+                            <monogr xml:lang="ar">
+                                <title level="j" xml:lang="ar">الهداية</title>
+                                <title level="j" xml:lang="ar">مجلة دينية علمية أدبية اجتماعية</title>
+                                <editor xml:lang="ar"> <persName xml:lang="ar">الشيخ عبد العزيز جاويش</persName> </editor>
+                                <textLang mainLang="ar"/>
+                                <imprint>
+                                    <pubPlace source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6161.d2e50639"> <placeName ref="geon:360630"
+                                        xml:lang="ar">مصر</placeName> </pubPlace>
+                                </imprint>
+                                <biblScope from="1" to="72" unit="page"/>
+                            </monogr>
+                            <note type="tagList"><list>
+                                <item xml:lang="en">frequency_monthly</item>
+                                </list></note>
+                        </biblStruct>
+                        <biblStruct xml:lang="ar" zot:genre="journalArticle">
+                            <monogr xml:lang="ar">
+                                <title level="j" xml:lang="ar">الهداية</title>
+                                <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6161.d2e50639" type="publisher">
+                                    <persName>طه الراوي</persName> </editor>
+                                <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4869.d2e61765" type="publisher"> <persName>ابن عون</persName> </editor>
+                                <textLang mainLang="ar"/>
+                                <imprint>
+                                    <pubPlace source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6161.d2e50639"> <placeName>Baghdad</placeName>
+                                    </pubPlace>
+                                </imprint>
+                                <biblScope from="1" to="72" unit="page"/>
+                            </monogr>
+                        </biblStruct>
+                    </listBibl>
                     <biblStruct xml:lang="ar" zot:genre="journalArticle">
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">العالم الجديد</title>
@@ -6337,12 +6363,15 @@
                             <textLang mainLang="ar"/>
                             <imprint>
                                 <date/>
-                                <pubPlace/>
+                                <pubPlace><placeName ref="geon:5128581" xml:lang="ar">نيويورك</placeName></pubPlace>
                                 <publisher/>
                             </imprint>
                             <biblScope from="7/8" to="7/8" unit="issue"/>
                             <biblScope from="1" to="20" unit="page"/>
                         </monogr>
+                        <note type="tagList"><list>
+                            <item xml:lang="en">frequency_monthly</item>
+                            </list></note>
                     </biblStruct>
                     <biblStruct xml:lang="ar" zot:genre="journalArticle">
                         <monogr xml:lang="ar">
