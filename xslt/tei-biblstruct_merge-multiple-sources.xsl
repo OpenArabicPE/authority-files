@@ -198,7 +198,7 @@
                 <xsl:text>Enriched all </xsl:text>
                 <gi>biblStruct</gi>
                 <xsl:text> with information from file </xsl:text>
-                <ref target="{base-uri()}"><xsl:value-of select="base-uri()"/></ref>
+                <ref target="{base-uri($v_file-current)}"><xsl:value-of select="base-uri($v_file-current)"/></ref>
                 <xsl:text> using matching of titles.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="node()"/>
