@@ -111,6 +111,9 @@
                 <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) = 1">
                     <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]"/>
                 </xsl:when>
+                 <xsl:when test="count($v_file-source/descendant::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) = 1">
+                    <xsl:copy-of select="$v_file-source/descendant::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]"/>
+                </xsl:when>
             </xsl:choose>
         </xsl:variable>
         <!-- check if there is additional information available -->
@@ -128,7 +131,7 @@
                     <xsl:copy-of select="$v_target"/>
                 </xsl:variable>
                 <xsl:variable name="v_target-monogr" select="$v_target/descendant-or-self::tei:biblStruct/tei:monogr"/>
-                <xsl:variable name="v_source-monogr" select="$v_source/descendant-or-self::tei:biblStruct/tei:monogr"/>
+                <xsl:variable name="v_source-monogr" select="if($v_source/descendant-or-self::tei:biblStruct/tei:monogr) then($v_source/descendant-or-self::tei:biblStruct/tei:monogr) else($v_source/descendant-or-self::tei:bibl)"/>
                 <xsl:copy>
                     <!-- combine attributes -->
                     <xsl:apply-templates select="$v_combined/descendant-or-self::tei:biblStruct/@*"/>
@@ -154,13 +157,16 @@
                             <xsl:apply-templates select="$v_combined/descendant-or-self::tei:biblStruct/tei:monogr/tei:imprint/@*"/>
                             <!-- date -->
                             <xsl:apply-templates select="$v_target-monogr/tei:imprint/tei:date"/>
-                            <xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:date[not(. = $v_target-monogr/tei:imprint/tei:date)]" mode="m_copy-from-source"/>
+                            <!--<xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:date[not(. = $v_target-monogr/tei:imprint/tei:date)]" mode="m_copy-from-source"/>-->
+                            <xsl:apply-templates select="$v_source-monogr/descendant::tei:date[not(. = $v_target-monogr/tei:imprint/tei:date)]" mode="m_copy-from-source"/>
                             <!-- pubPlace -->
                             <xsl:apply-templates select="$v_target-monogr/tei:imprint/tei:pubPlace"/>
-                            <xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:pubPlace[not(. = $v_target-monogr/tei:imprint/tei:pubPlace)]" mode="m_copy-from-source"/>
+<!--                            <xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:pubPlace[not(. = $v_target-monogr/tei:imprint/tei:pubPlace)]" mode="m_copy-from-source"/>-->
+                            <xsl:apply-templates select="$v_source-monogr/descendant::tei:pubPlace[not(. = $v_target-monogr/tei:imprint/tei:pubPlace)]" mode="m_copy-from-source"/>
                             <!-- publisher  -->
                             <xsl:apply-templates select="$v_target-monogr/tei:imprint/tei:publisher"/>
-                            <xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:publisher[not(. = $v_target-monogr/tei:imprint/tei:publisher)]" mode="m_copy-from-source"/>
+                            <!--<xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:publisher[not(. = $v_target-monogr/tei:imprint/tei:publisher)]" mode="m_copy-from-source"/>-->
+                            <xsl:apply-templates select="$v_source-monogr/descendant::tei:publisher[not(. = $v_target-monogr/tei:imprint/tei:publisher)]" mode="m_copy-from-source"/>
                         </xsl:element>
                         <!-- biblScope -->
                         <xsl:apply-templates select="$v_target-monogr/tei:biblScope"/>
