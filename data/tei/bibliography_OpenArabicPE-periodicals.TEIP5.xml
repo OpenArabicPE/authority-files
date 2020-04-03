@@ -24,6 +24,8 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
+            <tei:change when="2020-04-03" who="#pers_TG" xml:id="d3e130" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml"
+                >../data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>) and VIAF to <tei:gi>persName</tei:gi>s without such references based on <tei:gi>person</tei:gi>s in the local authority file. If the source <tei:gi>persName</tei:gi> did not contain any further TEI mark-up, this has been added from the local authority file.</tei:change>
             <change when="2020-04-03" who="#pers_TG" xml:id="d2e433" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
                 target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml"
                 >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml</ref> using matching of titles.</change>
@@ -161,7 +163,7 @@
                                 </persName>
                             </editor>
                             <editor change="#d2e33" source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_315.d2e2686">
-                                <persName>امين تقي الدين</persName>
+                                <persName change="#d3e130" ref="oape:pers:1142">أمين تقي الدين</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint xml:lang="ar">
@@ -197,7 +199,7 @@
                             <idno type="jid" xml:lang="ar">106</idno>
                             <idno type="OCLC">1036721166</idno>
                             <editor xml:lang="ar">
-                                <persName ref="oape:pers:2807 viaf:72750911" xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:962 viaf:72750911" xml:lang="ar">
                                     <forename xml:lang="ar">عبد الله</forename>
                                     <surname xml:lang="ar">النديم</surname>
                                     <addName type="nisbah" xml:lang="ar">الإدريسي</addName>
@@ -465,7 +467,7 @@
                             <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=7596;r=29795</idno>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:460 viaf:160786315" xml:lang="ar">
                                     <forename xml:lang="ar">شكري</forename>
                                     <surname xml:lang="ar">العسلي</surname>
                                 </persName>
@@ -553,7 +555,7 @@
                                 </persName>
                             </editor>
                             <editor>
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:877" xml:lang="ar">
                                     <forename xml:lang="ar">احمد</forename>
                                     <surname xml:lang="ar">كرد علي</surname>
                                 </persName>
@@ -599,7 +601,7 @@
                                 </persName>
                             </editor>
                             <editor>
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:877" xml:lang="ar">
                                     <forename xml:lang="ar">احمد</forename>
                                     <surname xml:lang="ar">كرد علي</surname>
                                 </persName>
@@ -639,7 +641,7 @@
                             <idno type="eap">EAP119/1/19/1</idno>
                             <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=6756;r=26919</idno>
                             <editor>
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:877" xml:lang="ar">
                                     <forename xml:lang="ar">احمد</forename>
                                     <surname xml:lang="ar">كرد علي</surname>
                                 </persName>
@@ -848,7 +850,12 @@
                             <textLang mainLang="ar"/>
                             <!--شهرية-->
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar"> <forename>عيسى</forename>أفندي <forename>اسكندر</forename> <surname>المعلوف</surname> </persName>
+                                <persName change="#d3e130" ref="oape:pers:533 viaf:40250618" xml:lang="ar">
+                                    <forename>عيسى</forename>
+                                    <roleName type="title">أفندي</roleName>
+                                    <forename>اسكندر</forename>
+                                    <surname>المعلوف</surname>
+                                </persName>
                             </editor>
                             <imprint>
                                 <publisher/>
@@ -944,21 +951,21 @@
                             <idno type="OCLC" xml:lang="en">22757559</idno>
                             <idno type="url" xml:lang="ar-Latn-x-ijmes">http://hdl.handle.net/2027/njp.32101007751447</idno>
                             <editor ref="viaf:79119650" xml:lang="ar">
-                                <persName ref="viaf:79119650" xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:305 viaf:79119650" xml:lang="ar">
                                     <forename xml:lang="ar">بطرس</forename>
                                     <surname xml:lang="ar">البستاني</surname>
                                 </persName>
-                                <persName ref="viaf:79119650" xml:lang="ar-Latn-x-ijmes">
+                                <persName change="#d3e130" ref="oape:pers:305 viaf:79119650" xml:lang="ar-Latn-x-ijmes">
                                     <forename xml:lang="ar-Latn-x-ijmes">Buṭrus</forename>
                                     <surname xml:lang="ar-Latn-x-ijmes">al-Bustānī</surname>
                                 </persName>
                             </editor>
                             <editor ref="viaf:21245607" xml:lang="ar">
-                                <persName ref="viaf:21245607" xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:307 viaf:21245607" xml:lang="ar">
                                     <forename xml:lang="ar">سليم</forename>
                                     <surname xml:lang="ar">البستاني</surname>
                                 </persName>
-                                <persName ref="viaf:21245607" xml:lang="ar-Latn-x-ijmes">
+                                <persName change="#d3e130" ref="oape:pers:307 viaf:21245607" xml:lang="ar-Latn-x-ijmes">
                                     <forename xml:lang="ar-Latn-x-ijmes">Salīm</forename>
                                     <surname xml:lang="ar-Latn-x-ijmes">al-Bustānī</surname>
                                 </persName>
@@ -1085,10 +1092,18 @@
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥuqūq</title>
                             <idno change="#d2e78" type="oape">38</idno>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">سليم بك المعوشي</persName>
+                                <persName change="#d3e130" ref="oape:pers:3673 viaf:311789538" xml:lang="ar">
+                                    <forename>سليم</forename>
+                                    <roleName type="title">بك</roleName>
+                                    <surname>المعوشي</surname>
+                                </persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">ملحم بك خلف</persName>
+                                <persName change="#d3e130" ref="oape:pers:4010 viaf:311789537" xml:lang="ar">
+                                    <forename>ملحم</forename>
+                                    <roleName type="title">بك</roleName>
+                                    <surname>خلف</surname>
+                                </persName>
                             </editor>
                             <editor change="#d2e33">
                                 <persName>ميخائيل بن جرجس</persName>
@@ -1131,7 +1146,7 @@
                                 <persName xml:lang="ar">شيخ أحمد عباس الأزهري</persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName ref="viaf:311789757" xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:555 viaf:311789757" xml:lang="ar">
                                     <forename xml:lang="ar">حسن</forename>
                                     <roleName type="title" xml:lang="ar">أفندي</roleName>
                                     <surname xml:lang="ar">الناطور</surname>
@@ -1185,8 +1200,12 @@
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Raʾī al-ʿĀmm</title>
                             <idno change="#d2e78" type="oape">40</idno>
                             <editor>
-                                <persName ref="viaf:305215096" xml:lang="ar">طه أفندي المدور</persName>
-                                <persName ref="viaf:305215096" xml:lang="ar-Latn-x-ijmes">Ṭaha Efendi al-Mudawwar</persName>
+                                <persName change="#d3e130" ref="oape:pers:4091 viaf:305215096" xml:lang="ar">
+                                    <forename>طه</forename>
+                                    <roleName type="title">أفندي</roleName>
+                                    <surname>المدور</surname>
+                                </persName>
+                                <persName change="#d3e130" ref="oape:pers:4091 viaf:305215096" xml:lang="ar-Latn-x-ijmes">Ṭaha Efendi al-Mudawwar</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint xml:lang="ar">
@@ -1216,7 +1235,7 @@
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Riyāḍ</title>
                             <idno change="#d2e78" type="oape">41</idno>
                             <editor change="#d2e33" source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_3320.d2e27480" xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:1845 viaf:21058435" xml:lang="ar">
                                     <forename xml:lang="ar">سليمان</forename>
                                     <surname xml:lang="ar">الدخيل</surname>
                                 </persName>
@@ -1394,11 +1413,11 @@
                             <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda siyāsiyya tujāriyya ʿilmiyya ṣināʿiyya adabiyya zirāʿiyya</title>
                             <idno change="#d2e78" type="oape">45</idno>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:2858 viaf:305214784" xml:lang="ar">
                                     <forename>ناصيف</forename>
                                     <surname>ابو زيد</surname>
                                 </persName>
-                                <persName xml:lang="ar-Latn-x-ijmes">
+                                <persName change="#d3e130" ref="oape:pers:2858 viaf:305214784" xml:lang="ar-Latn-x-ijmes">
                                     <forename>Nāṣīf</forename>
                                     <surname>Abū Zayd</surname>
                                 </persName>
@@ -1485,7 +1504,13 @@
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿIlm</title>
                             <textLang mainLang="ar"/>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">السيد هبة الدين الشهرستاني</persName>
+                                <persName change="#d3e130" ref="oape:pers:3339 viaf:118641865" xml:lang="ar">
+                                    <roleName type="nobility">السيد</roleName>
+                                    <surname>
+                                        <addName type="khitab">هبة الدين</addName>
+                                    </surname>
+                                    <addName type="nisbah">الشهرستاني</addName>
+                                </persName>
                             </editor>
                             <imprint xml:lang="ar">
                                 <publisher/>
@@ -1532,7 +1557,7 @@
                             <textLang mainLang="ar"/>
                             <editor>
                                 <persName xml:lang="ar-Latn-x-ijmes">Shaykh ʿAlī Yūsuf</persName>
-                                <persName change="#d3e53" ref="oape:pers:3707" xml:lang="ar">
+                                <persName change="#d3e53 #d3e130" ref="oape:pers:3707" xml:lang="ar">
                                     <roleName type="honorific">شيخ</roleName>
                                     <forename>علي</forename>
                                     <surname>يوسف</surname>
@@ -1633,14 +1658,14 @@
                             <title level="j" xml:lang="ar-Latn-x-ijmes">al-Waṭan</title>
                             <idno change="#d2e78" type="oape">48</idno>
                             <editor xml:lang="ar">
-                                <persName ref="viaf:60135237" xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:936 viaf:60135237" xml:lang="ar">
                                     <forename xml:lang="ar">شبلي</forename>
                                     <roleName type="title" xml:lang="ar">أفندي</roleName>
                                     <surname xml:lang="ar">ملاط</surname>
                                 </persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName ref="viaf:123147905332979092816" xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:767 viaf:123147905332979092816" xml:lang="ar">
                                     <forename xml:lang="ar">نجيب</forename>
                                     <roleName type="title" xml:lang="ar">أفندي</roleName>
                                     <surname>شوشاني</surname>
@@ -1784,7 +1809,7 @@
                             <idno change="#d2e69" type="oape">17</idno>
                             <idno type="OCLC">297351216</idno>
                             <editor>
-                                <persName xml:lang="en-Arab-AR">
+                                <persName change="#d3e130" ref="oape:pers:2901" xml:lang="en-Arab-AR">
                                     <roleName type="honorific">المستر</roleName>
                                     <forename>ويليام</forename>
                                     <surname>ستيد</surname>
@@ -1874,7 +1899,7 @@
                             <idno type="OCLC">226234432</idno>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:935 viaf:44217468" xml:lang="ar">
                                     <forename>نعوم</forename>
                                     <surname>مكرزل</surname>
                                 </persName>
@@ -1901,7 +1926,7 @@
                             <idno type="OCLC">226234432</idno>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:935 viaf:44217468" xml:lang="ar">
                                     <forename>نعوم</forename>
                                     <surname>مكرزل</surname>
                                 </persName>
@@ -1938,7 +1963,7 @@
                             <idno type="OCLC" xml:id="idno_11.d1e198" xml:lang="en">499946128</idno>
                             <idno type="OCLC" xml:id="idno_12.d1e202" xml:lang="en">177646790</idno>
                             <editor xml:id="editor_2.d1e205" xml:lang="en">
-                                <persName xml:id="persName_3.d1e207" xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:2008" xml:id="persName_3.d1e207" xml:lang="ar">
                                     <forename xml:id="forename_3.d1e209">عبد القادر</forename>
                                     <surname xml:id="surname_3.d1e212">قباني</surname>
                                 </persName>
@@ -1948,7 +1973,7 @@
                                 </persName>
                             </editor>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_2083.d2e23134">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:787 viaf:305214837" xml:lang="ar">
                                     <forename xml:lang="ar">احمد حسن</forename>
                                     <surname xml:lang="ar">طبارة</surname>
                                 </persName>
@@ -2059,7 +2084,7 @@
                             <title level="j" xml:lang="">أرناؤود</title>
                             <textLang otherLangs="ota">أرناؤودية لها قسم تركي</textLang>
                             <editor>
-                                <persName xml:lang="ar">درويش بك هيما الأرناؤودي</persName>
+                                <persName change="#d3e130" ref="oape:pers:3635" xml:lang="ar">درويش <roleName type="title">بك</roleName> هيما الأرناؤودي</persName>
                             </editor>
                             <imprint>
                                 <date/>
@@ -2211,7 +2236,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">الأخبار</title>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_8292.d2e75789">
-                                <persName xml:lang="ar">داود بركات</persName>
+                                <persName change="#d3e130" ref="oape:pers:1673" xml:lang="ar">داود بركات</persName>
                             </editor>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_1220.d2e12812">
                                 <persName xml:lang="ar">ابراهيم عبد القادر المازني</persName>
@@ -2375,10 +2400,14 @@
                             <title level="j" xml:lang="ar">الإصلاح</title>
                             <ref>Tarrazi:4:14</ref>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_2083.d2e23134">
-                                <persName xml:lang="ar">أحمد حسن طبارة</persName>
+                                <persName change="#d3e130" ref="oape:pers:787 viaf:305214837" xml:lang="ar">
+                                    <forename xml:lang="ar">أحمد</forename>
+                                    <forename xml:lang="ar">حسن</forename>
+                                    <surname xml:lang="ar">طبارة</surname>
+                                </persName>
                             </editor>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_357.d2e3274">
-                                <persName xml:lang="ar">أمين ناصر الدين</persName>
+                                <persName change="#d3e130" ref="oape:pers:1153 viaf:8827545" xml:lang="ar">أمين ناصر الدين</persName>
                             </editor>
                             <editor source="/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_2657.d2e21201">
                                 <persName xml:lang="ar">سعيد عقل</persName>
@@ -2419,7 +2448,7 @@
                             <title level="j" xml:lang="ar">الإنسانية</title>
                             <title level="j" xml:lang="ar">مجلة علمية أخلاقية اجتماعية انتقادية عمرانية</title>
                             <editor source="BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792" xml:lang="ar">
-                                <persName xml:lang="ar">الشيخ حسن الرزق</persName>
+                                <persName change="#d3e130" ref="oape:pers:3378" xml:lang="ar"> <roleName type="honorific">الشيخ</roleName>حسن الرزق</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -2507,7 +2536,7 @@
                             <title level="j" xml:lang="ar">الاقتصاد</title>
                             <title level="j" xml:lang="ar">زراعية صناعية تجارية مصورة</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">أنيبال أفندي أبيلا</persName>
+                                <persName change="#d3e130" ref="oape:pers:35" xml:lang="ar">أنيبال <roleName type="title" xml:lang="ar">أفندي</roleName> أبيلا</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -2868,7 +2897,7 @@
                             <ref target="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_618896732/tei/oclc_618896732-div_12.TEIP5.xml#"/>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName>احمد فارس</persName>
+                                <persName change="#d3e130" ref="oape:pers:3122">أحمد فارس</persName>
                             </editor>
                             <imprint>
                                 <pubPlace>
@@ -3011,7 +3040,11 @@
                             <ref>Tarrazi:4:188</ref>
                             <textLang mainLang="ar"/>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_6564.d2e82875" type="publisher">
-                                <persName>محمد فريد وجدي</persName>
+                                <persName change="#d3e130" ref="oape:pers:980 viaf:53094077">
+                                    <forename xml:lang="ar">محمد</forename>
+                                    <forename xml:lang="ar">فريد</forename>
+                                    <surname xml:lang="ar">وجدي</surname>
+                                </persName>
                             </editor>
                             <imprint>
                                 <pubPlace>
@@ -3168,7 +3201,10 @@
                             <title level="j" xml:lang="ar">الرابطة السورية الوطنية</title>
                             <textLang mainLang="ar"/>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_7932.d2e72626">
-                                <persName>خليل سعادة</persName>
+                                <persName change="#d3e130" ref="oape:pers:722 viaf:35793307">
+                                    <forename>خليل</forename>
+                                    <surname>سعادة</surname>
+                                </persName>
                             </editor>
                             <imprint>
                                 <date/>
@@ -3343,7 +3379,10 @@
                             <title level="j" xml:lang="ar">الشام</title>
                             <ref>Tarrazi:4:43</ref>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_5657.d2e66880">
-                                <persName>اديب نظمي</persName>
+                                <persName change="#d3e130" ref="oape:pers:963">
+                                    <forename xml:lang="ar">أديب</forename>
+                                    <surname xml:lang="ar">نظمي</surname>
+                                </persName>
                             </editor>
                             <editor>
                                 <persName>مصطفى واصف</persName>
@@ -3465,16 +3504,26 @@
                             <ref>Tarrazi:4:168</ref>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName>نصر الدين زغلول</persName>
+                                <persName change="#d3e130" ref="oape:pers:706">
+                                    <forename xml:lang="ar">نصر الدين</forename>
+                                    <surname xml:lang="ar">زغلول</surname>
+                                </persName>
                             </editor>
                             <editor>
                                 <persName>درويش مصطفى</persName>
                             </editor>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_7.TEIP5.xml#p_207.d2e2654">
-                                <persName>محمد لطفي جمعة</persName>
+                                <persName change="#d3e130" ref="oape:pers:625 viaf:62350636">
+                                    <forename xml:lang="ar">محمد</forename>
+                                    <forename xml:lang="ar">لطفي</forename>
+                                    <surname xml:lang="ar">جمعة</surname>
+                                </persName>
                             </editor>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4006.d2e51145">
-                                <persName>محمد كرد علي</persName>
+                                <persName change="#d3e130" ref="oape:pers:878 viaf:32272677">
+                                    <forename xml:lang="ar">محمد</forename>
+                                    <surname xml:lang="ar">كرد علي</surname>
+                                </persName>
                             </editor>
                             <imprint>
                                 <date/>
@@ -3554,10 +3603,17 @@
                             <title level="j" xml:lang="ar">العروة</title>
                             <ref>Tarrazi:4:374</ref>
                             <editor source="BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_3361.d2e43012">
-                                <persName>جمال الدين الافغاني</persName>
+                                <persName change="#d3e130" ref="oape:pers:1523 viaf:96977760">
+                                    <forename xml:lang="ar">جمال الدين</forename>
+                                    <surname xml:lang="ar">الأفغاني</surname>
+                                </persName>
                             </editor>
                             <editor source="BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4962.d2e62805">
-                                <persName>الشيخ محمد عبده</persName>
+                                <persName change="#d3e130" ref="oape:pers:809 viaf:27297150">
+                                    <roleName type="title" xml:lang="ar">الشيخ</roleName>
+                                    <forename xml:lang="ar">محمد</forename>
+                                    <surname xml:lang="ar">عبده</surname>
+                                </persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -4087,7 +4143,10 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">المدرسة</title>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_7.TEIP5.xml#p_4476.d2e53566" type="owner">
-                                <persName>مصطفى كامل</persName>
+                                <persName change="#d3e130" ref="oape:pers:872">
+                                    <forename xml:lang="ar">مصطفى</forename>
+                                    <surname xml:lang="ar">كامل</surname>
+                                </persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -4261,13 +4320,22 @@
                             <title level="j" xml:lang="ar">المقطم</title>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName>فارس نمر</persName>
+                                <persName change="#d3e130" ref="oape:pers:2833">
+                                    <forename>فارس</forename>
+                                    <surname>نمر</surname>
+                                </persName>
                             </editor>
                             <editor>
-                                <persName>يعقوب صروف</persName>
+                                <persName change="#d3e130" ref="oape:pers:780 viaf:62958224">
+                                    <forename>يعقوب</forename>
+                                    <surname>صروف</surname>
+                                </persName>
                             </editor>
                             <editor>
-                                <persName>شاهين مكاريوس</persName>
+                                <persName change="#d3e130" ref="oape:pers:934 viaf:38237868">
+                                    <forename xml:lang="ar">شاهين</forename>
+                                    <surname xml:lang="ar">مكاريوس</surname>
+                                </persName>
                             </editor>
                             <imprint>
                                 <pubPlace>
@@ -4336,7 +4404,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">المورد الصافي</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">جرجس أفندي الخوري المقدسي</persName>
+                                <persName change="#d3e130" ref="oape:pers:3574" xml:lang="ar">جرجس <roleName type="title">أفندي</roleName> الخوري المقدسي</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -4439,7 +4507,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">النصير</title>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_4079.d2e33981">
-                                <persName>شبلي ملاط</persName>
+                                <persName change="#d3e130" ref="oape:pers:1885">شبلي ملاط</persName>
                             </editor>
                             <editor change="#d2e433" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_9.d2e2992">
                                 <persName change="#d2e414">عبود أبي راشد</persName>
@@ -4464,8 +4532,8 @@
                             <tei:idno type="OCLC">792755094</tei:idno>
                             <textLang mainLang="ar"/>
                             <editor>
-                                <persName ref="viaf:40250618" xml:lang="ar"> <forename xml:lang="ar">عيسى</forename> أفندي <forename xml:lang="ar">اسكندر</forename> <surname xml:lang="ar"
-                                    >معلوف</surname> </persName>
+                                <persName change="#d3e130" ref="oape:pers:533 viaf:40250618" xml:lang="ar"> <forename xml:lang="ar">عيسى</forename> أفندي <forename xml:lang="ar">اسكندر</forename>
+                                    <surname xml:lang="ar">معلوف</surname> </persName>
                             </editor>
                             <imprint>
                                 <date/>
@@ -4560,7 +4628,10 @@
                             <title level="j" xml:lang="ar">الوقائع المصرية</title>
                             <ref>Tarrazi:4:162</ref>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_775.d2e5787&#34;">
-                                <persName>رفاعة الطهطاوي</persName>
+                                <persName change="#d3e130" ref="oape:pers:2863 viaf:96964876">
+                                    <forename>رفاعة</forename>
+                                    <surname>الطهطاوي</surname>
+                                </persName>
                             </editor>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_2236.d2e17318">
                                 <persName>سعادة</persName>
@@ -4569,10 +4640,18 @@
                                 <persName>العطار</persName>
                             </editor>
                             <editor>
-                                <persName>محمد علي باشا</persName>
+                                <persName change="#d3e130" ref="oape:pers:198 viaf:29512610">
+                                    <forename xml:lang="ar">محمد</forename>
+                                    <forename xml:lang="ar">علي</forename>
+                                    <roleName type="title" xml:lang="ar">باشا</roleName>
+                                </persName>
                             </editor>
                             <editor source="/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4962.d2e62805">
-                                <persName>الشيخ محمد عبده</persName>
+                                <persName change="#d3e130" ref="oape:pers:809 viaf:27297150">
+                                    <roleName type="title" xml:lang="ar">الشيخ</roleName>
+                                    <forename xml:lang="ar">محمد</forename>
+                                    <surname xml:lang="ar">عبده</surname>
+                                </persName>
                             </editor>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_617.d2e8401">
                                 <persName>شيهاب الدين</persName>
@@ -4741,7 +4820,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">جادالوز</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">حيدر رشدي أفندي</persName>
+                                <persName change="#d3e130" ref="oape:pers:3620" xml:lang="ar">حيدر رشدي <roleName type="title">أفندي</roleName></persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -4799,7 +4878,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">جريدة أدبية فكاهية إخبارية مصورة</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">خليل أفندي زينية</persName>
+                                <persName change="#d3e130" ref="oape:pers:99" xml:lang="ar">خليل <roleName type="title" xml:lang="ar">أفندي</roleName> زينية</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -5818,7 +5897,10 @@
                             <title level="j" xml:lang="ar">مسامرات الشعب</title>
                             <textLang mainLang="ar"/>
                             <editor source="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_7953.d2e72908" type="publisher">
-                                <persName>خليل صادق</persName>
+                                <persName change="#d3e130" ref="oape:pers:775">
+                                    <forename xml:lang="ar">خليل</forename>
+                                    <surname xml:lang="ar">صادق</surname>
+                                </persName>
                             </editor>
                             <imprint>
                                 <pubPlace>
@@ -5936,7 +6018,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">وادي النيل</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">أبي مسعود</persName>
+                                <persName change="#d3e130" ref="oape:pers:3078" xml:lang="ar">أبي مسعود</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -5961,7 +6043,7 @@
                         <monogr xml:lang="ota">
                             <title level="j" xml:lang="ota">يكي إقدام</title>
                             <editor xml:lang="ota">
-                                <persName xml:lang="ota">أحمد جودت بك</persName>
+                                <persName change="#d3e130" ref="oape:pers:3111" xml:lang="ota">أحمد جودت <roleName type="title">بك</roleName></persName>
                             </editor>
                             <textLang mainLang="ota"/>
                             <imprint>
@@ -5986,7 +6068,7 @@
                         <monogr xml:lang="ota">
                             <title level="j" xml:lang="ota">يكي كوه زه</title>
                             <editor xml:lang="ota">
-                                <persName xml:lang="ota">أحمد مختار بك</persName>
+                                <persName change="#d3e130" ref="oape:pers:3129" xml:lang="ota">أحمد مختار <roleName type="title">بك</roleName></persName>
                             </editor>
                             <textLang mainLang="ota"/>
                             <imprint>
@@ -6011,7 +6093,7 @@
                         <analytic xml:lang="ar">
                             <title level="j" xml:lang="ar">رحلة إلى اليمن سنة ١٨٦١</title>
                             <author xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:227 viaf:39370998" xml:lang="ar">
                                     <forename xml:lang="ar">أنستاس ماري</forename>
                                     <surname xml:lang="ar">الكرملي</surname>
                                 </persName>
@@ -6040,7 +6122,7 @@
                         <analytic xml:lang="ar">
                             <title level="j" xml:lang="ar">لا مساسية</title>
                             <author xml:lang="ar">
-                                <persName xml:lang="ar">الأستاذ أغناس غولدسهير</persName>
+                                <persName change="#d3e130" ref="oape:pers:3234" xml:lang="ar"> <roleName type="title">الأستاذ</roleName> أغناس غولدسهير</persName>
                             </author>
                         </analytic>
                         <monogr xml:lang="ar">
@@ -6057,7 +6139,10 @@
                         <analytic xml:lang="ar">
                             <title level="j" xml:lang="ar">محاضرات أدبيات الجغرافيا والتاريخ واللغة عند العرب باعتبار علاقتها بأوربا وخصوصاً بإيطاليا</title>
                             <author xml:lang="ar">
-                                <persName xml:lang="ar">سنيور جويدي</persName>
+                                <persName change="#d3e130" ref="oape:pers:627" xml:lang="ar">
+                                    <roleName type="honorific" xml:lang="it-Arab-AR">سنيور</roleName>
+                                    <surname xml:lang="it-Arab-AR">جويدي</surname>
+                                </persName>
                             </author>
                         </analytic>
                         <monogr xml:lang="ar">
@@ -6807,7 +6892,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">الطب</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">كلوت بك</persName>
+                                <persName change="#d3e130" ref="oape:pers:3861" xml:lang="ar">كلوت <roleName type="title">بك</roleName></persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -6849,13 +6934,17 @@
                             <ref target="file:/BachUni/BachBibliothek/GitHub/TEI/oclc_618896732/tei/oclc_618896732-div_27.TEIP5.xml#p_10056.d2e72892"/>
                             <ref>Tarrazi:4:118</ref>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:987 viaf:75445722" xml:lang="ar">
                                     <forename xml:lang="ar">جرجي</forename>
                                     <surname xml:lang="ar">يني</surname>
                                 </persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">صموئيل أفندي يني</persName>
+                                <persName change="#d3e130" ref="oape:pers:988" xml:lang="ar">
+                                    <forename xml:lang="ar">صموئيل</forename>
+                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
+                                    <surname xml:lang="ar">يني</surname>
+                                </persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -6912,7 +7001,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">المرج</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">الدكتور أسعد رحال</persName>
+                                <persName change="#d3e130" ref="oape:pers:3295" xml:lang="ar"> <roleName type="title">الدكتور</roleName>أسعد رحال</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -6943,10 +7032,18 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">المنتقد</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">محمد أفندي باقر</persName>
+                                <persName change="#d3e130" ref="oape:pers:583" xml:lang="ar">
+                                    <forename xml:lang="ar">محمد</forename>
+                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
+                                    <surname xml:lang="ar">باقر</surname>
+                                </persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">كمال أفندي بكداش</persName>
+                                <persName change="#d3e130" ref="oape:pers:592" xml:lang="ar">
+                                    <forename xml:lang="ar">كمال</forename>
+                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
+                                    <surname xml:lang="ar">بكداش</surname>
+                                </persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -6972,7 +7069,7 @@
                             <title level="j" xml:lang="ar">النبراس</title>
                             <ref target="BachUni/BachBibliothek/GitHub/TEI/oclc_618896732/tei/oclc_618896732-div_18.TEIP5.xml#p_7652.d2e53461"/>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:475 viaf:265101315" xml:lang="ar">
                                     <forename xml:lang="ar">مصطفى</forename>
                                     <surname xml:lang="ar">الغلاييني</surname>
                                 </persName>
@@ -6989,7 +7086,7 @@
                         <monogr xml:lang="fa">
                             <title level="j" xml:lang="fa">النجف</title>
                             <editor xml:lang="fa">
-                                <persName xml:lang="fa">آغا محمد المحلاتي</persName>
+                                <persName change="#d3e130" ref="oape:pers:2989" xml:lang="fa">آغا محمد المحلاتي</persName>
                             </editor>
                             <textLang mainLang="fa"/>
                             <imprint>
@@ -7015,7 +7112,7 @@
                         <monogr xml:lang="ota">
                             <title level="j" xml:lang="ota">ترجمان حقيقت</title>
                             <editor xml:lang="ota">
-                                <persName xml:lang="ota">حسين كاظم أفندي</persName>
+                                <persName change="#d3e130" ref="oape:pers:3611" xml:lang="ota">حسين كاظم <roleName type="title">أفندي</roleName></persName>
                             </editor>
                             <textLang mainLang="ota"/>
                             <imprint>
@@ -7029,7 +7126,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">تنظيمات</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">لطفي فكري بك</persName>
+                                <persName change="#d3e130" ref="oape:pers:3897" xml:lang="ar">لطفي فكري <roleName type="title">بك</roleName></persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7083,10 +7180,18 @@
                                 </persName>
                             </editor>
                             <editor change="#d2e433" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_14.d2e3094">
-                                <persName xml:lang="ar">وديع أفندي الخوري</persName>
+                                <persName change="#d3e130" ref="oape:pers:388" xml:lang="ar">
+                                    <forename xml:lang="ar">وديع</forename>
+                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
+                                    <surname xml:lang="ar">الخوري</surname>
+                                </persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">حنا أفندي الخوري</persName>
+                                <persName change="#d3e130" ref="oape:pers:380" xml:lang="ar">
+                                    <forename xml:lang="ar">حنا</forename>
+                                    <roleName type="title" xml:lang="ar">أفندي</roleName>
+                                    <surname xml:lang="ar">الخوري</surname>
+                                </persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7105,7 +7210,7 @@
                         <monogr xml:lang="ota">
                             <title level="j" xml:lang="ota">رسملي كتاب</title>
                             <editor xml:lang="ota">
-                                <persName xml:lang="ota">محمد رؤوف أفندي</persName>
+                                <persName change="#d3e130" ref="oape:pers:3954" xml:lang="ota">محمد رؤوف <roleName type="title">أفندي</roleName></persName>
                             </editor>
                             <textLang mainLang="ota"/>
                             <imprint>
@@ -7119,7 +7224,11 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">روضة المعارف</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">الشيخ عبد الرحمن سلام</persName>
+                                <persName change="#d3e130" ref="oape:pers:728" xml:lang="ar">
+                                    <roleName type="honorific">الشيخ</roleName>
+                                    <forename xml:lang="ar">عبد الرحمن</forename>
+                                    <surname xml:lang="ar">سلام</surname>
+                                </persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7133,7 +7242,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">صدى الشهباء</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">حكمت ناظم بك</persName>
+                                <persName change="#d3e130" ref="oape:pers:174" xml:lang="ar"> <forename xml:lang="ar">حكمت</forename>ناظم <roleName type="title" xml:lang="ar">بك</roleName></persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7147,7 +7256,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">غيديق</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">عارف حكمت</persName>
+                                <persName change="#d3e130" ref="oape:pers:3735" xml:lang="ar">عارف حكمت</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7161,7 +7270,7 @@
                         <analytic xml:lang="ar">
                             <title level="j" xml:lang="ar">القضاء على الشقاء</title>
                             <author xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:581 viaf:24606197" xml:lang="ar">
                                     <forename xml:lang="ar">فريدريك</forename>
                                     <surname xml:lang="ar">باسي</surname>
                                 </persName>
@@ -7182,7 +7291,7 @@
                             <title level="j" xml:lang="ar">سمير الصبا</title>
                             <title level="j" xml:lang="ar">مجلة أدبية فنية فكاهية</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">شكري أفندي فارس</persName>
+                                <persName change="#d3e130" ref="oape:pers:3694" xml:lang="ar">شكري <roleName type="title">أفندي</roleName> فارس</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7209,10 +7318,10 @@
                             <title level="j" xml:lang="ar">تنوير الأفكار</title>
                             <title level="j" xml:lang="ar">مجلة دينية أدبية سياسية</title>
                             <editor type="owner">
-                                <persName xml:lang="ar">عبد الهادي أفندي الأعظمي</persName>
+                                <persName change="#d3e130" ref="oape:pers:3773" xml:lang="ar">عبد الهادي <roleName type="title">أفندي</roleName> الأعظمي</persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">نعمان أفندي الأعظمي</persName>
+                                <persName change="#d3e130" ref="oape:pers:4043" xml:lang="ar">نعمان <roleName type="title">أفندي</roleName> الأعظمي</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7230,7 +7339,7 @@
                                 <title level="j" xml:lang="ar">الهداية</title>
                                 <title level="j" xml:lang="ar">مجلة دينية علمية أدبية اجتماعية</title>
                                 <editor xml:lang="ar">
-                                    <persName xml:lang="ar">الشيخ عبد العزيز جاويش</persName>
+                                    <persName change="#d3e130" ref="oape:pers:3401" xml:lang="ar"> <roleName type="honorific">الشيخ</roleName>عبد العزيز جاويش</persName>
                                 </editor>
                                 <textLang mainLang="ar"/>
                                 <imprint>
@@ -7269,7 +7378,7 @@
                         <monogr xml:lang="ar">
                             <title level="j" xml:lang="ar">العالم الجديد</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">سلوم أفندي مكرزل</persName>
+                                <persName change="#d3e130" ref="oape:pers:105" xml:lang="ar">سلوم <roleName type="title" xml:lang="ar">أفندي</roleName> مكرزل</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7293,7 +7402,8 @@
                             <title level="j" xml:lang="ar">شورا</title>
                             <title level="j" xml:lang="ar">مجلة علمية أدبية</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">رضاء الدين أفندي بن فخر الدين</persName>
+                                <persName change="#d3e130" ref="oape:pers:177" xml:lang="ar"> <forename xml:lang="ar">رضاء الدين</forename> <roleName type="title" xml:lang="ar"
+                                    >أفندي</roleName>بن <forename xml:lang="ar">فخر الدين</forename></persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7309,10 +7419,10 @@
                             <title level="j" xml:lang="ar">العريس</title>
                             <title level="j" xml:lang="ar">مجلة علمية أدبية اجتماعية فكاهية</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">نسيب أفندي نصار</persName>
+                                <persName change="#d3e130" ref="oape:pers:4039" xml:lang="ar">نسيب <roleName type="title">أفندي</roleName> نصار</persName>
                             </editor>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">فاضل أفندي الجمل</persName>
+                                <persName change="#d3e130" ref="oape:pers:3824" xml:lang="ar">فاضل <roleName type="title">أفندي</roleName> الجمل</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7327,7 +7437,7 @@
                             <title level="j" xml:lang="ar">الورقاء</title>
                             <title level="j" xml:lang="ar">مجلة علمية أدبية صناعية</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">الخور فسقفوس جرجس شلحت</persName>
+                                <persName change="#d3e130" ref="oape:pers:3282" xml:lang="ar">الخور فسقفوس جرجس شلحت</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7343,7 +7453,7 @@
                             <title level="j" xml:lang="ar">الكوثر</title>
                             <title level="j" xml:lang="ar">مجلة علمية فنية سياسية</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:2908" xml:lang="ar">
                                     <forename xml:lang="ar">بشير</forename>
                                     <surname xml:lang="ar">رمضان</surname>
                                 </persName>
@@ -7388,7 +7498,7 @@
                             <title level="j" xml:lang="ar">النديم</title>
                             <title level="j" xml:lang="ar">مجلة كاثوليكية سياسية إخبارية تاريخية أدبية علمية</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">شاكر أفندي عون</persName>
+                                <persName change="#d3e130" ref="oape:pers:3689" xml:lang="ar">شاكر <roleName type="title">أفندي</roleName> عون</persName>
                             </editor>
                             <textLang mainLang="ar"/>
                             <imprint>
@@ -7425,7 +7535,7 @@
                             <title level="j" xml:lang="ar">العروس</title>
                             <title level="j" xml:lang="ar">مجلة نسائية علمية أدبية صحية</title>
                             <editor xml:lang="ar">
-                                <persName xml:lang="ar">
+                                <persName change="#d3e130" ref="oape:pers:2844 viaf:219321857" xml:lang="ar">
                                     <forename>ماري</forename>
                                     <surname xml:lang="ar">عجمي</surname>
                                 </persName>
