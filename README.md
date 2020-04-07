@@ -1,7 +1,7 @@
 ---
 title: "readme: OpenArabicPE/authority-files"
 author: Till Grallert
-date: 2019-01-30
+date: 2020-04-06
 ---
 
 # locations and file names
@@ -59,7 +59,7 @@ date: 2019-01-30
 
     ```xml
     <note>
-        <!-- information about and links to the sourc -->
+        <!-- information about and links to the source -->
         <note type="bibliographic"><ref target="pointer-to-source"><bibl>bibliographic reference for the source</bibl></ref></note>
         <!-- the source -->
         <quote></quote>
@@ -68,7 +68,8 @@ date: 2019-01-30
 
 
 
-# Workflow named entities: persons
+# Workflows
+## named entities: persons
 
 1. Query all TEI files for `persName`
     + check if information is already present in a **local** authority file
@@ -79,6 +80,15 @@ date: 2019-01-30
 3. Save VIAF results as individual copy.
     + naming scheme: `viaf_id.SRW.xml`
     + licence: VIAF data is available under the [Open Data Commons Attribution License (ODC-BY)](https://opendatacommons.org/licenses/by/).
+
+## bibliography of periodicals
+
+1. create original bibliography either manually or through gathering all `<biblStruct>` for periodicals from all OpenArabicPE editions.
+2. enrich bibliography
+    - the must urgently needed information are all potential contributors to be then tested with stylometry
+    - automatically with information found in full text editions
+    - manually
+        + in order to manage limited resources, the order of importance for which periodicals we look at is established by the number of references to a title in our corpus (found, for example, in `oape_stats-referenced-periodicals.csv`)
 
 # references to authority files
 
@@ -147,12 +157,12 @@ URI schemes used across the entire project
 
 ## bibliography
 
-Each publication is encoded as a `<biblStruct>` with a type attribute (even though the type could be guessed from the internal structure of the `<biblStruct>` and the values of `@level` on `<title>`).
+Each publication is encoded as a `<biblStruct>` with a type attribute (even though the type could be guessed from the internal structure of the `<biblStruct>` and the values of `@level` on `<title>`). On the other hand, there is no way to distinguish between newspapers and journals/magazines based on the structure alone.
 
 - values of `@type`:
     + "book"
-    + "journal"
-    + "newspaper"
+    + "journal": everything that is called *majalla* in Arabic
+    + "newspaper": everything that is called *jarīda* in Arabic
 
 ```xml
 <!-- many periodicals underwent various changes in editorship, title, frequency etc. and should,
