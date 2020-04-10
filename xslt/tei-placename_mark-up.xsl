@@ -71,41 +71,6 @@
     </xsl:template>
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
 
-    <!-- variable to collect all placeName found in file this transformation is run on in a list containing tei:place with tei:placeName and tei:idno children -->
-    <xsl:variable name="v_places-source">
-        <xsl:element name="tei:list">
-            <xsl:for-each-group
-                select="tei:TEI/tei:text/descendant::tei:placeName" group-by="normalize-space(.)">
-                <xsl:sort select="current-grouping-key()"/>
-                <!-- some variables -->
-                <xsl:variable name="v_self">
-                    <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
-                </xsl:variable>
-                <xsl:variable name="v_geonames-id"
-                    select="replace(tokenize(@ref, ' ')[matches(., 'geon:\d+')][1], 'geon:(\d+)', '$1')"/>
-                <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
-                <!-- construct nodes -->
-                <xsl:element name="tei:place">
-                    <xsl:copy>
-                        <xsl:apply-templates select="@* | node()" mode="m_no-ids"/>
-                    </xsl:copy>
-                    <!-- construct a flattened string -->
-                    <!--<xsl:element name="tei:placeName">
-                        <xsl:attribute name="type" select="'flattened'"/>
-                        <xsl:value-of select="$v_name-flat"/>
-                    </xsl:element>-->
-                    <!-- construct the idno child -->
-                    <xsl:if test="./@ref">
-                        <xsl:element name="tei:idno">
-                            <xsl:attribute name="type" select="'geon'"/>
-                            <xsl:value-of select="$v_geonames-id"/>
-                        </xsl:element>
-                    </xsl:if>
-                </xsl:element>
-            </xsl:for-each-group>
-        </xsl:element>
-    </xsl:variable>
-    
     <xsl:function name="oape:get-place-from-authority-file">
         <xsl:param name="p_idno"/>
         <xsl:variable name="v_authority">
@@ -212,7 +177,7 @@
         <!-- normalize the spelling of the name in question -->
         <xsl:variable name="v_self" select="normalize-space(replace(., '([إ|أ|آ])', 'ا'))"/>
         <!-- version of the placeName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
+        <!--<xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>-->
         <!-- test if the flattened name is present in the authority file -->
         <xsl:choose>
             <xsl:when
