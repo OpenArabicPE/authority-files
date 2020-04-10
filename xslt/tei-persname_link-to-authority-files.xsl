@@ -178,7 +178,7 @@
         <xsl:param name="p_xml-id"/>
         <xsl:param name="p_authority"/>
         <xsl:value-of
-            select="$v_file-entities-master//tei:person[tei:persName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority]"
+            select="$v_file-entities-master//tei:person[tei:persName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"
         />
     </xsl:function>
     
