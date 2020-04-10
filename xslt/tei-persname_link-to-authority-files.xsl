@@ -142,45 +142,6 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <!-- this function queries a local authority file with an OpenArabicPE or VIAF ID and returns a <tei:person> -->
-    <xsl:function name="oape:get-person-from-authority-file">
-        <xsl:param name="p_idno"/>
-        <xsl:variable name="v_authority">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:pers:')">
-                    <xsl:text>oape</xsl:text>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'viaf:')">
-                    <xsl:text>VIAF</xsl:text>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="v_idno">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:pers:')">
-                    <xsl:value-of select="replace($p_idno, '.*oape:pers:(\d+).*', '$1')"/>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'viaf:')">
-                    <xsl:value-of select="replace($p_idno, '.*viaf:(\d+).*', '$1')"/>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <!--<xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>oape:get-person-from-authority-file: $v_authority="</xsl:text><xsl:value-of select="$v_authority"/><xsl:text>" and $v_idno="</xsl:text><xsl:value-of select="$v_idno"/><xsl:text>"</xsl:text>
-            </xsl:message>
-        </xsl:if>-->
-        <xsl:copy-of
-            select="$v_file-entities-master//tei:person[tei:idno[@type = $v_authority] = $v_idno]"/>
-    </xsl:function>
-    <!-- get OpenArabicPE ID from authority file with an @xml:id -->
-    <xsl:function name="oape:get-id-for-person">
-        <xsl:param name="p_xml-id"/>
-        <xsl:param name="p_authority"/>
-        <xsl:value-of
-            select="$v_file-entities-master//tei:person[tei:persName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"
-        />
-    </xsl:function>
     
     <!-- copy from authority file should not include @xml:id and @change -->
     <xsl:template match="node() | @*" mode="m_copy-from-authority-file">

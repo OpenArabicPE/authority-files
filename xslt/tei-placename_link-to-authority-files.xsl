@@ -30,8 +30,8 @@
     <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented" exclude-result-prefixes="#all"/>
 
     <xsl:include href="query-geonames.xsl"/>
-
-
+    <xsl:include href="functions.xsl"/>
+    
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master"
         select="'../data/tei/gazetteer_levant-phd.TEIP5.xml'"/>
@@ -71,44 +71,6 @@
     </xsl:template>
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
 
-    <xsl:function name="oape:get-place-from-authority-file">
-        <xsl:param name="p_idno"/>
-        <xsl:variable name="v_authority">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:place:')">
-                    <xsl:text>oape</xsl:text>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'geon:')">
-                    <xsl:text>geon</xsl:text>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="v_idno">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:place:')">
-                    <xsl:value-of select="replace($p_idno, '.*oape:place:(\d+).*', '$1')"/>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'geon:')">
-                    <xsl:value-of select="replace($p_idno, '.*geon:(\d+).*', '$1')"/>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <!--<xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>oape:get-place-from-authority-file: $v_authority="</xsl:text><xsl:value-of select="$v_authority"/><xsl:text>" and $v_idno="</xsl:text><xsl:value-of select="$v_idno"/><xsl:text>"</xsl:text>
-            </xsl:message>
-        </xsl:if>-->
-        <xsl:copy-of
-            select="$v_file-entities-master//tei:place[tei:idno[@type = $v_authority] = $v_idno]"/>
-    </xsl:function>
-    <!-- get OpenArabicPE ID from authority file with an @xml:id -->
-    <xsl:function name="oape:get-id-for-place">
-        <xsl:param name="p_xml-id"/>
-        <xsl:param name="p_authority"/>
-        <xsl:value-of
-            select="$v_file-entities-master//tei:lace[tei:placeName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority]"
-        />
-    </xsl:function>
     <!-- look for placeNames that have a @ref attribute -->
     <xsl:template match="tei:placeName[@ref]" name="t_3">
         <xsl:if test="$p_verbose = true()">

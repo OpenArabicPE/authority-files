@@ -28,6 +28,7 @@
     <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="no" exclude-result-prefixes="#all"/>
 
     <xsl:include href="query-geonames.xsl"/>
+    <xsl:include href="functions.xsl"/>
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master"
         select="'../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
@@ -54,45 +55,6 @@
     
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
     
-    <!-- function to retrieve a <biblStruct> from a local authority file -->
-    <xsl:function name="oape:get-bibl-from-authority-file">
-        <xsl:param name="p_idno"/>
-        <xsl:variable name="v_authority">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:bibl:')">
-                    <xsl:text>oape</xsl:text>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'OCLC:')">
-                    <xsl:text>OCLC</xsl:text>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="v_idno">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:bibl:')">
-                    <xsl:value-of select="replace($p_idno, '.*oape:bibl:(\d+).*', '$1')"/>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'OCLC:')">
-                    <xsl:value-of select="replace($p_idno, '.*OCLC:(\d+).*', '$1')"/>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <!--<xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>oape:get-place-from-authority-file: $v_authority="</xsl:text><xsl:value-of select="$v_authority"/><xsl:text>" and $v_idno="</xsl:text><xsl:value-of select="$v_idno"/><xsl:text>"</xsl:text>
-            </xsl:message>
-        </xsl:if>-->
-        <!-- check if the bibliography contains an entry for this ID, if so, retrieve the full <biblStruct>, otherwise return 'false()' -->
-        <xsl:choose>
-            <xsl:when test="$v_file-entities-master//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]">
-                <xsl:copy-of
-            select="$v_file-entities-master//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="'false()'"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
     
     <!-- look for titles that have a @ref attribute -->
     <xsl:template match="tei:text//tei:title[@ref]" name="t_3">
@@ -152,7 +114,7 @@
                 </xsl:choose>
             </xsl:if>
             <!-- replicate content -->
-            <xsl:apply-templates select="node()"></xsl:apply-templates>
+            <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
     
