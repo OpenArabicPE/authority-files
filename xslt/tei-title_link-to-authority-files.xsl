@@ -126,13 +126,11 @@
             </xsl:message>
         </xsl:if>
         <!-- normalize the spelling of the name in question -->
-        <xsl:variable name="v_self" select="normalize-space(replace(., '([إ|أ|آ])', 'ا'))"/>
-        <!-- version of the placeName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
+        <xsl:variable name="v_self" select="oape:string-normalise-name(.)"/>
         <!-- test if the flattened name is present in the authority file -->
         <xsl:choose>
             <xsl:when
-                test="$v_file-entities-master//tei:biblStruct/tei:monogr/tei:title[replace(., '([إ|أ|آ])', 'ا') = $v_self]">
+                test="$v_file-entities-master//tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-name(.) = $v_self]">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
                         <xsl:text>t_2: </xsl:text>
@@ -140,10 +138,9 @@
                         <xsl:text> is present in authority file and will be updated</xsl:text>
                     </xsl:message>
                 </xsl:if>
+                <!-- add matching by @type @subtype and @oape:frequency -->
                 <xsl:variable name="v_corresponding-bibl"
-                    select="$v_file-entities-master/descendant::tei:title[replace(., '([إ|أ|آ])', 'ا') = $v_self][1]/ancestor::tei:biblStruct[1]"/>
-                <!--<xsl:variable name="v_corresponding-xml-id"
-                    select="substring-after($v_corresponding-place/descendant::tei:placeName[replace(., '([إ|أ|آ])', 'ا') = $v_self][1]/@corresp, '#')"/>-->
+                    select="$v_file-entities-master/descendant::tei:title[oape:string-normalise-name(.) = $v_self][1]/ancestor::tei:biblStruct[1]"/>
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>
                     <!-- document change -->
