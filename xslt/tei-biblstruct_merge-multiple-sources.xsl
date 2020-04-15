@@ -291,6 +291,7 @@
     <!-- convert <bibl> to <biblStruct> -->
     <xsl:template match="tei:bibl" mode="m_copy-from-source">
         <biblStruct change="#{$p_id-change}">
+            <xsl:apply-templates select="@*" mode="m_copy-from-source"/>
             <!-- document source of information -->
              <xsl:attribute name="source">
                 <xsl:choose>
