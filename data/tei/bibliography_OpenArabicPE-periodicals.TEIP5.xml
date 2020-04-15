@@ -20,6 +20,9 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-04-15" who="#pers_TG" xml:id="d2e488" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
+            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml"
+            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-04-15" who="#pers_TG" xml:id="d2e466" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
             target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml"
             >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml</ref> using matching of titles.</change>
@@ -127,7 +130,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title corresp="sakhrit:jid:40" level="j" xml:lang="ar">الزهور</title>
                      <title corresp="sakhrit:jid:40" level="j" xml:lang="ar">مجلة أدبية فنية علمية</title>
@@ -770,7 +773,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="fortnightly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الحقوق</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة حقوقية</title>
@@ -793,9 +796,32 @@
                      <biblScope from="1" to="1" unit="issue"/>
                      <biblScope from="1" to="32" unit="page" xml:lang="ar"/>
                   </monogr>
-                  <note type="tagList"> <list>
-                     <item xml:lang="en">frequency_fortnightly</item>
-                     </list> </note>
+               </biblStruct>
+            </listBibl>
+            <listBibl xml:lang="ar">
+               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الحقوق</title>
+                     <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥuqūq</title>
+                     <editor change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" type="owner">
+                        <persName>اصغر زاده معروف أفندي</persName> </editor>
+                     <editor change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"> <persName>معروف أفندي</persName> </editor>
+                     <textLang change="#d2e488" mainLang="ota" otherLangs="ar" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"
+                        >اغلب مندرجاتها باللغة التركية وفيها ما يقارب العمود باللغة العربية</textLang>
+                     <imprint>
+                        <date calendar="#cal_gregorian" change="#d2e488" datingMethod="#cal_islamic"
+                           source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" when-custom="1330-01-28"> <num type="auto-markup"
+                           value="28" xml:lang="ar">٢٨</num> محرم <num type="auto-markup" value="13330" xml:lang="ar">١٣٣٣٠</num> </date>
+                        <date calendar="#cal_gregorian" change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"
+                           when="1912-01-18"> <num type="auto-markup" value="18" xml:lang="ar">١٨</num> كانون الثاني سنة <num type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
+                        <pubPlace change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2">
+                           <placeName>دار السلام</placeName> </pubPlace>
+                        <publisher change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2">
+                           <orgName>مطبعة الشابندر</orgName> </publisher>
+                     </imprint>
+                     <biblScope change="#d2e488" from="1" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" to="2" unit="issue"
+                        >عددها الأول</biblScope>
+                  </monogr>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -7522,6 +7548,36 @@
                            <placeName>مطبعة دنكور</placeName> </publisher>
                      </imprint>
                      <biblScope from="1" to="1" unit="issue">عددها الأول</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4">
+                  <monogr>
+                     <title level="j">المضحكات</title>
+                     <textLang mainLang="ar"/>
+                     <editor change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" type="owner">
+                        <persName>م. لطفي</persName> </editor>
+                     <imprint>
+                        <date calendar="#cal_islamic" change="#d2e488" datingMethod="#cal_islamic"
+                           source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" when-custom="1330-02-08"> <num type="auto-markup"
+                           value="8" xml:lang="ar">٨</num> صفر <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
+                        <date calendar="#cal_gregorian" change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4"
+                           when="1912-01-23"> <num type="auto-markup" value="23" xml:lang="ar">٢٣</num> كانون الثاني <num type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
+                        <pubPlace change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4"> <placeName
+                           ref="oape:place:216 geon:98182">بغداد</placeName> </pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="issue">عددها الاول</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#" xml:lang="ar">
+                  <monogr>
+                     <title level="j">مجلة اللجنة الأميركية الشرقية</title>
+                     <textLang change="#d2e488" mainLang="en" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#">أميركية</textLang>
+                     <imprint>
+                        <date change="#d2e488" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#" type="auto-markup" when="1901"
+                           >سنة <num type="auto-markup" value="1901" xml:lang="ar">١٩٠١</num> </date>
+                     </imprint>
+                     <biblScope from="22" to="22" unit="volume">سنتها الثانية والعشرين</biblScope>
+                     <biblScope from="97" unit="page">الصفحة <num type="auto-markup" value="97" xml:lang="ar">٩٧</num> </biblScope>
                   </monogr>
                </biblStruct>
             </listBibl>
