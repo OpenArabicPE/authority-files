@@ -20,6 +20,9 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-04-15" who="#pers_TG" xml:id="d2e448" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
+            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml"
+            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-04-15" who="#pers_TG" xml:id="d2e197" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
             target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml"
             >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml</ref> using matching of titles.</change>
@@ -7582,6 +7585,24 @@
                      </imprint>
                      <biblScope from="22" to="22" unit="volume">سنتها الثانية والعشرين</biblScope>
                      <biblScope from="97" unit="page">الصفحة <num type="auto-markup" value="97" xml:lang="ar">٩٧</num> </biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d2e448" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" subtype="journal" type="periodical">
+                  <monogr>
+                     <title level="j">زهيرة <placeName ref="oape:place:216 geon:98182">بغداد</placeName> </title>
+                     <textLang change="#d2e448" mainLang="ar" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#">عربية</textLang>
+                     <editor change="#d2e448" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" type="owner"
+                        >آباء الكرمليين المرسلين</editor>
+                     <imprint>
+                        <date calendar="#cal_gregorian" change="#d2e448" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#"
+                           when="1905-03-25"> <num type="auto-markup" value="25" xml:lang="ar">٢٥</num> آذار سنة <num type="auto-markup" value="1905" xml:lang="ar">١٩٠٥</num> </date>
+                        <date calendar="#cal_islamic" change="#d2e448" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#"
+                           >صفر سنة ١٣٢٣هـ</date>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="issue">عددها الأول</biblScope>
+                     <imprint>
+                        <pubPlace><placeName xml:lang="en">Baghdad</placeName></pubPlace>
+                     </imprint>
                   </monogr>
                </biblStruct>
             </listBibl>
