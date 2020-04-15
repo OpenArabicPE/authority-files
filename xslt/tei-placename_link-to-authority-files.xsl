@@ -71,7 +71,6 @@
     </xsl:template>
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
     
-    
     <xsl:template match="tei:placeName" priority="10">
         <!-- flatened version of the persName without non-word characters -->
         <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>

@@ -21,13 +21,12 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="#all" version="2.0">
     
-    <!-- PROBLEM: in some instance this stylesheet produces empty <placeName> nodes in the source file upon adding GeoNames references to them -->
-    
     <!-- this stylesheet queries an external authority files for every <title> and attempts to provide links via the @ref attribute -->
     <!-- The now unnecessary code to updated the master file needs to be removed -->
     <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="no" exclude-result-prefixes="#all"/>
 
-    <xsl:include href="query-geonames.xsl"/>
+    <!-- trigger debugging: paramter is loaded from OpenArabicPE_parameters.xsl included in parent stylesheet  -->
+    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <xsl:include href="functions.xsl"/>
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master"
@@ -55,25 +54,56 @@
     
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
     
-    
-    <!-- look for titles that have a @ref attribute -->
-    <xsl:template match="tei:text//tei:title[@ref]" name="t_3">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_3: found a title with @ref </xsl:text>
-                <xsl:value-of select="@ref"/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:variable name="v_corresponding-bibl"
-            select="oape:get-bibl-from-authority-file(@ref)"/>
-        <xsl:variable name="v_ref">
+     <xsl:template match="tei:title[ancestor::tei:text]" priority="10">
+        <!-- flatened version of the persName without non-word characters -->
+        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
+         <xsl:variable name="v_level" select="@level"/>
+        <!-- test if the flattened name is present in the authority file -->
+        <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
-                <!-- protect existing values of @ref for which there is no entry in the bibliography -->
-                <xsl:when test="$v_corresponding-bibl = 'false()'">
-                    <xsl:value-of select="@ref"/>
+                <!-- test if this node already points to an authority file -->
+                <xsl:when test="@ref">
+                    <xsl:copy-of select="oape:get-bibl-from-authority-file(@ref)"/>
                 </xsl:when>
-                <xsl:when test="contains(@ref, 'oape:bibl:') or contains(@ref, 'oclc:')">
-                    <!-- add references to IDs -->
+                <!-- test if the name is found in the authority file -->
+                <xsl:when test="$v_file-entities-master/descendant::tei:biblStruct/tei:monogr/tei:title[@level = $v_level][oape:string-normalise-name(.) = $v_name-flat]">
+                    <xsl:copy-of select="$v_file-entities-master/descendant::tei:title[@level = $v_level][oape:string-normalise-name(.) = $v_name-flat][1]/ancestor::tei:biblStruct"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- one cannot use a boolean value if the default result is non-boolean -->
+                    <xsl:value-of select="'false()'"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:choose>
+            <!-- fallback: name is not found in the authority file -->
+            <xsl:when test="$v_corresponding-bibl = 'false()'">
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>t_2: </xsl:text>
+                        <xsl:value-of select="normalize-space(.)"/>
+                        <xsl:message> not found in authority file.</xsl:message>
+                    </xsl:message>
+                </xsl:if>
+                <xsl:copy>
+                    <xsl:apply-templates select="@* | node()"/>
+                </xsl:copy>
+            </xsl:when>
+            <!-- name is found in the authority file. it will be linked and potentially updated -->
+            <xsl:otherwise>
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>t_2: </xsl:text>
+                        <xsl:value-of select="normalize-space(.)"/>
+                        <xsl:text> is present in authority file and will be updated</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+                <!-- get @xml:id of corresponding entry in authority file -->
+<!--                <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>-->
+                
+                <!-- construct @ref pointing to the corresponding entry -->
+                <xsl:variable name="v_ref">
                     <xsl:value-of
                         select="concat('oape:bibl:', $v_corresponding-bibl/descendant::tei:idno[@type = 'oape'][1])"/>
                     <xsl:if test="$v_corresponding-bibl/descendant::tei:idno[@type = 'OCLC']">
@@ -82,69 +112,14 @@
                             select="concat('oclc:', $v_corresponding-bibl/descendant::tei:idno[@type = 'OCLC'][1])"
                         />
                     </xsl:if>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="@ref"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_3: @ref </xsl:text>
-                <xsl:value-of select="$v_ref"/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <xsl:if test="@ref != $v_ref">
-                 <xsl:if test="$p_verbose = true()">
-                     <xsl:message>
-                         <xsl:text>t_3: missing reference to either OCLC or local authority file will be added</xsl:text>
-                     </xsl:message>
-                 </xsl:if>
-                <xsl:attribute name="ref" select="$v_ref"/>
-                <!-- document change -->
-                <xsl:choose>
-                    <xsl:when test="not(@change)">
-                        <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:apply-templates mode="m_documentation" select="@change"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:if>
-            <!-- replicate content -->
-            <xsl:apply-templates select="node()"/>
-        </xsl:copy>
-    </xsl:template>
-    
-    <!-- lock for placeName that have no @ref attribute -->
-    <xsl:template match="tei:text//tei:title[not(@ref)]" name="t_2">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_2: found a title without @ref</xsl:text>
-            </xsl:message>
-        </xsl:if>
-        <!-- normalize the spelling of the name in question -->
-        <xsl:variable name="v_self" select="oape:string-normalise-name(.)"/>
-        <!-- test if the flattened name is present in the authority file -->
-        <xsl:choose>
-            <xsl:when
-                test="$v_file-entities-master//tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-name(.) = $v_self]">
-                <xsl:if test="$p_verbose = true()">
-                    <xsl:message>
-                        <xsl:text>t_2: </xsl:text>
-                        <xsl:value-of select="$v_self"/>
-                        <xsl:text> is present in authority file and will be updated</xsl:text>
-                    </xsl:message>
-                </xsl:if>
-                <!-- add matching by @type @subtype and @oape:frequency -->
-                <xsl:variable name="v_corresponding-bibl"
-                    select="$v_file-entities-master/descendant::tei:title[oape:string-normalise-name(.) = $v_self][1]/ancestor::tei:biblStruct[1]"/>
+                </xsl:variable>   
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>
+                    <!-- add references to IDs -->
+                    <xsl:attribute name="ref" select="$v_ref"/>
                     <!-- document change -->
-                    <xsl:choose>
+                    <xsl:if test="not(@ref = $v_ref)">
+                        <xsl:choose>
                         <xsl:when test="not(@change)">
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                         </xsl:when>
@@ -152,37 +127,16 @@
                             <xsl:apply-templates mode="m_documentation" select="@change"/>
                         </xsl:otherwise>
                     </xsl:choose>
-                    <!-- add references to IDs -->
-                    <xsl:attribute name="ref">
-                        <xsl:value-of
-                            select="concat('oape:bibl:', $v_corresponding-bibl/descendant::tei:idno[@type = 'oape'][1])"/>
-                        <xsl:if test="$v_corresponding-bibl/descendant::tei:idno[@type = 'OCLC']">
-                            <xsl:text> </xsl:text>
-                            <xsl:value-of
-                                select="concat('oclc:', $v_corresponding-bibl/descendant::tei:idno[@type = 'OCLC'][1])"
-                            />
-                        </xsl:if>
-                    </xsl:attribute>
+                    </xsl:if>
                     <!-- replicate content -->
-                    <!-- NOTE: one could try to add mark-up from $v_corresponding-place -->
-                    <xsl:apply-templates select="node()"/>
-                </xsl:copy>
-            </xsl:when>
-            <!-- fallback -->
-            <xsl:otherwise>
-                <xsl:if test="$p_verbose = true()">
-                    <xsl:message>
-                        <xsl:text>t_2: </xsl:text>
-                        <xsl:value-of select="$v_self"/>
-                        <xsl:message> not found in authority file.</xsl:message>
-                    </xsl:message>
-                </xsl:if>
-                <xsl:copy>
-                    <xsl:apply-templates select="@* | node()"/>
+                    <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
+                    <xsl:apply-templates/>
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
+
     <!-- document the changes to source file -->
     <xsl:template match="tei:revisionDesc" name="t_9">
         <xsl:if test="$p_verbose = true()">
