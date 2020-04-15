@@ -57,7 +57,7 @@
     
     <xsl:template match="node() | @*" mode="m_copy-from-source">
         <xsl:copy>
-            <xsl:apply-templates select="@* "/>
+            <xsl:apply-templates select="@* " mode="m_copy-from-source"/>
             <!-- document change -->
             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                 <!--<xsl:choose>
@@ -73,10 +73,10 @@
              <xsl:attribute name="source">
                 <xsl:choose>
                     <xsl:when test="@source">
-                        <xsl:value-of select="concat(@source, if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', @xml:id)"/>
+                        <xsl:value-of select="concat(@source, if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', ancestor::node()[name() = ('bibl', 'biblStruct')]/@xml:id)"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="concat(if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', @xml:id)"/>
+                        <xsl:value-of select="concat(if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', ancestor::node()[name() = ('bibl', 'biblStruct')]/@xml:id)"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:attribute>
@@ -85,8 +85,9 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="@xml:id | @change" mode="m_copy-from-source"/>
     <!-- do not copy certain attributes from one file to another -->
+    <xsl:template match="@xml:id | @change | @next | @prev" mode="m_copy-from-source"/>
+    
     <xsl:template match="@xml:id | @change">
         <xsl:choose>
             <xsl:when test="$p_enrich-master = true() and ( base-uri(.) = base-uri($v_file-master))">
@@ -105,8 +106,8 @@
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                 <xsl:call-template name="t_add-biblstruct-from-master">
                     <!-- when the master file shall be enriched then the source is the current file and the target is the master file -->
-                    <xsl:with-param name="p_source" select="if($p_enrich-master = true()) then($v_file-current/descendant::tei:text) else($v_file-master/descendant::tei:text)"/>
-                    <xsl:with-param name="p_target" select="if($p_enrich-master = false()) then($v_file-current/descendant::tei:text) else($v_file-master/descendant::tei:text)"/>
+                    <xsl:with-param name="p_source" select="if($p_enrich-master = true()) then($v_bibls-in-file-current) else($v_file-master/descendant::tei:text)"/>
+                    <xsl:with-param name="p_target" select="if($p_enrich-master = false()) then($v_bibls-in-file-current) else($v_file-master/descendant::tei:text)"/>
                 </xsl:call-template>
             </xsl:element>
         </xsl:copy>
@@ -121,12 +122,18 @@
     <!-- update existing <biblStruct -->
     <xsl:template match="tei:biblStruct[ancestor::tei:text]">
         <xsl:variable name="v_base" select="."/>
-        <xsl:variable name="v_file-source" select="if($p_enrich-master = true()) then($v_file-current) else($v_file-master)"/>
+        <xsl:variable name="v_file-source" select="if($p_enrich-master = true()) then($v_bibls-in-file-current) else($v_file-master)"/>
         <xsl:variable name="v_additional-info">
             <!-- select a biblStruct in the external file that matches $v_base by title, editors etc. -->
             <xsl:choose>
                 <!-- multiple matches -->
                 <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) gt 1">
+                    <!-- better message needed -->
+                    <xsl:message terminate="no">
+                        <xsl:text>more than one match in the external file</xsl:text>
+                     </xsl:message>
+                </xsl:when>
+                <xsl:when test="count($v_file-source/descendant::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) gt 1">
                     <!-- better message needed -->
                     <xsl:message terminate="no">
                         <xsl:text>more than one match in the external file</xsl:text>
@@ -149,6 +156,11 @@
                         <xsl:text>additional information available</xsl:text>
                     </xsl:message>
                 </xsl:if>
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:copy-of select="$v_additional-info"/>
+                    </xsl:message>
+                </xsl:if>
                 <!-- establish source and target for enrichment -->
                 <!-- if running on the master file, the source should be the current file and the target should be the master -->
                 <xsl:variable name="v_source" select="if($p_enrich-master = false()) then($v_base) else($v_additional-info)"/>
@@ -161,7 +173,10 @@
                 <xsl:variable name="v_source-monogr" select="if($v_source/descendant-or-self::tei:biblStruct/tei:monogr) then($v_source/descendant-or-self::tei:biblStruct/tei:monogr) else($v_source/descendant-or-self::tei:bibl)"/>
                 <xsl:copy>
                     <!-- combine attributes -->
-                    <xsl:apply-templates select="$v_combined/descendant-or-self::tei:biblStruct/@*"/>
+<!--                    <xsl:apply-templates select="$v_combined/descendant-or-self::tei:biblStruct/@*"/>-->
+                    <xsl:apply-templates select="$v_source/descendant-or-self::tei:biblStruct/@*" mode="m_copy-from-source"/>
+                    <xsl:apply-templates select="$v_source/descendant-or-self::tei:bibl/@*" mode="m_copy-from-source"/>
+                    <xsl:apply-templates select="$v_target/@*"/>
                     <!-- monogr -->
                     <xsl:element name="monogr">
                         <!-- combine attributes -->
@@ -212,6 +227,67 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:variable name="v_bibls-in-file-current">
+        <xsl:apply-templates select="$v_file-current/descendant::tei:text/descendant::tei:bibl" mode="m_compile"/>
+       <!-- <xsl:for-each select="$v_file-current/descendant::tei:text/descendant::tei:bibl">
+            <xsl:copy>
+                <!-\- attributes -\->
+                <xsl:copy-of select="@*"/>
+                <!-\- check if one needs to compile nodes with @next and @prev -\->
+                <xsl:if test="starts-with(@next, '#')">
+                            <xsl:variable name="v_next-id" select="substring-after(@next, '#')"/>
+                            <xsl:copy-of select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/@*"/>
+                        </xsl:if>
+                <!-\-<xsl:if test="starts-with(@prev, '#')">
+                            <xsl:variable name="v_prev-id" select="substring-after(@prev, '#')"/>
+                            <xsl:copy-of select="ancestor::tei:text/descendant::node()[@xml:id = $v_prev-id]/@*"/>
+                        </xsl:if>-\->
+                <!-\- content -\->
+                <xsl:apply-templates/>
+                <!-\- check if one needs to compile nodes with @next and @prev -\->
+                <xsl:if test="starts-with(@next, '#')">
+                            <xsl:variable name="v_next-id" select="substring-after(@next, '#')"/>
+                            <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/node()"/>
+                        </xsl:if>
+                <!-\-<xsl:if test="starts-with(@prev, '#')">
+                            <xsl:variable name="v_prev-id" select="substring-after(@prev, '#')"/>
+                            <xsl:copy-of select="ancestor::tei:text/descendant::node()[@xml:id = $v_prev-id]/node()"/>
+                        </xsl:if>-\->
+            </xsl:copy>
+        </xsl:for-each>
+-->    </xsl:variable>
+    
+    <xsl:template match="tei:bibl" mode="m_compile">
+        <xsl:variable name="v_next-id" select="substring-after(@next, '#')"/>
+        <xsl:variable name="v_prev-id" select="substring-after(@prev, '#')"/>
+        <xsl:choose>
+            <!-- first -->
+            <xsl:when test="@next and not(@prev)">
+                <xsl:copy>
+                    <xsl:apply-templates select="@*"/>
+                    <xsl:copy-of select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/@*"/>
+                    <xsl:apply-templates select="node()"/>
+                    <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>
+                </xsl:copy>
+            </xsl:when>
+            <!-- middle -->
+            <xsl:when test="@next and @prev">
+                <xsl:apply-templates select="node()"/>
+                <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>
+            </xsl:when>
+            <!-- last -->
+            <xsl:when test="@prev and not(@next)">
+                <xsl:apply-templates select="node()"/>
+            </xsl:when>
+            <!-- nothing to compile -->
+            <xsl:otherwise>
+                <xsl:copy>
+                    <xsl:apply-templates select="@* | node()"/>
+                </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
     <!-- convert <bibl> to <biblStruct> -->
     <xsl:template match="tei:bibl" mode="m_copy-from-source">
         <biblStruct change="#{$p_id-change}">
@@ -235,7 +311,12 @@
             <monogr>
                 <xsl:apply-templates select="tei:title[@level  != 'a']"/>
                 <xsl:apply-templates select="tei:idno"/>
-                <textLang>
+                <xsl:choose>
+                    <xsl:when test="tei:textLang">
+                        <xsl:apply-templates select="tei:textLang" mode="m_copy-from-source"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <textLang>
                     <xsl:attribute name="mainLang">
                         <xsl:choose>
                             <xsl:when test="tei:title[@level  != 'a']/@xml:lang">
@@ -247,6 +328,8 @@
                         </xsl:choose>
                     </xsl:attribute>
                 </textLang>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:if test="tei:title[@level  != 'a']">
                     <xsl:apply-templates select="tei:author" mode="m_copy-from-source"/>
                 </xsl:if>
