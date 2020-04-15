@@ -20,6 +20,12 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-04-15" who="#pers_TG" xml:id="d2e197" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
+            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml"
+            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml</ref> using matching of titles.</change>
+         <change when="2020-04-15" who="#pers_TG" xml:id="d2e188" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
+            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml"
+            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-04-15" who="#pers_TG" xml:id="d2e488" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
             target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml"
             >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml</ref> using matching of titles.</change>
@@ -505,7 +511,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title corresp="sakhrit:jid:161" level="j" xml:lang="ar">البيان</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة علمية أدبية طبية صناعية</title>
@@ -527,10 +533,26 @@
                      <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                      <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
+               </biblStruct>
+               <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title corresp="sakhrit:jid:161" level="j" xml:lang="ar">البيان</title>
+                     <title level="j" xml:lang="ar-Latn-x-ijmes">al-Bayān</title>
+                     <editor change="#d2e188" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2" type="owner">
+                        <persName>عبد الرحمن البرقوقي</persName> </editor>
+                     <editor change="#d2e188" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2">
+                        <persName>محمد السباعي</persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint xml:lang="ar">
+                        <pubPlace change="#d2e188" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2"
+                           >شارع عبد العزيز في <placeName ref="oape:place:226 geon:360630">مصر</placeName> </pubPlace>
+                        <publisher/>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
+                     <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
+                     <biblScope change="#d2e188" from="1" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2" to="80" unit="page">
+                        <num type="auto-markup" value="80" xml:lang="ar">٨٠</num> صفحة</biblScope>
+                  </monogr>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -7451,18 +7473,6 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">نفكر</title>
-                     <idno change="#d2e167" type="oape">394</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">نوابغ الرجال</title>
                      <idno change="#d2e167" type="oape">460</idno>
                      <textLang mainLang="ar"/>
@@ -7578,6 +7588,48 @@
                      </imprint>
                      <biblScope from="22" to="22" unit="volume">سنتها الثانية والعشرين</biblScope>
                      <biblScope from="97" unit="page">الصفحة <num type="auto-markup" value="97" xml:lang="ar">٩٧</num> </biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct subtype="newspaper" type="periodical">
+                  <monogr>
+                     <title level="j">الزهور</title>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace> <placeName>بغداد</placeName> </pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2">
+                  <monogr>
+                     <title level="j" xmlns:ns="https://openarabicpe.github.io/ns">المسامرات</title>
+                     <textLang mainLang="ar"/>
+                     <editor change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2" type="owner"
+                        xmlns:ns="https://openarabicpe.github.io/ns"> <persName>احمد حرب</persName> </editor>
+                     <imprint>
+                        <date change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"> <num type="auto-markup"
+                           value="28" xml:lang="ar">٢٨</num> ذي القعدة سنة <num type="auto-markup" value="1329" xml:lang="ar">١٣٢٩</num> </date>
+                        <date calendar="#cal_gregorian" change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"
+                           when="1911-11-19"> <num type="auto-markup" value="19" xml:lang="ar">١٩</num> تشرين الثاني سنة <num type="auto-markup" value="1911" xml:lang="ar">١٩١١</num> </date>
+                        <pubPlace change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"> <placeName
+                           ref="oape:place:26 geon:276781">بيروت</placeName> </pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="issue" xmlns:ns="https://openarabicpe.github.io/ns">عددها الأول</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4">
+                  <monogr>
+                     <title level="j" xmlns:ns="https://openarabicpe.github.io/ns">المنير</title>
+                     <textLang change="#d2e197" mainLang="ar" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4"
+                        xmlns:ns="https://openarabicpe.github.io/ns">عربية</textLang>
+                     <editor change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4" type="owner"
+                        xmlns:ns="https://openarabicpe.github.io/ns"> <persName>احمد جودت كاظم</persName> </editor>
+                     <imprint>
+                        <date calendar="#cal_islamic" change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4"> <num
+                           type="auto-markup" value="2" xml:lang="ar">٢</num> ذي الحجة سنة <num type="auto-markup" value="1329" xml:lang="ar">١٣٢٩</num> </date>
+                        <pubPlace change="#d2e197" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4"> <placeName
+                           ref="oape:place:210 geon:99532">البصرة</placeName> </pubPlace>
+                     </imprint>
+                     <biblScope from="5" to="5" unit="issue" xmlns:ns="https://openarabicpe.github.io/ns">العدد <num type="auto-markup" value="5" xml:lang="ar">٥</num> </biblScope>
                   </monogr>
                </biblStruct>
             </listBibl>
