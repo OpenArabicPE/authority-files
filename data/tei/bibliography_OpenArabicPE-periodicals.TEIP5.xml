@@ -608,6 +608,7 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="en-Arab-AR">التيمس</title>
                      <title level="j" xml:lang="en">جريدة التيمس</title>
+                     <title level="j" xml:lang="en-Arab-AR">التايمس</title>
                      <title level="j" xml:lang="en">The Times</title>
                      <title level="j" xml:lang="en">London times</title>
                      <title level="j" xml:lang="en">Times of London</title>
@@ -697,7 +698,7 @@
             </listBibl>
             <listBibl xml:lang="ar">
                <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar-Latn-x-ijmes">
+                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الجنان</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jinān</title>
                      <idno change="#d2e69" type="oape">34</idno>
@@ -940,7 +941,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الرياض</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Riyāḍ</title>
@@ -958,11 +959,6 @@
                      <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                      <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">frequency_weekly</item>
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -1291,11 +1287,6 @@
                      <biblScope from="1" to="1" unit="volume"/>
                      <biblScope from="1" to="1" unit="issue"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
-                  <note place="bottom" resp="#pers_TG" type="editorial" xml:lang="en">Are these two periodicals of the same title? One in Beirut, the other in Cairo?</note>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
@@ -1315,7 +1306,6 @@
                      <biblScope from="1" to="1" unit="volume"/>
                      <biblScope from="1" to="1" unit="issue"/>
                   </monogr>
-                  <note place="bottom" resp="#pers_TG" type="editorial" xml:lang="en">Are these two periodicals of the same title? One in Beirut, the other in Cairo?</note>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -1467,7 +1457,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct next="oape:bibl:58" xml:lang="ar">
+               <biblStruct next="oape:bibl:58" oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr>
                      <title level="j" xml:lang="ar">الهدى</title>
                      <title level="j" xml:lang="ar">الهدى اليومية</title>
@@ -1485,7 +1475,7 @@
                      <biblScope from="1" unit="issue"/>
                   </monogr>
                </biblStruct>
-               <biblStruct prev="oape:bibl:57" xml:lang="ar">
+               <biblStruct oape:frequency="daily" prev="oape:bibl:57" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr>
                      <title level="j" xml:lang="ar">الهدى</title>
                      <title level="j" xml:lang="ar">الهدى اليومية</title>
@@ -2015,7 +2005,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الإصلاح</title>
                      <idno change="#d2e167" type="oape">95</idno>
@@ -2031,9 +2021,6 @@
                         <pubPlace> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
                      </imprint>
                   </monogr>
-                  <note type="tagList"> <list>
-                     <item xml:lang="en">frequency_daily</item>
-                     </list> </note>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
@@ -2051,7 +2038,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="fortnightly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الإنسانية</title>
                      <title level="j" xml:lang="ar">مجلة علمية أخلاقية اجتماعية انتقادية عمرانية</title>
@@ -2071,9 +2058,6 @@
                      </imprint>
                      <biblScope from="1" to="32" unit="page"/>
                   </monogr>
-                  <note type="tagList"> <list>
-                     <item xml:lang="en">frequency_fortnightly</item>
-                     </list> </note>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
@@ -3059,18 +3043,6 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">التايمس</title>
-                     <idno change="#d2e167" type="oape">124</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">التبشير</title>
                      <idno change="#d2e167" type="oape">414</idno>
                      <textLang mainLang="ar"/>
@@ -3695,9 +3667,10 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الستندارد</title>
+                     <title level="j" xml:lang="en-Arab-AR">الستندارد</title>
+                     <title xml:lang="en">The Standard</title>
                      <idno change="#d2e167" type="oape">470</idno>
-                     <textLang mainLang="ar"/>
+                     <textLang mainLang="en"/>
                      <imprint>
                         <date/>
                         <pubPlace/>
@@ -3729,7 +3702,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">السلام</title>
                      <title level="j" xml:lang="ar">جريدة السلام</title>
@@ -3745,7 +3718,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">السلام</title>
                      <title level="j" xml:lang="ar">جريدة السلام</title>
@@ -3817,25 +3790,14 @@
                      <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_5657.d2e66880"> <persName change="#d3e130" ref="oape:pers:963"> <forename xml:lang="ar"
                         >أديب</forename> <surname xml:lang="ar">نظمي</surname> </persName> </editor>
                      <editor> <persName>مصطفى واصف</persName> </editor>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4004.d2e51138"> <persName change="#d3e188" ref="oape:pers:878 viaf:32272677"> <forename
+                        xml:lang="ar">محمد</forename> <surname xml:lang="ar">كرد علي</surname> </persName> </editor>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_5657.d2e66880"> <placeName change="#d5e176" ref="oape:place:61 geon:170654"
                            >Damascus</placeName> </pubPlace>
                         <date from="1896-07-22"/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct>
-                  <monogr>
-                     <title level="j" xml:lang="ar">الشام</title>
-                     <idno change="#d2e167" type="oape">180</idno>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4004.d2e51138"> <persName change="#d3e188" ref="oape:pers:878 viaf:32272677"> <forename
-                        xml:lang="ar">محمد</forename> <surname xml:lang="ar">كرد علي</surname> </persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
                         <date datingMethod="#cal_islamic" from-custom="1315" source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4004.d2e51138" to-custom="1318"/>
-                        <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_4004.d2e51138"> <placeName change="#d5e176" ref="oape:place:61 geon:170654"
-                           >Damascus</placeName> </pubPlace>
                      </imprint>
                   </monogr>
                </biblStruct>
@@ -3864,7 +3826,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الشرق</title>
                      <idno change="#d2e167" type="oape">182</idno>
@@ -3877,9 +3839,6 @@
                         <publisher/>
                      </imprint>
                   </monogr>
-                  <note type="tagList"> <list>
-                     <item source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_2469.d2e20048" xml:lang="en">frequency_weekly</item>
-                     </list> </note>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
