@@ -79,26 +79,12 @@
         <xsl:choose>
             <!-- fallback: name is not found in the authority file -->
             <xsl:when test="$v_corresponding-bibl = 'false()'">
-                <xsl:if test="$p_verbose = true()">
-                    <xsl:message>
-                        <xsl:text>t_2: </xsl:text>
-                        <xsl:value-of select="normalize-space(.)"/>
-                        <xsl:message> not found in authority file.</xsl:message>
-                    </xsl:message>
-                </xsl:if>
                 <xsl:copy>
                     <xsl:apply-templates select="@* | node()"/>
                 </xsl:copy>
             </xsl:when>
             <!-- name is found in the authority file. it will be linked and potentially updated -->
             <xsl:otherwise>
-                <xsl:if test="$p_verbose = true()">
-                    <xsl:message>
-                        <xsl:text>t_2: </xsl:text>
-                        <xsl:value-of select="normalize-space(.)"/>
-                        <xsl:text> is present in authority file and will be updated</xsl:text>
-                    </xsl:message>
-                </xsl:if>
                 <!-- get @xml:id of corresponding entry in authority file -->
 <!--                <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>-->
                 
@@ -138,12 +124,7 @@
     
 
     <!-- document the changes to source file -->
-    <xsl:template match="tei:revisionDesc" name="t_9">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_9 source: document changes</xsl:text>
-            </xsl:message>
-        </xsl:if>
+    <xsl:template match="tei:revisionDesc">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:element name="tei:change">
