@@ -19,7 +19,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="#all" version="2.0">
+    exclude-result-prefixes="#all" version="3.0">
     
     <!-- this stylesheet queries an external authority files for every <title> and attempts to provide links via the @ref attribute -->
     <!-- The now unnecessary code to updated the master file needs to be removed -->
@@ -32,6 +32,8 @@
     <xsl:param name="p_url-master"
         select="'../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
+    
+    <xsl:param name="p_update-existing-refs" select="false()"/>
     
    <!-- identity transform -->
     <xsl:template match="node() | @*">
@@ -54,22 +56,119 @@
     
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
     
-     <xsl:template match="tei:title[ancestor::tei:text]" priority="10">
-        <!-- flatened version of the persName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
-         <xsl:variable name="v_level" select="@level"/>
+     <xsl:template match="tei:title[ancestor::tei:text][@level = 'j']" priority="10">
+         <xsl:copy-of select="oape:link-title-to-authority-file(.)"/>
+     </xsl:template>
+    <xsl:function name="oape:link-title-to-authority-file">
+        <xsl:param name="p_title"/>
+        <!-- flatened version of the persName without non-word characters and without any harakat -->
+        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string($p_title))"/>
+        <xsl:variable name="v_level" select="$p_title/@level"/>
+        <xsl:variable name="v_type" select="if($p_title/ancestor::tei:bibl/@type) then($p_title/ancestor::tei:bibl/@type) else()"/>
+         <xsl:variable name="v_subtype" select="if($p_title/ancestor::tei:bibl/@subtype) then($p_title/ancestor::tei:bibl/@subtype) else()"/>
+         <xsl:variable name="v_frequency" select="if($p_title/ancestor::tei:bibl/@oape:frequency) then($p_title/ancestor::tei:bibl/@oape:frequency) else()"/>
+         <!-- get the publication date of the TEI document in order to establish whether a title could have been mentioned -->
+         <xsl:variable name="v_date-publication" select="$p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1]/tei:monogr/tei:imprint/tei:date[1]"/>
         <!-- test if the flattened name is present in the authority file -->
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
                 <!-- test if this node already points to an authority file -->
-                <xsl:when test="@ref">
-                    <xsl:copy-of select="oape:get-bibl-from-authority-file(@ref)"/>
+                <!-- since these @refs can be faulty, one should probably add a param -->
+                <xsl:when test="$p_title/@ref and ($p_update-existing-refs = false())">
+                    <xsl:copy-of select="oape:get-bibl-from-authority-file($p_title/@ref)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
                 <xsl:when test="$v_file-entities-master/descendant::tei:biblStruct/tei:monogr/tei:title[@level = $v_level][oape:string-normalise-name(.) = $v_name-flat]">
-                    <xsl:copy-of select="$v_file-entities-master/descendant::tei:title[@level = $v_level][oape:string-normalise-name(.) = $v_name-flat][1]/ancestor::tei:biblStruct"/>
+                    <xsl:variable name="v_matches" select="$v_file-entities-master/descendant::tei:biblStruct[descendant::tei:title[@level = $v_level][oape:string-normalise-name(.) = $v_name-flat]]"/>
+                    <xsl:choose>
+                        <!-- a single match -->
+                        <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct) = 1">
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>Found a single match for </xsl:text><xsl:value-of select="$p_title"/><xsl:text> in the authority file.</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                            <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct"/>
+                        </xsl:when>
+                        <!-- multiple matches: add matching criteria -->
+                        <xsl:otherwise>
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>Found multiple matches for </xsl:text><xsl:value-of select="$p_title"/><xsl:text> in the authority file. Trying to match further search criteria.</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                            <!-- try to use further match criteria -->
+                            <xsl:choose>
+                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][@oape:frequency = $v_frequency]) = 1">
+                                    <xsl:if test="$p_verbose = true()">
+                                        <xsl:message>
+                                            <xsl:text>Found a single match based on @type, @subtype, and @oape:frequency.</xsl:text>
+                                        </xsl:message>
+                                    </xsl:if>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][@oape:frequency = $v_frequency]"/>
+                                </xsl:when>
+                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype]) = 1">
+                                    <xsl:if test="$p_verbose = true()">
+                                        <xsl:message>
+                                            <xsl:text>Found a single match based on @type and @subtype.</xsl:text>
+                                        </xsl:message>
+                                    </xsl:if>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype]"/>
+                                </xsl:when>
+<!--                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[xs:date(descendant::tei:date/@when) &lt; xs:date($v_date-publication/@when)]) = 1">-->
+                                <!-- the comparison of dates should be based on the year only, since the data type for att.dated is not xs:date -->
+                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@when &lt; $v_date-publication/@when]) = 1">
+                                    <xsl:if test="$p_verbose = true()">
+                                        <xsl:message>
+                                            <xsl:text>Found a single match based on publication date.</xsl:text>
+                                        </xsl:message>
+                                    </xsl:if>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@when &lt; $v_date-publication/@when]"/>
+                                </xsl:when>
+                                 <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@from &lt; $v_date-publication/@when][descendant::tei:date/@to &gt; $v_date-publication/@when]) = 1">
+                                    <xsl:if test="$p_verbose = true()">
+                                        <xsl:message>
+                                            <xsl:text>Found a single match based on publication date.</xsl:text>
+                                        </xsl:message>
+                                    </xsl:if>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@from &lt; $v_date-publication/@when][descendant::tei:date/@to &gt; $v_date-publication/@when]"/>
+                                </xsl:when>
+                                 <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@from &lt; $v_date-publication/@when]) = 1">
+                                    <xsl:if test="$p_verbose = true()">
+                                        <xsl:message>
+                                            <xsl:text>Found a single match based on publication date.</xsl:text>
+                                        </xsl:message>
+                                    </xsl:if>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@from &lt; $v_date-publication/@when]"/>
+                                </xsl:when>
+                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@notBefore &lt; $v_date-publication/@when][descendant::tei:date/@notAfter &gt; $v_date-publication/@when]) = 1">
+                                    <xsl:if test="$p_verbose = true()">
+                                        <xsl:message>
+                                            <xsl:text>Found a single match based on publication date.</xsl:text>
+                                        </xsl:message>
+                                    </xsl:if>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@notBefore &lt; $v_date-publication/@when][descendant::tei:date/@notAfter &gt; $v_date-publication/@when]"/>
+                                </xsl:when>
+                                <!--</xsl:when>-->
+                                <xsl:otherwise>
+                                    <!--<xsl:if test="$p_verbose = true()">-->
+                                        <xsl:message>
+                                            <xsl:text>Found no unique match in the authority file for </xsl:text><xsl:value-of select="$p_title"/><xsl:text> at </xsl:text><xsl:value-of select="concat(base-uri($p_title), '#',$p_title/@xml:id)"/><xsl:text>.</xsl:text>
+                                        </xsl:message>
+                                    <!--</xsl:if>-->
+                                    <xsl:value-of select="'false()'"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:when>
+                <!-- no match found -->
                 <xsl:otherwise>
+<!--                    <xsl:if test="$p_verbose = true()">-->
+                                <xsl:message>
+                                    <xsl:text>Found no match in the authority file for </xsl:text><xsl:value-of select="$p_title"/><xsl:text> at </xsl:text><xsl:value-of select="concat(base-uri($p_title), '#',$p_title/@xml:id)"/><xsl:text>.</xsl:text>
+                                </xsl:message>
+                            <!--</xsl:if>-->
                     <!-- one cannot use a boolean value if the default result is non-boolean -->
                     <xsl:value-of select="'false()'"/>
                 </xsl:otherwise>
@@ -79,9 +178,9 @@
         <xsl:choose>
             <!-- fallback: name is not found in the authority file -->
             <xsl:when test="$v_corresponding-bibl = 'false()'">
-                <xsl:copy>
-                    <xsl:apply-templates select="@* | node()"/>
-                </xsl:copy>
+                <xsl:element name="title">
+                    <xsl:apply-templates select="$p_title/@* | $p_title/node()"/>
+                </xsl:element>
             </xsl:when>
             <!-- name is found in the authority file. it will be linked and potentially updated -->
             <xsl:otherwise>
@@ -90,37 +189,47 @@
                 
                 <!-- construct @ref pointing to the corresponding entry -->
                 <xsl:variable name="v_ref">
-                    <xsl:value-of
+                    <xsl:if test="$v_corresponding-bibl/descendant::tei:idno[@type = 'oape']">
+                        <xsl:value-of
                         select="concat('oape:bibl:', $v_corresponding-bibl/descendant::tei:idno[@type = 'oape'][1])"/>
+                    </xsl:if>
                     <xsl:if test="$v_corresponding-bibl/descendant::tei:idno[@type = 'OCLC']">
-                        <xsl:text> </xsl:text>
+                        <xsl:if test="$v_corresponding-bibl/descendant::tei:idno[@type = 'oape']">
+                            <xsl:text> </xsl:text>
+                        </xsl:if>
                         <xsl:value-of
                             select="concat('oclc:', $v_corresponding-bibl/descendant::tei:idno[@type = 'OCLC'][1])"
                         />
                     </xsl:if>
-                </xsl:variable>   
-                <xsl:copy>
-                    <xsl:apply-templates select="@*"/>
+                </xsl:variable>
+                <xsl:if test="$p_verbose = true() and $p_title/@ref = ''">
+                    <xsl:message>
+                        <xsl:text>The match has no &lt;idno&gt; child.</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+                <xsl:element name="title">
+                    <xsl:apply-templates select="$p_title/@*"/>
                     <!-- add references to IDs -->
-                    <xsl:attribute name="ref" select="$v_ref"/>
+                    <xsl:if test="not($p_title/@ref = '')">
+                        <xsl:attribute name="ref" select="$v_ref"/>
                     <!-- document change -->
-                    <xsl:if test="not(@ref = $v_ref)">
+                    <xsl:if test="not($p_title/@ref = $v_ref)">
                         <xsl:choose>
-                        <xsl:when test="not(@change)">
+                        <xsl:when test="not($p_title/@change)">
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:apply-templates mode="m_documentation" select="@change"/>
+                            <xsl:apply-templates mode="m_documentation" select="$p_title/@change"/>
                         </xsl:otherwise>
                     </xsl:choose>
                     </xsl:if>
+                    </xsl:if>
                     <!-- replicate content -->
-                    <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
-                    <xsl:apply-templates/>
-                </xsl:copy>
+                    <xsl:apply-templates select="$p_title/node()"/>
+                </xsl:element>
             </xsl:otherwise>
         </xsl:choose>
-    </xsl:template>
+    </xsl:function>
     
 
     <!-- document the changes to source file -->
