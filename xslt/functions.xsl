@@ -8,6 +8,15 @@
     
     <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
+    <!--<xsl:template match="/">
+        <xsl:apply-templates select="descendant::tei:date" mode="m_debug"/>
+    </xsl:template>-->
+    <xsl:template match="tei:date" mode="m_debug">
+        <xsl:value-of select="oape:date-get-onset(.)"/> 
+        <xsl:text> - </xsl:text>
+        <xsl:value-of select="oape:date-get-terminus(.)"/>
+    </xsl:template>
+    
     <!-- parameters for string-replacements -->
     <xsl:param name="p_string-match" select="'([إ|أ|آ])'"/>
     <xsl:param name="p_string-replace" select="'ا'"/>
@@ -153,5 +162,84 @@
             select="$p_authority-file/tei:place[tei:placeName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"
         />
     </xsl:function>
+    
+    <xsl:function name="oape:date-get-onset">
+        <xsl:param name="p_date"/>
+        <xsl:choose>
+            <xsl:when test="$p_date/@when">
+                <xsl:copy-of select="$p_date/@when"/>
+            </xsl:when>
+            <xsl:when test="$p_date/@from">
+                <xsl:copy-of select="$p_date/@from"/>
+            </xsl:when>
+            <xsl:when test="$p_date/@notBefore">
+                <xsl:copy-of select="$p_date/@notBefore"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>date: no machine-readible onset found</xsl:text>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:function name="oape:date-get-terminus">
+        <xsl:param name="p_date"/>
+        <xsl:choose>
+            <xsl:when test="$p_date/@when">
+                <xsl:copy-of select="$p_date/@when"/>
+            </xsl:when>
+            <xsl:when test="$p_date/@to">
+                <xsl:copy-of select="$p_date/@to"/>
+            </xsl:when>
+            <xsl:when test="$p_date/@notAfter">
+                <xsl:copy-of select="$p_date/@notAfter"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>date: no machine-readible terminus found</xsl:text>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
+    <xsl:function name="oape:compile-next-prev">
+        <xsl:param name="p_node"/>
+        <xsl:variable name="v_next-id" select="substring-after($p_node/@next, '#')"/>
+        <xsl:variable name="v_prev-id" select="substring-after($p_node/@prev, '#')"/>
+        <xsl:choose>
+            <!-- first -->
+            <xsl:when test="$p_node/@next and not($p_node/@prev)">
+                <xsl:element name="{$p_node/name()}">
+                    <xsl:apply-templates select="$p_node/@*" mode="m_identity-transform"/>
+                    <xsl:copy-of select="$p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/@*"/>
+                    <xsl:apply-templates select="$p_node/node()" mode="m_identity-transform"/>
+                    <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
+<!--                    <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>-->
+                </xsl:element>
+            </xsl:when>
+            <!-- middle -->
+            <xsl:when test="$p_node/@next and $p_node/@prev">
+                <xsl:apply-templates select="$p_node/node()" mode="m_identity-transform"/>
+                <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
+<!--                <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>-->
+            </xsl:when>
+            <!-- last -->
+            <xsl:when test="$p_node/@prev and not($p_node/@next)">
+                <xsl:apply-templates select="$p_node/node()" mode="m_identity-transform"/>
+            </xsl:when>
+            <!-- nothing to compile -->
+            <xsl:otherwise>
+                <xsl:element name="{$p_node/name()}">
+                    <xsl:apply-templates select="$p_node/@* | $p_node/node()" mode="m_identity-transform"/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
+    <xsl:template match="node() | @*" mode="m_identity-transform">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>
+        </xsl:copy>
+    </xsl:template>
     
 </xsl:stylesheet>
