@@ -7,7 +7,7 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="#all"
     version="3.0">
-    <xsl:output method="xml" encoding="UTF-8" indent="true" omit-xml-declaration="no" version="1.0"/>
+    <xsl:output method="xml" encoding="UTF-8" indent="no" omit-xml-declaration="no" version="1.0"/>
     
     <!-- identify the author of the change by means of a @xml:id -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
@@ -17,6 +17,8 @@
     - already existing entries shall be enriched with clearly marked information.
          + add a <biblStruct> child with the additional information
     - new entries can just be added from the external file. -->
+    
+    <xsl:include href="functions.xsl"/>
     
      <xsl:param name="p_url-master"
         select="'../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
@@ -229,63 +231,9 @@
     
     <xsl:variable name="v_bibls-in-file-current">
         <xsl:apply-templates select="$v_file-current/descendant::tei:text/descendant::tei:bibl" mode="m_compile"/>
-       <!-- <xsl:for-each select="$v_file-current/descendant::tei:text/descendant::tei:bibl">
-            <xsl:copy>
-                <!-\- attributes -\->
-                <xsl:copy-of select="@*"/>
-                <!-\- check if one needs to compile nodes with @next and @prev -\->
-                <xsl:if test="starts-with(@next, '#')">
-                            <xsl:variable name="v_next-id" select="substring-after(@next, '#')"/>
-                            <xsl:copy-of select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/@*"/>
-                        </xsl:if>
-                <!-\-<xsl:if test="starts-with(@prev, '#')">
-                            <xsl:variable name="v_prev-id" select="substring-after(@prev, '#')"/>
-                            <xsl:copy-of select="ancestor::tei:text/descendant::node()[@xml:id = $v_prev-id]/@*"/>
-                        </xsl:if>-\->
-                <!-\- content -\->
-                <xsl:apply-templates/>
-                <!-\- check if one needs to compile nodes with @next and @prev -\->
-                <xsl:if test="starts-with(@next, '#')">
-                            <xsl:variable name="v_next-id" select="substring-after(@next, '#')"/>
-                            <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/node()"/>
-                        </xsl:if>
-                <!-\-<xsl:if test="starts-with(@prev, '#')">
-                            <xsl:variable name="v_prev-id" select="substring-after(@prev, '#')"/>
-                            <xsl:copy-of select="ancestor::tei:text/descendant::node()[@xml:id = $v_prev-id]/node()"/>
-                        </xsl:if>-\->
-            </xsl:copy>
-        </xsl:for-each>
--->    </xsl:variable>
-    
+    </xsl:variable>
     <xsl:template match="tei:bibl" mode="m_compile">
-        <xsl:variable name="v_next-id" select="substring-after(@next, '#')"/>
-        <xsl:variable name="v_prev-id" select="substring-after(@prev, '#')"/>
-        <xsl:choose>
-            <!-- first -->
-            <xsl:when test="@next and not(@prev)">
-                <xsl:copy>
-                    <xsl:apply-templates select="@*"/>
-                    <xsl:copy-of select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/@*"/>
-                    <xsl:apply-templates select="node()"/>
-                    <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>
-                </xsl:copy>
-            </xsl:when>
-            <!-- middle -->
-            <xsl:when test="@next and @prev">
-                <xsl:apply-templates select="node()"/>
-                <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>
-            </xsl:when>
-            <!-- last -->
-            <xsl:when test="@prev and not(@next)">
-                <xsl:apply-templates select="node()"/>
-            </xsl:when>
-            <!-- nothing to compile -->
-            <xsl:otherwise>
-                <xsl:copy>
-                    <xsl:apply-templates select="@* | node()"/>
-                </xsl:copy>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:copy-of select="oape:compile-next-prev(.)"/>
     </xsl:template>
     
     <!-- convert <bibl> to <biblStruct> -->
