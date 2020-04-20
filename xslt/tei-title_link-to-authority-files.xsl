@@ -57,7 +57,7 @@
     
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
     
-     <xsl:template match="tei:title[ancestor::tei:text][@level = 'j']" priority="10">
+     <xsl:template match="tei:title[ancestor::tei:text][@level = 'j'][not(@type = 'sub')]" priority="10">
          <xsl:copy-of select="oape:link-title-to-authority-file(., $v_file-entities-master)"/>
      </xsl:template>
     <xsl:function name="oape:link-title-to-authority-file">
@@ -66,11 +66,14 @@
         <!-- flatened version of the persName without non-word characters and without any harakat -->
         <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string($p_title))"/>
         <xsl:variable name="v_level" select="$p_title/@level"/>
-        <xsl:variable name="v_type" select="if($p_title/ancestor::tei:bibl/@type) then($p_title/ancestor::tei:bibl/@type) else()"/>
-         <xsl:variable name="v_subtype" select="if($p_title/ancestor::tei:bibl/@subtype) then($p_title/ancestor::tei:bibl/@subtype) else()"/>
-         <xsl:variable name="v_frequency" select="if($p_title/ancestor::tei:bibl/@oape:frequency) then($p_title/ancestor::tei:bibl/@oape:frequency) else()"/>
+        <xsl:variable name="v_bibl" select="if($p_title/ancestor::tei:bibl) then(oape:compile-next-prev($p_title/ancestor::tei:bibl)) else()"/>
+        <xsl:variable name="v_type" select="if($v_bibl/descendant-or-self::tei:bibl/@type) then($v_bibl/descendant-or-self::tei:bibl/@type) else()"/>
+         <xsl:variable name="v_subtype" select="if($v_bibl/descendant-or-self::tei:bibl/@subtype) then($v_bibl/descendant-or-self::tei:bibl/@subtype) else()"/>
+         <xsl:variable name="v_frequency" select="if($v_bibl/descendant-or-self::tei:bibl/@oape:frequency) then($v_bibl/descendant-or-self::tei:bibl/@oape:frequency) else()"/>
          <!-- get the publication date of the TEI document in order to establish whether a title could have been mentioned -->
          <xsl:variable name="v_date-publication" select="$p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1]/tei:monogr/tei:imprint/tei:date[1]"/>
+        <!-- get the place of publication -->
+        <xsl:variable name="v_place-publication" select="$v_bibl/descendant-or-self::tei:bibl/tei:pubPlace/tei:placeName[1]"/>
         <!-- test if the flattened name is present in the authority file -->
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
@@ -117,41 +120,42 @@
                                     </xsl:if>
                                     <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype]"/>
                                 </xsl:when>
-<!--                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[xs:date(descendant::tei:date/@when) &lt; xs:date($v_date-publication/@when)]) = 1">-->
+                                <!-- location -->
+                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[tei:monogr/tei:imprint/tei:pubPlace/tei:placeName = $v_place-publication]) = 1">
+                                    <xsl:if test="$p_verbose = true()">
+                                        <xsl:message>
+                                            <xsl:text>Found a single match based on publication place.</xsl:text>
+                                        </xsl:message>
+                                    </xsl:if>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[tei:monogr/tei:imprint/tei:pubPlace/tei:placeName = $v_place-publication]"/>
+                                </xsl:when>
+<!--                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[xs:date(descendant::tei:date/@when) lt xs:date($v_date-publication/@when)]) = 1">-->
                                 <!-- the comparison of dates should be based on the year only, since the data type for att.dated is not xs:date -->
-                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@when &lt; $v_date-publication/@when]) = 1">
+                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@when lt $v_date-publication/@when]) = 1">
                                     <xsl:if test="$p_verbose = true()">
                                         <xsl:message>
                                             <xsl:text>Found a single match based on publication date.</xsl:text>
                                         </xsl:message>
                                     </xsl:if>
-                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@when &lt; $v_date-publication/@when]"/>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@when lt $v_date-publication/@when]"/>
                                 </xsl:when>
-                                 <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@from &lt; $v_date-publication/@when][descendant::tei:date/@to &gt; $v_date-publication/@when]) = 1">
+                                <!-- test if the date falls into a range -->
+                                 <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[oape:date-get-onset(descendant::tei:date) lt $v_date-publication/@when][oape:date-get-terminus(descendant::tei:date) gt $v_date-publication/@when]) = 1">
                                     <xsl:if test="$p_verbose = true()">
                                         <xsl:message>
-                                            <xsl:text>Found a single match based on publication date.</xsl:text>
+                                            <xsl:text>Found a single match based on publication date (range).</xsl:text>
                                         </xsl:message>
                                     </xsl:if>
-                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@from &lt; $v_date-publication/@when][descendant::tei:date/@to &gt; $v_date-publication/@when]"/>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[oape:date-get-onset(descendant::tei:date) lt $v_date-publication/@when][oape:date-get-terminus(descendant::tei:date) gt $v_date-publication/@when]"/>
                                 </xsl:when>
-                                 <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@from &lt; $v_date-publication/@when]) = 1">
+                                 <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[oape:date-get-onset(descendant::tei:date) lt $v_date-publication/@when]) = 1">
                                     <xsl:if test="$p_verbose = true()">
                                         <xsl:message>
-                                            <xsl:text>Found a single match based on publication date.</xsl:text>
+                                            <xsl:text>Found a single match based on publication date (onset).</xsl:text>
                                         </xsl:message>
                                     </xsl:if>
-                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@from &lt; $v_date-publication/@when]"/>
+                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[oape:date-get-onset(descendant::tei:date) lt $v_date-publication/@when]"/>
                                 </xsl:when>
-                                <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@notBefore &lt; $v_date-publication/@when][descendant::tei:date/@notAfter &gt; $v_date-publication/@when]) = 1">
-                                    <xsl:if test="$p_verbose = true()">
-                                        <xsl:message>
-                                            <xsl:text>Found a single match based on publication date.</xsl:text>
-                                        </xsl:message>
-                                    </xsl:if>
-                                    <xsl:copy-of select="$v_matches/descendant-or-self::tei:biblStruct[descendant::tei:date/@notBefore &lt; $v_date-publication/@when][descendant::tei:date/@notAfter &gt; $v_date-publication/@when]"/>
-                                </xsl:when>
-                                <!--</xsl:when>-->
                                 <xsl:otherwise>
                                     <!--<xsl:if test="$p_verbose = true()">-->
                                         <xsl:message>
