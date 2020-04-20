@@ -35,7 +35,7 @@
             <xsl:choose>
                 <!-- test if this node already points to an authority file -->
                 <xsl:when test="@ref">
-                    <xsl:copy-of select="oape:get-person-from-authority-file(@ref)"/>
+                    <xsl:copy-of select="oape:get-person-from-authority-file(@ref, $v_file-entities-master)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
                 <xsl:when test="$v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]">

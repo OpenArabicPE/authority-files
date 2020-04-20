@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet  
+<xsl:stylesheet
+    xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:oape="https://openarabicpe.github.io/ns"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
@@ -57,10 +58,11 @@
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
     
      <xsl:template match="tei:title[ancestor::tei:text][@level = 'j']" priority="10">
-         <xsl:copy-of select="oape:link-title-to-authority-file(.)"/>
+         <xsl:copy-of select="oape:link-title-to-authority-file(., $v_file-entities-master)"/>
      </xsl:template>
     <xsl:function name="oape:link-title-to-authority-file">
         <xsl:param name="p_title"/>
+        <xsl:param name="p_authority-file"/>
         <!-- flatened version of the persName without non-word characters and without any harakat -->
         <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string($p_title))"/>
         <xsl:variable name="v_level" select="$p_title/@level"/>
@@ -75,7 +77,7 @@
                 <!-- test if this node already points to an authority file -->
                 <!-- since these @refs can be faulty, one should probably add a param -->
                 <xsl:when test="$p_title/@ref and ($p_update-existing-refs = false())">
-                    <xsl:copy-of select="oape:get-bibl-from-authority-file($p_title/@ref)"/>
+                    <xsl:copy-of select="oape:get-bibl-from-authority-file($p_title/@ref, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
                 <xsl:when test="$v_file-entities-master/descendant::tei:biblStruct/tei:monogr/tei:title[@level = $v_level][oape:string-normalise-name(.) = $v_name-flat]">

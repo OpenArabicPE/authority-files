@@ -5,6 +5,7 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
     version="3.0">
+    
     <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <!-- parameters for string-replacements -->
@@ -32,6 +33,7 @@
     <!-- function to retrieve a <biblStruct> from a local authority file -->
     <xsl:function name="oape:get-bibl-from-authority-file">
         <xsl:param name="p_idno"/>
+        <xsl:param name="p_authority-file"/>
         <xsl:variable name="v_authority">
             <xsl:choose>
                 <xsl:when test="contains($p_idno, 'oape:bibl:')">
@@ -59,9 +61,9 @@
         </xsl:if>-->
         <!-- check if the bibliography contains an entry for this ID, if so, retrieve the full <biblStruct>, otherwise return 'false()' -->
         <xsl:choose>
-            <xsl:when test="$v_file-entities-master//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]">
+            <xsl:when test="$p_authority-file//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]">
                 <xsl:copy-of
-            select="$v_file-entities-master//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]"/>
+            select="$p_authority-file//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="'false()'"/>
@@ -72,6 +74,7 @@
     <!-- this function queries a local authority file with an OpenArabicPE or VIAF ID and returns a <tei:person> -->
     <xsl:function name="oape:get-person-from-authority-file">
         <xsl:param name="p_idno"/>
+        <xsl:param name="p_authority-file"/>
         <xsl:variable name="v_authority">
             <xsl:choose>
                 <xsl:when test="contains($p_idno, 'oape:pers:')">
@@ -98,19 +101,21 @@
             </xsl:message>
         </xsl:if>-->
         <xsl:copy-of
-            select="$v_file-entities-master//tei:person[tei:idno[@type = $v_authority] = $v_idno]"/>
+            select="$p_authority-file//tei:person[tei:idno[@type = $v_authority] = $v_idno]"/>
     </xsl:function>
     <!-- get OpenArabicPE ID from authority file with an @xml:id -->
     <xsl:function name="oape:get-id-for-person">
         <xsl:param name="p_xml-id"/>
         <xsl:param name="p_authority"/>
+        <xsl:param name="p_authority-file"/>
         <xsl:value-of
-            select="$v_file-entities-master//tei:person[tei:persName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"
+            select="$p_authority-file//tei:person[tei:persName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"
         />
     </xsl:function>
 
     <xsl:function name="oape:get-place-from-authority-file">
         <xsl:param name="p_idno"/>
+        <xsl:param name="p_authority-file"/>
         <xsl:variable name="v_authority">
             <xsl:choose>
                 <xsl:when test="contains($p_idno, 'oape:place:')">
@@ -137,14 +142,15 @@
             </xsl:message>
         </xsl:if>-->
         <xsl:copy-of
-            select="$v_file-entities-master//tei:place[tei:idno[@type = $v_authority] = $v_idno]"/>
+            select="$p_authority-file//tei:place[tei:idno[@type = $v_authority] = $v_idno]"/>
     </xsl:function>
     <!-- get OpenArabicPE ID from authority file with an @xml:id -->
     <xsl:function name="oape:get-id-for-place">
         <xsl:param name="p_xml-id"/>
         <xsl:param name="p_authority"/>
+        <xsl:param name="p_authority-file"/>
         <xsl:value-of
-            select="$v_file-entities-master//tei:place[tei:placeName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"
+            select="$p_authority-file/tei:place[tei:placeName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"
         />
     </xsl:function>
     
