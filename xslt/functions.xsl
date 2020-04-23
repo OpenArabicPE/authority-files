@@ -3,6 +3,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:oape="https://openarabicpe.github.io/ns"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
     version="3.0">
     
@@ -209,13 +210,14 @@
         <xsl:choose>
             <!-- first -->
             <xsl:when test="$p_node/@next and not($p_node/@prev)">
-                <xsl:element name="{$p_node/name()}">
+                <!-- problem: the namespace is not provided! -->
+                <xsl:copy select="$p_node" copy-namespaces="yes" inherit-namespaces="yes">
                     <xsl:apply-templates select="$p_node/@*" mode="m_identity-transform"/>
                     <xsl:copy-of select="$p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/@*"/>
                     <xsl:apply-templates select="$p_node/node()" mode="m_identity-transform"/>
                     <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
 <!--                    <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>-->
-                </xsl:element>
+                </xsl:copy>
             </xsl:when>
             <!-- middle -->
             <xsl:when test="$p_node/@next and $p_node/@prev">
@@ -229,9 +231,9 @@
             </xsl:when>
             <!-- nothing to compile -->
             <xsl:otherwise>
-                <xsl:element name="{$p_node/name()}">
+                <xsl:copy select="$p_node" copy-namespaces="yes" inherit-namespaces="yes">
                     <xsl:apply-templates select="$p_node/@* | $p_node/node()" mode="m_identity-transform"/>
-                </xsl:element>
+                </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>

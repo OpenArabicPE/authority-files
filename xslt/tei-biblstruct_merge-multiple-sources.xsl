@@ -26,6 +26,17 @@
     <xsl:variable name="v_file-current" select="/"/>
     
     <xsl:param name="p_enrich-master" select="true()"/>
+    <xsl:variable name="v_bibls-in-file-current">
+        <xsl:variable name="v_bibl">
+            <xsl:for-each select="$v_file-current/descendant::tei:text/descendant::tei:bibl">
+                 <xsl:copy-of select="oape:compile-next-prev(.)"/>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:variable name="v_biblStruct">
+            <xsl:apply-templates select="$v_bibl/descendant-or-self::tei:bibl" mode="m_bibl-to-biblStruct"/>
+        </xsl:variable>
+        <xsl:copy-of select="$v_biblStruct"/>
+    </xsl:variable>
     
     <xsl:template match="/">
 <!--        <xsl:result-document href="_output/merge-multiple-sources.TEIP5.xml">-->
@@ -118,7 +129,7 @@
         <xsl:param name="p_target"/>
         <xsl:param name="p_source"/>
         <xsl:copy-of select="$p_source/descendant::tei:biblStruct[not(tei:monogr/tei:title = $p_target/descendant::tei:biblStruct/tei:monogr/tei:title)]"/>
-        <xsl:apply-templates select="$p_source/descendant::tei:bibl[not(tei:title = $p_target/descendant::tei:biblStruct/tei:monogr/tei:title)]" mode="m_copy-from-source"/>
+<!--        <xsl:apply-templates select="$p_source/descendant-or-self::tei:bibl[not(tei:title = $p_target/descendant::tei:biblStruct/tei:monogr/tei:title)]" mode="m_copy-from-source"/>-->
     </xsl:template>
     
     <!-- update existing <biblStruct -->
@@ -135,7 +146,7 @@
                         <xsl:text>more than one match in the external file</xsl:text>
                      </xsl:message>
                 </xsl:when>
-                <xsl:when test="count($v_file-source/descendant::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) gt 1">
+                <xsl:when test="count($v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) gt 1">
                     <!-- better message needed -->
                     <xsl:message terminate="no">
                         <xsl:text>more than one match in the external file</xsl:text>
@@ -143,10 +154,20 @@
                 </xsl:when>
                 <!-- single match -->
                 <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) = 1">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>
+                            <xsl:text>one match in the external file</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
                     <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]"/>
                 </xsl:when>
-                 <xsl:when test="count($v_file-source/descendant::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) = 1">
-                    <xsl:copy-of select="$v_file-source/descendant::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]"/>
+                 <xsl:when test="count($v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) = 1">
+                     <xsl:if test="$p_verbose = true()">
+                        <xsl:message>
+                            <xsl:text>one match in the external file</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
+                    <xsl:copy-of select="$v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
@@ -222,6 +243,11 @@
             </xsl:when>
             <!-- fallback: replicate input -->
             <xsl:otherwise>
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>no additional information for </xsl:text><xsl:value-of select="descendant::tei:title"/>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
@@ -229,15 +255,8 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:variable name="v_bibls-in-file-current">
-        <xsl:apply-templates select="$v_file-current/descendant::tei:text/descendant::tei:bibl" mode="m_compile"/>
-    </xsl:variable>
-    <xsl:template match="tei:bibl" mode="m_compile">
-        <xsl:copy-of select="oape:compile-next-prev(.)"/>
-    </xsl:template>
-    
     <!-- convert <bibl> to <biblStruct> -->
-    <xsl:template match="tei:bibl" mode="m_copy-from-source">
+    <xsl:template match="tei:bibl" mode="m_bibl-to-biblStruct">
         <biblStruct change="#{$p_id-change}">
             <xsl:apply-templates select="@*" mode="m_copy-from-source"/>
             <!-- document source of information -->
