@@ -73,25 +73,26 @@
             <xsl:apply-templates select="@* " mode="m_copy-from-source"/>
             <!-- document change -->
             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                <!--<xsl:choose>
-                    <xsl:when test="@change">
-                        <xsl:value-of select="concat(@change, ' #', $p_id-change)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="concat('#', $p_id-change)"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:attribute>-->
             <!-- document source of additional information -->
              <xsl:attribute name="source">
-                <xsl:choose>
-                    <xsl:when test="@source">
-                        <xsl:value-of select="concat(@source, if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', ancestor::node()[name() = ('bibl', 'biblStruct')]/@xml:id)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
+                <!-- this potentially duplicates the @source information when m_copy-from-source is applied more than once -->
+                 <xsl:choose>
+                     <xsl:when test="@source = ancestor::node()[name() = ('bibl', 'biblStruct')]/@source">
+                         <xsl:value-of select="@source"/>
+                     </xsl:when>
+                     <xsl:when test="@source">
+                        <xsl:value-of select="concat(@source, ' ')"/>
+                     <!--                 <xsl:variable name="v_uri" select="if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master))"/>-->
+                 <xsl:choose>
+                     <xsl:when test="ancestor::node()[name() = ('bibl', 'biblStruct')]/@source">
+                         <xsl:value-of select="ancestor::node()[name() = ('bibl', 'biblStruct')]/@source"/>
+                     </xsl:when>
+                     <xsl:otherwise>
                         <xsl:value-of select="concat(if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', ancestor::node()[name() = ('bibl', 'biblStruct')]/@xml:id)"/>
                     </xsl:otherwise>
-                </xsl:choose>
+                 </xsl:choose>
+                     </xsl:when>
+                 </xsl:choose>
             </xsl:attribute>
             <!-- content -->
             <xsl:apply-templates select="node()"/>
@@ -136,39 +137,54 @@
     <xsl:template match="tei:biblStruct[ancestor::tei:text]">
         <xsl:variable name="v_base" select="."/>
         <xsl:variable name="v_file-source" select="if($p_enrich-master = true()) then($v_bibls-in-file-current) else($v_file-master)"/>
+        <!--  -->
+        <xsl:variable name="v_title" select="$v_base/tei:monogr/tei:title[1]"/>
+        <xsl:variable name="v_level" select="$v_title/@level"/>
+        <xsl:variable name="v_type" select="$v_base/@type"/>
+         <xsl:variable name="v_subtype" select="$v_base/@subtype"/>
+         <xsl:variable name="v_frequency" select="$v_base/@oape:frequency"/>
         <xsl:variable name="v_additional-info">
             <!-- select a biblStruct in the external file that matches $v_base by title, editors etc. -->
             <xsl:choose>
                 <!-- multiple matches -->
-                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) gt 1">
-                    <!-- better message needed -->
-                    <xsl:message terminate="no">
-                        <xsl:text>more than one match in the external file</xsl:text>
-                     </xsl:message>
+                <xsl:when test="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)][@type = $v_type][@subtype = $v_subtype]">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>
+                            <xsl:text>match(es) in the external file based on title, @type, @subtype</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
+                    <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)][@type = $v_type][@subtype = $v_subtype]"/>
                 </xsl:when>
-                <xsl:when test="count($v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) gt 1">
-                    <!-- better message needed -->
-                    <xsl:message terminate="no">
-                        <xsl:text>more than one match in the external file</xsl:text>
-                     </xsl:message>
-                </xsl:when>
-                <!-- single match -->
-                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]) = 1">
+                <!-- single matches -->
+                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)]) = 1">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
                             <xsl:text>one match in the external file</xsl:text>
                         </xsl:message>
                     </xsl:if>
-                    <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title = $v_base/tei:monogr/tei:title]"/>
+                    <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)]"/>
                 </xsl:when>
-                 <xsl:when test="count($v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) = 1">
+                <!-- multiple matches -->
+                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)]) gt 1">
+                    <!-- better message needed -->
+                    <xsl:message terminate="no">
+                        <xsl:text>more than one match in the external file</xsl:text>
+                     </xsl:message>
+                </xsl:when>
+                <!--<xsl:when test="count($v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) gt 1">
+                    <!-\- better message needed -\->
+                    <xsl:message terminate="no">
+                        <xsl:text>more than one match in the external file</xsl:text>
+                     </xsl:message>
+                </xsl:when>-->
+                 <!--<xsl:when test="count($v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) = 1">
                      <xsl:if test="$p_verbose = true()">
                         <xsl:message>
                             <xsl:text>one match in the external file</xsl:text>
                         </xsl:message>
                     </xsl:if>
                     <xsl:copy-of select="$v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]"/>
-                </xsl:when>
+                </xsl:when>-->
             </xsl:choose>
         </xsl:variable>
         <!-- check if there is additional information available -->
