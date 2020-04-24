@@ -20,7 +20,9 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2020-04-23" who="#pers_TG" xml:lang="en" xml:id="d3e469">Enriched all <gi>biblStruct</gi> with information from file <ref target="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_24.TEIP5.xml">../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_24.TEIP5.xml</ref> using matching of titles.</change>
+         <change when="2020-04-23" who="#pers_TG" xml:id="d3e469" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
+            target="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_24.TEIP5.xml"
+            >../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_24.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-04-15" who="#pers_TG" xml:id="d2e481" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
             target="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml"
             >../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml</ref> using matching of titles.</change>
@@ -80,7 +82,7 @@
       <body xml:lang="ar">
          <div subtype="list" type="item" xml:lang="ar">
             <listBibl xml:lang="ar">
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct type="periodical" xml:lang="ar" oape:frequency="monthly" subtype="journal">
                   <monogr xml:lang="ar">
                      <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة شهرية ادبية علمية تاريخية</title>
@@ -106,14 +108,6 @@
                      <biblScope from="1" to="1" unit="volume"/>
                      <biblScope from="1" to="1" unit="issue"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">frequency_monthly</item>
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
-                  <note type="tagList"> <list>
-                     <item>frequency_monthly</item>
-                     </list> </note>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -139,10 +133,6 @@
                      <biblScope from="1" to="1" unit="volume"/>
                      <biblScope from="1" to="1" unit="issue"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -181,15 +171,15 @@
                      <title level="j">الزهور</title>
                      <textLang mainLang="ar"/>
                      <editor><persName>نوري أفندي</persName></editor>
-                     <editor type="editor" source=" ../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_24.TEIP5.xml#bibl_2" change="#d3e469"><persName ref="oape:pers:3717">صلاح الدين الكركوكي</persName></editor>
+                     <editor change="#d3e469" source=" ../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_24.TEIP5.xml#bibl_2" type="editor"><persName ref="oape:pers:3717"
+                        >صلاح الدين الكركوكي</persName></editor>
                      <imprint>
-                        <date calendar="#cal_islamic" change="#d2e472" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_17.TEIP5.xml#"> <num
-                           type="auto-markup" value="23" xml:lang="ar">٢٣</num> رمضان سنة <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
-                        <pubPlace change="#d2e472" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_17.TEIP5.xml#"> <placeName>بغداد</placeName>
-                        </pubPlace>
+                        <date calendar="#cal_islamic" change="#d2e472" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_17.TEIP5.xml#"> <num type="auto-markup" value="23"
+                           xml:lang="ar">٢٣</num> رمضان سنة <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
+                        <pubPlace change="#d2e472" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_17.TEIP5.xml#"> <placeName>بغداد</placeName> </pubPlace>
                      </imprint>
-                     <biblScope change="#d2e472" from="297" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_17.TEIP5.xml#" to="297" unit="issue"
-                        >العدد <num type="auto-markup" value="297" xml:lang="ar">٢٩٧</num> </biblScope>
+                     <biblScope change="#d2e472" from="297" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_17.TEIP5.xml#" to="297" unit="issue">العدد <num
+                        type="auto-markup" value="297" xml:lang="ar">٢٩٧</num> </biblScope>
                   </monogr>
                </biblStruct>
             </listBibl>
@@ -212,10 +202,6 @@
                      </imprint>
                      <biblScope unit="issue" xml:lang="ar">العدد رقم 1</biblScope>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -357,33 +343,36 @@
                      <biblScope from="1" to="56" unit="page"/>
                   </monogr>
                </biblStruct>
-               <biblStruct  oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar" prev="oape:bibl:9">
-                    <monogr xml:lang="ar"><title level="j" xml:lang="ar">المقتبس</title><title level="j" type="sub" xml:lang="ar">مجلة ادبية علمية اجتماعية</title><title level="j" type="sub" xml:lang="ar">تصدر في كل شهر عربي بدمشق</title><title level="j" xml:lang="ar-Latn-x-ijmes">[Majallat] al-Muqtabas</title><title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla adabiyya ʿilmiyya ijtimāʿiyya</title><title level="j" type="sub" xml:lang="ar-Latn-x-ijmes"> tuṣadir fī kull shahr ʿarabī bi-Dimashq</title><idno type="OCLC" xml:lang="en">4770057679</idno><idno type="OCLC" xml:lang="en">79440195</idno><idno type="aucr" xml:lang="en">07201136864</idno><idno type="shamela" xml:lang="en">26523</idno><idno type="zenodo" xml:lang="en">45922152</idno><editor ref="viaf:32272677" xml:lang="en"> 
-                            <persName xml:lang="ar" ref="oape:pers:878 viaf:32272677"> 
-                                <forename xml:lang="ar">محمد</forename> 
-                                <surname xml:lang="ar">كرد علي</surname> 
-                            </persName> 
-                            <persName xml:lang="ar-Latn-x-ijmes" ref="oape:pers:878 viaf:32272677">
-                                <forename xml:lang="ar-Latn-x-ijmes">Muḥammad</forename> 
-                                <surname xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname>
-                            </persName> 
-                        </editor><imprint xml:lang="en">
-                            <publisher xml:lang="en"> 
-                                <orgName xml:lang="ar">مطبعة المقتبس</orgName>
-                                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</orgName> 
-                            </publisher>
-                            <pubPlace xml:lang="en"> 
-                                <placeName xml:lang="ar" ref="oape:place:61 geon:170654">دمشق</placeName>
-                                <placeName xml:lang="en" ref="oape:place:61 geon:170654">Damascus</placeName> 
-                            </pubPlace>
-                            <date type="official" calendar="#cal_islamic" datingMethod="#cal_islamic" when="1909-01-23" when-custom="1327-01-01" xml:lang="ar-Latn-x-ijmes">1 Muḥ 1327</date>
-                        </imprint><biblScope from="4" to="4" unit="volume" xml:lang="en"/><biblScope from="1" to="1" unit="issue" xml:lang="en"/><biblScope from="1" to="72" unit="page"/></monogr>
-                    
-                </biblStruct>
+               <biblStruct oape:frequency="monthly" prev="oape:bibl:9" subtype="journal" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">المقتبس</title>
+                     <title level="j" type="sub" xml:lang="ar">مجلة ادبية علمية اجتماعية</title>
+                     <title level="j" type="sub" xml:lang="ar">تصدر في كل شهر عربي بدمشق</title>
+                     <title level="j" xml:lang="ar-Latn-x-ijmes">[Majallat] al-Muqtabas</title>
+                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla adabiyya ʿilmiyya ijtimāʿiyya</title>
+                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes"> tuṣadir fī kull shahr ʿarabī bi-Dimashq</title>
+                     <idno type="OCLC" xml:lang="en">4770057679</idno>
+                     <idno type="OCLC" xml:lang="en">79440195</idno>
+                     <idno type="aucr" xml:lang="en">07201136864</idno>
+                     <idno type="shamela" xml:lang="en">26523</idno>
+                     <idno type="zenodo" xml:lang="en">45922152</idno>
+                     <editor ref="viaf:32272677" xml:lang="en"> <persName ref="oape:pers:878 viaf:32272677" xml:lang="ar"> <forename xml:lang="ar">محمد</forename> <surname xml:lang="ar"
+                        >كرد علي</surname> </persName> <persName ref="oape:pers:878 viaf:32272677" xml:lang="ar-Latn-x-ijmes"> <forename xml:lang="ar-Latn-x-ijmes">Muḥammad</forename> <surname
+                        xml:lang="ar-Latn-x-ijmes">Kurd ʿAlī</surname> </persName> </editor>
+                     <imprint xml:lang="en">
+                        <publisher xml:lang="en"> <orgName xml:lang="ar">مطبعة المقتبس</orgName> <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Muqtabas</orgName> </publisher>
+                        <pubPlace xml:lang="en"> <placeName ref="oape:place:61 geon:170654" xml:lang="ar">دمشق</placeName> <placeName ref="oape:place:61 geon:170654" xml:lang="en">Damascus</placeName> </pubPlace>
+                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" type="official" when="1909-01-23" when-custom="1327-01-01" xml:lang="ar-Latn-x-ijmes">1 Muḥ 1327</date>
+                     </imprint>
+                     <biblScope from="4" to="4" unit="volume" xml:lang="en"/>
+                     <biblScope from="1" to="1" unit="issue" xml:lang="en"/>
+                     <biblScope from="1" to="72" unit="page"/>
+                  </monogr>
+               </biblStruct>
             </listBibl>
             <!-- add the newspaper *al-Muqtabas*, also published as *al-Qabas* -->
             <listBibl xml:lang="ar">
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" next="oape:bibl:53" prev="oape:bibl:51">
+               <biblStruct next="oape:bibl:53" oape:frequency="daily" prev="oape:bibl:51" subtype="newspaper" type="periodical">
                   <monogr>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Qabas</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
@@ -408,7 +397,7 @@
                      <biblScope from="1" to="4" unit="page">1-4</biblScope>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" next="oape:bibl:51">
+               <biblStruct next="oape:bibl:51" oape:frequency="daily" subtype="newspaper" type="periodical">
                   <monogr>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
@@ -433,7 +422,7 @@
                      <biblScope from="1" to="4" unit="page"/>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" next="oape:bibl:52" prev="oape:bibl:50">
+               <biblStruct next="oape:bibl:52" oape:frequency="daily" prev="oape:bibl:50" subtype="newspaper" type="periodical">
                   <monogr>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
@@ -459,7 +448,7 @@
                      <biblScope from="1" to="4" unit="page"/>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" next="oape:bibl:54" prev="oape:bibl:52">
+               <biblStruct next="oape:bibl:54" oape:frequency="daily" prev="oape:bibl:52" subtype="newspaper" type="periodical">
                   <monogr>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
@@ -485,7 +474,7 @@
                      <biblScope from="1" to="4" unit="page"/>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" prev="oape:bibl:53">
+               <biblStruct oape:frequency="daily" prev="oape:bibl:53" subtype="newspaper" type="periodical">
                   <monogr>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
@@ -529,11 +518,7 @@
                      </imprint>
                      <biblScope unit="issue" xml:lang="ar">العدد رقم 1</biblScope>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">place_cairo</item>
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
+                  
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -569,19 +554,18 @@
                      <editor change="#d2e188"
                         source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2 file:///BachUni/BachBibliothek/GitHub/TEI/oclc_618896732/tei/oclc_618896732-div_19.TEIP5.xml#p_7868.d2e55315"
                         type="owner"> <persName>عبد الرحمن البرقوقي</persName> </editor>
-                     <editor change="#d2e188" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2">
-                        <persName>محمد السباعي</persName> </editor>
+                     <editor change="#d2e188" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2"> <persName>محمد السباعي</persName> </editor>
                      <textLang mainLang="ar"/>
                      <imprint xml:lang="ar">
                         <date source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_7893.d2e68896" when="1910"/>
-                        <pubPlace change="#d2e188" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2"
-                           >شارع عبد العزيز في <placeName ref="oape:place:226 geon:360630">مصر</placeName> </pubPlace>
+                        <pubPlace change="#d2e188" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2">شارع عبد العزيز في <placeName
+                           ref="oape:place:226 geon:360630">مصر</placeName> </pubPlace>
                         <publisher/>
                      </imprint>
                      <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                      <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                     <biblScope change="#d2e188" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2" to="80" unit="page">
-                        <num type="auto-markup" value="80" xml:lang="ar">٨٠</num> صفحة</biblScope>
+                     <biblScope change="#d2e188" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2" to="80" unit="page"> <num type="auto-markup"
+                        value="80" xml:lang="ar">٨٠</num> صفحة</biblScope>
                   </monogr>
                </biblStruct>
                <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical">
@@ -617,10 +601,7 @@
                      <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                      <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
+                  
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -640,9 +621,7 @@
                      <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                      <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                   </monogr>
-                  <note type="tagList" xml:lang="fr"> <list xml:lang="fr">
-                     <item xml:lang="fr">status_complete</item>
-                     </list> </note>
+                  
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -697,7 +676,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct type="periodical" subtype="newspaper" oape:frequency="daily" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الاتحاد العثماني</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
@@ -729,11 +708,7 @@
                      <biblScope from="1" to="1" unit="issue"/>
                      <biblScope from="1" to="4" unit="page"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     <item>frequency_daily</item>
-                     </list> </note>
+                  
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -769,10 +744,7 @@
                      <biblScope from="1" to="1" unit="issue" xml:lang="en">1</biblScope>
                      <biblScope from="1" to="36" unit="page" xml:lang="en">1-36</biblScope>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
+                  
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -866,24 +838,19 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الحقوق</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥuqūq</title>
-                     <editor change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" type="owner">
-                        <persName>اصغر زاده معروف أفندي</persName> </editor>
+                     <editor change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" type="owner"> <persName>اصغر زاده معروف أفندي</persName> </editor>
                      <editor change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"> <persName>معروف أفندي</persName> </editor>
                      <textLang change="#d2e488" mainLang="ota" otherLangs="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"
                         >اغلب مندرجاتها باللغة التركية وفيها ما يقارب العمود باللغة العربية</textLang>
                      <imprint>
-                        <date calendar="#cal_gregorian" change="#d2e488" datingMethod="#cal_islamic"
-                           source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" when-custom="1330-01-28"> <num type="auto-markup"
-                           value="28" xml:lang="ar">٢٨</num> محرم <num type="auto-markup" value="13330" xml:lang="ar">١٣٣٣٠</num> </date>
-                        <date calendar="#cal_gregorian" change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"
-                           when="1912-01-18"> <num type="auto-markup" value="18" xml:lang="ar">١٨</num> كانون الثاني سنة <num type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
-                        <pubPlace change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2">
-                           <placeName>دار السلام</placeName> </pubPlace>
-                        <publisher change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2">
-                           <orgName>مطبعة الشابندر</orgName> </publisher>
+                        <date calendar="#cal_gregorian" change="#d2e488" datingMethod="#cal_islamic" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"
+                           when-custom="1330-01-28"> <num type="auto-markup" value="28" xml:lang="ar">٢٨</num> محرم <num type="auto-markup" value="13330" xml:lang="ar">١٣٣٣٠</num> </date>
+                        <date calendar="#cal_gregorian" change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" when="1912-01-18"> <num
+                           type="auto-markup" value="18" xml:lang="ar">١٨</num> كانون الثاني سنة <num type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
+                        <pubPlace change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"> <placeName>دار السلام</placeName> </pubPlace>
+                        <publisher change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"> <orgName>مطبعة الشابندر</orgName> </publisher>
                      </imprint>
-                     <biblScope change="#d2e488" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" to="2" unit="issue"
-                        >عددها الأول</biblScope>
+                     <biblScope change="#d2e488" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" to="2" unit="issue">عددها الأول</biblScope>
                   </monogr>
                </biblStruct>
             </listBibl>
@@ -935,23 +902,21 @@
                      <title level="j" xml:lang="ar">الحياة</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥayāt</title>
                      <idno type="oape">531</idno>
-                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7"> <persName
-                        ref="oape:pers:1845 viaf:21058435"> <forename>سليمان</forename> <roleName type="title">أفندي</roleName> <surname>الدخيل</surname> </persName> </editor>
+                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7"> <persName ref="oape:pers:1845 viaf:21058435">
+                        <forename>سليمان</forename> <roleName type="title">أفندي</roleName> <surname>الدخيل</surname> </persName> </editor>
                      <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7" type="owner"> <persName
                         ref="oape:pers:1845 viaf:21058435"> <forename>سليمان</forename> <roleName type="title">أفندي</roleName> <surname>الدخيل</surname> </persName> </editor>
-                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7"> <persName ref="oape:pers:647">
-                        <forename xml:lang="ar">إبراهيم</forename> <surname xml:lang="ar">حلمي</surname> <roleName type="title">أفندي</roleName> </persName> </editor>
+                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7"> <persName ref="oape:pers:647"> <forename xml:lang="ar"
+                        >إبراهيم</forename> <surname xml:lang="ar">حلمي</surname> <roleName type="title">أفندي</roleName> </persName> </editor>
                      <imprint>
-                        <date change="#d2e466" notAfter="1912-02-29" notBefore="1912-02-01"
-                           source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7">شباط <num type="auto-markup" value="1912"
-                           xml:lang="ar">١٩١٢</num> </date>
-                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7"> <placeName
-                           ref="oape:place:216 geon:98182">بغداد</placeName> </pubPlace>
+                        <date change="#d2e466" notAfter="1912-02-29" notBefore="1912-02-01" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7">شباط <num
+                           type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
+                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7"> <placeName ref="oape:place:216 geon:98182"
+                           >بغداد</placeName> </pubPlace>
                      </imprint>
                      <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                      <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
-                     <biblScope change="#d2e466" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7" to="1" unit="issue"
-                        >العدد الأول</biblScope>
+                     <biblScope change="#d2e466" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7" to="1" unit="issue">العدد الأول</biblScope>
                   </monogr>
                </biblStruct>
             </listBibl>
@@ -974,10 +939,7 @@
                      <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                      <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
+                  
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -1149,10 +1111,7 @@
                      <biblScope from="53" to="53" unit="issue"/>
                      <biblScope from="1" to="4" unit="page"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
+                  
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -1297,10 +1256,7 @@
                      <biblScope from="1" to="1" unit="volume" xml:lang="ar"/>
                      <biblScope from="1" to="1" unit="issue" xml:lang="ar"/>
                   </monogr>
-                  <note type="tagList" xml:lang="ar"> <list xml:lang="ar">
-                     <item xml:lang="en">record_primary</item>
-                     <item xml:lang="en">status_complete</item>
-                     </list> </note>
+                  
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -1535,7 +1491,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <tei:biblStruct xml:id="biblStruct_2.d1e163" xml:lang="ar">
+               <tei:biblStruct type="periodical" subtype="newspaper" xml:id="biblStruct_2.d1e163" xml:lang="ar" oape:frequency="weekly">
                   <tei:monogr xml:id="monogr_2.d1e165" xml:lang="ar">
                      <title level="j" xml:id="title_8.d1e167" xml:lang="ar">ثمرات الفنون</title>
                      <title level="j" type="sub" xml:id="title_9.d1e170" xml:lang="ar">ان هذه الصحيفة تحتوي على حوادث سياسية ومحلية وتجارة وفنون</title>
@@ -1571,7 +1527,6 @@
                      <biblScope from="1" to="4" unit="page" xml:id="biblScope_4.d1e263"/>
                   </tei:monogr>
                   <note type="tagList"> <list>
-                     <item xml:lang="en">frequency_weekly</item>
                      <item xml:lang="en">days_tuesday</item>
                      </list> </note>
                </tei:biblStruct>
@@ -1603,7 +1558,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical">
+               <biblStruct type="periodical" oape:frequency="weekly" subtype="newspaper">
                   <monogr xml:lang="">
                      <title level="j" xml:lang="">أرناؤود</title>
                      <idno change="#d2e167" type="oape">69</idno>
@@ -1615,9 +1570,6 @@
                         <publisher/>
                      </imprint>
                   </monogr>
-                  <note type="tagList"> <list>
-                     <item xml:lang="en">frequency_weekly</item>
-                     </list> </note>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
@@ -1818,7 +1770,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct type="periodical" subtype="journal" oape:frequency="monthly" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الأحكام</title>
                      <title level="j" xml:lang="ar">الاحكام</title>
@@ -1834,11 +1786,9 @@
                      </imprint>
                      <biblScope from="1" to="64" unit="page"/>
                   </monogr>
-                  <note type="tagList"> <list>
-                     <item xml:lang="en">frequency_monthly</item>
-                     </list> </note>
+                  
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct type="periodical" subtype="newspaper" oape:frequency="daily" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الأحوال</title>
                      <idno change="#d2e167" type="oape">79</idno>
@@ -1854,9 +1804,6 @@
                            ref="oape:place:26 geon:276781">بيروت</placeName> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
                      </imprint>
                   </monogr>
-                  <note type="tagList"> <list>
-                     <item xml:lang="en">frequency_daily</item>
-                     </list> </note>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
@@ -4045,7 +3992,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct type="periodical" oape:frequency="monthly" subtype="journal" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">العالم الجديد</title>
                      <idno change="#d2e167" type="oape">501</idno>
@@ -4059,9 +4006,6 @@
                      <biblScope from="7/8" to="7/8" unit="issue"/>
                      <biblScope from="1" to="20" unit="page"/>
                   </monogr>
-                  <note type="tagList"> <list>
-                     <item xml:lang="en">frequency_monthly</item>
-                     </list> </note>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
@@ -4339,26 +4283,25 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">القسطاس</title>
                      <idno change="#d2e167" type="oape">212</idno>
-                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5" type="owner"> <persName
-                        ref="oape:pers:3137">أعظمي عبد الجبار <roleName type="title">أفندي</roleName> </persName> </editor>
-                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"> <persName ref="oape:pers:3977"
-                        >محمد هادي <roleName type="title">أفندي</roleName> </persName> </editor>
+                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5" type="owner"> <persName ref="oape:pers:3137"
+                        >أعظمي عبد الجبار <roleName type="title">أفندي</roleName> </persName> </editor>
+                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"> <persName ref="oape:pers:3977">محمد هادي <roleName
+                        type="title">أفندي</roleName> </persName> </editor>
                      <textLang mainLang="ar"/>
                      <textLang change="#d2e466" mainLang="ar" otherLangs="ota" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"
                         >تنشر بالعربية والتركية</textLang>
                      <imprint>
                         <date/>
-                        <date change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"> <num type="auto-markup"
-                           value="17" xml:lang="ar">١٧</num> صفر سنة <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
-                        <date calendar="#cal_gregorian" change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"
-                           when="1912-02-05"> <num type="auto-markup" value="5" xml:lang="ar">٥</num> شباط سنة <num type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
+                        <date change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"> <num type="auto-markup" value="17" xml:lang="ar"
+                           >١٧</num> صفر سنة <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
+                        <date calendar="#cal_gregorian" change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5" when="1912-02-05"> <num
+                           type="auto-markup" value="5" xml:lang="ar">٥</num> شباط سنة <num type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
                         <pubPlace/>
-                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"> <placeName
-                           ref="oape:place:216 geon:98182">بغداد</placeName> </pubPlace>
+                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"> <placeName ref="oape:place:216 geon:98182"
+                           >بغداد</placeName> </pubPlace>
                         <publisher/>
                      </imprint>
-                     <biblScope change="#d2e466" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5" to="1" unit="issue"
-                        >عددها الأول</biblScope>
+                     <biblScope change="#d2e466" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5" to="1" unit="issue">عددها الأول</biblScope>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
@@ -5870,17 +5813,15 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">جبل عامل</title>
                      <idno change="#d2e167" type="oape">297</idno>
-                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2" type="owner">
-                        <persName>احمد عارف أفندي الرين</persName> </editor>
+                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2" type="owner"> <persName>احمد عارف أفندي الرين</persName> </editor>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
                         <pubPlace/>
-                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2">
-                           <placeName>صيداء</placeName> </pubPlace>
+                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2"> <placeName>صيداء</placeName> </pubPlace>
                         <publisher/>
-                        <publisher change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2"> <orgName>مطبعة <title
-                           level="j">العرفان</title> </orgName> </publisher>
+                        <publisher change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2"> <orgName>مطبعة <title level="j">العرفان</title>
+                           </orgName> </publisher>
                      </imprint>
                   </monogr>
                </biblStruct>
@@ -5908,7 +5849,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct type="periodical" subtype="newspaper" oape:frequency="weekly" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">جريدة أدبية فكاهية إخبارية مصورة</title>
                      <idno change="#d2e167" type="oape">300</idno>
@@ -6156,12 +6097,10 @@
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_7.TEIP5.xml#p_4012.d2e48605" when="1912"/>
-                        <pubPlace change="#d2e481" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_4">
-                           <placeName>دير القمر</placeName> </pubPlace>
+                        <pubPlace change="#d2e481" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_4"> <placeName>دير القمر</placeName> </pubPlace>
                         <publisher/>
                      </imprint>
-                     <biblScope change="#d2e481" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_4" to="1" unit="issue"
-                        >العدد الثالث</biblScope>
+                     <biblScope change="#d2e481" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_4" to="1" unit="issue">العدد الثالث</biblScope>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
@@ -6257,18 +6196,16 @@
                      <title change="#d2e481" level="j" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_2" type="sub"
                         >مجلة دينية علمية اجتماعية فلسفية تاريخية</title>
                      <idno change="#d2e167" type="oape">319</idno>
-                     <editor change="#d2e481" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_2" type="owner">
-                        <persName>محمد رشيد الصفار</persName> </editor>
+                     <editor change="#d2e481" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_2" type="owner"> <persName>محمد رشيد الصفار</persName> </editor>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
                         <pubPlace/>
-                        <pubPlace change="#d2e481" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_2">
-                           <placeName>بغداد</placeName> </pubPlace>
+                        <pubPlace change="#d2e481" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_2"> <placeName>بغداد</placeName> </pubPlace>
                         <publisher/>
                      </imprint>
-                     <biblScope change="#d2e481" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_2" to="1" unit="page"
-                        >في <num type="auto-markup" value="32" xml:lang="ar">٣٢</num> صحيفة</biblScope>
+                     <biblScope change="#d2e481" from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_2" to="1" unit="page">في <num
+                        type="auto-markup" value="32" xml:lang="ar">٣٢</num> صحيفة</biblScope>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
@@ -7505,77 +7442,69 @@
                      </monogr>
                   </biblStruct>
                </listBibl>
-               <biblStruct change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" subtype="newspaper"
-                  type="periodical">
+               <biblStruct change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" subtype="newspaper" type="periodical">
                   <monogr>
                      <title level="j">تفكر</title>
-                     <textLang mainLang="ota" otherLangs="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9"
-                        >تركية عربية</textLang>
-                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" type="owner">
-                        <persName>سلمان أفندي عنبر</persName> </editor>
+                     <textLang mainLang="ota" otherLangs="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9">تركية عربية</textLang>
+                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" type="owner"> <persName>سلمان أفندي عنبر</persName> </editor>
                      <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9"> <persName>ابن المنذر</persName> </editor>
                      <imprint>
-                        <date calendar="#cal_islamic" change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9"
-                           >نهار الأربعاء في <num type="auto-markup" value="3" xml:lang="ar">٣</num> ربيع الأول سنة <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
-                        <date change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" when="1912-02-21"> <num
-                           type="auto-markup" value="21" xml:lang="ar">٢١</num> شباط <num type="auto-markup" value="1291" xml:lang="ar">١٢٩١</num> </date>
-                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9"> <placeName
-                           ref="oape:place:216 geon:98182">بغداد</placeName> </pubPlace>
-                        <publisher change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9">
-                           <placeName>مطبعة دنكور</placeName> </publisher>
+                        <date calendar="#cal_islamic" change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9">نهار الأربعاء في <num
+                           type="auto-markup" value="3" xml:lang="ar">٣</num> ربيع الأول سنة <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
+                        <date change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" when="1912-02-21"> <num type="auto-markup" value="21"
+                           xml:lang="ar">٢١</num> شباط <num type="auto-markup" value="1291" xml:lang="ar">١٢٩١</num> </date>
+                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9"> <placeName ref="oape:place:216 geon:98182"
+                           >بغداد</placeName> </pubPlace>
+                        <publisher change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9"> <placeName>مطبعة دنكور</placeName> </publisher>
                      </imprint>
                      <biblScope from="1" to="1" unit="issue">عددها الأول</biblScope>
                   </monogr>
                </biblStruct>
-               <biblStruct change="#d2e197" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"
-                  subtype="newspaper" type="periodical">
+               <biblStruct change="#d2e197" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2" subtype="newspaper"
+                  type="periodical">
                   <monogr>
                      <title level="j">المسامرات</title>
                      <textLang mainLang="ar"/>
-                     <editor change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2" type="owner">
-                        <persName>احمد حرب</persName> </editor>
+                     <editor change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2" type="owner"> <persName>احمد حرب</persName> </editor>
                      <imprint>
-                        <date change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"> <num type="auto-markup"
-                           value="28" xml:lang="ar">٢٨</num> ذي القعدة سنة <num type="auto-markup" value="1329" xml:lang="ar">١٣٢٩</num> </date>
-                        <date calendar="#cal_gregorian" change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"
-                           when="1911-11-19"> <num type="auto-markup" value="19" xml:lang="ar">١٩</num> تشرين الثاني سنة <num type="auto-markup" value="1911" xml:lang="ar">١٩١١</num> </date>
-                        <pubPlace change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"> <placeName
-                           ref="oape:place:26 geon:276781">بيروت</placeName> </pubPlace>
+                        <date change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"> <num type="auto-markup" value="28" xml:lang="ar"
+                           >٢٨</num> ذي القعدة سنة <num type="auto-markup" value="1329" xml:lang="ar">١٣٢٩</num> </date>
+                        <date calendar="#cal_gregorian" change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2" when="1911-11-19"> <num
+                           type="auto-markup" value="19" xml:lang="ar">١٩</num> تشرين الثاني سنة <num type="auto-markup" value="1911" xml:lang="ar">١٩١١</num> </date>
+                        <pubPlace change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2"> <placeName ref="oape:place:26 geon:276781"
+                           >بيروت</placeName> </pubPlace>
                      </imprint>
                      <biblScope from="1" to="1" unit="issue">عددها الأول</biblScope>
                   </monogr>
                </biblStruct>
-               <biblStruct change="#d2e197" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4"
-                  subtype="newspaper" type="periodical">
+               <biblStruct change="#d2e197" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4" subtype="newspaper"
+                  type="periodical">
                   <monogr>
                      <title level="j">المنير</title>
                      <textLang change="#d2e197" mainLang="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4">عربية</textLang>
-                     <editor change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4" type="owner">
-                        <persName>احمد جودت كاظم</persName> </editor>
+                     <editor change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4" type="owner"> <persName>احمد جودت كاظم</persName> </editor>
                      <imprint>
-                        <date calendar="#cal_islamic" change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4"> <num
-                           type="auto-markup" value="2" xml:lang="ar">٢</num> ذي الحجة سنة <num type="auto-markup" value="1329" xml:lang="ar">١٣٢٩</num> </date>
-                        <pubPlace change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4"> <placeName
-                           ref="oape:place:210 geon:99532">البصرة</placeName> </pubPlace>
+                        <date calendar="#cal_islamic" change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4"> <num type="auto-markup"
+                           value="2" xml:lang="ar">٢</num> ذي الحجة سنة <num type="auto-markup" value="1329" xml:lang="ar">١٣٢٩</num> </date>
+                        <pubPlace change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4"> <placeName ref="oape:place:210 geon:99532"
+                           >البصرة</placeName> </pubPlace>
                      </imprint>
                      <biblScope from="5" to="5" unit="issue">العدد <num type="auto-markup" value="5" xml:lang="ar">٥</num> </biblScope>
                   </monogr>
                </biblStruct>
-               <biblStruct change="#d2e488" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4"
-                  subtype="newspaper" type="periodical">
+               <biblStruct change="#d2e488" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" subtype="newspaper"
+                  type="periodical">
                   <monogr>
                      <title level="j">المضحكات</title>
                      <textLang mainLang="ar"/>
-                     <editor change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" type="owner">
-                        <persName>م. لطفي</persName> </editor>
+                     <editor change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" type="owner"> <persName>م. لطفي</persName> </editor>
                      <imprint>
-                        <date calendar="#cal_islamic" change="#d2e488" datingMethod="#cal_islamic"
-                           source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" when-custom="1330-02-08"> <num type="auto-markup"
-                           value="8" xml:lang="ar">٨</num> صفر <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
-                        <date calendar="#cal_gregorian" change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4"
-                           when="1912-01-23"> <num type="auto-markup" value="23" xml:lang="ar">٢٣</num> كانون الثاني <num type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
-                        <pubPlace change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4"> <placeName
-                           ref="oape:place:216 geon:98182">بغداد</placeName> </pubPlace>
+                        <date calendar="#cal_islamic" change="#d2e488" datingMethod="#cal_islamic" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4"
+                           when-custom="1330-02-08"> <num type="auto-markup" value="8" xml:lang="ar">٨</num> صفر <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
+                        <date calendar="#cal_gregorian" change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" when="1912-01-23"> <num
+                           type="auto-markup" value="23" xml:lang="ar">٢٣</num> كانون الثاني <num type="auto-markup" value="1912" xml:lang="ar">١٩١٢</num> </date>
+                        <pubPlace change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4"> <placeName ref="oape:place:216 geon:98182"
+                           >بغداد</placeName> </pubPlace>
                      </imprint>
                      <biblScope from="1" to="1" unit="issue">عددها الاول</biblScope>
                   </monogr>
@@ -7585,8 +7514,8 @@
                      <title level="j">مجلة اللجنة الأميركية الشرقية</title>
                      <textLang change="#d2e488" mainLang="en" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#">أميركية</textLang>
                      <imprint>
-                        <date change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#" type="auto-markup" when="1901"
-                           >سنة <num type="auto-markup" value="1901" xml:lang="ar">١٩٠١</num> </date>
+                        <date change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#" type="auto-markup" when="1901">سنة <num type="auto-markup"
+                           value="1901" xml:lang="ar">١٩٠١</num> </date>
                      </imprint>
                      <biblScope from="22" to="22" unit="volume">سنتها الثانية والعشرين</biblScope>
                      <biblScope from="97" unit="page">الصفحة <num type="auto-markup" value="97" xml:lang="ar">٩٧</num> </biblScope>
@@ -7596,13 +7525,11 @@
                   <monogr>
                      <title level="j">زهيرة <placeName ref="oape:place:216 geon:98182">بغداد</placeName> </title>
                      <textLang change="#d2e448" mainLang="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#">عربية</textLang>
-                     <editor change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" type="owner"
-                        >آباء الكرمليين المرسلين</editor>
+                     <editor change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" type="owner">آباء الكرمليين المرسلين</editor>
                      <imprint>
-                        <date calendar="#cal_gregorian" change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#"
-                           when="1905-03-25"> <num type="auto-markup" value="25" xml:lang="ar">٢٥</num> آذار سنة <num type="auto-markup" value="1905" xml:lang="ar">١٩٠٥</num> </date>
-                        <date calendar="#cal_islamic" change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#"
-                           >صفر سنة ١٣٢٣هـ</date>
+                        <date calendar="#cal_gregorian" change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" when="1905-03-25"> <num
+                           type="auto-markup" value="25" xml:lang="ar">٢٥</num> آذار سنة <num type="auto-markup" value="1905" xml:lang="ar">١٩٠٥</num> </date>
+                        <date calendar="#cal_islamic" change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#">صفر سنة ١٣٢٣هـ</date>
                      </imprint>
                      <biblScope from="1" to="1" unit="issue">عددها الأول</biblScope>
                      <imprint>
