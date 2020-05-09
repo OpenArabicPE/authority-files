@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
    xmlns:zot="https://zotero.org">
    <teiHeader>
@@ -15,8 +20,11 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <tei:change when="2020-04-24" who="#pers_TG" xml:id="d2e286" xml:lang="en"
-            >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag>.</tei:change>
+         <change when="2020-04-26" who="#pers_TG" xml:id="d3e505" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
+            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml"
+            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml</ref> using matching of titles.</change>
+         <change when="2020-04-24" who="#pers_TG" xml:id="d2e286" xml:lang="en"
+            >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag>.</change>
          <change when="2020-04-24" who="#pers_TG" xml:id="d3e933" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
             target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_4.TEIP5.xml"
             >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_4.TEIP5.xml</ref> using matching of titles.</change>
@@ -1322,7 +1330,7 @@
                <biblStruct xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة العالم الإسلامي</title>
-                     <title level="j" xml:lang="fr">مجلة العالم الاسلامي</title>
+                     <title level="j" xml:lang="ar">مجلة العالم الاسلامي</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">Majallat al-ʿĀlam al-Islamī</title>
                      <title level="j" xml:lang="fr">Revue du Monde Musulman</title>
                      <idno change="#d2e69" type="oape">24</idno>
@@ -2119,12 +2127,13 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الالستراسيون</title>
+                     <title level="j" xml:lang="fr-Arab-AR">الالستراسيون</title>
+                     <title level="j" xml:lang="fr">L'Illustration</title>
                      <idno change="#d2e167" type="oape">107</idno>
-                     <textLang mainLang="ar"/>
+                     <textLang mainLang="fr"/>
                      <imprint>
                         <date/>
-                        <pubPlace/>
+                        <pubPlace><placeName>Paris</placeName></pubPlace>
                         <publisher/>
                      </imprint>
                   </monogr>
@@ -3403,14 +3412,18 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الحبل</title>
+                     <title level="j" xml:lang="fa">الحبل المتين</title>
                      <idno change="#d2e167" type="oape">141</idno>
-                     <textLang mainLang="ar"/>
+                     <editor change="#d3e505" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1" type="owner"
+                        ><persName>جلال الدين الحسيني</persName></editor>
+                     <textLang change="#d3e505" mainLang="fa" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1"
+                        >الفارسية</textLang>
                      <imprint>
                         <date/>
-                        <pubPlace/>
+                        <pubPlace change="#d3e505" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1"
+                           ><placeName>كلكتة</placeName> (<placeName>الهند</placeName>)</pubPlace>
                         <publisher/>
                      </imprint>
                   </monogr>
@@ -3560,6 +3573,15 @@
                         <forename xml:lang="ar">محمد</forename> <forename xml:lang="ar">فريد</forename> <surname xml:lang="ar">وجدي</surname> </persName> </editor>
                      <imprint>
                         <pubPlace> <placeName change="#d5e176" ref="oape:place:226 geon:360630">Cairo</placeName> </pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr>
+                     <title level="j" xml:lang="ar">الدستور</title>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace><placeName xml:lang="ar">البصرة‎</placeName></pubPlace>
                      </imprint>
                   </monogr>
                </biblStruct>
@@ -4396,11 +4418,9 @@
                         >أعظمي عبد الجبار <roleName type="title">أفندي</roleName> </persName> </editor>
                      <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"> <persName ref="oape:pers:3977">محمد هادي <roleName
                         type="title">أفندي</roleName> </persName> </editor>
-                     <textLang mainLang="ar"/>
                      <textLang change="#d2e466" mainLang="ar" otherLangs="ota" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"
                         >تنشر بالعربية والتركية</textLang>
                      <imprint>
-                        <date/>
                         <date change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5"> <num type="auto-markup" value="17" xml:lang="ar"
                            >١٧</num> صفر سنة <num type="auto-markup" value="1330" xml:lang="ar">١٣٣٠</num> </date>
                         <date calendar="#cal_gregorian" change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5" when="1912-02-05"> <num
@@ -4804,7 +4824,7 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المجلة الجديدة</title>
                      <idno change="#d2e167" type="oape">477</idno>
-                     <textLang mainLang="ar"/>
+                     <textLang mainLang="ar">Not Arabic. al-Muqtabas published articles in translation</textLang>
                      <imprint>
                         <date/>
                         <pubPlace/>
@@ -6835,10 +6855,12 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">لسان الشرق</title>
                      <idno change="#d2e167" type="oape">350</idno>
+                     <editor source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_1616.d2e17170" type="owner"><persName>احمد الصابوني</persName></editor>
                      <textLang mainLang="ar"/>
                      <imprint>
-                        <date/>
-                        <pubPlace/>
+                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" from-custom="1324"
+                           source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_1616.d2e17170" to-custom="1326">1324-1326</date>
+                        <pubPlace source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_1616.d2e17170"><placeName>حماة</placeName></pubPlace>
                         <publisher/>
                      </imprint>
                   </monogr>
@@ -6859,18 +6881,6 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">لغة</title>
                      <idno change="#d2e167" type="oape">352</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">لمقتبس</title>
-                     <idno change="#d2e167" type="oape">353</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
@@ -6927,7 +6937,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الأحكام الشرعية</title>
                      <idno change="#d2e167" type="oape">360</idno>
@@ -6939,7 +6949,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الأنتروبوس الإنسان</title>
                      <idno change="#d2e167" type="oape">361</idno>
@@ -6951,7 +6961,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الإصلاح الاجتماعي</title>
                      <idno change="#d2e167" type="oape">362</idno>
@@ -6963,7 +6973,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الاجتماع الدولية</title>
                      <idno change="#d2e167" type="oape">363</idno>
@@ -6975,7 +6985,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الاقتصاد الدولية</title>
                      <idno change="#d2e167" type="oape">364</idno>
@@ -6987,7 +6997,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الاقتصاديين</title>
                      <idno change="#d2e167" type="oape">358</idno>
@@ -6999,7 +7009,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة التربية</title>
                      <idno change="#d2e167" type="oape">365</idno>
@@ -7011,7 +7021,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة التعليم الدولية</title>
                      <idno change="#d2e167" type="oape">366</idno>
@@ -7023,7 +7033,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الجامعة المصرية</title>
                      <idno change="#d2e167" type="oape">367</idno>
@@ -7035,7 +7045,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الشتاء</title>
                      <idno change="#d2e167" type="oape">368</idno>
@@ -7047,7 +7057,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الشرق</title>
                      <idno change="#d2e167" type="oape">369</idno>
@@ -7059,7 +7069,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" subtype="journal" xml:lang="ar">
+               <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مجلة الطبيعة الفرنسية</title>
                      <title level="j" xml:lang="ar">مجلة الطبيعة</title>
@@ -7474,6 +7484,62 @@
                      </monogr>
                   </biblStruct>
                </listBibl>
+               <biblStruct change="#d3e423" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_1.TEIP5.xml#bibl_3.d2e1454" subtype="newspaper"
+                  type="periodical" xml:lang="ar">
+                  <monogr>
+                     <title level="j" xml:lang="ar">الرصافة</title>
+                     <textLang mainLang="ar"/>
+                     <editor><persName>محمد صادق الاعرجي</persName></editor>
+                     <imprint>
+                        <date calendar="#cal_gregorian" from="1910-06-17">1910-06-17</date>
+                        <pubPlace><placeName>Baghdad</placeName></pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="issue"/>
+                  </monogr>
+               </biblStruct>
+               <biblStruct xml:lang="ar-Latn-x-ijmes" subtype="newspaper" type="periodical" oape:frequency="weekly">
+               <monogr xml:lang="ar-Latn-x-ijmes">
+                  <title level="j" xml:lang="ar">حديقة الاخبار</title>
+                        <title level="j" type="sub" xml:lang="ar">جرنال مدني علمي متجري تاريخي</title>
+                        <title level="j" xml:lang="ar-Latn-x-ijmes">Ḥadīqat al-Akhbār</title>
+                        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jurnāl madanī ʿilmī matjarī tārīkhī</title>
+                        <!-- use as many identifiers as appropriate -->
+                        <idno type="OCLC" xml:lang="en">792755425</idno>
+                        <idno type="OCLC" xml:lang="en">745205670</idno>
+                        <idno type="OCLC" xml:lang="en">243441816</idno>
+                        <idno type="OCLC" xml:lang="en">503753305</idno>
+                        <idno type="OCLC" xml:lang="en">269135845</idno>
+                        <idno type="OCLC" xml:lang="en">499946227</idno>
+                  <editor xml:lang="en" ref="viaf:41830998">
+                            <persName xml:lang="ar">
+                                <forename xml:lang="ar">خليل</forename>
+                                <surname xml:lang="ar">الخوري</surname>
+                            </persName>
+                            <persName xml:lang="ar-Latn-x-ijmes">
+                                <forename xml:lang="ar-Latn-x-ijmes">Khalīl</forename>
+                                <surname xml:lang="ar-Latn-x-ijmes">al-Khūrī</surname>
+                            </persName>
+                        </editor>
+                        <imprint xml:lang="en">
+                            <publisher xml:lang="en">
+                                <orgName xml:lang="ar">المطبعة السورية</orgName>
+                                <orgName xml:lang="ar-Latn-x-ijmes">al-Maṭbaʿa al-Sūriyya</orgName>
+                            </publisher>
+                            <pubPlace xml:lang="en">
+                                <placeName xml:lang="ar">بيروت</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                                <placeName xml:lang="en">Beirut</placeName>
+                                <placeName xml:lang="fr">Beyrouth</placeName>
+                            </pubPlace>
+                     <date when="1858-01-01" xml:lang="en">1 Jan 1858</date>
+                     <date when="1858-01-01" when-custom="1857-12-20" calendar="#cal_julian" datingMethod="#cal_julian" xml:lang="en">20 Kān I 1857, Friday</date>
+                     <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1274-05-16" xml:lang="en">16 Jum I 1274</date>
+                     <biblScope unit="issue" from="1" to="1" xml:lang="en">1</biblScope>
+                     <biblScope unit="volume" from="1" to="1" xml:lang="en">1</biblScope>
+                     <biblScope unit="page" from="1" to="4" xml:lang="en">1-4</biblScope>
+                  </imprint>
+               </monogr>
+            </biblStruct>
             </listBibl>
          </div>
       </body>
