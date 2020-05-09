@@ -85,8 +85,13 @@ date: 2020-04-06
 
 1. create original bibliography either manually or through gathering all `<biblStruct>` for periodicals from all OpenArabicPE editions.
 2. enrich bibliography
-    - the must urgently needed information are all potential contributors to be then tested with stylometry
-    - automatically with information found in full text editions
+    - the most urgently needed information are all potential contributors to be then tested with stylometry
+    - automatically with information found in full text editions of Zirikli and Sarkīs
+        + add full-text of dī Ṭarrāzī, which is organized in biographies
+        + I make use of the `@source` attribute to keep record of the source for a piece of information
+            * usually these are file URLs for full-text editions
+            * but I will also use `sente:UUID` to reference other sources of information
+            + in either case bibliographic information can be automatically retrieved (locally only)
     - manually
         + in order to manage limited resources, the order of importance for which periodicals we look at is established by the number of references to a title in our corpus (found, for example, in `oape_stats-referenced-periodicals.csv`)
 
@@ -108,6 +113,10 @@ URI schemes used across the entire project
 - local authority: OpenArabicPE
     + ID pattern: `\d+`
     + persons: (`oape:pers:`, `<idno type="oape">`)
+- local authority: Sente (my reference manager)
+    + ID pattern: UUID
+    + mark-up: `sente:UUID`
+    + since I have exported everything as individual XML files this information is not locked in, even though I am not currently sharing it on the internet
 
 # TEI mark-up
 ## prosopography
