@@ -31,9 +31,10 @@
     <xsl:template match="tei:body">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="descendant::tei:biblStruct">
-                <xsl:sort select="tei:monogr/tei:title[@xml:lang = $p_lang][not(@type = 'sub')][1]"/>
-            </xsl:apply-templates>
+            <xsl:for-each-group select="descendant::tei:biblStruct" group-by="tei:monogr/tei:title[@xml:lang = $p_lang][not(@type = 'sub')][1]">
+                <xsl:sort select="current-grouping-key()"/>
+                <xsl:apply-templates select="."/>
+            </xsl:for-each-group>
         </xsl:copy>
     </xsl:template>
     
