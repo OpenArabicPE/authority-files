@@ -4,7 +4,7 @@
 <?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -47,7 +47,8 @@
                     <bibl change="#d2e58 #d2e60"> <title level="j">( <foreign xml:lang="ota">سالنامة</foreign> ) ولاية بيروت</title> </bibl>
                     <bibl change="#d2e58 #d2e60">مجلة <title level="j" xml:lang="ar">مستندات الترقي</title> <title level="j" xml:lang="fr">Les Documents du Progrès</title></bibl>
                     <bibl change="#d2e58 #d2e60">اقترحت مجلة <title level="j" xml:lang="ar">أدلة الترقي</title> الفرنسوية</bibl>
-                    <bibl change="#d2e58 #d2e60"> <title level="j" xml:lang="ota">أرناؤود</title>. جريدة أسبوعية <textLang otherLangs="ota">أرناؤودية لها قسم تركي</textLang> . <respStmt xml:lang="ar">
+                    <bibl change="sub" oape:frequency="weekly" subtype="newspaper" type="periodical"> <title level="j" xml:lang="ota">أرناؤود</title>. جريدة أسبوعية <textLang otherLangs="ota"
+                        >أرناؤودية لها قسم تركي</textLang> . <respStmt xml:lang="ar">
                         <resp xml:lang="ar">صاحبها</resp>
                         <persName xml:lang="ar">درويش بك هيما الأرناؤودي</persName>
                         </respStmt>المشهور وهو من الذين اشتغلوا للحرية في الدور السابق. وخطة هذه الجريدة المخالفة الشديدة للحكومات بعبارة قاسية قارضة جداً. أكثر قرائها من الأرناؤود ومنتشرة في الولايات الأرناؤودية انتشاراً كبيراً.</bibl>
