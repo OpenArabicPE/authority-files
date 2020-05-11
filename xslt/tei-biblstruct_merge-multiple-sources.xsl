@@ -18,6 +18,10 @@
          + add a <biblStruct> child with the additional information
     - new entries can just be added from the external file. -->
     
+    <!-- problems:
+    - <ref> children are ignored
+    - biblScope/@source is empty -->
+    
     <xsl:include href="functions.xsl"/>
     
      <xsl:param name="p_url-master"
@@ -129,7 +133,7 @@
     <xsl:template name="t_add-biblstruct-from-master">
         <xsl:param name="p_target"/>
         <xsl:param name="p_source"/>
-        <xsl:copy-of select="$p_source/descendant::tei:biblStruct[not(tei:monogr/tei:title = $p_target/descendant::tei:biblStruct/tei:monogr/tei:title)]"/>
+        <xsl:copy-of select="$p_source/descendant::tei:biblStruct[tei:monogr/tei:title[@level='j']][not(tei:monogr/tei:title = $p_target/descendant::tei:biblStruct/tei:monogr/tei:title)]"/>
 <!--        <xsl:apply-templates select="$p_source/descendant-or-self::tei:bibl[not(tei:title = $p_target/descendant::tei:biblStruct/tei:monogr/tei:title)]" mode="m_copy-from-source"/>-->
     </xsl:template>
     
