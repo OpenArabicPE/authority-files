@@ -2012,20 +2012,27 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الإقبال</title>
+                     <title level="j" type="sub" xml:lang="ar">جريدة علمية تاريخية اخبارية فنية</title>
                      <idno change="#d2e167" type="oape">96</idno>
-                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_13.d2e3622"> <persName ref="oape:pers:288" type="owner">
+                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_13.d2e3622" type="owner"> <persName ref="oape:pers:288">
                         <forename xml:lang="ar">عبد الباسط</forename> <surname xml:lang="ar">الانسي</surname> </persName> </editor>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_14.d2e3632"> <persName xml:lang="ar"
                         >الشيخ محيي الدين الخياط</persName> </editor>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date from="1902-04-09"/>
+                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" from="1902-04-09" when-custom="1320-01-01">١ محرم سنة ١٣٢٠</date>
+                        <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" from="1902-04-09" when-custom="1318-01-27">٢٧ مارت ١٣١٨</date>
                         <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_13.d2e3618"> <placeName change="#d5e176"
                            ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> <placeName ref="oape:place:26 geon:276781">بيروت</placeName> </pubPlace>
+                        <publisher><orgName>المكتبة الانسية</orgName></publisher>
                      </imprint>
+                     <biblScope from="1" to="1" unit="volume"/>
+                     <biblScope from="1" to="1" unit="issue"/>
+                     <biblScope from="1" to="8" unit="page">1-8</biblScope>
                   </monogr>
                </biblStruct>
                <biblStruct oape:frequency="fortnightly" subtype="journal" type="periodical" xml:lang="ar">
@@ -7497,49 +7504,34 @@
                      <biblScope from="1" to="1" unit="issue"/>
                   </monogr>
                </biblStruct>
-               <biblStruct xml:lang="ar-Latn-x-ijmes" subtype="newspaper" type="periodical" oape:frequency="weekly">
-               <monogr xml:lang="ar-Latn-x-ijmes">
-                  <title level="j" xml:lang="ar">حديقة الاخبار</title>
-                        <title level="j" type="sub" xml:lang="ar">جرنال مدني علمي متجري تاريخي</title>
-                        <title level="j" xml:lang="ar-Latn-x-ijmes">Ḥadīqat al-Akhbār</title>
-                        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jurnāl madanī ʿilmī matjarī tārīkhī</title>
-                        <!-- use as many identifiers as appropriate -->
-                        <idno type="OCLC" xml:lang="en">792755425</idno>
-                        <idno type="OCLC" xml:lang="en">745205670</idno>
-                        <idno type="OCLC" xml:lang="en">243441816</idno>
-                        <idno type="OCLC" xml:lang="en">503753305</idno>
-                        <idno type="OCLC" xml:lang="en">269135845</idno>
-                        <idno type="OCLC" xml:lang="en">499946227</idno>
-                  <editor xml:lang="en" ref="viaf:41830998">
-                            <persName xml:lang="ar">
-                                <forename xml:lang="ar">خليل</forename>
-                                <surname xml:lang="ar">الخوري</surname>
-                            </persName>
-                            <persName xml:lang="ar-Latn-x-ijmes">
-                                <forename xml:lang="ar-Latn-x-ijmes">Khalīl</forename>
-                                <surname xml:lang="ar-Latn-x-ijmes">al-Khūrī</surname>
-                            </persName>
-                        </editor>
-                        <imprint xml:lang="en">
-                            <publisher xml:lang="en">
-                                <orgName xml:lang="ar">المطبعة السورية</orgName>
-                                <orgName xml:lang="ar-Latn-x-ijmes">al-Maṭbaʿa al-Sūriyya</orgName>
-                            </publisher>
-                            <pubPlace xml:lang="en">
-                                <placeName xml:lang="ar">بيروت</placeName>
-                                <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
-                                <placeName xml:lang="en">Beirut</placeName>
-                                <placeName xml:lang="fr">Beyrouth</placeName>
-                            </pubPlace>
-                     <date when="1858-01-01" xml:lang="en">1 Jan 1858</date>
-                     <date when="1858-01-01" when-custom="1857-12-20" calendar="#cal_julian" datingMethod="#cal_julian" xml:lang="en">20 Kān I 1857, Friday</date>
-                     <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1274-05-16" xml:lang="en">16 Jum I 1274</date>
-                     <biblScope unit="issue" from="1" to="1" xml:lang="en">1</biblScope>
-                     <biblScope unit="volume" from="1" to="1" xml:lang="en">1</biblScope>
-                     <biblScope unit="page" from="1" to="4" xml:lang="en">1-4</biblScope>
-                  </imprint>
-               </monogr>
-            </biblStruct>
+               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar-Latn-x-ijmes">
+                  <monogr xml:lang="ar-Latn-x-ijmes">
+                     <title level="j" xml:lang="ar">حديقة الاخبار</title>
+                     <title level="j" type="sub" xml:lang="ar">جرنال مدني علمي متجري تاريخي</title>
+                     <title level="j" xml:lang="ar-Latn-x-ijmes">Ḥadīqat al-Akhbār</title>
+                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jurnāl madanī ʿilmī matjarī tārīkhī</title>
+                     <!-- use as many identifiers as appropriate -->
+                     <idno type="OCLC" xml:lang="en">792755425</idno>
+                     <idno type="OCLC" xml:lang="en">745205670</idno>
+                     <idno type="OCLC" xml:lang="en">243441816</idno>
+                     <idno type="OCLC" xml:lang="en">503753305</idno>
+                     <idno type="OCLC" xml:lang="en">269135845</idno>
+                     <idno type="OCLC" xml:lang="en">499946227</idno>
+                     <editor ref="viaf:41830998" xml:lang="en"> <persName xml:lang="ar"> <forename xml:lang="ar">خليل</forename> <surname xml:lang="ar">الخوري</surname> </persName> <persName
+                        xml:lang="ar-Latn-x-ijmes"> <forename xml:lang="ar-Latn-x-ijmes">Khalīl</forename> <surname xml:lang="ar-Latn-x-ijmes">al-Khūrī</surname> </persName> </editor>
+                     <imprint xml:lang="en">
+                        <publisher xml:lang="en"> <orgName xml:lang="ar">المطبعة السورية</orgName> <orgName xml:lang="ar-Latn-x-ijmes">al-Maṭbaʿa al-Sūriyya</orgName> </publisher>
+                        <pubPlace xml:lang="en"> <placeName xml:lang="ar">بيروت</placeName> <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName> <placeName xml:lang="en">Beirut</placeName>
+                           <placeName xml:lang="fr">Beyrouth</placeName> </pubPlace>
+                        <date when="1858-01-01" xml:lang="en">1 Jan 1858</date>
+                        <date calendar="#cal_julian" datingMethod="#cal_julian" when="1858-01-01" when-custom="1857-12-20" xml:lang="en">20 Kān I 1857, Friday</date>
+                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1274-05-16" xml:lang="en">16 Jum I 1274</date>
+                        <biblScope from="1" to="1" unit="issue" xml:lang="en">1</biblScope>
+                        <biblScope from="1" to="1" unit="volume" xml:lang="en">1</biblScope>
+                        <biblScope from="1" to="4" unit="page" xml:lang="en">1-4</biblScope>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
             </listBibl>
          </div>
       </body>
