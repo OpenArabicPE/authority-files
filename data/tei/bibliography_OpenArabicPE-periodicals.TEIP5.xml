@@ -24,6 +24,9 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-06-18" who="#pers_TG" xml:id="d3e788" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
+            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml"
+            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-05-12" who="#pers_TG" xml:id="d3e917" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
             target="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_12.TEIP5.xml"
             >../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_12.TEIP5.xml</ref> using matching of titles.</change>
@@ -5011,14 +5014,20 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct ns:frequency="fortnightly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_6.d2e5036" subtype="journal"
+                  type="periodical" xml:lang="ar" xmlns:ns="https://openarabicpe.github.io/ns">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المرآة</title>
+                     <title change="#d3e788" level="j" rend="quotation-marks" source="">المرأة</title>
                      <idno change="#d2e167" type="oape">243</idno>
+                     <editor change="#d3e788" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_6.d2e5036" type="owner"
+                        ><persName>خليل أفندي زينيه</persName></editor>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
                         <pubPlace/>
+                        <pubPlace change="#d3e788" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_6.d2e5036"
+                           ><placeName>بيروت</placeName></pubPlace>
                         <publisher/>
                      </imprint>
                   </monogr>
@@ -7558,7 +7567,9 @@
                   <monogr>
                      <title level="j">القرن العشرين</title>
                      <textLang change="#d3e957" mainLang="fr">الفرنسية</textLang>
-                     <imprint/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
                   </monogr>
                </biblStruct>
                <biblStruct change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar">
@@ -7579,7 +7590,67 @@
                   <monogr>
                      <title level="j" xml:lang="ar">المنبر</title>
                      <textLang mainLang="ar"/>
-                     <imprint/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#" subtype="newspaperArticle" type="periodical">
+                  <monogr>
+                     <title level="j">طنين</title>
+                     <textLang mainLang="ota"/>
+                     <imprint>
+                        <pubPlace><placeName>الاستانة</placeName></pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" ns:frequency="monthly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064"
+                  subtype="journal" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
+                  <monogr>
+                     <title level="j" rend="quotation-marks">مجلة المنتدى الأدبي</title>
+                     <textLang mainLang="ar"/>
+                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064"
+                        ><persName>احمد عزت أفندي العظمي</persName></editor>
+                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064">
+                        <persName>عاصم أفندي بسيسو</persName></editor>
+                     <imprint>
+                        <pubPlace change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064">
+                           <placeName>الاستانة</placeName></pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="48" unit="page"><num resp="#pers_TG" type="auto-markup" value="48" xml:lang="ar">٤٨</num> صفحة</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#" subtype="journal" type="periodical">
+                  <monogr>
+                     <title level="j">لسان العرب</title>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" ns:frequency="weekly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112"
+                  subtype="journal" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
+                  <monogr>
+                     <title level="j" rend="quotation-marks">المستقبل</title>
+                     <title level="j" type="sub">مجلة علمية أدبية عمرانية أسبوعية</title>
+                     <textLang mainLang="ar"/>
+                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112">
+                        <persName>سلامة أفندي موسى</persName></editor>
+                     <imprint>
+                        <pubPlace change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112">
+                           <placeName>القاهرة</placeName></pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="20" unit="page"><num resp="#pers_TG" subtype="d2" type="auto-markup" value="20" xml:lang="ar">عشرين</num> صفحة</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e6294">
+                  <monogr>
+                     <title level="j">فتى العرب</title>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
                   </monogr>
                </biblStruct>
             </listBibl>
