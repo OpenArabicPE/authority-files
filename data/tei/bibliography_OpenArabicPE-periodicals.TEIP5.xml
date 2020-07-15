@@ -24,6 +24,9 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <change when="2020-07-15" who="#pers_TG" xml:id="d3e439" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
+            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml"
+            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-06-18" who="#pers_TG" xml:id="d3e788" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
             target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml"
             >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml</ref> using matching of titles.</change>
@@ -2218,14 +2221,19 @@
                      <biblScope change="#d3e932" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_7.TEIP5.xml#bibl_1.d2e1934" unit="issue">العدد الأخير</biblScope>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477" subtype="newspaper" type="periodical"
+                  xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">البرهان</title>
                      <idno change="#d2e167" type="oape">116</idno>
+                     <editor change="#d3e439" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477"><persName
+                        ref="oape:pers:3406" xml:lang="ar"> <roleName type="honorific" xml:lang="ar">الشيخ</roleName> عبد القادر المغربي</persName></editor>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
                         <pubPlace/>
+                        <pubPlace change="#d3e439" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477"
+                           ><placeName>طرابلس الشام</placeName></pubPlace>
                         <publisher/>
                      </imprint>
                   </monogr>
@@ -5045,7 +5053,8 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_4.d2e2513" subtype="newspaper" type="periodical"
+                  xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المراقب</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة سياسية ادبية اجتماعية صناعية زراعية فكاهية</title>
@@ -6002,16 +6011,19 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="weekly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_5.d2e2534" subtype="newspaper"
+                  type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">جبل عامل</title>
                      <idno change="#d2e167" type="oape">297</idno>
-                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2" type="owner"> <persName>احمد عارف أفندي الرين</persName> </editor>
+                     <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2" type="owner"> <persName>احمد عارف أفندي الرين</persName> </editor>>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
                         <pubPlace/>
-                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2"> <placeName>صيداء</placeName> </pubPlace>
+                        <pubPlace change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2 file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_5.d2e2534"> 
+                           <placeName>صيداء</placeName>
+                           <placeName>صيدا</placeName></pubPlace>
                         <publisher/>
                         <publisher change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2"> <orgName>مطبعة <title level="j">العرفان</title>
                            </orgName> </publisher>
@@ -7654,6 +7666,30 @@
                      </imprint>
                   </monogr>
                </biblStruct>
+            <biblStruct change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458" subtype="newspaper"
+               type="periodical">
+               <monogr>
+                  <title level="j">الجديد</title>
+                  <textLang mainLang="ar"/>
+                  <editor change="#d3e439" source=""><persName>نجيب أفندي نسيم طراد</persName></editor>
+                  <editor change="#d3e439" source=""><persName>فارس أفندي نجم</persName></editor>
+                  <imprint>
+                     <pubPlace change="#d3e439" source=""><placeName>سان باولو</placeName></pubPlace>
+                  </imprint>
+               </monogr>
+            </biblStruct>
+            <biblStruct change="#d3e439" ns:frequency="weekly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"
+               subtype="newspaper" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
+               <monogr>
+                  <title level="j">البيرق</title>
+                  <textLang mainLang="ar"/>
+                  <editor change="#d3e439" source=""><persName>نجيب أفندي شديد عقل</persName></editor>
+                  <editor change="#d3e439" source=""><persName>سعيد أفندي فاضل عقل</persName></editor>
+                  <imprint>
+                     <pubPlace change="#d3e439" source=""><placeName>الحدث</placeName></pubPlace>
+                  </imprint>
+               </monogr>
+            </biblStruct>
             </listBibl>
          </div>
       </body>
