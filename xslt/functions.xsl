@@ -382,7 +382,7 @@
                         <xsl:variable name="v_word" select="regex-group(1)"/>
                         <!-- try to find it in the nymlist -->
                         <xsl:copy-of select="oape:look-up-nym-and-mark-up-name($v_word, $v_file-nyms, $p_id-change)"/>
-                        <xsl:text> </xsl:text>
+<!--                        <xsl:text> </xsl:text>-->
                     </xsl:matching-substring>
                     <xsl:non-matching-substring>
                         <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
@@ -417,6 +417,7 @@
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                             <xsl:value-of select="$p_input"/>
                         </xsl:element>
+                        <xsl:text> </xsl:text>
                     </xsl:when>
                 </xsl:choose>
             </xsl:when>
@@ -438,7 +439,7 @@
                 </xsl:if>
             <xsl:attribute name="type" select="'noAddName'"/>
             <!-- generate xml:id -->
-<!--            <xsl:attribute name="xml:id" select="oape:generate-xml-id($p_persname)"/>-->
+            <xsl:attribute name="xml:id" select="oape:generate-xml-id($p_persname)"/>
             <xsl:apply-templates select="$p_persname/tei:surname | $p_persname/tei:forename" mode="m_no-ids"/>
         </xsl:element>
     </xsl:function>
@@ -458,7 +459,7 @@
                 </xsl:if>
             <xsl:attribute name="type" select="'flattened'"/>
             <!-- generate xml:id -->
-<!--            <xsl:attribute name="xml:id" select="oape:generate-xml-id($p_persname)"/>-->
+            <xsl:attribute name="xml:id" select="oape:generate-xml-id($p_persname)"/>
                 <xsl:value-of select="oape:string-remove-spaces(oape:string-normalise-characters($v_persname))"/>
             </xsl:element>
     </xsl:function>

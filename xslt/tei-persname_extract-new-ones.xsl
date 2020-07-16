@@ -42,8 +42,8 @@
     <!-- run on root -->
     <xsl:template match="/">
         <xsl:element name="tei:listPerson">
-            <xsl:copy-of select="$v_persons-source"/>
-<!--            <xsl:apply-templates mode="m_extract-new-names" select="$v_persons-source/descendant::tei:person"/>-->
+<!--            <xsl:copy-of select="$v_persons-source"/>-->
+            <xsl:apply-templates mode="m_extract-new-names" select="$v_persons-source/descendant::tei:person"/>
         </xsl:element>
     </xsl:template>
     <!-- variable to collect all persNames found in this file -->
@@ -78,9 +78,12 @@
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:variable name="v_name-marked-up">
-                    <xsl:copy>
+                    <xsl:apply-templates select="." mode="m_mark-up"/>
+                   <!-- <xsl:copy>
+                        <xsl:apply-templates select="@*"/>
+<!-\-                        <xsl:attribute name="xml:id" select="oape:generate-xml-id(.)"/>-\->
                         <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
-                    </xsl:copy>
+                    </xsl:copy>-->
                 </xsl:variable>
                 <!-- construct nodes -->
                 <xsl:element name="tei:person">
@@ -165,5 +168,14 @@
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    <xsl:template match="tei:persName | tei:forename | tei:surname | tei:addName | tei:roleName" mode="m_mark-up">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="m_identity-transform"/>
+            <xsl:apply-templates select="node()" mode="m_mark-up"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()" mode="m_mark-up">
+        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
     </xsl:template>
 </xsl:stylesheet>
