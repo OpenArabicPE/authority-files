@@ -12,10 +12,6 @@
     <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
 
     <xsl:include href="functions.xsl"/>
-    <!-- identify the author of the change by means of a @xml:id -->
-    <!-- toggle debugging messages -->
-    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
-
     
     <!-- identity transform -->
     <xsl:template match="node() | @*">
@@ -28,9 +24,9 @@
         - persName @type="flattened"
         - persName @type="noAddName"
     -->
-    <xsl:template match="tei:persName[@type = ('flattened', 'noAddName')]"/>
+<!--    <xsl:template match="tei:persName[@type = ('flattened', 'noAddName')]"/>-->
     <!-- remove persName/@change -->
-    <xsl:template match="tei:persName/@change | tei:idno/@change"/>
+<!--    <xsl:template match="tei:persName/@change | tei:idno/@change"/>-->
     
     <!-- add mark-up to direct text children of persName -->
     <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()">
