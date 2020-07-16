@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet exclude-result-prefixes="#all" version="2.0" xmlns:bgn="http://bibliograph.net/"
+<xsl:stylesheet exclude-result-prefixes="#all" version="3.0" 
+    xmlns:bgn="http://bibliograph.net/"
+    xmlns:oape="https://openarabicpe.github.io/ns" 
     xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:genont="http://www.w3.org/2006/gen/ont#"
     xmlns:opf="http://www.idpf.org/2007/opf" xmlns:pto="http://www.productontology.org/id/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -18,18 +20,17 @@
     <!--<xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes"
         name="xml_indented" exclude-result-prefixes="#all"/>-->
     <xsl:include href="query-viaf.xsl"/>
-    <!-- p_id-editor references the @xml:id of a responsible editor to be used for documentation of changes -->
-    <!-- identify the author of the change by means of a @xml:id -->
-    <!--    <xsl:param name="p_id-editor" select="'pers_TG'"/>-->
-    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    <xsl:include href="functions.xsl"/>
+    
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master" select="'../data/tei/personography_OpenArabicPE.TEIP5.xml'"/>
     <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
     <!-- toggle debugging messages: this is toggled through the parameter file -->
     <!--    <xsl:param name="p_verbose" select="false()"/>-->
+    
     <!-- idendity transform -->
     <!-- replicate everything except @xml:id -->
-    <xsl:template match="node() | @*" mode="m_no-ids">
+    <!--<xsl:template match="node() | @*" mode="m_no-ids">
         <xsl:copy>
             <xsl:apply-templates mode="m_no-ids" select="@* | node()"/>
         </xsl:copy>
@@ -37,12 +38,12 @@
     <xsl:template match="@xml:id | @change" mode="m_no-ids"/>
     <xsl:template match="text()" mode="m_no-ids">
         <xsl:value-of select="normalize-space(.)"/>
-    </xsl:template>
+    </xsl:template>-->
     <!-- run on root -->
     <xsl:template match="/">
         <xsl:element name="tei:listPerson">
-            <xsl:apply-templates mode="m_extract-new-names"
-                select="$v_persons-source/descendant::tei:person"/>
+            <xsl:copy-of select="$v_persons-source"/>
+<!--            <xsl:apply-templates mode="m_extract-new-names" select="$v_persons-source/descendant::tei:person"/>-->
         </xsl:element>
     </xsl:template>
     <!-- variable to collect all persNames found in this file -->
@@ -55,11 +56,7 @@
                 <xsl:sort select="tei:forename[1]"/>
                 <xsl:sort select="current-grouping-key()"/>
                 <!-- some variables -->
-                <xsl:variable name="v_self">
-                    <xsl:value-of select="normalize-space(replace(., '([إ|أ|آ])', 'ا'))"/>
-                </xsl:variable>
-                <!--<xsl:variable name="v_viaf-id"
-                    select="replace(tokenize(@ref, ' ')[matches(., 'viaf:\d+')][1], 'viaf:(\d+)', '$1')"/>-->
+<!--                <xsl:variable name="v_self" select="oape:string-normalise-characters(.)"/>-->
                 <xsl:variable name="v_authority">
                     <xsl:choose>
                         <xsl:when test="contains(@ref, 'oape:pers:')">
@@ -80,29 +77,23 @@
                         </xsl:when>
                     </xsl:choose>
                 </xsl:variable>
-                <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
+                <xsl:variable name="v_name-marked-up">
+                    <xsl:copy>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:copy>
+                </xsl:variable>
                 <!-- construct nodes -->
                 <xsl:element name="tei:person">
-                    <!-- copy the original -->
-                    <xsl:copy>
-                        <xsl:apply-templates mode="m_no-ids" select="@* | node()"/>
-                    </xsl:copy>
+                    <!-- add mark-up to the original -->
+                    <xsl:copy-of select="$v_name-marked-up"/>
                     <!-- construct a flattened string -->
-                    <xsl:element name="tei:persName">
-                        <xsl:attribute name="type" select="'flattened'"/>
-                        <xsl:value-of select="$v_name-flat"/>
-                    </xsl:element>
+                    <xsl:copy-of select="oape:name-flattened($v_name-marked-up, $p_id-change)"/>
                     <!-- construct name without titles, honorary addresses etc. -->
-                    <xsl:if test="child::tei:addName">
-                        <xsl:element name="tei:persName">
-                            <xsl:attribute name="type" select="'noAddName'"/>
-                            <xsl:apply-templates mode="m_no-ids"
-                                select="child::node()[not(self::tei:addName)]"/>
-                        </xsl:element>
+                    <xsl:if test="$v_name-marked-up/tei:addName or $v_name-marked-up/tei:roleName">
+                        <xsl:copy-of select="oape:name-remove-addnames($v_name-marked-up, $p_id-change)"/>
                     </xsl:if>
                     <!-- construct the idno child -->
                     <xsl:if test="./@ref">
-                        <!-- <xsl:variable name="v_viaf-id" select="replace(tokenize(@ref,' ')[matches(.,'viaf:\d+')][1],'viaf:(\d+)','$1')"/>-->
                         <xsl:element name="tei:idno">
                             <xsl:attribute name="type" select="$v_authority"/>
                             <xsl:value-of select="$v_idno"/>
