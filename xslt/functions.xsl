@@ -9,6 +9,8 @@
     
     <xsl:output method="xml" encoding="UTF-8" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
+    <xsl:param name="p_url-nyms" select="'../data/tei/nymlist.TEIP5.xml'"/>
+    <xsl:variable name="v_file-nyms" select="doc($p_url-nyms)"/>
     <!--<xsl:template match="/">
         <xsl:apply-templates select="descendant::tei:date" mode="m_debug"/>
     </xsl:template>-->
@@ -376,9 +378,54 @@
                     </xsl:non-matching-substring>
                 </xsl:analyze-string>
             </xsl:when>
+            <!-- test if a single word is found in a nymlist -->
+            <xsl:when test="matches($v_input, '^(.+\s)*(\w+)(\s.+)*$')">
+                <xsl:analyze-string regex="(\w+)" select="$v_input">
+                    <!-- single word match -->
+                    <xsl:matching-substring>
+                        <xsl:variable name="v_word" select="regex-group(1)"/>
+                        <!-- try to find it in the nymlist -->
+                        <xsl:copy-of select="oape:look-up-nym-and-mark-up-name($v_word, $v_file-nyms, $p_id-change)"/>
+                        <xsl:text> </xsl:text>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
             <!-- fallback: return input -->
             <xsl:otherwise>
                 <xsl:value-of select="$v_input"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:function name="oape:look-up-nym-and-mark-up-name">
+        <xsl:param as="xs:string" name="p_input"/>
+        <xsl:param name="p_authority-file"/>
+        <xsl:param name="p_id-change"/>
+        <!-- try to find it in the nymlist -->
+        <xsl:choose>
+            <xsl:when test="$p_authority-file/descendant::tei:listNym/tei:nym/tei:form = $p_input">
+                <!-- <xsl:message>
+                    <xsl:text>found </xsl:text>
+                    <xsl:value-of select="$p_input"/>
+                    <xsl:text> in nymList</xsl:text>
+                </xsl:message> -->
+                <xsl:variable name="v_nymlist" select="$v_file-nyms/descendant::tei:listNym[tei:nym/tei:form = $p_input]"/>
+                <xsl:variable name="v_type" select="$v_nymlist/@type"/>
+                <!-- establish the kind of nym -->
+                <xsl:choose>
+                    <xsl:when test="$v_type = ('title', 'honorific', 'nobility')">
+                        <xsl:element name="tei:roleName">
+                            <xsl:attribute name="type" select="$v_type"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="$p_input"/>
+                        </xsl:element>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$p_input"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
