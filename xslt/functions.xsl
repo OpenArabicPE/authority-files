@@ -7,7 +7,7 @@
     exclude-result-prefixes="xs"
     version="3.0">
     
-    <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
+    <xsl:output method="xml" encoding="UTF-8" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <!--<xsl:template match="/">
         <xsl:apply-templates select="descendant::tei:date" mode="m_debug"/>
@@ -244,4 +244,134 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:function name="oape:string-mark-up-names">
+        <xsl:param name="p_input" as="xs:string"/>
+        <xsl:param name="p_id-change"/>
+        <xsl:variable name="v_input" select="normalize-space(replace(oape:string-remove-harakat($p_input),$p_string-match,$p_string-replace))"/>
+        <xsl:choose>
+            <!-- kunya -->
+            <xsl:when test="matches($v_input, '^(.+\s)*(ابو|ابي)\s(.+)$')">
+                <xsl:message>
+                    <xsl:value-of select="$v_input"/>
+                    <xsl:text> contains a kunya</xsl:text>
+                </xsl:message>
+                <xsl:analyze-string select="$v_input" regex="(ابو|ابي)\s(.+)$">
+                    <xsl:matching-substring>
+                        <xsl:variable name="v_trailing" select="regex-group(2)"/>
+                        <xsl:element name="tei:addName">
+                            <xsl:attribute name="type" select="'nasab'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="concat(regex-group(1), ' ')"/>
+                            <xsl:copy-of select="oape:string-mark-up-names($v_trailing, $p_id-change)"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
+            <!-- test for nasab -->
+            <xsl:when test="matches($v_input, '^(.+\s)*(ابن|بن)(\s.+)$')">
+                <xsl:message>
+                    <xsl:value-of select="$v_input"/>
+                    <xsl:text> contains a nasab</xsl:text>
+                </xsl:message>
+                <xsl:analyze-string select="$v_input" regex="(ابن|بن)\s(.+)$">
+                    <xsl:matching-substring>
+                        <xsl:variable name="v_trailing" select="regex-group(2)"/>
+                        <xsl:element name="tei:addName">
+                            <xsl:attribute name="type" select="'nasab'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="concat(regex-group(1), ' ')"/>
+                            <xsl:copy-of select="oape:string-mark-up-names($v_trailing, $p_id-change)"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
+            <!-- test for khitab (... al-Dīn) -->
+            <xsl:when test="matches($v_input, '^(.+\s)*(\w+)\s(الدين)(.*)$')">
+                <xsl:message>
+                    <xsl:value-of select="$v_input"/>
+                    <xsl:text> contains a khitab</xsl:text>
+                </xsl:message>
+                <xsl:analyze-string select="$v_input" regex="(\w+)\s(الدين)">
+                    <xsl:matching-substring>
+                        <xsl:element name="tei:addName">
+                            <xsl:attribute name="type" select="'khitab'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="concat(regex-group(1), ' ', regex-group(2))"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
+            <!-- test for theophoric names ending with Allah -->
+            <xsl:when test="matches($v_input, '^(.+\s)*(\w+)\s(الله)(.*)$')">
+                <xsl:message>
+                    <xsl:value-of select="$v_input"/>
+                    <xsl:text> contains a theophoric name</xsl:text>
+                </xsl:message>
+                <xsl:analyze-string select="$v_input" regex="(\w+)\s(الله)">
+                    <xsl:matching-substring>
+                        <xsl:element name="tei:addName">
+                            <xsl:attribute name="type" select="'theophoric'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="concat(regex-group(1), ' ', regex-group(2))"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
+            <!-- test for theophoric names beginning with ʿAbd -->
+            <xsl:when test="matches($v_input, '^(.+\s)*(عبد)\s(\w+)(.*)$')">
+                <xsl:message>
+                    <xsl:value-of select="$v_input"/>
+                    <xsl:text> contains a theophoric name</xsl:text>
+                </xsl:message>
+                <xsl:analyze-string select="$v_input" regex="(عبد)\s(\w+)">
+                    <xsl:matching-substring>
+                        <xsl:element name="tei:addName">
+                            <xsl:attribute name="type" select="'theophoric'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="concat(regex-group(1), ' ', regex-group(2))"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
+            <!-- test for nisba -->
+            <xsl:when test="matches($v_input, '^(.+\s)*(ال\w+ي)(\s.+)*$')">
+                <xsl:message>
+                    <xsl:value-of select="$v_input"/>
+                    <xsl:text> contains a nisba</xsl:text>
+                </xsl:message>
+                <xsl:analyze-string select="$v_input" regex="(ال\w+ي)">
+                    <xsl:matching-substring>
+                        <xsl:element name="tei:addName">
+                            <xsl:attribute name="type" select="'nisba'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="regex-group(1)"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
+            <!-- fallback: return input -->
+            <xsl:otherwise>
+                <xsl:value-of select="$v_input"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+
 </xsl:stylesheet>
