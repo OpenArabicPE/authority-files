@@ -33,7 +33,7 @@
     <xsl:template match="tei:persName/@change | tei:idno/@change"/>
     
     <!-- add mark-up to direct text children of persName -->
-    <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text()">
+    <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()">
         <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
     </xsl:template>
     
@@ -46,7 +46,7 @@
                 <xsl:attribute name="who" select="concat('#',$p_id-editor)"/>
                 <xsl:attribute name="xml:id" select="$p_id-change"/>
                 <xsl:attribute name="xml:lang" select="'en'"/>
-                <xsl:text>Improved </xsl:text><tei:gi>personName</tei:gi><xsl:text> nodes by automatically marking up Arabic name components, such as nasab, nisba, khitab, kunya.</xsl:text>
+                <xsl:text>Improved </xsl:text><tei:gi>persName</tei:gi><xsl:text>, </xsl:text><tei:gi>surname</tei:gi><xsl:text> and </xsl:text><tei:gi>forename</tei:gi><xsl:text> nodes by automatically marking up Arabic name components, such as nasab, nisba, khitab, kunya.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
