@@ -153,7 +153,7 @@
                 <xsl:apply-templates select="@* | node()"/>
             </xsl:copy>
         <!-- add flattened persName string if this is not already present  -->
-        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
+        <xsl:variable name="v_name-flat" select="oape:string-remove-spaces(oape:string-normalise-characters(string()))"/>
         <xsl:if test="not($v_name-flat='') and not(parent::tei:person/tei:persName[@type='flattened'] = $v_name-flat)">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
@@ -181,14 +181,14 @@
                 </xsl:message>
             </xsl:if>
             <!-- this variable generates a persName with nothing but forenames and surnames -->
-            <xsl:variable name="v_no-addname">
-                <xsl:copy>
+            <xsl:variable name="v_no-addname" select="oape:name-remove-addnames(., $p_id-change)">
+                <!--<xsl:copy>
                     <xsl:apply-templates select="@xml:lang"/>
                     <xsl:attribute name="type" select="'noAddName'"/>
-                    <!-- document change -->
+                    <!-\- document change -\->
                     <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                     <xsl:apply-templates select="tei:surname | tei:forename" mode="m_no-ids"/>
-                </xsl:copy>
+                </xsl:copy>-->
             </xsl:variable>
             <xsl:choose>
                 <!-- if there is already a child similar to the noAddName variant, this should not added to the output -->
@@ -219,23 +219,10 @@
         <xsl:variable name="v_self" select="."/>
         <xsl:copy>
             <!-- add @corresp -->
-                <xsl:attribute name="corresp" select="concat('#',parent::tei:person/tei:persName[not(@type='flattened')][oape:string-normalise-name(string())=$v_self][1]/@xml:id)"/>
+                <xsl:attribute name="corresp" select="concat('#',parent::tei:person/tei:persName[not(@type='flattened')][oape:string-remove-spaces(oape:string-normalise-characters(string()))=$v_self][1]/@xml:id)"/>
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
             <xsl:apply-templates select="@* |node() "/>
-        </xsl:copy>
-    </xsl:template>
-    
-    <!-- replicate everything except @xml:id -->
-    <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids" name="t_10">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_10 master: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids"/>
         </xsl:copy>
     </xsl:template>
     
