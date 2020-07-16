@@ -22,24 +22,25 @@
     <xsl:param name="p_string-match" select="'([إ|أ|آ])'"/>
     <xsl:param name="p_string-replace" select="'ا'"/>
     <xsl:param name="p_string-harakat" select="'([ِ|ُ|ٓ|ٰ|ْ|ٌ|ٍ|ً|ّ|َ])'"/>
-    
-    <xsl:function name="oape:string-normalise-name">
+    <xsl:function name="oape:string-normalise-characters">
         <xsl:param name="p_input"/>
-        <xsl:variable name="v_self" select="normalize-space(replace(oape:string-remove-harakat($p_input),$p_string-match,$p_string-replace))"/>
-        <xsl:value-of select="replace($v_self, '\W', '')"/>
+        <xsl:variable name="v_self" select="normalize-space(replace(oape:string-remove-harakat($p_input), $p_string-match, $p_string-replace))"/>
+<!--        <xsl:value-of select="replace($v_self, '\W', '')"/>-->
+        <xsl:value-of select="$v_self"/>
     </xsl:function>
-    
     <xsl:function name="oape:string-remove-characters">
-        <xsl:param name="p_input"/>
+        <xsl:param name="p_input" as="xs:string"/>
         <xsl:param name="p_string-match"/>
-        <xsl:value-of select="normalize-space(replace($p_input,$p_string-match,''))"/>
+        <xsl:value-of select="normalize-space(replace($p_input, $p_string-match, ''))"/>
     </xsl:function>
-    
     <xsl:function name="oape:string-remove-harakat">
         <xsl:param name="p_input"/>
-        <xsl:value-of select="oape:string-remove-characters($p_input,$p_string-harakat)"/>
+        <xsl:value-of select="oape:string-remove-characters($p_input, $p_string-harakat)"/>
     </xsl:function>
-
+    <xsl:function name="oape:string-remove-spaces">
+        <xsl:param name="p_input"/>
+        <xsl:value-of select="replace($p_input, '\W', '')"/>
+    </xsl:function>
     <!-- function to retrieve a <biblStruct> from a local authority file -->
     <xsl:function name="oape:get-bibl-from-authority-file">
         <xsl:param name="p_idno"/>
