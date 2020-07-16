@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>NymList of mostly Arabic and Ottoman Turkish names and titles in Damascus and its
+               vicinity, 1850s-1910s</title>
+                <author>Till Grallert</author>
+            </titleStmt>
+            <editionStmt>
+                <edition> <date when="2012-11-24">Nov 2012</date> </edition>
+                <respStmt>
+                    <persName xml:id="pers_TG"> <forename>Till</forename> <surname>Grallert</surname> </persName>
+                    <resp>contributed data</resp>
+                    <!-- all contributors should be included here and their contributions should be marked with the @resp attributed
+                  and a reference to the contributor's xml:id -->
+                </respStmt>
+            </editionStmt>
+            <publicationStmt>
+                <p>The file was originally created in November 2012 and is continuously updated through
+               manual and automated input by the original authors.</p>
+                <p>This NymList of names, titles, and, increasingly, entities in Arabic, Ottoman
+               Turkish, and their various spellings was produced semi-automatically from a corpus of
+               some 15.000 newspaper articles,consular letters, and journal entries</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>This file has no source but itself.</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <editorialDecl>
+                <p>Languages: According to TEI P5 <att>xml:lang</att> should follow  <ref target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
+                    >BCP 47</ref>, which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the
+               IJMES transcription of Arabic in Latin script. The tag for Ottoman Turkish is "ota". Persian is rendered as "fa".
+               For transcription in Latin script following the IJMES transcription, it would
+               be "ota-Latn-x-ijmes" and "fa-Latn-x-ijmes". The English variant of Latinised Arabic would be "ar-Latn-EN"
+               and the French "ar-Latn-FR"</p>
+                <p>There is a XSLT stylesheet for this "TeiXmlLandCodes".</p>
+                <p>Name types: any name can carry a @type="variant" to indicate variant spellings.
+               surnames can be of @type "short" or "long". Some Arabic names consist of more than
+               one word and are marked as @type="phrase". Entities can carry the type "abbr"</p>
+                <p>As search and normalizing functions further down the work-flow include replacement functions for
+               up-marking and down-marking IJMES and other diacritics, it is not necessary to
+               include both "Muḥammad" and "Muhammad". Such a search function produces a lot of computing overhead and thus it was replaced with pre-computed forms in this file. These forms are marked as @type="normalized". There is a XSLT stylesheet for this: "TeiNym AddNormalizedForms v1.xsl" [ "TeiMarkDown"].</p>
+                <p>The IJMES transliteration of Arabic names was used to automatically add forms in Arabic script using "TeiNym AddArabic v1.xsl" this forms are marked as @type="transliterated".</p>
+            </editorialDecl>
+        </encodingDesc>
+        <revisionDesc>
+            <change when="2015-11-02" who="#pers_TG">Made corrections to some of the automatically generated Arabic spellings.</change>
+            <change when="2015-07-16">Moved the content of this file from the <gi>sourceDesc</gi> to the <gi>body</gi>, which makes much more sense.</change>
+            <change when="2013-03-13">created</change>
+            <change when="2013-06-28">made into "Nym-MasterTEI-"</change>
+            <change when="2013-06-29">updated with new names from the PersMaster</change>
+            <change when="2013-11-06">correct some @xml:lang; removed unneccesary @type</change>
+            <change when="2013-11-20">updated with new names from the PersMaster</change>
+            <change when="2014-02-04">re-integrated nyms for the social structure, which were lost at
+            some point between August and November since they were nested into other nyms</change>
+            <change when="2014-04-24">corrected the xml:lang codes to comply with TEI</change>
+            <change when="2014-04-27">Added new nyms</change>
+            <change when="2014-05-27">Added new nyms, corrected the forenames, corrected surnames</change>
+            <change when="2014-10-16">Manually removed all multi-word nyms that make no sense in Arabic</change>
+            <change when="2014-10-19"
+                >Added automatically generated normalized forms of each form with an @xml:lang attribute that contained "x-ijmes". These forms have been labelled as @type="normalized".</change>
+            <change when="2014-12-15">split the @xml:id of the nyms into three groups separated by dashes; i.e. nymH0002 was transformed into nym-H-2</change>
+            <change when="2014-12-17">Added forms in automatically generated Arabic script for all forms carrying @xml:lang="ar-Latn-x-ijmes" using new XSLT transformations I wrote recently.</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <listNym type="title" xml:id="nyml-Title">
+                <nym xml:id="nym-T-2">
+                    <form type="transliterated" xml:lang="ar">افندي</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">Afandi</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Afandī</form>
+                    <form xml:lang="en">Eff</form>
+                    <form xml:lang="en">Effendi</form>
+                    <form xml:lang="en">Eff.</form>
+                    <form xml:lang="en">Ef.</form>
+                    <form xml:lang="ota-Latn-x-ijmes">Efendī</form>
+                    <form xml:lang="tr">Efendi</form>
+                </nym>
+                <nym xml:id="nym-T-3">
+                    <form type="transliterated" xml:lang="ar">اغا</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Āghā</form>
+                    <form xml:lang="en">Aga</form>
+                    <form xml:lang="en">Agha</form>
+                    <form xml:lang="tr-ijmes">Āğā</form>
+                </nym>
+                <nym xml:id="nym-T-4">
+                    <form type="transliterated" xml:lang="ar">باشا</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">Basha</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Bāshā</form>
+                    <form xml:lang="de">Pascha</form>
+                    <form xml:lang="en">Pasha</form>
+                    <form xml:lang="fr">Pacha</form>
+                    <form xml:lang="tr">Paşa</form>
+                </nym>
+                <nym xml:id="nym-T-1">
+                    <form xml:lang="en">Bek</form>
+                    <form xml:lang="ota">بك</form>
+                    <form xml:lang="ota-Latn-DE">Beg</form>
+                    <form xml:lang="tr">Bey</form>
+                </nym>
+                <nym xml:id="nym-H-2">
+                    <form type="transliterated" xml:lang="ar">الدكتور</form>
+                    <form type="transliterated" xml:lang="ar">دكتور</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">al-Duktur</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">Duktur</form>
+                    <form xml:lang="ar-Latn-x-ijmes">al-Duktūr</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Duktūr</form>
+                    <form xml:lang="en">Dr.</form>
+                    <form xml:lang="en">Dr</form>
+                </nym>
+            </listNym>
+            <listNym type="honorific" xml:id="nyml-Honorific">
+                <nym xml:id="nym-H-1">
+                    <form type="transliterated" xml:lang="ar">امير</form>
+                    <form type="transliterated" xml:lang="ar">الامير</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">al-Amir</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Amīr</form>
+                    <form xml:lang="ar-Latn-x-ijmes">al-Amīr</form>
+                    <form xml:lang="en">Amir</form>
+                    <form xml:lang="en">Emir</form>
+                    <form type="short" xml:lang="ar-Latn-EN">Amer</form>
+                    <form xml:lang="ar-Latn-EN">El Amer</form>
+                    <form xml:lang="ar-Latn-EN">el Amir</form>
+                </nym>
+                <nym xml:id="nym-H-4">
+                    <form xml:lang="de">Frau</form>
+                    <form xml:lang="en">Mrs.</form>
+                    <form xml:lang="en">Ms.</form>
+                    <form xml:lang="fr">Mme</form>
+                    <form xml:lang="tr">Hanım</form>
+                    <form type="variant" xml:lang="ota-Latn-x-ijmes">Ḫānim</form>
+                    <form type="short" xml:lang="ota-Latn-x-ijmes">Ḫānım</form>
+                </nym>
+                <nym xml:id="nym-H-5">
+                    <form xml:lang="de">Fräulein</form>
+                    <form xml:lang="de">Frl.</form>
+                    <form xml:lang="en">Miss</form>
+                    <form xml:lang="fr">Mlle</form>
+                </nym>
+                <nym xml:id="nym-H-14">
+                    <form type="transliterated" xml:lang="ar">حجي</form>
+                    <form type="transliterated" xml:lang="ar">الحاج</form>
+                    <form type="transliterated" xml:lang="ar">حاجي</form>
+                    <form xml:lang="ar-Latn-DE">Hadschi</form>
+                    <form xml:lang="ar-Latn-EN">Hajji</form>
+                    <form xml:lang="ar-Latn-EN">Haji</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">al-Hajj</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Ḥajjī</form>
+                    <form xml:lang="ar-Latn-x-ijmes">al-Ḥājj</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Ḥājjī</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Ḥājī</form>
+                </nym>
+                <nym xml:id="nym-H-3">
+                    <form type="transliterated" xml:lang="ar">خواجة</form>
+                    <form type="transliterated" xml:lang="ar">خواجا</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">Khawaja</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Khawāja</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Khawājā</form>
+                    <form xml:lang="de">Herr</form>
+                    <form xml:lang="en">Mr.</form>
+                    <form xml:lang="fr">Monsieur</form>
+                    <form xml:lang="it">Signore</form>
+                </nym>
+                <nym xml:id="nym-H-15">
+                    <form type="transliterated" xml:lang="ar">خان</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Khān</form>
+                    <form xml:lang="fa-Latn-EN">Khan</form>
+                </nym>
+                <nym xml:id="nym-H-13">
+                    <form xml:lang="fr">Messeigneurs</form>
+                    <form xml:lang="fr">Monseigneur</form>
+                </nym>
+                <nym xml:id="nym-H-11">
+                    <form type="transliterated" xml:lang="ar">ميرزا</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Mīrzā</form>
+                    <form xml:lang="fa-Latn-x-ijmes">Mirza</form>
+                </nym>
+                <nym xml:id="nym-H-7">
+                    <form>Rabbi</form>
+                </nym>
+                <nym xml:id="nym-H-8">
+                    <form xml:lang="en">Rev</form>
+                    <form xml:lang="en">Rev.</form>
+                    <form xml:lang="en">Rev.d</form>
+                </nym>
+                <nym xml:id="nym-H-9">
+                    <form type="transliterated" xml:lang="ar">شيخ</form>
+                    <form type="transliterated" xml:lang="ar">الشيخ</form>
+                    <form xml:lang="ar-Latn-DE">Scheich</form>
+                    <form xml:lang="ar-Latn-EN">Sheikh</form>
+                    <form type="variant" xml:lang="ar-Latn-EN">Sheik</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Shaykh</form>
+                    <form xml:lang="ar-Latn-x-ijmes">al-Shaykh</form>
+                </nym>
+                <nym xml:id="nym-H-10">
+                    <form xml:lang="en">Sir</form>
+                </nym>
+                <nym xml:id="nym-H-6">
+                    <form type="transliterated" xml:lang="ar">زادة</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">zada</form>
+                    <form xml:lang="ar-Latn-FR">zadé</form>
+                    <form xml:lang="ar-Latn-x-ijmes">zāda</form>
+                    <form xml:lang="tr">zade</form>
+                    <form xml:lang="tr">Zade</form>
+                </nym>
+            </listNym>
+            <listNym type="nobility">
+                <nym xml:id="nym-H-12">
+                    <form type="transliterated" xml:lang="ar">سيد</form>
+                    <form type="transliterated" xml:lang="ar">السيد</form>
+                    <form xml:lang="ar-Latn-EN">Seyed</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Sayyid</form>
+                    <form xml:lang="ar-Latn-x-ijmes">al-Sayyid</form>
+                </nym>
+            </listNym>
+            <listNym type="rank" xml:id="nyml-Rank">
+                <nym xml:id="nym-R-8">
+                    <form xml:lang="en">Dragoman</form>
+                </nym>
+                <listNym subtype="military" type="rank">
+                    <nym xml:id="nym-RM-8">
+                        <form xml:lang="ar">بينباشي</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Binbashi</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Binbashī</form>
+                        <form xml:lang="en">Major</form>
+                        <form xml:lang="ota">بيكباشي</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Binbāşı</form>
+                        <form xml:lang="tr">Binbaşı</form>
+                    </nym>
+                    <nym xml:id="nym-RM-10">
+                        <form xml:lang="en">Sergeant</form>
+                        <form xml:lang="en">(Sgt)</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Çāvūş</form>
+                        <form xml:lang="tr">Çavuş</form>
+                    </nym>
+                    <nym xml:id="nym-RM-2">
+                        <form type="transliterated" xml:lang="ar">فريق</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Fariq</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Farīq</form>
+                        <form xml:lang="en">General</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Ferīḳ</form>
+                        <form xml:lang="tr">Ferik</form>
+                    </nym>
+                    <nym xml:id="nym-RM-9">
+                        <form xml:lang="en">Sernior Captain</form>
+                        <form xml:lang="ota-Latn-EN">Kul Ağası</form>
+                        <form xml:lang="ota-Latn-EN">Kul Aghasi</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Ḳūl Ağāsı</form>
+                        <form xml:lang="tr">kolağası</form>
+                    </nym>
+                    <nym xml:id="nym-RM-13">
+                        <form xml:lang="en">Lieutenant</form>
+                        <form xml:lang="en">(Lt)</form>
+                        <form xml:lang="en">Lt.</form>
+                    </nym>
+                    <nym xml:id="nym-RM-5">
+                        <form type="transliterated" xml:lang="ar">مير الاي</form>
+                        <form type="transliterated" xml:lang="ar">امير الاي</form>
+                        <form type="transliterated" xml:lang="ar">امير الالاي</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Mir Alay</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Amir al-Alay</form>
+                        <form xml:lang="ar-Latn-EN">Amir Alay</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Mīr Alāy</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Amīr Alāy</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Amīr al-Alāy</form>
+                        <form xml:lang="en">Brigadier</form>
+                        <form type="normalized" xml:lang="ota-Latn-EN">Alay Amini</form>
+                        <form type="variant" xml:lang="ota-Latn-x-ijmes">Alay Amīnī</form>
+                        <form type="variant" xml:lang="ota-Latn-x-ijmes">Alāy Amīni</form>
+                        <form xml:lang="tr">Miralay</form>
+                    </nym>
+                    <nym xml:id="nym-RM-3">
+                        <form type="transliterated" xml:lang="ar">مير ليوا</form>
+                        <form type="transliterated" xml:lang="ar">امير الليوا</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Mir Liwa</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Amir al-Liwa</form>
+                        <form type="normalized" xml:lang="ota-Latn-EN">Amir al-Liva</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Mīr Līwā</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Amīr al-Līwā</form>
+                        <form type="variant" xml:lang="ota-Latn-x-ijmes">Amīr al-Liva</form>
+                        <form xml:lang="en">Major General</form>
+                        <form xml:lang="tr">Mirliva</form>
+                    </nym>
+                    <nym xml:id="nym-RM-4">
+                        <form type="transliterated" xml:lang="ar">مشير</form>
+                        <form xml:lang="ar-Latn-EN">Muchir</form>
+                        <form xml:lang="ar-Latn-EN">Mushir</form>
+                        <form xml:lang="ar-Latn-FR">Mouchir</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Mushīr</form>
+                        <form xml:lang="en">Field Marshal</form>
+                        <form type="variant" xml:lang="en">Commander</form>
+                        <form type="normalized" xml:lang="ota-Latn-EN">Muşir</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Muşīr</form>
+                        <form xml:lang="tr">Müşir</form>
+                    </nym>
+                    <nym xml:id="nym-RM-12">
+                        <form xml:lang="en">Corporal</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Onbāşı</form>
+                        <form xml:lang="tr">Onbaşı</form>
+                    </nym>
+                    <nym xml:id="nym-RM-6">
+                        <form xml:lang="ota-Latn-x-ijmes">Otabāşı</form>
+                        <form type="variant" xml:lang="tr">Otabaşi</form>
+                        <form xml:lang="tr">Otabaşı</form>
+                    </nym>
+                    <nym xml:id="nym-RM-11">
+                        <form type="transliterated" xml:lang="ar">قائمقام</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">qa'imaqam</form>
+                        <form xml:lang="ar-Latn-EN">Kaimakam</form>
+                        <form xml:lang="ar-Latn-x-ijmes">qāʾimaqām</form>
+                        <form xml:lang="en">Colonel</form>
+                        <form type="normalized" xml:lang="ota-Latn-EN">Qayimmaqam</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Ḳāyimmaḳām</form>
+                        <form xml:lang="ota-Latn-x-ijmes">ḳāʾimaḳām</form>
+                        <form xml:lang="tr">Kaymakam</form>
+                    </nym>
+                    <nym xml:id="nym-RM-7">
+                        <form type="normalized" xml:lang="ar-Latn-EN">Yüzbashi</form>
+                        <form type="variant" xml:lang="ar-Latn-x-ijmes">Yüzbashī</form>
+                        <form xml:lang="en">Captain</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Yüzbāşı</form>
+                        <form type="variant" xml:lang="ota-Latn-x-ijmes">Yüz başı</form>
+                        <form xml:lang="tr">yüzbaşı</form>
+                    </nym>
+                </listNym>
+                <listNym subtype="civil" type="rank">
+                    <nym xml:id="nym-RC-2">
+                        <form type="transliterated" xml:lang="ar">متصرف</form>
+                        <form xml:lang="ar-Latn-EN">Mutassarif</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Mutasarrif</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Mutaṣarrif</form>
+                        <form xml:lang="en">Governor</form>
+                        <form xml:lang="ota-Latn-EN">Mutesarrif</form>
+                        <form xml:lang="ota-Latn-EN">Mutaserif</form>
+                        <form xml:lang="tr">Mutasarrıf</form>
+                    </nym>
+                    <nym xml:id="nym-RC-3">
+                        <form type="transliterated" xml:lang="ar">قائمقام</form>
+                        <form xml:lang="ar-Latn-EN">Kaimakam</form>
+                        <form xml:lang="ar-Latn-x-ijmes">qāʾimaqām</form>
+                        <form xml:lang="en">prefect</form>
+                        <form type="normalized" xml:lang="ota-Latn-EN">Qayimmaqam</form>
+                        <form type="normalized" xml:lang="ota-Latn-EN">qa'imaqam</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Ḳāyimmaḳām</form>
+                        <form xml:lang="ota-Latn-x-ijmes">ḳāʾimaḳām</form>
+                        <form xml:lang="tr">Kaymakam</form>
+                    </nym>
+                    <nym xml:id="nym-RC-4">
+                        <form type="transliterated" xml:lang="ar">قاضي</form>
+                        <form xml:lang="ar-Latn-EN">Qadi</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Qāḍī</form>
+                        <form xml:lang="en">judge</form>
+                        <form type="normalized" xml:lang="ota-Latn-EN">Qaẕi</form>
+                        <form xml:lang="ota-Latn-x-ijmes">Ḳāẕī</form>
+                        <form xml:lang="tr">Kazı</form>
+                    </nym>
+                    <nym xml:id="nym-RC-1">
+                        <form type="transliterated" xml:lang="ar">والي</form>
+                        <form xml:lang="ar-Latn-DE">Wali</form>
+                        <form xml:lang="ar-Latn-EN">Vali</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Wālī</form>
+                        <form xml:lang="en">Governor General</form>
+                        <form xml:lang="en">Governor-General</form>
+                        <form xml:lang="tr">Veli</form>
+                    </nym>
+                    <nym xml:id="nym-RC-5">
+                        <form xml:lang="en">MP</form>
+                        <form xml:lang="en">member of parliament</form>
+                    </nym>
+                    <nym xml:id="nym-RC-6">
+                        <form xml:lang="en">consul general</form>
+                        <form xml:lang="de">Generalkonsul</form>
+                    </nym>
+                    <nym xml:id="nym-RC-7">
+                        <form xml:lang="en">consul</form>
+                        <form xml:lang="de">Konsul</form>
+                    </nym>
+                </listNym>
+                <listNym subtype="clergy" type="rank">
+                    <nym xml:id="nym-R-7">
+                        <form xml:lang="de">Abt</form>
+                        <form xml:lang="en">Abbot</form>
+                    </nym>
+                    <nym xml:id="nym-R-6">
+                        <form xml:lang="de">Erzbischof</form>
+                        <form xml:lang="en">Archbishop</form>
+                        <form xml:lang="en">Metropolitan</form>
+                    </nym>
+                    <nym xml:id="nym-R-5">
+                        <form type="transliterated" xml:lang="ar">خوري</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Khuri</form>
+                        <form xml:lang="ar-Latn-FR">Khouri</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Khūrī</form>
+                        <form xml:lang="de">Pfarrer</form>
+                        <form xml:lang="de">Priester</form>
+                        <form xml:lang="en">Priest</form>
+                        <form xml:lang="en">Pastor</form>
+                        <form xml:lang="fr">Abbé</form>
+                    </nym>
+                    <nym xml:id="nym-R-4">
+                        <form type="transliterated" xml:lang="ar">مطران</form>
+                        <form type="normalized" xml:lang="ar-Latn-EN">Matran</form>
+                        <form xml:lang="ar-Latn-x-ijmes">Maṭrān</form>
+                        <form xml:lang="de">Bischof</form>
+                        <form xml:lang="en">Bishop</form>
+                        <form xml:lang="fr">Monseigneur</form>
+                        <form xml:lang="fr">Monsignor</form>
+                        <form xml:lang="fr">Messeigneurs</form>
+                        <form xml:lang="it">Monsignore</form>
+                    </nym>
+                    <nym xml:id="nym-R-3">
+                        <form xml:lang="de">Papst</form>
+                        <form xml:lang="en">Pope</form>
+                    </nym>
+                    <nym xml:id="nym-R-9">
+                        <form xml:lang="en">Patriarch</form>
+                    </nym>
+                </listNym>
+            </listNym>
+            <listNym type="patronym" xml:id="nyml-Patronym">
+                <nym xml:id="nym-P-1">
+                    <form type="transliterated" xml:lang="ar">ابو</form>
+                    <form type="transliterated" xml:lang="ar">ابي</form>
+                    <form xml:lang="ar-Latn-EN">Abu</form>
+                    <form type="normalized" xml:lang="ar-Latn-EN">Abi</form>
+                    <form xml:lang="ar-Latn-FR">Abou</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Abū</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Abī</form>
+                </nym>
+                <nym xml:id="nym-P-2">
+                    <form type="transliterated" xml:lang="ar">بن</form>
+                    <form type="transliterated" xml:lang="ar">ابن</form>
+                    <form xml:lang="ar-Latn-EN">ben</form>
+                    <form xml:lang="ar-Latn-x-ijmes">bin</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Bin</form>
+                    <form xml:lang="ar-Latn-x-ijmes">ibn</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Ibn</form>
+                </nym>
+                <nym xml:id="nym-P-3">
+                    <form type="transliterated" xml:lang="ar">بنت</form>
+                    <form type="transliterated" xml:lang="ar">ابنة</form>
+                    <form xml:lang="ar-Latn-x-ijmes">bint</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Ibnat</form>
+                </nym>
+                <nym xml:id="nym-P-4">
+                    <form type="transliterated" xml:lang="ar">ام</form>
+                    <form xml:lang="ar-Latn-x-ijmes">Umm</form>
+                    <form type="variant" xml:lang="ar-Latn-x-ijmes">Imm</form>
+                </nym>
+            </listNym>
+        </body>
+    </text>
+</TEI>
