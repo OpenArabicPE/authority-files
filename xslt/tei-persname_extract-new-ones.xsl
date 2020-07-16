@@ -87,6 +87,8 @@
                 </xsl:variable>
                 <!-- construct nodes -->
                 <xsl:element name="tei:person">
+                    <!-- document source of information -->
+                <xsl:attribute name="source" select="base-uri()"/>            
                     <!-- add mark-up to the original -->
                     <xsl:copy-of select="$v_name-marked-up"/>
                     <!-- construct a flattened string -->
