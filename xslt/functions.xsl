@@ -380,13 +380,21 @@
                     <!-- single word match -->
                     <xsl:matching-substring>
                         <xsl:variable name="v_word" select="regex-group(1)"/>
+<!--                        <xsl:variable name="v_trailing" select="regex-group(3)"/>-->
                         <!-- try to find it in the nymlist -->
                         <xsl:copy-of select="oape:look-up-nym-and-mark-up-name($v_word, $v_file-nyms, $p_id-change)"/>
-<!--                        <xsl:text> </xsl:text>-->
+<!--                        <xsl:if test="$v_trailing != ''">-->
+                            <xsl:text> </xsl:text>
+                        <!--</xsl:if>-->
+                        <!-- debugging -->
+                <xsl:message>
+                    <xsl:value-of select="$v_word"/>
+                </xsl:message>
                     </xsl:matching-substring>
-                    <xsl:non-matching-substring>
+                    <!-- there is no non-matching substring -->
+                    <!--<xsl:non-matching-substring>
                         <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
-                    </xsl:non-matching-substring>
+                    </xsl:non-matching-substring>-->
                 </xsl:analyze-string>
             </xsl:when>
             <!-- fallback: return input -->
