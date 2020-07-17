@@ -224,7 +224,7 @@
     </xsl:template>
     
     <!-- remove empty nodes -->
-    <xsl:template match="node()[.='']"/>
+    <xsl:template match="node()[.='']" priority="20"/>
     <!-- remove duplicate persName[@type='noAddName'] that have no persName[@type='flattened'] pointing to them -->
     <xsl:template match="tei:persName[@type='noAddName']">
         <xsl:variable name="v_ref" select="concat('#',@xml:id)"/>
