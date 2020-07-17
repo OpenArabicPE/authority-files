@@ -244,33 +244,8 @@
         <xsl:param name="p_id-change"/>
         <xsl:variable name="v_input" select="oape:string-normalise-characters($p_input)"/>
         <xsl:choose>
-            <!-- kunya -->
-            <xsl:when test="matches($v_input, '^(.+\s)*(ابو|ابي)\s(.+)$')">
-                <!--<xsl:message>
-                    <xsl:value-of select="$v_input"/>
-                    <xsl:text> contains a kunya</xsl:text>
-                </xsl:message>-->
-                <xsl:analyze-string regex="(ابو|ابي)\s(.+)$" select="$v_input">
-                    <xsl:matching-substring>
-                        <xsl:variable name="v_trailing" select="regex-group(2)"/>
-                        <xsl:element name="tei:addName">
-                            <xsl:attribute name="type" select="'kunyah'"/>
-                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                            <xsl:element name="tei:nameLink">
-                                <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                                <xsl:value-of select="regex-group(1)"/>
-                                <xsl:text> </xsl:text>
-                            </xsl:element>
-                            <xsl:text> </xsl:text>
-                            <xsl:copy-of select="oape:string-mark-up-names($v_trailing, $p_id-change)"/>
-                        </xsl:element>
-                    </xsl:matching-substring>
-                    <xsl:non-matching-substring>
-                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
-                    </xsl:non-matching-substring>
-                </xsl:analyze-string>
-            </xsl:when>
-            <!-- test for nasab -->
+            
+            <!-- 1. test for nasab -->
             <xsl:when test="matches($v_input, '^(.+\s)*(ابن|بن|بنت)(\s.+)$')">
                 <!--<xsl:message>
                     <xsl:value-of select="$v_input"/>
@@ -290,6 +265,31 @@
                             <xsl:copy-of select="oape:string-mark-up-names($v_trailing, $p_id-change)"/>
                         </xsl:element>
                         <xsl:text> </xsl:text>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
+            <!-- 2. kunya -->
+            <xsl:when test="matches($v_input, '^(.+\s)*(ابو|ابي|ابا)\s(.+)$')">
+                <!--<xsl:message>
+                    <xsl:value-of select="$v_input"/>
+                    <xsl:text> contains a kunya</xsl:text>
+                </xsl:message>-->
+                <xsl:analyze-string regex="(ابو|ابي|ابا)\s(.+)$" select="$v_input">
+                    <xsl:matching-substring>
+                        <xsl:variable name="v_trailing" select="regex-group(2)"/>
+                        <xsl:element name="tei:addName">
+                            <xsl:attribute name="type" select="'kunyah'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:element name="tei:nameLink">
+                                <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                                <xsl:value-of select="regex-group(1)"/>
+                            </xsl:element>
+                            <xsl:text> </xsl:text>
+                            <xsl:copy-of select="oape:string-mark-up-names($v_trailing, $p_id-change)"/>
+                        </xsl:element>
                     </xsl:matching-substring>
                     <xsl:non-matching-substring>
                         <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
