@@ -392,6 +392,7 @@
             <!-- fallback: return input -->
             <xsl:otherwise>
                 <xsl:value-of select="$v_input"/>
+                <xsl:text> </xsl:text>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
