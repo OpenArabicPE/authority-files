@@ -254,7 +254,7 @@
                     <xsl:matching-substring>
                         <xsl:variable name="v_trailing" select="regex-group(2)"/>
                         <xsl:element name="tei:addName">
-                            <xsl:attribute name="type" select="'nasab'"/>
+                            <xsl:attribute name="type" select="'kunyah'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                             <xsl:element name="tei:nameLink">
                                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
