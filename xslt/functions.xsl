@@ -437,45 +437,56 @@
     <xsl:function name="oape:name-remove-addnames">
         <xsl:param name="p_persname"/>
         <xsl:param name="p_id-change"/>
+        <xsl:variable name="v_persname" select="$p_persname/descendant-or-self::tei:persName"/>
+        <!-- write content to variable in order to then generate a unique @xml:id -->
+        <xsl:variable name="v_output">
         <xsl:element name="tei:persName">
-            <xsl:apply-templates select="$p_persname/@xml:lang"/>
+            <xsl:apply-templates select="$v_persname/@xml:lang"/>
             <!-- document change -->
-                <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-            <!-- the flattened string should point back to its origin -->
-                <xsl:if test="$p_persname/@xml:id">
-                    <xsl:attribute name="corresp" select="concat('#',$p_persname/@xml:id)"/>
-                </xsl:if>
+            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
             <xsl:attribute name="type" select="'noAddName'"/>
-            <!-- generate xml:id -->
-            <xsl:attribute name="xml:id" select="oape:generate-xml-id($p_persname)"/>
-            <xsl:apply-templates select="$p_persname/tei:surname | $p_persname/tei:forename" mode="m_no-ids"/>
+            <xsl:apply-templates select="$v_persname/tei:surname | $v_persname/tei:forename" mode="m_no-ids"/>
         </xsl:element>
+        </xsl:variable>
+        <!-- output -->
+        <xsl:copy select="$v_output/tei:persName">
+            <!-- generate xml:id -->
+            <xsl:attribute name="xml:id" select="oape:generate-xml-id($v_output/tei:persName)"/>
+            <xsl:apply-templates select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"/>
+        </xsl:copy>
     </xsl:function>
     <xsl:function name="oape:name-flattened">
         <xsl:param name="p_persname"/>
         <xsl:param name="p_id-change"/>
-        <xsl:variable name="v_persname">
-            <xsl:value-of select="$p_persname"/>
-        </xsl:variable>
-        <xsl:element name="persName">
-                <xsl:apply-templates select="$p_persname/@xml:lang"/>
+        <xsl:variable name="v_persname" select="$p_persname/descendant-or-self::tei:persName"/>
+        <!-- write content to variable in order to then generate a unique @xml:id -->
+        <xsl:variable name="v_output">
+        <xsl:element name="tei:persName">
+                <xsl:apply-templates select="$v_persname/@xml:lang"/>
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
             <!-- the flattened string should point back to its origin -->
-                <xsl:if test="$p_persname/@xml:id">
-                    <xsl:attribute name="corresp" select="concat('#',$p_persname/@xml:id)"/>
+                <xsl:if test="$v_persname/@xml:id">
+                    <xsl:attribute name="corresp" select="concat('#',$v_persname/@xml:id)"/>
                 </xsl:if>
             <xsl:attribute name="type" select="'flattened'"/>
-            <!-- generate xml:id -->
-            <xsl:attribute name="xml:id" select="oape:generate-xml-id($p_persname)"/>
+            <!-- content -->
                 <xsl:value-of select="oape:string-remove-spaces(oape:string-normalise-characters($v_persname))"/>
             </xsl:element>
+        </xsl:variable>
+        <!-- output -->
+        <xsl:copy select="$v_output/tei:persName">
+            <!-- generate xml:id -->
+            <xsl:attribute name="xml:id" select="oape:generate-xml-id($v_output/tei:persName)"/>
+            <xsl:apply-templates select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"/>
+        </xsl:copy>
     </xsl:function>
     
     <!-- replicate everything except @xml:id -->
-    <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids">
+    <xsl:template match="node() | @*" mode="m_no-ids">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids"/>
+            <xsl:apply-templates select="@* | node()" mode="m_no-ids"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="@xml:id" mode="m_no-ids" priority="10"/>
 </xsl:stylesheet>

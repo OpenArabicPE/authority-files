@@ -15,21 +15,20 @@
     
     <xsl:include href="query-viaf.xsl"/>
     <xsl:include href="functions.xsl"/>
-    <!-- identify the author of the change by means of a @xml:id -->
-    <!-- toggle debugging messages -->
-    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     
     <!-- variables for OpenArabicPE IDs -->
     <xsl:variable name="v_oape-id-count" select="count(//tei:person/tei:idno[@type='oape'])"/>
     <xsl:variable name="v_oape-id-highest" select="if($v_oape-id-count gt 0) then(max(//tei:person/tei:idno[@type='oape'])) else(0)"/>
     
     
-    <xsl:template match="node() | @*" name="t_1">
+    <!-- identity transform -->
+    <xsl:template match="node() | @*">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
     
+    <!-- resort the contents of listPerson by surname, forename -->
     <xsl:template match="tei:listPerson" name="t_2">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
@@ -111,7 +110,7 @@
     </xsl:template>
     
     <!-- improve tei:person records without VIAF references -->
-    <xsl:template match="tei:person" name="t_4">
+    <xsl:template match="tei:person" priority="10">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_4: </xsl:text><xsl:value-of select="@xml:id"/>
@@ -119,6 +118,10 @@
         </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
+            <!-- test if @xml:id is present -->
+            <xsl:if test="not(@xml:id)">
+                <xsl:attribute name="xml:id" select="oape:generate-xml-id(.)"/>
+            </xsl:if>
             <!-- check if it has duplicate child nodes -->
             <!--<xsl:for-each-group select="tei:persName" group-by=".">
                 <xsl:apply-templates select="."/>
@@ -143,34 +146,33 @@
     </xsl:template>
     
     
-    <xsl:template match="tei:person/tei:persName" name="t_5">
+    <xsl:template match="tei:person/tei:persName">
         <xsl:if test="$p_verbose=true()">
             <xsl:message>
                 <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> copy existing persName</xsl:text>
             </xsl:message>
         </xsl:if>
+        <xsl:variable name="v_self">
             <xsl:copy>
-                <xsl:apply-templates select="@* | node()"/>
+                <xsl:apply-templates select="@*"/>
+                <!-- test if @xml:id is present -->
+                <xsl:if test="not(@xml:id)">
+                    <xsl:attribute name="xml:id" select="oape:generate-xml-id(.)"/>
+                </xsl:if>
+                <xsl:apply-templates select="node()"/>
             </xsl:copy>
+        </xsl:variable>
+        <!-- reproduce content -->
+        <xsl:copy-of select="$v_self"/>
         <!-- add flattened persName string if this is not already present  -->
-        <xsl:variable name="v_name-flat" select="oape:string-remove-spaces(oape:string-normalise-characters(string()))"/>
-        <xsl:if test="not($v_name-flat='') and not(parent::tei:person/tei:persName[@type='flattened'] = $v_name-flat)">
+        <xsl:variable name="v_name-flat" select="oape:name-flattened($v_self, $p_id-change)"/>
+        <xsl:if test="not($v_name-flat='') and not(parent::tei:person/tei:persName[@type='flattened'] = $v_name-flat/text())">
             <xsl:if test="$p_verbose=true()">
                 <xsl:message>
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
                 </xsl:message>
             </xsl:if>
-            <xsl:element name="persName">
-                <xsl:apply-templates select="@xml:lang"/>
-                <xsl:attribute name="type" select="'flattened'"/>
-                <!-- the flattened string should point back to its origin -->
-                <xsl:if test="@xml:id">
-                    <xsl:attribute name="corresp" select="concat('#',@xml:id)"/>
-                </xsl:if>
-                <!-- document change -->
-                <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                <xsl:value-of select="$v_name-flat"/>
-            </xsl:element>
+            <xsl:copy-of select="$v_name-flat"/>
         </xsl:if>
         <!-- add persName without any titles, honorary addresses etc. -->
         <!-- test if there are <addName> children -->
@@ -181,36 +183,31 @@
                 </xsl:message>
             </xsl:if>
             <!-- this variable generates a persName with nothing but forenames and surnames -->
-            <xsl:variable name="v_no-addname" select="oape:name-remove-addnames(., $p_id-change)">
-                <!--<xsl:copy>
-                    <xsl:apply-templates select="@xml:lang"/>
-                    <xsl:attribute name="type" select="'noAddName'"/>
-                    <!-\- document change -\->
-                    <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                    <xsl:apply-templates select="tei:surname | tei:forename" mode="m_no-ids"/>
-                </xsl:copy>-->
-            </xsl:variable>
+            <xsl:variable name="v_no-addname" select="oape:name-remove-addnames($v_self, $p_id-change)"/>
+            <!-- add flattened persName string if this is not already present  -->
+            <xsl:variable name="v_no-addname-flat" select="oape:name-flattened($v_no-addname, $p_id-change)"/>
             <xsl:choose>
                 <!-- if there is already a child similar to the noAddName variant, this should not added to the output -->
                 <!-- the following condition produces erroneous results and I have no idea why -->
-                <xsl:when test="parent::tei:person/tei:persName = $v_no-addname">
+                <!--<xsl:when test="parent::tei:person/tei:persName = $v_no-addname">-->
+                <xsl:when test="not($v_no-addname-flat='') and not(parent::tei:person/tei:persName[@type='flattened'] = $v_no-addname-flat/text())">
                      <xsl:if test="$p_verbose=true()">
                          <xsl:message><xsl:value-of select="$v_no-addname"/> is already present</xsl:message>
                      </xsl:if>
                 </xsl:when>
-<!--                <xsl:when test="parent::node()/tei:persName[@type='flattened']=replace(normalize-space(replace($v_no-addname,'([إ|أ|آ])','ا')), '\W', '')"/>-->
                 <xsl:otherwise>
                     <xsl:if test="$p_verbose=true()">
                         <xsl:message><xsl:copy-of select="$v_no-addname"/> is not present</xsl:message>
                     </xsl:if>
                     <xsl:copy-of select="$v_no-addname"/>
+                    <xsl:copy-of select="$v_no-addname-flat"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
     </xsl:template>
     
     <!-- fix flattened persNames without @corresp attribute -->
-    <xsl:template match="tei:persName[@type='flattened'][not(@corresp)]" name="t_6">
+    <xsl:template match="tei:persName[@type='flattened'][not(@corresp)]">
          <xsl:if test="$p_verbose=true()">
                     <xsl:message>
                         <xsl:text>t_6: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> no @corresp</xsl:text>
@@ -253,7 +250,7 @@
     </xsl:template>
     
     <!-- document the changes -->
-    <xsl:template match="tei:revisionDesc" name="t_8">
+    <xsl:template match="tei:revisionDesc">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:element name="tei:change">
