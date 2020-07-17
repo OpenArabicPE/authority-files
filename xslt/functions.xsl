@@ -245,12 +245,12 @@
         <xsl:variable name="v_input" select="oape:string-normalise-characters($p_input)"/>
         <xsl:choose>
             <!-- 1. test for nisba -->
-            <xsl:when test="matches($v_input, '^(.+\s)*(ال\w+ي)(\s.+)*$')">
+            <xsl:when test="matches($v_input, '^(.+\s)*(ال\w+ي)$')">
                 <!--<xsl:message>
                     <xsl:value-of select="$v_input"/>
                     <xsl:text> contains a nisba</xsl:text>
                 </xsl:message>-->
-                <xsl:analyze-string regex="(ال\w+ي)" select="$v_input">
+                <xsl:analyze-string regex="(ال\w+ي)$" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:element name="tei:addName">
                             <xsl:attribute name="type" select="'nisbah'"/>
@@ -386,9 +386,9 @@
                             <xsl:text> </xsl:text>
                         <!--</xsl:if>-->
                         <!-- debugging -->
-                <xsl:message>
+                <!--<xsl:message>
                     <xsl:value-of select="$v_word"/>
-                </xsl:message>
+                </xsl:message>-->
                     </xsl:matching-substring>
                     <!-- there is no non-matching substring -->
                     <!--<xsl:non-matching-substring>
