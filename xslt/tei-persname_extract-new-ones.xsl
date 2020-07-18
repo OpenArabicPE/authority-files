@@ -77,14 +77,7 @@
                         </xsl:when>
                     </xsl:choose>
                 </xsl:variable>
-                <xsl:variable name="v_name-marked-up">
-                    <xsl:apply-templates select="." mode="m_mark-up"/>
-                   <!-- <xsl:copy>
-                        <xsl:apply-templates select="@*"/>
-<!-\-                        <xsl:attribute name="xml:id" select="oape:generate-xml-id(.)"/>-\->
-                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
-                    </xsl:copy>-->
-                </xsl:variable>
+                <xsl:variable name="v_name-marked-up" select="oape:name-add-markup(.)"/>
                 <!-- construct nodes -->
                 <xsl:element name="tei:person">
                     <!-- document source of information -->
@@ -171,13 +164,5 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template match="tei:persName | tei:forename | tei:surname | tei:addName | tei:roleName" mode="m_mark-up">
-        <xsl:copy>
-            <xsl:apply-templates select="@*" mode="m_identity-transform"/>
-            <xsl:apply-templates select="node()" mode="m_mark-up"/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()" mode="m_mark-up">
-        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
-    </xsl:template>
+    
 </xsl:stylesheet>
