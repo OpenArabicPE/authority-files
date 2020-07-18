@@ -47,14 +47,25 @@
                     <xsl:copy-of select="$v_no-rolename/descendant-or-self::tei:persName"/>
                 </xsl:message>-->
                 <!-- call this function again with the new, marked-up name -->
-                <xsl:variable name="v_name-marked-up-linked" select="oape:link-persname-to-authority-file($v_no-rolename/descendant-or-self::tei:persName, $v_file-entities-master, $p_add-mark-up-to-input)"/>
+                <xsl:variable name="v_name-marked-up-linked" select="oape:link-persname-to-authority-file($v_no-rolename/tei:persName, $v_file-entities-master, $p_add-mark-up-to-input)"/>
                 <xsl:choose>
                     <!-- test if a match was found in the authority file -->
                     <xsl:when test="$v_name-marked-up-linked/@ref">
                         <xsl:copy>
+                            <!-- original attributes -->
                             <xsl:apply-templates select="@*"/>
+                            <!-- link to authority file -->
                             <xsl:copy-of select="$v_name-marked-up-linked/@ref"/>
-                            <xsl:apply-templates select="$v_name-marked-up/node()"/>
+                            <xsl:choose>
+                                <!-- name with additional mark-up -->
+                                <xsl:when test="$p_add-mark-up-to-input = true()">
+                                    <xsl:apply-templates select="$v_name-marked-up/node()"/>
+                                </xsl:when>
+                                <!-- fallback: original content -->
+                                <xsl:otherwise>
+                                    <xsl:apply-templates select="node()"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:copy>
                     </xsl:when>
                     <xsl:otherwise>

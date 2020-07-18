@@ -225,6 +225,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <!-- identity transform -->
     <xsl:template match="node() | @*" mode="m_identity-transform">
         <xsl:copy>
             <xsl:apply-templates mode="m_identity-transform" select="@* | node()"/>
@@ -486,7 +487,7 @@
         <xsl:param name="p_persname"/>
         <xsl:apply-templates mode="m_mark-up" select="$p_persname"/>
     </xsl:function>
-    <xsl:template match="tei:persName | tei:forename | tei:surname | tei:addName | tei:roleName" mode="m_mark-up">
+    <xsl:template match="tei:persName | tei:forename | tei:surname | tei:addName | tei:roleName | @*" mode="m_mark-up" priority="10">
         <xsl:copy>
             <xsl:apply-templates mode="m_identity-transform" select="@*"/>
             <xsl:apply-templates mode="m_mark-up" select="node()"/>
@@ -549,7 +550,7 @@
                 <!-- replicate node -->
                 <xsl:copy select="$p_persname">
                     <!-- replicate attributes -->
-                    <xsl:apply-templates select="$p_persname/@*"/>
+                    <xsl:apply-templates select="$p_persname/@*" mode="m_identity-transform"/>
                     <!-- add references to IDs -->
                     <xsl:attribute name="ref" select="$v_ref"/>
                     <!-- document change -->
@@ -569,7 +570,7 @@
                     <!-- NOTE: one could try to add mark-up from $v_corresponding-person -->
                     <xsl:choose>
                         <xsl:when test="$p_add-mark-up = false()">
-                            <xsl:apply-templates select="node()"/>
+                            <xsl:apply-templates select="node()" mode="m_identity-transform"/>
                         </xsl:when>
                         <xsl:when test="$p_add-mark-up = true()">
                             <!-- test of corresponding person contains mark-up -->
@@ -578,7 +579,7 @@
                                     <xsl:apply-templates mode="m_copy-from-authority-file" select="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()"/>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <xsl:apply-templates/>
+                                    <xsl:apply-templates select="node()" mode="m_identity-transform"/>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:when>
@@ -594,11 +595,19 @@
                     </xsl:message>
                 <!--</xsl:if>-->
                         <xsl:copy select="$p_persname">
-                            <xsl:apply-templates select="$p_persname/@* | $p_persname/node()"/>
+                            <xsl:apply-templates select="$p_persname/@* | $p_persname/node()" mode="m_identity-transform"/>
                         </xsl:copy>
             </xsl:when>
         </xsl:choose>
     </xsl:function>
+    
+    <!-- copy from authority file should not include @xml:id and @change -->
+    <xsl:template match="node() | @*" mode="m_copy-from-authority-file">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()" mode="m_copy-from-authority-file"/>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="10"/>
     
     <!-- document changes on changed elements by means of the @change attribute linking to the @xml:id of the <tei:change> element -->
     <xsl:template match="@change" mode="m_documentation">
