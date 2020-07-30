@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
    xmlns:zot="https://zotero.org">
    <teiHeader>
@@ -1395,11 +1400,13 @@
                      <title level="j" xml:lang="ar">مجلة العالم الاسلامي</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">Majallat al-ʿĀlam al-Islamī</title>
                      <title level="j" xml:lang="fr">Revue du Monde Musulman</title>
+                     <title level="j" xml:lang="ar">العالم الإسلامي</title>
                      <idno change="#d2e69" type="oape">24</idno>
+                     <idno change="#d2e167" type="oape">192</idno>
                      <idno type="OCLC">1681243</idno>
                      <editor> <persName/> </editor>
                      <textLang mainLang="fr"/>
-                     <imprint xml:lang="ar">
+                     <imprint xml:lang="fr">
                         <date when="1906"/>
                         <pubPlace> <placeName change="#d5e42" ref="oape:place:322 geon:2988507" xml:lang="en">Paris</placeName> </pubPlace>
                         <publisher/>
@@ -1643,8 +1650,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
-                     <title level="j" xml:lang="en-Arab-AR">إيفنن نيوز</title>
                      <title level="j" xml:lang="en">Evening News</title>
+                     <title level="j" xml:lang="en-Arab-AR">إيفنن نيوز</title>
                      <idno change="#d2e167" type="oape">72</idno>
                      <textLang mainLang="en"/>
                      <imprint>
@@ -1717,8 +1724,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="fr">
                   <monogr xml:lang="fr">
-                     <title level="j" xml:lang="fr-Arab-AR">البتي مارسيليه</title>
                      <title level="j" xml:lang="fr">Le Petit Marseillais</title>
+                     <title level="j" xml:lang="fr-Arab-AR">البتي مارسيليه</title>
                      <idno change="#d2e167" type="oape">113</idno>
                      <idno type="OCLC">472522226</idno>
                      <textLang mainLang="fr"/>
@@ -1756,10 +1763,10 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="fr-Arab-AR">الالستراسيون</title>
+               <biblStruct type="periodical" xml:lang="fr">
+                  <monogr xml:lang="fr">
                      <title level="j" xml:lang="fr">L'Illustration</title>
+                     <title level="j" xml:lang="fr-Arab-AR">الالستراسيون</title>
                      <idno change="#d2e167" type="oape">107</idno>
                      <textLang mainLang="fr"/>
                      <imprint>
@@ -1801,9 +1808,9 @@
                   </monogr> -->
                </biblStruct>
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_11.TEIP5.xml#bibl_6.d2e4097" type="periodical" xml:lang="fr">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="fr-Arab-AR">الجورنال</title>
+                  <monogr xml:lang="fr">
                      <title level="j" xml:lang="fr">Le Journal</title>
+                     <title level="j" xml:lang="fr-Arab-AR">الجورنال</title>
                      <idno change="#d2e167" type="oape">139</idno>
                      <textLang mainLang="fr"/>
                      <imprint>
@@ -1815,8 +1822,8 @@
                </biblStruct>
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_9.TEIP5.xml#bibl_8.d2e3102" subtype="newspaper" type="periodical" xml:lang="fr">
                   <monogr xml:lang="fr">
-                     <title level="j" xml:lang="fr-Arab-AR">الديبيش كلونيال</title>
                      <title level="j" xml:lang="fr">La Dépêche coloniale</title>
+                     <title level="j" xml:lang="fr-Arab-AR">الديبيش كلونيال</title>
                      <idno change="#d2e167" type="oape">154</idno>
                      <textLang mainLang="fr"/>
                      <imprint>
@@ -1828,8 +1835,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
-                     <title level="j" xml:lang="en-Arab-AR">الديلي اكسبرس</title>
                      <title level="j" xml:lang="en">The Daily Express</title>
+                     <title level="j" xml:lang="en-Arab-AR">الديلي اكسبرس</title>
                      <idno change="#d2e167" type="oape">156</idno>
                      <textLang mainLang="en"/>
                      <imprint>
@@ -1841,8 +1848,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
-                     <title level="j" xml:lang="en-Arab-AR">الديلي تلغراف</title>
                      <title level="j" xml:lang="en">The Daily Telegraph</title>
+                     <title level="j" xml:lang="en-Arab-AR">الديلي تلغراف</title>
                      <idno change="#d2e167" type="oape">157</idno>
                      <textLang mainLang="en"/>
                      <imprint>
@@ -1854,8 +1861,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
-                     <title level="j" xml:lang="en-Arab-AR">الديلي كرونيكل</title>
                      <title level="j" xml:lang="en">The Daily Chronicle</title>
+                     <title level="j" xml:lang="en-Arab-AR">الديلي كرونيكل</title>
                      <idno change="#d2e167" type="oape">158</idno>
                      <textLang mainLang="en"/>
                      <imprint>
@@ -1867,8 +1874,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
-                     <title level="j" xml:lang="en-Arab-AR">الديلي ميرور</title>
                      <title level="j" xml:lang="en">The Daily Mirror</title>
+                     <title level="j" xml:lang="en-Arab-AR">الديلي ميرور</title>
                      <idno change="#d2e167" type="oape">159</idno>
                      <textLang mainLang="en"/>
                      <imprint>
@@ -1880,8 +1887,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
-                     <title level="j" xml:lang="en-Arab-AR">الديلي ميل</title>
                      <title level="j" xml:lang="en">The Daily Mail</title>
+                     <title level="j" xml:lang="en-Arab-AR">الديلي ميل</title>
                      <idno change="#d2e167" type="oape">160</idno>
                      <textLang mainLang="en"/>
                      <imprint>
@@ -1893,8 +1900,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
-                     <title level="j" xml:lang="en-Arab-AR">الديلي نيوز</title>
                      <title level="j" xml:lang="en">The Daily News</title>
+                     <title level="j" xml:lang="en-Arab-AR">الديلي نيوز</title>
                      <idno change="#d2e167" type="oape">161</idno>
                      <textLang mainLang="en"/>
                      <imprint>
@@ -1906,9 +1913,11 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
-                     <title level="j" xml:lang="en-Arab-AR">الستاندارد</title>
                      <title level="j" xml:lang="en">The Standard</title>
+                     <title level="j" xml:lang="en-Arab-AR">الستاندارد</title>
+                     <title level="j" xml:lang="en-Arab-AR">الستندارد</title>
                      <idno change="#d2e167" type="oape">171</idno>
+                     <idno change="#d2e167" type="oape">470</idno>
                      <textLang mainLang="en"/>
                      <imprint>
                         <date/>
@@ -1919,8 +1928,11 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="fr">
                   <monogr xml:lang="fr">
+                     <title level="j">Le Matin</title>
                      <title level="j" xml:lang="fr">الماتين</title>
+                     <title level="j" xml:lang="fr-Arab-AR">المايتن</title>
                      <idno change="#d2e167" type="oape">227</idno>
+                     <idno change="#d2e167" type="oape">473</idno>
                      <textLang mainLang="fr"/>
                      <imprint>
                         <date/>
@@ -1977,10 +1989,10 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="en-Arab-AR">نيويورك هرالد</title>
+               <biblStruct type="periodical" xml:lang="en">
+                  <monogr xml:lang="en">
                      <title level="j" xml:lang="en">New York Herald</title>
+                     <title level="j" xml:lang="en-Arab-AR">نيويورك هرالد</title>
                      <idno change="#d2e167" type="oape">395</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -2335,19 +2347,6 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="en-Arab-AR">الستندارد</title>
-                     <title xml:lang="en">The Standard</title>
-                     <idno change="#d2e167" type="oape">470</idno>
-                     <textLang mainLang="en"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
                <biblStruct change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" subtype="newspaper" type="periodical">
                   <monogr>
                      <title level="j">تفكر</title>
@@ -2494,7 +2493,7 @@
                </biblStruct>
                <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#" subtype="newspaperArticle" type="periodical">
                   <monogr>
-                     <title level="j">طنين</title>
+                     <title level="j" xml:lang="ota">طنين</title>
                      <idno change="#d2e414" type="oape">550</idno>
                      <textLang mainLang="ota"/>
                      <imprint>
@@ -2641,20 +2640,7 @@
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j">Le Matin</title>
-                     <title level="j" xml:lang="fr-Arab-AR">المايتن</title>
-                     <idno change="#d2e167" type="oape">473</idno>
-                     <textLang mainLang="fr"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
+                  <monogr xml:lang="en">
                      <title level="j">The Morning Post</title>
                      <title level="j" xml:lang="en-Arab-AR">المورنن بوست</title>
                      <idno change="#d2e167" type="oape">264</idno>
@@ -4016,7 +4002,7 @@
                      <biblScope from="1" to="1" unit="issue"/>
                   </monogr>
                </biblStruct>
-               <biblStruct>
+               <biblStruct type="periodical">
                   <monogr>
                      <title level="j" xml:lang="ar">الرقيب</title>
                      <idno change="#d2e167" type="oape">529</idno>
@@ -4026,7 +4012,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct>
+               <biblStruct type="periodical">
                   <monogr>
                      <title level="j" xml:lang="ar">الرقيب</title>
                      <idno change="#d2e167" type="oape">530</idno>
@@ -4453,18 +4439,6 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">العالم</title>
                      <idno change="#d2e167" type="oape">191</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العالم الإسلامي</title>
-                     <idno change="#d2e167" type="oape">192</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
