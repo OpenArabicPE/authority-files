@@ -9,9 +9,6 @@
     version="3.0">
     <xsl:output method="xml" encoding="UTF-8" indent="no" omit-xml-declaration="no" version="1.0"/>
     
-    <!-- identify the author of the change by means of a @xml:id -->
-    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
-    
     <!-- the plan:
     - enrich an existing bibliography by adding information **to** a master file 
     - already existing entries shall be enriched with clearly marked information.
@@ -23,6 +20,8 @@
     - biblScope/@source is empty -->
     
     <xsl:include href="functions.xsl"/>
+    <!-- identify the author of the change by means of a @xml:id -->
+<!--    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>-->
     
      <xsl:param name="p_url-master"
         select="'../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
@@ -151,25 +150,25 @@
             <!-- select a biblStruct in the external file that matches $v_base by title, editors etc. -->
             <xsl:choose>
                 <!-- multiple matches -->
-                <xsl:when test="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)][@type = $v_type][@subtype = $v_subtype]">
+                <xsl:when test="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-characters(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-characters(.)][@type = $v_type][@subtype = $v_subtype]">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
                             <xsl:text>match(es) in the external file based on title, @type, @subtype</xsl:text>
                         </xsl:message>
                     </xsl:if>
-                    <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)][@type = $v_type][@subtype = $v_subtype]"/>
+                    <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-characters(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-characters(.)][@type = $v_type][@subtype = $v_subtype]"/>
                 </xsl:when>
                 <!-- single matches -->
-                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)]) = 1">
+                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-characters(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-characters(.)]) = 1">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
                             <xsl:text>one match in the external file</xsl:text>
                         </xsl:message>
                     </xsl:if>
-                    <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)]"/>
+                    <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-characters(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-characters(.)]"/>
                 </xsl:when>
                 <!-- multiple matches -->
-                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-name(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-name(.)]) gt 1">
+                <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-characters(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-characters(.)]) gt 1">
                     <!-- better message needed -->
                     <xsl:message terminate="no">
                         <xsl:text>more than one match in the external file</xsl:text>
