@@ -434,10 +434,11 @@
         <!-- write content to variable in order to then generate a unique @xml:id -->
         <xsl:variable name="v_output">
             <xsl:element name="tei:persName">
-                <xsl:apply-templates select="$v_persname/@xml:lang"/>
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                 <xsl:attribute name="type" select="'noAddName'"/>
+                <!-- reproduce language attributes -->
+                <xsl:apply-templates select="$v_persname/@xml:lang" mode="m_identity-transform"/>
                 <xsl:apply-templates mode="m_no-ids" select="$v_persname/tei:surname | $v_persname/tei:forename"/>
             </xsl:element>
         </xsl:variable>
@@ -445,7 +446,7 @@
         <xsl:copy select="$v_output/tei:persName">
             <!-- generate xml:id -->
             <xsl:attribute name="xml:id" select="oape:generate-xml-id($v_output/tei:persName)"/>
-            <xsl:apply-templates select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"/>
+            <xsl:apply-templates select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"  mode="m_identity-transform"/>
         </xsl:copy>
     </xsl:function>
     <xsl:function name="oape:name-flattened">
@@ -455,14 +456,15 @@
         <!-- write content to variable in order to then generate a unique @xml:id -->
         <xsl:variable name="v_output">
             <xsl:element name="tei:persName">
-                <xsl:apply-templates select="$v_persname/@xml:lang"/>
                 <!-- document change -->
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                <xsl:attribute name="type" select="'flattened'"/>
                 <!-- the flattened string should point back to its origin -->
                 <xsl:if test="$v_persname/@xml:id">
                     <xsl:attribute name="corresp" select="concat('#', $v_persname/@xml:id)"/>
                 </xsl:if>
-                <xsl:attribute name="type" select="'flattened'"/>
+                <!-- reproduce language attributes -->
+                <xsl:apply-templates select="$v_persname/@xml:lang"  mode="m_identity-transform"/>
                 <!-- content -->
                 <xsl:value-of select="oape:string-remove-spaces(oape:string-normalise-characters($v_persname))"/>
             </xsl:element>
@@ -471,7 +473,8 @@
         <xsl:copy select="$v_output/tei:persName">
             <!-- generate xml:id -->
             <xsl:attribute name="xml:id" select="oape:generate-xml-id($v_output/tei:persName)"/>
-            <xsl:apply-templates select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"/>
+            <xsl:apply-templates select="$v_output/tei:persName/@*"  mode="m_identity-transform"/>
+            <xsl:apply-templates select="$v_output/tei:persName/node()"  mode="m_identity-transform"/>
         </xsl:copy>
     </xsl:function>
     <!-- replicate everything except @xml:id -->
@@ -490,6 +493,10 @@
     <xsl:template match="tei:persName | tei:forename | tei:surname | tei:addName | tei:roleName | @*" mode="m_mark-up" priority="10">
         <xsl:copy>
             <xsl:apply-templates mode="m_identity-transform" select="@*"/>
+            <!-- add @xml:id if it isn't there -->
+            <xsl:if test="not(@xml:id)">
+                <xsl:attribute name="xml:id" select="oape:generate-xml-id(.)"/>
+            </xsl:if>
             <xsl:apply-templates mode="m_mark-up" select="node()"/>
         </xsl:copy>
     </xsl:template>
