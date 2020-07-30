@@ -21,12 +21,11 @@
     
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
-    <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" name="xml"
+    <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" 
         omit-xml-declaration="no"/>
     <!--<xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes"
         name="xml_indented" exclude-result-prefixes="#all"/>-->
     <xsl:include href="query-viaf.xsl"/>
-    <xsl:include href="functions.xsl"/>
     
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master" select="'../data/tei/personography_OpenArabicPE.TEIP5.xml'"/>
@@ -47,10 +46,14 @@
     </xsl:template>-->
     <!-- run on root -->
     <xsl:template match="/">
+        <xsl:copy>
         <xsl:element name="tei:listPerson">
 <!--            <xsl:copy-of select="$v_persons-source"/>-->
             <xsl:apply-templates mode="m_extract-new-names" select="$v_persons-source/descendant::tei:person"/>
         </xsl:element>
+            <!-- document changes -->
+            
+        </xsl:copy>
     </xsl:template>
     <!-- variable to collect all persNames found in this file -->
     <!--- this transformation is run on in a list containing tei:person with tei:persName and tei:idno children -->

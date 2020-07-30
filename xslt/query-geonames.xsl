@@ -16,7 +16,8 @@
     <xsl:include href="convert_geonames-to-tei_functions.xsl"/>
     <xsl:include href="../data/api-credentials/api-credentials.xsl"/>
     <!-- trigger debugging: paramter is loaded from OpenArabicPE_parameters.xsl included in parent stylesheet  -->
-    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+<!--    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>-->
+    <xsl:include href="functions.xsl"/>
     <!-- this param establishes the path to the folder holding individual authority files from GeoNames. The file path is relative to this stylesheet!  -->
     <xsl:param name="p_path-authority-files" select="'../data/geonames/'"/>
     

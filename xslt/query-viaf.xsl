@@ -15,6 +15,7 @@
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml"
         name="xml_indented" omit-xml-declaration="no"/>
     <xsl:include href="convert_viaf-to-tei_functions.xsl"/>
+    <xsl:include href="functions.xsl"/>
     
     <!-- the file path is relative to this stylesheet!  -->
     <xsl:param name="p_viaf-file-path" select="'../data/viaf/'"/>
