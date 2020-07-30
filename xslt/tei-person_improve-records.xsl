@@ -14,7 +14,6 @@
     <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <xsl:include href="query-viaf.xsl"/>
-    <xsl:include href="functions.xsl"/>
     
     <!-- variables for OpenArabicPE IDs -->
     <xsl:variable name="v_oape-id-count" select="count(//tei:person/tei:idno[@type='oape'])"/>
