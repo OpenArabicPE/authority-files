@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
    xmlns:zot="https://zotero.org">
    <teiHeader>
@@ -24,6 +19,10 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <tei:change when="2020-07-30" who="#pers_TG" xml:id="d2e423" xml:lang="en"
+            >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag>.</tei:change>
+         <tei:change when="2020-07-30" who="#pers_TG" xml:id="d2e414" xml:lang="en"
+            >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag>.</tei:change>
          <tei:change when="2020-07-30" who="#pers_TG" xml:id="d3e399" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml"
             >../data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>) and VIAF to <tei:gi>persName</tei:gi>s without such references based on <tei:gi>person</tei:gi>s in the local authority file. If the source <tei:gi>persName</tei:gi> did not contain any further TEI mark-up, this has been added from the local authority file.</tei:change>
          <change when="2020-07-29" who="#pers_TG" xml:id="d3e723" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
@@ -1759,463 +1758,6 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">أدلة الترقي</title>
-                     <idno change="#d2e167" type="oape">68</idno>
-                     <textLang mainLang="fr"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_9.TEIP5.xml#bibl_13.d1e5093" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">أميركا الشمالية</title>
-                     <idno change="#d2e167" type="oape">70</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">إقدام</title>
-                     <idno change="#d2e167" type="oape">71</idno>
-                     <textLang mainLang="ar"/>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6834.d2e56280"> <persName change="#d3e399" ref="oape:pers:4117"> <tei:addName type="nisbah"
-                        >الخليلي</tei:addName> </persName> </editor>
-                     <imprint>
-                        <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6834.d2e56280"> <placeName change="#d5e176" ref="oape:place:300 geon:112931"
-                           >Teheran</placeName> </pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الآسياوية</title>
-                     <idno change="#d2e167" type="oape">74</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الآنال</title>
-                     <idno change="#d2e167" type="oape">75</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الآورلوك</title>
-                     <idno change="#d2e167" type="oape">76</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأثري</title>
-                     <idno change="#d2e167" type="oape">77</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct oape:frequency="monthly" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_8.TEIP5.xml#bibl_3.d2e2051" subtype="journal" type="periodical"
-                  xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأحكام</title>
-                     <title level="j" xml:lang="ar">الاحكام</title>
-                     <idno change="#d2e167" type="oape">78</idno>
-                     <editor source="../../../../OpenArabicPE/newspaper_thamarat-al-funun/tei/oclc_792755216-i_659.TEIP5.xml#pb_1.d2e208" type="owner"> <persName ref="oape:pers:4049" xml:lang="ar"
-                        >نقولا <tei:roleName change="#d3e399" type="title">افندي</tei:roleName> توما </persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date source="../../../../OpenArabicPE/newspaper_thamarat-al-funun/tei/oclc_792755216-i_659.TEIP5.xml#pb_1.d2e208" when="1887">1887</date>
-                        <pubPlace source="../../../../OpenArabicPE/newspaper_thamarat-al-funun/tei/oclc_792755216-i_659.TEIP5.xml#pb_1.d2e208"> <placeName change="#d5e176"
-                           ref="oape:place:226 geon:360630" xml:lang="en">Cairo</placeName> </pubPlace>
-                        <publisher/>
-                     </imprint>
-                     <biblScope from="1" to="64" unit="page"/>
-                  </monogr>
-               </biblStruct>
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأحوال</title>
-                     <idno change="#d2e167" type="oape">79</idno>
-                     <editor
-                        source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_8040.d2e73961 ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_2.d2e2874"
-                        > <persName change="#d3e399" ref="oape:pers:4138" xml:lang="ar">خليل <tei:addName type="nasab"> <tei:nameLink>بن</tei:nameLink> ميخائيل</tei:addName> <tei:addName type="nisbah"
-                        >البدوي</tei:addName> </persName> <persName change="#d3e399 #d2e414 #d3e399" ref="oape:pers:299 viaf:305214691"> <forename xml:lang="ar">خليل</forename> <surname xml:lang="ar"
-                        ><addName type="nisbah">البدوي</addName></surname></persName> </editor>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_2657.d2e21201"> <persName ref="oape:pers:4144" xml:lang="ar">سعيد عقل</persName> </editor>
-                     <editor change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_3.d2e2884"> <persName change="#d2e414" ref="oape:pers:4147"
-                        >سليم العقاد</persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <pubPlace change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#pubPlace_3.d2e2870"> <placeName change="#d5e387 #d2e414"
-                           ref="oape:place:26 geon:276781">بيروت</placeName> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأخبار</title>
-                     <idno change="#d2e167" type="oape">80</idno>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_8292.d2e75789"> <persName change="#d3e130" ref="oape:pers:1673" xml:lang="ar"
-                        >داود بركات</persName> </editor>
-                     <editor notBefore="1918" source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_1220.d2e12812"> <persName change="#d3e399" ref="oape:pers:4105" xml:lang="ar"
-                        >ابراهيم <tei:addName type="theophoric">عبد القادر</tei:addName> <tei:addName type="nisbah">المازني</tei:addName></persName> </editor>
-                     <editor notBefore="1918" source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_354.d2e3224"> <persName change="#d3e399" ref="oape:pers:4097" xml:lang="ar"
-                        >امين <tei:addName type="nisbah">الرافعي</tei:addName></persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date from="1898-07-29"/>
-                        <pubPlace> <placeName change="#d5e176" ref="oape:place:226 geon:360630" xml:lang="en">Cairo</placeName> </pubPlace>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct>
-                  <monogr>
-                     <title level="j" xml:lang="ar">الأخبار</title>
-                     <idno change="#d2e167" type="oape">81</idno>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_630.d2e4375"> <persName change="#d3e188 #d3e399" ref="oape:pers:819"> <forename xml:lang="ar"
-                        >رشيد</forename> <surname xml:lang="ar">عطية</surname></persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_630.d2e4375" when="1913">1913</date>
-                        <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_630.d2e4375"> <placeName>ريو دي جانيرو</placeName> </pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأرز</title>
-                     <idno change="#d2e167" type="oape">82</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأسبوع الأدبي</title>
-                     <idno change="#d2e167" type="oape">83</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_8.TEIP5.xml#bibl_9.d1e2481" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأقلام</title>
-                     <idno change="#d2e167" type="oape">84</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأمم</title>
-                     <idno change="#d2e167" type="oape">85</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأوتلوك</title>
-                     <idno change="#d2e167" type="oape">86</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأوتو</title>
-                     <idno change="#d2e167" type="oape">87</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأوقات</title>
-                     <idno change="#d2e167" type="oape">88</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأوقاف</title>
-                     <idno change="#d2e167" type="oape">89</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإخا</title>
-                     <idno change="#d2e167" type="oape">90</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct oape:frequency="biweekly" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإخاء</title>
-                     <title level="j" type="sub" xml:lang="ar">جريدة اسبوعية عمومية</title>
-                     <idno change="#d2e167" type="oape">91</idno>
-                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_23.d2e3806" type="owner"> <persName change="#d3e399"
-                        ref="oape:pers:4126">جبران مسّوح</persName> </editor>
-                     <editor><persName ref="oape:pers:4130">جميل مسوح</persName></editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <!--                        <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_2608.d2e29898"> <placeName xml:lang="en">Tehran</placeName> </pubPlace>-->
-                        <date when="1910-09-20" xml:lang="en">20 September 1910, Monday</date>
-                        <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_19.d2e3802"> <placeName
-                           ref="oape:place:175 geon:170017">حماه</placeName> </pubPlace>
-                     </imprint>
-                     <biblScope from="29" to="29" unit="issue">29</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإخراجات</title>
-                     <idno change="#d2e167" type="oape">92</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإرشاد</title>
-                     <idno change="#d2e167" type="oape">93</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإسلاميات</title>
-                     <idno change="#d2e167" type="oape">94</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإصلاح</title>
-                     <idno change="#d2e167" type="oape">95</idno>
-                     <ref>Tarrazi:4:14</ref>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_2083.d2e23134"> <persName change="#d3e130 #d3e399" ref="oape:pers:787 viaf:305214837"
-                        xml:lang="ar"><forename xml:lang="ar">احمد</forename><forename xml:lang="ar">حسن</forename><surname xml:lang="ar">طبارة</surname></persName> </editor>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_357.d2e3274"> <persName change="#d3e130 #d3e399" ref="oape:pers:1153 viaf:8827545" xml:lang="ar"
-                        >امين <addName type="khitab">ناصر الدين</addName></persName> </editor>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_2657.d2e21201"> <persName ref="oape:pers:4144" xml:lang="ar">سعيد عقل</persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date from="1913-05-10"/>
-                        <pubPlace> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإقبال</title>
-                     <title level="j" type="sub" xml:lang="ar">جريدة علمية تاريخية اخبارية فنية</title>
-                     <title level="j" xml:lang="ar-Latn-x-ijmes">al-Iqbāl</title>
-                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda ʿilmiyya tārīkhiyya akhbāriyya fanniyya</title>
-                     <idno change="#d2e167" type="oape">96</idno>
-                     <idno type="OCLC">1086411815</idno>
-                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_13.d2e3622" type="owner"> <persName change="#d3e399"
-                        ref="oape:pers:288 viaf:22151654727108281690"> <forename xml:lang="ar"><addName type="theophoric">عبد الباسط</addName></forename> <surname xml:lang="ar"><addName type="nisbah"
-                        >الانسي</addName></surname></persName> <persName change="#d3e399" ref="oape:pers:288 viaf:22151654727108281690" xml:lang="ar-Latn-x-ijmes"><forename xml:lang="ar-Latn-x-ijmes"
-                        >ʿAbd al Bāsiṭ</forename> <surname xml:lang="ar">al-Unsī</surname></persName> </editor>
-                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_14.d2e3632"> <persName ref="oape:pers:391 viaf:4812503"
-                        xml:lang="ar"><tei:roleName change="#d3e399" type="honorific">الشيخ</tei:roleName> <tei:addName change="#d3e399" type="khitab">محيي الدين</tei:addName>الخياط </persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date from="1902-04-09" to="1912">1902-1912</date>
-                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" from="1902-04-09" when-custom="1320-01-01">١ محرم سنة ١٣٢٠</date>
-                        <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" from="1902-04-09" when-custom="1318-01-27">٢٧ مارت ١٣١٨</date>
-                        <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_13.d2e3618"> <placeName change="#d5e176"
-                           ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> <placeName ref="oape:place:26 geon:276781">بيروت</placeName> </pubPlace>
-                        <publisher><orgName xml:lang="ar">المكتبة الانسية</orgName> <orgName xml:lang="ar-Latn-x-ijmes">al-Maktaba al-Unsiyya</orgName> </publisher>
-                     </imprint>
-                     <biblScope from="1" to="1" unit="volume"/>
-                     <biblScope from="1" to="1" unit="issue"/>
-                     <biblScope from="1" to="8" unit="page">1-8</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct oape:frequency="fortnightly" subtype="journal" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإنسانية</title>
-                     <title level="j" xml:lang="ar">مجلة علمية أخلاقية اجتماعية انتقادية عمرانية</title>
-                     <idno change="#d2e167" type="oape">97</idno>
-                     <editor
-                        source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792 ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_15.d2e1594 ../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792"
-                        type="owner" xml:lang="ar"> <persName change="#d3e130 #d3e188 #d3e399" ref="oape:pers:682" xml:lang="ar"> <roleName type="honorific">الشيخ</roleName> <forename>حسن</forename>
-                        <surname>الرزق</surname></persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <tei:date calendar="#cal_gregorian" change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#date_3.d2e1094" when="1910"> <tei:num
-                           type="auto-markup" value="1910" xml:lang="ar">١٩١٠</tei:num> </tei:date>
-                        <date source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792" to="1912">1912</date>
-                        <pubPlace
-                           source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792 ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#pubPlace_15.d2e1583"
-                           > <placeName change="#d5e176" ref="oape:place:175 geon:170017" xml:lang="ar">حماة</placeName> </pubPlace>
-                     </imprint>
-                     <biblScope from="1" to="32" unit="page"/>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاتحاد</title>
-                     <idno change="#d2e167" type="oape">99</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاحياء</title>
-                     <idno change="#d2e167" type="oape">101</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاستعمار</title>
-                     <idno change="#d2e167" type="oape">102</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاستقلال</title>
-                     <idno change="#d2e167" type="oape">103</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاقتصاد</title>
-                     <title level="j" xml:lang="ar">زراعية صناعية تجارية مصورة</title>
-                     <idno change="#d2e167" type="oape">104</idno>
-                     <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_22.d2e1716"> <persName ref="oape:pers:35"
-                        >أنيبال أبيلا</persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                     <biblScope from="1" to="32" unit="page"/>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاقتصاديين</title>
-                     <idno change="#d2e167" type="oape">105</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="fr-Arab-AR">الالستراسيون</title>
                      <title level="j" xml:lang="fr">L'Illustration</title>
                      <idno change="#d2e167" type="oape">107</idno>
@@ -2227,154 +1769,6 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الانثربوس</title>
-                     <idno change="#d2e167" type="oape">108</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الايكو</title>
-                     <idno change="#d2e167" type="oape">109</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_7.TEIP5.xml#bibl_1.d2e1934" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البابيروس</title>
-                     <idno change="#d2e167" type="oape">110</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                     <biblScope change="#d3e932" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_7.TEIP5.xml#bibl_1.d2e1934" unit="issue">العدد الأخير</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477" subtype="newspaper" type="periodical"
-                  xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البرهان</title>
-                     <idno change="#d2e167" type="oape">116</idno>
-                     <editor change="#d3e439" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477"><persName change="#d3e399"
-                        ref="oape:pers:3406" xml:lang="ar"> <roleName type="honorific">الشيخ</roleName><addName type="theophoric">عبد القادر</addName> <addName type="nisbah"
-                        >المغربي</addName></persName></editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <pubPlace change="#d3e439" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477"
-                           ><placeName>طرابلس الشام</placeName></pubPlace>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_9.TEIP5.xml#bibl_3.d2e1738" subtype="newspaper" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البريس</title>
-                     <idno change="#d2e167" type="oape">117</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البشير</title>
-                     <idno change="#d2e167" type="oape">118</idno>
-                     <idno type="OCLC">472081984</idno>
-                     <idno type="OCLC">1034540410</idno>
-                     <editor source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_5.TEIP5.xml#p_4399.d2e27065"> <persName change="#d3e188 #d3e399" ref="oape:pers:1159 viaf:305214858"
-                        >انطون <roleName type="title">أفندي</roleName>الجميل</persName> </editor>
-                     <editor> <orgName>الاباء اليسوعيون</orgName> </editor>
-                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_9.d2e3518"> <persName change="#d3e399"
-                        ref="oape:pers:933 viaf:22683375"> <roleName subtype="religious" type="rank">الاب</roleName> <forename xml:lang="ar">لويس</forename> <surname xml:lang="ar"
-                        >معلوف</surname></persName> </editor>
-                     <editor source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_2.TEIP5.xml#p_3499.d2e20704"> <persName change="#d3e399" ref="oape:pers:4195"> <forename>خليل</forename>
-                        <surname>بدوي</surname> <addName type="nisbah">الدمشقي</addName> </persName> </editor>
-                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_552.d2e5353"> <persName change="#d3e399" ref="oape:pers:4099">انطون <tei:addName type="nisbah"
-                        >الصالحاني</tei:addName></persName> </editor>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date from="1870-09-03"/>
-                        <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_9.d2e3507"> <placeName ref="oape:place:26 geon:276781"
-                           >بيروت</placeName> <placeName xml:lang="en">Beirut</placeName> </pubPlace>
-                        <publisher change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#publisher_2.d2e3511"> <orgName>الآباء اليسوعيون</orgName>
-                        </publisher>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_3.TEIP5.xml#bibl_1.d2e2045" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الديوان</title>
-                     <idno change="#d2e167" type="oape">63</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                     <biblScope change="#d3e911" from="3" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_3.TEIP5.xml#bibl_1.d2e2045" to="3" unit="volume" xml:lang="ar"
-                        >الجزء الثالث</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العلم في القرن العشرين</title>
-                     <title level="j" xml:lang="ar">العلم في القرن ال عشرين</title>
-                     <idno change="#d2e167" type="oape">66</idno>
-                     <tei:idno type="OCLC">265304396</tei:idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">قره سنان</title>
-                     <idno change="#d2e167" type="oape">73</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="fr">
-                  <monogr xml:lang="fr">
-                     <title level="j" xml:lang="ar">مستندات الترقي</title>
-                     <title level="j" xml:lang="fr">Les Documents du Progrès</title>
-                     <idno change="#d2e167" type="oape">67</idno>
-                     <textLang mainLang="fr"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-            </listBibl>
-            <listBibl>
                <biblStruct type="periodical" xml:lang="fr">
                   <monogr xml:lang="fr">
                      <title level="j" xml:lang="fr">التربية</title>
@@ -3060,6 +2454,290 @@
                      </imprint>
                   </monogr>
                </biblStruct>
+               <biblStruct source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1" subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="fa">الحبل المتين</title>
+                     <idno change="#d2e167" type="oape">141</idno>
+                     <editor change="#d3e505" source=" ../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1" type="owner"><persName change="#d3e399"
+                        ref="oape:pers:4128"> <tei:addName type="khitab">جلال الدين</tei:addName> <tei:addName type="nisbah">الحسيني</tei:addName> </persName></editor>
+                     <textLang change="#d3e505" mainLang="fa" source=" ../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1">الفارسية</textLang>
+                     <imprint>
+                        <date/>
+                        <pubPlace change="#d3e505" source=" ../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1"
+                           ><placeName>كلكتة</placeName> (<placeName>الهند</placeName>)</pubPlace>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="fr">l'humanité</title>
+                     <title level="j" xml:lang="fr-Arab-AR">لومانيتي</title>
+                     <idno change="#d2e167" type="oape">355</idno>
+                     <textLang mainLang="fr"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e957" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_1.TEIP5.xml#bibl_9.d2e5099" subtype="journal" type="periodical">
+                  <monogr>
+                     <title level="j">القرن العشرين</title>
+                     <idno change="#d2e414" type="oape">547</idno>
+                     <textLang change="#d3e957" mainLang="fr">الفرنسية</textLang>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#" subtype="newspaperArticle" type="periodical">
+                  <monogr>
+                     <title level="j">طنين</title>
+                     <idno change="#d2e414" type="oape">550</idno>
+                     <textLang mainLang="ota"/>
+                     <imprint>
+                        <pubPlace><placeName>الاستانة</placeName></pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" ns:frequency="monthly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064"
+                  subtype="journal" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
+                  <monogr>
+                     <title level="j" rend="quotation-marks">مجلة المنتدى الأدبي</title>
+                     <idno change="#d2e414" type="oape">551</idno>
+                     <textLang mainLang="ar"/>
+                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064"><persName change="#d3e399"
+                        ref="oape:pers:4112">احمد عزت <tei:roleName type="title">افندي</tei:roleName> <tei:addName type="nisbah">العظمي</tei:addName></persName></editor>
+                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064"> <persName change="#d3e399"
+                        ref="oape:pers:4155">عاصم <tei:roleName type="title">افندي</tei:roleName> بسيسو</persName></editor>
+                     <imprint>
+                        <pubPlace change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064">
+                           <placeName>الاستانة</placeName></pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="48" unit="page"><num resp="#pers_TG" type="auto-markup" value="48" xml:lang="ar">٤٨</num> صفحة</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#" subtype="journal" type="periodical">
+                  <monogr>
+                     <title level="j">لسان العرب</title>
+                     <idno change="#d2e414" type="oape">552</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" ns:frequency="weekly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112"
+                  subtype="journal" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
+                  <monogr>
+                     <title level="j" rend="quotation-marks">المستقبل</title>
+                     <title level="j" type="sub">مجلة علمية أدبية عمرانية أسبوعية</title>
+                     <idno change="#d2e414" type="oape">553</idno>
+                     <textLang mainLang="ar"/>
+                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112"> <persName
+                        ref="oape:pers:2831 viaf:81983937">سلامة <tei:roleName change="#d3e399" type="title">افندي</tei:roleName> موسى </persName></editor>
+                     <imprint>
+                        <pubPlace change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112">
+                           <placeName>القاهرة</placeName></pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="20" unit="page"><num resp="#pers_TG" subtype="d2" type="auto-markup" value="20" xml:lang="ar">عشرين</num> صفحة</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e6294">
+                  <monogr>
+                     <title level="j">فتى العرب</title>
+                     <idno change="#d2e414" type="oape">554</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458" subtype="newspaper"
+                  type="periodical">
+                  <monogr>
+                     <title level="j">الجديد</title>
+                     <idno change="#d2e414" type="oape">555</idno>
+                     <textLang mainLang="ar"/>
+                     <editor change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458"><persName
+                        ref="oape:pers:2606">نجيب <tei:roleName change="#d3e399" type="title">افندي</tei:roleName> نسيم طراد </persName></editor>
+                     <editor change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458"><persName change="#d3e399"
+                        ref="oape:pers:4163">فارس <tei:roleName type="title">افندي</tei:roleName> نجم</persName></editor>
+                     <imprint>
+                        <pubPlace change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458"
+                           ><placeName>سان باولو</placeName></pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e439" ns:frequency="weekly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"
+                  subtype="newspaper" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
+                  <monogr>
+                     <title level="j">البيرق</title>
+                     <idno change="#d2e414" type="oape">556</idno>
+                     <textLang mainLang="ar"/>
+                     <editor change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"><persName change="#d3e399"
+                        ref="oape:pers:4185">نجيب <tei:roleName type="title">افندي</tei:roleName> شديد عقل</persName></editor>
+                     <editor change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"><persName
+                        ref="oape:pers:1803">سعيد <tei:roleName change="#d3e399" type="title">افندي</tei:roleName> فاضل عقل </persName></editor>
+                     <imprint>
+                        <pubPlace change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"
+                           ><placeName>الحدث</placeName></pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174" subtype="journal"
+                  type="periodical">
+                  <monogr>
+                     <title level="j">الشرق المصور</title>
+                     <idno change="#d2e414" type="oape">557</idno>
+                     <textLang change="#d3e723" mainLang="ar" otherLangs="ota"
+                        source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174">بالعربية والتركية</textLang>
+                     <imprint>
+                        <pubPlace change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174"
+                           ><placeName>دمشق</placeName></pubPlace>
+                        <publisher change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174">أدارة <title level="j"
+                           >الشرق</title></publisher>
+                     </imprint>
+                     <biblScope from="1" to="16" unit="page"><num resp="#pers_TG" type="auto-markup" value="16" xml:lang="ar">١٦</num> صفحة</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_4.d2e6282" type="periodical">
+                  <monogr>
+                     <title level="j">مجلة العالم الإسلامي الالمانية</title>
+                     <idno change="#d2e414" type="oape">558</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="issue">العدد الأول</biblScope>
+                     <biblScope from="1" to="61" unit="page"><num resp="#pers_TG" type="auto-markup" value="61" xml:lang="ar">٦١</num> صفحة</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e723" ns:frequency="fortnightly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304"
+                  subtype="journal" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
+                  <monogr>
+                     <title level="j" xml:lang="ota">مصور جول</title>
+                     <idno change="#d2e414" type="oape">559</idno>
+                     <textLang change="#d3e723" mainLang="ota" otherLangs="ar"
+                        source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304">بالتركية والعربية</textLang>
+                     <editor change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304">مفتش منزل البادية</editor>
+                     <imprint>
+                        <pubPlace change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304"
+                           ><placeName>بئر سبع</placeName></pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="issue">العدد الأول</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_6.d2e6514" type="periodical">
+                  <monogr>
+                     <title level="j">جريدة غرفة التجارة العثمانية</title>
+                     <idno change="#d2e414" type="oape">560</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j">Le Matin</title>
+                     <title level="j" xml:lang="fr-Arab-AR">المايتن</title>
+                     <idno change="#d2e167" type="oape">473</idno>
+                     <textLang mainLang="fr"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j">The Morning Post</title>
+                     <title level="j" xml:lang="en-Arab-AR">المورنن بوست</title>
+                     <idno change="#d2e167" type="oape">264</idno>
+                     <textLang mainLang="en"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct subtype="newspaper" type="periodical" xml:lang="ota">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ota">جريدة حوادث</title>
+                     <idno change="#d2e167" type="oape">302</idno>
+                     <textLang mainLang="ota"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ota">شوراي أمت</title>
+                     <idno change="#d2e167" type="oape">325</idno>
+                     <textLang mainLang="ota"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ota">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ota">عثمانلي رساملر جمعيتي غزته سي</title>
+                     <idno change="#d2e167" type="oape">333</idno>
+                     <textLang mainLang="ota"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ota">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ota">قرة كوز</title>
+                     <idno change="#d2e167" type="oape">342</idno>
+                     <textLang mainLang="ota"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">أدلة الترقي</title>
+                     <idno change="#d2e167" type="oape">68</idno>
+                     <textLang mainLang="fr"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_9.TEIP5.xml#bibl_13.d1e5093" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">أميركا الشمالية</title>
+                     <idno change="#d2e167" type="oape">70</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">إطالة القامة</title>
@@ -3069,6 +2747,19 @@
                         <date/>
                         <pubPlace/>
                         <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">إقدام</title>
+                     <idno change="#d2e167" type="oape">71</idno>
+                     <textLang mainLang="ar"/>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6834.d2e56280"> <persName change="#d3e399" ref="oape:pers:4117"> <tei:addName type="nisbah"
+                        >الخليلي</tei:addName> </persName> </editor>
+                     <imprint>
+                        <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6834.d2e56280"> <placeName change="#d5e176" ref="oape:place:300 geon:112931"
+                           >Teheran</placeName> </pubPlace>
                      </imprint>
                   </monogr>
                </biblStruct>
@@ -3088,6 +2779,18 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">اختلاف الشرائع وغرائبها</title>
                      <idno change="#d2e167" type="oape">409</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الآسياوية</title>
+                     <idno change="#d2e167" type="oape">74</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
@@ -3122,8 +2825,136 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الآنال</title>
+                     <idno change="#d2e167" type="oape">75</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الآورلوك</title>
+                     <idno change="#d2e167" type="oape">76</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الأبحاث العلمية</title>
                      <idno change="#d2e167" type="oape">412</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأثري</title>
+                     <idno change="#d2e167" type="oape">77</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct oape:frequency="monthly" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_8.TEIP5.xml#bibl_3.d2e2051" subtype="journal" type="periodical"
+                  xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأحكام</title>
+                     <title level="j" xml:lang="ar">الاحكام</title>
+                     <idno change="#d2e167" type="oape">78</idno>
+                     <editor source="../../../../OpenArabicPE/newspaper_thamarat-al-funun/tei/oclc_792755216-i_659.TEIP5.xml#pb_1.d2e208" type="owner"> <persName ref="oape:pers:4049" xml:lang="ar"
+                        >نقولا <tei:roleName change="#d3e399" type="title">افندي</tei:roleName> توما </persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date source="../../../../OpenArabicPE/newspaper_thamarat-al-funun/tei/oclc_792755216-i_659.TEIP5.xml#pb_1.d2e208" when="1887">1887</date>
+                        <pubPlace source="../../../../OpenArabicPE/newspaper_thamarat-al-funun/tei/oclc_792755216-i_659.TEIP5.xml#pb_1.d2e208"> <placeName change="#d5e176"
+                           ref="oape:place:226 geon:360630" xml:lang="en">Cairo</placeName> </pubPlace>
+                        <publisher/>
+                     </imprint>
+                     <biblScope from="1" to="64" unit="page"/>
+                  </monogr>
+               </biblStruct>
+               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأحوال</title>
+                     <idno change="#d2e167" type="oape">79</idno>
+                     <editor
+                        source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_8040.d2e73961 ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_2.d2e2874"
+                        > <persName change="#d3e399" ref="oape:pers:4138" xml:lang="ar">خليل <tei:addName type="nasab"> <tei:nameLink>بن</tei:nameLink> ميخائيل</tei:addName> <tei:addName type="nisbah"
+                        >البدوي</tei:addName> </persName> <persName change="#d3e399 #d2e414 #d3e399" ref="oape:pers:299 viaf:305214691"> <forename xml:lang="ar">خليل</forename> <surname xml:lang="ar"
+                        ><addName type="nisbah">البدوي</addName></surname></persName> </editor>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_2657.d2e21201"> <persName ref="oape:pers:4144" xml:lang="ar">سعيد عقل</persName> </editor>
+                     <editor change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_3.d2e2884"> <persName change="#d2e414" ref="oape:pers:4147"
+                        >سليم العقاد</persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#pubPlace_3.d2e2870"> <placeName change="#d5e387 #d2e414"
+                           ref="oape:place:26 geon:276781">بيروت</placeName> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأخبار</title>
+                     <idno change="#d2e167" type="oape">80</idno>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_8292.d2e75789"> <persName change="#d3e130" ref="oape:pers:1673" xml:lang="ar"
+                        >داود بركات</persName> </editor>
+                     <editor notBefore="1918" source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_1220.d2e12812"> <persName change="#d3e399" ref="oape:pers:4105" xml:lang="ar"
+                        >ابراهيم <tei:addName type="theophoric">عبد القادر</tei:addName> <tei:addName type="nisbah">المازني</tei:addName></persName> </editor>
+                     <editor notBefore="1918" source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_354.d2e3224"> <persName change="#d3e399" ref="oape:pers:4097" xml:lang="ar"
+                        >امين <tei:addName type="nisbah">الرافعي</tei:addName></persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date from="1898-07-29"/>
+                        <pubPlace> <placeName change="#d5e176" ref="oape:place:226 geon:360630" xml:lang="en">Cairo</placeName> </pubPlace>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct>
+                  <monogr>
+                     <title level="j" xml:lang="ar">الأخبار</title>
+                     <idno change="#d2e167" type="oape">81</idno>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_630.d2e4375"> <persName change="#d3e188 #d3e399" ref="oape:pers:819"> <forename xml:lang="ar"
+                        >رشيد</forename> <surname xml:lang="ar">عطية</surname></persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_630.d2e4375" when="1913">1913</date>
+                        <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_630.d2e4375"> <placeName>ريو دي جانيرو</placeName> </pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأرز</title>
+                     <idno change="#d2e167" type="oape">82</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأسبوع الأدبي</title>
+                     <idno change="#d2e167" type="oape">83</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
@@ -3197,6 +3028,30 @@
                      </imprint>
                   </monogr>
                </biblStruct>
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_8.TEIP5.xml#bibl_9.d1e2481" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأقلام</title>
+                     <idno change="#d2e167" type="oape">84</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأمم</title>
+                     <idno change="#d2e167" type="oape">85</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الأنثروبوس</title>
@@ -3206,6 +3061,355 @@
                         <date/>
                         <pubPlace/>
                         <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأوتلوك</title>
+                     <idno change="#d2e167" type="oape">86</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأوتو</title>
+                     <idno change="#d2e167" type="oape">87</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأوقات</title>
+                     <idno change="#d2e167" type="oape">88</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الأوقاف</title>
+                     <idno change="#d2e167" type="oape">89</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإخا</title>
+                     <idno change="#d2e167" type="oape">90</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct oape:frequency="biweekly" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإخاء</title>
+                     <title level="j" type="sub" xml:lang="ar">جريدة اسبوعية عمومية</title>
+                     <idno change="#d2e167" type="oape">91</idno>
+                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_23.d2e3806" type="owner"> <persName change="#d3e399"
+                        ref="oape:pers:4126">جبران مسّوح</persName> </editor>
+                     <editor><persName ref="oape:pers:4130">جميل مسوح</persName></editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <!--                        <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_2608.d2e29898"> <placeName xml:lang="en">Tehran</placeName> </pubPlace>-->
+                        <date when="1910-09-20" xml:lang="en">20 September 1910, Monday</date>
+                        <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_19.d2e3802"> <placeName
+                           ref="oape:place:175 geon:170017">حماه</placeName> </pubPlace>
+                     </imprint>
+                     <biblScope from="29" to="29" unit="issue">29</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإخراجات</title>
+                     <idno change="#d2e167" type="oape">92</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإرشاد</title>
+                     <idno change="#d2e167" type="oape">93</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإسلاميات</title>
+                     <idno change="#d2e167" type="oape">94</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإصلاح</title>
+                     <idno change="#d2e167" type="oape">95</idno>
+                     <ref>Tarrazi:4:14</ref>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_2083.d2e23134"> <persName change="#d3e130 #d3e399" ref="oape:pers:787 viaf:305214837"
+                        xml:lang="ar"><forename xml:lang="ar">احمد</forename><forename xml:lang="ar">حسن</forename><surname xml:lang="ar">طبارة</surname></persName> </editor>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_357.d2e3274"> <persName change="#d3e130 #d3e399" ref="oape:pers:1153 viaf:8827545" xml:lang="ar"
+                        >امين <addName type="khitab">ناصر الدين</addName></persName> </editor>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_2657.d2e21201"> <persName ref="oape:pers:4144" xml:lang="ar">سعيد عقل</persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date from="1913-05-10"/>
+                        <pubPlace> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإقبال</title>
+                     <title level="j" type="sub" xml:lang="ar">جريدة علمية تاريخية اخبارية فنية</title>
+                     <title level="j" xml:lang="ar-Latn-x-ijmes">al-Iqbāl</title>
+                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda ʿilmiyya tārīkhiyya akhbāriyya fanniyya</title>
+                     <idno change="#d2e167" type="oape">96</idno>
+                     <idno type="OCLC">1086411815</idno>
+                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_13.d2e3622" type="owner"> <persName change="#d3e399"
+                        ref="oape:pers:288 viaf:22151654727108281690"> <forename xml:lang="ar"><addName type="theophoric">عبد الباسط</addName></forename> <surname xml:lang="ar"><addName type="nisbah"
+                        >الانسي</addName></surname></persName> <persName change="#d3e399" ref="oape:pers:288 viaf:22151654727108281690" xml:lang="ar-Latn-x-ijmes"><forename xml:lang="ar-Latn-x-ijmes"
+                        >ʿAbd al Bāsiṭ</forename> <surname xml:lang="ar">al-Unsī</surname></persName> </editor>
+                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_14.d2e3632"> <persName ref="oape:pers:391 viaf:4812503"
+                        xml:lang="ar"><tei:roleName change="#d3e399" type="honorific">الشيخ</tei:roleName> <tei:addName change="#d3e399" type="khitab">محيي الدين</tei:addName>الخياط </persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date from="1902-04-09" to="1912">1902-1912</date>
+                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" from="1902-04-09" when-custom="1320-01-01">١ محرم سنة ١٣٢٠</date>
+                        <date calendar="#cal_ottomanfiscal" datingMethod="#cal_ottomanfiscal" from="1902-04-09" when-custom="1318-01-27">٢٧ مارت ١٣١٨</date>
+                        <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_13.d2e3618"> <placeName change="#d5e176"
+                           ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> <placeName ref="oape:place:26 geon:276781">بيروت</placeName> </pubPlace>
+                        <publisher><orgName xml:lang="ar">المكتبة الانسية</orgName> <orgName xml:lang="ar-Latn-x-ijmes">al-Maktaba al-Unsiyya</orgName> </publisher>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="volume"/>
+                     <biblScope from="1" to="1" unit="issue"/>
+                     <biblScope from="1" to="8" unit="page">1-8</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct oape:frequency="fortnightly" subtype="journal" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الإنسانية</title>
+                     <title level="j" xml:lang="ar">مجلة علمية أخلاقية اجتماعية انتقادية عمرانية</title>
+                     <idno change="#d2e167" type="oape">97</idno>
+                     <editor
+                        source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792 ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_15.d2e1594 ../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792"
+                        type="owner" xml:lang="ar"> <persName change="#d3e130 #d3e188 #d3e399" ref="oape:pers:682" xml:lang="ar"> <roleName type="honorific">الشيخ</roleName> <forename>حسن</forename>
+                        <surname>الرزق</surname></persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <tei:date calendar="#cal_gregorian" change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#date_3.d2e1094" when="1910"> <tei:num
+                           type="auto-markup" value="1910" xml:lang="ar">١٩١٠</tei:num> </tei:date>
+                        <date source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792" to="1912">1912</date>
+                        <pubPlace
+                           source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792 ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#pubPlace_15.d2e1583"
+                           > <placeName change="#d5e176" ref="oape:place:175 geon:170017" xml:lang="ar">حماة</placeName> </pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="32" unit="page"/>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الاتحاد</title>
+                     <idno change="#d2e167" type="oape">99</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الاحياء</title>
+                     <idno change="#d2e167" type="oape">101</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الاستعمار</title>
+                     <idno change="#d2e167" type="oape">102</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الاستقلال</title>
+                     <idno change="#d2e167" type="oape">103</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الاقتصاد</title>
+                     <title level="j" xml:lang="ar">زراعية صناعية تجارية مصورة</title>
+                     <idno change="#d2e167" type="oape">104</idno>
+                     <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_22.d2e1716"> <persName ref="oape:pers:35"
+                        >أنيبال أبيلا</persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                     <biblScope from="1" to="32" unit="page"/>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الاقتصاديين</title>
+                     <idno change="#d2e167" type="oape">105</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الانثربوس</title>
+                     <idno change="#d2e167" type="oape">108</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الايكو</title>
+                     <idno change="#d2e167" type="oape">109</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_7.TEIP5.xml#bibl_1.d2e1934" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">البابيروس</title>
+                     <idno change="#d2e167" type="oape">110</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                     <biblScope change="#d3e932" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_7.TEIP5.xml#bibl_1.d2e1934" unit="issue">العدد الأخير</biblScope>
+                  </monogr>
+               </biblStruct>
+               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477" subtype="newspaper" type="periodical"
+                  xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">البرهان</title>
+                     <idno change="#d2e167" type="oape">116</idno>
+                     <editor change="#d3e439" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477"><persName change="#d3e399"
+                        ref="oape:pers:3406" xml:lang="ar"> <roleName type="honorific">الشيخ</roleName><addName type="theophoric">عبد القادر</addName> <addName type="nisbah"
+                        >المغربي</addName></persName></editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <pubPlace change="#d3e439" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477"
+                           ><placeName>طرابلس الشام</placeName></pubPlace>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_9.TEIP5.xml#bibl_3.d2e1738" subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">البريس</title>
+                     <idno change="#d2e167" type="oape">117</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">البشير</title>
+                     <idno change="#d2e167" type="oape">118</idno>
+                     <idno type="OCLC">472081984</idno>
+                     <idno type="OCLC">1034540410</idno>
+                     <editor source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_5.TEIP5.xml#p_4399.d2e27065"> <persName change="#d3e188 #d3e399" ref="oape:pers:1159 viaf:305214858"
+                        >انطون <roleName type="title">أفندي</roleName>الجميل</persName> </editor>
+                     <editor> <orgName>الاباء اليسوعيون</orgName> </editor>
+                     <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_9.d2e3518"> <persName change="#d3e399"
+                        ref="oape:pers:933 viaf:22683375"> <roleName subtype="religious" type="rank">الاب</roleName> <forename xml:lang="ar">لويس</forename> <surname xml:lang="ar"
+                        >معلوف</surname></persName> </editor>
+                     <editor source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_2.TEIP5.xml#p_3499.d2e20704"> <persName change="#d3e399" ref="oape:pers:4195"> <forename>خليل</forename>
+                        <surname>بدوي</surname> <addName type="nisbah">الدمشقي</addName> </persName> </editor>
+                     <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_552.d2e5353"> <persName change="#d3e399" ref="oape:pers:4099">انطون <tei:addName type="nisbah"
+                        >الصالحاني</tei:addName></persName> </editor>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date from="1870-09-03"/>
+                        <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_9.d2e3507"> <placeName ref="oape:place:26 geon:276781"
+                           >بيروت</placeName> <placeName xml:lang="en">Beirut</placeName> </pubPlace>
+                        <publisher change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#publisher_2.d2e3511"> <orgName>الآباء اليسوعيون</orgName>
+                        </publisher>
                      </imprint>
                   </monogr>
                </biblStruct>
@@ -3529,21 +3733,6 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1" subtype="newspaper" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="fa">الحبل المتين</title>
-                     <idno change="#d2e167" type="oape">141</idno>
-                     <editor change="#d3e505" source=" ../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1" type="owner"><persName change="#d3e399"
-                        ref="oape:pers:4128"> <tei:addName type="khitab">جلال الدين</tei:addName> <tei:addName type="nisbah">الحسيني</tei:addName> </persName></editor>
-                     <textLang change="#d3e505" mainLang="fa" source=" ../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1">الفارسية</textLang>
-                     <imprint>
-                        <date/>
-                        <pubPlace change="#d3e505" source=" ../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#bibl_1"
-                           ><placeName>كلكتة</placeName> (<placeName>الهند</placeName>)</pubPlace>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الحجاز</title>
@@ -3695,6 +3884,7 @@
                <biblStruct subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr>
                      <title level="j" xml:lang="ar">الدستور</title>
+                     <idno change="#d2e414" type="oape">543</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <pubPlace><placeName xml:lang="ar">البصرة‎</placeName></pubPlace>
@@ -3749,6 +3939,20 @@
                      </imprint>
                   </monogr>
                </biblStruct>
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_3.TEIP5.xml#bibl_1.d2e2045" type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">الديوان</title>
+                     <idno change="#d2e167" type="oape">63</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                     <biblScope change="#d3e911" from="3" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_3.TEIP5.xml#bibl_1.d2e2045" to="3" unit="volume" xml:lang="ar"
+                        >الجزء الثالث</biblScope>
+                  </monogr>
+               </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الرئيس</title>
@@ -3797,6 +4001,19 @@
                         <pubPlace/>
                         <publisher/>
                      </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e423" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_1.TEIP5.xml#bibl_3.d2e1454" subtype="newspaper" type="periodical" xml:lang="ar">
+                  <monogr>
+                     <title level="j" xml:lang="ar">الرصافة</title>
+                     <idno change="#d2e414" type="oape">545</idno>
+                     <textLang mainLang="ar"/>
+                     <editor><persName change="#d3e399" ref="oape:pers:4175">محمد صادق <tei:addName type="nisbah">الاعرجي</tei:addName></persName></editor>
+                     <imprint>
+                        <date calendar="#cal_gregorian" from="1910-06-17">1910-06-17</date>
+                        <pubPlace><placeName>Baghdad</placeName></pubPlace>
+                     </imprint>
+                     <biblScope from="1" to="1" unit="issue"/>
                   </monogr>
                </biblStruct>
                <biblStruct>
@@ -4071,6 +4288,7 @@
                <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الشرق</title>
+                     <idno change="#d2e414" type="oape">544</idno>
                      <editor type="owner"><persName ref="oape:pers:4132">حبيب برهوم</persName></editor>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4389,6 +4607,20 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">العصور</title>
                      <idno change="#d2e167" type="oape">200</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="ar">
+                  <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">العلم في القرن العشرين</title>
+                     <title level="j" xml:lang="ar">العلم في القرن ال عشرين</title>
+                     <idno change="#d2e167" type="oape">66</idno>
+                     <tei:idno type="OCLC">265304396</tei:idno>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
@@ -4798,18 +5030,6 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المايتن</title>
-                     <idno change="#d2e167" type="oape">473</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المباحث</title>
                      <title level="j" xml:lang="ar">مجلة المباحث</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة علمية ادبية فكاهية</title>
@@ -4849,18 +5069,6 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المتقتبس</title>
-                     <idno change="#d2e167" type="oape">230</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المجتمع وعلومه</title>
                      <idno change="#d2e167" type="oape">429</idno>
                      <textLang mainLang="ar"/>
@@ -4874,18 +5082,8 @@
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المجلة الآسياوية</title>
-                     <idno change="#d2e167" type="oape">231</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المجلة الآسيوية</title>
+                     <idno change="#d2e167" type="oape">231</idno>
                      <idno change="#d2e167" type="oape">475</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -5348,6 +5546,16 @@
                      </imprint>
                   </monogr>
                </biblStruct>
+               <biblStruct change="#d3e940" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_8.TEIP5.xml#bibl_11.d1e2518" xml:lang="ar">
+                  <monogr>
+                     <title level="j" xml:lang="ar">المنبر</title>
+                     <idno change="#d2e414" type="oape">549</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المنتج</title>
@@ -5430,6 +5638,7 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المورد الصافي</title>
                      <idno change="#d2e167" type="oape">263</idno>
+                     <idno change="#d2e167" type="oape">482</idno>
                      <editor xml:lang="ar"> <persName change="#d3e130 #d3e399" ref="oape:pers:3574" xml:lang="ar">جرجس <roleName type="title">أفندي</roleName><addName type="nisbah"
                         >الخوري</addName><addName type="nisbah">المقدسي</addName></persName> </editor>
                      <textLang mainLang="ar"/>
@@ -5439,30 +5648,6 @@
                         <publisher/>
                      </imprint>
                      <biblScope from="1" to="104" unit="page"/>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المورد الصافي</title>
-                     <idno change="#d2e167" type="oape">482</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المورنن بوست</title>
-                     <idno change="#d2e167" type="oape">264</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
@@ -6021,19 +6206,6 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <!--<biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_10.d1e2639" type="book" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title change="#d3e891" level="m" xml:lang="ar">تقويم <title level="j" ref="oape:bibl:25 oclc:792755902" xml:lang="ar">المؤيد</title></title>
-                     <idno change="#d2e167" type="oape">406</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                     <biblScope from="11" to="11" unit="volume"/>
-                  </monogr>
-               </biblStruct>-->
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">تنظيمات</title>
@@ -6135,18 +6307,6 @@
                </biblStruct>
                <biblStruct subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">جريدة حوادث</title>
-                     <idno change="#d2e167" type="oape">302</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct subtype="newspaper" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">جريدة عدلية</title>
                      <idno change="#d2e167" type="oape">303</idno>
                      <textLang mainLang="ar"/>
@@ -6231,24 +6391,41 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
+                     <title level="j" xml:lang="ar">حديقة الاخبار</title>
                      <title level="j" xml:lang="ar">حديقة الأخبار</title>
+                     <title level="j" type="sub" xml:lang="ar">جرنال مدني علمي متجري تاريخي</title>
+                     <title level="j" xml:lang="ar-Latn-x-ijmes">Ḥadīqat al-Akhbār</title>
+                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jurnāl madanī ʿilmī mutajjarī tārīkhī</title>
+                     <idno change="#d2e414" type="oape">546</idno>
                      <idno change="#d2e167" type="oape">490</idno>
-                     <editor change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_13.d2e3084"> <persName change="#d3e399 #d2e414 #d3e399"
-                        ref="oape:pers:382 viaf:41830998"> <forename xml:lang="ar">خليل</forename> <surname xml:lang="ar"><addName type="nisbah">الخوري</addName></surname></persName> </editor>
+                     <idno type="OCLC" xml:lang="en">792755425</idno>
+                     <idno type="OCLC" xml:lang="en">745205670</idno>
+                     <idno type="OCLC" xml:lang="en">243441816</idno>
+                     <idno type="OCLC" xml:lang="en">503753305</idno>
+                     <idno type="OCLC" xml:lang="en">269135845</idno>
+                     <idno type="OCLC" xml:lang="en">499946227</idno>
+                     <!-- use as many identifiers as appropriate -->
+                     <editor ref="viaf:41830998"> <persName change="#d3e399" ref="oape:pers:382 viaf:41830998" xml:lang="ar"> <forename xml:lang="ar">خليل</forename> <surname xml:lang="ar"><addName
+                        type="nisbah">الخوري</addName></surname></persName> <persName change="#d3e399" ref="oape:pers:4194" xml:lang="ar-Latn-x-ijmes"> <forename xml:lang="ar-Latn-x-ijmes"
+                        >Khalīl</forename> <surname xml:lang="ar-Latn-x-ijmes">al-Khūrī</surname> </persName> </editor>
                      <editor change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_14.d2e3094"> <persName change="#d3e130 #d3e399"
                         ref="oape:pers:388" xml:lang="ar"> <forename xml:lang="ar">وديع</forename> <roleName type="title" xml:lang="ar">أفندي</roleName> <surname xml:lang="ar"><addName type="nisbah"
                         >الخوري</addName></surname></persName> </editor>
                      <editor xml:lang="ar"> <persName change="#d3e130 #d3e399" ref="oape:pers:380" xml:lang="ar"> <forename xml:lang="ar">حنا</forename> <roleName type="title" xml:lang="ar"
                         >أفندي</roleName> <surname xml:lang="ar"><addName type="nisbah">الخوري</addName></surname></persName> </editor>
                      <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <date change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#date_3.d2e3074" when="1858-01-01"> ١ ك ٢ يناير سنة ١٨٥٨</date>
-                        <pubPlace change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#pubPlace_9.d2e3070"> <placeName change="#d5e387 #d2e414"
-                           ref="oape:place:26 geon:276781">بيروت</placeName> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
-                        <publisher/>
+                     <imprint xml:lang="ar">
+                        <publisher> <orgName xml:lang="ar">المطبعة السورية</orgName> <orgName xml:lang="ar-Latn-x-ijmes">al-Maṭbaʿa al-Sūriyya</orgName> </publisher>
+                        <pubPlace> <placeName xml:lang="ar">بيروت</placeName> <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName> <placeName xml:lang="en">Beirut</placeName> <placeName
+                           xml:lang="fr">Beyrouth</placeName> </pubPlace>
+                        <date when="1858-01-01" xml:lang="en">1 Jan 1858</date>
+                        <date calendar="#cal_julian" datingMethod="#cal_julian" when="1858-01-01" when-custom="1857-12-20" xml:lang="en">20 Kān I 1857, Friday</date>
+                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1274-05-16" xml:lang="en">16 Jum I 1274</date>
+                        <biblScope from="1" to="1" unit="issue">1</biblScope>
+                        <biblScope from="1" to="1" unit="volume">1</biblScope>
+                        <biblScope from="1" to="4" unit="page">1-4</biblScope>
                      </imprint>
                   </monogr>
                </biblStruct>
@@ -6595,18 +6772,6 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">شوراي أمت</title>
-                     <idno change="#d2e167" type="oape">325</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">صباح</title>
                      <idno change="#d2e167" type="oape">326</idno>
                      <textLang mainLang="ar"/>
@@ -6695,18 +6860,6 @@
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">طرابلس الغرب</title>
                      <idno change="#d2e167" type="oape">331</idno>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">عثمانلي رساملر جمعيتي غزته سي</title>
-                     <idno change="#d2e167" type="oape">333</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
@@ -6886,8 +7039,8 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">قرة كوز</title>
-                     <idno change="#d2e167" type="oape">342</idno>
+                     <title level="j" xml:lang="ar">قره سنان</title>
+                     <idno change="#d2e167" type="oape">73</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
@@ -7062,19 +7215,6 @@
                      <title level="j" xml:lang="ar">لمورنن ليدر</title>
                      <idno change="#d2e167" type="oape">354</idno>
                      <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
-                        <publisher/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="fr">l'humanité</title>
-                     <title level="j" xml:lang="fr-Arab-AR">لومانيتي</title>
-                     <idno change="#d2e167" type="oape">355</idno>
-                     <textLang mainLang="fr"/>
                      <imprint>
                         <date/>
                         <pubPlace/>
@@ -7433,6 +7573,34 @@
                      </imprint>
                   </monogr>
                </biblStruct>
+               <biblStruct change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar">
+                  <monogr>
+                     <title level="j" xml:lang="ar">مسامرات الشعب</title>
+                     <idno change="#d2e414" type="oape">548</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar"> <placeName
+                           ref="oape:place:226 geon:360630" xml:lang="ar">القاهرة</placeName></pubPlace>
+                        <publisher change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar"> <persName change="#d3e399"
+                           ref="oape:pers:3783" xml:lang="ar">عزت خليل <roleName type="title">بك</roleName>صادق</persName></publisher>
+                        <publisher change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar"> <orgName xml:lang="ar"
+                           >مكتبة الشعب ومطبعتها</orgName></publisher>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct type="periodical" xml:lang="fr">
+                  <monogr xml:lang="fr">
+                     <title level="j" xml:lang="ar">مستندات الترقي</title>
+                     <title level="j" xml:lang="fr">Les Documents du Progrès</title>
+                     <idno change="#d2e167" type="oape">67</idno>
+                     <textLang mainLang="fr"/>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">مشرق</title>
@@ -7601,216 +7769,6 @@
                      </monogr>
                   </biblStruct>
                </listBibl>
-               <biblStruct change="#d3e423" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_1.TEIP5.xml#bibl_3.d2e1454" subtype="newspaper" type="periodical" xml:lang="ar">
-                  <monogr>
-                     <title level="j" xml:lang="ar">الرصافة</title>
-                     <textLang mainLang="ar"/>
-                     <editor><persName change="#d3e399" ref="oape:pers:4175">محمد صادق <tei:addName type="nisbah">الاعرجي</tei:addName></persName></editor>
-                     <imprint>
-                        <date calendar="#cal_gregorian" from="1910-06-17">1910-06-17</date>
-                        <pubPlace><placeName>Baghdad</placeName></pubPlace>
-                     </imprint>
-                     <biblScope from="1" to="1" unit="issue"/>
-                  </monogr>
-               </biblStruct>
-               <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
-                  <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">حديقة الاخبار</title>
-                     <title level="j" type="sub" xml:lang="ar">جرنال مدني علمي متجري تاريخي</title>
-                     <title level="j" xml:lang="ar-Latn-x-ijmes">Ḥadīqat al-Akhbār</title>
-                     <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jurnāl madanī ʿilmī mutajjarī tārīkhī</title>
-                     <!-- use as many identifiers as appropriate -->
-                     <idno type="OCLC" xml:lang="en">792755425</idno>
-                     <idno type="OCLC" xml:lang="en">745205670</idno>
-                     <idno type="OCLC" xml:lang="en">243441816</idno>
-                     <idno type="OCLC" xml:lang="en">503753305</idno>
-                     <idno type="OCLC" xml:lang="en">269135845</idno>
-                     <idno type="OCLC" xml:lang="en">499946227</idno>
-                     <editor ref="viaf:41830998"> <persName change="#d3e399" ref="oape:pers:382 viaf:41830998" xml:lang="ar"> <forename xml:lang="ar">خليل</forename> <surname xml:lang="ar"><addName
-                        type="nisbah">الخوري</addName></surname></persName> <persName change="#d3e399" ref="oape:pers:4194" xml:lang="ar-Latn-x-ijmes"> <forename xml:lang="ar-Latn-x-ijmes"
-                        >Khalīl</forename> <surname xml:lang="ar-Latn-x-ijmes">al-Khūrī</surname> </persName> </editor>
-                     <imprint xml:lang="ar">
-                        <publisher> <orgName xml:lang="ar">المطبعة السورية</orgName> <orgName xml:lang="ar-Latn-x-ijmes">al-Maṭbaʿa al-Sūriyya</orgName> </publisher>
-                        <pubPlace> <placeName xml:lang="ar">بيروت</placeName> <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName> <placeName xml:lang="en">Beirut</placeName> <placeName
-                           xml:lang="fr">Beyrouth</placeName> </pubPlace>
-                        <date when="1858-01-01" xml:lang="en">1 Jan 1858</date>
-                        <date calendar="#cal_julian" datingMethod="#cal_julian" when="1858-01-01" when-custom="1857-12-20" xml:lang="en">20 Kān I 1857, Friday</date>
-                        <date calendar="#cal_islamic" datingMethod="#cal_islamic" when-custom="1274-05-16" xml:lang="en">16 Jum I 1274</date>
-                        <biblScope from="1" to="1" unit="issue">1</biblScope>
-                        <biblScope from="1" to="1" unit="volume">1</biblScope>
-                        <biblScope from="1" to="4" unit="page">1-4</biblScope>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e957" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_1.TEIP5.xml#bibl_9.d2e5099" subtype="journal" type="periodical">
-                  <monogr>
-                     <title level="j">القرن العشرين</title>
-                     <textLang change="#d3e957" mainLang="fr">الفرنسية</textLang>
-                     <imprint>
-                        <pubPlace/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar">
-                  <monogr>
-                     <title level="j" xml:lang="ar">مسامرات الشعب</title>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <pubPlace change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar"> <placeName
-                           ref="oape:place:226 geon:360630" xml:lang="ar">القاهرة</placeName></pubPlace>
-                        <publisher change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar"> <persName change="#d3e399"
-                           ref="oape:pers:3783" xml:lang="ar">عزت خليل <roleName type="title">بك</roleName>صادق</persName></publisher>
-                        <publisher change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar"> <orgName xml:lang="ar"
-                           >مكتبة الشعب ومطبعتها</orgName></publisher>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e940" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_8.TEIP5.xml#bibl_11.d1e2518" xml:lang="ar">
-                  <monogr>
-                     <title level="j" xml:lang="ar">المنبر</title>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <pubPlace/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#" subtype="newspaperArticle" type="periodical">
-                  <monogr>
-                     <title level="j">طنين</title>
-                     <textLang mainLang="ota"/>
-                     <imprint>
-                        <pubPlace><placeName>الاستانة</placeName></pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e788" ns:frequency="monthly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064"
-                  subtype="journal" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
-                  <monogr>
-                     <title level="j" rend="quotation-marks">مجلة المنتدى الأدبي</title>
-                     <textLang mainLang="ar"/>
-                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064"><persName change="#d3e399"
-                        ref="oape:pers:4112">احمد عزت <tei:roleName type="title">افندي</tei:roleName> <tei:addName type="nisbah">العظمي</tei:addName></persName></editor>
-                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064"> <persName change="#d3e399"
-                        ref="oape:pers:4155">عاصم <tei:roleName type="title">افندي</tei:roleName> بسيسو</persName></editor>
-                     <imprint>
-                        <pubPlace change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064">
-                           <placeName>الاستانة</placeName></pubPlace>
-                     </imprint>
-                     <biblScope from="1" to="48" unit="page"><num resp="#pers_TG" type="auto-markup" value="48" xml:lang="ar">٤٨</num> صفحة</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#" subtype="journal" type="periodical">
-                  <monogr>
-                     <title level="j">لسان العرب</title>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <pubPlace/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e788" ns:frequency="weekly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112"
-                  subtype="journal" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
-                  <monogr>
-                     <title level="j" rend="quotation-marks">المستقبل</title>
-                     <title level="j" type="sub">مجلة علمية أدبية عمرانية أسبوعية</title>
-                     <textLang mainLang="ar"/>
-                     <editor change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112"> <persName
-                        ref="oape:pers:2831 viaf:81983937">سلامة <tei:roleName change="#d3e399" type="title">افندي</tei:roleName> موسى </persName></editor>
-                     <imprint>
-                        <pubPlace change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e5112">
-                           <placeName>القاهرة</placeName></pubPlace>
-                     </imprint>
-                     <biblScope from="1" to="20" unit="page"><num resp="#pers_TG" subtype="d2" type="auto-markup" value="20" xml:lang="ar">عشرين</num> صفحة</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e788" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_8.d2e6294">
-                  <monogr>
-                     <title level="j">فتى العرب</title>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <pubPlace/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458" subtype="newspaper"
-                  type="periodical">
-                  <monogr>
-                     <title level="j">الجديد</title>
-                     <textLang mainLang="ar"/>
-                     <editor change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458"><persName
-                        ref="oape:pers:2606">نجيب <tei:roleName change="#d3e399" type="title">افندي</tei:roleName> نسيم طراد </persName></editor>
-                     <editor change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458"><persName change="#d3e399"
-                        ref="oape:pers:4163">فارس <tei:roleName type="title">افندي</tei:roleName> نجم</persName></editor>
-                     <imprint>
-                        <pubPlace change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_1.d2e2458"
-                           ><placeName>سان باولو</placeName></pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e439" ns:frequency="weekly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"
-                  subtype="newspaper" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
-                  <monogr>
-                     <title level="j">البيرق</title>
-                     <textLang mainLang="ar"/>
-                     <editor change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"><persName change="#d3e399"
-                        ref="oape:pers:4185">نجيب <tei:roleName type="title">افندي</tei:roleName> شديد عقل</persName></editor>
-                     <editor change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"><persName
-                        ref="oape:pers:1803">سعيد <tei:roleName change="#d3e399" type="title">افندي</tei:roleName> فاضل عقل </persName></editor>
-                     <imprint>
-                        <pubPlace change="#d3e439" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"
-                           ><placeName>الحدث</placeName></pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174" subtype="journal"
-                  type="periodical">
-                  <monogr>
-                     <title level="j">الشرق المصور</title>
-                     <textLang change="#d3e723" mainLang="ar" otherLangs="ota"
-                        source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174">بالعربية والتركية</textLang>
-                     <imprint>
-                        <pubPlace change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174"
-                           ><placeName>دمشق</placeName></pubPlace>
-                        <publisher change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174">أدارة <title level="j"
-                           >الشرق</title></publisher>
-                     </imprint>
-                     <biblScope from="1" to="16" unit="page"><num resp="#pers_TG" type="auto-markup" value="16" xml:lang="ar">١٦</num> صفحة</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_4.d2e6282" type="periodical">
-                  <monogr>
-                     <title level="j">مجلة العالم الإسلامي الالمانية</title>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <pubPlace/>
-                     </imprint>
-                     <biblScope from="1" to="1" unit="issue">العدد الأول</biblScope>
-                     <biblScope from="1" to="61" unit="page"><num resp="#pers_TG" type="auto-markup" value="61" xml:lang="ar">٦١</num> صفحة</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e723" ns:frequency="fortnightly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304"
-                  subtype="journal" type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
-                  <monogr>
-                     <title level="j" xml:lang="ota">مصور جول</title>
-                     <textLang change="#d3e723" mainLang="ota" otherLangs="ar"
-                        source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304">بالتركية والعربية</textLang>
-                     <editor change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304">مفتش منزل البادية</editor>
-                     <imprint>
-                        <pubPlace change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304"
-                           ><placeName>بئر سبع</placeName></pubPlace>
-                     </imprint>
-                     <biblScope from="1" to="1" unit="issue">العدد الأول</biblScope>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_6.d2e6514" type="periodical">
-                  <monogr>
-                     <title level="j">جريدة غرفة التجارة العثمانية</title>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <pubPlace/>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
             </listBibl>
          </div>
       </body>
