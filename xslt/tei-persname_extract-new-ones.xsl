@@ -13,6 +13,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+    
+    <!-- To do:
+            - use the same code for constructing nodes missing from the authority file as in tei-person_improve-records.xsl
+            - check if this stylesheet really tries to query external authority files as claimed below
+    -->
+    
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" name="xml"
@@ -77,6 +83,7 @@
                         </xsl:when>
                     </xsl:choose>
                 </xsl:variable>
+                <!-- does the node in this variable get @xml:id? this is needed to link it to the flattened version -->
                 <xsl:variable name="v_name-marked-up" select="oape:name-add-markup(.)"/>
                 <!-- construct nodes -->
                 <xsl:element name="tei:person">
@@ -87,9 +94,10 @@
                     <!-- construct a flattened string -->
                     <xsl:copy-of select="oape:name-flattened($v_name-marked-up, $p_id-change)"/>
                     <!-- construct name without titles, honorary addresses etc. -->
-                    <xsl:if test="$v_name-marked-up/tei:addName or $v_name-marked-up/tei:roleName">
+                    <!-- this will currently result in empty nodes -->
+                    <!--<xsl:if test="$v_name-marked-up/tei:addName or $v_name-marked-up/tei:roleName">
                         <xsl:copy-of select="oape:name-remove-addnames($v_name-marked-up, $p_id-change)"/>
-                    </xsl:if>
+                    </xsl:if>-->
                     <!-- construct the idno child -->
                     <xsl:if test="./@ref">
                         <xsl:element name="tei:idno">
@@ -127,7 +135,7 @@
                     </xsl:message>
                 </xsl:if>
             </xsl:when>
-            <!-- test if a name has a @ref attribute pointing to VIAF and an entry for the VIAF ID is already present in the master file -->
+            <!-- test if a name has a @ref attribute pointing to our own authority files and an entry for the OAPE ID is already present in the master file -->
             <xsl:when
                 test="tei:idno[@type = 'oape'] and $v_file-entities-master//tei:person[tei:idno[@type = 'oape'] = $v_oape-id]">
                 <xsl:if test="$p_verbose = true()">
@@ -138,14 +146,14 @@
                     </xsl:message>
                 </xsl:if>
             </xsl:when>
-            <!-- test if the text string is present in the master file: it would be necessary to normalise the content of persName in some way -->
+            <!-- test if the text string is present in the master file -->
             <xsl:when
                 test="$v_file-entities-master//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
                         <xsl:text>t_6 #2: </xsl:text>
                         <xsl:value-of select="$v_name-flat"/>
-                        <xsl:text> is present in authority file.</xsl:text>
+                        <xsl:text> is already present in the authority file.</xsl:text>
                     </xsl:message>
                 </xsl:if>
             </xsl:when>
@@ -159,7 +167,7 @@
                     </xsl:message>
                 </xsl:if>
                 <xsl:copy>
-                    <xsl:apply-templates mode="m_no-ids" select="@* | node()"/>
+                    <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
