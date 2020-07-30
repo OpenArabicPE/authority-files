@@ -41,25 +41,6 @@
     <xsl:variable name="v_url-file"
         select="concat('../../', substring-after(base-uri(), 'OpenArabicPE/'))"/>
 
-
-    <!-- This template replicates everything -->
-    <xsl:template match="node() | @*" mode="m_replicate" name="t_1">
-        <xsl:copy>
-            <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
-        </xsl:copy>
-    </xsl:template>
-    
-    <!-- replicate everything except @xml:id -->
-    <xsl:template match="node() | @*[not(name() = 'xml:id')]" mode="m_no-ids" name="t_10">
-        <xsl:copy>
-            <xsl:apply-templates select="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids"/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="@xml:id" mode="m_no-ids"/>
-    <xsl:template match="text()" mode="m_no-ids">
-        <xsl:value-of select="normalize-space(.)"/>
-    </xsl:template>
-
     <!-- run on root -->
     <xsl:template match="/" name="t_3">
             <xsl:if test="$p_verbose = true()">
@@ -69,7 +50,7 @@
             </xsl:if>
             <xsl:result-document href="../tei/{$v_id-file}-gazetteer.TEIP5.xml"
                 format="xml_indented">
-                <xsl:apply-templates select="$v_file-entities-master" mode="m_replicate"/>
+                <xsl:apply-templates select="$v_file-entities-master" mode="m_identity-transform"/>
             </xsl:result-document>
     </xsl:template>
 
@@ -119,7 +100,7 @@
         </xsl:if>
         <xsl:copy>
             <!-- copy existing data: -->
-<!--            <xsl:apply-templates select="@* | node()" mode="m_replicate"/>-->
+<!--            <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>-->
             <!-- build a listPlace with places present in the source file but missing from the master -->
             <xsl:element name="tei:listPlace">
                 <xsl:attribute name="corresp" select="$v_url-file"/>
@@ -170,14 +151,14 @@
                     </xsl:message>
                 </xsl:if>
                 <xsl:copy>
-                    <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
+                    <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>
                 </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
     <!-- NOT currently USED: existing tei:place in the master file should updated with new information if available -->
-    <xsl:template match="tei:place" mode="m_replicate" name="t_7">
+    <xsl:template match="tei:place" mode="m_identity-transform" name="t_7">
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_7 master: </xsl:text>
@@ -198,7 +179,7 @@
                            <xsl:value-of select="tei:placeName[1]"/>
                        </xsl:message>
                    </xsl:if>
-                    <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
+                    <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>
                     <!-- add idno -->
                     <xsl:copy-of
                         select="$v_places-source/descendant-or-self::tei:place[tei:placeName = $v_name]/tei:idno[@type = 'geon']"
@@ -206,32 +187,32 @@
                 </xsl:when>
                 <!-- potentially test if there is an additional spelling in $v_places-source not precent in the entity master -->
                 <xsl:otherwise>
-                    <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
+                    <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="tei:placeName/text()" mode="m_replicate">
+    <xsl:template match="tei:placeName/text()" mode="m_identity-transform">
         <xsl:value-of select="normalize-space(.)"/>
     </xsl:template>
     <!-- omit xml:id from output -->
     <xsl:template
         match="tei:list//tei:placeName/@xml:id | tei:list//tei:placeName/@change"
-        mode="m_replicate"/>
+        mode="m_identity-transform"/>
     <!--<xsl:template match="tei:placeName//tei:pb | tei:placeName//tei:lb | tei:placeName//tei:note"
-        mode="m_replicate">
+        mode="m_identity-transform">
         <xsl:text> </xsl:text>
     </xsl:template>-->
 
     <!-- document the changes to master file -->
-    <xsl:template match="tei:revisionDesc" mode="m_replicate" name="t_8">
+    <xsl:template match="tei:revisionDesc" mode="m_identity-transform" name="t_8">
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_8 master: document changes</xsl:text>
             </xsl:message>
         </xsl:if>
         <xsl:copy>
-            <xsl:apply-templates select="@*" mode="m_replicate"/>
+            <xsl:apply-templates select="@*" mode="m_identity-transform"/>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when"
                     select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
@@ -240,7 +221,7 @@
                 <xsl:attribute name="xml:lang" select="'en'"/>
                 <xsl:text>Added </xsl:text><tei:gi>listPlace</tei:gi><xsl:text> with </xsl:text><tei:gi>place</tei:gi><xsl:text>s mentioned in </xsl:text><tei:ref target="{$v_url-file}"><xsl:value-of select="$v_url-file"/></tei:ref><xsl:text> but not previously present in this master file.</xsl:text>
             </xsl:element>
-            <xsl:apply-templates select="node()" mode="m_replicate"/>
+            <xsl:apply-templates select="node()" mode="m_identity-transform"/>
         </xsl:copy>
     </xsl:template>
     
@@ -252,5 +233,5 @@
     </xsl:template>
     
     <!-- elements not to be replicated -->
-    <xsl:template match="tei:publicationStmt | tei:encodingDesc | tei:revisionDesc" mode="m_replicate" priority="100"/>
+    <xsl:template match="tei:publicationStmt | tei:encodingDesc | tei:revisionDesc" mode="m_identity-transform" priority="100"/>
 </xsl:stylesheet>
