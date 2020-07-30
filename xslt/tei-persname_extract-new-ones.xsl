@@ -33,17 +33,22 @@
     <!-- toggle debugging messages: this is toggled through the parameter file -->
     <!--    <xsl:param name="p_verbose" select="false()"/>-->
     
+    <xsl:variable name="v_id-file"
+        select="
+            if (tei:TEI/@xml:id) then
+                (tei:TEI/@xml:id)
+            else
+                ('_output')"/>
+<!--    <xsl:variable name="v_url-file" select="concat('../../', substring-after(base-uri(), 'OpenArabicPE/'))"/>-->
+    
     <!-- idendity transform -->
-    <!-- replicate everything except @xml:id -->
-    <!--<xsl:template match="node() | @*" mode="m_no-ids">
+        <!-- This template replicates everything -->
+    <xsl:template match="node() | @*" mode="m_replicate">
         <xsl:copy>
-            <xsl:apply-templates mode="m_no-ids" select="@* | node()"/>
+            <xsl:apply-templates select="@* | node()" mode="m_replicate"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="@xml:id | @change" mode="m_no-ids"/>
-    <xsl:template match="text()" mode="m_no-ids">
-        <xsl:value-of select="normalize-space(.)"/>
-    </xsl:template>-->
+
     <!-- run on root -->
     <xsl:template match="/">
         <xsl:copy>
@@ -52,7 +57,14 @@
             <xsl:apply-templates mode="m_extract-new-names" select="$v_persons-source/descendant::tei:person"/>
         </xsl:element>
             <!-- document changes -->
-            
+            <xsl:element name="tei:change">
+                <xsl:attribute name="when"
+                    select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+                <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
+                <xsl:attribute name="xml:id" select="$p_id-change"/>
+                <xsl:attribute name="xml:lang" select="'en'"/>
+                <xsl:text>Added </xsl:text><tei:gi>listPerson</tei:gi><xsl:text> with </xsl:text><tei:gi>person</tei:gi><xsl:text>s mentioned in </xsl:text><tei:ref target="{base-uri()}"><xsl:value-of select="base-uri()"/></tei:ref><xsl:text> but not previously present in this master file.</xsl:text>
+            </xsl:element>
         </xsl:copy>
     </xsl:template>
     <!-- variable to collect all persNames found in this file -->
