@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="https://openarabicpe.github.io/tei-boilerplate-arabic-editions/boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude"
    xmlns:zot="https://zotero.org">
    <teiHeader>
@@ -24,21 +19,23 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <tei:change when="2020-08-20" who="#pers_TG" xml:id="d2e487" xml:lang="en"
+            >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag>.</tei:change>
          <change when="2020-08-20" who="#pers_TG" xml:id="d3e718" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
-            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml"
-            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml</ref> using matching of titles.</change>
+            target="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml"
+            >../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-08-20" who="#pers_TG" xml:id="d3e720" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
-            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml"
-            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml</ref> using matching of titles.</change>
+            target="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml"
+            >../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-08-20" who="#pers_TG" xml:id="d3e719" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
-            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml"
-            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml</ref> using matching of titles.</change>
+            target="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml"
+            >../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-08-20" who="#pers_TG" xml:id="d3e723" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
-            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml"
-            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml</ref> using matching of titles.</change>
+            target="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml"
+            >../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml</ref> using matching of titles.</change>
          <change when="2020-08-03" who="#pers_TG" xml:id="d3e742" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
-            target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml"
-            >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml</ref> using matching of titles.</change>
+            target="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml"
+            >../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml</ref> using matching of titles.</change>
          <tei:change when="2020-07-31" who="#pers_TG" xml:id="d3e432" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml"
             >../data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>) and VIAF to <tei:gi>persName</tei:gi>s without such references based on <tei:gi>person</tei:gi>s in the local authority file. </tei:change>
          <tei:change when="2020-07-30" who="#pers_TG" xml:id="d2e423" xml:lang="en"
@@ -145,7 +142,7 @@
       <body xml:lang="ar">
          <div subtype="list" type="item" xml:lang="ar">
             <listBibl xml:lang="ar">
-               <biblStruct oape:frequency="monthly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_9.d2e8415" subtype="journal"
+               <biblStruct oape:frequency="monthly" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_9.d2e8415" subtype="journal"
                   type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
@@ -171,9 +168,9 @@
                      </imprint>
                      <biblScope from="1" to="1" unit="volume"/>
                      <biblScope from="1" to="1" unit="issue"/>
-                     <biblScope change="#d3e742" from="3" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_9.d2e8415" to="3"
+                     <biblScope change="#d3e742" from="3" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_9.d2e8415" to="3"
                         unit="volume"> م <num resp="#pers_TG" type="auto-markup" value="3" xml:lang="ar">٣</num></biblScope>
-                     <biblScope change="#d3e742" from="536" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_9.d2e8415" unit="page"
+                     <biblScope change="#d3e742" from="536" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_9.d2e8415" unit="page"
                         >ص <num resp="#pers_TG" type="auto-markup" value="536" xml:lang="ar">٥٣٦</num></biblScope>
                   </monogr>
                </biblStruct>
@@ -1168,6 +1165,7 @@
                      <title xml:lang="ar">العرب</title>
                      <title type="sub" xml:lang="ar">جريدة سياسية اخبارية تاريخية ادبية عمرانية عربية</title>
                      <title type="sub">المبدإ والغرض ينشئها في بغداد عرب للعرب</title>
+                     <idno change="#d2e487" type="oape">561</idno>
                      <idno type="URI">https://www.wdl.org/en/search/?collection=al-arab-newspaper-collection&amp;grouping=12236</idno>
                      <editor><persName change="#d3e399" ref="oape:pers:227 viaf:39370998" xml:lang="ar"> <roleName subtype="religious" type="rank" xml:lang="ar">الأب</roleName> <forename xml:lang="ar"
                         >انستاس</forename> <forename xml:lang="ar">ماري</forename> <surname xml:lang="ar"> <addName type="nisbah" xml:lang="ar">الكرملي</addName></surname></persName></editor>
@@ -1280,7 +1278,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct oape:frequency="weekly" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_12.d2e8758" subtype="newspaper"
+               <biblStruct oape:frequency="weekly" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_12.d2e8758" subtype="newspaper"
                   type="periodical" xml:lang="ar">
                   <monogr>
                      <title level="j" xml:lang="ar">المؤيد</title>
@@ -1320,17 +1318,17 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml#" type="periodical" xml:lang="ar">
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml#" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المجلة</title>
                      <title level="j" xml:lang="ar">المجلة الباريسية</title>
                      <title level="j" xml:lang="fr">La Revue</title>
-                     <title change="#d3e723" level="j" source="" xml:lang="fr-Arab-AR">لارفو</title>
+                     <title change="#d3e723" level="j" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml#" xml:lang="fr-Arab-AR">لارفو</title>
                      <idno change="#d2e69" type="oape">14</idno>
                      <idno type="OCLC">472961924</idno>
                      <idno type="ISSN">1153-6012</idno>
                      <editor/>
-                     <textLang change="#d3e723" mainLang="fr" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml#">الافرنسية</textLang>
+                     <textLang change="#d3e723" mainLang="fr" source=" ../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml#">الافرنسية</textLang>
                      <imprint>
                         <pubPlace> <placeName change="#d5e42" ref="oape:place:322 geon:2988507" xml:lang="en">Paris</placeName> </pubPlace>
                         <publisher/>
@@ -1943,13 +1941,13 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="daily" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml#" subtype="newspaper" type="periodical"
+               <biblStruct oape:frequency="daily" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml#" subtype="newspaper" type="periodical"
                   xml:lang="en">
                   <monogr xml:lang="en">
                      <title level="j" xml:lang="en">The Daily News</title>
                      <title level="j" xml:lang="en-Arab-AR">الديلي نيوز</title>
                      <idno change="#d2e167" type="oape">161</idno>
-                     <textLang change="#d3e718" mainLang="en" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml#">الإنكليزية</textLang>
+                     <textLang change="#d3e718" mainLang="en" source=" ../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_92.TEIP5.xml#">الإنكليزية</textLang>
                      <imprint>
                         <date/>
                         <pubPlace/>
@@ -2725,6 +2723,38 @@
                         <pubPlace/>
                         <publisher/>
                      </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e719" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_3.d2e5982">
+                  <monogr>
+                     <title level="j">العالم الشرقي</title>
+                     <idno change="#d2e487" type="oape">563</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace change="#d3e719" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_3.d2e5982"><placeName xml:lang="ar"
+                           >أوبسال</placeName> <placeName xml:lang="en">Uppsala</placeName></pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e720" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml#">
+                  <monogr>
+                     <title level="j" xml:lang="fr">Revue de Hongrie</title>
+                     <idno change="#d2e487" type="oape">564</idno>
+                     <textLang mainLang="fr"/>
+                     <author change="#d3e720" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml#"> <persName>المسيو هنري ماركزالي</persName></author>
+                     <imprint>
+                        <date/>
+                        <pubPlace/>
+                        <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e720" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml#">
+                  <monogr>
+                     <title level="j">افدام</title>
+                     <idno change="#d2e487" type="oape">565</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint/>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
@@ -3743,18 +3773,18 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_3.d2e6196" subtype="newspaper" type="periodical"
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_3.d2e6196" subtype="newspaper" type="periodical"
                   xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الحجاز</title>
                      <idno change="#d2e167" type="oape">142</idno>
-                     <editor change="#d3e726" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_3.d2e6196" type="editor"
+                     <editor change="#d3e726" source=" ../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_3.d2e6196" type="editor"
                         ><persName>محمد بن بدر الدين أفندي النعساني</persName></editor>
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
                         <pubPlace/>
-                        <pubPlace change="#d3e726" source=" file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_3.d2e6196"
+                        <pubPlace change="#d3e726" source=" ../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_3.d2e6196"
                            ><placeName>المدينة المنورة</placeName></pubPlace>
                         <publisher/>
                      </imprint>
@@ -3820,6 +3850,16 @@
                         <date/>
                         <pubPlace/>
                         <publisher/>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e723" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml#" subtype="journal" type="periodical">
+                  <monogr>
+                     <title level="j" xml:lang="ar">الحياة الباريزية</title>
+                     <idno change="#d2e487" type="oape">562</idno>
+                     <textLang change="#d3e723" mainLang="fr"/>
+                     <imprint>
+                        <pubPlace><placeName xml:lang="en">Paris</placeName></pubPlace>
                      </imprint>
                   </monogr>
                </biblStruct>
@@ -4918,7 +4958,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_11.d2e8624" type="periodical" xml:lang="ar">
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_11.d2e8624" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">اللاذقية</title>
                      <idno change="#d2e167" type="oape">220</idno>
@@ -4928,7 +4968,7 @@
                         <pubPlace/>
                         <publisher/>
                      </imprint>
-                     <biblScope change="#d3e742" from="288" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_11.d2e8624" to="288"
+                     <biblScope change="#d3e742" from="288" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_11.d2e8624" to="288"
                         unit="issue"> عدد <num resp="#pers_TG" type="auto-markup" value="288" xml:lang="ar">٢٨٨</num></biblScope>
                   </monogr>
                </biblStruct>
@@ -5637,7 +5677,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_1.d2e4150" subtype="journal" type="periodical"
+               <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_1.d2e4150" subtype="journal" type="periodical"
                   xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">المورد الصافي</title>
@@ -5649,7 +5689,7 @@
                      <textLang mainLang="ar"/>
                      <imprint>
                         <date/>
-                        <pubPlace change="#d3e719" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_1.d2e4150"
+                        <pubPlace change="#d3e719" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_1.d2e4150"
                            ><placeName>بيروت</placeName></pubPlace>
                         <publisher/>
                      </imprint>
@@ -7775,40 +7815,6 @@
                      </monogr>
                   </biblStruct>
                </listBibl>
-               <biblStruct change="#d3e723" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_89.TEIP5.xml#" subtype="journal" type="periodical">
-                  <monogr>
-                     <title level="j" xml:lang="ar">الحياة الباريزية</title>
-                     <textLang change="#d3e723" mainLang="fr"/>
-                     <imprint>
-                        <pubPlace><placeName xml:lang="en">Paris</placeName></pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e719" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_3.d2e5982">
-                  <monogr>
-                     <title level="j">العالم الشرقي</title>
-                     <textLang mainLang="ar"/>
-                     <imprint>
-                        <pubPlace change="#d3e719" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_3.d2e5982"><placeName xml:lang="ar"
-                           >أوبسال</placeName> <placeName xml:lang="en">Uppsala</placeName></pubPlace>
-                     </imprint>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e720" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml#">
-                  <monogr>
-                     <title level="j" xml:lang="fr">Revue de Hongrie</title>
-                     <textLang mainLang="fr"/>
-                     <author change="#d3e720" source=""> <persName>المسيو هنري ماركزالي</persName></author>
-                     <imprint/>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e720" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_91.TEIP5.xml#">
-                  <monogr>
-                     <title level="j">افدام</title>
-                     <textLang mainLang="ar"/>
-                     <imprint/>
-                  </monogr>
-               </biblStruct>
             </listBibl>
          </div>
       </body>
