@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -10,15 +13,10 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>
-                    <date when="2012-11-24">Nov 2012</date>
-                </edition>
+                <edition> <date when="2012-11-24">Nov 2012</date> </edition>
                 <respStmt>
                     <resp>Contributed data</resp>
-                    <persName xml:id="pers_TG">
-                        <forename>Till</forename>
-                        <surname>Grallert</surname>
-                    </persName>
+                    <persName xml:id="pers_TG"> <forename>Till</forename> <surname>Grallert</surname> </persName>
                     <orgName xml:id="org_geon">GeoNames.org</orgName>
                     <orgName xml:id="org_wiki">Wikimapia</orgName>
                     <!-- all contributors should be included here and their contributions should be marked with the @resp attributed
@@ -26,26 +24,8 @@
                 </respStmt>
             </editionStmt>
             <publicationStmt>
-                <p>The file was originally created in November 2012 and is continuously updated through
-               manual and automated input by the original author.</p>
-                <p>This software is licensed as: Distributed under a Creative Commons
-               Attribution-ShareAlike 3.0 Unported License
-               http://creativecommons.org/licenses/by-sa/3.0/ All rights reserved. Redistribution
-               and use in source and binary forms, with or without modification, are permitted
-               provided that the following conditions are met: * Redistributions of source code must
-               retain the above copyright notice, this list of conditions and the following
-               disclaimer. * Redistributions in binary form must reproduce the above copyright
-               notice, this list of conditions and the following disclaimer in the documentation
-               and/or other materials provided with the distribution. This software is provided by
-               the copyright holders and contributors &quot;as is&quot; and any express or implied warranties,
-               including, but not limited to, the implied warranties of merchantability and fitness
-               for a particular purpose are disclaimed. In no event shall the copyright holder or
-               contributors be liable for any direct, indirect, incidental, special, exemplary, or
-               consequential damages (including, but not limited to, procurement of substitute goods
-               or services; loss of use, data, or profits; or business interruption) however caused
-               and on any theory of liability, whether in contract, strict liability, or tort
-               (including negligence or otherwise) arising in any way out of the use of this
-               software, even if advised of the possibility of such damage. </p>
+                <p>The file was originally created in November 2012 and is continuously updated through manual and automated input by the original author.</p>
+                <p>This software is licensed as: Distributed under a Creative Commons Attribution-ShareAlike 3.0 Unported License http://creativecommons.org/licenses/by-sa/3.0/ All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. This software is provided by the copyright holders and contributors &quot;as is&quot; and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the copyright holder or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage. </p>
                 <p>Author: Till Grallert</p>
             </publicationStmt>
             <sourceDesc>
@@ -71,8 +51,7 @@
                     <listPlace type="town">
                         <head>Istanbul</head>
                         <place>
-                            <placeName xml:lang="ar">قصر 
-                                <placeName xml:lang="ota">ييلدز</placeName></placeName>
+                            <placeName xml:lang="ar">قصر <placeName xml:lang="ota">ييلدز</placeName></placeName>
                             <placeName xml:lang="ota">ييلدز</placeName>
                             <idno type="oape">2</idno>
                         </place>
@@ -127,12 +106,12 @@
                             </location>
                             <placeName source="#org_geon" type="alt" xml:lang="ar">القدس الشريف</placeName>
                             <placeName xml:lang="ar">القدس</placeName>
-                            <idno type="url">http://en.wikipedia.org/wiki/Jerusalem</idno>
-                            <idno type="geon">281184</idno>
                             <placeName source="#org_geon" type="alt" xml:lang="fr">Jérusalem</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="de">Jerusalem</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="tr">Kudüs</placeName>
+                            <idno type="url">http://en.wikipedia.org/wiki/Jerusalem</idno>
                             <idno type="oape">6</idno>
+                            <idno type="geon">281184</idno>
                         </place>
                         <place type="town">
                             <placeName source="#org_geon" type="alt" xml:lang="ar">النبطية</placeName>
@@ -2293,6 +2272,10 @@
                                         <idno type="oape">196</idno>
                                     </place>
                                 </listPlace>
+                                <place type="town">
+                                    <placeName xml:lang="ar">بئر سبع</placeName>
+                                    <placeName xml:lang="en">Beer Sheva</placeName>
+                                </place>
                             </listPlace>
                             <listPlace type="district">
                                 <head>Sancak of Belqā</head>
@@ -2486,6 +2469,10 @@
                                 <idno type="geon">169612</idno>
                                 <placeName source="#org_geon" type="alt" xml:lang="en">Mount Hermon</placeName>
                                 <idno type="oape">208</idno>
+                            </place>
+                            <place type="town">
+                                <placeName xml:lang="ar">الخليل</placeName>
+                                <placeName xml:lang="en">Hebron</placeName>
                             </place>
                         </listPlace>
                     </listPlace>
@@ -2715,8 +2702,7 @@
                     <listPlace type="region">
                         <head>Egypt</head>
                         <place>
-                            <placeName xml:lang="ar">جزيرة 
-                                <placeName xml:lang="ar">أسوان</placeName></placeName>
+                            <placeName xml:lang="ar">جزيرة <placeName xml:lang="ar">أسوان</placeName></placeName>
                             <idno type="oape">223</idno>
                         </place>
                         <place type="town">
@@ -2924,17 +2910,11 @@
                         <idno type="oape">241</idno>
                     </place>
                     <place>
-                        <placeName xml:lang="ar">
-                            <geogFeat xml:lang="ar">ضفاف</geogFeat>
-                            <geogName xml:lang="ar">النيل</geogName>
-                        </placeName>
+                        <placeName xml:lang="ar"> <geogFeat xml:lang="ar">ضفاف</geogFeat> <geogName xml:lang="ar">النيل</geogName> </placeName>
                         <idno type="oape">242</idno>
                     </place>
                     <place>
-                        <placeName xml:lang="ar">
-                            <geogFeat xml:lang="ar">ضفاف</geogFeat>
-                            <geogName xml:lang="ar">بردى</geogName>
-                        </placeName>
+                        <placeName xml:lang="ar"> <geogFeat xml:lang="ar">ضفاف</geogFeat> <geogName xml:lang="ar">بردى</geogName> </placeName>
                         <idno type="oape">243</idno>
                     </place>
                     <place>
@@ -4097,6 +4077,10 @@
                             <idno type="geon">2907911</idno>
                             <idno type="oape">345</idno>
                         </place>
+                        <place type="town">
+                            <placeName xml:lang="ar">فرانكفورت</placeName>
+                            <placeName xml:lang="de-Arab-AR">Frankfurt</placeName>
+                        </place>
                     </listPlace>
                     <listPlace type="country">
                         <head>Austria-Hungary</head>
@@ -4413,154 +4397,131 @@
                         </place>
                     </listPlace>
                 </listPlace>
+                <listPlace>
+                    <place>
+                        <placeName xml:lang="ar">أمريكا</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">أوبسال</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">استراليا</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">اطنة</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">الترنسفال</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">الروم أيلي</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">السنغا</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">السودان</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">العجم</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">بلاد السويد</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">بودابست</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">بيت المقدس</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">جبال الخليل</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">جبال طوروس</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">جبل الكرمل</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">جزيرة كليبولي</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">خربوط</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">دبار بكر</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">رأس العين</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">رومية</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">سلسلة جبال طوروس</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">قينارجة</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">كيليكيا</placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar"> <choice>
+                            <corr resp="#org_MS">مدغشقر</corr>
+                            <orig>مدغكسر</orig>
+                            </choice> </placeName>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">مكة المكرمة</placeName>
+                    </place>
+                </listPlace>
             </settingDesc>
         </profileDesc>
         <encodingDesc>
             <projectDesc>
-                <p>The TEI file was produced by Till Grallert to provide a list of geo-tagged toponyms
-               extracted from a database of sources (Sente XML) and enriched with geo information
-               from geonames.org</p>
+                <p>The TEI file was produced by Till Grallert to provide a list of geo-tagged toponyms extracted from a database of sources (Sente XML) and enriched with geo information from geonames.org</p>
             </projectDesc>
             <editorialDecl>
-                <p>The relation between places, toponyms and their geographic location was recorded
-               using TEI P5 XML. Individual 
-                    <gi>place</gi>
-                    nodes are nested inside 
-                    <gi>listPlace</gi>
-                    nodes following administrative and topographic structures. Thus the quarters of the
-               city of Damascus are recorded as 
-                    <gi>place</gi>
-                    nodes nested inside a
-                    <gi>listPlace</gi>
-                    that corresponds to the city. The city of Damascus is then part of
-               a 
-                    <gi>listPlace</gi>
-                    for the county, the district, and the province. Future
-               improvements could record different sets of relations in parallel 
-                    <gi>listPlace</gi>
-                    nodes that all link to a flat tree of places.</p>
+                <p>The relation between places, toponyms and their geographic location was recorded using TEI P5 XML. Individual <gi>place</gi> nodes are nested inside <gi>listPlace</gi> nodes following administrative and topographic structures. Thus the quarters of the city of Damascus are recorded as <gi>place</gi> nodes nested inside a <gi>listPlace</gi> that corresponds to the city. The city of Damascus is then part of a <gi>listPlace</gi> for the county, the district, and the province. Future improvements could record different sets of relations in parallel <gi>listPlace</gi> nodes that all link to a flat tree of places.</p>
                 <p>The transscription of Arabic and Ottoman toponyms follows the IJMES paradigm.</p>
-                <p>Languages: According to TEI P5 
-                    <att>xml:lang</att>
-                    should follow BCP 47 
-                    <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"/>
-                    , which specifies for Arabic in Latin transcription &quot;ar-Latn&quot;. The specific type of
-               transcription should be added as a private use subtag, i.e. &quot;ar-Latn-x-ijmes&quot; for the
-               IJMES transcription of Arabic in Latin script. The tag for Ottoman Turkish is &quot;ota&quot;.
-               For transcription in Latin script following an adapted IJMES transcription, it would
-               be &quot;ota-Latn-x-ijmes&quot;. The English variant of Latinised Arabic would be &quot;ar-Latn-EN&quot;
-               and the French &quot;ar-Latn-FR&quot;</p>
-                <p>the structur of the element 
-                    <gi>geo</gi>
-                    is lat, long</p>
-                <p>The pattern of 
-                    <att>xml:id</att>
-                    s is the following:
-                    <list>
-                        <item>
-                            - no 
-                            <att>xml:id</att>
-                            : no reference to this place
-               could be found in online databases</item>
-                        <item>- xml:id starting with lgn [location geonames]
-               refer to geoname.org/xml:id</item>
-                        <item>- xml:id starting with lwm [location wikimapia] refer to
-               wikimapia.org/xml:id</item>
-                        <item>- in case of Ottoman provinces named after their capital cities,
-               a &quot;p&quot; is amended to the end of the xml:id.</item>
-                    </list>
-                </p>
+                <p>Languages: According to TEI P5 <att>xml:lang</att> should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
+                    /> , which specifies for Arabic in Latin transcription &quot;ar-Latn&quot;. The specific type of transcription should be added as a private use subtag, i.e. &quot;ar-Latn-x-ijmes&quot; for the IJMES transcription of Arabic in Latin script. The tag for Ottoman Turkish is &quot;ota&quot;. For transcription in Latin script following an adapted IJMES transcription, it would be &quot;ota-Latn-x-ijmes&quot;. The English variant of Latinised Arabic would be &quot;ar-Latn-EN&quot; and the French &quot;ar-Latn-FR&quot;</p>
+                <p>the structur of the element <gi>geo</gi> is lat, long</p>
+                <p>The pattern of <att>xml:id</att> s is the following: <list>
+                    <item> - no <att>xml:id</att> : no reference to this place could be found in online databases</item>
+                    <item>- xml:id starting with lgn [location geonames] refer to geoname.org/xml:id</item>
+                    <item>- xml:id starting with lwm [location wikimapia] refer to wikimapia.org/xml:id</item>
+                    <item>- in case of Ottoman provinces named after their capital cities, a &quot;p&quot; is amended to the end of the xml:id.</item>
+                    </list> </p>
             </editorialDecl>
         </encodingDesc>
         <revisionDesc>
-            <tei:change when="2019-05-17" who="#pers_TG">Improved 
-                <tei:gi>person</tei:gi>
-                nodes that had references to VIAF, by querying VIAF and adding  
-                <tei:gi>birth</tei:gi>
-                , 
-                <tei:gi>death</tei:gi>
-                , and 
-                <tei:gi>idno</tei:gi>
-                .</tei:change>
-            <change when="2019-03-24" who="#pers_TG">Improved 
-                <gi>person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding  
-                <gi>birth</gi>
-                , 
-                <gi>death</gi>
-                , and 
-                <gi>idno</gi>
-                .</change>
-            <change when="2018-07-23" who="#pers_TG">Improved 
-                <gi>person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding  
-                <gi>birth</gi>
-                , 
-                <gi>death</gi>
-                , and 
-                <gi>idno</gi>
-                .</change>
-            <change when="2018-05-20" who="#pers_TG">Improved 
-                <gi>person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding  
-                <gi>birth</gi>
-                , 
-                <gi>death</gi>
-                , and 
-                <gi>idno</gi>
-                .</change>
-            <change when="2018-05-19" who="#pers_TG">Improved 
-                <gi>person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding  
-                <gi>birth</gi>
-                , 
-                <gi>death</gi>
-                , and 
-                <gi>idno</gi>
-                .</change>
-            <change when="2018-05-18" who="#pers_TG">Improved 
-                <gi>person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding  
-                <gi>birth</gi>
-                , 
-                <gi>death</gi>
-                , and 
-                <gi>idno</gi>
-                .</change>
-            <change when="2018-05-18" who="#pers_TG">Improved 
-                <gi>person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding  
-                <gi>birth</gi>
-                , 
-                <gi>death</gi>
-                , and 
-                <gi>idno</gi>
-                .</change>
-            <change when="2018-05-17" who="#pers_TG">Improved 
-                <gi>person</gi>
-                nodes that had references to VIAF, by querying VIAF and adding  
-                <gi>birth</gi>
-                , 
-                <gi>death</gi>
-                , and 
-                <gi>idno</gi>
-                .</change>
-            <change when="2018-05-16" who="#pers_TG">Automatically fixed mark-up by adding 
-                <gi>idno</gi>
-                pointing to Geonames or Wikimapia to 
-                <gi>place</gi>
-                nodes and 
-                <att>source</att>
-                to 
-                <tag>placeName type=&quot;alt&quot;</tag>
-                pointing to the source for this information.</change>
+            <tei:change when="2019-05-17" who="#pers_TG"
+                >Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding <tei:gi>birth</tei:gi> , <tei:gi>death</tei:gi> , and <tei:gi>idno</tei:gi> .</tei:change>
+            <change when="2019-03-24" who="#pers_TG"
+                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
+            <change when="2018-07-23" who="#pers_TG"
+                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
+            <change when="2018-05-20" who="#pers_TG"
+                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
+            <change when="2018-05-19" who="#pers_TG"
+                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
+            <change when="2018-05-18" who="#pers_TG"
+                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
+            <change when="2018-05-18" who="#pers_TG"
+                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
+            <change when="2018-05-17" who="#pers_TG"
+                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
+            <change when="2018-05-16" who="#pers_TG"
+                >Automatically fixed mark-up by adding <gi>idno</gi> pointing to Geonames or Wikimapia to <gi>place</gi> nodes and <att>source</att> to <tag>placeName type=&quot;alt&quot;</tag> pointing to the source for this information.</change>
             <change when="2012-11-24">originally created</change>
             <change when="2012-11-29">added places</change>
             <change when="2013-02-25">added and corrected places</change>
             <change when="2013-04-15">added and corrected places</change>
             <change when="2013-06-25">added and corrected places</change>
-            <change when="2013-10-10">created a hierarchy of quarters and neighbourhoods in
-            Damascus</change>
+            <change when="2013-10-10">created a hierarchy of quarters and neighbourhoods in Damascus</change>
             <change when="2014-10-10">corrected the language codes</change>
             <change when="2014-10-15">expanded the project description and editorial declarations</change>
         </revisionDesc>
