@@ -412,16 +412,24 @@
                 <xsl:variable name="v_type" select="$v_nymlist/@type"/>
                 <!-- establish the kind of nym -->
                 <xsl:choose>
-                    <xsl:when test="$v_type = ('title', 'honorific', 'nobility')">
+                    <xsl:when test="$v_type = ('title', 'honorific', 'nobility', 'rank')">
                         <xsl:element name="tei:roleName">
                             <xsl:attribute name="type" select="$v_type"/>
+                            <xsl:if test="$v_nymlist/@subtype">
+                                <xsl:copy-of select="$v_nymlist/@subtype"/>
+                            </xsl:if>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                             <xsl:value-of select="$p_input"/>
                         </xsl:element>
                         <xsl:text> </xsl:text>
                     </xsl:when>
+                    <!-- fallback -->
+                    <xsl:otherwise>
+                        <xsl:value-of select="$p_input"/>
+                    </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <!-- fallback -->
             <xsl:otherwise>
                 <xsl:value-of select="$p_input"/>
             </xsl:otherwise>
