@@ -25,7 +25,7 @@
             </editionStmt>
             <publicationStmt>
                 <p>The file was originally created in November 2012 and is continuously updated through manual and automated input by the original author.</p>
-                <p>This software is licensed as: Distributed under a Creative Commons Attribution-ShareAlike 3.0 Unported License http://creativecommons.org/licenses/by-sa/3.0/ All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. This software is provided by the copyright holders and contributors &quot;as is&quot; and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the copyright holder or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage. </p>
+                <p>This software is licensed as: Distributed under a Creative Commons Attribution-ShareAlike 3.0 Unported License http://creativecommons.org/licenses/by-sa/3.0/ All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. This software is provided by the copyright holders and contributors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the copyright holder or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage. </p>
                 <p>Author: Till Grallert</p>
             </publicationStmt>
             <sourceDesc>
@@ -51,7 +51,7 @@
                     <listPlace type="town">
                         <head>Istanbul</head>
                         <place>
-                            <placeName xml:lang="ar">قصر <placeName xml:lang="ota">ييلدز</placeName></placeName>
+                            <placeName xml:lang="ar">قصر <placeName xml:lang="ota">ييلدز</placeName> </placeName>
                             <placeName xml:lang="ota">ييلدز</placeName>
                             <idno type="oape">2</idno>
                         </place>
@@ -191,6 +191,16 @@
                                 <idno type="oape">14</idno>
                             </place>
                             <place type="town">
+                                <placeName xml:lang="ota">بيره جك</placeName>
+                                <placeName xml:lang="ota">بيره جيك</placeName>
+                                <placeName xml:lang="tr">Birecik</placeName>
+                                <location source="#org_geon">
+                                    <geo>37.02577, 37.97841</geo>
+                                </location>
+                                <idno type="geon">321062</idno>
+                                <idno type="oape">164</idno>
+                            </place>
+                            <place type="town">
                                 <placeName xml:lang="en">Alexandretta</placeName>
                                 <placeName source="#org_geon" type="alt" xml:lang="ar">إسكندرونة</placeName>
                                 <placeName source="#org_geon" type="alt" xml:lang="ar">الإسكندرونة</placeName>
@@ -225,16 +235,6 @@
                                 <idno type="url">http://en.wikipedia.org/wiki/Aleppo</idno>
                                 <idno type="geon">170063</idno>
                                 <idno type="oape">15</idno>
-                            </place>
-                            <place type="town">
-                                <placeName xml:lang="ota">بيره جك</placeName>
-                                <placeName xml:lang="ota">بيره جيك</placeName>
-                                <placeName xml:lang="tr">Birecik</placeName>
-                                <location source="#org_geon">
-                                    <geo>37.02577, 37.97841</geo>
-                                </location>
-                                <idno type="geon">321062</idno>
-                                <idno type="oape">164</idno>
                             </place>
                             <place type="town" xml:id="lgn170794">
                                 <placeName type="simple">Dayr al-Zur</placeName>
@@ -440,6 +440,9 @@
                                     </tei:location>
                                     <tei:idno type="geon">294098</tei:idno>
                                     <idno type="oape">369</idno>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Nazareth</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Nazaret</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Nasıra</tei:placeName>
                                 </place>
                                 <place type="town">
                                     <placeName type="simple" xml:lang="en">Tiberias</placeName>
@@ -2212,6 +2215,19 @@
                                     <idno type="geon">8621697</idno>
                                     <idno type="oape">191</idno>
                                 </place>
+                                <place type="town">
+                                    <placeName xml:lang="ar">بئر سبع</placeName>
+                                    <placeName xml:lang="en">Beer Sheva</placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Beer-Sheva</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Be’er Scheva</tei:placeName>
+                                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Beerşeba</tei:placeName>
+                                    <tei:location source="#org_geon">
+                                        <tei:geo>31.25181, 34.7913</tei:geo>
+                                    </tei:location>
+                                    <tei:idno type="url">https://en.wikipedia.org/wiki/Beersheba</tei:idno>
+                                    <tei:idno type="geon">295530</tei:idno>
+                                    <idno type="oape">376</idno>
+                                </place>
                                 <place type="town" xml:id="lgn248382">
                                     <placeName type="simple">Ma'an</placeName>
                                     <placeName type="toponym">Ma‘ān</placeName>
@@ -2272,10 +2288,6 @@
                                         <idno type="oape">196</idno>
                                     </place>
                                 </listPlace>
-                                <place type="town">
-                                    <placeName xml:lang="ar">بئر سبع</placeName>
-                                    <placeName xml:lang="en">Beer Sheva</placeName>
-                                </place>
                             </listPlace>
                             <listPlace type="district">
                                 <head>Sancak of Belqā</head>
@@ -2393,19 +2405,6 @@
                         </listPlace>
                         <listPlace type="district">
                             <head>Mount Lebanon</head>
-                            <place type="village">
-                                <placeName xml:lang="ar">حريصا</placeName>
-                                <placeName xml:lang="ar-Latn-x-ijmes">Ḥarīṣā</placeName>
-                            </place>
-                            <place type="town">
-                                <placeName xml:lang="ar">الشويفات</placeName>
-                                <placeName xml:lang="ar-Latn-x-ijmes">al-Shuwayfāt</placeName>
-                                <tei:location source="#org_geon">
-                                    <tei:geo>30.00806, 31.40942</tei:geo>
-                                </tei:location>
-                                <tei:idno type="geon">8134087</tei:idno>
-                                <idno type="oape">370</idno>
-                            </place>
                             <place type="district">
                                 <placeName xml:lang="ar">لبنان</placeName>
                                 <placeName xml:lang="ar">جبل لبنان</placeName>
@@ -2438,6 +2437,15 @@
                                 <idno type="oape">207</idno>
                             </place>
                             <place type="town">
+                                <placeName xml:lang="ar">الشويفات</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">al-Shuwayfāt</placeName>
+                                <tei:location source="#org_geon">
+                                    <tei:geo>30.00806, 31.40942</tei:geo>
+                                </tei:location>
+                                <tei:idno type="geon">8134087</tei:idno>
+                                <idno type="oape">370</idno>
+                            </place>
+                            <place type="town">
                                 <placeName xml:lang="ar">بعبدا</placeName>
                                 <location>
                                     <geo>33.83389, 35.54417</geo>
@@ -2456,9 +2464,27 @@
                                 <idno type="geon">8041193</idno>
                                 <idno type="oape">206</idno>
                             </place>
+                            <place type="village">
+                                <placeName xml:lang="ar">حريصا</placeName>
+                                <placeName xml:lang="ar-Latn-x-ijmes">Ḥarīṣā</placeName>
+                                <idno type="oape">377</idno>
+                            </place>
                         </listPlace>
                         <listPlace>
                             <head>Other places</head>
+                            <place type="town">
+                                <placeName xml:lang="ar">الخليل</placeName>
+                                <placeName xml:lang="en">Hebron</placeName>
+                                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Hébron</tei:placeName>
+                                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Hebron</tei:placeName>
+                                <tei:placeName source="#org_geon" type="alt" xml:lang="tr">El Halil</tei:placeName>
+                                <tei:location source="#org_geon">
+                                    <tei:geo>31.52935, 35.0938</tei:geo>
+                                </tei:location>
+                                <tei:idno type="url">https://en.wikipedia.org/wiki/Hebron</tei:idno>
+                                <tei:idno type="geon">285066</tei:idno>
+                                <idno type="oape">378</idno>
+                            </place>
                             <place type="MT">
                                 <placeName type="simple">Mt.Hermon</placeName>
                                 <placeName type="toponym">Mt Hermon</placeName>
@@ -2470,33 +2496,10 @@
                                 <placeName source="#org_geon" type="alt" xml:lang="en">Mount Hermon</placeName>
                                 <idno type="oape">208</idno>
                             </place>
-                            <place type="town">
-                                <placeName xml:lang="ar">الخليل</placeName>
-                                <placeName xml:lang="en">Hebron</placeName>
-                            </place>
                         </listPlace>
                     </listPlace>
                     <listPlace type="region">
                         <head>Iraq</head>
-                        <place type="town">
-                            <placeName xml:lang="ar">الديوانية</placeName>
-                            <placeName xml:lang="ar-Latn-x-ijmes">al-Dīwāniyya</placeName>
-                            <tei:location source="#org_geon">
-                                <tei:geo>31.99289, 44.92552</tei:geo>
-                            </tei:location>
-                            <tei:idno type="url">https://en.wikipedia.org/wiki/Al_Diwaniyah</tei:idno>
-                            <tei:idno type="geon">99762</tei:idno>
-                            <idno type="oape">373</idno>
-                        </place>
-                        <place type="town">
-                            <placeName xml:lang="ar">الكاظمية</placeName>
-                            <placeName xml:lang="ar-Latn-x-ijmes">al-Kāẓimiyya</placeName>
-                            <tei:location source="#org_geon">
-                                <tei:geo>37.18879, 42.23989</tei:geo>
-                            </tei:location>
-                            <tei:idno type="geon">447476</tei:idno>
-                            <idno type="oape">374</idno>
-                        </place>
                         <place type="region">
                             <placeName xml:lang="ar">بين النهرين</placeName>
                             <placeName xml:lang="ar">ما بين النهرين</placeName>
@@ -2559,6 +2562,25 @@
                             <idno type="oape">211</idno>
                         </place>
                         <place type="town">
+                            <placeName xml:lang="ar">الديوانية</placeName>
+                            <placeName xml:lang="ar-Latn-x-ijmes">al-Dīwāniyya</placeName>
+                            <tei:location source="#org_geon">
+                                <tei:geo>31.99289, 44.92552</tei:geo>
+                            </tei:location>
+                            <tei:idno type="url">https://en.wikipedia.org/wiki/Al_Diwaniyah</tei:idno>
+                            <tei:idno type="geon">99762</tei:idno>
+                            <idno type="oape">373</idno>
+                        </place>
+                        <place type="town">
+                            <placeName xml:lang="ar">الكاظمية</placeName>
+                            <placeName xml:lang="ar-Latn-x-ijmes">al-Kāẓimiyya</placeName>
+                            <tei:location source="#org_geon">
+                                <tei:geo>37.18879, 42.23989</tei:geo>
+                            </tei:location>
+                            <tei:idno type="geon">447476</tei:idno>
+                            <idno type="oape">374</idno>
+                        </place>
+                        <place type="town">
                             <placeName xml:lang="ar">كربلاء</placeName>
                             <placeName xml:lang="ar-Latn-x-ijmes">Karbalāʾ</placeName>
                             <tei:location source="#org_geon">
@@ -2566,6 +2588,12 @@
                             </tei:location>
                             <tei:idno type="geon">94824</tei:idno>
                             <idno type="oape">372</idno>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Karbala</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Karbala</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Kerbala</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Karbala</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Kerbela</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Kerbela</tei:placeName>
                         </place>
                         <listPlace type="province">
                             <head>Province of Baghdad</head>
@@ -2701,9 +2729,14 @@
                     </listPlace>
                     <listPlace type="region">
                         <head>Egypt</head>
-                        <place>
-                            <placeName xml:lang="ar">جزيرة <placeName xml:lang="ar">أسوان</placeName></placeName>
+                        <place type="PRK">
+                            <placeName xml:lang="ar">جزيرة <placeName xml:lang="ar">أسوان</placeName> </placeName>
                             <idno type="oape">223</idno>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Kitchener's Island</tei:placeName>
+                            <tei:location source="#org_geon">
+                                <tei:geo>24.09366, 32.88695</tei:geo>
+                            </tei:location>
+                            <tei:idno type="geon">11072230</tei:idno>
                         </place>
                         <place type="town">
                             <placeName xml:lang="ar">أسوان</placeName>
@@ -2909,9 +2942,13 @@
                         <placeName xml:lang="fr-Arab-AR">بور رويال</placeName>
                         <idno type="oape">241</idno>
                     </place>
-                    <place>
+                    <place type="SCH">
                         <placeName xml:lang="ar"> <geogFeat xml:lang="ar">ضفاف</geogFeat> <geogName xml:lang="ar">النيل</geogName> </placeName>
                         <idno type="oape">242</idno>
+                        <tei:location source="#org_geon">
+                            <tei:geo>33.27524, 44.2765</tei:geo>
+                        </tei:location>
+                        <tei:idno type="geon">12085354</tei:idno>
                     </place>
                     <place>
                         <placeName xml:lang="ar"> <geogFeat xml:lang="ar">ضفاف</geogFeat> <geogName xml:lang="ar">بردى</geogName> </placeName>
@@ -4054,6 +4091,9 @@
                             <idno type="oape">343</idno>
                         </place>
                         <place type="town">
+                            <idno type="oape">379</idno>
+                        </place>
+                        <place type="town">
                             <placeName xml:lang="ar">ليبسيك</placeName>
                             <placeName xml:lang="de">Leipzig</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="en">Leipsic</placeName>
@@ -4076,10 +4116,6 @@
                             <idno type="url">http://en.wikipedia.org/wiki/Heidelberg</idno>
                             <idno type="geon">2907911</idno>
                             <idno type="oape">345</idno>
-                        </place>
-                        <place type="town">
-                            <placeName xml:lang="ar">فرانكفورت</placeName>
-                            <placeName xml:lang="de-Arab-AR">Frankfurt</placeName>
                         </place>
                     </listPlace>
                     <listPlace type="country">
@@ -4335,6 +4371,19 @@
                             <idno type="oape">363</idno>
                         </place>
                         <place type="town">
+                            <placeName xml:lang="ar">ريو دي جانيرو</placeName>
+                            <placeName xml:lang="en">Rio de Janeiro</placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Rio de Janeiro</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Rio de Janeiro</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Rio de Janeiro</tei:placeName>
+                            <tei:location source="#org_geon">
+                                <tei:geo>-22.90642, -43.18223</tei:geo>
+                            </tei:location>
+                            <tei:idno type="url">https://en.wikipedia.org/wiki/Rio_de_Janeiro</tei:idno>
+                            <tei:idno type="geon">3451190</tei:idno>
+                            <idno type="oape">380</idno>
+                        </place>
+                        <place type="town">
                             <placeName xml:lang="ar">سان باولو</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="en">São Paulo</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="fr">São Paulo</placeName>
@@ -4346,10 +4395,6 @@
                             <idno type="url">http://en.wikipedia.org/wiki/S%C3%A3o_Paulo</idno>
                             <idno type="geon">3448439</idno>
                             <idno type="oape">364</idno>
-                        </place>
-                        <place type="town">
-                            <placeName xml:lang="ar">ريو دي جانيرو</placeName>
-                            <placeName xml:lang="en">Rio de Janeiro</placeName>
                         </place>
                     </listPlace>
                     <listPlace type="country">
@@ -4399,82 +4444,183 @@
                 </listPlace>
                 <listPlace>
                     <place>
-                        <placeName xml:lang="ar">أمريكا</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">أوبسال</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">استراليا</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">اطنة</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">الترنسفال</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">الروم أيلي</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">السنغا</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">السودان</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">العجم</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">بلاد السويد</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">بودابست</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">بيت المقدس</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">جبال الخليل</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">جبال طوروس</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">جبل الكرمل</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">جزيرة كليبولي</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">خربوط</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">دبار بكر</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">رأس العين</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">رومية</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">سلسلة جبال طوروس</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">قينارجة</placeName>
-                    </place>
-                    <place>
-                        <placeName xml:lang="ar">كيليكيا</placeName>
-                    </place>
-                    <place>
                         <placeName xml:lang="ar"> <choice>
                             <corr resp="#org_MS">مدغشقر</corr>
                             <orig>مدغكسر</orig>
                             </choice> </placeName>
+                        <idno type="oape">404</idno>
+                    </place>
+                    <place type="RGN">
+                        <placeName xml:lang="ar">أمريكا</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Northern America</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Amérique septentrionale</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Nordamerika</tei:placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>54.77535, -105.64453</tei:geo>
+                        </tei:location>
+                        <tei:idno type="url">https://en.wikipedia.org/wiki/Northern_America</tei:idno>
+                        <tei:idno type="geon">7729890</tei:idno>
+                        <idno type="oape">381</idno>
                     </place>
                     <place>
+                        <placeName xml:lang="ar">أوبسال</placeName>
+                        <idno type="oape">382</idno>
+                    </place>
+                    <place type="country">
+                        <placeName xml:lang="ar">استراليا</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Australia</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Australie</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Australien</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Avustralya</tei:placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>-25, 135</tei:geo>
+                        </tei:location>
+                        <tei:idno type="url">https://en.wikipedia.org/wiki/Australia</tei:idno>
+                        <tei:idno type="geon">2077456</tei:idno>
+                        <idno type="oape">383</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">اطنة</placeName>
+                        <idno type="oape">384</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">الترنسفال</placeName>
+                        <idno type="oape">385</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">الروم أيلي</placeName>
+                        <idno type="oape">386</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">السنغا</placeName>
+                        <idno type="oape">387</idno>
+                    </place>
+                    <place type="country">
+                        <placeName xml:lang="ar">السودان</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Sudan</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Soudan</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Sudan</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Sudan</tei:placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>16, 30</tei:geo>
+                        </tei:location>
+                        <tei:idno type="url">https://en.wikipedia.org/wiki/Sudan</tei:idno>
+                        <tei:idno type="geon">366755</tei:idno>
+                        <idno type="oape">388</idno>
+                    </place>
+                    <place type="LCTY">
+                        <placeName xml:lang="ar">العجم</placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>31.93787, 45.51102</tei:geo>
+                        </tei:location>
+                        <tei:idno type="geon">6755774</tei:idno>
+                        <idno type="oape">389</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">بلاد السويد</placeName>
+                        <idno type="oape">390</idno>
+                    </place>
+                    <place type="town">
+                        <placeName xml:lang="ar">بودابست</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Budapest</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Budapest</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Budapest</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Budapeşte</tei:placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>47.49835, 19.04045</tei:geo>
+                        </tei:location>
+                        <tei:idno type="url">https://en.wikipedia.org/wiki/Budapest</tei:idno>
+                        <tei:idno type="geon">3054643</tei:idno>
+                        <idno type="oape">391</idno>
+                    </place>
+                    <place type="town">
+                        <placeName xml:lang="ar">بيت المقدس</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Jerusalem</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Jérusalem</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Jerusalem</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Kudüs</tei:placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>31.76904, 35.21633</tei:geo>
+                        </tei:location>
+                        <tei:idno type="url">https://en.wikipedia.org/wiki/Jerusalem</tei:idno>
+                        <tei:idno type="geon">281184</tei:idno>
+                        <idno type="oape">392</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">جبال الخليل</placeName>
+                        <idno type="oape">393</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">جبال طوروس</placeName>
+                        <idno type="oape">394</idno>
+                    </place>
+                    <place type="MTS">
+                        <placeName xml:lang="ar">جبل الكرمل</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Mount Carmel</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Karmel</tei:placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>32.72852, 35.05411</tei:geo>
+                        </tei:location>
+                        <tei:idno type="url">https://en.wikipedia.org/wiki/Mount_Carmel</tei:idno>
+                        <tei:idno type="geon">294579</tei:idno>
+                        <idno type="oape">395</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">جزيرة كليبولي</placeName>
+                        <idno type="oape">396</idno>
+                    </place>
+                    <place type="town">
+                        <placeName xml:lang="ar">خربوط</placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>36.9031, 43.90387</tei:geo>
+                        </tei:location>
+                        <tei:idno type="geon">97385</tei:idno>
+                        <idno type="oape">397</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">دبار بكر</placeName>
+                        <idno type="oape">398</idno>
+                    </place>
+                    <place type="LCTY">
+                        <placeName xml:lang="ar">رأس العين</placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>37.06953, 43.04323</tei:geo>
+                        </tei:location>
+                        <tei:idno type="geon">92041</tei:idno>
+                        <idno type="oape">399</idno>
+                    </place>
+                    <place type="PK">
+                        <placeName xml:lang="ar">رومية</placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>33.80682, 35.58182</tei:geo>
+                        </tei:location>
+                        <tei:idno type="geon">11829477</tei:idno>
+                        <idno type="oape">400</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">سلسلة جبال طوروس</placeName>
+                        <idno type="oape">401</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">قينارجة</placeName>
+                        <idno type="oape">402</idno>
+                    </place>
+                    <place>
+                        <placeName xml:lang="ar">كيليكيا</placeName>
+                        <idno type="oape">403</idno>
+                    </place>
+                    <place type="town">
                         <placeName xml:lang="ar">مكة المكرمة</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Makkah</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">La Mecque</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Mekka</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Mekke</tei:placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>21.42664, 39.82563</tei:geo>
+                        </tei:location>
+                        <tei:idno type="url">https://en.wikipedia.org/wiki/Mecca</tei:idno>
+                        <tei:idno type="geon">104515</tei:idno>
+                        <idno type="oape">405</idno>
                     </place>
                 </listPlace>
             </settingDesc>
@@ -4487,17 +4633,19 @@
                 <p>The relation between places, toponyms and their geographic location was recorded using TEI P5 XML. Individual <gi>place</gi> nodes are nested inside <gi>listPlace</gi> nodes following administrative and topographic structures. Thus the quarters of the city of Damascus are recorded as <gi>place</gi> nodes nested inside a <gi>listPlace</gi> that corresponds to the city. The city of Damascus is then part of a <gi>listPlace</gi> for the county, the district, and the province. Future improvements could record different sets of relations in parallel <gi>listPlace</gi> nodes that all link to a flat tree of places.</p>
                 <p>The transscription of Arabic and Ottoman toponyms follows the IJMES paradigm.</p>
                 <p>Languages: According to TEI P5 <att>xml:lang</att> should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
-                    /> , which specifies for Arabic in Latin transcription &quot;ar-Latn&quot;. The specific type of transcription should be added as a private use subtag, i.e. &quot;ar-Latn-x-ijmes&quot; for the IJMES transcription of Arabic in Latin script. The tag for Ottoman Turkish is &quot;ota&quot;. For transcription in Latin script following an adapted IJMES transcription, it would be &quot;ota-Latn-x-ijmes&quot;. The English variant of Latinised Arabic would be &quot;ar-Latn-EN&quot; and the French &quot;ar-Latn-FR&quot;</p>
+                    /> , which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the IJMES transcription of Arabic in Latin script. The tag for Ottoman Turkish is "ota". For transcription in Latin script following an adapted IJMES transcription, it would be "ota-Latn-x-ijmes". The English variant of Latinised Arabic would be "ar-Latn-EN" and the French "ar-Latn-FR"</p>
                 <p>the structur of the element <gi>geo</gi> is lat, long</p>
                 <p>The pattern of <att>xml:id</att> s is the following: <list>
                     <item> - no <att>xml:id</att> : no reference to this place could be found in online databases</item>
                     <item>- xml:id starting with lgn [location geonames] refer to geoname.org/xml:id</item>
                     <item>- xml:id starting with lwm [location wikimapia] refer to wikimapia.org/xml:id</item>
-                    <item>- in case of Ottoman provinces named after their capital cities, a &quot;p&quot; is amended to the end of the xml:id.</item>
+                    <item>- in case of Ottoman provinces named after their capital cities, a "p" is amended to the end of the xml:id.</item>
                     </list> </p>
             </editorialDecl>
         </encodingDesc>
         <revisionDesc>
+            <tei:change when="2020-08-24" who="#pers_TG"
+                >Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
             <tei:change when="2019-05-17" who="#pers_TG"
                 >Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding <tei:gi>birth</tei:gi> , <tei:gi>death</tei:gi> , and <tei:gi>idno</tei:gi> .</tei:change>
             <change when="2019-03-24" who="#pers_TG"
@@ -4515,7 +4663,7 @@
             <change when="2018-05-17" who="#pers_TG"
                 >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
             <change when="2018-05-16" who="#pers_TG"
-                >Automatically fixed mark-up by adding <gi>idno</gi> pointing to Geonames or Wikimapia to <gi>place</gi> nodes and <att>source</att> to <tag>placeName type=&quot;alt&quot;</tag> pointing to the source for this information.</change>
+                >Automatically fixed mark-up by adding <gi>idno</gi> pointing to Geonames or Wikimapia to <gi>place</gi> nodes and <att>source</att> to <tag>placeName type="alt"</tag> pointing to the source for this information.</change>
             <change when="2012-11-24">originally created</change>
             <change when="2012-11-29">added places</change>
             <change when="2013-02-25">added and corrected places</change>
