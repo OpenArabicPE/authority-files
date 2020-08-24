@@ -41,7 +41,7 @@
                     <xsl:message>
                         <xsl:text>Starting further processing</xsl:text>
                     </xsl:message>
-                </xsl:if>>
+                </xsl:if>
                 <xsl:variable name="v_name-marked-up" select="oape:name-add-markup(.)"/>
                 <xsl:variable name="v_no-rolename">
                     <xsl:apply-templates select="$v_name-marked-up" mode="m_remove-rolename"/>

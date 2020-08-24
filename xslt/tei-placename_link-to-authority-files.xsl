@@ -30,7 +30,7 @@
     <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented" exclude-result-prefixes="#all"/>
 
     <xsl:include href="query-geonames.xsl"/>
-    <xsl:include href="functions.xsl"/>
+    <!--<xsl:include href="functions.xsl"/>-->
     
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master"
@@ -73,7 +73,7 @@
     
     <xsl:template match="tei:placeName" priority="10">
         <!-- flatened version of the persName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string())"/>
+        <xsl:variable name="v_name-flat" select="oape:string-normalise-characters(string())"/>
         <!-- test if the flattened name is present in the authority file -->
         <xsl:variable name="v_corresponding-place">
             <xsl:choose>
@@ -91,17 +91,24 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        
         <xsl:choose>
             <!-- fallback: name is not found in the authority file -->
             <xsl:when test="$v_corresponding-place = 'false()'">
-                <xsl:if test="$p_verbose = true()">
+<!--                <xsl:if test="$p_verbose = true()">-->
                     <xsl:message>
-                        <xsl:text>t_2: </xsl:text>
                         <xsl:value-of select="normalize-space(.)"/>
-                        <xsl:message> not found in authority file.</xsl:message>
+                        <xsl:text> not found in authority file. Add </xsl:text>
+                        <xsl:element name="tei:place">
+                            <xsl:copy>
+                                <xsl:if test="not(@xml:lang)">
+                                    <xsl:attribute name="xml:lang" select="'ar'"/>
+                                </xsl:if>
+                                <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>
+                            </xsl:copy>
+                        </xsl:element>
+                        <xsl:text> to the authority file.</xsl:text>
                     </xsl:message>
-                </xsl:if>
+                <!--</xsl:if>-->
                 <xsl:copy>
                     <xsl:apply-templates select="@* | node()"/>
                 </xsl:copy>
@@ -110,7 +117,6 @@
             <xsl:otherwise>
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>t_2: </xsl:text>
                         <xsl:value-of select="normalize-space(.)"/>
                         <xsl:text> is present in authority file and will be updated</xsl:text>
                     </xsl:message>
@@ -176,11 +182,5 @@
             </xsl:element>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
-    </xsl:template>
-    <!-- document changes on changed elements by means of the @change attribute linking to the @xml:id of the <tei:change> element -->
-    <xsl:template match="@change" mode="m_documentation">
-        <xsl:attribute name="change">
-            <xsl:value-of select="concat(., ' #', $p_id-change)"/>
-        </xsl:attribute>
     </xsl:template>
 </xsl:stylesheet>
