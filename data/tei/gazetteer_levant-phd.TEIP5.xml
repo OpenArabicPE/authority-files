@@ -98,14 +98,15 @@
                             <idno type="oape">4</idno>
                         </place>
                         <place type="town">
+                            <placeName xml:lang="ar">القدس</placeName>
+                            <placeName source="#org_geon" type="alt" xml:lang="ar">القدس الشريف</placeName>
+                            <placeName xml:lang="ar">بيت المقدس</placeName>
                             <placeName type="simple" xml:lang="en">Jerusalem</placeName>
                             <placeName xml:lang="ar-Latn-x-ijmes">al-Quds</placeName>
                             <placeName xml:lang="ar-Latn-x-ijmes">al-Quds al-Sharīf</placeName>
                             <location>
                                 <geo>31.76904, 35.21633</geo>
                             </location>
-                            <placeName source="#org_geon" type="alt" xml:lang="ar">القدس الشريف</placeName>
-                            <placeName xml:lang="ar">القدس</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="fr">Jérusalem</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="de">Jerusalem</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="tr">Kudüs</placeName>
@@ -2690,6 +2691,7 @@
                         </place>
                         <place type="town">
                             <placeName xml:lang="ar">مكة</placeName>
+                            <placeName xml:lang="ar">مكة المكرمة</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="en">Mecca</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="fr">La Mecque</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="de">Mekka</placeName>
@@ -3166,6 +3168,7 @@
                     </place>
                     <place type="country">
                         <placeName xml:lang="ar">أوستراليا</placeName>
+                        <placeName xml:lang="ar">استراليا</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="en">Australia</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="fr">Australie</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="de">Australien</placeName>
@@ -4171,6 +4174,19 @@
                             <idno type="geon">2761369</idno>
                             <idno type="oape">348</idno>
                         </place>
+                        <place type="town">
+                            <placeName xml:lang="ar">بودابست</placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Budapest</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Budapest</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Budapest</tei:placeName>
+                            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Budapeşte</tei:placeName>
+                            <tei:location source="#org_geon">
+                                <tei:geo>47.49835, 19.04045</tei:geo>
+                            </tei:location>
+                            <tei:idno type="url">https://en.wikipedia.org/wiki/Budapest</tei:idno>
+                            <tei:idno type="geon">3054643</tei:idno>
+                            <idno type="oape">391</idno>
+                        </place>
                     </listPlace>
                     <listPlace type="country">
                         <head>Sweden</head>
@@ -4466,19 +4482,6 @@
                         <placeName xml:lang="ar">أوبسال</placeName>
                         <idno type="oape">382</idno>
                     </place>
-                    <place type="country">
-                        <placeName xml:lang="ar">استراليا</placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Australia</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Australie</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Australien</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Avustralya</tei:placeName>
-                        <tei:location source="#org_geon">
-                            <tei:geo>-25, 135</tei:geo>
-                        </tei:location>
-                        <tei:idno type="url">https://en.wikipedia.org/wiki/Australia</tei:idno>
-                        <tei:idno type="geon">2077456</tei:idno>
-                        <idno type="oape">383</idno>
-                    </place>
                     <place>
                         <placeName xml:lang="ar">اطنة</placeName>
                         <idno type="oape">384</idno>
@@ -4519,32 +4522,6 @@
                     <place>
                         <placeName xml:lang="ar">بلاد السويد</placeName>
                         <idno type="oape">390</idno>
-                    </place>
-                    <place type="town">
-                        <placeName xml:lang="ar">بودابست</placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Budapest</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Budapest</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Budapest</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Budapeşte</tei:placeName>
-                        <tei:location source="#org_geon">
-                            <tei:geo>47.49835, 19.04045</tei:geo>
-                        </tei:location>
-                        <tei:idno type="url">https://en.wikipedia.org/wiki/Budapest</tei:idno>
-                        <tei:idno type="geon">3054643</tei:idno>
-                        <idno type="oape">391</idno>
-                    </place>
-                    <place type="town">
-                        <placeName xml:lang="ar">بيت المقدس</placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Jerusalem</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Jérusalem</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Jerusalem</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Kudüs</tei:placeName>
-                        <tei:location source="#org_geon">
-                            <tei:geo>31.76904, 35.21633</tei:geo>
-                        </tei:location>
-                        <tei:idno type="url">https://en.wikipedia.org/wiki/Jerusalem</tei:idno>
-                        <tei:idno type="geon">281184</tei:idno>
-                        <idno type="oape">392</idno>
                     </place>
                     <place>
                         <placeName xml:lang="ar">جبال الخليل</placeName>
@@ -4609,19 +4586,6 @@
                         <placeName xml:lang="ar">كيليكيا</placeName>
                         <idno type="oape">403</idno>
                     </place>
-                    <place type="town">
-                        <placeName xml:lang="ar">مكة المكرمة</placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Makkah</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">La Mecque</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Mekka</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Mekke</tei:placeName>
-                        <tei:location source="#org_geon">
-                            <tei:geo>21.42664, 39.82563</tei:geo>
-                        </tei:location>
-                        <tei:idno type="url">https://en.wikipedia.org/wiki/Mecca</tei:idno>
-                        <tei:idno type="geon">104515</tei:idno>
-                        <idno type="oape">405</idno>
-                    </place>
                 </listPlace>
             </settingDesc>
         </profileDesc>
@@ -4645,7 +4609,7 @@
         </encodingDesc>
         <revisionDesc>
             <tei:change when="2020-08-24" who="#pers_TG"
-                >Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding  <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
+                >Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding <tei:gi>birth</tei:gi>, <tei:gi>death</tei:gi>, and <tei:gi>idno</tei:gi>.</tei:change>
             <tei:change when="2019-05-17" who="#pers_TG"
                 >Improved <tei:gi>person</tei:gi> nodes that had references to VIAF, by querying VIAF and adding <tei:gi>birth</tei:gi> , <tei:gi>death</tei:gi> , and <tei:gi>idno</tei:gi> .</tei:change>
             <change when="2019-03-24" who="#pers_TG"
