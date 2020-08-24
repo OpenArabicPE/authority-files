@@ -7,8 +7,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <!-- PROBLEMS: 
-           - The input <persName>السلطان صلاح الدين</persName> is converted to <persName ref="oape:pers:3715"> <tei:addName type="khitab" change="#d3e749">صلاح الدين</tei:addName></persName>
-        - in some instance this stylesheet produces empty <persName> nodes in the source file upon adding VIAF references to them
+         - no known problems
     -->
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
