@@ -6,7 +6,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-    <!-- PROBLEM: in some instance this stylesheet produces empty <persName> nodes in the source file upon adding VIAF references to them -->
+    <!-- PROBLEMS: 
+           - The input <persName>السلطان صلاح الدين</persName> is converted to <persName ref="oape:pers:3715"> <tei:addName type="khitab" change="#d3e749">صلاح الدين</tei:addName></persName>
+        - in some instance this stylesheet produces empty <persName> nodes in the source file upon adding VIAF references to them
+    -->
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml"
@@ -35,9 +38,11 @@
             <!-- fall back -->
             <xsl:otherwise>
                 <!-- add mark-up to the input name -->
-                <xsl:message>
-                    <xsl:text>Starting further processing</xsl:text>
-                </xsl:message>
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>Starting further processing</xsl:text>
+                    </xsl:message>
+                </xsl:if>>
                 <xsl:variable name="v_name-marked-up" select="oape:name-add-markup(.)"/>
                 <xsl:variable name="v_no-rolename">
                     <xsl:apply-templates select="$v_name-marked-up" mode="m_remove-rolename"/>
@@ -48,7 +53,7 @@
                 </xsl:message>-->
                 <!-- call this function again with the new, marked-up name -->
                 <xsl:variable name="v_name-marked-up-linked" select="oape:link-persname-to-authority-file($v_no-rolename/tei:persName, $v_file-entities-master, $p_add-mark-up-to-input)"/>
-                <xsl:choose>
+                    <xsl:choose>
                     <!-- test if a match was found in the authority file -->
                     <xsl:when test="$v_name-marked-up-linked/@ref">
                         <xsl:copy>
@@ -68,8 +73,19 @@
                             </xsl:choose>
                         </xsl:copy>
                     </xsl:when>
+                    <!-- add mark-up to the input  -->
+                    <xsl:when test="$p_add-mark-up-to-input = true()">
+                        <xsl:copy-of select="$v_name-marked-up"/>
+                        <!-- message to add the missing name to the authority file -->
+                        <xsl:message>
+                            <xsl:text>Add the following to the authority file: </xsl:text>
+                            <xsl:element name="tei:person">
+                                <xsl:copy-of select="$v_name-marked-up"/>
+                            </xsl:element>
+                        </xsl:message>
+                    </xsl:when>
+                    <!-- fallback replicate original input -->
                     <xsl:otherwise>
-                        <!-- replicate original input -->
                         <xsl:copy>
                             <xsl:apply-templates select="@* | node()"/>
                         </xsl:copy>
