@@ -17,11 +17,9 @@
     
     <!-- problems:
     - <ref> children are ignored
-    - biblScope/@source is empty -->
+     -->
     
     <xsl:include href="functions.xsl"/>
-    <!-- identify the author of the change by means of a @xml:id -->
-<!--    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>-->
     
      <xsl:param name="p_url-master"
         select="'../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
@@ -29,14 +27,19 @@
     <xsl:variable name="v_file-current" select="/"/>
     
     <xsl:param name="p_enrich-master" select="true()"/>
+    <!-- find all <bibl>s in current file and convert them to <biblStruct> -->
     <xsl:variable name="v_bibls-in-file-current">
+        <!-- find all <bibl>s in current file and compile them if necessary -->
         <xsl:variable name="v_bibl">
             <xsl:for-each select="$v_file-current/descendant::tei:text/descendant::tei:bibl">
                  <xsl:copy-of select="oape:compile-next-prev(.)"/>
             </xsl:for-each>
         </xsl:variable>
+        <!-- convert <bibl>s to <biblStruct> -->
         <xsl:variable name="v_biblStruct">
             <xsl:apply-templates select="$v_bibl/descendant-or-self::tei:bibl" mode="m_bibl-to-biblStruct"/>
+            <!-- find all <biblStruct> in the curent file -->
+            <xsl:apply-templates select="$v_file-current/descendant::tei:text/descendant::tei:biblStruct" mode="m_copy-from-source"/>
         </xsl:variable>
         <xsl:copy-of select="$v_biblStruct"/>
     </xsl:variable>
@@ -162,7 +165,7 @@
                 <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-characters(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-characters(.)]) = 1">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
-                            <xsl:text>one match in the external file</xsl:text>
+                            <xsl:text>one match in the external file for </xsl:text><xsl:value-of select="descendant::tei:title[1]"/>
                         </xsl:message>
                     </xsl:if>
                     <xsl:copy-of select="$v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-characters(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-characters(.)]"/>
@@ -171,7 +174,7 @@
                 <xsl:when test="count($v_file-source/descendant::tei:biblStruct[tei:monogr/tei:title/oape:string-normalise-characters(.) = $v_base/tei:monogr/tei:title/oape:string-normalise-characters(.)]) gt 1">
                     <!-- better message needed -->
                     <xsl:message terminate="no">
-                        <xsl:text>more than one match in the external file</xsl:text>
+                        <xsl:text>more than one match in the external file for </xsl:text><xsl:value-of select="descendant::tei:title[1]"/><xsl:text>. Will proceed without updating.</xsl:text>
                      </xsl:message>
                 </xsl:when>
                 <!--<xsl:when test="count($v_file-source/descendant-or-self::tei:bibl[tei:title = $v_base/tei:monogr/tei:title]) gt 1">
@@ -195,7 +198,7 @@
             <xsl:when test="$v_additional-info != ''">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>additional information available</xsl:text>
+                        <xsl:text>additional information available for </xsl:text><xsl:value-of select="descendant::tei:title[1]"/>
                     </xsl:message>
                 </xsl:if>
                 <xsl:if test="$p_verbose = true()">
@@ -213,6 +216,24 @@
                 </xsl:variable>
                 <xsl:variable name="v_target-monogr" select="$v_target/descendant-or-self::tei:biblStruct/tei:monogr"/>
                 <xsl:variable name="v_source-monogr" select="if($v_source/descendant-or-self::tei:biblStruct/tei:monogr) then($v_source/descendant-or-self::tei:biblStruct/tei:monogr) else($v_source/descendant-or-self::tei:bibl)"/>
+                <!-- IDs of editors -->
+                        <xsl:variable name="v_id-editors-target">
+                            <xsl:variable name="v_temp">
+                                <xsl:value-of select="$v_target-monogr/tei:editor/tei:persName/@ref"/>
+                            </xsl:variable>
+                            <xsl:for-each-group select="tokenize($v_temp, ' ')" group-by=".">
+                                <xsl:value-of select="concat(., ',')"/>
+                            </xsl:for-each-group>
+                        </xsl:variable>
+                <!-- IDs of places -->
+                        <xsl:variable name="v_id-place-target">
+                            <xsl:variable name="v_temp">
+                                <xsl:value-of select="$v_target-monogr/tei:imprint/tei:pubPlace/tei:placeName/@ref"/>
+                            </xsl:variable>
+                            <xsl:for-each-group select="tokenize($v_temp, ' ')" group-by=".">
+                                <xsl:value-of select="concat(., ',')"/>
+                            </xsl:for-each-group>
+                        </xsl:variable>
                 <xsl:copy>
                     <!-- combine attributes -->
 <!--                    <xsl:apply-templates select="$v_combined/descendant-or-self::tei:biblStruct/@*"/>-->
@@ -232,7 +253,46 @@
                         <xsl:apply-templates select="$v_source-monogr/tei:idno[not(. = $v_target-monogr/tei:idno)]" mode="m_copy-from-source"/>
                         <!-- editors etc. -->
                         <xsl:apply-templates select="$v_target-monogr/tei:editor"/>
-                        <xsl:apply-templates select="$v_source-monogr/tei:editor[not(. = $v_target-monogr/tei:editor)]" mode="m_copy-from-source"/>
+                        <!-- try matching persons through their IDs first -->
+                        <!--              debugging-->
+                    <xsl:message>
+                        <!--<xsl:text>editors in source (ID): </xsl:text><xsl:value-of select="$v_id-editors-source"/><xsl:text>; </xsl:text>-->
+                        <xsl:text>editors in target (ID): </xsl:text><xsl:value-of select="$v_id-editors-target"/>
+                    </xsl:message>
+                <!-- end debugging-->
+                        <xsl:for-each select="$v_source-monogr/tei:editor">
+                            <xsl:choose>
+                                <!-- test if it references authority files -->
+                                <xsl:when test="tei:persName/@ref">
+                                    <!-- test if the value of the @ref attributes are part of the target -->
+                                    <xsl:choose>
+                                        <xsl:when test="contains($v_id-editors-target, tokenize(tei:persName/@ref, ' ')[1])">
+                                            <xsl:if test="$p_verbose = true()">
+                                            <xsl:message>
+                                                <xsl:text>editor (ID) found in target</xsl:text>
+                                            </xsl:message>
+                                            </xsl:if>
+                                        </xsl:when>
+                                        <xsl:when test="contains($v_id-editors-target, tokenize(tei:persName/@ref, ' ')[2])">
+                                            <xsl:if test="$p_verbose = true()">
+                                            <xsl:message>
+                                                <xsl:text>editor (ID) found in target</xsl:text>
+                                            </xsl:message>
+                                            </xsl:if>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:apply-templates select="." mode="m_copy-from-source"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:when>
+                                <!-- test if the string itself is present -->
+                                <xsl:when test=". = $v_target-monogr/tei:editor"/>
+                                <xsl:otherwise>
+                                    <xsl:apply-templates select="." mode="m_copy-from-source"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:for-each>
+                        <!--<xsl:apply-templates select="$v_source-monogr/tei:editor[not(. = $v_target-monogr/tei:editor)]" mode="m_copy-from-source">/-->
                         <!-- textLang -->
                         <xsl:apply-templates select="$v_target-monogr/tei:textLang"/>
                         <xsl:apply-templates select="$v_source-monogr/tei:textLang[not(. = $v_target-monogr/tei:textLang)]" mode="m_copy-from-source"/>
@@ -241,15 +301,45 @@
                             <xsl:apply-templates select="$v_combined/descendant-or-self::tei:biblStruct/tei:monogr/tei:imprint/@*"/>
                             <!-- date -->
                             <xsl:apply-templates select="$v_target-monogr/tei:imprint/tei:date"/>
-                            <!--<xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:date[not(. = $v_target-monogr/tei:imprint/tei:date)]" mode="m_copy-from-source"/>-->
                             <xsl:apply-templates select="$v_source-monogr/descendant::tei:date[not(. = $v_target-monogr/tei:imprint/tei:date)]" mode="m_copy-from-source"/>
                             <!-- pubPlace -->
                             <xsl:apply-templates select="$v_target-monogr/tei:imprint/tei:pubPlace"/>
-<!--                            <xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:pubPlace[not(. = $v_target-monogr/tei:imprint/tei:pubPlace)]" mode="m_copy-from-source"/>-->
-                            <xsl:apply-templates select="$v_source-monogr/descendant::tei:pubPlace[not(. = $v_target-monogr/tei:imprint/tei:pubPlace)]" mode="m_copy-from-source"/>
+                            <!-- try matching places through their IDs first -->
+                            <xsl:for-each select="$v_source-monogr/tei:imprint/tei:pubPlace">
+                            <xsl:choose>
+                                <!-- test if it references authority files -->
+                                <xsl:when test="tei:placeName/@ref">
+                                    <!-- test if the value of the @ref attributes are part of the target -->
+                                    <xsl:choose>
+                                        <xsl:when test="contains($v_id-place-target, tokenize(tei:placeName/@ref, ' ')[1])">
+                                            <xsl:if test="$p_verbose = true()">
+                                                <xsl:message>
+                                                <xsl:text>pubPlace (ID) found in target</xsl:text>
+                                            </xsl:message>
+                                            </xsl:if>
+                                        </xsl:when>
+                                        <xsl:when test="contains($v_id-place-target, tokenize(tei:placeName/@ref, ' ')[2])">
+                                            <xsl:if test="$p_verbose = true()">
+                                                <xsl:message>
+                                                <xsl:text>pubPlace (ID) found in target</xsl:text>
+                                            </xsl:message>
+                                            </xsl:if>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:apply-templates select="." mode="m_copy-from-source"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:when>
+                                <!-- test if the string itself is present -->
+                                <xsl:when test=". = $v_target-monogr/tei:imprint/tei:pubPlace"/>
+                                <xsl:otherwise>
+                                    <xsl:apply-templates select="." mode="m_copy-from-source"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:for-each>
+<!--                            <xsl:apply-templates select="$v_source-monogr/descendant::tei:pubPlace[not(. = $v_target-monogr/tei:imprint/tei:pubPlace)]" mode="m_copy-from-source"/>-->
                             <!-- publisher  -->
                             <xsl:apply-templates select="$v_target-monogr/tei:imprint/tei:publisher"/>
-                            <!--<xsl:apply-templates select="$v_source-monogr/tei:imprint/tei:publisher[not(. = $v_target-monogr/tei:imprint/tei:publisher)]" mode="m_copy-from-source"/>-->
                             <xsl:apply-templates select="$v_source-monogr/descendant::tei:publisher[not(. = $v_target-monogr/tei:imprint/tei:publisher)]" mode="m_copy-from-source"/>
                         </xsl:element>
                         <!-- biblScope -->
@@ -264,7 +354,7 @@
             <xsl:otherwise>
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>no additional information for </xsl:text><xsl:value-of select="descendant::tei:title"/>
+                        <xsl:text>no additional information for </xsl:text><xsl:value-of select="descendant::tei:title[1]"/>
                     </xsl:message>
                 </xsl:if>
                 <xsl:copy>
