@@ -2,7 +2,6 @@
 <xsl:stylesheet exclude-result-prefixes="#all" version="3.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
-    
     <!-- this stylesheet generates an authority file from the TEI input file with:
         - persons
         - places
@@ -90,25 +89,26 @@
                         </xsl:choose>
                     </title>
                     <editor>
-                        <xsl:apply-templates select="$p_editor/descendant::tei:persName" mode="m_identity-transform"/>
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_editor/descendant::tei:persName"/>
                     </editor>
                     <!-- contributors to the source file -->
                     <respStmt>
                         <resp>Contributed to the original file from which the entities were extracted</resp>
-                        <xsl:apply-templates select="descendant::tei:fileDesc/tei:titleStmt/descendant::tei:persName" mode="m_copy-from-authority-file"/>
+                        <xsl:apply-templates mode="m_copy-from-authority-file" select="descendant::tei:fileDesc/tei:titleStmt/descendant::tei:persName"/>
                     </respStmt>
                 </titleStmt>
                 <publicationStmt>
                     <authority>
-                        <xsl:apply-templates select="$p_editor/descendant::tei:persName" mode="m_copy-from-authority-file"/>
-                        <date>
-                            <xsl:attribute name="when" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
-                            <xsl:value-of select="format-date(current-date(), '[Y0001]')"/>
-                        </date>
-                        <availability status="restricted">
-                            <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:lang="en">Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
-                        </availability>
+                        <xsl:apply-templates mode="m_copy-from-authority-file" select="$p_editor/descendant::tei:persName"/>
                     </authority>
+                    <date>
+                        <xsl:attribute name="when" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+                        <xsl:value-of select="format-date(current-date(), '[Y0001]')"/>
+                    </date>
+                    <availability status="restricted">
+                        <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:lang="en"
+                            >Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
+                    </availability>
                 </publicationStmt>
                 <sourceDesc>
                     <p>Born digital.</p>
