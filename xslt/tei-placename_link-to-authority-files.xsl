@@ -32,10 +32,13 @@
     <xsl:include href="query-geonames.xsl"/>
     <!--<xsl:include href="functions.xsl"/>-->
     
+       <!-- variables for local IDs (OpenArabicPE) -->
+    <xsl:param name="p_local-authority" select="'oape'"/>
+    
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
-    <xsl:param name="p_url-master"
-        select="'../data/tei/gazetteer_levant-phd.TEIP5.xml'"/>
-    <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
+    <xsl:param name="p_url-gazetteer" select="'../data/tei/gazetteer_levant-phd.TEIP5.xml'"/>
+<!--    <xsl:param name="p_url-master" select="'/BachUni/BachBibliothek/GitHub/ProjectJaraid/jaraid_source/authority-files/jaraid_authority-file.TEIP5.xml'"></xsl:param>-->
+    <xsl:variable name="v_file-entities-master" select="doc($p_url-gazetteer)"/>
 
     <!-- parameter to select whether the source file should be updated  -->
     <xsl:param name="p_update-source" select="true()"/>
@@ -58,7 +61,7 @@
         </xsl:copy>
     </xsl:template>
     <!-- replicate everything except @xml:id and @xml:change -->
-    <xsl:template match="node() | @*" mode="m_copy-from-authority-file" name="t_10">
+    <!--<xsl:template match="node() | @*" mode="m_copy-from-authority-file" name="t_10">
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_10 master: </xsl:text>
@@ -69,7 +72,7 @@
             <xsl:apply-templates mode="m_copy-from-authority-file" select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
+    <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>-->
     
     <xsl:template match="tei:placeName" priority="10">
         <!-- flatened version of the persName without non-word characters -->
@@ -127,7 +130,7 @@
                 <!-- construct @ref pointing to the corresponding entry -->
                 <xsl:variable name="v_ref">
                     <xsl:value-of
-                        select="concat('oape:place:', $v_corresponding-place/descendant::tei:idno[@type = 'oape'][1])"/>
+                        select="concat($p_local-authority, ':place:', $v_corresponding-place/descendant::tei:idno[@type = $p_local-authority][1])"/>
                     <xsl:if test="$v_corresponding-place/descendant::tei:idno[@type = 'geon']">
                         <xsl:text> </xsl:text>
                         <xsl:value-of
@@ -175,8 +178,8 @@
                 <xsl:attribute name="xml:id" select="$p_id-change"/>
                 <xsl:attribute name="xml:lang" select="'en'"/>
                  <xsl:text>Added references to local authority file (</xsl:text>
-                <tei:ref target="{$p_url-master}">
-                    <xsl:value-of select="$p_url-master"/>
+                <tei:ref target="{$p_url-gazetteer}">
+                    <xsl:value-of select="$p_url-gazetteer"/>
                 </tei:ref>
                 <xsl:text>) and to GeoNames IDs to </xsl:text><tei:gi>placeName</tei:gi><xsl:text>s without such references based on  </xsl:text><tei:gi>place</tei:gi><xsl:text>s mentioned in the authority file.</xsl:text>
             </xsl:element>
