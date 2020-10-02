@@ -57,6 +57,8 @@
                     collation="http://saxon.sf.net/collation?rules={encode-for-uri($v_sort-place-type)}"
                     order="ascending" select="@type"/>
                 <xsl:sort order="ascending" select="tei:placeName[@xml:lang = 'ar'][1]"/>
+                 <xsl:sort order="ascending" select="tei:placeName[@xml:lang = 'ar-Latn-x-ijmes'][1]"/>
+                <xsl:sort order="ascending" select="tei:placeName[@xml:lang = 'en'][1]"/>
             </xsl:apply-templates>
             <xsl:apply-templates select="tei:listPlace"/>
         </xsl:copy>
@@ -278,15 +280,11 @@
                 <xsl:attribute name="when"
                     select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
                 <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
+                <xsl:attribute name="xml:id" select="$p_id-change"/>
+                <xsl:attribute name="xml:lang" select="'en'"/>
                 <xsl:text>Improved </xsl:text>
-                <tei:gi>person</tei:gi>
-                <xsl:text> nodes that had references to VIAF, by querying VIAF and adding  </xsl:text>
-                <tei:gi>birth</tei:gi>
-                <xsl:text>, </xsl:text>
-                <tei:gi>death</tei:gi>
-                <xsl:text>, and </xsl:text>
-                <tei:gi>idno</tei:gi>
-                <xsl:text>.</xsl:text>
+                <tei:gi>place</tei:gi>
+                <xsl:text> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
