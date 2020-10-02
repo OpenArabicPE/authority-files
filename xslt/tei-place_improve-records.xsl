@@ -66,12 +66,13 @@
     <xsl:template match="tei:place" name="t_3" priority="100">
         <xsl:variable name="v_geonames-search">
             <xsl:choose>
+                <!-- try and find a GeoNames ID -->
                 <xsl:when test="tei:idno[@type = 'geon'] != ''">
                     <xsl:value-of select="tei:idno[@type = 'geon']"/>
                 </xsl:when>
                 <xsl:when test="tei:placeName[matches(@ref, 'geon:\d+')]">
                     <xsl:value-of
-                        select="replace(tei:placeName[matches(@ref, 'geon:\d+')][1]/@ref, 'geon:(\d+)', '$1')"
+                        select="replace(tei:placeName[matches(@ref, 'geon:\d+')][1]/@ref, '^.*geon:(\d+).*$', '$1')"
                     />
                 </xsl:when>
                 <!-- check English toponyms first -->
@@ -89,8 +90,7 @@
         </xsl:variable>
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
-                <xsl:text>t_3: query GeoNames for </xsl:text>
-                <xsl:value-of select="$v_geonames-search"/>
+                <xsl:text>t_3: query GeoNames for: </xsl:text><xsl:value-of select="$v_geonames-search"/>
             </xsl:message>
         </xsl:if>
         <!-- try to download the GeoNames XML file -->
