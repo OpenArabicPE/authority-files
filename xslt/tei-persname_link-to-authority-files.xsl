@@ -15,9 +15,11 @@
         omit-xml-declaration="no"/>
     <xsl:include href="functions.xsl"/>
 
+    <!-- variables for local IDs (OpenArabicPE) -->
+    <xsl:param name="p_local-authority" select="'oape'"/>
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
-    <xsl:param name="p_url-master" select="'../data/tei/personography_OpenArabicPE.TEIP5.xml'"/>
-    <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
+    <xsl:param name="p_url-personography" select="'../data/tei/personography_OpenArabicPE.TEIP5.xml'"/>
+    <xsl:variable name="v_file-entities-master" select="doc($p_url-personography)"/>
     <xsl:param name="p_add-mark-up-to-input" select="true()"/>
     
     <!-- idendity transform -->
@@ -28,7 +30,7 @@
     </xsl:template>
     
     <xsl:template match="tei:persName" priority="30">
-        <xsl:variable name="v_self-linked" select="oape:link-persname-to-authority-file(., $v_file-entities-master, $p_add-mark-up-to-input)"/>
+        <xsl:variable name="v_self-linked" select="oape:link-persname-to-authority-file(., $p_local-authority, $v_file-entities-master, $p_add-mark-up-to-input)"/>
         <xsl:choose>
             <!-- test if a match was found in the authority file -->
             <xsl:when test="$v_self-linked/@ref">
@@ -51,7 +53,7 @@
                     <xsl:copy-of select="$v_no-rolename/descendant-or-self::tei:persName"/>
                 </xsl:message>-->
                 <!-- call this function again with the new, marked-up name -->
-                <xsl:variable name="v_name-marked-up-linked" select="oape:link-persname-to-authority-file($v_no-rolename/tei:persName, $v_file-entities-master, $p_add-mark-up-to-input)"/>
+                <xsl:variable name="v_name-marked-up-linked" select="oape:link-persname-to-authority-file($v_no-rolename/tei:persName, $p_local-authority, $v_file-entities-master, $p_add-mark-up-to-input)"/>
                     <xsl:choose>
                     <!-- test if a match was found in the authority file -->
                     <xsl:when test="$v_name-marked-up-linked/@ref">
@@ -113,8 +115,8 @@
                 <xsl:attribute name="xml:id" select="$p_id-change"/>
                 <xsl:attribute name="xml:lang" select="'en'"/>
                 <xsl:text>Added references to local authority file (</xsl:text>
-                <tei:ref target="{$p_url-master}">
-                    <xsl:value-of select="$p_url-master"/>
+                <tei:ref target="{$p_url-personography}">
+                    <xsl:value-of select="$p_url-personography"/>
                 </tei:ref>
                 <xsl:text>) and VIAF to </xsl:text>
                 <tei:gi>persName</tei:gi>

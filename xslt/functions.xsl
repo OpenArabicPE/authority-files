@@ -521,6 +521,7 @@
     <!-- this function takes a <tei:persName> as input, tries to look it up in an authority file and returns a <tei:persName> -->
     <xsl:function name="oape:link-persname-to-authority-file">
         <xsl:param name="p_persname"/>
+        <xsl:param name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
         <xsl:param name="p_add-mark-up"/>
         <!-- flatened version of the persName without non-word characters -->
@@ -556,7 +557,7 @@
                 <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
                 <!-- construct @ref pointing to the corresponding entry -->
                 <xsl:variable name="v_ref">
-                    <xsl:value-of select="concat('oape:pers:', $v_corresponding-person/descendant::tei:idno[@type = 'oape'][1])"/>
+                    <xsl:value-of select="concat('oape:pers:', $v_corresponding-person/descendant::tei:idno[@type = $p_local-authority][1])"/>
                     <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type = 'VIAF']">
                         <xsl:text> </xsl:text>
                         <xsl:value-of select="concat('viaf:', $v_corresponding-person/descendant::tei:idno[@type = 'VIAF'][1])"/>
