@@ -15,7 +15,7 @@
         name="xml_indented" omit-xml-declaration="no"/>
     <xsl:include href="convert_geonames-to-tei_functions.xsl"/>
 <!--    <xsl:include href="../data/api-credentials/api-credentials.xsl"/>-->
-    <xsl:include href="/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/api-credentials/api-credentials.xsl"/>
+    <xsl:include href="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/api-credentials/api-credentials.xsl"/>
     <!-- trigger debugging: paramter is loaded from OpenArabicPE_parameters.xsl included in parent stylesheet  -->
 <!--    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>-->
     <xsl:include href="functions.xsl"/>

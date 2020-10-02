@@ -81,10 +81,12 @@
     <!-- this function queries a local authority file with an OpenArabicPE or VIAF ID and returns a <tei:person> -->
     <xsl:function name="oape:get-person-from-authority-file">
         <xsl:param name="p_idno"/>
+        <xsl:param name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
+        <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority,':pers:')"/>
         <xsl:variable name="v_authority">
             <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:pers:')">
+                <xsl:when test="contains($p_idno, $v_local-uri-scheme)">
                     <xsl:text>oape</xsl:text>
                 </xsl:when>
                 <xsl:when test="contains($p_idno, 'viaf:')">
@@ -94,8 +96,8 @@
         </xsl:variable>
         <xsl:variable name="v_idno">
             <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:pers:')">
-                    <xsl:value-of select="replace($p_idno, '.*oape:pers:(\d+).*', '$1')"/>
+                <xsl:when test="contains($p_idno, $v_local-uri-scheme)">
+                    <xsl:value-of select="replace($p_idno, concat('.*', $v_local-uri-scheme,'(\d+).*'), '$1')"/>
                 </xsl:when>
                 <xsl:when test="contains($p_idno, 'viaf:')">
                     <xsl:value-of select="replace($p_idno, '.*viaf:(\d+).*', '$1')"/>
@@ -532,7 +534,7 @@
             <xsl:choose>
                 <!-- test if this node already points to an authority file -->
                 <xsl:when test="$p_persname/@ref">
-                    <xsl:copy-of select="oape:get-person-from-authority-file($p_persname/@ref, $p_authority-file)"/>
+                    <xsl:copy-of select="oape:get-person-from-authority-file($p_persname/@ref, $p_local-authority, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
                 <xsl:when test="$p_authority-file//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]">
@@ -557,7 +559,7 @@
                 <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
                 <!-- construct @ref pointing to the corresponding entry -->
                 <xsl:variable name="v_ref">
-                    <xsl:value-of select="concat('oape:pers:', $v_corresponding-person/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                    <xsl:value-of select="concat($p_local-authority, ':pers:', $v_corresponding-person/descendant::tei:idno[@type = $p_local-authority][1])"/>
                     <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type = 'VIAF']">
                         <xsl:text> </xsl:text>
                         <xsl:value-of select="concat('viaf:', $v_corresponding-person/descendant::tei:idno[@type = 'VIAF'][1])"/>
