@@ -22,8 +22,7 @@
     <!-- this stylesheet queries an external authority files for every <title> and attempts to provide links via the @ref attribute -->
     <!-- The now unnecessary code to updated the master file needs to be removed -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
-    <!-- trigger debugging: paramter is loaded from OpenArabicPE_parameters.xsl included in parent stylesheet  -->
-    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    
     <xsl:include href="functions.xsl"/>
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-master" select="'../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
@@ -55,7 +54,7 @@
         <xsl:param name="p_title"/>
         <xsl:param name="p_authority-file"/>
         <!-- flatened version of the persName without non-word characters and without any harakat -->
-        <xsl:variable name="v_name-flat" select="oape:string-normalise-name(string($p_title))"/>
+        <xsl:variable name="v_name-flat" select="oape:string-normalise-characters(string($p_title))"/>
         <xsl:variable name="v_level" select="$p_title/@level"/>
         <xsl:variable name="v_bibl"
             select="
@@ -94,8 +93,8 @@
                     <xsl:copy-of select="oape:get-bibl-from-authority-file($p_title/@ref, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
-                <xsl:when test="$v_file-entities-master/descendant::tei:biblStruct/tei:monogr/tei:title[@level = $v_level][oape:string-normalise-name(.) = $v_name-flat]">
-                    <xsl:variable name="v_matches" select="$v_file-entities-master/descendant::tei:biblStruct[descendant::tei:title[@level = $v_level][oape:string-normalise-name(.) = $v_name-flat]]"/>
+                <xsl:when test="$v_file-entities-master/descendant::tei:biblStruct/tei:monogr/tei:title[@level = $v_level][oape:string-normalise-characters(.) = $v_name-flat]">
+                    <xsl:variable name="v_matches" select="$v_file-entities-master/descendant::tei:biblStruct[descendant::tei:title[@level = $v_level][oape:string-normalise-characters(.) = $v_name-flat]]"/>
                     <xsl:choose>
                         <!-- a single match -->
                         <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct) = 1">
