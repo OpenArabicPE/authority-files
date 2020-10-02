@@ -14,16 +14,16 @@
     It DOES NOT try to find names on VIAF without an ID -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="yes" method="xml"
         omit-xml-declaration="no"/>
+    
     <xsl:include href="query-geonames.xsl"/>
-    <!-- identify the author of the change by means of a @xml:id -->
-    <!--<xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>-->
-    <!--<xsl:param name="p_id-editor" select="'pers_TG'"/>-->
-    <!-- variables for OpenArabicPE IDs -->
-    <xsl:variable name="v_oape-id-count" select="count(//tei:place/tei:idno[@type = 'oape'])"/>
-    <xsl:variable name="v_oape-id-highest"
+
+      <!-- variables for local IDs (OpenArabicPE) -->
+    <xsl:param name="p_local-authority" select="'oape'"/>
+    <xsl:variable name="v_local-id-count" select="count(//tei:place/tei:idno[@type = $p_local-authority])"/>
+    <xsl:variable name="v_local-id-highest"
         select="
-            if ($v_oape-id-count gt 0) then
-                (max(//tei:place/tei:idno[@type = 'oape']))
+            if ($v_local-id-count gt 0) then
+                (max(//tei:place/tei:idno[@type = $p_local-authority]))
             else
                 (0)"/>
     <xsl:variable name="v_sort-place-type"
@@ -163,13 +163,13 @@
     </xsl:template>
     <!-- mode to generate OpenArabicPE IDs -->
     <xsl:template match="tei:place" mode="m_generate-id">
-        <xsl:if test="not(tei:idno[@type = 'oape'])">
+        <xsl:if test="not(tei:idno[@type = $p_local-authority])">
             <xsl:element name="idno">
-                <xsl:attribute name="type" select="'oape'"/>
+                <xsl:attribute name="type" select="$p_local-authority"/>
                 <!-- basis is the highest existing ID -->
                 <!-- add preceding tei:place without OpenArabicPE ID -->
                 <xsl:value-of
-                    select="$v_oape-id-highest + count(preceding::tei:place[not(tei:idno[@type = 'oape'])]) + 1"
+                    select="$v_local-id-highest + count(preceding::tei:place[not(tei:idno[@type = $p_local-authority])]) + 1"
                 />
             </xsl:element>
         </xsl:if>

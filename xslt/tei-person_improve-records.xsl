@@ -15,9 +15,10 @@
     
     <xsl:include href="query-viaf.xsl"/>
     
-    <!-- variables for OpenArabicPE IDs -->
-    <xsl:variable name="v_oape-id-count" select="count(//tei:person/tei:idno[@type='oape'])"/>
-    <xsl:variable name="v_oape-id-highest" select="if($v_oape-id-count gt 0) then(max(//tei:person/tei:idno[@type='oape'])) else(0)"/>
+    <!-- variables for local IDs (OpenArabicPE) -->
+    <xsl:param name="p_local-authority" select="'oape'"/>
+    <xsl:variable name="v_local-id-count" select="count(//tei:person/tei:idno[@type = $p_local-authority])"/>
+    <xsl:variable name="v_local-id-highest" select="if($v_local-id-count gt 0) then(max(//tei:person/tei:idno[@type = $p_local-authority])) else(0)"/>
     
     
     <!-- identity transform -->
@@ -181,12 +182,12 @@
     
     <!-- mode to generate OpenArabicPE IDs -->
     <xsl:template match="tei:person" mode="m_generate-id">
-        <xsl:if test="not(tei:idno[@type='oape'])">
+        <xsl:if test="not(tei:idno[@type=$p_local-authority])">
                 <xsl:element name="idno">
-                    <xsl:attribute name="type" select="'oape'"/>
+                    <xsl:attribute name="type" select="$p_local-authority"/>
                     <!-- basis is the highest existing ID -->
                     <!-- add preceding tei:person without OpenArabicPE ID -->
-                    <xsl:value-of select="$v_oape-id-highest + count(preceding::tei:person[not(tei:idno[@type='oape'])]) + 1"/>
+                    <xsl:value-of select="$v_local-id-highest + count(preceding::tei:person[not(tei:idno[@type=$p_local-authority])]) + 1"/>
                 </xsl:element>
             </xsl:if>
     </xsl:template>
