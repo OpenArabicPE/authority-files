@@ -72,31 +72,31 @@
     </xsl:template>
     
     <xsl:template match="node() | @*" mode="m_copy-from-source">
+        <!-- source information -->
+        <xsl:variable name="v_source">
+            <xsl:variable name="v_base-uri" select="if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master))"/>
+            <xsl:variable name="v_bibl-source" select="ancestor-or-self::node()[name() = ('bibl', 'biblStruct')]/@source"/>
+            <xsl:variable name="v_bibl-id" select="ancestor-or-self::node()[name() = ('bibl', 'biblStruct')]/@xml:id"/>
+            
+            <!-- if the there is already a source on the node, replicate it -->
+            <xsl:choose>
+                <xsl:when test="@source != ''">
+                    <xsl:value-of select="@source"/>
+                </xsl:when>
+                <xsl:when test="$v_bibl-source != ''">
+                    <xsl:value-of select="$v_bibl-source"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="concat($v_base-uri, '#', $v_bibl-id)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:copy>
             <xsl:apply-templates select="@* " mode="m_copy-from-source"/>
             <!-- document change -->
             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
             <!-- document source of additional information -->
-             <xsl:attribute name="source">
-                <!-- this potentially duplicates the @source information when m_copy-from-source is applied more than once -->
-                 <xsl:choose>
-                     <xsl:when test="@source = ancestor::node()[name() = ('bibl', 'biblStruct')]/@source">
-                         <xsl:value-of select="@source"/>
-                     </xsl:when>
-                     <xsl:when test="@source">
-                        <xsl:value-of select="concat(@source, ' ')"/>
-                     <!--                 <xsl:variable name="v_uri" select="if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master))"/>-->
-                 <xsl:choose>
-                     <xsl:when test="ancestor::node()[name() = ('bibl', 'biblStruct')]/@source">
-                         <xsl:value-of select="ancestor::node()[name() = ('bibl', 'biblStruct')]/@source"/>
-                     </xsl:when>
-                     <xsl:otherwise>
-                        <xsl:value-of select="concat(if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', ancestor::node()[name() = ('bibl', 'biblStruct')]/@xml:id)"/>
-                    </xsl:otherwise>
-                 </xsl:choose>
-                     </xsl:when>
-                 </xsl:choose>
-            </xsl:attribute>
+             <xsl:attribute name="source" select="$v_source"/>
             <!-- content -->
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
@@ -276,11 +276,8 @@
     
     <!-- convert <bibl> to <biblStruct> -->
     <xsl:template match="tei:bibl" mode="m_bibl-to-biblStruct">
-        <biblStruct change="#{$p_id-change}">
-            <xsl:apply-templates select="@*" mode="m_copy-from-source"/>
-            <!-- document source of information -->
-             <xsl:attribute name="source">
-                <xsl:choose>
+        <xsl:variable name="v_source">
+             <xsl:choose>
                     <xsl:when test="@source">
                         <xsl:value-of select="concat(@source, if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', @xml:id)"/>
                     </xsl:when>
@@ -288,7 +285,11 @@
                         <xsl:value-of select="concat(if($p_enrich-master = true()) then(base-uri($v_file-current)) else(base-uri($v_file-master)), '#', @xml:id)"/>
                     </xsl:otherwise>
                 </xsl:choose>
-            </xsl:attribute>
+        </xsl:variable>
+        <biblStruct change="#{$p_id-change}">
+            <xsl:apply-templates select="@*" mode="m_copy-from-source"/>
+            <!-- document source of information -->
+             <xsl:attribute name="source" select="$v_source"/>
             <xsl:if test="tei:title[@level  = 'a']">
                 <analytic>
                     <xsl:apply-templates select="tei:title[@level  = 'a']"/>
