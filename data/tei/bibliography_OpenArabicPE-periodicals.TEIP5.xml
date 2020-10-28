@@ -3828,9 +3828,11 @@
                      <title level="j" xml:lang="ar">الحق يعلو</title>
                      <idno change="#d2e167" type="oape">145</idno>
                      <textLang mainLang="ar"/>
+                      <editor source="jaraid"> 
+                          <persName xml:lang="ar">عبد اللطيف شكر</persName> </editor>
                      <imprint>
                         <date/>
-                        <pubPlace/>
+                        <pubPlace source="jaraid"><placeName>معان</placeName></pubPlace>
                         <publisher/>
                      </imprint>
                   </monogr>
@@ -4028,14 +4030,17 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <biblStruct type="periodical" xml:lang="ar" oape:frequency="weekly">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الراوي</title>
                      <idno change="#d2e167" type="oape">164</idno>
                      <textLang mainLang="ar"/>
-                     <imprint>
-                        <date/>
-                        <pubPlace/>
+                      <editor source="tarazi"> 
+                          <persName xml:lang="ar-Latn-x-ijmes">Tawfīq al-Ḥalabī</persName> 
+                          <persName xml:lang="ar">توفيق الحلبي</persName> </editor>
+                      <imprint source="tarazi">
+                          <pubPlace> <placeName xml:lang="en">Damascus</placeName> </pubPlace>
+                          <date type="onset" when="1909-12-04" xml:lang="en">1909</date>
                         <publisher/>
                      </imprint>
                   </monogr>
@@ -4397,11 +4402,19 @@
                      <title level="j" xml:lang="ar">الشمس</title>
                      <idno change="#d2e167" type="oape">186</idno>
                      <textLang mainLang="ar"/>
+                      <editor type="owner">
+                          <persName xml:lang="ar">جورج متى</persName>
+                      </editor>
+                      <editor>
+                          <persName xml:lang="ar">جورج سمان</persName>
+                      </editor>
                      <imprint>
-                        <date/>
-                        <pubPlace/>
+                        <date type="onset" notAfter="1900-06-24" notBefore="1900-06-01">June 1900</date>
+                        <pubPlace><placeName>Damascus</placeName></pubPlace>
                         <publisher/>
                      </imprint>
+                      <biblScope unit="volume" from="1"/>
+                      <biblScope unit="issue"  from="1"/>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
@@ -4914,6 +4927,7 @@
                <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الكوثر</title>
+                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Kawthar</title>
                      <title level="j" xml:lang="ar">مجلة علمية فنية سياسية</title>
                      <idno change="#d2e167" type="oape">505</idno>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_6.d2e1370" type="owner"> <persName change="#d3e399"
