@@ -13,7 +13,7 @@
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml"
         omit-xml-declaration="no"/>
-    <xsl:include href="functions.xsl"/>
+    <xsl:import href="functions.xsl"/>
 
     <!-- variables for local IDs (OpenArabicPE) -->
     <xsl:param name="p_local-authority" select="'oape'"/>
@@ -29,11 +29,28 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="/">
+        <!-- temporary debugging -->
+        <!--<xsl:message>
+            <xsl:value-of select="$p_local-authority"/><xsl:text>, </xsl:text>
+            <xsl:value-of select="$p_url-personography"/><xsl:text>, </xsl:text>
+            <xsl:value-of select="$p_add-mark-up-to-input"/><xsl:text>, </xsl:text>
+        </xsl:message>-->
+        <!-- test if the URL of the personography resolves to an actual file -->
+        <xsl:if test="not(doc-available($p_url-personography))">
+            <xsl:message terminate="yes">
+                <xsl:text>The specified authority file has not been found.</xsl:text>
+            </xsl:message>
+        </xsl:if>
+        <xsl:copy>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="tei:persName" priority="30">
         <xsl:variable name="v_self-linked" select="oape:link-persname-to-authority-file(., $p_local-authority, $v_file-entities-master, $p_add-mark-up-to-input)"/>
         <xsl:choose>
             <!-- test if a match was found in the authority file -->
-            <!-- this test seemingly doesn't work always -->
             <xsl:when test="$v_self-linked/@ref">
                 <xsl:copy-of select="$v_self-linked"/>
             </xsl:when>
