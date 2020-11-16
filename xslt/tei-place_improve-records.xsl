@@ -118,10 +118,8 @@
                 <xsl:attribute name="type"
                     select="$v_geonames-result-tei/descendant::tei:place[1]/@type"/>
             </xsl:if>
-            <xsl:apply-templates select="node()"/>
-            <!--<xsl:call-template name="t_query-viaf-rdf">
-                <xsl:with-param name="p_viaf-id" select="replace(tei:placeName[matches(@ref,'geon:\d+')][1]/@ref,'geon:(\d+)','$1')"/>
-            </xsl:call-template>-->
+            <!-- the content model specifies that <idno> must be the last child -->
+            <xsl:apply-templates select="tei:placeName"/>
             <!-- check if basic data is already present -->
             <!-- add missing fields -->
             <xsl:if test="not(tei:placeName[@xml:lang = 'ar'])">
@@ -149,12 +147,17 @@
                     select="$v_geonames-result-tei/descendant::tei:place[1]/tei:placeName[@xml:lang = 'tr']"
                 />
             </xsl:if>
+            <!-- location -->
+            <xsl:apply-templates select="tei:location"/>
             <xsl:if test="not(tei:location)">
                 <xsl:copy-of select="$v_geonames-result-tei/descendant::tei:place[1]/tei:location"/>
             </xsl:if>
+            <xsl:apply-templates select="tei:link"/>
             <xsl:if test="not(tei:link)">
                 <xsl:copy-of select="$v_geonames-result-tei/descendant::tei:place[1]/tei:link"/>
             </xsl:if>
+            <!-- IDs -->
+            <xsl:apply-templates select="tei:idno"/>
             <!-- GeoNames ID -->
             <xsl:if test="not(tei:idno[@type = 'geon'])">
                 <xsl:copy-of select="$v_geonames-result-tei/descendant::tei:place[1]/tei:idno"/>
