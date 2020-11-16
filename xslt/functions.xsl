@@ -91,12 +91,12 @@
         <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority,':pers:')"/>
         <xsl:variable name="v_authority">
             <xsl:choose>
-                <xsl:when test="contains($p_idno, $v_local-uri-scheme)">
-                    <xsl:text>oape</xsl:text>
-                </xsl:when>
                 <xsl:when test="contains($p_idno, 'viaf:')">
                     <xsl:text>VIAF</xsl:text>
                 </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$p_local-authority"/>
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="v_idno">
