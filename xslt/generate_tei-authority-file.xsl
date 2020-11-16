@@ -11,6 +11,7 @@
     <xsl:include href="functions.xsl"/>
     <xsl:param name="p_include-persons" select="true()"/>
     <xsl:param name="p_include-places" select="true()"/>
+    <xsl:param name="p_include-organizations" select="true()"/>
     <xsl:template match="/">
         <xsl:copy>
             <xsl:apply-templates mode="m_identity-transform"/>
@@ -26,6 +27,11 @@
                 <xsl:if test="$p_include-persons = true()">
                     <xsl:element name="listPerson">
                         <xsl:copy-of select="$v_persons"/>
+                    </xsl:element>
+                </xsl:if>
+                <xsl:if test="$p_include-organizations = true()">
+                    <xsl:element name="listOrg">
+                        <xsl:copy-of select="$v_organizations"/>
                     </xsl:element>
                 </xsl:if>
                 <xsl:if test="$p_include-places = true()">
@@ -46,6 +52,22 @@
         </xsl:for-each-group>
         <xsl:for-each-group group-by="." select="descendant::tei:persName[not(parent::tei:editor | parent::tei:author)]">
             <xsl:element name="person">
+                <xsl:copy>
+                    <xsl:apply-templates mode="m_identity-transform" select="@xml:lang | @type | @ref"/>
+                    <xsl:apply-templates mode="m_copy-from-authority-file"/>
+                </xsl:copy>
+            </xsl:element>
+        </xsl:for-each-group>
+    </xsl:variable>
+    <xsl:variable name="v_organizations">
+        <xsl:for-each-group group-by="." select="descendant::tei:publisher[tei:orgName]">
+            <xsl:element name="org">
+                <xsl:apply-templates mode="m_identity-transform" select="@xml:lang | @type | @ref"/>
+                <xsl:apply-templates mode="m_copy-from-authority-file" select="tei:orgName"/>
+            </xsl:element>
+        </xsl:for-each-group>
+        <xsl:for-each-group group-by="." select="descendant::tei:orgName[not(parent::tei:publisher)]">
+            <xsl:element name="org">
                 <xsl:copy>
                     <xsl:apply-templates mode="m_identity-transform" select="@xml:lang | @type | @ref"/>
                     <xsl:apply-templates mode="m_copy-from-authority-file"/>
