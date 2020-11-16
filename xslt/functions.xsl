@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet exclude-result-prefixes="xs" version="3.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+<xsl:stylesheet exclude-result-prefixes="xs" version="3.0" 
+    xmlns:oape="https://openarabicpe.github.io/ns" 
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" method="xml" omit-xml-declaration="no"/>
     <!-- identify the author of the change by means of a @xml:id -->
     <!-- toggle debugging messages -->
@@ -534,13 +539,23 @@
             <xsl:choose>
                 <!-- test if this node already points to an authority file -->
                 <xsl:when test="$p_persname/@ref">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The input already points to an authority file</xsl:message>
+                    </xsl:if>
+                    <!-- there seems to be a problem with this function -->
                     <xsl:copy-of select="oape:get-person-from-authority-file($p_persname/@ref, $p_local-authority, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
                 <xsl:when test="$p_authority-file//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The flattened input has been found in the authority file</xsl:message>
+                    </xsl:if>
                     <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName[@type = 'flattened'] = $v_name-flat][1]"/>
                 </xsl:when>
                 <xsl:otherwise>
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The input has not been found in the authority file</xsl:message>
+                    </xsl:if>
                     <!-- one cannot use a boolean value if the default result is non-boolean -->
                     <xsl:value-of select="'false()'"/>
                 </xsl:otherwise>
@@ -551,8 +566,9 @@
             <xsl:when test="$v_corresponding-person/descendant-or-self::tei:person">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
+                        <xsl:text>"</xsl:text>
                         <xsl:value-of select="normalize-space($p_persname)"/>
-                        <xsl:text> is present in authority file and will be linked</xsl:text>
+                        <xsl:text>" is present in the authority file and will be linked</xsl:text>
                     </xsl:message>
                 </xsl:if>
                 <!-- get @xml:id of corresponding entry in authority file -->
