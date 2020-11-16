@@ -33,6 +33,7 @@
         <xsl:variable name="v_self-linked" select="oape:link-persname-to-authority-file(., $p_local-authority, $v_file-entities-master, $p_add-mark-up-to-input)"/>
         <xsl:choose>
             <!-- test if a match was found in the authority file -->
+            <!-- this test seemingly doesn't work always -->
             <xsl:when test="$v_self-linked/@ref">
                 <xsl:copy-of select="$v_self-linked"/>
             </xsl:when>
@@ -41,7 +42,7 @@
                 <!-- add mark-up to the input name -->
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>Starting further processing</xsl:text>
+                        <xsl:text>No match found in the authority file "</xsl:text><xsl:value-of select="$p_url-personography"/><xsl:text>". Starting further processing ...</xsl:text>
                     </xsl:message>
                 </xsl:if>
                 <xsl:variable name="v_name-marked-up" select="oape:name-add-markup(.)"/>

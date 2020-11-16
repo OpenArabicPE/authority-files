@@ -523,7 +523,7 @@
     <!-- this function takes a <tei:persName> as input, tries to look it up in an authority file and returns a <tei:persName> -->
     <xsl:function name="oape:link-persname-to-authority-file">
         <xsl:param name="p_persname"/>
-        <xsl:param name="p_local-authority"/>
+        <xsl:param name="p_local-authority" as="xs:string"/>
         <xsl:param name="p_authority-file"/>
         <xsl:param name="p_add-mark-up"/>
         <!-- flatened version of the persName without non-word characters -->
