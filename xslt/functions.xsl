@@ -608,8 +608,9 @@
             <xsl:when test="$v_corresponding-person = 'false()'">
 <!--                <xsl:if test="$p_verbose = true()">-->
                     <xsl:message>
+                        <xsl:text> The input "</xsl:text>
                         <xsl:value-of select="normalize-space($p_persname)"/>
-                        <xsl:text> not found in authority file.</xsl:text>
+                        <xsl:text>" was not found in authority file.</xsl:text>
                     </xsl:message>
                 <!--</xsl:if>-->
                         <xsl:copy select="$p_persname">
