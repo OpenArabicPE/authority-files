@@ -62,6 +62,7 @@
                         <xsl:text>No match found in the authority file "</xsl:text><xsl:value-of select="$p_url-personography"/><xsl:text>". Starting further processing ...</xsl:text>
                     </xsl:message>
                 </xsl:if>
+                <!-- SOLVED: this strips symbols such as .,-' out of strings -->
                 <xsl:variable name="v_name-marked-up" select="oape:name-add-markup(.)"/>
                 <xsl:variable name="v_no-rolename">
                     <xsl:apply-templates select="$v_name-marked-up" mode="m_remove-rolename"/>
@@ -83,6 +84,7 @@
                             <xsl:choose>
                                 <!-- name with additional mark-up -->
                                 <xsl:when test="$p_add-mark-up-to-input = true()">
+                                    <!-- SOLVED: this strips symbols such as .,-' out of strings -->
                                     <xsl:apply-templates select="$v_name-marked-up/node()"/>
                                 </xsl:when>
                                 <!-- fallback: original content -->

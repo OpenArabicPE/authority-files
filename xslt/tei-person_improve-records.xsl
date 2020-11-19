@@ -138,10 +138,14 @@
                             <xsl:value-of select="tei:idno[@type='VIAF'][1]"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'viaf:(\d+)','$1')"/>
+                            <xsl:value-of select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'^.*viaf:(\d+).*$','$1')"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
+                <!-- debugging -->
+                 <xsl:if test="$p_verbose = true()">
+                     <xsl:message><xsl:text>Found VIAF ID: </xsl:text><xsl:value-of select="$v_viaf-id"/></xsl:message>
+                 </xsl:if>
                 <!-- try to download the VIAF SRU file -->
                 <xsl:call-template name="t_query-viaf-sru">
                     <xsl:with-param name="p_output-mode" select="'file'"/>
@@ -160,6 +164,9 @@
             </xsl:variable>
                 <!-- VIAF ID -->
             <xsl:if test="not(tei:idno[@type='VIAF'])">
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message><xsl:text>This person has no VIAF ID</xsl:text></xsl:message>
+                </xsl:if>
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='VIAF']" mode="m_documentation"/>
             </xsl:if>
             <xsl:if test="not(tei:idno[@type='wiki'])">
@@ -219,7 +226,9 @@
                     <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
                 </xsl:message>
             </xsl:if>
-            <xsl:copy-of select="$v_name-flat"/>
+            <!-- it is probably better to not assign an `@xml:id` at this point as they are not currently guaranteed to be unique -->
+<!--            <xsl:copy-of select="$v_name-flat"/>-->
+            <xsl:apply-templates select="$v_name-flat" mode="m_no-ids"/>
         </xsl:if>
         <!-- add persName without any titles, honorary addresses etc. -->
         <!-- test if there are <addName> children -->

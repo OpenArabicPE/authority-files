@@ -239,6 +239,7 @@
         </xsl:copy>
     </xsl:template>
     <!-- problem: any mark-up from the input will be removed -->
+    <!-- SOLVED: this strips symbols such as .,-' out of strings -->
     <xsl:function name="oape:string-mark-up-names">
         <xsl:param as="xs:string" name="p_input"/>
         <xsl:param name="p_id-change"/>
@@ -375,25 +376,25 @@
             </xsl:when>
             <!-- test if a single word is found in a nymlist -->
             <xsl:when test="matches($v_input, '^(.+\s)*(\w+)(\s.+)*$')">
-                <xsl:analyze-string regex="(\w+)" select="$v_input">
+                <xsl:analyze-string regex="(\w+)(\s*)" select="$v_input">
                     <!-- single word match -->
                     <xsl:matching-substring>
                         <xsl:variable name="v_word" select="regex-group(1)"/>
-                        <!--                        <xsl:variable name="v_trailing" select="regex-group(3)"/>-->
+                        <xsl:variable name="v_trailing-space" select="regex-group(2)"/>
                         <!-- try to find it in the nymlist -->
                         <xsl:copy-of select="oape:look-up-nym-and-mark-up-name($v_word, $v_file-nyms, $p_id-change)"/>
-                        <!--                        <xsl:if test="$v_trailing != ''">-->
-                        <xsl:text> </xsl:text>
-                        <!--</xsl:if>-->
+                        <xsl:value-of select="$v_trailing-space"/>
                         <!-- debugging -->
                         <!--<xsl:message>
-                    <xsl:value-of select="$v_word"/>
-                </xsl:message>-->
+                            <xsl:value-of select="$v_word"/>
+                        </xsl:message>-->
                     </xsl:matching-substring>
-                    <!-- there is no non-matching substring -->
-                    <!--<xsl:non-matching-substring>
-                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
-                    </xsl:non-matching-substring>-->
+                    <!-- there ARE non-matching substrings -->
+                    <!-- otherwise this strips symbols such as .,-' out of strings -->
+                    <xsl:non-matching-substring>
+                        <xsl:value-of select="."/>
+<!--                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>-->
+                    </xsl:non-matching-substring>
                 </xsl:analyze-string>
             </xsl:when>
             <!-- fallback: return input -->
@@ -501,6 +502,8 @@
     <xsl:template match="@xml:id" mode="m_no-ids" priority="10"/>
     <!-- delete nodes -->
     <xsl:template match="node() | @*" mode="m_delete"/>
+    <!-- this function adds internam markup to a persName node -->
+    <!-- SOLVED: this strips symbols such as .,-' out of strings -->
     <xsl:function name="oape:name-add-markup">
         <xsl:param name="p_persname"/>
         <xsl:apply-templates mode="m_mark-up" select="$p_persname"/>
@@ -516,6 +519,7 @@
         </xsl:copy>
     </xsl:template>
     <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()" mode="m_mark-up">
+        <!-- SOLVED: this strips symbols such as .,-' out of strings -->
         <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
     </xsl:template>
     <xsl:template match="tei:roleName | tei:nameLink" mode="m_remove-rolename"/>
@@ -608,7 +612,7 @@
                         </xsl:when>
                         <xsl:when test="$p_add-mark-up = true()">
                             <!-- test of corresponding person contains mark-up -->
-                            <!-- this strips symbols such as .,-' out of strings -->
+                            <!-- SOLVED: this strips symbols such as .,-' out of strings -->
                             <xsl:choose>
                                 <xsl:when test="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()[namespace::tei]">
                                     <xsl:apply-templates mode="m_copy-from-authority-file" select="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()"/>
