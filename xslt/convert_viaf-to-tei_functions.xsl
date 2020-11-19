@@ -57,7 +57,7 @@
     <!-- VIAF ID -->
     <xsl:template match="viaf:viafID" mode="m_viaf-to-tei">
         <xsl:element name="tei:idno">
-            <xsl:attribute name="type" select="'viaf'"/>
+            <xsl:attribute name="type" select="'VIAF'"/>
             <xsl:value-of select="."/>
         </xsl:element>
     </xsl:template>
