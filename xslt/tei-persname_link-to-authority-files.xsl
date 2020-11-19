@@ -7,7 +7,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <!-- PROBLEMS: 
-         - no known problems
+         - If run on names in Latin alphabet and with $p_add-mark-up-to-input set to "true()", symbols such as -,. and ' are stripped out
     -->
     <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
     <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute -->

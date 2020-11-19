@@ -608,6 +608,7 @@
                         </xsl:when>
                         <xsl:when test="$p_add-mark-up = true()">
                             <!-- test of corresponding person contains mark-up -->
+                            <!-- this strips symbols such as .,-' out of strings -->
                             <xsl:choose>
                                 <xsl:when test="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()[namespace::tei]">
                                     <xsl:apply-templates mode="m_copy-from-authority-file" select="$v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/node()"/>
