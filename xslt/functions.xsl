@@ -86,7 +86,7 @@
     <!-- this function queries a local authority file with an OpenArabicPE or VIAF ID and returns a <tei:person> -->
     <xsl:function name="oape:get-person-from-authority-file">
         <xsl:param name="p_idno"/>
-        <xsl:param name="p_local-authority"/>
+        <xsl:param name="p_local-authority" as="xs:string"/>
         <xsl:param name="p_authority-file"/>
         <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority,':pers:')"/>
         <xsl:variable name="v_authority">
@@ -101,11 +101,11 @@
         </xsl:variable>
         <xsl:variable name="v_idno">
             <xsl:choose>
-                <xsl:when test="contains($p_idno, $v_local-uri-scheme)">
-                    <xsl:value-of select="replace($p_idno, concat('.*', $v_local-uri-scheme,'(\d+).*'), '$1')"/>
-                </xsl:when>
                 <xsl:when test="contains($p_idno, 'viaf:')">
                     <xsl:value-of select="replace($p_idno, '.*viaf:(\d+).*', '$1')"/>
+                </xsl:when>
+                <xsl:when test="contains($p_idno, $v_local-uri-scheme)">
+                    <xsl:value-of select="replace($p_idno, concat('.*', $v_local-uri-scheme,'(\d+).*'), '$1')"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
@@ -502,7 +502,8 @@
     <xsl:template match="@xml:id" mode="m_no-ids" priority="10"/>
     <!-- delete nodes -->
     <xsl:template match="node() | @*" mode="m_delete"/>
-    <!-- this function adds internam markup to a persName node -->
+    <!-- this function adds internal markup to a persName node -->
+    <!-- output is a persName node -->
     <!-- SOLVED: this strips symbols such as .,-' out of strings -->
     <xsl:function name="oape:name-add-markup">
         <xsl:param name="p_persname"/>
