@@ -114,7 +114,18 @@
                 <xsl:text>oape:get-person-from-authority-file: $v_authority="</xsl:text><xsl:value-of select="$v_authority"/><xsl:text>" and $v_idno="</xsl:text><xsl:value-of select="$v_idno"/><xsl:text>"</xsl:text>
             </xsl:message>
         </xsl:if>-->
-        <xsl:copy-of select="$p_authority-file//tei:person[tei:idno[@type = $v_authority] = $v_idno]"/>
+        <xsl:choose>
+            <xsl:when test="$p_authority-file//tei:person/tei:idno[@type = $v_authority] = $v_idno">
+                <xsl:copy-of select="$p_authority-file//tei:person[tei:idno[@type = $v_authority] = $v_idno]"/>
+            </xsl:when>
+            <!-- even though the input claims that there is an entry in the authority file, there isn't -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>There is no person with the ID </xsl:text><xsl:value-of select="$v_idno"/><xsl:text> in the authority file</xsl:text>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+        
     </xsl:function>
     <!-- get OpenArabicPE ID from authority file with an @xml:id -->
     <xsl:function name="oape:get-id-for-person">
