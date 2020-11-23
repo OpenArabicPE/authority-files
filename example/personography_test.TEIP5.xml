@@ -2,205 +2,215 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
-  <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Title</title>
-         </titleStmt>
-         <publicationStmt>
-            <p>Publication Information</p>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Information about the source</p>
-         </sourceDesc>
-      </fileDesc>
-  </teiHeader>
-  <text>
-      <body>
-         <div>
-            <listPerson>
-               <person xml:id="person_177.d5e1340">
-                <persName xml:id="persName_196.d5e1342" xml:lang="en">A. Beaman</persName>
-                <persName change="#d5e126" corresp="#persName_196.d5e1342" type="flattened" xml:id="persName_1.d13e1" xml:lang="en">ABeaman</persName>
-                <idno type="jaraid">177</idno>
-            </person>
-            <person xml:id="person_108.d5e915">
-                <persName xml:id="persName_127.d5e917" xml:lang="ar-Latn-EN">A. M. Onsy</persName>
-                <persName change="#d5e126" corresp="#persName_127.d5e917" type="flattened" xml:id="persName_1.d16e1" xml:lang="ar-Latn-EN">AMOnsy</persName>
-                <idno type="jaraid">108</idno>
-            </person>
-            <person xml:id="person_2293.d5e14390">
-                <persName xml:id="persName_2312.d5e14392" xml:lang="ar-Latn-x-ijmes">A. Būlus</persName>
-                <persName change="#d2e154" xml:lang="ar">ا. بولس</persName>
-                <persName change="#d5e126" corresp="#persName_2312.d5e14392" type="flattened" xml:id="persName_1.d19e1" xml:lang="en">ABūlus</persName>
-                <idno type="jaraid">2293</idno>
-            </person>
-            <person xml:id="person_484.d5e3235">
-                <persName xml:id="persName_503.d5e3237" xml:lang="ar-Latn-x-ijmes">A. J.</persName>
-                <persName change="#d2e154" xml:lang="ar">ا. ج.</persName>
-                <persName change="#d5e126" corresp="#persName_503.d5e3237" type="flattened" xml:id="persName_1.d22e1" xml:lang="en">AJ</persName>
-                <idno type="jaraid">484</idno>
-            </person>
-            <person xml:id="person_1641.d5e10369">
-                <persName xml:id="persName_1660.d5e10371" xml:lang="ar-Latn-x-ijmes">A. M. Hāy</persName>
-                <persName change="#d2e154" xml:lang="ar">ا. م. هاي</persName>
-                <persName change="#d5e126" corresp="#persName_1660.d5e10371" type="flattened" xml:id="persName_1.d25e1" xml:lang="en">AMHāy</persName>
-                <idno type="jaraid">1641</idno>
-            </person>
-            <person xml:id="person_2327.d5e14600">
-                <persName xml:id="persName_2346.d5e14602" xml:lang="ar-Latn-x-ijmes">A. Safīr</persName>
-                <persName change="#d2e154" xml:lang="ar">ا. سفير</persName>
-                <persName change="#d5e126" corresp="#persName_2346.d5e14602" type="flattened" xml:id="persName_1.d28e1" xml:lang="en">ASafīr</persName>
-                <idno type="jaraid">2327</idno>
-            </person>
-            <person xml:id="person_1320.d5e8390">
-                <persName xml:id="persName_1339.d5e8392" xml:lang="ar-Latn-x-ijmes">A.A.N.</persName>
-                <persName change="#d2e154" xml:lang="ar">ا..ن.</persName>
-                <persName change="#d5e126" corresp="#persName_1339.d5e8392" type="flattened" xml:id="persName_1.d31e1" xml:lang="en">AAN</persName>
-                <idno type="jaraid">1320</idno>
-            </person>
-            <person xml:id="person_1502.d5e9512">
-                <persName xml:id="persName_1521.d5e9514" xml:lang="en-Arab-AR">A.H. Tumsun</persName>
-                <persName xml:lang="en">A.H. Thomson</persName>
-                <persName change="#d2e154" xml:lang="ar">ا.ه. تمسن</persName>
-                <persName change="#d5e126" corresp="#persName_1521.d5e9514" type="flattened" xml:id="persName_1.d34e1" xml:lang="en">AHTumsunThomson</persName>
-                <idno type="jaraid">1502</idno>
-            </person>
-            <person xml:id="person_2108.d5e13249">
-                <persName xml:id="persName_2127.d5e13251" xml:lang="ar-Latn-x-ijmes">AL-Khūrī Būlus al-Kufūrī</persName>
-                <persName change="#d2e154" xml:lang="ar">الخوري بولس الكفوري</persName>
-                <persName change="#d5e126" corresp="#persName_2127.d5e13251" type="flattened" xml:id="persName_1.d37e1" xml:lang="en">ALKhūrīBūlusalKufūrī</persName>
-                <idno type="jaraid">2108</idno>
-            </person>
-            <person xml:id="person_101.d5e871">
-                <persName xml:id="persName_120.d5e873" xml:lang="ar-Latn-x-ijmes">ʿAbd al-Raḥmān al-Kawākibī</persName>
-                <persName change="#d2e154" xml:lang="ar">عبد الرحمن الكواكبي</persName>
-                <persName change="#d5e126" corresp="#persName_120.d5e873" type="flattened" xml:id="persName_1.d40e1" xml:lang="en">ʿAbdalRaḥmānalKawākibī</persName>
-                <idno type="jaraid">101</idno>
-            </person>
-            <person xml:id="person_104.d5e890">
-                <persName xml:id="persName_123.d5e892" xml:lang="ar-Latn-FR">Abraham B. Taïeb</persName>
-                <persName xml:lang="ar-Latn-x-ijmes">Ibrāhīm Ṭayyib</persName>
-                <persName change="#d2e154" xml:lang="ar">ابراهيم طيب</persName>
-                <persName change="#d5e126" corresp="#persName_123.d5e892" type="flattened" xml:id="persName_1.d43e1" xml:lang="en">AbrahamBTaïebIbrāhīmṬayyib</persName>
-                <idno type="jaraid">104</idno>
-            </person>
-            <person xml:id="person_184.d5e1383">
-                <persName xml:id="persName_203.d5e1385" xml:lang="ar-Latn-x-ijmes">Abu'l-Naṣr Yaḥyā al-Salāwī</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو النصر يحيی السلاوي</persName>
-                <persName change="#d5e126" corresp="#persName_203.d5e1385" type="flattened" xml:id="persName_1.d46e1" xml:lang="en">AbulNaṣrYaḥyāalSalāwī</persName>
-                <idno type="jaraid">184</idno>
-            </person>
-            <person xml:id="person_1086.d5e6947">
-                <persName xml:id="persName_1105.d5e6949" xml:lang="ar-Latn-x-ijmes">Abū Al-Layl Rāshid</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو الليل راشد</persName>
-                <persName change="#d5e126" corresp="#persName_1105.d5e6949" type="flattened" xml:id="persName_1.d49e1" xml:lang="en">AbūAlLaylRāshid</persName>
-                <idno type="jaraid">1086</idno>
-            </person>
-            <person xml:id="person_2478.d5e15531">
-                <persName xml:id="persName_2497.d5e15533" xml:lang="ar-Latn-x-ijmes">Abū Bakr al-Dāghistānī</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو بكر الداغستاني</persName>
-                <persName change="#d5e126" corresp="#persName_2497.d5e15533" type="flattened" xml:id="persName_1.d52e1" xml:lang="en">AbūBakralDāghistānī</persName>
-                <persName xml:id="persName_766.d5e4858" xml:lang="ar-Latn-x-ijmes">Abū Bakr bin ʿUmar Dāghistānī</persName>
-                <persName change="#d2e182" xml:lang="ar">ابو بكر بن عمر داغستاني</persName>
-                <persName change="#d5e126" corresp="#persName_766.d5e4858" type="flattened" xml:id="persName_1.d58e1" xml:lang="ar-Latn-x-ijmes">AbūBakrbinʿUmarDāghistānī</persName>
-                <idno type="jaraid">747</idno>
-                <idno type="jaraid">2478</idno>
-            </person>
-            <person xml:id="person_2724.d5e17048">
-                <persName xml:id="persName_2743.d5e17050" xml:lang="ar-Latn-x-ijmes">Abū Bakr al-ʿAṭṭās</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو بكر العطاس</persName>
-                <persName change="#d5e126" corresp="#persName_2743.d5e17050" type="flattened" xml:id="persName_1.d55e1" xml:lang="en">AbūBakralʿAṭṭās</persName>
-                <idno type="jaraid">2724</idno>
-            </person>
-            <person xml:id="person_1239.d5e7890">
-                <persName xml:id="persName_1258.d5e7892" xml:lang="ar-Latn-x-ijmes">Abū Muslim al-Rawāḥī</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو مسلم الرواحي</persName>
-                <persName change="#d5e126" corresp="#persName_1258.d5e7892" type="flattened" xml:id="persName_1.d61e1" xml:lang="en">AbūMuslimalRawāḥī</persName>
-                <idno type="jaraid">1239</idno>
-            </person>
-            <person xml:id="person_243.d5e1747">
-                <persName xml:id="persName_262.d5e1749" xml:lang="ar-Latn-x-ijmes">Abū Turāb
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <listPerson>
+                    <person>
+                        <persName change="#d3e951" ref="jaraid:pers:269 viaf:12720446" xml:lang="ar">ابراهيم الاسود</persName>
+                    </person>
+                    <person xml:id="person_177.d5e1340">
+                        <persName xml:id="persName_196.d5e1342" xml:lang="en">A. Beaman</persName>
+                        <persName change="#d5e126" corresp="#persName_196.d5e1342" type="flattened" xml:id="persName_1.d13e1" xml:lang="en">ABeaman</persName>
+                        <idno type="jaraid">177</idno>
+                    </person>
+                    <person xml:id="person_108.d5e915">
+                        <persName xml:id="persName_127.d5e917" xml:lang="ar-Latn-EN">A. M. Onsy</persName>
+                        <persName change="#d5e126" corresp="#persName_127.d5e917" type="flattened" xml:id="persName_1.d16e1" xml:lang="ar-Latn-EN">AMOnsy</persName>
+                        <idno type="jaraid">108</idno>
+                    </person>
+                    <person xml:id="person_2293.d5e14390">
+                        <persName xml:id="persName_2312.d5e14392" xml:lang="ar-Latn-x-ijmes">A. Būlus</persName>
+                        <persName change="#d2e154" xml:lang="ar">ا. بولس</persName>
+                        <persName change="#d5e126" corresp="#persName_2312.d5e14392" type="flattened" xml:id="persName_1.d19e1" xml:lang="en">ABūlus</persName>
+                        <idno type="jaraid">2293</idno>
+                    </person>
+                    <person xml:id="person_484.d5e3235">
+                        <persName xml:id="persName_503.d5e3237" xml:lang="ar-Latn-x-ijmes">A. J.</persName>
+                        <persName change="#d2e154" xml:lang="ar">ا. ج.</persName>
+                        <persName change="#d5e126" corresp="#persName_503.d5e3237" type="flattened" xml:id="persName_1.d22e1" xml:lang="en">AJ</persName>
+                        <idno type="jaraid">484</idno>
+                    </person>
+                    <person xml:id="person_1641.d5e10369">
+                        <persName xml:id="persName_1660.d5e10371" xml:lang="ar-Latn-x-ijmes">A. M. Hāy</persName>
+                        <persName change="#d2e154" xml:lang="ar">ا. م. هاي</persName>
+                        <persName change="#d5e126" corresp="#persName_1660.d5e10371" type="flattened" xml:id="persName_1.d25e1" xml:lang="en">AMHāy</persName>
+                        <idno type="jaraid">1641</idno>
+                    </person>
+                    <person xml:id="person_2327.d5e14600">
+                        <persName xml:id="persName_2346.d5e14602" xml:lang="ar-Latn-x-ijmes">A. Safīr</persName>
+                        <persName change="#d2e154" xml:lang="ar">ا. سفير</persName>
+                        <persName change="#d5e126" corresp="#persName_2346.d5e14602" type="flattened" xml:id="persName_1.d28e1" xml:lang="en">ASafīr</persName>
+                        <idno type="jaraid">2327</idno>
+                    </person>
+                    <person xml:id="person_1320.d5e8390">
+                        <persName xml:id="persName_1339.d5e8392" xml:lang="ar-Latn-x-ijmes">A.A.N.</persName>
+                        <persName change="#d2e154" xml:lang="ar">ا..ن.</persName>
+                        <persName change="#d5e126" corresp="#persName_1339.d5e8392" type="flattened" xml:id="persName_1.d31e1" xml:lang="en">AAN</persName>
+                        <idno type="jaraid">1320</idno>
+                    </person>
+                    <person xml:id="person_1502.d5e9512">
+                        <persName xml:id="persName_1521.d5e9514" xml:lang="en-Arab-AR">A.H. Tumsun</persName>
+                        <persName xml:lang="en">A.H. Thomson</persName>
+                        <persName change="#d2e154" xml:lang="ar">ا.ه. تمسن</persName>
+                        <persName change="#d5e126" corresp="#persName_1521.d5e9514" type="flattened" xml:id="persName_1.d34e1" xml:lang="en">AHTumsunThomson</persName>
+                        <idno type="jaraid">1502</idno>
+                    </person>
+                    <person xml:id="person_2553.d5e15993">
+                        <persName xml:id="persName_2572.d5e15995" xml:lang="ar-Latn-x-ijmes">Al-Duktūr Anṭūn Shalfūn</persName>
+                        <persName change="#d2e154" xml:id="persName_219.d5e1206" xml:lang="ar">الدكتور انطون شلفون</persName>
+                        <tei:persName change="#d5e194" corresp="#persName_219.d5e1206" type="flattened" xml:lang="ar">الدكتورانطونشلفون</tei:persName>
+                        <persName change="#d5e126" corresp="#persName_2572.d5e15995" type="flattened" xml:id="persName_1.d205e1" xml:lang="en">AlDuktūrAnṭūnShalfūn</persName>
+                        <idno type="jaraid">2553</idno>
+                    </person>
+                    <person xml:id="person_2108.d5e13249">
+                        <persName xml:id="persName_2127.d5e13251" xml:lang="ar-Latn-x-ijmes">AL-Khūrī Būlus al-Kufūrī</persName>
+                        <persName change="#d2e154" xml:lang="ar">الخوري بولس الكفوري</persName>
+                        <persName change="#d5e126" corresp="#persName_2127.d5e13251" type="flattened" xml:id="persName_1.d37e1" xml:lang="en">ALKhūrīBūlusalKufūrī</persName>
+                        <idno type="jaraid">2108</idno>
+                    </person>
+                    <person xml:id="person_101.d5e871">
+                        <persName xml:id="persName_120.d5e873" xml:lang="ar-Latn-x-ijmes">ʿAbd al-Raḥmān al-Kawākibī</persName>
+                        <persName change="#d2e154" xml:lang="ar">عبد الرحمن الكواكبي</persName>
+                        <persName change="#d5e126" corresp="#persName_120.d5e873" type="flattened" xml:id="persName_1.d40e1" xml:lang="en">ʿAbdalRaḥmānalKawākibī</persName>
+                        <idno type="jaraid">101</idno>
+                    </person>
+                    <person xml:id="person_104.d5e890">
+                        <persName xml:id="persName_123.d5e892" xml:lang="ar-Latn-FR">Abraham B. Taïeb</persName>
+                        <persName xml:lang="ar-Latn-x-ijmes">Ibrāhīm Ṭayyib</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابراهيم طيب</persName>
+                        <persName change="#d5e126" corresp="#persName_123.d5e892" type="flattened" xml:id="persName_1.d43e1" xml:lang="en">AbrahamBTaïebIbrāhīmṬayyib</persName>
+                        <idno type="jaraid">104</idno>
+                    </person>
+                    <person xml:id="person_184.d5e1383">
+                        <persName xml:id="persName_203.d5e1385" xml:lang="ar-Latn-x-ijmes">Abu'l-Naṣr Yaḥyā al-Salāwī</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو النصر يحيی السلاوي</persName>
+                        <persName change="#d5e126" corresp="#persName_203.d5e1385" type="flattened" xml:id="persName_1.d46e1" xml:lang="en">AbulNaṣrYaḥyāalSalāwī</persName>
+                        <idno type="jaraid">184</idno>
+                    </person>
+                    <person xml:id="person_1086.d5e6947">
+                        <persName xml:id="persName_1105.d5e6949" xml:lang="ar-Latn-x-ijmes">Abū Al-Layl Rāshid</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو الليل راشد</persName>
+                        <persName change="#d5e126" corresp="#persName_1105.d5e6949" type="flattened" xml:id="persName_1.d49e1" xml:lang="en">AbūAlLaylRāshid</persName>
+                        <idno type="jaraid">1086</idno>
+                    </person>
+                    <person xml:id="person_2478.d5e15531">
+                        <persName xml:id="persName_2497.d5e15533" xml:lang="ar-Latn-x-ijmes">Abū Bakr al-Dāghistānī</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو بكر الداغستاني</persName>
+                        <persName change="#d5e126" corresp="#persName_2497.d5e15533" type="flattened" xml:id="persName_1.d52e1" xml:lang="en">AbūBakralDāghistānī</persName>
+                        <persName xml:id="persName_766.d5e4858" xml:lang="ar-Latn-x-ijmes">Abū Bakr bin ʿUmar Dāghistānī</persName>
+                        <persName change="#d2e182" xml:lang="ar">ابو بكر بن عمر داغستاني</persName>
+                        <persName change="#d5e126" corresp="#persName_766.d5e4858" type="flattened" xml:id="persName_1.d58e1" xml:lang="ar-Latn-x-ijmes">AbūBakrbinʿUmarDāghistānī</persName>
+                        <idno type="jaraid">747</idno>
+                        <idno type="jaraid">2478</idno>
+                    </person>
+                    <person xml:id="person_2724.d5e17048">
+                        <persName xml:id="persName_2743.d5e17050" xml:lang="ar-Latn-x-ijmes">Abū Bakr al-ʿAṭṭās</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو بكر العطاس</persName>
+                        <persName change="#d5e126" corresp="#persName_2743.d5e17050" type="flattened" xml:id="persName_1.d55e1" xml:lang="en">AbūBakralʿAṭṭās</persName>
+                        <idno type="jaraid">2724</idno>
+                    </person>
+                    <person xml:id="person_1239.d5e7890">
+                        <persName xml:id="persName_1258.d5e7892" xml:lang="ar-Latn-x-ijmes">Abū Muslim al-Rawāḥī</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو مسلم الرواحي</persName>
+                        <persName change="#d5e126" corresp="#persName_1258.d5e7892" type="flattened" xml:id="persName_1.d61e1" xml:lang="en">AbūMuslimalRawāḥī</persName>
+                        <idno type="jaraid">1239</idno>
+                    </person>
+                    <person xml:id="person_243.d5e1747">
+                        <persName xml:id="persName_262.d5e1749" xml:lang="ar-Latn-x-ijmes">Abū Turāb
                         Muḥammad ʿAbd al-Jabbār Khān</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو تراب محمد عبد الجبار خان</persName>
-                <persName change="#d5e126" corresp="#persName_262.d5e1749" type="flattened" xml:id="persName_1.d64e1" xml:lang="en">AbūTurābMuḥammadʿAbdalJabbārKhān</persName>
-                <idno type="jaraid">243</idno>
-            </person>
-            <person xml:id="person_795.d5e5152">
-                <persName xml:id="persName_814.d5e5154" xml:lang="ar-Latn-x-ijmes">Abū Zayd Ḥasan</persName>
-                <persName change="#d2e182" xml:lang="ar">ابو زيد حسن</persName>
-                <persName change="#d5e126" corresp="#persName_814.d5e5154" type="flattened" xml:id="persName_1.d67e1" xml:lang="ar-Latn-x-ijmes">AbūZaydḤasan</persName>
-                <idno type="jaraid">795</idno>
-            </person>
-            <person xml:id="person_2490.d5e15605">
-                <persName xml:id="persName_2509.d5e15607" xml:lang="ar-Latn-x-ijmes">Abū al-Faḍl al-Anṣārī</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو الفضل الانصاري</persName>
-                <persName change="#d5e126" corresp="#persName_2509.d5e15607" type="flattened" xml:id="persName_1.d70e1" xml:lang="en">AbūalFaḍlalAnṣārī</persName>
-                <idno type="jaraid">2490</idno>
-            </person>
-            <person xml:id="person_2179.d5e13687">
-                <persName xml:id="persName_2198.d5e13689" xml:lang="ar-Latn-x-ijmes">Abū al-Hudā al-Yāfī</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو الهدی اليافي</persName>
-                <persName change="#d5e126" corresp="#persName_2198.d5e13689" type="flattened" xml:id="persName_1.d73e1" xml:lang="en">AbūalHudāalYāfī</persName>
-                <idno type="jaraid">2179</idno>
-            </person>
-            <person xml:id="person_1219.d5e7767">
-                <persName xml:id="persName_1238.d5e7769" xml:lang="ar-Latn-x-ijmes">Abū al-Manṣūr al-Ṣanhājī</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو المنصور الصنهاجي</persName>
-                <persName change="#d5e126" corresp="#persName_1238.d5e7769" type="flattened" xml:id="persName_1.d76e1" xml:lang="en">AbūalManṣūralṢanhājī</persName>
-                <idno type="jaraid">1219</idno>
-            </person>
-            <person xml:id="person_1223.d5e7792">
-                <persName xml:id="persName_1242.d5e7794" xml:lang="ar-Latn-x-ijmes">Abū al-Yaqẓān Ibrāhīm bin ʿĪsā</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو اليقظان ابراهيم بن عيسی</persName>
-                <persName change="#d5e126" corresp="#persName_1242.d5e7794" type="flattened" xml:id="persName_1.d79e1" xml:lang="en">AbūalYaqẓānIbrāhīmbinʿĪsā</persName>
-                <idno type="jaraid">1223</idno>
-            </person>
-            <person xml:id="person_862.d5e5565">
-                <persName xml:id="persName_881.d5e5567" xml:lang="ar-Latn-x-ijmes">Abū al-ʿAynayn</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو العينين</persName>
-                <persName change="#d5e126" corresp="#persName_881.d5e5567" type="flattened" xml:id="persName_1.d82e1" xml:lang="en">AbūalʿAynayn</persName>
-                <idno type="jaraid">862</idno>
-            </person>
-            <person xml:id="person_2373.d5e14883">
-                <persName xml:id="persName_2392.d5e14885" xml:lang="ar-Latn-x-ijmes">Abū al-Ṣifā Ṭalʿat</persName>
-                <persName change="#d2e154" xml:lang="ar">ابو الصفی طلعة</persName>
-                <persName change="#d5e126" corresp="#persName_2392.d5e14885" type="flattened" xml:id="persName_1.d85e1" xml:lang="en">AbūalṢifāṬalʿat</persName>
-                <idno type="jaraid">2373</idno>
-            </person>
-            <person xml:id="person_1293.d5e8223">
-                <persName xml:id="persName_1312.d5e8225" xml:lang="ar-Latn-x-ijmes">Adīb Dāwud Harārī</persName>
-                <persName change="#d2e154" xml:lang="ar">اديب داود هراري</persName>
-                <persName change="#d5e126" corresp="#persName_1312.d5e8225" type="flattened" xml:id="persName_1.d88e1" xml:lang="en">AdībDāwudHarārī</persName>
-                <idno type="jaraid">1293</idno>
-            </person>
-            <person xml:id="person_78.d5e730">
-                <persName xml:id="persName_97.d5e732" xml:lang="ar-Latn-x-ijmes">Adīb Isḥāq</persName>
-                <persName change="#d2e154" xml:lang="ar">اديب اسحاق</persName>
-                <persName change="#d5e126" corresp="#persName_97.d5e732" type="flattened" xml:id="persName_1.d91e1" xml:lang="en">AdībIsḥāq</persName>
-                <idno type="jaraid">78</idno>
-            </person>
-            <person xml:id="person_2143.d5e13465">
-                <persName xml:id="persName_2162.d5e13467" xml:lang="ar-Latn-x-ijmes">Adīb Naẓmī</persName>
-                <persName change="#d2e154" xml:lang="ar">اديب نظمي</persName>
-                <persName change="#d5e126" corresp="#persName_2162.d5e13467" type="flattened" xml:id="persName_1.d94e1" xml:lang="en">AdībNaẓmī</persName>
-                <idno type="jaraid">2143</idno>
-            </person>
-            <person xml:id="person_2621.d5e16413">
-                <persName xml:id="persName_2640.d5e16415" xml:lang="ar-Latn-x-ijmes">Adīb Tanbakjī</persName>
-                <persName change="#d2e154" xml:lang="ar">اديب تنبكجي</persName>
-                <persName change="#d5e126" corresp="#persName_2640.d5e16415" type="flattened" xml:id="persName_1.d97e1" xml:lang="en">AdībTanbakjī</persName>
-                <idno type="jaraid">2621</idno>
-            </person>
-            <person xml:id="person_2211.d5e13884">
-                <persName xml:id="persName_2230.d5e13886" xml:lang="ar-Latn-x-ijmes">Adīb al-Tanbakjī</persName>
-                <persName change="#d2e154" xml:lang="ar">اديب التنبكجي</persName>
-                <persName change="#d5e126" corresp="#persName_2230.d5e13886" type="flattened" xml:id="persName_1.d100e1" xml:lang="en">AdībalTanbakjī</persName>
-                <idno type="jaraid">2211</idno>
-            </person>
-            </listPerson>
-         </div>
-      </body>
-  </text>
+                        <persName change="#d2e154" xml:lang="ar">ابو تراب محمد عبد الجبار خان</persName>
+                        <persName change="#d5e126" corresp="#persName_262.d5e1749" type="flattened" xml:id="persName_1.d64e1" xml:lang="en">AbūTurābMuḥammadʿAbdalJabbārKhān</persName>
+                        <idno type="jaraid">243</idno>
+                    </person>
+                    <person xml:id="person_795.d5e5152">
+                        <persName xml:id="persName_814.d5e5154" xml:lang="ar-Latn-x-ijmes">Abū Zayd Ḥasan</persName>
+                        <persName change="#d2e182" xml:lang="ar">ابو زيد حسن</persName>
+                        <persName change="#d5e126" corresp="#persName_814.d5e5154" type="flattened" xml:id="persName_1.d67e1" xml:lang="ar-Latn-x-ijmes">AbūZaydḤasan</persName>
+                        <idno type="jaraid">795</idno>
+                    </person>
+                    <person xml:id="person_2490.d5e15605">
+                        <persName xml:id="persName_2509.d5e15607" xml:lang="ar-Latn-x-ijmes">Abū al-Faḍl al-Anṣārī</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو الفضل الانصاري</persName>
+                        <persName change="#d5e126" corresp="#persName_2509.d5e15607" type="flattened" xml:id="persName_1.d70e1" xml:lang="en">AbūalFaḍlalAnṣārī</persName>
+                        <idno type="jaraid">2490</idno>
+                    </person>
+                    <person xml:id="person_2179.d5e13687">
+                        <persName xml:id="persName_2198.d5e13689" xml:lang="ar-Latn-x-ijmes">Abū al-Hudā al-Yāfī</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو الهدی اليافي</persName>
+                        <persName change="#d5e126" corresp="#persName_2198.d5e13689" type="flattened" xml:id="persName_1.d73e1" xml:lang="en">AbūalHudāalYāfī</persName>
+                        <idno type="jaraid">2179</idno>
+                    </person>
+                    <person xml:id="person_1219.d5e7767">
+                        <persName xml:id="persName_1238.d5e7769" xml:lang="ar-Latn-x-ijmes">Abū al-Manṣūr al-Ṣanhājī</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو المنصور الصنهاجي</persName>
+                        <persName change="#d5e126" corresp="#persName_1238.d5e7769" type="flattened" xml:id="persName_1.d76e1" xml:lang="en">AbūalManṣūralṢanhājī</persName>
+                        <idno type="jaraid">1219</idno>
+                    </person>
+                    <person xml:id="person_1223.d5e7792">
+                        <persName xml:id="persName_1242.d5e7794" xml:lang="ar-Latn-x-ijmes">Abū al-Yaqẓān Ibrāhīm bin ʿĪsā</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو اليقظان ابراهيم بن عيسی</persName>
+                        <persName change="#d5e126" corresp="#persName_1242.d5e7794" type="flattened" xml:id="persName_1.d79e1" xml:lang="en">AbūalYaqẓānIbrāhīmbinʿĪsā</persName>
+                        <idno type="jaraid">1223</idno>
+                    </person>
+                    <person xml:id="person_862.d5e5565">
+                        <persName xml:id="persName_881.d5e5567" xml:lang="ar-Latn-x-ijmes">Abū al-ʿAynayn</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو العينين</persName>
+                        <persName change="#d5e126" corresp="#persName_881.d5e5567" type="flattened" xml:id="persName_1.d82e1" xml:lang="en">AbūalʿAynayn</persName>
+                        <idno type="jaraid">862</idno>
+                    </person>
+                    <person xml:id="person_2373.d5e14883">
+                        <persName xml:id="persName_2392.d5e14885" xml:lang="ar-Latn-x-ijmes">Abū al-Ṣifā Ṭalʿat</persName>
+                        <persName change="#d2e154" xml:lang="ar">ابو الصفی طلعة</persName>
+                        <persName change="#d5e126" corresp="#persName_2392.d5e14885" type="flattened" xml:id="persName_1.d85e1" xml:lang="en">AbūalṢifāṬalʿat</persName>
+                        <idno type="jaraid">2373</idno>
+                    </person>
+                    <person xml:id="person_1293.d5e8223">
+                        <persName xml:id="persName_1312.d5e8225" xml:lang="ar-Latn-x-ijmes">Adīb Dāwud Harārī</persName>
+                        <persName change="#d2e154" xml:lang="ar">اديب داود هراري</persName>
+                        <persName change="#d5e126" corresp="#persName_1312.d5e8225" type="flattened" xml:id="persName_1.d88e1" xml:lang="en">AdībDāwudHarārī</persName>
+                        <idno type="jaraid">1293</idno>
+                    </person>
+                    <person xml:id="person_78.d5e730">
+                        <persName xml:id="persName_97.d5e732" xml:lang="ar-Latn-x-ijmes">Adīb Isḥāq</persName>
+                        <persName change="#d2e154" xml:lang="ar">اديب اسحاق</persName>
+                        <persName change="#d5e126" corresp="#persName_97.d5e732" type="flattened" xml:id="persName_1.d91e1" xml:lang="en">AdībIsḥāq</persName>
+                        <idno type="jaraid">78</idno>
+                    </person>
+                    <person xml:id="person_2143.d5e13465">
+                        <persName xml:id="persName_2162.d5e13467" xml:lang="ar-Latn-x-ijmes">Adīb Naẓmī</persName>
+                        <persName change="#d2e154" xml:lang="ar">اديب نظمي</persName>
+                        <persName change="#d5e126" corresp="#persName_2162.d5e13467" type="flattened" xml:id="persName_1.d94e1" xml:lang="en">AdībNaẓmī</persName>
+                        <idno type="jaraid">2143</idno>
+                    </person>
+                    <person xml:id="person_2621.d5e16413">
+                        <persName xml:id="persName_2640.d5e16415" xml:lang="ar-Latn-x-ijmes">Adīb Tanbakjī</persName>
+                        <persName change="#d2e154" xml:lang="ar">اديب تنبكجي</persName>
+                        <persName change="#d5e126" corresp="#persName_2640.d5e16415" type="flattened" xml:id="persName_1.d97e1" xml:lang="en">AdībTanbakjī</persName>
+                        <idno type="jaraid">2621</idno>
+                    </person>
+                    <person xml:id="person_2211.d5e13884">
+                        <persName xml:id="persName_2230.d5e13886" xml:lang="ar-Latn-x-ijmes">Adīb al-Tanbakjī</persName>
+                        <persName change="#d2e154" xml:lang="ar">اديب التنبكجي</persName>
+                        <persName change="#d5e126" corresp="#persName_2230.d5e13886" type="flattened" xml:id="persName_1.d100e1" xml:lang="en">AdībalTanbakjī</persName>
+                        <idno type="jaraid">2211</idno>
+                    </person>
+                </listPerson>
+            </div>
+        </body>
+    </text>
 </TEI>
