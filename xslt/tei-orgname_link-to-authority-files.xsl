@@ -39,9 +39,6 @@
 <!--    <xsl:param name="p_url-master" select="'/BachUni/BachBibliothek/GitHub/ProjectJaraid/jaraid_source/authority-files/jaraid_authority-file.TEIP5.xml'"></xsl:param>-->
     <xsl:variable name="v_file-entities-master" select="doc($p_url-authority-file)"/>
 
-    <!-- parameter to select whether the source file should be updated  -->
-    <xsl:param name="p_update-source" select="true()"/>
-
    <!-- Identity transformation -->
     <xsl:template match="node() | @*">
         <xsl:copy>
