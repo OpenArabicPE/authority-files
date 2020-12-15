@@ -51,25 +51,7 @@
     </xsl:template>
     
     <xsl:template match="tei:placeName" priority="10">
-        <!-- flatened version of the persName without non-word characters -->
-        <xsl:variable name="v_name-flat" select="oape:string-normalise-characters(string())"/>
-        <!-- test if the flattened name is present in the authority file -->
-        <xsl:variable name="v_corresponding-place">
-            <xsl:choose>
-                <!-- test if this node already points to an authority file -->
-                <xsl:when test="@ref">
-                    <xsl:copy-of select="oape:get-place-from-authority-file(@ref, $v_file-entities-master)"/>
-                </xsl:when>
-                <!-- test if the name is found in the authority file -->
-                <xsl:when test="$v_file-entities-master//tei:place[tei:placeName = $v_name-flat]">
-                    <xsl:copy-of select="$v_file-entities-master/descendant::tei:place[tei:placeName = $v_name-flat][1]"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <!-- one cannot use a boolean value if the default result is non-boolean -->
-                    <xsl:value-of select="'false()'"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
+        <xsl:variable name="v_corresponding-place" select="oape:get-entity-from-authority-file(., $p_local-authority, $v_file-entities-master)"/>
         <xsl:choose>
             <!-- fallback: name is not found in the authority file -->
             <xsl:when test="$v_corresponding-place = 'false()'">
