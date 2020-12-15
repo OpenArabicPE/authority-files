@@ -13,6 +13,8 @@
 
     <xsl:include href="functions.xsl"/>
     
+    <xsl:param name="p_restrict-to-arabic" select="true()"/>
+    
     <!-- identity transform -->
     <xsl:template match="node() | @*">
         <xsl:copy>
@@ -30,7 +32,14 @@
     
     <!-- add mark-up to direct text children of persName -->
     <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()">
-        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+        <xsl:choose>
+            <xsl:when test="$p_restrict-to-arabic = true() and parent::node()/@xml:lang = 'ar'">
+                <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!-- document the changes -->
