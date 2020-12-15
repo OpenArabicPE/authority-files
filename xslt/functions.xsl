@@ -148,7 +148,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority, $v_entity-type)"/>
+        <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority,':', $v_entity-type,':')"/>
         <xsl:choose>
             <!-- check if the entity already links to an authority file by means of the @ref attribute -->
             <xsl:when test="$p_entity/@ref != ''">
@@ -243,7 +243,7 @@
                             <xsl:otherwise>
                                 <xsl:message>
                                     <xsl:text>The persName </xsl:text>
-                                    <xsl:value-of select="$p_entity"/>
+                                    <xsl:value-of select="$v_name-flat"/>
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
@@ -259,7 +259,7 @@
                             <xsl:otherwise>
                                 <xsl:message>
                                     <xsl:text>The orgName </xsl:text>
-                                    <xsl:value-of select="$p_entity"/>
+                                    <xsl:value-of select="$v_name-flat"/>
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
@@ -275,7 +275,7 @@
                             <xsl:otherwise>
                                 <xsl:message>
                                     <xsl:text>The placeName </xsl:text>
-                                    <xsl:value-of select="$p_entity"/>
+                                    <xsl:value-of select="$v_name-flat"/>
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
