@@ -42,37 +42,13 @@
 
     <!-- parameter to select whether the source file should be updated  -->
     <xsl:param name="p_update-source" select="true()"/>
-    <!-- toggle debugging messages: this is toggled through the parameter file -->
-<!--    <xsl:param name="p_verbose" select="false()"/>-->
-    <xsl:variable name="v_id-file"
-        select="
-            if (tei:TEI/@xml:id) then
-                (tei:TEI/@xml:id)
-            else
-                ('_output')"/>
-    <xsl:variable name="v_url-file"
-        select="concat('../../', substring-after(base-uri(), 'OpenArabicPE/'))"/>
 
-
-   <!-- This template replicates everything -->
+   <!-- Identity transformation -->
     <xsl:template match="node() | @*">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
-    <!-- replicate everything except @xml:id and @xml:change -->
-    <!--<xsl:template match="node() | @*" mode="m_copy-from-authority-file" name="t_10">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_10 master: </xsl:text>
-                <xsl:value-of select="."/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates mode="m_copy-from-authority-file" select="@* | node()"/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>-->
     
     <xsl:template match="tei:placeName" priority="10">
         <!-- flatened version of the persName without non-word characters -->
