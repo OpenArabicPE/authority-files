@@ -123,7 +123,10 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-    <!-- this function queries a local authority file with an OpenArabicPE or VIAF ID and returns a <tei:person> -->
+    <!-- this function queries a local authority file
+        - input: an entity name such as <persName>, <orgName>, or <placeName>
+        - output: an entity: such as <person>, <org>, or <place>
+    -->
     <xsl:function name="oape:get-entity-from-authority-file">
         <!-- input: entity such as <persName>, <orgName>, or <placeName> node -->
         <xsl:param name="p_entity"/>
