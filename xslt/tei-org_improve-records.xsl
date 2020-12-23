@@ -50,7 +50,7 @@
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:head"/>
             <xsl:apply-templates select="tei:org">
-                <xsl:sort order="ascending" select="tei:orgName[@xml:lang = 'ar'][1]"/>
+                <xsl:sort order="ascending" select="if(starts-with(tei:orgName[@xml:lang = 'ar'][1],'ال')) then(substring-after(tei:orgName[@xml:lang = 'ar'][1],'ال')) else(tei:orgName[@xml:lang = 'ar'][1])"/>
                  <xsl:sort order="ascending" select="tei:orgName[@xml:lang = 'ar-Latn-x-ijmes'][1]"/>
                 <xsl:sort order="ascending" select="tei:orgName[@xml:lang = 'en'][1]"/>
                 <xsl:sort order="ascending" select="tei:orgName[1]"/>
