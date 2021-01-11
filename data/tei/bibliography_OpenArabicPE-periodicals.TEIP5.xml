@@ -749,7 +749,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar" next="oape:bibl:95">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الاتحاد العثماني</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
@@ -781,6 +781,7 @@
                      <biblScope from="1" to="1" unit="issue"/>
                      <biblScope from="1" to="4" unit="page"/>
                   </monogr>
+                  <note source="Cioeta+1979a">The paper was indefinitely suspended in 1913 and Ṭabbāra established <title level="j" ref="oape:bibl:95">al-Iṣlāḥ</title> as an replacement in May 1913.</note>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -3220,7 +3221,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
+               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar" prev="oape:bibl:28">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الإصلاح</title>
                      <idno change="#d2e167" type="oape">95</idno>
@@ -3236,6 +3237,7 @@
                         <pubPlace> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
                      </imprint>
                   </monogr>
+                  <note source="Cioeta+1979a">Ṭabbāra established this paper as a replacement for <title level="j" ref="oape:bibl:28">al-Ittiḥād al-ʿUthmānī</title> after the latter was indefintely suspended.</note>
                </biblStruct>
                <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
@@ -3788,7 +3790,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar" source="oape:bibl:143" subtype="newspaper" oape:frequency="weekly">
+               <biblStruct oape:frequency="weekly" source="oape:bibl:143" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الحرية</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة سياسية ادبية اخبارية</title>
@@ -3797,31 +3799,21 @@
                      <idno type="URI">https://hdl.handle.net/2027/hvd.32044051113173</idno>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_5.d2e3445" type="owner"> <persName ref="oape:pers:1678"
                         >داود مجاعص</persName> </editor>
-                     <editor type="editor" source="oape:bibl:143">
-                        <persName xml:lang="ar">الشيخ اسكندر العازار</persName>
-                     </editor>
-                     <editor type="editor" source="oape:bibl:143">
-                        <persName xml:lang="ar">الدكتور اسعد عفيش</persName>
-                     </editor>
-                     <editor type="editor" source="oape:bibl:143">
-                        <persName xml:lang="ar">السيد حسين وصفي رضا</persName>
-                     </editor>
-                     <editor type="editor" source="oape:bibl:143">
-                        <persName xml:lang="ar">جرجي افندي نقولا باز</persName>
-                     </editor>
+                     <editor source="oape:bibl:143" type="editor"> <persName xml:lang="ar">الشيخ اسكندر العازار</persName> </editor>
+                     <editor source="oape:bibl:143" type="editor"> <persName xml:lang="ar">الدكتور اسعد عفيش</persName> </editor>
+                     <editor source="oape:bibl:143" type="editor"> <persName xml:lang="ar">السيد حسين وصفي رضا</persName> </editor>
+                     <editor source="oape:bibl:143" type="editor"> <persName xml:lang="ar">جرجي افندي نقولا باز</persName> </editor>
                      <textLang mainLang="ar"/>
                      <imprint>
-                        <date when="1909-09-25" type="official" datingMethod="#cal_gregorian">Saturday, 25 September 1909</date>
-                        <date when="1909-09-25" when-custom="1909-07-11" type="official" datingMethod="#cal_julian"/>
+                        <date datingMethod="#cal_gregorian" type="official" when="1909-09-25">Saturday, 25 September 1909</date>
+                        <date datingMethod="#cal_julian" type="official" when="1909-09-25" when-custom="1909-07-11"/>
                         <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_6.d2e3441"> <placeName ref="oape:place:26 geon:276781"
                            >بيروت</placeName> </pubPlace>
-                        <publisher>
-                           <orgName xml:lang="ar">المطبعة العثمانية</orgName>
-                        </publisher>
+                        <publisher> <orgName xml:lang="ar">المطبعة العثمانية</orgName> </publisher>
                      </imprint>
-                     <biblScope unit="volume" from="1" to="1"/>
-                     <biblScope unit="issue" from="10" to="10"/>
-                     <biblScope unit="page" from="145" to=""/>
+                     <biblScope from="1" to="1" unit="volume"/>
+                     <biblScope from="10" to="10" unit="issue"/>
+                     <biblScope from="145" to="" unit="page"/>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
@@ -6525,7 +6517,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="weekly" type="periodical" xml:lang="ar" source="oape:bibl:311">
+               <biblStruct oape:frequency="weekly" source="oape:bibl:311" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">حمص</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة علمية ادبية اخبارية</title>
@@ -6540,18 +6532,16 @@
                         >قسطنطين يني</persName> </editor>
                      <textLang mainLang="ar"/>
                      <imprint>
-                        <date when="1911-08-26" type="official" datingMethod="#cal_gregorian">Saturday, 26 August 1911</date>
-                        <date when="1911-08-26" when-custom="1911-06-13" type="official" datingMethod="#cal_julian"/>
-                        <date when="1911-08-26" when-custom="1329-09-02" type="official" datingMethod="#cal_islamic"/>
+                        <date datingMethod="#cal_gregorian" type="official" when="1911-08-26">Saturday, 26 August 1911</date>
+                        <date datingMethod="#cal_julian" type="official" when="1911-08-26" when-custom="1911-06-13"/>
+                        <date datingMethod="#cal_islamic" type="official" when="1911-08-26" when-custom="1329-09-02"/>
                         <pubPlace change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#pubPlace_20.d2e3822"> <placeName
                            ref="oape:place:176 geon:169577">حمص</placeName> </pubPlace>
-                        <publisher>
-                           <orgName xml:lang="ar">جمعية رابطة الادبية</orgName>
-                        </publisher>
+                        <publisher> <orgName xml:lang="ar">جمعية رابطة الادبية</orgName> </publisher>
                      </imprint>
-                     <biblScope unit="volume" from="2" to="2"/>
-                     <biblScope unit="issue" from="38" to="38"/>
-                     <biblScope unit="page" from="602" to="616"/>
+                     <biblScope from="2" to="2" unit="volume"/>
+                     <biblScope from="38" to="38" unit="issue"/>
+                     <biblScope from="602" to="616" unit="page"/>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
