@@ -153,7 +153,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority,':', $v_entity-type,':')"/>
+        <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority, ':', $v_entity-type, ':')"/>
         <xsl:choose>
             <!-- check if the entity already links to an authority file by means of the @ref attribute -->
             <xsl:when test="$p_entity/@ref != ''">
@@ -247,9 +247,19 @@
                 <xsl:variable name="v_name-flat" select="oape:string-normalise-characters(string($p_entity))"/>
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
+                        <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity, $p_id-change)"/>
+                        <xsl:variable name="v_name-marked-up" select="oape:name-add-markup($p_entity)"/>
+                        <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, $p_id-change)"/>
+                        <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, $p_id-change)"/>
                         <xsl:choose>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flat]">
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-flat][1]"/>
+                            </xsl:when>
+                            <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flattened]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-flattened][1]"/>
+                            </xsl:when>
+                            <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-no-addnames-flattened]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-no-addnames-flattened][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
@@ -257,6 +267,11 @@
                                     <xsl:value-of select="$v_name-flat"/>
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
+                                <!-- quick debugging -->
+                                <!--<xsl:message>
+                                    <xsl:copy-of select="$v_name-marked-up"/>
+                                    <xsl:copy-of select="$v_name-no-addnames"/>
+                                </xsl:message>-->
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
                                 <xsl:value-of select="'false()'"/>
                             </xsl:otherwise>
@@ -591,6 +606,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <!-- this function takes a string as input and tries to find it in a nymlist. It will then try and wrap it in a name element -->
     <xsl:function name="oape:look-up-nym-and-mark-up-name">
         <xsl:param as="xs:string" name="p_input"/>
         <xsl:param name="p_authority-file"/>
@@ -642,7 +658,7 @@
                 <xsl:attribute name="type" select="'noAddName'"/>
                 <!-- reproduce language attributes -->
                 <xsl:apply-templates mode="m_identity-transform" select="$v_persname/@xml:lang"/>
-                <xsl:apply-templates mode="m_no-ids" select="$v_persname/tei:surname | $v_persname/tei:forename"/>
+                <xsl:apply-templates mode="m_remove-rolename" select="$v_persname/node()"/>
             </xsl:element>
         </xsl:variable>
         <!-- output -->
