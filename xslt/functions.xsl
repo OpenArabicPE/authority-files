@@ -116,7 +116,9 @@
             <!-- even though the input claims that there is an entry in the authority file, there isn't -->
             <xsl:otherwise>
                 <xsl:message>
-                    <xsl:text>There is no person with the ID </xsl:text>
+                    <xsl:text>There is no person with the </xsl:text>
+                    <xsl:value-of select="$v_authority"/>
+                    <xsl:text>-ID </xsl:text>
                     <xsl:value-of select="$v_idno"/>
                     <xsl:text> in the authority file</xsl:text>
                 </xsl:message>
@@ -135,13 +137,13 @@
         <xsl:variable name="v_ref" select="$p_entity/@ref"/>
         <xsl:variable name="v_entity-type">
             <xsl:choose>
-                <xsl:when test="name($p_entity) = 'persName'">
+                <xsl:when test="contains(name($p_entity), 'persName')">
                     <xsl:text>pers</xsl:text>
                 </xsl:when>
-                <xsl:when test="name($p_entity) = 'orgName'">
+                <xsl:when test="contains(name($p_entity), 'orgName')">
                     <xsl:text>org</xsl:text>
                 </xsl:when>
-                <xsl:when test="name($p_entity) = 'placeName'">
+                <xsl:when test="contains(name($p_entity), 'placeName')">
                     <xsl:text>place</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
@@ -190,7 +192,9 @@
                             <!-- even though the input claims that there is an entry in the authority file, there isn't -->
                             <xsl:otherwise>
                                 <xsl:message>
-                                    <xsl:text>There is no person with the ID </xsl:text>
+                                    <xsl:text>There is no person with the </xsl:text>
+                                    <xsl:value-of select="$v_authority"/>
+                                    <xsl:text>-ID </xsl:text>
                                     <xsl:value-of select="$v_idno"/>
                                     <xsl:text> in the authority file</xsl:text>
                                 </xsl:message>
@@ -205,7 +209,9 @@
                             <!-- even though the input claims that there is an entry in the authority file, there isn't -->
                             <xsl:otherwise>
                                 <xsl:message>
-                                    <xsl:text>There is no org with the ID </xsl:text>
+                                    <xsl:text>There is no org with the </xsl:text>
+                                    <xsl:value-of select="$v_authority"/>
+                                    <xsl:text>-ID </xsl:text>
                                     <xsl:value-of select="$v_idno"/>
                                     <xsl:text> in the authority file</xsl:text>
                                 </xsl:message>
@@ -220,7 +226,9 @@
                             <!-- even though the input claims that there is an entry in the authority file, there isn't -->
                             <xsl:otherwise>
                                 <xsl:message>
-                                    <xsl:text>There is no place with the ID </xsl:text>
+                                    <xsl:text>There is no place with the </xsl:text>
+                                    <xsl:value-of select="$v_authority"/>
+                                    <xsl:text>-ID </xsl:text>
                                     <xsl:value-of select="$v_idno"/>
                                     <xsl:text> in the authority file</xsl:text>
                                 </xsl:message>
@@ -644,6 +652,7 @@
             <xsl:apply-templates mode="m_identity-transform" select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"/>
         </xsl:copy>
     </xsl:function>
+    <!-- this function produces a flattened name -->
     <xsl:function name="oape:name-flattened">
         <xsl:param name="p_persname"/>
         <xsl:param name="p_id-change"/>
