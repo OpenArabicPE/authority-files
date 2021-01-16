@@ -19,6 +19,8 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <tei:change when="2021-01-16" who="#pers_TG" xml:id="d2e506" xml:lang="en"
+            >Improved <tei:gi>biblStruct</tei:gi> nodes by adding a private ID scheme with <tei:tag>idno type="oape"</tei:tag>.</tei:change>
          <change when="2020-10-28" who="#pers_TG" xml:id="d3e938" xml:lang="en">Enriched all <gi>biblStruct</gi> with information from file <ref
             target="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml"
             >file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml</ref> using matching of titles.</change>
@@ -685,7 +687,6 @@
                      <title level="j" xml:lang="fr">Le Temps</title>
                      <idno change="#d2e69" type="oape">21</idno>
                      <idno type="OCLC">263593774</idno>
-                     <editor> <persName/> </editor>
                      <textLang mainLang="fr"/>
                      <imprint xml:lang="ar">
                         <date when="1861" xml:lang="ar"/>
@@ -708,7 +709,6 @@
                      <title level="j" xml:lang="en">Times of London</title>
                      <idno change="#d2e69" type="oape">26</idno>
                      <idno type="OCLC">992611467</idno>
-                     <editor> <persName/> </editor>
                      <textLang mainLang="en"/>
                      <imprint xml:lang="ar">
                         <date when="1785"/>
@@ -835,6 +835,7 @@
                      <idno type="OCLC">672047031</idno>
                      <editor type="owner"> <persName ref="oape:pers:579 viaf:311789687" xml:lang="ar-Latn-x-ijmes">Jirjī Niqūlā Bāz</persName> <persName change="#d3e399"
                         ref="oape:pers:579 viaf:311789687" xml:lang="ar"><forename xml:lang="ar">جرجي</forename><forename xml:lang="ar">نقولا</forename><surname xml:lang="ar">باز</surname></persName> </editor>
+                     <textLang mainLang="ar"/>
                      <imprint>
                         <date source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#date_6.d2e1328" when="1909-06-20" xml:lang="ar-Latn-x-ijmes">20 Jun 1909</date>
                         <date calendar="#cal_julian" datingMethod="#cal_julian" when="1909-06-20" when-custom="1909-06-07" xml:lang="ar-Latn-x-ijmes">7 Ḥazīrān 1909, Sunday</date>
@@ -1259,7 +1260,6 @@
                      <title level="j" xml:lang="ar">الكلية</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Kulliyya</title>
                      <idno change="#d2e78" type="oape">47</idno>
-                     <editor> <persName/> </editor>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_7.d2e1408"> <persName change="#d3e399"
                         ref="oape:pers:390 viaf:305214783"> <roleName type="title">الأستاذ</roleName>بولس <addName type="nisbah">الخولي</addName></persName> </editor>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_8.d2e1416"> <persName ref="oape:pers:4190">هورد بلس</persName> </editor>
@@ -1444,7 +1444,6 @@
                      <idno change="#d2e69" type="oape">24</idno>
                      <idno change="#d2e167" type="oape">192</idno>
                      <idno type="OCLC">1681243</idno>
-                     <editor> <persName/> </editor>
                      <textLang mainLang="fr"/>
                      <imprint xml:lang="fr">
                         <date when="1906"/>
@@ -1652,8 +1651,8 @@
                <biblStruct type="periodical" xml:lang="en">
                   <monogr xml:lang="en">
                      <title level="j" xml:lang="en">News of the World</title>
-                     <title level="j" xml:lang="en">النيوز اوف دي ورلد</title>
-                     <title level="j" xml:lang="en">النيو اوف دي ورلد</title>
+                     <title level="j" xml:lang="en-Arab-AR">النيوز اوف دي ورلد</title>
+                     <title level="j" xml:lang="en-Arab-AR">النيو اوف دي ورلد</title>
                      <idno change="#d2e167" type="oape">64</idno>
                      <textLang mainLang="en"/>
                      <imprint>
@@ -1665,12 +1664,13 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ota">
                   <monogr xml:lang="ota">
-                     <title level="j" xml:lang="ota">( سالنامة ) ولاية بيروت</title>
+                     <title level="j" xml:lang="ota">سالنامة ولاية بيروت</title>
+                     <title level="j" xml:lang="ota">(سالنامة) ولاية بيروت</title>
                      <idno change="#d2e167" type="oape">65</idno>
                      <textLang mainLang="ota"/>
                      <imprint>
                         <date/>
-                        <pubPlace/>
+                        <pubPlace><placeName xml:lang="en">Damascus</placeName></pubPlace>
                         <publisher/>
                      </imprint>
                   </monogr>
@@ -1705,8 +1705,8 @@
                <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="fr">
                   <monogr xml:lang="fr">
                      <title xml:lang="fr">L'Écho de Paris</title>
-                     <title level="j" xml:lang="fr">الإيكو دي باري</title>
-                     <title level="j" xml:lang="fr">الإيكودي باري</title>
+                     <title level="j" xml:lang="fr-Arab-AR">الإيكو دي باري</title>
+                     <title level="j" xml:lang="fr-Arab-AR">الإيكودي باري</title>
                      <idno change="#d2e167" type="oape">98</idno>
                      <idno change="#d2e167" type="oape">465</idno>
                      <idno type="URI">https://gallica.bnf.fr/ark:/12148/cb34429768r/date</idno>
@@ -2717,6 +2717,7 @@
                <biblStruct type="periodical" xml:lang="ota">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ota">قرة كوز</title>
+                     <title level="j" xml:lang="ota-Latn">Karagöz</title>
                      <idno change="#d2e167" type="oape">342</idno>
                      <textLang mainLang="ota"/>
                      <imprint>
@@ -2728,7 +2729,7 @@
                </biblStruct>
                <biblStruct change="#d3e719" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_3.d2e5982">
                   <monogr>
-                     <title level="j">العالم الشرقي</title>
+                     <title level="j" xml:lang="ar">العالم الشرقي</title>
                      <idno change="#d2e487" type="oape">563</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -2755,6 +2756,14 @@
                      <title level="j">افدام</title>
                      <idno change="#d2e487" type="oape">565</idno>
                      <textLang mainLang="ar"/>
+                     <imprint/>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e938" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_4.d2e4388" type="periodical">
+                  <monogr>
+                     <title level="j" xml:lang="it-Arab-AR">جورنال ديتاليا</title>
+                     <idno change="#d2e506" type="oape">567</idno>
+                     <textLang mainLang="it"/>
                      <imprint/>
                   </monogr>
                </biblStruct>
@@ -3797,8 +3806,8 @@
                      <title level="j" xml:lang="ar">الحرية</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة سياسية ادبية اخبارية</title>
                      <idno change="#d2e167" type="oape">143</idno>
-                     <!-- Harvard, HathiTrust -->
                      <idno type="URI">https://hdl.handle.net/2027/hvd.32044051113173</idno>
+                     <!-- Harvard, HathiTrust -->
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_5.d2e3445" type="owner"> <persName ref="oape:pers:1678"
                         >داود مجاعص</persName> </editor>
                      <editor source="oape:bibl:143" type="editor"> <persName xml:lang="ar">الشيخ اسكندر العازار</persName> </editor>
@@ -3853,6 +3862,15 @@
                         <pubPlace source="jaraid"><placeName>معان</placeName></pubPlace>
                         <publisher/>
                      </imprint>
+                  </monogr>
+               </biblStruct>
+               <biblStruct change="#d3e938" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_3.d2e2619" subtype="journal"
+                  type="periodical" xml:lang="ar">
+                  <monogr>
+                     <title level="j" ref="oape:bibl:38" xml:lang="ar">الحقوق الإنسانية</title>
+                     <idno change="#d2e506" type="oape">566</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint/>
                   </monogr>
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
@@ -6395,7 +6413,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct type="periodical" xml:lang="ar">
+               <!-- <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">جريدة علمية سياسية أدبية تجارية مصورة</title>
                      <idno change="#d2e167" type="oape">305</idno>
@@ -6406,7 +6424,7 @@
                         <publisher/>
                      </imprint>
                   </monogr>
-               </biblStruct>
+               </biblStruct> -->
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">جم</title>
@@ -6525,9 +6543,9 @@
                      <title level="j" type="sub" xml:lang="ar">جريدة علمية ادبية اخبارية</title>
                      <title level="j" xml:lang="fr">Emessa</title>
                      <idno change="#d2e167" type="oape">311</idno>
-                     <!-- vols. 2-3 at Harvard, Hathitrust -->
                      <idno type="URI">https://hdl.handle.net/2027/hvd.32044093669323</idno>
                      <idno type="URI">https://hdl.handle.net/2027/hvd.32044093669331</idno>
+                     <!-- vols. 2-3 at Harvard, Hathitrust -->
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_24.d2e3826" type="owner"> <persName change="#d3e432"
                         ref="oape:pers:4151">سيادة اثناسيوس <tei:addName type="theophoric">عطا الله</tei:addName></persName> </editor>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_25.d2e3830"> <persName ref="oape:pers:4166"
@@ -7845,21 +7863,6 @@
                      </monogr>
                   </biblStruct>
                </listBibl>
-               <biblStruct change="#d3e938" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_3.d2e2619" subtype="journal"
-                  type="periodical" xml:lang="ar">
-                  <monogr>
-                     <title level="j" ref="oape:bibl:38" xml:lang="ar">الحقوق الإنسانية</title>
-                     <textLang mainLang="ar"/>
-                     <imprint/>
-                  </monogr>
-               </biblStruct>
-               <biblStruct change="#d3e938" source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#bibl_4.d2e4388" type="periodical">
-                  <monogr>
-                     <title level="j" xml:lang="it-Arab-AR">جورنال ديتاليا</title>
-                     <textLang mainLang="it"/>
-                     <imprint/>
-                  </monogr>
-               </biblStruct>
             </listBibl>
          </div>
       </body>
