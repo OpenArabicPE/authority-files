@@ -319,18 +319,18 @@
         <xsl:param name="gazetteer"/>
         <xsl:param name="p_local-authority"/>
                 <!-- the publication place can be further looked up -->
-                <xsl:variable name="v_pubPlace" select="$p_bibl/descendant::tei:pubPlace/tei:placeName[@ref][1]"/>
+                <xsl:variable name="v_pubPlace" select="$p_bibl/descendant::tei:pubPlace[1]/tei:placeName[@ref][1]"/>
                 <xsl:choose>
                     <!-- return publication place -->
                     <xsl:when test="$p_output-mode = 'pubPlace'">
                         <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority,'name', $output-language)"/>
                     </xsl:when>
                     <!-- return location -->
-                    <xsl:when test="$p_output-mode = 'location'">
-                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority,'location','')"/>
+                    <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
+                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority, $p_output-mode,'')"/>
                     </xsl:when>
                     <xsl:when test="$p_output-mode = 'id-location'">
-                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority,'id','')"/>
+                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority, 'id', '')"/>
                     </xsl:when>
                     <!-- return IDs -->
                     <xsl:when test="$p_output-mode = 'id'">
@@ -344,6 +344,9 @@
                             <xsl:when test="$p_bibl/descendant::tei:idno">
                                 <xsl:value-of select="concat($p_bibl/descendant::tei:idno[1]/@type, ':', $p_bibl/descendant::tei:idno[1])"/>
                             </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
                      <xsl:when test="$p_output-mode = $p_local-authority">
@@ -353,7 +356,7 @@
                         <xsl:value-of select="$p_bibl/descendant::tei:idno[@type='OCLC'][1]"/>
                     </xsl:when>
                     <!-- return the publication title in selected language -->
-                    <xsl:when test="$p_output-mode = 'name'">
+                    <xsl:when test="$p_output-mode = ('name', 'title')">
                         <xsl:choose>
                             <xsl:when test="$p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $output-language]">
                                 <xsl:value-of
@@ -428,8 +431,25 @@
         <xsl:param name="p_local-authority"/>
                 <xsl:choose>
                     <!-- return location -->
-                    <xsl:when test="$output-mode = 'location'">
-                        <xsl:value-of select="$p_place/descendant-or-self::tei:place/tei:location/tei:geo"/>
+                    <xsl:when test="$output-mode = ('location', 'lat', 'long')">
+                        <xsl:choose>
+                            <xsl:when test="$p_place/tei:location/tei:geo">
+                                <xsl:choose>
+                                    <xsl:when test="$output-mode = 'location'">
+                                        <xsl:value-of select="$p_place/tei:location/tei:geo"/>
+                                    </xsl:when>
+                                    <xsl:when test="$output-mode = 'lat'">
+                                        <xsl:value-of select="replace($p_place/tei:location/tei:geo, '^(.+?),\s*(.+?)$', '$1')"/>
+                                    </xsl:when>
+                                    <xsl:when test="$output-mode = 'long'">
+                                        <xsl:value-of select="replace($p_place/tei:location/tei:geo, '^(.+?),\s*(.+?)$', '$2')"/>
+                                    </xsl:when>
+                                </xsl:choose>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                     <!-- return IDs -->
                     <xsl:when test="$output-mode = 'id'">
@@ -443,6 +463,9 @@
                             <xsl:when test="$p_place/descendant::tei:idno">
                                 <xsl:value-of select="concat($p_place/descendant::tei:idno[1]/@type, ':', $p_place/descendant::tei:idno[1])"/>
                             </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
                      <xsl:when test="$output-mode = 'oape'">
