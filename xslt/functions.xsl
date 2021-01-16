@@ -339,7 +339,7 @@
                                 <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = 'OCLC'][1])"/>
                             </xsl:when>
                             <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_local-authority]">
-                                <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                                <xsl:value-of select="concat($p_local-authority, ':', $p_bibl/descendant::tei:idno[@type = $p_local-authority][1])"/>
                             </xsl:when>
                             <xsl:when test="$p_bibl/descendant::tei:idno">
                                 <xsl:value-of select="concat($p_bibl/descendant::tei:idno[1]/@type, ':', $p_bibl/descendant::tei:idno[1])"/>
@@ -376,7 +376,14 @@
                     </xsl:when>
                     <!-- return type -->
                     <xsl:when test="$p_output-mode = 'textLang'">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:textLang/@mainLang"/>
+                        <xsl:choose>
+                            <xsl:when test="$p_bibl/descendant::tei:monogr/tei:textLang/@mainLang">
+                                <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:textLang/@mainLang"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                 </xsl:choose>
     </xsl:function>
@@ -458,7 +465,7 @@
                                 <xsl:value-of select="concat('geon:', $p_place/descendant::tei:idno[@type = 'geon'][1])"/>
                             </xsl:when>
                             <xsl:when test="$p_place/descendant::tei:idno[@type = $p_local-authority]">
-                                <xsl:value-of select="concat('oclc:', $p_place/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                                <xsl:value-of select="concat($p_local-authority, ':', $p_place/descendant::tei:idno[@type = $p_local-authority][1])"/>
                             </xsl:when>
                             <xsl:when test="$p_place/descendant::tei:idno">
                                 <xsl:value-of select="concat($p_place/descendant::tei:idno[1]/@type, ':', $p_place/descendant::tei:idno[1])"/>
