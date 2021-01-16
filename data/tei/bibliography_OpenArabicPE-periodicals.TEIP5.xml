@@ -7,7 +7,7 @@
             <title>Open Arabic Periodical Editions: Bibliography of periodicals</title>
             <author xml:id="pers_TG"> <persName> <forename>Till</forename> <surname>Grallert</surname> </persName> </author>
             <respStmt>
-               <resp>Date cleaning, added information from dī Ṭarrāzī, Ziriklī and Sarkīs</resp>
+               <resp>Data cleaning, added information from dī Ṭarrāzī, Ziriklī and Sarkīs</resp>
                <persName xml:id="pers_JB">Jasper Bernhofer</persName>
             </respStmt>
          </titleStmt>
@@ -701,7 +701,7 @@
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_12.TEIP5.xml#bibl_21.d2e5036" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="en-Arab-AR">التيمس</title>
-                     <title level="j" xml:lang="en">جريدة التيمس</title>
+                     <title level="j" xml:lang="ar">جريدة التيمس</title>
                      <title level="j" xml:lang="en-Arab-AR">التايمس</title>
                      <title level="j" xml:lang="en">The Times</title>
                      <title level="j" xml:lang="en">London times</title>
@@ -749,7 +749,7 @@
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar" next="oape:bibl:95">
+               <biblStruct next="oape:bibl:95" oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الاتحاد العثماني</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
@@ -781,7 +781,8 @@
                      <biblScope from="1" to="1" unit="issue"/>
                      <biblScope from="1" to="4" unit="page"/>
                   </monogr>
-                  <note source="Cioeta+1979a">The paper was indefinitely suspended in 1913 and Ṭabbāra established <title level="j" ref="oape:bibl:95">al-Iṣlāḥ</title> as an replacement in May 1913.</note>
+                  <note source="Cioeta+1979a">The paper was indefinitely suspended in 1913 and Ṭabbāra established <title level="j" ref="oape:bibl:95"
+                     >al-Iṣlāḥ</title> as an replacement in May 1913.</note>
                </biblStruct>
             </listBibl>
             <listBibl xml:lang="ar">
@@ -3221,7 +3222,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar" prev="oape:bibl:28">
+               <biblStruct oape:frequency="daily" prev="oape:bibl:28" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الإصلاح</title>
                      <idno change="#d2e167" type="oape">95</idno>
@@ -3237,7 +3238,8 @@
                         <pubPlace> <placeName change="#d5e176" ref="oape:place:26 geon:276781" xml:lang="en">Beirut</placeName> </pubPlace>
                      </imprint>
                   </monogr>
-                  <note source="Cioeta+1979a">Ṭabbāra established this paper as a replacement for <title level="j" ref="oape:bibl:28">al-Ittiḥād al-ʿUthmānī</title> after the latter was indefintely suspended.</note>
+                  <note source="Cioeta+1979a">Ṭabbāra established this paper as a replacement for <title level="j" ref="oape:bibl:28"
+                     >al-Ittiḥād al-ʿUthmānī</title> after the latter was indefintely suspended.</note>
                </biblStruct>
                <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
@@ -5475,7 +5477,7 @@
                         <date calendar="#cal_gregorian" change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#date_11.d2e1502" when="1910-06-01"
                            >أول حزيران سنة <tei:num type="auto-markup" value="1910" xml:lang="ar">١٩١٠</tei:num> </date>
                         <pubPlace change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#pubPlace_11.d2e1495"> <placeName change="#d5e176"
-                           ref="oape:place:">حريصا</placeName> </pubPlace>
+                           ref="oape:place:377">حريصا</placeName> </pubPlace>
                         <publisher change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#publisher_4.d2e1507"> <orgName>المرسلون البولسيون</orgName>
                         </publisher>
                      </imprint>
