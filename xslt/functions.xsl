@@ -39,124 +39,52 @@
         <xsl:param name="p_input"/>
         <xsl:value-of select="replace($p_input, '\W', '')"/>
     </xsl:function>
-    <!-- function to retrieve a <biblStruct> from a local authority file -->
-    <xsl:function name="oape:get-bibl-from-authority-file">
-        <xsl:param name="p_idno"/>
-        <xsl:param name="p_authority-file"/>
-        <xsl:variable name="v_authority">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:bibl:')">
-                    <xsl:text>oape</xsl:text>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'OCLC:')">
-                    <xsl:text>OCLC</xsl:text>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="v_idno">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:bibl:')">
-                    <xsl:value-of select="replace($p_idno, '.*oape:bibl:(\d+).*', '$1')"/>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'OCLC:')">
-                    <xsl:value-of select="replace($p_idno, '.*OCLC:(\d+).*', '$1')"/>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <!--<xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>oape:get-place-from-authority-file: $v_authority="</xsl:text><xsl:value-of select="$v_authority"/><xsl:text>" and $v_idno="</xsl:text><xsl:value-of select="$v_idno"/><xsl:text>"</xsl:text>
-            </xsl:message>
-        </xsl:if>-->
-        <!-- check if the bibliography contains an entry for this ID, if so, retrieve the full <biblStruct>, otherwise return 'false()' -->
-        <xsl:choose>
-            <xsl:when test="$p_authority-file//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]">
-                <xsl:copy-of select="$p_authority-file//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="'false()'"/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
-    <!-- this function queries a local authority file with an OpenArabicPE or VIAF ID and returns a <tei:person> -->
-    <xsl:function name="oape:get-person-from-authority-file">
-        <xsl:param name="p_idno"/>
-        <xsl:param as="xs:string" name="p_local-authority"/>
-        <xsl:param name="p_authority-file"/>
-        <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority, ':pers:')"/>
-        <xsl:variable name="v_authority">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'viaf:')">
-                    <xsl:text>VIAF</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="$p_local-authority"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="v_idno">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'viaf:')">
-                    <xsl:value-of select="replace($p_idno, '.*viaf:(\d+).*', '$1')"/>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, $v_local-uri-scheme)">
-                    <xsl:value-of select="replace($p_idno, concat('.*', $v_local-uri-scheme, '(\d+).*'), '$1')"/>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <!--<xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>oape:get-person-from-authority-file: $v_authority="</xsl:text><xsl:value-of select="$v_authority"/><xsl:text>" and $v_idno="</xsl:text><xsl:value-of select="$v_idno"/><xsl:text>"</xsl:text>
-            </xsl:message>
-        </xsl:if>-->
-        <xsl:choose>
-            <xsl:when test="$p_authority-file//tei:person/tei:idno[@type = $v_authority] = $v_idno">
-                <xsl:copy-of select="$p_authority-file//tei:person[tei:idno[@type = $v_authority] = $v_idno]"/>
-            </xsl:when>
-            <!-- even though the input claims that there is an entry in the authority file, there isn't -->
-            <xsl:otherwise>
-                <xsl:message>
-                    <xsl:text>There is no person with the </xsl:text>
-                    <xsl:value-of select="$v_authority"/>
-                    <xsl:text>-ID </xsl:text>
-                    <xsl:value-of select="$v_idno"/>
-                    <xsl:text> in the authority file</xsl:text>
-                </xsl:message>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
+    
+    
     <!-- this function queries a local authority file
-        - input: an entity name such as <persName>, <orgName>, or <placeName>
-        - output: an entity: such as <person>, <org>, or <place>
+        - input: an entity name such as <persName>, <orgName>, <placeName> or <title>
+        - output: an entity: such as <person>, <org>, <place> or <biblStruct>
     -->
     <xsl:function name="oape:get-entity-from-authority-file">
-        <!-- input: entity such as <persName>, <orgName>, or <placeName> node -->
-        <xsl:param name="p_entity"/>
+        <!-- input: entity such as <persName>, <orgName>, <placeName> or <title> node -->
+        <xsl:param name="p_entity-name"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
-        <xsl:variable name="v_ref" select="$p_entity/@ref"/>
+        <!-- this is a rather ridiculous hack, but I don't need change IDs in the context of this function -->
+        <xsl:variable name="v_id-change" select="'a1'"/>
+        <xsl:variable name="v_ref" select="$p_entity-name/@ref"/>
         <xsl:variable name="v_entity-type">
             <xsl:choose>
-                <xsl:when test="contains(name($p_entity), 'persName')">
+                <xsl:when test="contains(name($p_entity-name), 'persName')">
                     <xsl:text>pers</xsl:text>
                 </xsl:when>
-                <xsl:when test="contains(name($p_entity), 'orgName')">
+                <xsl:when test="contains(name($p_entity-name), 'orgName')">
                     <xsl:text>org</xsl:text>
                 </xsl:when>
-                <xsl:when test="contains(name($p_entity), 'placeName')">
+                <xsl:when test="contains(name($p_entity-name), 'placeName')">
                     <xsl:text>place</xsl:text>
+                </xsl:when>
+                <xsl:when test="matches(name($p_entity-name), 'title')">
+                    <xsl:text>bibl</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:message terminate="no">
-                        <xsl:text>the input type cannot be looked up</xsl:text>
+                        <xsl:text>the input type (</xsl:text><xsl:value-of select="name($p_entity-name)"/><xsl:text>) cannot be looked up</xsl:text>
                     </xsl:message>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority, ':', $v_entity-type, ':')"/>
+        <!-- debugging -->
+        <xsl:if test="$p_verbose = true()">
+            <xsl:text>p_entity-name: </xsl:text><xsl:copy-of select="$p_entity-name"/>
+        </xsl:if>
+        <xsl:if test="$p_verbose = true()">
+            <xsl:text>v_entity-type: </xsl:text><xsl:value-of select="$v_entity-type"/>
+        </xsl:if>
         <xsl:choose>
             <!-- check if the entity already links to an authority file by means of the @ref attribute -->
-            <xsl:when test="$p_entity/@ref != ''">
+            <xsl:when test="$v_ref != ''">
                 <xsl:variable name="v_authority">
                     <xsl:choose>
                         <xsl:when test="contains($v_ref, 'viaf:')">
@@ -164,6 +92,9 @@
                         </xsl:when>
                         <xsl:when test="contains($v_ref, 'geon:')">
                             <xsl:text>geon</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="contains($v_ref, 'oclc:')">
+                            <xsl:text>OCLC</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="$p_local-authority"/>
@@ -177,6 +108,9 @@
                         </xsl:when>
                         <xsl:when test="contains($v_ref, 'geon:')">
                             <xsl:value-of select="replace($v_ref, '.*geon:(\d+).*', '$1')"/>
+                        </xsl:when>
+                        <xsl:when test="contains($v_ref, 'oclc:')">
+                            <xsl:value-of select="replace($v_ref, '.*oclc:(\d+).*', '$1')"/>
                         </xsl:when>
                         <xsl:when test="contains($v_ref, $v_local-uri-scheme)">
                             <xsl:value-of select="replace($v_ref, concat('.*', $v_local-uri-scheme, '(\d+).*'), '$1')"/>
@@ -235,22 +169,40 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
+                    <xsl:when test="$v_entity-type = 'bibl'">
+                        <xsl:choose>
+                            <xsl:when test="$p_authority-file//tei:biblStruct//tei:idno[@type = $v_authority] = $v_idno">
+                                <xsl:copy-of select="$p_authority-file//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]"/>
+                            </xsl:when>
+                            <!-- even though the input claims that there is an entry in the authority file, there isn't -->
+                            <xsl:otherwise>
+                                <xsl:message>
+                                    <xsl:text>There is no biblStruct with the </xsl:text>
+                                    <xsl:value-of select="$v_authority"/>
+                                    <xsl:text>-ID </xsl:text>
+                                    <xsl:value-of select="$v_idno"/>
+                                    <xsl:text> in the authority file</xsl:text>
+                                </xsl:message>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
                     <!-- fallback message -->
                     <xsl:otherwise>
                         <!-- one cannot use a boolean value if the default result is non-boolean -->
-                        <xsl:value-of select="'false()'"/>
+                        <xsl:value-of select="'NA'"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
             <!-- check if the string is found in the authority file -->
             <xsl:otherwise>
-                <xsl:variable name="v_name-flat" select="oape:string-normalise-characters(string($p_entity))"/>
+                <!-- this fails for nested entities -->
+                <xsl:variable name="v_name-flat" select="oape:string-normalise-characters(string($p_entity-name))"/>
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
-                        <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity, $p_id-change)"/>
-                        <xsl:variable name="v_name-marked-up" select="oape:name-add-markup($p_entity)"/>
-                        <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, $p_id-change)"/>
-                        <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, $p_id-change)"/>
+                        <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity-name, $v_id-change)"/>
+                        <xsl:variable name="v_name-marked-up" select="oape:name-add-markup($p_entity-name)"/>
+                        <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, $v_id-change)"/>
+                        <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, $v_id-change)"/>
                         <xsl:choose>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flat]">
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-flat][1]"/>
@@ -273,7 +225,7 @@
                                     <xsl:copy-of select="$v_name-no-addnames"/>
                                 </xsl:message>-->
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
-                                <xsl:value-of select="'false()'"/>
+                                <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -289,7 +241,7 @@
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
-                                <xsl:value-of select="'false()'"/>
+                                <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -305,18 +257,221 @@
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
-                                <xsl:value-of select="'false()'"/>
+                                <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
                     <!-- fallback message -->
                     <xsl:otherwise>
                         <!-- one cannot use a boolean value if the default result is non-boolean -->
-                        <xsl:value-of select="'false()'"/>
+                        <xsl:value-of select="'NA'"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:function>
+    
+    <!-- query a local TEI bibliography for titles, editors, locations, IDs etc. -->
+    <xsl:function name="oape:query-bibliography">
+        <!-- input is a tei <title> node -->
+        <xsl:param name="title"/>
+        <!-- $bibliography expects a document -->
+        <xsl:param name="bibliography"/>
+        <!-- $gazetteer expects a path to a file -->
+        <xsl:param name="gazetteer"/>
+        <!-- local authority -->
+        <xsl:param name="p_local-authority"/>
+        <!-- values for $p_mode are 'pubPlace', 'location', 'name', 'local-authority', 'textLang', ID -->
+        <xsl:param name="output-mode"/>
+        <!-- select a target language for toponyms -->
+        <xsl:param name="output-language"/>
+        <!-- load data from authority file -->
+        <!--<xsl:variable name="v_bibl" select="oape:get-biblstruct-from-bibliography($title, $p_local-authority, $bibliography)"/>-->
+        <xsl:variable name="v_listbibl">
+            <listBibl>
+                <xsl:copy-of select="oape:get-entity-from-authority-file($title, $p_local-authority, $bibliography)"/>
+            </listBibl>
+        </xsl:variable>
+        <xsl:variable name="v_bibl" select="$v_listbibl/descendant::tei:biblStruct[1]"/>
+        <xsl:choose>
+            <!-- test if more detailed data is available -->
+            <xsl:when test="$v_bibl != 'NA'">
+                <xsl:copy-of select="oape:query-biblstruct($v_bibl, $output-mode, $output-language, $gazetteer, $p_local-authority)"/>
+            </xsl:when>
+            <!-- return original input toponym if nothing else is found -->
+            <xsl:when test="$output-mode = 'name'">
+                <xsl:value-of select="normalize-space($title)"/>
+            </xsl:when>
+            <!-- otherwise: no location data -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>no bibliographic data found for </xsl:text><xsl:value-of select="normalize-space($title)"/>
+                </xsl:message>
+                <xsl:value-of select="'NA'"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:function name="oape:query-biblstruct">
+        <xsl:param name="p_bibl"/>
+        <!-- values for $p_mode are 'pubPlace', 'location', 'name', 'local-authority', 'textLang', ID -->
+        <xsl:param name="p_output-mode"/>
+        <xsl:param name="output-language"/>
+        <xsl:param name="gazetteer"/>
+        <xsl:param name="p_local-authority"/>
+                <!-- the publication place can be further looked up -->
+                <xsl:variable name="v_pubPlace" select="$p_bibl/descendant::tei:pubPlace/tei:placeName[@ref][1]"/>
+                <xsl:choose>
+                    <!-- return publication place -->
+                    <xsl:when test="$p_output-mode = 'pubPlace'">
+                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority,'name', $output-language)"/>
+                    </xsl:when>
+                    <!-- return location -->
+                    <xsl:when test="$p_output-mode = 'location'">
+                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority,'location','')"/>
+                    </xsl:when>
+                    <xsl:when test="$p_output-mode = 'id-location'">
+                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority,'id','')"/>
+                    </xsl:when>
+                    <!-- return IDs -->
+                    <xsl:when test="$p_output-mode = 'id'">
+                        <xsl:choose>
+                            <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'OCLC']">
+                                <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = 'OCLC'][1])"/>
+                            </xsl:when>
+                            <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_local-authority]">
+                                <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                            </xsl:when>
+                            <xsl:when test="$p_bibl/descendant::tei:idno">
+                                <xsl:value-of select="concat($p_bibl/descendant::tei:idno[1]/@type, ':', $p_bibl/descendant::tei:idno[1])"/>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:when>
+                     <xsl:when test="$p_output-mode = $p_local-authority">
+                        <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = $p_local-authority][1]"/>
+                    </xsl:when>
+                    <xsl:when test="$p_output-mode = 'oclc'">
+                        <xsl:value-of select="$p_bibl/descendant::tei:idno[@type='OCLC'][1]"/>
+                    </xsl:when>
+                    <!-- return the publication title in selected language -->
+                    <xsl:when test="$p_output-mode = 'name'">
+                        <xsl:choose>
+                            <xsl:when test="$p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $output-language]">
+                                <xsl:value-of
+                                    select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $output-language][1])"
+                                />
+                            </xsl:when>
+                            <!-- fallback to main language of publication -->
+                            <xsl:when test="$p_bibl/descendant-or-self::tei:biblStruct/tei:monogr/tei:title[@xml:lang = $p_bibl/descendant::tei:monogr/tei:textLang/@mainLang]">
+                                <xsl:value-of
+                                    select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_bibl/descendant::tei:monogr/tei:textLang/@mainLang][1])"
+                                />
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[1])"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <!-- return type -->
+                    <xsl:when test="$p_output-mode = 'textLang'">
+                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:textLang/@mainLang"/>
+                    </xsl:when>
+                </xsl:choose>
+    </xsl:function>
+    <!-- query a local TEI gazetteer for toponyms, locations, IDs etc. -->
+    <xsl:function name="oape:query-gazetteer">
+        <!-- input is a tei <placeName> node -->
+        <xsl:param name="placeName"/>
+        <!-- $gazetteer expects a path to a file -->
+        <xsl:param name="gazetteer"/>
+        <!-- local authority -->
+        <xsl:param name="p_local-authority"/>
+        <!-- values for $mode are 'location', 'name', 'type', 'oape' -->
+        <xsl:param name="output-mode"/>
+        <!-- select a target language for toponyms -->
+        <xsl:param name="output-language"/>
+        <!-- load data from authority file -->
+        <xsl:variable name="v_place" select="oape:get-entity-from-authority-file($placeName,$p_local-authority,$gazetteer)"/>
+        
+        <xsl:choose>
+            <!-- test for @ref pointing to auhority files -->
+            <xsl:when test="$v_place != 'NA'">
+                <xsl:copy-of select="oape:query-place($v_place, $output-mode, $output-language, $p_local-authority)"/>
+            </xsl:when>
+            <!-- return original input toponym if nothing else is fond -->
+            <xsl:when test="$output-mode = 'name'">
+                <xsl:choose>
+                    <xsl:when test="$placeName != ''">
+                        <xsl:value-of select="normalize-space($placeName)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <!-- otherwise: no location data -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>no location data found for </xsl:text><xsl:value-of select="normalize-space($placeName)"/>
+                </xsl:message>
+                <xsl:value-of select="'NA'"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:function name="oape:query-place">
+        <!-- input is a tei <place> node -->
+        <xsl:param name="p_place"/>
+        <!-- values for $mode are 'location', 'name', 'type', 'oape' -->
+        <xsl:param name="output-mode"/>
+        <!-- select a target language for toponyms -->
+        <xsl:param name="output-language"/>
+        <!-- local authority -->
+        <xsl:param name="p_local-authority"/>
+                <xsl:choose>
+                    <!-- return location -->
+                    <xsl:when test="$output-mode = 'location'">
+                        <xsl:value-of select="$p_place/descendant-or-self::tei:place/tei:location/tei:geo"/>
+                    </xsl:when>
+                    <!-- return IDs -->
+                    <xsl:when test="$output-mode = 'id'">
+                        <xsl:choose>
+                            <xsl:when test="$p_place/descendant::tei:idno[@type = 'geon']">
+                                <xsl:value-of select="concat('geon:', $p_place/descendant::tei:idno[@type = 'geon'][1])"/>
+                            </xsl:when>
+                            <xsl:when test="$p_place/descendant::tei:idno[@type = $p_local-authority]">
+                                <xsl:value-of select="concat('oclc:', $p_place/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                            </xsl:when>
+                            <xsl:when test="$p_place/descendant::tei:idno">
+                                <xsl:value-of select="concat($p_place/descendant::tei:idno[1]/@type, ':', $p_place/descendant::tei:idno[1])"/>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:when>
+                     <xsl:when test="$output-mode = 'oape'">
+                        <xsl:value-of select="$p_place/descendant-or-self::tei:place/tei:idno[@type='oape'][1]"/>
+                    </xsl:when>
+                    <!-- return toponym in selected language -->
+                    <xsl:when test="$output-mode = 'name'">
+                        <xsl:choose>
+                            <xsl:when test="$p_place/descendant-or-self::tei:place/tei:placeName[@xml:lang = $output-language]">
+                                <xsl:value-of
+                                    select="normalize-space($p_place/descendant-or-self::tei:place/tei:placeName[@xml:lang = $output-language][1])"
+                                />
+                            </xsl:when>
+                            <!-- fallback to english -->
+                            <xsl:when test="$p_place/descendant-or-self::tei:place/tei:placeName[@xml:lang = 'en']">
+                                <xsl:value-of
+                                    select="normalize-space($p_place/descendant-or-self::tei:place/tei:placeName[@xml:lang = 'en'][1])"
+                                />
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="normalize-space($p_place/descendant-or-self::tei:place/tei:placeName[1])"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <!-- return type -->
+                    <xsl:when test="$output-mode = 'type'">
+                        <xsl:value-of select="$p_place/descendant-or-self::tei:place/@type"/>
+                    </xsl:when>
+                </xsl:choose>
     </xsl:function>
     <!-- get OpenArabicPE ID from authority file with an @xml:id -->
     <xsl:function name="oape:get-id-for-person">
@@ -325,37 +480,7 @@
         <xsl:param name="p_authority-file"/>
         <xsl:value-of select="$p_authority-file//tei:person[tei:persName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"/>
     </xsl:function>
-    <xsl:function name="oape:get-place-from-authority-file">
-        <xsl:param name="p_idno"/>
-        <xsl:param name="p_authority-file"/>
-        <xsl:variable name="v_authority">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:place:')">
-                    <xsl:text>oape</xsl:text>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'geon:')">
-                    <xsl:text>geon</xsl:text>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="v_idno">
-            <xsl:choose>
-                <xsl:when test="contains($p_idno, 'oape:place:')">
-                    <xsl:value-of select="replace($p_idno, '.*oape:place:(\d+).*', '$1')"/>
-                </xsl:when>
-                <xsl:when test="contains($p_idno, 'geon:')">
-                    <xsl:value-of select="replace($p_idno, '.*geon:(\d+).*', '$1')"/>
-                </xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <!--<xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>oape:get-place-from-authority-file: $v_authority="</xsl:text><xsl:value-of select="$v_authority"/><xsl:text>" and $v_idno="</xsl:text><xsl:value-of select="$v_idno"/><xsl:text>"</xsl:text>
-            </xsl:message>
-        </xsl:if>-->
-        <xsl:copy-of select="$p_authority-file//tei:place[tei:idno[@type = $v_authority] = $v_idno]"/>
-    </xsl:function>
-    <!-- get OpenArabicPE ID from authority file with an @xml:id -->
+       <!-- get OpenArabicPE ID from authority file with an @xml:id -->
     <xsl:function name="oape:get-id-for-place">
         <xsl:param name="p_xml-id"/>
         <xsl:param name="p_authority"/>
@@ -751,7 +876,7 @@
                         <xsl:message>The input already points to an authority file</xsl:message>
                     </xsl:if>
                     <!-- there seems to be a problem with this function -->
-                    <xsl:copy-of select="oape:get-person-from-authority-file($p_persname/@ref, $p_local-authority, $p_authority-file)"/>
+                    <xsl:copy-of select="oape:get-entity-from-authority-file($p_persname, $p_local-authority, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
                 <xsl:when test="$p_authority-file//tei:person[tei:persName[@type = 'flattened'] = $v_name-flat]">
@@ -765,7 +890,7 @@
                         <xsl:message>The input has not been found in the authority file</xsl:message>
                     </xsl:if>
                     <!-- one cannot use a boolean value if the default result is non-boolean -->
-                    <xsl:value-of select="'false()'"/>
+                    <xsl:value-of select="'NA'"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -830,7 +955,7 @@
                 </xsl:copy>
             </xsl:when>
             <!-- fallback: name is not found in the authority file -->
-            <xsl:when test="$v_corresponding-person = 'false()'">
+            <xsl:when test="$v_corresponding-person = 'NA'">
                 <!--                <xsl:if test="$p_verbose = true()">-->
                 <xsl:message>
                     <xsl:text> The input "</xsl:text>
