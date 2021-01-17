@@ -1138,6 +1138,6 @@
     </xsl:template>
     
     <xsl:template match="text()" mode="m_plain-text">
-        <xsl:value-of select="concat(' ',.,' ')"/>
+        <xsl:value-of select="concat(' ', normalize-space(.),' ')"/>
     </xsl:template>
 </xsl:stylesheet>
