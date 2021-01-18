@@ -13,7 +13,7 @@
     <!-- Problem: this stylesheet will inadvertantly produce duplicate "noAddName" and "flattened" nodes because it runs on the persName and cannot check against hypothetical conversions of its sibling persName nodes -->
     <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
-    <xsl:include href="query-viaf.xsl"/>
+    <xsl:include href="functions.xsl"/>
     
     <!-- variables for local IDs (OpenArabicPE) -->
     <xsl:param name="p_local-authority" select="'oape'"/>

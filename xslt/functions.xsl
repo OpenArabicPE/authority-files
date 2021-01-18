@@ -5,6 +5,8 @@
     <!-- identify the author of the change by means of a @xml:id -->
     <!-- toggle debugging messages -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    <xsl:include href="query-viaf.xsl"/>
+    
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
     <xsl:param name="p_url-nyms" select="'../data/tei/nymlist.TEIP5.xml'"/>
     <xsl:variable name="v_file-nyms" select="doc($p_url-nyms)"/>
