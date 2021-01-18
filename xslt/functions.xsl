@@ -539,19 +539,19 @@
                     <xsl:when test="$p_output-mode = 'id'">
                         <xsl:choose>
                             <!-- VIAF -->
-                            <xsl:when test="$p_person/descendant::tei:idno[@type = 'VIAF']">
-                                <xsl:value-of select="concat('viaf:', $p_person/descendant::tei:idno[@type = 'VIAF'][1])"/>
+                            <xsl:when test="$p_person/tei:idno[@type = 'VIAF']">
+                                <xsl:value-of select="concat('viaf:', $p_person/tei:idno[@type = 'VIAF'][1])"/>
                             </xsl:when>
                             <!-- Wikidata -->
-                            <xsl:when test="$p_person/descendant::tei:idno[@type = 'wiki']">
-                                <xsl:value-of select="concat('wiki:', $p_person/descendant::tei:idno[@type = 'wiki'][1])"/>
+                            <xsl:when test="$p_person/tei:idno[@type = 'wiki']">
+                                <xsl:value-of select="concat('wiki:', $p_person/tei:idno[@type = 'wiki'][1])"/>
                             </xsl:when>
 
-                            <xsl:when test="$p_person/descendant::tei:idno[@type = $p_local-authority]">
-                                <xsl:value-of select="concat($p_local-authority, ':', $p_person/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                            <xsl:when test="$p_person/tei:idno[@type = $p_local-authority]">
+                                <xsl:value-of select="concat($p_local-authority, ':', $p_person/tei:idno[@type = $p_local-authority][1])"/>
                             </xsl:when>
-                            <xsl:when test="$p_person/descendant::tei:idno">
-                                <xsl:value-of select="concat($p_person/descendant::tei:idno[1]/@type, ':', $p_person/descendant::tei:idno[1])"/>
+                            <xsl:when test="$p_person/tei:idno">
+                                <xsl:value-of select="concat($p_person/tei:idno[1]/@type, ':', $p_person/tei:idno[1])"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="'NA'"/>
@@ -560,6 +560,16 @@
                     </xsl:when>
                      <xsl:when test="$p_output-mode = 'id-local'">
                         <xsl:value-of select="$p_person/tei:idno[@type = $p_local-authority][1]"/>
+                    </xsl:when>
+                    <xsl:when test="$p_output-mode = 'id-viaf'">
+                        <xsl:choose>
+                            <xsl:when test="$p_person/tei:idno[@type = 'VIAF']">
+                                <xsl:value-of select="$p_person/tei:idno[@type = 'VIAF'][1]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                     <!-- return toponym in selected language -->
                     <xsl:when test="$p_output-mode = 'name'">
