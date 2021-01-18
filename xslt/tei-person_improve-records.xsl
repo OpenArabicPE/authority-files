@@ -116,6 +116,17 @@
                 <xsl:text>t_4: </xsl:text><xsl:value-of select="@xml:id"/>
             </xsl:message>
         </xsl:if>
+        <!-- ID -->
+        <xsl:variable name="v_id">
+            <xsl:choose>
+                <xsl:when test="oape:query-person(.,'id-local', '', '') = 'NA'">
+                    <xsl:value-of select="$v_local-id-highest + count(preceding::tei:person[not(tei:idno[@type=$p_local-authority])]) + 1"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="oape:query-person(.,'id-local', '', '')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- test if @xml:id is present -->
@@ -129,19 +140,15 @@
             <!-- replicate all existing children -->
             <xsl:apply-templates select="node()"/>
              <!-- our own OpenArabicPE ID -->
-            <xsl:apply-templates select="." mode="m_generate-id"/>
+            <xsl:if test="not(tei:idno[@type=$p_local-authority])">
+                <xsl:element name="idno">
+                    <xsl:attribute name="type" select="$p_local-authority"/>
+                    <xsl:value-of select="$v_id"/>
+                </xsl:element>
+            </xsl:if>
             <!-- VIAF data -->
-            <xsl:if test="tei:persName[matches(@ref,'viaf:\d+')] or tei:idno[@type='VIAF']!=''">
-                <xsl:variable name="v_viaf-id">
-                    <xsl:choose>
-                        <xsl:when test="tei:idno[@type='VIAF']!=''">
-                            <xsl:value-of select="tei:idno[@type='VIAF'][1]"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="replace(tei:persName[matches(@ref,'viaf:\d+')][1]/@ref,'^.*viaf:(\d+).*$','$1')"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
+            <xsl:if test="oape:query-person(.,'id-viaf', '', '') != 'NA'">
+                <xsl:variable name="v_viaf-id" select="oape:query-person(.,'id-viaf', '', '')"/>
                 <!-- debugging -->
                  <xsl:if test="$p_verbose = true()">
                      <xsl:message><xsl:text>Found VIAF ID: </xsl:text><xsl:value-of select="$v_viaf-id"/></xsl:message>
