@@ -960,7 +960,8 @@
                 <xsl:apply-templates mode="m_remove-rolename" select="$v_persname/node()"/>
             </xsl:element>
         </xsl:variable>
-        <xsl:variable name="v_xml-id">
+        <xsl:if test="normalize-space($v_output) !=''">
+            <xsl:variable name="v_xml-id">
             <xsl:choose>
                 <xsl:when test="$p_xml-id-output != ''">
                     <xsl:value-of select="$p_xml-id-output"/>
@@ -976,6 +977,7 @@
             <xsl:attribute name="xml:id" select="$v_xml-id"/>
             <xsl:apply-templates mode="m_identity-transform" select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"/>
         </xsl:copy>
+        </xsl:if>
     </xsl:function>
     <!-- this function produces a flattened name -->
     <xsl:function name="oape:name-flattened">
@@ -1046,7 +1048,7 @@
         <!-- SOLVED: this strips symbols such as .,-' out of strings -->
         <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
     </xsl:template>
-    <xsl:template match="tei:roleName | tei:nameLink" mode="m_remove-rolename"/>
+    <xsl:template match="tei:roleName | tei:nameLink[not(parent::tei:addName)]" mode="m_remove-rolename"/>
     <xsl:template match="tei:persName | tei:forename | tei:surname | tei:addName | @*" mode="m_remove-rolename">
         <xsl:copy>
             <xsl:apply-templates mode="m_remove-rolename" select="@* | node()"/>
