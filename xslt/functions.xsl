@@ -201,10 +201,10 @@
                 <xsl:variable name="v_name-flat" select="oape:string-normalise-characters(string($p_entity-name))"/>
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
-                        <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity-name, $v_id-change)"/>
+                        <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity-name, '', $v_id-change)"/>
                         <xsl:variable name="v_name-marked-up" select="oape:name-add-markup($p_entity-name)"/>
-                        <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, $v_id-change)"/>
-                        <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, $v_id-change)"/>
+                        <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, '', $v_id-change)"/>
+                        <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, '', $v_id-change)"/>
                         <xsl:choose>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flat]">
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-flat][1]"/>
@@ -559,7 +559,14 @@
                         </xsl:choose>
                     </xsl:when>
                      <xsl:when test="$p_output-mode = 'id-local'">
-                        <xsl:value-of select="$p_person/tei:idno[@type = $p_local-authority][1]"/>
+                         <xsl:choose>
+                            <xsl:when test="$p_person/tei:idno[@type = $p_local-authority]">
+                                <xsl:value-of select="$p_person/tei:idno[@type = $p_local-authority][1]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                     <xsl:when test="$p_output-mode = 'id-viaf'">
                         <xsl:choose>
@@ -938,8 +945,9 @@
         </xsl:choose>
     </xsl:function>
     <xsl:function name="oape:name-remove-addnames">
-        <xsl:param name="p_persname"/>
-        <xsl:param name="p_id-change"/>
+        <xsl:param name="p_persname" as="node()"/>
+        <xsl:param name="p_xml-id-output" as="xs:string"/>
+        <xsl:param name="p_id-change" as="xs:string"/>
         <xsl:variable name="v_persname" select="$p_persname/descendant-or-self::tei:persName"/>
         <!-- write content to variable in order to then generate a unique @xml:id -->
         <xsl:variable name="v_output">
@@ -952,17 +960,28 @@
                 <xsl:apply-templates mode="m_remove-rolename" select="$v_persname/node()"/>
             </xsl:element>
         </xsl:variable>
+        <xsl:variable name="v_xml-id">
+            <xsl:choose>
+                <xsl:when test="$p_xml-id-output != ''">
+                    <xsl:value-of select="$p_xml-id-output"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="oape:generate-xml-id($v_output/tei:persName)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <!-- output -->
         <xsl:copy select="$v_output/tei:persName">
             <!-- generate xml:id -->
-            <xsl:attribute name="xml:id" select="oape:generate-xml-id($v_output/tei:persName)"/>
+            <xsl:attribute name="xml:id" select="$v_xml-id"/>
             <xsl:apply-templates mode="m_identity-transform" select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"/>
         </xsl:copy>
     </xsl:function>
     <!-- this function produces a flattened name -->
     <xsl:function name="oape:name-flattened">
-        <xsl:param name="p_persname"/>
-        <xsl:param name="p_id-change"/>
+        <xsl:param name="p_persname" as="node()"/>
+        <xsl:param name="p_xml-id-output" as="xs:string"/>
+        <xsl:param name="p_id-change" as="xs:string"/>
         <xsl:variable name="v_persname" select="$p_persname/descendant-or-self::tei:persName"/>
         <!-- write content to variable in order to then generate a unique @xml:id -->
         <xsl:variable name="v_output">
@@ -980,12 +999,21 @@
                 <xsl:value-of select="oape:string-remove-spaces(oape:string-normalise-characters($v_persname))"/>
             </xsl:element>
         </xsl:variable>
+        <xsl:variable name="v_xml-id">
+            <xsl:choose>
+                <xsl:when test="$p_xml-id-output != ''">
+                    <xsl:value-of select="$p_xml-id-output"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="oape:generate-xml-id($v_output/tei:persName)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <!-- output -->
         <xsl:copy select="$v_output/tei:persName">
             <!-- generate xml:id -->
-            <xsl:attribute name="xml:id" select="oape:generate-xml-id($v_output/tei:persName)"/>
-            <xsl:apply-templates mode="m_identity-transform" select="$v_output/tei:persName/@*"/>
-            <xsl:apply-templates mode="m_identity-transform" select="$v_output/tei:persName/node()"/>
+            <xsl:attribute name="xml:id" select="$v_xml-id"/>
+            <xsl:apply-templates mode="m_identity-transform" select="$v_output/tei:persName/@* | $v_output/tei:persName/node()"/>
         </xsl:copy>
     </xsl:function>
     <!-- replicate everything except @xml:id -->
