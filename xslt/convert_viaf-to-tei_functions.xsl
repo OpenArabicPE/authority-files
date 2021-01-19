@@ -31,7 +31,7 @@
         <!-- VIAF can return the value "0" for dates. There should be no output in these cases -->
         <xsl:if test="not(. = '0')">
             <xsl:element name="tei:birth">
-            <xsl:attribute name="resp" select="'viaf'"/>
+            <xsl:attribute name="resp" select="'#org_viaf'"/>
             <xsl:call-template name="t_dates-normalise">
                 <xsl:with-param name="p_input" select="."/>
             </xsl:call-template>
@@ -45,7 +45,7 @@
         <!-- VIAF can return the value "0" for dates. There should be no output in these cases -->
         <xsl:if test="not(. = '0')">
         <xsl:element name="tei:death">
-            <xsl:attribute name="resp" select="'viaf'"/>
+            <xsl:attribute name="resp" select="'#org_viaf'"/>
             <xsl:call-template name="t_dates-normalise">
                 <xsl:with-param name="p_input" select="."/>
             </xsl:call-template>
@@ -98,13 +98,13 @@
     <!-- transform viaf works to TEI bibls -->
     <xsl:template match="viaf:titles" mode="m_viaf-to-tei">
         <xsl:element name="tei:listBibl">
-            <xsl:attribute name="resp" select="'viaf'"/>
+            <xsl:attribute name="resp" select="'#org_viaf'"/>
             <xsl:apply-templates mode="m_viaf-to-tei"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="viaf:work" mode="m_viaf-to-tei">
         <xsl:element name="tei:bibl">
-            <xsl:attribute name="resp" select="'viaf'"/>
+            <xsl:attribute name="resp" select="'#org_viaf'"/>
             <!-- author information might be redundant but helpful -->
             <xsl:element name="tei:author">
                 <xsl:element name="tei:persName">
