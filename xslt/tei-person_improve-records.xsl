@@ -119,11 +119,11 @@
         <!-- ID -->
         <xsl:variable name="v_id">
             <xsl:choose>
-                <xsl:when test="oape:query-person(.,'id-local', '', '') = 'NA'">
+                <xsl:when test="oape:query-person(.,'id-local', '', $p_local-authority) = 'NA'">
                     <xsl:value-of select="$v_local-id-highest + count(preceding::tei:person[not(tei:idno[@type=$p_local-authority])]) + 1"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="oape:query-person(.,'id-local', '', '')"/>
+                    <xsl:value-of select="oape:query-person(.,'id-local', '', $p_local-authority)"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
