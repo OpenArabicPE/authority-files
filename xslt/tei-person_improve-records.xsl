@@ -10,7 +10,6 @@
     
     <!-- This stylesheet takes a TEI personography as input. It resorts the persons by names, queries VIAF for additional information (based on VIAF IDs already present in the personography), and adds normalized versions of names for each person. -->
     <!-- Note 1: It DOES NOT try to find names on VIAF without an ID -->
-    <!-- Problem: this stylesheet will inadvertantly produce duplicate "noAddName" and "flattened" nodes because it runs on the persName and cannot check against hypothetical conversions of its sibling persName nodes -->
     <xsl:output method="xml" encoding="UTF-8" indent="no" exclude-result-prefixes="#all" omit-xml-declaration="no"/>
     
     <xsl:include href="functions.xsl"/>
