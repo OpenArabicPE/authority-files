@@ -33,6 +33,12 @@
         <xsl:param name="p_output-mode" select="'file'"/>
         <xsl:param name="p_csv-separator" select="';'"/>
         <xsl:param name="p_number-of-results" select="1"/>
+        <!-- test if input is valid -->
+        <xsl:if test="$p_input = ''">
+            <xsl:message terminate="yes">
+                <xsl:text>The input is empty</xsl:text>
+            </xsl:message>
+        </xsl:if>
         <!-- establish whether the input is a string or an integer -->
         <xsl:variable name="v_input-data-type">
             <xsl:analyze-string regex="\d+" select="$p_input">
@@ -98,6 +104,12 @@
                                         <xsl:value-of
                                             select="concat('get?geonameId=', $v_geonames-id)"/>
                                     </xsl:when>
+                                    <!-- this fallback should never happen as it means the input was empty -->
+                                    <xsl:otherwise>
+                                        <xsl:message terminate="yes">
+                                            <xsl:text>$v_input-data-type: </xsl:text><xsl:value-of select="$v_input-data-type"/>
+                                        </xsl:message>
+                                    </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:variable>
                             <xsl:variable name="v_api-options"

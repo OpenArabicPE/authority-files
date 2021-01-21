@@ -130,7 +130,7 @@
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- new @xml:id  -->
-                <xsl:attribute name="xml:id" select="$v_xml-id"/>
+            <xsl:attribute name="xml:id" select="$v_xml-id"/>
             <!-- persName -->
             <!-- replicate all untyped persNames -->
             <xsl:for-each-group select="tei:persName[not(@type)]" group-by=".">

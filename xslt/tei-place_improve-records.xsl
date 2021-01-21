@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet exclude-result-prefixes="#all" version="3.0" xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:oape="https://openarabicpe.github.io/ns"
     xmlns:bgn="http://bibliograph.net/" xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:genont="http://www.w3.org/2006/gen/ont#" xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:opf="http://www.idpf.org/2007/opf" xmlns:pto="http://www.productontology.org/id/"
@@ -9,13 +10,11 @@
     xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-    <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
-    <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute on a persName child.
-    It DOES NOT try to find names on VIAF without an ID -->
-    <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="yes" method="xml"
+    
+    <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" method="xml"
         omit-xml-declaration="no"/>
     
-    <xsl:include href="query-geonames.xsl"/>
+    <xsl:include href="functions.xsl"/>
 
       <!-- variables for local IDs (OpenArabicPE) -->
     <xsl:param name="p_local-authority" select="'oape'"/>
@@ -42,12 +41,6 @@
         </xsl:result-document>
     </xsl:template>
     <xsl:template match="tei:listPlace" name="t_2">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_2: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:head"/>
@@ -68,28 +61,39 @@
     <xsl:template match="tei:place" name="t_3" priority="100">
         <xsl:variable name="v_geonames-search">
             <xsl:choose>
-                <!-- try and find a GeoNames ID -->
-                <xsl:when test="tei:idno[@type = 'geon'] != ''">
-                    <xsl:value-of select="tei:idno[@type = 'geon']"/>
+                <xsl:when test="oape:query-place(.,'id-geon', '', '') != 'NA'">
+                    <xsl:value-of select="oape:query-place(.,'id-geon', '', '')"/>
                 </xsl:when>
-                <xsl:when test="tei:placeName[matches(@ref, 'geon:\d+')]">
-                    <xsl:value-of
-                        select="replace(tei:placeName[matches(@ref, 'geon:\d+')][1]/@ref, '^.*geon:(\d+).*$', '$1')"
-                    />
+                <xsl:when test="oape:query-place(., 'name', 'en', '') != ''">
+                    <xsl:value-of select="oape:query-place(., 'name', 'en', '')"/>
                 </xsl:when>
-                <!-- check English toponyms first -->
-                <xsl:when test="tei:placeName[@xml:lang = 'en']">
-                    <xsl:copy-of select="tei:placeName[@xml:lang = 'en'][1]"/>
+                <xsl:when test="oape:query-place(., 'name', 'ar', '') != ''">
+                    <xsl:value-of select="oape:query-place(., 'name', 'ar', '')"/>
                 </xsl:when>
-                <!-- check Arabic toponyms first -->
-                <xsl:when test="tei:placeName[@xml:lang = 'ar']">
-                    <xsl:copy-of select="tei:placeName[@xml:lang = 'ar'][1]"/>
-                </xsl:when>
+                <!-- this fallback is not necessary as the function oape:query-place returns the same -->
                 <xsl:otherwise>
                     <xsl:copy-of select="tei:placeName[1]"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+         <!-- ID -->
+        <xsl:variable name="v_id">
+            <xsl:choose>
+                <xsl:when test="oape:query-place(.,'id-local', '', $p_local-authority) = 'NA'">
+                    <xsl:value-of select="$v_local-id-highest + count(preceding::tei:place[not(tei:idno[@type=$p_local-authority])]) + 1"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="oape:query-place(.,'id-local', '', $p_local-authority)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="v_xml-id" select="concat('place_',$v_id)"/>
+        <!-- test if the place has a toponym -->
+        <xsl:if test="$v_geonames-search = ''">
+            <xsl:message terminate="yes">
+                <xsl:text>The place (</xsl:text><xsl:value-of select="$v_id"/><xsl:text>)  has no placeName child.</xsl:text>
+            </xsl:message>
+        </xsl:if>
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_3: query GeoNames for: </xsl:text><xsl:value-of select="$v_geonames-search"/>
@@ -113,6 +117,8 @@
         </xsl:variable>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
+            <!-- new @xml:id  -->
+            <xsl:attribute name="xml:id" select="$v_xml-id"/>
             <!-- add @type if it is missing -->
             <xsl:if test="not(@type) and $v_geonames-result-tei/descendant::tei:place[1]/@type">
                 <xsl:attribute name="type"
@@ -163,118 +169,15 @@
                 <xsl:copy-of select="$v_geonames-result-tei/descendant::tei:place[1]/tei:idno"/>
             </xsl:if>
             <!-- our own OpenArabicPE ID -->
-            <xsl:apply-templates mode="m_generate-id" select="."/>
-        </xsl:copy>
-    </xsl:template>
-    <!-- mode to generate OpenArabicPE IDs -->
-    <xsl:template match="tei:place" mode="m_generate-id">
-        <xsl:if test="not(tei:idno[@type = $p_local-authority])">
-            <xsl:element name="idno">
-                <xsl:attribute name="type" select="$p_local-authority"/>
-                <!-- basis is the highest existing ID -->
-                <!-- add preceding tei:place without OpenArabicPE ID -->
-                <xsl:value-of
-                    select="$v_local-id-highest + count(preceding::tei:place[not(tei:idno[@type = $p_local-authority])]) + 1"
-                />
-            </xsl:element>
-        </xsl:if>
-    </xsl:template>
-    <!-- improve tei:place records without GeoNames references -->
-    <xsl:template match="tei:place" name="t_4">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_4: no GeoName ID in original data for </xsl:text>
-                <xsl:value-of select="@xml:id"/>
-                <xsl:text>. Removed duplicate toponyms</xsl:text>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates select="@*"/>
-            <!-- check if it has duplicate child nodes -->
-            <xsl:for-each-group group-by="." select="tei:placeName">
-                <xsl:apply-templates select="."/>
-            </xsl:for-each-group>
-            <!-- our own OpenArabicPE ID -->
-            <xsl:apply-templates mode="m_generate-id" select="."/>
-        </xsl:copy>
-    </xsl:template>
-    <!--    <xsl:template match="tei:placeName[@type='flattened']" priority="100"/>-->
-    <!-- <xsl:template match="tei:placeName[ancestor::tei:settingDesc]" name="t_5">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> copy existing persName</xsl:text>
-            </xsl:message>
-        </xsl:if>
-            <xsl:copy>
-                <xsl:apply-templates select="@* | node()"/>
-            </xsl:copy>
-        <!-\- add flattened persName string if this is not already present  -\->
-        <xsl:variable name="v_self">
-            <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
-        </xsl:variable>
-        <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
-        <xsl:if test="not(parent::node()/tei:placeName[@type='flattened'] = $v_name-flat)">
-            <xsl:if test="$p_verbose=true()">
-                <xsl:message>
-                    <xsl:text>t_5: </xsl:text><xsl:value-of select="@xml:id"/><xsl:text> create flattened persName</xsl:text>
-                </xsl:message>
+            <xsl:if test="not(tei:idno[@type=$p_local-authority])">
+                <xsl:element name="idno">
+                    <xsl:attribute name="type" select="$p_local-authority"/>
+                    <xsl:value-of select="$v_id"/>
+                </xsl:element>
             </xsl:if>
-            <xsl:copy>
-                <xsl:apply-templates select="@xml:lang"/>
-                <xsl:attribute name="type" select="'flattened'"/>
-                <!-\- the flattened string should point back to its origin -\->
-                <xsl:attribute name="corresp" select="concat('#',@xml:id)"/>
-                <xsl:value-of select="$v_name-flat"/>
-                
-            </xsl:copy>
-        </xsl:if>
-    </xsl:template>-->
-    <xsl:template match="tei:placeName[@type = 'flattened']" name="t_6">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_6: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:variable name="v_self" select="."/>
-        <xsl:copy>
-            <!-- check if it has a @corresp attribute -->
-            <xsl:if test="not(@corresp)">
-                <xsl:if test="$p_verbose = true()">
-                    <xsl:message>
-                        <xsl:text>t_6: </xsl:text>
-                        <xsl:value-of select="@xml:id"/>
-                        <xsl:text> no @corresp</xsl:text>
-                    </xsl:message>
-                </xsl:if>
-                <xsl:attribute name="corresp"
-                    select="concat('#', parent::tei:place/tei:placeName[replace(normalize-space(.), '\W', '') = $v_self][1]/@xml:id)"
-                />
-            </xsl:if>
-            <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
-    <!-- decide whether or not to omit existing records -->
-    <!--<xsl:template match="tei:place/tei:idno | tei:place/tei:birth | tei:place/tei:death | tei:place/tei:listBibl" name="t_7">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_7: </xsl:text><xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
-    </xsl:template>
-    -->
-    <!-- replicate everything except @xml:id -->
-    <xsl:template match="@*[not(name() = 'xml:id')] | node()" mode="m_no-ids" name="t_10">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_10 master: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates mode="m_no-ids" select="@*[not(name() = 'xml:id')] | node()"/>
-        </xsl:copy>
-    </xsl:template>
+    
     <!-- document the changes -->
     <xsl:template match="tei:revisionDesc" name="t_8">
         <xsl:copy>

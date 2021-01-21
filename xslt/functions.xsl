@@ -443,7 +443,7 @@
     <xsl:function name="oape:query-place">
         <!-- input is a tei <place> node -->
         <xsl:param name="p_place" as="node()"/>
-        <!-- values for $mode are 'location', 'name', 'type', 'oape' -->
+        <!-- values for $mode are 'location', 'name', 'type', 'id-local', 'id', 'id-geon' -->
         <xsl:param name="p_output-mode" as="xs:string"/>
         <!-- select a target language for toponyms -->
         <xsl:param name="p_output-language" as="xs:string"/>
@@ -488,9 +488,30 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
-                     <xsl:when test="$p_output-mode = 'oape'">
-                        <xsl:value-of select="$p_place/tei:idno[@type='oape'][1]"/>
-                    </xsl:when>
+                     <xsl:when test="$p_output-mode = 'id-local'">
+                         <xsl:choose>
+                             <xsl:when test="$p_place/tei:idno[@type = $p_local-authority]">
+                                 <xsl:value-of select="$p_place/tei:idno[@type = $p_local-authority][1]"/>
+                             </xsl:when>
+                             <xsl:otherwise>
+                                 <xsl:value-of select="'NA'"/>
+                             </xsl:otherwise>
+                         </xsl:choose>
+                     </xsl:when>
+                     <xsl:when test="$p_output-mode = 'id-geon'">
+                         <xsl:choose>
+                             <xsl:when test="$p_place/tei:idno[@type = 'geon']">
+                                 <xsl:value-of select="$p_place/tei:idno[@type = 'geon'][1]"/>
+                             </xsl:when>
+                             <xsl:when test="$p_place/tei:placeName[matches(@ref, 'geon:\d+')]">
+                                <xsl:value-of select="replace($p_place/tei:placeName[matches(@ref, 'geon:\d+')][1]/@ref, '^.*geon:(\d+).*$', '$1')"
+                    />
+                             </xsl:when>
+                             <xsl:otherwise>
+                                 <xsl:value-of select="'NA'"/>
+                             </xsl:otherwise>
+                         </xsl:choose>
+                     </xsl:when>
                     <!-- return toponym in selected language -->
                     <xsl:when test="$p_output-mode = 'name'">
                         <xsl:choose>
