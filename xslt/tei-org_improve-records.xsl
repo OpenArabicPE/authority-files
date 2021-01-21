@@ -9,13 +9,11 @@
     xmlns:xd="http://www.pnp-software.com/XSLTdoc" xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-    <!-- this stylesheet extracts all <persName> elements from a TEI XML file and groups them into a <listPerson> element. Similarly, it extracts all <placeName> elements and creates a <listPlace> with the toponyms nested as child elements -->
-    <!-- this stylesheet also tries to query external authority files if they are linked through the @ref attribute on a persName child.
-    It DOES NOT try to find names on VIAF without an ID -->
-    <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="yes" method="xml"
+    
+    <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml"
         omit-xml-declaration="no"/>
     
-    <xsl:include href="query-geonames.xsl"/>
+    <xsl:include href="functions.xsl"/>
 
       <!-- variables for local IDs (OpenArabicPE) -->
     <xsl:param name="p_local-authority" select="'oape'"/>
@@ -31,14 +29,7 @@
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
-    <!--<xsl:template match="/">
-        <xsl:result-document
-            href="{concat('_output/org_improved/',tokenize(base-uri(),'/')[last()])}">
-            <xsl:copy>
-                <xsl:apply-templates/>
-            </xsl:copy>
-        </xsl:result-document>
-    </xsl:template>-->
+    
     <xsl:template match="tei:listOrg" name="t_2">
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
@@ -58,8 +49,7 @@
             <xsl:apply-templates select="tei:listOrg"/>
         </xsl:copy>
     </xsl:template>
-    <!-- improve tei:place records with GeoNames references -->
-    <!-- tei:place[tei:placeName[matches(@ref,'geon:\d+')]] | tei:place[tei:idno[@type='geon']!=''] -->
+    
     <xsl:template match="tei:org" name="t_3" priority="100">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
@@ -84,16 +74,6 @@
             </xsl:element>
         </xsl:if>
     </xsl:template>
-
-    <!-- decide whether or not to omit existing records -->
-    <!--<xsl:template match="tei:place/tei:idno | tei:place/tei:birth | tei:place/tei:death | tei:place/tei:listBibl" name="t_7">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_7: </xsl:text><xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
-    </xsl:template>
-    -->
  
     <!-- document the changes -->
     <xsl:template match="tei:revisionDesc" name="t_8">
