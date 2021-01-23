@@ -27,7 +27,7 @@
                 (0)"/>
     <xsl:variable name="v_sort-place-type"
         select="'&lt; region &lt; country &lt; state &lt; province &lt; district &lt; county &lt; town &lt; village &lt; quarter &lt; neighbourhood &lt; building'"/>
-    <xsl:template match="@* | node()" name="t_1">
+    <xsl:template match="@* | node()">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
@@ -40,7 +40,7 @@
             </xsl:copy>
         </xsl:result-document>
     </xsl:template>
-    <xsl:template match="tei:listPlace" name="t_2">
+    <xsl:template match="tei:listPlace">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:head"/>
@@ -57,8 +57,7 @@
         </xsl:copy>
     </xsl:template>
     <!-- improve tei:place records with GeoNames references -->
-    <!-- tei:place[tei:placeName[matches(@ref,'geon:\d+')]] | tei:place[tei:idno[@type='geon']!=''] -->
-    <xsl:template match="tei:place" name="t_3" priority="100">
+    <xsl:template match="tei:place">
         <xsl:variable name="v_geonames-search">
             <xsl:choose>
                 <xsl:when test="oape:query-place(.,'id-geon', '', '') != 'NA'">
@@ -179,7 +178,7 @@
     </xsl:template>
     
     <!-- document the changes -->
-    <xsl:template match="tei:revisionDesc" name="t_8">
+    <xsl:template match="tei:revisionDesc">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:element name="tei:change">
