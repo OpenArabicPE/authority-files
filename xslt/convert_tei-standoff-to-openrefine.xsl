@@ -27,12 +27,25 @@
             <xsl:value-of select="concat('id.', $p_local-authority)"/>
         <xsl:value-of select="$v_quot"/><xsl:value-of select="$v_new-line"/>
     </xsl:variable>
+    <xsl:variable name="v_csv-head_places">
+        <xsl:value-of select="$v_quot"/>
+            <xsl:text>name</xsl:text><xsl:value-of select="$v_seperator"/>
+            <!-- names not strictly needed -->
+            <xsl:text>id.geon</xsl:text><xsl:value-of select="$v_seperator"/>
+            <xsl:text>id.wiki</xsl:text><xsl:value-of select="$v_seperator"/>
+            <xsl:value-of select="concat('id.', $p_local-authority)"/>
+        <xsl:value-of select="$v_quot"/><xsl:value-of select="$v_new-line"/>
+    </xsl:variable>
     
     <xsl:template match="/">
         <!-- persons -->
         <xsl:result-document href="{$v_base-directory}refine/{$v_id-file}_persons.csv" method="text">
             <xsl:value-of select="$v_csv-head_persons"/>
             <xsl:apply-templates select="descendant::tei:standOff/descendant::tei:person | descendant::tei:teiHeader/tei:profileDesc/tei:particDesc/descendant::tei:person" mode="m_openrefine"/>
+        </xsl:result-document>
+        <xsl:result-document href="{$v_base-directory}refine/{$v_id-file}_places.csv" method="text">
+            <xsl:value-of select="$v_csv-head_places"/>
+            <xsl:apply-templates select="descendant::tei:standOff/descendant::tei:place | descendant::tei:teiHeader/tei:profileDesc/tei:settingDesc/descendant::tei:place" mode="m_openrefine"/>
         </xsl:result-document>
     </xsl:template>
     
@@ -42,6 +55,17 @@
         <xsl:value-of select="oape:query-person(., 'name', 'ar', '')"/><xsl:value-of select="$v_seperator"/>
         <!-- IDs -->
         <xsl:value-of select="oape:query-person(., 'id-viaf', '', '')"/><xsl:value-of select="$v_seperator"/>
+        <xsl:value-of select="oape:query-person(., 'id-wiki', '', '')"/><xsl:value-of select="$v_seperator"/>
+        <xsl:value-of select="oape:query-person(., 'id-local', '', $p_local-authority)"/>
+        <!-- end of line -->
+        <xsl:value-of select="$v_quot"/><xsl:value-of select="$v_new-line"/>
+    </xsl:template>
+     <xsl:template match="tei:place" mode="m_openrefine">
+        <xsl:value-of select="$v_quot"/>
+        <!-- name -->
+        <xsl:value-of select="oape:query-place(., 'name', 'ar', '')"/><xsl:value-of select="$v_seperator"/>
+        <!-- IDs -->
+        <xsl:value-of select="oape:query-place(., 'id-geon', '', '')"/><xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="oape:query-person(., 'id-wiki', '', '')"/><xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="oape:query-person(., 'id-local', '', $p_local-authority)"/>
         <!-- end of line -->

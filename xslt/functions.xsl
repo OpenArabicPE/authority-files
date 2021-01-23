@@ -649,6 +649,7 @@
                     <xsl:when test="$p_output-mode = 'name'">
                         <xsl:variable name="v_name">
                         <xsl:choose>
+                            <!-- preference for names without addNames -->
                             <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language]">
                                 <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language][1]"
                                 />
