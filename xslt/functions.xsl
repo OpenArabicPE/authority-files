@@ -2,15 +2,13 @@
 <xsl:stylesheet exclude-result-prefixes="xs" version="3.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" method="xml" omit-xml-declaration="no"/>
+    <xsl:include href="parameters.xsl"/>
     <!-- identify the author of the change by means of a @xml:id -->
     <!-- toggle debugging messages -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <xsl:include href="query-viaf.xsl"/>
     <xsl:include href="query-geonames.xsl"/>
     
-    <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
-    <xsl:param name="p_url-nyms" select="'../data/tei/nymlist.TEIP5.xml'"/>
-    <xsl:variable name="v_file-nyms" select="doc($p_url-nyms)"/>
     <!--<xsl:template match="/">
         <xsl:apply-templates select="descendant::tei:date" mode="m_debug"/>
     </xsl:template>-->
@@ -19,10 +17,7 @@
         <xsl:text> - </xsl:text>
         <xsl:value-of select="oape:date-get-terminus(.)"/>
     </xsl:template>
-    <!-- parameters for string-replacements -->
-    <xsl:param name="p_string-match" select="'([إ|أ|آ])'"/>
-    <xsl:param name="p_string-replace" select="'ا'"/>
-    <xsl:param name="p_string-harakat" select="'([ِ|ُ|ٓ|ٰ|ْ|ٌ|ٍ|ً|ّ|َ])'"/>
+
     <xsl:function name="oape:string-normalise-characters">
         <xsl:param name="p_input"/>
         <xsl:variable name="v_self" select="normalize-space(replace(oape:string-remove-harakat($p_input), $p_string-match, $p_string-replace))"/>
@@ -403,15 +398,15 @@
     <!-- query a local TEI gazetteer for toponyms, locations, IDs etc. -->
     <xsl:function name="oape:query-gazetteer">
         <!-- input is a tei <placeName> node -->
-        <xsl:param name="placeName"/>
+        <xsl:param name="placeName" as="node()"/>
         <!-- $gazetteer expects a path to a file -->
         <xsl:param name="gazetteer"/>
         <!-- local authority -->
-        <xsl:param name="p_local-authority"/>
+        <xsl:param name="p_local-authority" as="xs:string"/>
         <!-- values for $mode are 'location', 'name', 'type', 'oape' -->
-        <xsl:param name="p_output-mode"/>
+        <xsl:param name="p_output-mode" as="xs:string"/>
         <!-- select a target language for toponyms -->
-        <xsl:param name="p_output-language"/>
+        <xsl:param name="p_output-language" as="xs:string"/>
         <!-- load data from authority file -->
         <xsl:variable name="v_place" select="oape:get-entity-from-authority-file($placeName,$p_local-authority,$gazetteer)"/>
         
@@ -547,6 +542,46 @@
                     </xsl:otherwise>
                 </xsl:choose>
     </xsl:function>
+    <!-- query a local TEI personography  -->
+    <xsl:function name="oape:query-personography">
+        <!-- input is a tei <placeName> node -->
+        <xsl:param name="persName" as="node()"/>
+        <!-- $gazetteer expects a path to a file -->
+        <xsl:param name="personography"/>
+        <!-- local authority -->
+        <xsl:param name="p_local-authority" as="xs:string"/>
+        <!-- values for $mode are 'id', 'id-local', 'name', 'date-birth', 'date-death' -->
+        <xsl:param name="p_output-mode" as="xs:string"/>
+        <!-- select a target language for names -->
+        <xsl:param name="p_output-language" as="xs:string"/>
+        <!-- load data from authority file -->
+        <xsl:variable name="v_person" select="oape:get-entity-from-authority-file($persName, $p_local-authority, $personography)"/>
+        
+        <xsl:choose>
+            <!-- test for @ref pointing to auhority files -->
+            <xsl:when test="$v_person != 'NA'">
+                <xsl:copy-of select="oape:query-person($v_person, $p_output-mode, $p_output-language, $p_local-authority)"/>
+            </xsl:when>
+            <!-- return original input toponym if nothing else is fond -->
+            <xsl:when test="$p_output-mode = 'name'">
+                <xsl:choose>
+                    <xsl:when test="$persName != ''">
+                        <xsl:value-of select="normalize-space($persName)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <!-- otherwise: no location data -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>no location data found for </xsl:text><xsl:value-of select="normalize-space($persName)"/>
+                </xsl:message>
+                <xsl:value-of select="'NA'"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
     <xsl:function name="oape:query-person">
         <!-- input is a tei <person> node -->
         <xsl:param name="p_person" as="node()"/>
@@ -594,6 +629,16 @@
                         <xsl:choose>
                             <xsl:when test="$p_person/tei:idno[@type = 'VIAF']">
                                 <xsl:value-of select="$p_person/tei:idno[@type = 'VIAF'][1]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <xsl:when test="$p_output-mode = 'id-wiki'">
+                        <xsl:choose>
+                            <xsl:when test="$p_person/tei:idno[@type = 'wiki']">
+                                <xsl:value-of select="$p_person/tei:idno[@type = 'wiki'][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="'NA'"/>
@@ -654,6 +699,25 @@
                         <xsl:choose>
                             <xsl:when test="$p_person/tei:death/@when">
                                 <xsl:value-of select="$p_person/tei:death/@when"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
+                    <xsl:when test="$p_output-mode = 'countWorks'">
+                        <xsl:variable name="v_id-viaf" select="oape:query-person($p_person, 'id-viaf', '', '')"/>
+                        <xsl:choose>
+                            <xsl:when test="$v_id-viaf != 'NA'">
+                                <xsl:variable name="v_person-viaf">
+                            <xsl:call-template name="t_query-viaf-sru">
+                                <xsl:with-param name="p_input-type" select="'id'"/>
+                                <xsl:with-param name="p_search-term" select="$v_id-viaf"/>
+                                <xsl:with-param name="p_include-bibliograpy-in-output" select="true()"/>
+                                <xsl:with-param name="p_output-mode" select="'tei'"/>
+                            </xsl:call-template>
+                        </xsl:variable>
+                         <xsl:value-of select="count($v_person-viaf/descendant::tei:listBibl/tei:bibl)"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="'NA'"/>
@@ -1076,6 +1140,7 @@
             <xsl:apply-templates mode="m_remove-rolename" select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="@xml:id" mode="m_remove-rolename"/>
     <!-- this function takes a <tei:persName> as input, tries to look it up in an authority file and returns a <tei:persName> -->
     <xsl:function name="oape:link-persname-to-authority-file">
         <xsl:param name="p_persname"/>

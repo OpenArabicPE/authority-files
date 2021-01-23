@@ -15,7 +15,6 @@
     <xsl:include href="functions.xsl"/>
     
     <!-- variables for local IDs (OpenArabicPE) -->
-    <xsl:param name="p_local-authority" select="'oape'"/>
     <xsl:variable name="v_local-id-count" select="count(//tei:person/tei:idno[@type = $p_local-authority])"/>
     <xsl:variable name="v_local-id-highest" select="if($v_local-id-count gt 0) then(max(//tei:person/tei:idno[@type = $p_local-authority])) else(0)"/>
     

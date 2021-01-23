@@ -18,7 +18,7 @@
     <xsl:include href="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/api-credentials/api-credentials.xsl"/>
     
     <!-- this param establishes the path to the folder holding individual authority files from GeoNames. The file path is relative to this stylesheet!  -->
-    <xsl:param name="p_path-authority-files" select="'../data/geonames/'"/>
+    <xsl:param name="p_path-geon-files" select="'../data/geonames/'"/>
     
     
     <!-- NOTE: doc-available() resolves relative to the stylesheets URI, doc() relative to the base-uri() of the context node. To get the same result with doc-available(), one has to use resolve-uri() -->
@@ -79,7 +79,7 @@
                     <xsl:choose>
                         <!-- 1. $v_geonames-id contains an ID and local copy of GeoNames result file is available -->
                         <xsl:when
-                            test="$v_geonames-id != 'NA' and doc-available(concat($p_path-authority-files, 'geon_', $v_geonames-id, '.xml'))">
+                            test="$v_geonames-id != 'NA' and doc-available(concat($p_path-geon-files, 'geon_', $v_geonames-id, '.xml'))">
                             <xsl:if test="$p_verbose = true()">
                                 <xsl:message>
                                     <xsl:text>Found local copy for </xsl:text>
@@ -87,7 +87,7 @@
                                 </xsl:message>
                             </xsl:if>
                             <xsl:copy-of
-                                select="doc(concat($p_path-authority-files, 'geon_', $v_geonames-id, '.xml'))"
+                                select="doc(concat($p_path-geon-files, 'geon_', $v_geonames-id, '.xml'))"
                             />
                         </xsl:when>
                         <!-- otherwise query geonames -->
@@ -142,12 +142,12 @@
                                 <!-- this is relative to the input XML  -->
                                 <!-- check if the file already exists! -->
                                 <xsl:message terminate="no">
-                                    <xsl:value-of select="concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml',': ' )"/>
-                                    <xsl:copy-of select="doc-available(concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml'))"/>
+                                    <xsl:value-of select="concat($p_path-geon-files,'geon_', $v_geonames-id, '.xml',': ' )"/>
+                                    <xsl:copy-of select="doc-available(concat($p_path-geon-files,'geon_', $v_geonames-id, '.xml'))"/>
                                 </xsl:message>
-                                <xsl:if test="doc-available(resolve-uri(concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml'))) = false()">
+                                <xsl:if test="doc-available(resolve-uri(concat($p_path-geon-files,'geon_', $v_geonames-id, '.xml'))) = false()">
                                     <xsl:result-document
-                                        href="{concat($p_path-authority-files,'geon_', $v_geonames-id, '.xml')}">
+                                        href="{concat($p_path-geon-files,'geon_', $v_geonames-id, '.xml')}">
                                         <xsl:copy-of select="$v_xml-geonames"/>
                                     </xsl:result-document>
                                     <xsl:if test="$p_verbose = true()">
