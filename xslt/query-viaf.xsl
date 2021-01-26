@@ -16,7 +16,7 @@
     <xsl:include href="convert_viaf-to-tei_functions.xsl"/>
     
     <!-- the file path is relative to this stylesheet!  -->
-    <xsl:param name="p_viaf-file-path" select="'../data/viaf/'"/>
+    <xsl:param name="p_path-viaf-files" select="'../data/viaf/'"/>
     
     <!-- query VIAF and return RDF -->
     <xsl:template name="t_query-viaf-rdf">
@@ -60,9 +60,9 @@
             <xsl:choose>
                 <!-- check if a local copy of the VIAF result is present  -->
                 <xsl:when
-                    test="$p_input-type = 'id' and doc-available(concat($p_viaf-file-path, 'viaf_', $p_search-term, '.SRW.xml'))">
+                    test="$p_input-type = 'id' and doc-available(concat($p_path-viaf-files, 'viaf_', $p_search-term, '.SRW.xml'))">
                     <xsl:copy-of
-                        select="doc(concat($p_viaf-file-path, 'viaf_', $p_search-term, '.SRW.xml'))"
+                        select="doc(concat($p_path-viaf-files, 'viaf_', $p_search-term, '.SRW.xml'))"
                     />
                 </xsl:when>
                 <!-- else query VIAF for ID -->
@@ -146,7 +146,7 @@
                 <xsl:choose>
                     <xsl:when test="$v_viaf-id != ''">
                         <xsl:result-document format="xml_indented"
-                            href="../viaf/viaf_{$v_viaf-id}.SRW.xml">
+                            href="{$p_path-viaf-files}viaf_{$v_viaf-id}.SRW.xml">
                             <xsl:copy-of select="$v_viaf-srw"/>
                         </xsl:result-document>
                     </xsl:when>
