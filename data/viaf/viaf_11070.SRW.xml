@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/zing/srw/" xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
    <version xsi:type="xsd:string">1.1</version>
    <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
    <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
@@ -7,7 +11,12 @@
          <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
          <recordPacking xsi:type="xsd:string">xml</recordPacking>
          <recordData xsi:type="ns1:stringOrXmlFragment">
-            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:void="http://rdfs.org/ns/void#" xmlns:ns2="http://viaf.org/viaf/terms#">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
                <ns2:viafID>11070</ns2:viafID>
                <ns2:Document about="http://viaf.org/viaf/11070/">
                   <ns2:inDataset resource="http://viaf.org/viaf/data"/>
@@ -7071,29 +7080,73 @@
                   </ns2:work>
                </ns2:titles>
                <ns2:history>
-                  <ns2:ht recid="NLA|000035002441" time="2010-06-24T11:32:01+00:00" type="delete"/>
-                  <ns2:ht recid="ISNI|0000000418414180" time="2015-02-16T15:07:12+00:00" type="delete"/>
+                  <ns2:ht recid="NLA|000035002441"
+                          time="2010-06-24T11:32:01+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="ISNI|0000000418414180"
+                          time="2015-02-16T15:07:12+00:00"
+                          type="delete"/>
                   <ns2:ht recid="WKP|Al-Jahiz" time="2015-04-14T18:56:54+00:00" type="delete"/>
-                  <ns2:ht recid="SWNL|vtls000100707" time="2015-11-17T21:05:39.183968+00:00" type="delete"/>
-                  <ns2:ht recid="DNB|1089145802" time="2016-04-24T11:06:04.204884+00:00" type="delete"/>
-                  <ns2:ht recid="WKP|Q293497" time="2016-08-31T16:40:28.667337+00:00" type="add"/>
-                  <ns2:ht recid="B2Q|0000060087" time="2016-08-31T16:40:28.679151+00:00" type="add"/>
-                  <ns2:ht recid="SUDOC|066912776" time="2016-08-31T16:40:28.691803+00:00" type="add"/>
-                  <ns2:ht recid="BAV|ADV11063573" time="2016-08-31T16:40:28.703397+00:00" type="add"/>
-                  <ns2:ht recid="SELIBR|192308" time="2016-08-31T16:40:28.714852+00:00" type="add"/>
-                  <ns2:ht recid="NUKAT|n 2007123263" time="2016-08-31T16:40:28.759704+00:00" type="add"/>
-                  <ns2:ht recid="LC|n  79115518" time="2016-08-31T16:40:28.770419+00:00" type="add"/>
-                  <ns2:ht recid="ICCU|RMLV020529" time="2016-08-31T16:40:28.795486+00:00" type="add"/>
-                  <ns2:ht recid="BNF|11903850" time="2016-08-31T16:40:28.816769+00:00" type="add"/>
-                  <ns2:ht recid="NTA|069562601" time="2016-08-31T16:40:28.828592+00:00" type="add"/>
-                  <ns2:ht recid="ISNI|0000000353836728" time="2016-08-31T16:40:28.844218+00:00" type="add"/>
-                  <ns2:ht recid="RERO|vtls016242348" time="2016-08-31T16:40:28.869659+00:00" type="add"/>
-                  <ns2:ht recid="NLI|000423523" time="2016-10-09T13:34:07.036131+00:00" type="delete"/>
-                  <ns2:ht recid="LNL|7246" time="2016-11-13T08:50:23.009312+00:00" type="delete"/>
-                  <ns2:ht recid="DNB|118680919" time="2016-11-13T09:04:30.222156+00:00" type="add"/>
-                  <ns2:ht recid="EGAXA|vtls000825469" time="2016-11-20T08:57:13.370483+00:00" type="add"/>
-                  <ns2:ht recid="BNE|XX1154288" time="2016-11-20T10:07:25.822668+00:00" type="delete"/>
-                  <ns2:ht recid="NKC|jn19981000055" time="2016-11-20T10:07:25.831140+00:00" type="delete"/>
+                  <ns2:ht recid="SWNL|vtls000100707"
+                          time="2015-11-17T21:05:39.183968+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="DNB|1089145802"
+                          time="2016-04-24T11:06:04.204884+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="WKP|Q293497"
+                          time="2016-08-31T16:40:28.667337+00:00"
+                          type="add"/>
+                  <ns2:ht recid="B2Q|0000060087"
+                          time="2016-08-31T16:40:28.679151+00:00"
+                          type="add"/>
+                  <ns2:ht recid="SUDOC|066912776"
+                          time="2016-08-31T16:40:28.691803+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BAV|ADV11063573"
+                          time="2016-08-31T16:40:28.703397+00:00"
+                          type="add"/>
+                  <ns2:ht recid="SELIBR|192308"
+                          time="2016-08-31T16:40:28.714852+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NUKAT|n 2007123263"
+                          time="2016-08-31T16:40:28.759704+00:00"
+                          type="add"/>
+                  <ns2:ht recid="LC|n  79115518"
+                          time="2016-08-31T16:40:28.770419+00:00"
+                          type="add"/>
+                  <ns2:ht recid="ICCU|RMLV020529"
+                          time="2016-08-31T16:40:28.795486+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BNF|11903850"
+                          time="2016-08-31T16:40:28.816769+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NTA|069562601"
+                          time="2016-08-31T16:40:28.828592+00:00"
+                          type="add"/>
+                  <ns2:ht recid="ISNI|0000000353836728"
+                          time="2016-08-31T16:40:28.844218+00:00"
+                          type="add"/>
+                  <ns2:ht recid="RERO|vtls016242348"
+                          time="2016-08-31T16:40:28.869659+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NLI|000423523"
+                          time="2016-10-09T13:34:07.036131+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="LNL|7246"
+                          time="2016-11-13T08:50:23.009312+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="DNB|118680919"
+                          time="2016-11-13T09:04:30.222156+00:00"
+                          type="add"/>
+                  <ns2:ht recid="EGAXA|vtls000825469"
+                          time="2016-11-20T08:57:13.370483+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BNE|XX1154288"
+                          time="2016-11-20T10:07:25.822668+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="NKC|jn19981000055"
+                          time="2016-11-20T10:07:25.831140+00:00"
+                          type="delete"/>
                </ns2:history>
                <ns2:creationtime>2017-03-19T18:01:55.487135+00:00</ns2:creationtime>
             </ns2:VIAFCluster>
@@ -7101,11 +7154,13 @@
          <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
       </record>
    </records>
-   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/" xsi:type="ns3:echoedSearchRetrieveRequestType">
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
       <version xsi:type="xsd:string">1.1</version>
       <query xsi:type="xsd:string">local.viafID any "11070"</query>
       <xQuery>
-         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/" xsi:type="ns4:searchClauseType">
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
             <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
             <ns4:relation xsi:type="ns4:relationType">
                <ns4:value xsi:type="xsd:string">any</ns4:value>

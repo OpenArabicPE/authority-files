@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/zing/srw/" xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
    <version xsi:type="xsd:string">1.1</version>
    <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
    <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
@@ -7,7 +11,12 @@
          <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
          <recordPacking xsi:type="xsd:string">xml</recordPacking>
          <recordData xsi:type="ns1:stringOrXmlFragment">
-            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:void="http://rdfs.org/ns/void#" xmlns:ns2="http://viaf.org/viaf/terms#">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
                <ns2:viafID>225088570</ns2:viafID>
                <ns2:Document about="http://viaf.org/viaf/225088570/">
                   <ns2:inDataset resource="http://viaf.org/viaf/data"/>
@@ -31,7 +40,9 @@
                   <ns2:source nsid="LNC10-000148749">LNB|LNC10-000148749</ns2:source>
                   <ns2:source nsid="000065897">NLI|000065897</ns2:source>
                   <ns2:source nsid="0000057402">B2Q|0000057402</ns2:source>
-                  <ns2:source differentiated="false" nsid="http://d-nb.info/gnd/159161037" sparse="true">DNB|159161037</ns2:source>
+                  <ns2:source differentiated="false"
+                              nsid="http://d-nb.info/gnd/159161037"
+                              sparse="true">DNB|159161037</ns2:source>
                   <ns2:source nsid="http://d-nb.info/gnd/118708295">DNB|118708295</ns2:source>
                   <ns2:source nsid="vtls000770396">EGAXA|vtls000770396</ns2:source>
                   <ns2:source nsid="vtls008705019">SWNL|vtls008705019</ns2:source>
@@ -9119,46 +9130,124 @@
                   </ns2:work>
                </ns2:titles>
                <ns2:history>
-                  <ns2:ht recid="EGAXA|vtls000772529" time="2012-05-22T07:07:53+00:00" type="delete"/>
-                  <ns2:ht recid="NLIara|000161190" time="2012-05-22T07:07:53+00:00" type="delete"/>
-                  <ns2:ht recid="EGAXA|vtls000710139" time="2016-08-31T18:55:27.786411+00:00" type="delete"/>
-                  <ns2:ht recid="BNC|a11629514" time="2017-03-13T17:02:31.497907+00:00" type="add"/>
-                  <ns2:ht recid="W2Z|90052468" time="2017-03-13T17:02:31.508874+00:00" type="add"/>
-                  <ns2:ht recid="BAV|ADV12161667" time="2017-03-13T17:02:31.521000+00:00" type="add"/>
-                  <ns2:ht recid="NTA|068308124" time="2017-03-13T17:02:31.554329+00:00" type="add"/>
-                  <ns2:ht recid="BNF|11925918" time="2017-03-13T17:02:31.570836+00:00" type="add"/>
-                  <ns2:ht recid="LC|n  50014331" time="2017-03-13T17:02:31.591087+00:00" type="add"/>
-                  <ns2:ht recid="NII|DA0166072X" time="2017-03-13T17:02:31.607360+00:00" type="add"/>
+                  <ns2:ht recid="EGAXA|vtls000772529"
+                          time="2012-05-22T07:07:53+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="NLIara|000161190"
+                          time="2012-05-22T07:07:53+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="EGAXA|vtls000710139"
+                          time="2016-08-31T18:55:27.786411+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="BNC|a11629514"
+                          time="2017-03-13T17:02:31.497907+00:00"
+                          type="add"/>
+                  <ns2:ht recid="W2Z|90052468"
+                          time="2017-03-13T17:02:31.508874+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BAV|ADV12161667"
+                          time="2017-03-13T17:02:31.521000+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NTA|068308124"
+                          time="2017-03-13T17:02:31.554329+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BNF|11925918"
+                          time="2017-03-13T17:02:31.570836+00:00"
+                          type="add"/>
+                  <ns2:ht recid="LC|n  50014331"
+                          time="2017-03-13T17:02:31.591087+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NII|DA0166072X"
+                          time="2017-03-13T17:02:31.607360+00:00"
+                          type="add"/>
                   <ns2:ht recid="LNL|7340" time="2017-03-13T17:02:31.622187+00:00" type="add"/>
-                  <ns2:ht recid="SUDOC|03393696X" time="2017-03-13T17:02:31.637580+00:00" type="add"/>
-                  <ns2:ht recid="NKC|jo20010092675" time="2017-03-13T17:02:31.652670+00:00" type="add"/>
-                  <ns2:ht recid="BIBSYS|90052468" time="2017-03-13T17:02:31.666722+00:00" type="add"/>
-                  <ns2:ht recid="NUKAT|n  97010333" time="2017-03-13T17:02:31.683251+00:00" type="add"/>
-                  <ns2:ht recid="NLR|RU NLR AUTH 777427" time="2017-03-13T17:02:31.699311+00:00" type="add"/>
-                  <ns2:ht recid="LNB|LNC10-000148749" time="2017-03-13T17:02:31.716335+00:00" type="add"/>
-                  <ns2:ht recid="NLI|000065897" time="2017-03-13T17:02:31.731424+00:00" type="add"/>
-                  <ns2:ht recid="B2Q|0000057402" time="2017-03-13T17:02:31.747497+00:00" type="add"/>
-                  <ns2:ht recid="DNB|159161037" time="2017-03-13T17:02:31.763832+00:00" type="add"/>
-                  <ns2:ht recid="DNB|118708295" time="2017-03-13T17:02:31.781192+00:00" type="add"/>
-                  <ns2:ht recid="EGAXA|vtls000770396" time="2017-03-13T17:02:31.800350+00:00" type="add"/>
-                  <ns2:ht recid="SWNL|vtls008705019" time="2017-03-13T17:02:31.817723+00:00" type="add"/>
-                  <ns2:ht recid="LNL|50013" time="2017-03-13T17:02:31.833342+00:00" type="add"/>
-                  <ns2:ht recid="BAV|ADV12161665" time="2017-03-13T17:02:31.850178+00:00" type="add"/>
-                  <ns2:ht recid="BAV|ADV12161666" time="2017-03-13T17:02:31.866386+00:00" type="add"/>
-                  <ns2:ht recid="SELIBR|106602" time="2017-03-13T17:02:31.882791+00:00" type="add"/>
-                  <ns2:ht recid="BAV|ADV12161668" time="2017-03-13T17:02:31.898802+00:00" type="add"/>
-                  <ns2:ht recid="RERO|vtls021727901" time="2017-03-13T17:02:31.915115+00:00" type="add"/>
-                  <ns2:ht recid="LAC|1021K2931" time="2017-03-13T17:02:31.931940+00:00" type="add"/>
-                  <ns2:ht recid="WKP|Q328765" time="2017-03-13T17:02:31.949551+00:00" type="add"/>
-                  <ns2:ht recid="NDL|00468706" time="2017-03-13T17:02:31.966013+00:00" type="add"/>
-                  <ns2:ht recid="NLP|a12725912" time="2017-03-13T17:02:31.983927+00:00" type="add"/>
-                  <ns2:ht recid="NSK|000173405" time="2017-03-13T17:02:32.042832+00:00" type="add"/>
-                  <ns2:ht recid="ICCU|CFIV009422" time="2017-03-13T17:02:32.059493+00:00" type="add"/>
-                  <ns2:ht recid="ISNI|000000012120836X" time="2017-03-13T17:02:32.078105+00:00" type="add"/>
-                  <ns2:ht recid="BNE|XX1053638" time="2017-03-13T17:02:32.094303+00:00" type="add"/>
-                  <ns2:ht recid="BAV|ADV10018815" time="2017-03-13T17:02:32.112406+00:00" type="add"/>
-                  <ns2:ht recid="NLA|000035537892" time="2017-03-13T17:02:32.128351+00:00" type="add"/>
-                  <ns2:ht recid="EGAXA|vtls002838429" time="2017-04-01T11:02:31.356431+00:00" type="delete"/>
+                  <ns2:ht recid="SUDOC|03393696X"
+                          time="2017-03-13T17:02:31.637580+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NKC|jo20010092675"
+                          time="2017-03-13T17:02:31.652670+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BIBSYS|90052468"
+                          time="2017-03-13T17:02:31.666722+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NUKAT|n  97010333"
+                          time="2017-03-13T17:02:31.683251+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NLR|RU NLR AUTH 777427"
+                          time="2017-03-13T17:02:31.699311+00:00"
+                          type="add"/>
+                  <ns2:ht recid="LNB|LNC10-000148749"
+                          time="2017-03-13T17:02:31.716335+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NLI|000065897"
+                          time="2017-03-13T17:02:31.731424+00:00"
+                          type="add"/>
+                  <ns2:ht recid="B2Q|0000057402"
+                          time="2017-03-13T17:02:31.747497+00:00"
+                          type="add"/>
+                  <ns2:ht recid="DNB|159161037"
+                          time="2017-03-13T17:02:31.763832+00:00"
+                          type="add"/>
+                  <ns2:ht recid="DNB|118708295"
+                          time="2017-03-13T17:02:31.781192+00:00"
+                          type="add"/>
+                  <ns2:ht recid="EGAXA|vtls000770396"
+                          time="2017-03-13T17:02:31.800350+00:00"
+                          type="add"/>
+                  <ns2:ht recid="SWNL|vtls008705019"
+                          time="2017-03-13T17:02:31.817723+00:00"
+                          type="add"/>
+                  <ns2:ht recid="LNL|50013"
+                          time="2017-03-13T17:02:31.833342+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BAV|ADV12161665"
+                          time="2017-03-13T17:02:31.850178+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BAV|ADV12161666"
+                          time="2017-03-13T17:02:31.866386+00:00"
+                          type="add"/>
+                  <ns2:ht recid="SELIBR|106602"
+                          time="2017-03-13T17:02:31.882791+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BAV|ADV12161668"
+                          time="2017-03-13T17:02:31.898802+00:00"
+                          type="add"/>
+                  <ns2:ht recid="RERO|vtls021727901"
+                          time="2017-03-13T17:02:31.915115+00:00"
+                          type="add"/>
+                  <ns2:ht recid="LAC|1021K2931"
+                          time="2017-03-13T17:02:31.931940+00:00"
+                          type="add"/>
+                  <ns2:ht recid="WKP|Q328765"
+                          time="2017-03-13T17:02:31.949551+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NDL|00468706"
+                          time="2017-03-13T17:02:31.966013+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NLP|a12725912"
+                          time="2017-03-13T17:02:31.983927+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NSK|000173405"
+                          time="2017-03-13T17:02:32.042832+00:00"
+                          type="add"/>
+                  <ns2:ht recid="ICCU|CFIV009422"
+                          time="2017-03-13T17:02:32.059493+00:00"
+                          type="add"/>
+                  <ns2:ht recid="ISNI|000000012120836X"
+                          time="2017-03-13T17:02:32.078105+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BNE|XX1053638"
+                          time="2017-03-13T17:02:32.094303+00:00"
+                          type="add"/>
+                  <ns2:ht recid="BAV|ADV10018815"
+                          time="2017-03-13T17:02:32.112406+00:00"
+                          type="add"/>
+                  <ns2:ht recid="NLA|000035537892"
+                          time="2017-03-13T17:02:32.128351+00:00"
+                          type="add"/>
+                  <ns2:ht recid="EGAXA|vtls002838429"
+                          time="2017-04-01T11:02:31.356431+00:00"
+                          type="delete"/>
                </ns2:history>
                <ns2:creationtime>2017-05-07T06:11:35.145260+00:00</ns2:creationtime>
             </ns2:VIAFCluster>
@@ -9166,11 +9255,13 @@
          <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
       </record>
    </records>
-   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/" xsi:type="ns3:echoedSearchRetrieveRequestType">
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
       <version xsi:type="xsd:string">1.1</version>
       <query xsi:type="xsd:string">local.viafID any "225088570"</query>
       <xQuery>
-         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/" xsi:type="ns4:searchClauseType">
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
             <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
             <ns4:relation xsi:type="ns4:relationType">
                <ns4:value xsi:type="xsd:string">any</ns4:value>

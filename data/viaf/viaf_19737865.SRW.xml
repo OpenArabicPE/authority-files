@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/zing/srw/" xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<searchRetrieveResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xmlns="http://www.loc.gov/zing/srw/"
+                        xsi:schemaLocation="http://www.loc.gov/zing/srw/ http://www.loc.gov/standards/sru/sru1-1archive/xml-files/srw-types.xsd">
    <version xsi:type="xsd:string">1.1</version>
    <numberOfRecords xsi:type="xsd:nonNegativeInteger">1</numberOfRecords>
    <resultSetIdleTime xsi:type="xsd:positiveInteger">1</resultSetIdleTime>
@@ -7,7 +11,12 @@
          <recordSchema xsi:type="xsd:string">http://viaf.org/VIAFCluster</recordSchema>
          <recordPacking xsi:type="xsd:string">xml</recordPacking>
          <recordData xsi:type="ns1:stringOrXmlFragment">
-            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:void="http://rdfs.org/ns/void#" xmlns:ns2="http://viaf.org/viaf/terms#">
+            <ns2:VIAFCluster xmlns="http://viaf.org/viaf/terms#"
+                             xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                             xmlns:owl="http://www.w3.org/2002/07/owl#"
+                             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                             xmlns:void="http://rdfs.org/ns/void#"
+                             xmlns:ns2="http://viaf.org/viaf/terms#">
                <ns2:viafID>19737865</ns2:viafID>
                <ns2:Document about="http://viaf.org/viaf/19737865/">
                   <ns2:inDataset resource="http://viaf.org/viaf/data"/>
@@ -2816,18 +2825,32 @@
                   <ns2:ht recid="DNB|119216426" time="2009-03-03T12:03:29+00:00" type="add"/>
                   <ns2:ht recid="LC|n  81053795" time="2009-03-03T12:03:30+00:00" type="add"/>
                   <ns2:ht recid="SELIBR|95844" time="2009-03-03T12:03:44+00:00" type="add"/>
-                  <ns2:ht recid="J9Uara|000160736" time="2009-09-21T11:33:14+00:00" type="delete"/>
-                  <ns2:ht recid="EGAXA|vtls000855989" time="2009-11-11T06:00:16+00:00" type="add"/>
+                  <ns2:ht recid="J9Uara|000160736"
+                          time="2009-09-21T11:33:14+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="EGAXA|vtls000855989"
+                          time="2009-11-11T06:00:16+00:00"
+                          type="add"/>
                   <ns2:ht recid="LAC|0055E3137" time="2010-02-22T06:44:12+00:00" type="add"/>
-                  <ns2:ht recid="NII|DA13846510" time="2010-11-16T05:07:53+00:00" type="delete"/>
+                  <ns2:ht recid="NII|DA13846510"
+                          time="2010-11-16T05:07:53+00:00"
+                          type="delete"/>
                   <ns2:ht recid="SUDOC|079400620" time="2011-12-15T07:58:54+00:00" type="add"/>
                   <ns2:ht recid="NTA|073415537" time="2012-12-19T19:11:18+00:00" type="add"/>
                   <ns2:ht recid="NLI|000436567" time="2013-04-17T17:27:37+00:00" type="add"/>
-                  <ns2:ht recid="NLIlat|000436567" time="2013-05-13T19:14:22+00:00" type="delete"/>
-                  <ns2:ht recid="NLIara|000160736" time="2013-05-13T19:14:22+00:00" type="delete"/>
-                  <ns2:ht recid="ISNI|0000000080985700" time="2013-09-16T16:15:07+00:00" type="add"/>
+                  <ns2:ht recid="NLIlat|000436567"
+                          time="2013-05-13T19:14:22+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="NLIara|000160736"
+                          time="2013-05-13T19:14:22+00:00"
+                          type="delete"/>
+                  <ns2:ht recid="ISNI|0000000080985700"
+                          time="2013-09-16T16:15:07+00:00"
+                          type="add"/>
                   <ns2:ht recid="LNL|7153" time="2013-09-16T16:15:07+00:00" type="add"/>
-                  <ns2:ht recid="RERO|vtls023275134" time="2014-01-15T05:38:27+00:00" type="add"/>
+                  <ns2:ht recid="RERO|vtls023275134"
+                          time="2014-01-15T05:38:27+00:00"
+                          type="add"/>
                   <ns2:ht recid="WKP|Q8510488" time="2015-05-12T00:14:00+00:00" type="add"/>
                </ns2:history>
                <ns2:creationtime>2017-03-19T18:06:39.807777+00:00</ns2:creationtime>
@@ -2836,11 +2859,13 @@
          <recordPosition xsi:type="xsd:positiveInteger">1</recordPosition>
       </record>
    </records>
-   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/" xsi:type="ns3:echoedSearchRetrieveRequestType">
+   <echoedSearchRetrieveRequest xmlns:ns3="http://www.loc.gov/zing/srw/"
+                                xsi:type="ns3:echoedSearchRetrieveRequestType">
       <version xsi:type="xsd:string">1.1</version>
       <query xsi:type="xsd:string">local.viafID any "19737865"</query>
       <xQuery>
-         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/" xsi:type="ns4:searchClauseType">
+         <ns4:searchClause xmlns:ns4="http://www.loc.gov/zing/cql/xcql/"
+                           xsi:type="ns4:searchClauseType">
             <ns4:index xsi:type="xsd:string">local.viafID</ns4:index>
             <ns4:relation xsi:type="ns4:relationType">
                <ns4:value xsi:type="xsd:string">any</ns4:value>
