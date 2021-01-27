@@ -38,6 +38,7 @@
             <xsl:apply-templates select="tei:person">
                 <!-- this sort should consider the Arabic "al-" -->
                 <xsl:sort select="descendant::tei:surname[1]"/>
+                <xsl:sort select="descendant::tei:addName[@type = 'nisbah'][1]"/>
                     <xsl:sort select="descendant::tei:forename[1]"/>
                     <xsl:sort select="descendant::tei:addName[@type='noAddName'][not(.='')][1]"/>
                     <xsl:sort select="descendant::tei:addName[@type='flattened'][1]"/>
