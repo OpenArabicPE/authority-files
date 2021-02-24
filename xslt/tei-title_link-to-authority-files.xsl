@@ -25,8 +25,8 @@
     
     <xsl:include href="functions.xsl"/>
     <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
-    <xsl:param name="p_url-master" select="'../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
-    <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>
+    <!--<xsl:param name="p_url-master" select="'../data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
+    <xsl:variable name="v_file-entities-master" select="doc($p_url-master)"/>-->
     <xsl:param name="p_update-existing-refs" select="false()"/>
     <!-- identity transform -->
     <xsl:template match="node() | @*">
@@ -48,7 +48,7 @@
     </xsl:template>
     <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>
     <xsl:template match="tei:title[ancestor::tei:text][@level = 'j'][not(@type = 'sub')]" priority="10">
-        <xsl:copy-of select="oape:link-title-to-authority-file(., $v_file-entities-master)"/>
+        <xsl:copy-of select="oape:link-title-to-authority-file(., $v_bibliography)"/>
     </xsl:template>
     <xsl:function name="oape:link-title-to-authority-file">
         <xsl:param name="p_title"/>
@@ -90,11 +90,12 @@
                 <!-- test if this node already points to an authority file -->
                 <!-- since these @refs can be faulty, one should probably add a param -->
                 <xsl:when test="$p_title/@ref and ($p_update-existing-refs = false())">
-                    <xsl:copy-of select="oape:get-bibl-from-authority-file($p_title/@ref, $p_authority-file)"/>
+                    <xsl:copy-of select="oape:get-entity-from-authority-file($p_title, $p_local-authority, $v_bibliography)"/>
+<!--                    <xsl:copy-of select="oape:get-bibl-from-authority-file($p_title/@ref, $p_authority-file)"/>-->
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
-                <xsl:when test="$v_file-entities-master/descendant::tei:biblStruct/tei:monogr/tei:title[@level = $v_level][oape:string-normalise-characters(.) = $v_name-flat]">
-                    <xsl:variable name="v_matches" select="$v_file-entities-master/descendant::tei:biblStruct[descendant::tei:title[@level = $v_level][oape:string-normalise-characters(.) = $v_name-flat]]"/>
+                <xsl:when test="$v_bibliography/descendant::tei:biblStruct/tei:monogr/tei:title[@level = $v_level][oape:string-normalise-characters(.) = $v_name-flat]">
+                    <xsl:variable name="v_matches" select="$v_bibliography/descendant::tei:biblStruct[descendant::tei:title[@level = $v_level][oape:string-normalise-characters(.) = $v_name-flat]]"/>
                     <xsl:choose>
                         <!-- a single match -->
                         <xsl:when test="count($v_matches/descendant-or-self::tei:biblStruct) = 1">
@@ -315,8 +316,8 @@
                 <xsl:attribute name="xml:id" select="$p_id-change"/>
                 <xsl:attribute name="xml:lang" select="'en'"/>
                 <xsl:text>Added references to local authority file (</xsl:text>
-                <tei:ref target="{$p_url-master}">
-                    <xsl:value-of select="$p_url-master"/>
+                <tei:ref target="{$p_url-bibliography}">
+                    <xsl:value-of select="$p_url-bibliography"/>
                 </tei:ref>
                 <xsl:text>) and to OCLC (WorldCat) IDs to </xsl:text>
                 <tei:gi>titles</tei:gi>
