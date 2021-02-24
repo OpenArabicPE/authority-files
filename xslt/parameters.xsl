@@ -71,7 +71,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
-    <xsl:variable name="v_file-entities-master" select="doc($p_url-authority)"/>
+    <xsl:variable name="v_file-entities-master" select="doc(concat($p_path-authority-files,$p_url-authority))"/>
      <!-- load the authority files -->
     <xsl:variable name="v_gazetteer"
         select="doc(concat($p_path-authority-files, $p_url-gazetteer))"/>
