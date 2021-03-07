@@ -384,67 +384,88 @@
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="'NA'"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:when>
-                    <!-- fallback -->
-                    <xsl:otherwise>
-                        <xsl:message>
-                            <xsl:text>Unkown output mode: </xsl:text><xsl:value-of select="$p_output-mode"/>
-                        </xsl:message>
                     </xsl:otherwise>
                 </xsl:choose>
-    </xsl:function>
-    <!-- query a local TEI gazetteer for toponyms, locations, IDs etc. -->
-    <xsl:function name="oape:query-gazetteer">
-        <!-- input is a tei <placeName> node -->
-        <xsl:param name="placeName" as="node()"/>
-        <!-- $gazetteer expects a path to a file -->
-        <xsl:param name="gazetteer"/>
-        <!-- local authority -->
-        <xsl:param name="p_local-authority" as="xs:string"/>
-        <!-- values for $mode are 'location', 'name', 'type', 'oape' -->
-        <xsl:param name="p_output-mode" as="xs:string"/>
-        <!-- select a target language for toponyms -->
-        <xsl:param name="p_output-language" as="xs:string"/>
-        <!-- load data from authority file -->
-        <xsl:variable name="v_place" select="oape:get-entity-from-authority-file($placeName,$p_local-authority,$gazetteer)"/>
-        
-        <xsl:choose>
-            <!-- test for @ref pointing to auhority files -->
-            <xsl:when test="$v_place != 'NA'">
-                <xsl:copy-of select="oape:query-place($v_place, $p_output-mode, $p_output-language, $p_local-authority)"/>
             </xsl:when>
-            <!-- return original input toponym if nothing else is fond -->
-            <xsl:when test="$p_output-mode = 'name'">
+            <xsl:when test="$p_output-mode = 'date'">
                 <xsl:choose>
-                    <xsl:when test="$placeName != ''">
-                        <xsl:value-of select="normalize-space($placeName)"/>
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@when]">
+                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@when][1]/@when"/>
+                    </xsl:when>
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date/@from">
+                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@from][1]/@from"/>
+                    </xsl:when>
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date/@notBefore">
+                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@notBefore][1]/@notBefore"/>
+                    </xsl:when>
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date/@notAfter">
+                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@notAfter][1]/@notAfter"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-- otherwise: no location data -->
+            <!-- fallback -->
             <xsl:otherwise>
                 <xsl:message>
-                    <xsl:text>no location data found for </xsl:text><xsl:value-of select="normalize-space($placeName)"/>
+                    <xsl:text>Unkown output mode: </xsl:text>
+                    <xsl:value-of select="$p_output-mode"/>
                 </xsl:message>
-                <xsl:value-of select="'NA'"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <!-- query a local TEI gazetteer for toponyms, locations, IDs etc. -->
+    <xsl:function name="oape:query-gazetteer">
+        <!-- input is a tei <placeName> node -->
+        <xsl:param as="node()" name="placeName"/>
+        <!-- $gazetteer expects a path to a file -->
+        <xsl:param name="gazetteer"/>
+        <!-- local authority -->
+        <xsl:param as="xs:string" name="p_local-authority"/>
+        <!-- values for $mode are 'location', 'name', 'type', 'oape' -->
+        <xsl:param as="xs:string" name="p_output-mode"/>
+        <!-- select a target language for toponyms -->
+        <xsl:param as="xs:string" name="p_output-language"/>
+        <xsl:choose>
+            <!-- test if input is not empty -->
+            <xsl:when test="$placeName != ''">
+                <!-- load data from authority file -->
+                <xsl:variable name="v_place" select="oape:get-entity-from-authority-file($placeName, $p_local-authority, $gazetteer)"/>
+                <xsl:choose>
+                    <!-- test for @ref pointing to auhority files -->
+                    <xsl:when test="$v_place != 'NA'">
+                        <!-- query the place note returned from the gazetteer -->
+                        <xsl:copy-of select="oape:query-place($v_place, $p_output-mode, $p_output-language, $p_local-authority)"/>
+                    </xsl:when>
+                    <!-- return original input toponym if nothing else is found -->
+                    <xsl:otherwise>
+                        <xsl:message>
+                            <xsl:text>The input placeName "</xsl:text>
+                            <xsl:value-of select="normalize-space($placeName)"/>
+                            <xsl:text>" was not found in the authority file</xsl:text>
+                        </xsl:message>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>The input placeName was empty</xsl:text>
+                </xsl:message>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
     <xsl:function name="oape:query-place">
         <!-- input is a tei <place> node -->
-        <xsl:param name="p_place" as="node()"/>
+        <xsl:param as="node()" name="p_place"/>
         <!-- values for $mode are 'location', 'name', 'type', 'id-local', 'id', 'id-geon' -->
-        <xsl:param name="p_output-mode" as="xs:string"/>
+        <xsl:param as="xs:string" name="p_output-mode"/>
         <!-- select a target language for toponyms -->
-        <xsl:param name="p_output-language" as="xs:string"/>
+        <xsl:param as="xs:string" name="p_output-language"/>
         <!-- local authority -->
         <xsl:param name="p_local-authority"/>
-                <xsl:choose>
+        <xsl:choose>
                     <!-- return location -->
                     <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
                         <xsl:choose>
