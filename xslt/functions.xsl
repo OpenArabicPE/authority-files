@@ -310,28 +310,44 @@
         </xsl:choose>
     </xsl:function>
     <xsl:function name="oape:query-biblstruct">
-        <xsl:param name="p_bibl" as="node()"/>
+        <xsl:param as="node()" name="p_bibl"/>
         <!-- values for $p_mode are 'pubPlace', 'location', 'name', 'local-authority', 'textLang', ID -->
-        <xsl:param name="p_output-mode" as="xs:string"/>
-        <xsl:param name="p_output-language" as="xs:string"/>
+        <xsl:param as="xs:string" name="p_output-mode"/>
+        <xsl:param as="xs:string" name="p_output-language"/>
         <xsl:param name="gazetteer"/>
-        <xsl:param name="p_local-authority" as="xs:string"/>
-                <!-- the publication place can be further looked up -->
-                <xsl:variable name="v_pubPlace" select="$p_bibl/descendant::tei:pubPlace[1]/tei:placeName[@ref][1]"/>
-                <xsl:choose>
-                    <!-- return publication place -->
-                    <xsl:when test="$p_output-mode = 'pubPlace'">
-                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority,'name', $p_output-language)"/>
-                    </xsl:when>
-                    <!-- return location -->
-                    <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
-                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority, $p_output-mode,'')"/>
-                    </xsl:when>
-                    <xsl:when test="$p_output-mode = 'id-location'">
-                        <xsl:value-of select="oape:query-gazetteer($v_pubPlace, $gazetteer, $p_local-authority, 'id', '')"/>
-                    </xsl:when>
-                    <!-- return IDs -->
-                    <xsl:when test="$p_output-mode = 'id'">
+        <xsl:param as="xs:string" name="p_local-authority"/>
+        <!-- the publication place can be further looked up -->
+        <xsl:variable name="v_pubPlace">
+            <xsl:choose>
+                <xsl:when test="$p_bibl/descendant::tei:pubPlace[1]/tei:placeName[@ref]">
+                    <xsl:copy-of select="$p_bibl/descendant::tei:pubPlace[1]/tei:placeName[@ref][1]"/>
+                </xsl:when>
+                <xsl:when test="$p_bibl/descendant::tei:pubPlace[1]/tei:placeName">
+                    <xsl:copy-of select="$p_bibl/descendant::tei:pubPlace[1]/tei:placeName[1]"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!--                    <xsl:value-of select="'NA'"/>-->
+                    <tei:placeName/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:choose>
+            <!-- return publication place -->
+            <xsl:when test="$p_output-mode = 'pubPlace'">
+                <!--<xsl:message>
+                        <xsl:copy-of select="$v_pubPlace//tei:placeName"/>
+                    </xsl:message>-->
+                <xsl:value-of select="oape:query-gazetteer($v_pubPlace//tei:placeName, $gazetteer, $p_local-authority, 'name', $p_output-language)"/>
+            </xsl:when>
+            <!-- return location -->
+            <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
+                <xsl:value-of select="oape:query-gazetteer($v_pubPlace//tei:placeName, $gazetteer, $p_local-authority, $p_output-mode, '')"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-location'">
+                <xsl:value-of select="oape:query-gazetteer($v_pubPlace//tei:placeName, $gazetteer, $p_local-authority, 'id', '')"/>
+            </xsl:when>
+            <!-- return IDs -->
+            <xsl:when test="$p_output-mode = 'id'">
                         <xsl:choose>
                             <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'OCLC']">
                                 <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = 'OCLC'][1])"/>
@@ -354,25 +370,21 @@
                         <xsl:value-of select="$p_bibl/descendant::tei:idno[@type='OCLC'][1]"/>
                     </xsl:when>
                     <!-- return the publication title in selected language -->
-                    <xsl:when test="$p_output-mode = ('name', 'title')">
-                        <xsl:choose>
-                            <xsl:when test="$p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_output-language]">
-                                <xsl:value-of
-                                    select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_output-language][1])"
-                                />
-                            </xsl:when>
-                            <!-- possible transcriptions into other script -->
-                            <xsl:when test="($p_output-language = 'ar') and ($p_bibl/descendant::tei:monogr/tei:title[contains(@xml:lang, '-Arab-')])">
-                                <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[contains(@xml:lang, '-Arab-')][1])"/>
-                            </xsl:when>
-                            <!-- fallback to main language of publication -->
-                            <xsl:when test="$p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_bibl/descendant::tei:monogr/tei:textLang/@mainLang]">
-                                <xsl:value-of
-                                    select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_bibl/descendant::tei:monogr/tei:textLang/@mainLang][1])"
-                                />
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[1])"/>
+            <xsl:when test="$p_output-mode = ('name', 'title')">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_output-language]">
+                        <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_output-language][1])"/>
+                    </xsl:when>
+                    <!-- possible transcriptions into other script -->
+                    <xsl:when test="($p_output-language = 'ar') and ($p_bibl/descendant::tei:monogr/tei:title[contains(@xml:lang, '-Arab-')])">
+                        <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[contains(@xml:lang, '-Arab-')][1])"/>
+                    </xsl:when>
+                    <!-- fallback to main language of publication -->
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_bibl/descendant::tei:monogr/tei:textLang/@mainLang]">
+                        <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_bibl/descendant::tei:monogr/tei:textLang/@mainLang][1])"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[1])"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
