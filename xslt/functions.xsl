@@ -8,7 +8,6 @@
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <xsl:include href="query-viaf.xsl"/>
     <xsl:include href="query-geonames.xsl"/>
-    
     <!--<xsl:template match="/">
         <xsl:apply-templates select="descendant::tei:date" mode="m_debug"/>
     </xsl:template>-->
@@ -17,7 +16,6 @@
         <xsl:text> - </xsl:text>
         <xsl:value-of select="oape:date-get-terminus(.)"/>
     </xsl:template>
-
     <xsl:function name="oape:string-normalise-characters">
         <xsl:param name="p_input"/>
         <xsl:variable name="v_self" select="normalize-space(replace(oape:string-remove-harakat($p_input), $p_string-match, $p_string-replace))"/>
@@ -37,8 +35,6 @@
         <xsl:param name="p_input"/>
         <xsl:value-of select="replace($p_input, '\W', '')"/>
     </xsl:function>
-    
-    
     <!-- this function queries a local authority file
         - input: an entity name such as <persName>, <orgName>, <placeName> or <title>
         - output: an entity: such as <person>, <org>, <place> or <biblStruct>
@@ -67,7 +63,9 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:message terminate="no">
-                        <xsl:text>the input type (</xsl:text><xsl:value-of select="name($p_entity-name)"/><xsl:text>) cannot be looked up</xsl:text>
+                        <xsl:text>the input type (</xsl:text>
+                        <xsl:value-of select="name($p_entity-name)"/>
+                        <xsl:text>) cannot be looked up</xsl:text>
                     </xsl:message>
                 </xsl:otherwise>
             </xsl:choose>
@@ -529,37 +527,32 @@
                      <xsl:when test="$p_output-mode = 'id-geon'">
                          <xsl:choose>
                              <xsl:when test="$p_place/tei:idno[@type = 'geon']">
-                                 <xsl:value-of select="$p_place/tei:idno[@type = 'geon'][1]"/>
-                             </xsl:when>
-                             <xsl:when test="$p_place/tei:placeName[matches(@ref, 'geon:\d+')]">
-                                <xsl:value-of select="replace($p_place/tei:placeName[matches(@ref, 'geon:\d+')][1]/@ref, '^.*geon:(\d+).*$', '$1')"
-                    />
-                             </xsl:when>
-                             <xsl:otherwise>
-                                 <xsl:value-of select="'NA'"/>
+                        <xsl:value-of select="$p_place/tei:idno[@type = 'geon'][1]"/>
+                    </xsl:when>
+                    <xsl:when test="$p_place/tei:placeName[matches(@ref, 'geon:\d+')]">
+                        <xsl:value-of select="replace($p_place/tei:placeName[matches(@ref, 'geon:\d+')][1]/@ref, '^.*geon:(\d+).*$', '$1')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
                              </xsl:otherwise>
                          </xsl:choose>
                      </xsl:when>
                     <!-- return toponym in selected language -->
-                    <xsl:when test="$p_output-mode = 'name'">
-                        <xsl:choose>
-                            <xsl:when test="$p_place/tei:placeName[@xml:lang = $p_output-language]">
-                                <xsl:value-of
-                                    select="normalize-space($p_place/tei:placeName[@xml:lang = $p_output-language][1])"
-                                />
-                            </xsl:when>
-                            <!-- possible transcriptions into other script -->
-                            <xsl:when test="($p_output-language = 'ar') and ($p_place/tei:placeName[contains(@xml:lang, '-Arab-')])">
-                                <xsl:value-of select="normalize-space($p_place/tei:placeName[contains(@xml:lang, '-Arab-')][1])"/>
-                            </xsl:when>
-                            <!-- fallback to english -->
-                            <xsl:when test="$p_place/tei:placeName[@xml:lang = 'en']">
-                                <xsl:value-of
-                                    select="normalize-space($p_place/tei:placeName[@xml:lang = 'en'][1])"
-                                />
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:value-of select="normalize-space($p_place/tei:placeName[1])"/>
+            <xsl:when test="$p_output-mode = 'name'">
+                <xsl:choose>
+                    <xsl:when test="$p_place/tei:placeName[@xml:lang = $p_output-language]">
+                        <xsl:value-of select="normalize-space($p_place/tei:placeName[@xml:lang = $p_output-language][1])"/>
+                    </xsl:when>
+                    <!-- possible transcriptions into other script -->
+                    <xsl:when test="($p_output-language = 'ar') and ($p_place/tei:placeName[contains(@xml:lang, '-Arab-')])">
+                        <xsl:value-of select="normalize-space($p_place/tei:placeName[contains(@xml:lang, '-Arab-')][1])"/>
+                    </xsl:when>
+                    <!-- fallback to english -->
+                    <xsl:when test="$p_place/tei:placeName[@xml:lang = 'en']">
+                        <xsl:value-of select="normalize-space($p_place/tei:placeName[@xml:lang = 'en'][1])"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="normalize-space($p_place/tei:placeName[1])"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -567,29 +560,29 @@
                     <xsl:when test="$p_output-mode = 'type'">
                         <xsl:value-of select="$p_place/@type"/>
                     </xsl:when>
-                    <!-- fallback -->
-                    <xsl:otherwise>
-                        <xsl:message>
-                            <xsl:text>Unkown output mode: </xsl:text><xsl:value-of select="$p_output-mode"/>
-                        </xsl:message>
-                    </xsl:otherwise>
-                </xsl:choose>
+            <!-- fallback -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>Unkown output mode: </xsl:text>
+                    <xsl:value-of select="$p_output-mode"/>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:function>
     <!-- query a local TEI personography  -->
     <xsl:function name="oape:query-personography">
         <!-- input is a tei <placeName> node -->
-        <xsl:param name="persName" as="node()"/>
+        <xsl:param as="node()" name="persName"/>
         <!-- $gazetteer expects a path to a file -->
         <xsl:param name="personography"/>
         <!-- local authority -->
-        <xsl:param name="p_local-authority" as="xs:string"/>
+        <xsl:param as="xs:string" name="p_local-authority"/>
         <!-- values for $mode are 'id', 'id-local', 'name', 'date-birth', 'date-death' -->
-        <xsl:param name="p_output-mode" as="xs:string"/>
+        <xsl:param as="xs:string" name="p_output-mode"/>
         <!-- select a target language for names -->
-        <xsl:param name="p_output-language" as="xs:string"/>
+        <xsl:param as="xs:string" name="p_output-language"/>
         <!-- load data from authority file -->
         <xsl:variable name="v_person" select="oape:get-entity-from-authority-file($persName, $p_local-authority, $personography)"/>
-        
         <xsl:choose>
             <!-- test for @ref pointing to auhority files -->
             <xsl:when test="$v_person != 'NA'">
@@ -609,7 +602,8 @@
             <!-- otherwise: no location data -->
             <xsl:otherwise>
                 <xsl:message>
-                    <xsl:text>no location data found for </xsl:text><xsl:value-of select="normalize-space($persName)"/>
+                    <xsl:text>no authority data found for </xsl:text>
+                    <xsl:value-of select="normalize-space($persName)"/>
                 </xsl:message>
                 <xsl:value-of select="'NA'"/>
             </xsl:otherwise>
@@ -617,29 +611,28 @@
     </xsl:function>
     <xsl:function name="oape:query-person">
         <!-- input is a tei <person> node -->
-        <xsl:param name="p_person" as="node()"/>
+        <xsl:param as="node()" name="p_person"/>
         <!-- values for $mode are 'id', 'id-local', 'name', 'date-birth', 'date-death' -->
-        <xsl:param name="p_output-mode" as="xs:string"/>
+        <xsl:param as="xs:string" name="p_output-mode"/>
         <!-- select a target language for toponyms -->
-        <xsl:param name="p_output-language" as="xs:string"/>
+        <xsl:param as="xs:string" name="p_output-language"/>
         <!-- local authority -->
-        <xsl:param name="p_local-authority" as="xs:string"/>
-                <xsl:choose>
-                    <!-- return IDs -->
-                    <xsl:when test="$p_output-mode = 'id'">
+        <xsl:param as="xs:string" name="p_local-authority"/>
+        <xsl:choose>
+            <!-- return IDs -->
+            <xsl:when test="$p_output-mode = 'id'">
                         <xsl:choose>
                             <!-- VIAF -->
                             <xsl:when test="$p_person/tei:idno[@type = 'VIAF']">
                                 <xsl:value-of select="concat('viaf:', $p_person/tei:idno[@type = 'VIAF'][1])"/>
                             </xsl:when>
                             <!-- Wikidata -->
-                            <xsl:when test="$p_person/tei:idno[@type = 'wiki']">
-                                <xsl:value-of select="concat('wiki:', $p_person/tei:idno[@type = 'wiki'][1])"/>
-                            </xsl:when>
-
-                            <xsl:when test="$p_person/tei:idno[@type = $p_local-authority]">
-                                <xsl:value-of select="concat($p_local-authority, ':', $p_person/tei:idno[@type = $p_local-authority][1])"/>
-                            </xsl:when>
+                    <xsl:when test="$p_person/tei:idno[@type = 'wiki']">
+                        <xsl:value-of select="concat('wiki:', $p_person/tei:idno[@type = 'wiki'][1])"/>
+                    </xsl:when>
+                    <xsl:when test="$p_person/tei:idno[@type = $p_local-authority]">
+                        <xsl:value-of select="concat($p_local-authority, ':', $p_person/tei:idno[@type = $p_local-authority][1])"/>
+                    </xsl:when>
                             <xsl:when test="$p_person/tei:idno">
                                 <xsl:value-of select="concat($p_person/tei:idno[1]/@type, ':', $p_person/tei:idno[1])"/>
                             </xsl:when>
@@ -681,44 +674,38 @@
                     <!-- return toponym in selected language -->
                     <xsl:when test="$p_output-mode = 'name'">
                         <xsl:variable name="v_name">
-                        <xsl:choose>
-                            <!-- preference for names without addNames -->
-                            <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language]">
-                                <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language][1]"
-                                />
-                            </xsl:when>
-                            <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = $p_output-language]">
-                                <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = $p_output-language][1]"
-                                />
-                            </xsl:when>
-                            <!-- possible transcriptions into other script -->
-                            <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Arab-')])">
+                    <xsl:choose>
+                        <!-- preference for names without addNames -->
+                        <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language]">
+                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language][1]"/>
+                        </xsl:when>
+                        <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = $p_output-language]">
+                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = $p_output-language][1]"/>
+                        </xsl:when>
+                        <!-- possible transcriptions into other script -->
+                        <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Arab-')])">
                                 <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Arab-')][1]"/>
                             </xsl:when>
                             <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')])">
                                 <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')][1]"/>
-                            </xsl:when>
-                            <!-- fallback to english -->
-                            <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = 'en']">
-                                <xsl:copy-of
-                                    select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = 'en'][1]"
-                                />
-                            </xsl:when>
-                            <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en']">
-                                <xsl:copy-of
-                                    select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en'][1]"
-                                />
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:copy-of select="$p_person/tei:persName[1]"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                        </xsl:variable>
-                        <xsl:variable name="v_name">
-                            <xsl:apply-templates select="$v_name" mode="m_plain-text"/>
-                        </xsl:variable>
-                        <xsl:value-of select="normalize-space($v_name)"/>
-                    </xsl:when>
+                        </xsl:when>
+                        <!-- fallback to english -->
+                        <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = 'en']">
+                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = 'en'][1]"/>
+                        </xsl:when>
+                        <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en']">
+                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en'][1]"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="$p_person/tei:persName[1]"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:variable name="v_name">
+                    <xsl:apply-templates mode="m_plain-text" select="$v_name"/>
+                </xsl:variable>
+                <xsl:value-of select="normalize-space($v_name)"/>
+            </xsl:when>
                     <xsl:when test="$p_output-mode = 'date-birth'">
                         <xsl:choose>
                             <xsl:when test="$p_person/tei:birth/@when">
@@ -758,13 +745,14 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
-                    <!-- fallback -->
-                    <xsl:otherwise>
-                        <xsl:message>
-                            <xsl:text>Unkown output mode: </xsl:text><xsl:value-of select="$p_output-mode"/>
-                        </xsl:message>
-                    </xsl:otherwise>
-                </xsl:choose>
+            <!-- fallback -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>Unkown output mode: </xsl:text>
+                    <xsl:value-of select="$p_output-mode"/>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:function>
     <!-- get OpenArabicPE ID from authority file with an @xml:id -->
     <xsl:function name="oape:get-id-for-person">
@@ -1065,9 +1053,9 @@
         </xsl:choose>
     </xsl:function>
     <xsl:function name="oape:name-remove-addnames">
-        <xsl:param name="p_persname" as="node()"/>
-        <xsl:param name="p_xml-id-output" as="xs:string"/>
-        <xsl:param name="p_id-change" as="xs:string"/>
+        <xsl:param as="node()" name="p_persname"/>
+        <xsl:param as="xs:string" name="p_xml-id-output"/>
+        <xsl:param as="xs:string" name="p_id-change"/>
         <xsl:variable name="v_persname" select="$p_persname/descendant-or-self::tei:persName"/>
         <!-- write content to variable in order to then generate a unique @xml:id -->
         <xsl:variable name="v_output">
@@ -1101,9 +1089,9 @@
     </xsl:function>
     <!-- this function produces a flattened name -->
     <xsl:function name="oape:name-flattened">
-        <xsl:param name="p_persname" as="node()"/>
-        <xsl:param name="p_xml-id-output" as="xs:string"/>
-        <xsl:param name="p_id-change" as="xs:string"/>
+        <xsl:param as="node()" name="p_persname"/>
+        <xsl:param as="xs:string" name="p_xml-id-output"/>
+        <xsl:param as="xs:string" name="p_id-change"/>
         <xsl:variable name="v_persname" select="$p_persname/descendant-or-self::tei:persName"/>
         <!-- write content to variable in order to then generate a unique @xml:id -->
         <xsl:variable name="v_output">
@@ -1299,8 +1287,7 @@
             <xsl:value-of select="concat(., ' #', $p_id-change)"/>
         </xsl:attribute>
     </xsl:template>
-    
     <xsl:template match="text()" mode="m_plain-text">
-        <xsl:value-of select="concat(' ', normalize-space(.),' ')"/>
+        <xsl:value-of select="concat(' ', normalize-space(.), ' ')"/>
     </xsl:template>
 </xsl:stylesheet>
