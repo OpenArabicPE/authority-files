@@ -43,7 +43,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
-    <xsl:param name="p_url-authority">
+    <xsl:param name="p_file-authority">
         <xsl:choose>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
@@ -53,7 +53,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
-    <xsl:param name="p_url-bibliography">
+    <xsl:param name="p_file-bibliography">
         <xsl:choose>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
@@ -63,7 +63,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
-    <xsl:param name="p_url-gazetteer">
+    <xsl:param name="p_file-gazetteer">
         <xsl:choose>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
@@ -73,7 +73,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
-    <xsl:param name="p_url-personography">
+    <xsl:param name="p_file-personography">
         <xsl:choose>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
@@ -83,14 +83,14 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
-    <xsl:variable name="v_file-entities-master" select="doc(concat($p_path-base, $p_path-authority-files-folder, $p_url-authority))"/>
+    <xsl:variable name="v_file-entities-master" select="doc(concat($p_path-base, $p_path-authority-files-folder, $p_file-authority))"/>
      <!-- load the authority files -->
-    <xsl:variable name="v_url-gazetteer" select="concat($p_path-base, $p_path-authority-files-folder, $p_url-gazetteer)"/>
-    <xsl:variable name="v_gazetteer" select="doc($v_url-gazetteer)"/>
-    <xsl:variable name="v_url-personography" select="concat($p_path-base, $p_path-authority-files-folder, $p_url-personography)"/>
-    <xsl:variable name="v_personography" select="doc($v_url-personography)"/>
-    <xsl:variable name="v_url-bibliography" select="concat($p_path-base, $p_path-authority-files-folder, $p_url-bibliography)"/>
-    <xsl:variable name="v_bibliography" select="doc($v_url-bibliography)"/>
+    <xsl:param name="p_url-gazetteer" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-gazetteer)"/>
+    <xsl:variable name="v_gazetteer" select="doc($p_url-gazetteer)"/>
+    <xsl:param name="p_url-personography" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-personography)"/>
+    <xsl:variable name="v_personography" select="doc($p_url-personography)"/>
+    <xsl:param name="p_url-bibliography" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-bibliography)"/>
+    <xsl:variable name="v_bibliography" select="doc($p_url-bibliography)"/>
     <!-- strings -->
     <xsl:variable name="v_new-line" select="'&#x0A;'"/>
     <xsl:variable name="v_quot" select="'&quot;'"/>
