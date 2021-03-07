@@ -40,7 +40,7 @@
     </xsl:template>
     
     <xsl:template match="tei:placeName" priority="10">
-        <xsl:variable name="v_corresponding-place" select="oape:get-entity-from-authority-file(., $p_local-authority, $v_file-entities-master)"/>
+        <xsl:variable name="v_corresponding-place" select="oape:get-entity-from-authority-file(., $p_local-authority, $v_gazetteer)"/>
         <xsl:choose>
             <!-- fallback: name is not found in the authority file -->
             <xsl:when test="$v_corresponding-place = 'NA'">
