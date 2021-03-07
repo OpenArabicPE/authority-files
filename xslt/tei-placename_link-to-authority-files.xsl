@@ -29,19 +29,8 @@
         exclude-result-prefixes="#all"/>
     <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented" exclude-result-prefixes="#all"/>
 
-    <xsl:include href="query-geonames.xsl"/>
-    <!--<xsl:include href="functions.xsl"/>-->
-    
-       <!-- variables for local IDs (OpenArabicPE) -->
-    <xsl:param name="p_local-authority" select="'oape'"/>
-    
-    <!-- v_file-entities-master: relative paths relate to this stylesheet and NOT the file this transformation is run on; default: '../tei/entities_master.TEIP5.xml' -->
-    <xsl:param name="p_url-gazetteer" select="'../data/tei/gazetteer_levant-phd.TEIP5.xml'"/>
-<!--    <xsl:param name="p_url-master" select="'/BachUni/BachBibliothek/GitHub/ProjectJaraid/jaraid_source/authority-files/jaraid_authority-file.TEIP5.xml'"></xsl:param>-->
-    <xsl:variable name="v_file-entities-master" select="doc($p_url-gazetteer)"/>
-
-    <!-- parameter to select whether the source file should be updated  -->
-    <xsl:param name="p_update-source" select="true()"/>
+<!--    <xsl:include href="query-geonames.xsl"/>-->
+    <xsl:include href="functions.xsl"/>
 
    <!-- Identity transformation -->
     <xsl:template match="node() | @*">
@@ -54,7 +43,7 @@
         <xsl:variable name="v_corresponding-place" select="oape:get-entity-from-authority-file(., $p_local-authority, $v_file-entities-master)"/>
         <xsl:choose>
             <!-- fallback: name is not found in the authority file -->
-            <xsl:when test="$v_corresponding-place = 'false()'">
+            <xsl:when test="$v_corresponding-place = 'NA'">
 <!--                <xsl:if test="$p_verbose = true()">-->
                     <xsl:message>
                         <xsl:value-of select="normalize-space(.)"/>
@@ -122,11 +111,6 @@
     
     <!-- document the changes to source file -->
     <xsl:template match="tei:revisionDesc" name="t_9">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_9 source: document changes</xsl:text>
-            </xsl:message>
-        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:element name="tei:change">
