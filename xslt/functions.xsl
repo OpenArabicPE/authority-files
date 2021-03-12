@@ -41,7 +41,7 @@
     -->
     <xsl:function name="oape:get-entity-from-authority-file">
         <!-- input: entity such as <persName>, <orgName>, <placeName> or <title> node -->
-        <xsl:param name="p_entity-name"/>
+        <xsl:param name="p_entity-name" as="node()"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
         <!-- this is a rather ridiculous hack, but I don't need change IDs in the context of this function -->
@@ -49,16 +49,16 @@
         <xsl:variable name="v_ref" select="$p_entity-name/@ref"/>
         <xsl:variable name="v_entity-type">
             <xsl:choose>
-                <xsl:when test="contains(name($p_entity-name), 'persName')">
+                <xsl:when test="local-name($p_entity-name) = 'persName'">
                     <xsl:text>pers</xsl:text>
                 </xsl:when>
-                <xsl:when test="contains(name($p_entity-name), 'orgName')">
+                <xsl:when test="local-name($p_entity-name) = 'orgName'">
                     <xsl:text>org</xsl:text>
                 </xsl:when>
-                <xsl:when test="contains(name($p_entity-name), 'placeName')">
+                <xsl:when test="local-name($p_entity-name) = 'placeName'">
                     <xsl:text>place</xsl:text>
                 </xsl:when>
-                <xsl:when test="matches(name($p_entity-name), 'title')">
+                <xsl:when test="local-name($p_entity-name) = 'title'">
                     <xsl:text>bibl</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
