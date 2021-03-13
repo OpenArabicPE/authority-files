@@ -110,11 +110,6 @@
     
     <!-- improve tei:person records without VIAF references -->
     <xsl:template match="tei:person" priority="10">
-        <xsl:if test="$p_verbose=true()">
-            <xsl:message>
-                <xsl:text>t_4: </xsl:text><xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
         <!-- ID -->
         <xsl:variable name="v_id">
             <xsl:choose>
@@ -158,13 +153,25 @@
             </xsl:for-each-group>
             <!-- replicate all existing children -->
             <xsl:apply-templates select="node()[not(self::tei:persName)]"/>
-             <!-- our own OpenArabicPE ID -->
+            <!-- add data -->
+             <!-- our own ID -->
             <xsl:if test="not(tei:idno[@type=$p_local-authority])">
                 <xsl:element name="idno">
                     <xsl:attribute name="type" select="$p_local-authority"/>
                     <xsl:value-of select="$v_id"/>
                 </xsl:element>
             </xsl:if>
+            <!-- other IDs linked through a @ref attribute on a persName child-->
+                <xsl:if test="tei:persName/@ref">
+                    <xsl:for-each-group select="tokenize(tei:persName/@ref, ' ')" group-by=".">
+                        <xsl:if test="not(matches(current-grouping-key(), concat($p_local-authority, '|viaf')))">
+                            <xsl:element name="idno">
+                                <xsl:attribute name="type" select="'unknown'"/>
+                                <xsl:value-of select="current-grouping-key()"/>
+                            </xsl:element>
+                        </xsl:if>
+                    </xsl:for-each-group>
+                </xsl:if>
             <!-- VIAF data -->
             <xsl:if test="oape:query-person(.,'id-viaf', '', '') != 'NA'">
                 <xsl:variable name="v_viaf-id" select="oape:query-person(.,'id-viaf', '', '')"/>
@@ -188,26 +195,29 @@
                     <xsl:with-param name="p_input-type" select="'id'"/>
                 </xsl:call-template>
             </xsl:variable>
+                <xsl:variable name="v_viaf-person" select="$v_viaf-result-tei/descendant::tei:person"/>
                 <!-- VIAF ID -->
             <xsl:if test="not(tei:idno[@type='VIAF'])">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message><xsl:text>This person has no VIAF ID</xsl:text></xsl:message>
                 </xsl:if>
                 <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='VIAF']" mode="m_documentation"/>
+<!--                <xsl:value-of select="$v_viaf-id"/>-->
             </xsl:if>
+                <!-- Wikidata ID -->
             <xsl:if test="not(tei:idno[@type='wiki'])">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message><xsl:text>This person has no Wikidata ID</xsl:text></xsl:message>
                 </xsl:if>
-                <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:idno[@type='wiki']" mode="m_documentation"/>
+                <xsl:apply-templates select="$v_viaf-person/tei:idno[@type='wiki']" mode="m_documentation"/>
             </xsl:if>
                 <!-- birth -->
             <xsl:if test="not(tei:birth)">
-                <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:birth" mode="m_documentation"/>
+                <xsl:apply-templates select="$v_viaf-person/tei:birth" mode="m_documentation"/>
             </xsl:if>
             <!-- death -->
             <xsl:if test="not(tei:death)">
-                <xsl:apply-templates select="$v_viaf-result-tei/descendant::tei:person/tei:death" mode="m_documentation"/>
+                <xsl:apply-templates select="$v_viaf-person/tei:death" mode="m_documentation"/>
             </xsl:if>
             </xsl:if>
         </xsl:copy>
