@@ -668,6 +668,10 @@
                     <xsl:when test="$p_person/tei:idno[@type = 'VIAF']">
                         <xsl:value-of select="$p_person/tei:idno[@type = 'VIAF'][1]"/>
                     </xsl:when>
+                    <!-- look for a @ref attribute -->
+                    <xsl:when test="$p_person/tei:persName/@ref[matches(.,'viaf:\d+')]">
+                        <xsl:value-of select="replace($p_person/tei:persName[matches(@ref,'viaf')][1]/@ref, '^.*viaf:(\d+).*$', '$1')"/>
+                    </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
                     </xsl:otherwise>
