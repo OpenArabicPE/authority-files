@@ -163,7 +163,7 @@
             </xsl:if>
             <!-- other IDs linked through a @ref attribute on a persName child-->
                 <xsl:if test="tei:persName/@ref">
-                    <xsl:for-each-group select="tokenize(tei:persName/@ref, ' ')" group-by=".">
+                    <xsl:for-each-group select="tei:persName/@ref/tokenize(., ' ')" group-by=".">
                         <xsl:if test="not(matches(current-grouping-key(), concat($p_local-authority, '|viaf')))">
                             <xsl:element name="idno">
                                 <xsl:attribute name="type" select="'unknown'"/>
