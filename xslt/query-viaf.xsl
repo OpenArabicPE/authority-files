@@ -152,7 +152,7 @@
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:message>
-                            <xsl:text>No result for: </xsl:text>
+                            <xsl:text>VIAF returned no result for: </xsl:text>
                             <xsl:value-of select="normalize-space($p_search-term)"/>
                         </xsl:message>
                     </xsl:otherwise>
