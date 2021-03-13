@@ -624,7 +624,7 @@
     <xsl:function name="oape:query-person">
         <!-- input is a tei <person> node -->
         <xsl:param as="node()" name="p_person"/>
-        <!-- values for $mode are 'id', 'id-local', 'name', 'date-birth', 'date-death' -->
+        <!-- values for $mode are 'id', 'id-local', 'id-viaf', 'id-wiki' 'name', 'date-birth', 'date-death' -->
         <xsl:param as="xs:string" name="p_output-mode"/>
         <!-- select a target language for toponyms -->
         <xsl:param as="xs:string" name="p_output-language"/>
