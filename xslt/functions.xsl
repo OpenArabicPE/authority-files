@@ -367,11 +367,28 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <xsl:when test="$p_output-mode = $p_local-authority">
+            <xsl:when test="$p_output-mode = ('id-local', $p_local-authority)">
                 <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = $p_local-authority][1]"/>
             </xsl:when>
-            <xsl:when test="$p_output-mode = 'oclc'">
+            <xsl:when test="$p_output-mode = ('id-oclc', 'oclc')">
                 <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = 'OCLC'][1]"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'tei-ref'">
+                <xsl:for-each-group select="$p_bibl/descendant::tei:idno[not(@type = 'URI')]" group-by="@type">
+                    <xsl:sort select="@type"/>
+                    <xsl:if test="current-grouping-key() = 'OCLC'">
+                        <xsl:value-of select="concat('oclc:', current-group()[1])"/>
+                    </xsl:if>
+                    <xsl:if test="current-grouping-key() = 'oape'">
+                        <xsl:value-of select="concat('oape:bibl', current-group()[1])"/>
+                    </xsl:if>
+                    <xsl:if test="current-grouping-key() = 'jaraid'">
+                        <xsl:value-of select="concat('jaraid:bibl', current-group()[1])"/>
+                    </xsl:if>
+                    <xsl:if test="position() != last()">
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
+                </xsl:for-each-group>
             </xsl:when>
             <!-- return the publication title in selected language -->
             <xsl:when test="$p_output-mode = ('name', 'title')">
