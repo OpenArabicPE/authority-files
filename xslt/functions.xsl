@@ -720,7 +720,34 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-- return toponym in selected language -->
+            <xsl:when test="$p_output-mode = 'tei-ref'">
+                <xsl:choose>
+                    <xsl:when test="$p_person/tei:idno[not(@type = 'URI')]">
+                <xsl:for-each-group select="$p_person/descendant::tei:idno[not(@type = 'URI')]" group-by="@type">
+                    <xsl:sort select="@type"/>
+                    <xsl:if test="current-grouping-key() = 'VIAF'">
+                        <xsl:value-of select="concat('viaf:', current-group()[1])"/>
+                    </xsl:if>
+                    <xsl:if test="current-grouping-key() = 'wiki'">
+                        <xsl:value-of select="concat('wiki:', current-group()[1])"/>
+                    </xsl:if>
+                    <xsl:if test="current-grouping-key() = 'oape'">
+                        <xsl:value-of select="concat('oape:pers', current-group()[1])"/>
+                    </xsl:if>
+                    <xsl:if test="current-grouping-key() = 'jaraid'">
+                        <xsl:value-of select="concat('jaraid:pers', current-group()[1])"/>
+                    </xsl:if>
+                    <xsl:if test="position() != last()">
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
+                </xsl:for-each-group>
+                        </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <!-- return name in selected language -->
             <xsl:when test="$p_output-mode = 'name'">
                 <xsl:variable name="v_name">
                     <xsl:choose>
@@ -1222,6 +1249,7 @@
         <xsl:variable name="v_name-flat" select="oape:string-remove-spaces(oape:string-normalise-characters($p_persname))"/>
         <!-- remove all roleNames, flatten and test again -->
         <!-- test if the flattened name is present in the authority file -->
+        <!-- returns a single <person> node -->
         <xsl:variable name="v_corresponding-person">
             <xsl:choose>
                 <!-- test if this node already points to an authority file -->
@@ -1261,13 +1289,7 @@
                 <!-- get @xml:id of corresponding entry in authority file -->
                 <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
                 <!-- construct @ref pointing to the corresponding entry -->
-                <xsl:variable name="v_ref">
-                    <xsl:value-of select="concat($p_local-authority, ':pers:', $v_corresponding-person/descendant::tei:idno[@type = $p_local-authority][1])"/>
-                    <xsl:if test="$v_corresponding-person/descendant::tei:idno[@type = 'VIAF']">
-                        <xsl:text> </xsl:text>
-                        <xsl:value-of select="concat('viaf:', $v_corresponding-person/descendant::tei:idno[@type = 'VIAF'][1])"/>
-                    </xsl:if>
-                </xsl:variable>
+                <xsl:variable name="v_ref" select="oape:query-person($v_corresponding-person, 'tei-ref', '', '')"/>
                 <!-- replicate node -->
                 <xsl:copy select="$p_persname">
                     <!-- replicate attributes -->
