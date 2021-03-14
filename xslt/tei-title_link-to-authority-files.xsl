@@ -89,10 +89,4 @@
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
     </xsl:template>
-    <!-- document changes on changed elements by means of the @change attribute linking to the @xml:id of the <tei:change> element -->
-    <xsl:template match="@change" mode="m_documentation">
-        <xsl:attribute name="change">
-            <xsl:value-of select="concat(., ' #', $p_id-change)"/>
-        </xsl:attribute>
-    </xsl:template>
 </xsl:stylesheet>
