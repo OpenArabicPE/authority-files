@@ -263,6 +263,22 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
+                    <xsl:when test="$v_entity-type = 'bibl'">
+                        <xsl:choose>
+                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title = $v_name-flat]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title = $v_name-flat][1]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:message>
+                                    <xsl:text>The title </xsl:text>
+                                    <xsl:value-of select="$v_name-flat"/>
+                                    <xsl:text> was not found in the authority file</xsl:text>
+                                </xsl:message>
+                                <!-- one cannot use a boolean value if the default result is non-boolean -->
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:when>
                     <!-- fallback message -->
                     <xsl:otherwise>
                         <!-- one cannot use a boolean value if the default result is non-boolean -->
