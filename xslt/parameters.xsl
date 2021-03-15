@@ -56,7 +56,7 @@
     <xsl:param name="p_file-bibliography">
         <xsl:choose>
             <xsl:when test="$p_local-authority = 'jaraid'">
-                <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
+                <xsl:value-of select="'../tei/jaraid_master-biblStruct.TEIP5.xml'"/>
             </xsl:when>
             <xsl:when test="$p_local-authority = 'oape'">
                 <xsl:value-of select="'bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
