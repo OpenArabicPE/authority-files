@@ -445,8 +445,8 @@
             </xsl:when>
             <xsl:when test="$p_output-mode = 'date'">
                 <xsl:choose>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@when]">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@when][1]/@when"/>
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@type = 'onset'][@when]">
+                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@type = 'onset'][@when][1]/@when"/>
                     </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date/@from">
                         <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@from][1]/@from"/>
@@ -456,6 +456,9 @@
                     </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date/@notAfter">
                         <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@notAfter][1]/@notAfter"/>
+                    </xsl:when>
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[not(@type = 'onset')][@when]">
+                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[not(@type = 'onset')][@when][1]/@when"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -1386,29 +1389,52 @@
         <!-- try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
         <!-- possible results: none, one, multiple -->
         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($p_title, $p_local-authority, $p_bibliography)"/>
+        <!--<xsl:if test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
+        <xsl:message terminate="no">
+            <xsl:text>title: </xsl:text><xsl:value-of select="oape:query-biblstruct($v_corresponding-bibls[1], 'title', 'ar', '', '')"/>
+            <xsl:text>, date: </xsl:text><xsl:value-of select="oape:query-biblstruct($v_corresponding-bibls[1], 'date', '', '', '')"/>
+            <xsl:text>, year: </xsl:text><xsl:value-of select="oape:date-year-only(oape:query-biblstruct($v_corresponding-bibls[1], 'date', '', '', ''))"/>
+            </xsl:message>
+        </xsl:if>-->
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
                 <!-- assuming that a single match is actually correct might not always prove true -->
                 <!-- add date as condition: referenced periodical must have been published before the source was written -->
-                <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and oape:date-year-only(oape:query-biblstruct($v_corresponding-bibls/descendant-or-self::tei:biblStruct, 'date', '', '', '')) &lt;= $p_year">
-                    <xsl:if test="$p_verbose = true()">
-                        <xsl:message>
-                            <xsl:text>Found a single match for </xsl:text>
-                            <xsl:value-of select="$p_title"/>
-                            <xsl:text> in the authority file.</xsl:text>
-                        </xsl:message>
-                    </xsl:if>
-                    <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>
-                </xsl:when>
                 <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1">
-<!--                    <xsl:if test="$p_verbose = true()">-->
-                        <xsl:message>
-                            <xsl:text>Found a single match for </xsl:text>
-                            <xsl:value-of select="$p_title"/>
-                            <xsl:text> in the authority file but publication dates suggest it is erroneous</xsl:text>
-                        </xsl:message>
-                    <!--</xsl:if>-->
-<!--                    <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>-->
+                    <xsl:variable name="v_corresponding-bibl-year" select="oape:date-year-only(oape:query-biblstruct($v_corresponding-bibls/descendant-or-self::tei:biblStruct, 'date', '', '', ''))"/>
+                    <xsl:choose>
+                        <!-- date -->
+                        <!-- possible match -->
+                        <!--<xsl:when test="$v_corresponding-bibl-year != 'NA' and $v_corresponding-bibl-year &lt;= $p_year">
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>Found a single match for </xsl:text>
+                                    <xsl:value-of select="$p_title"/>
+                                    <xsl:text> in the authority file.</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                            <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>
+                        </xsl:when>-->
+                        <!-- impossible match -->
+                        <xsl:when test="$v_corresponding-bibl-year != 'NA' and $v_corresponding-bibl-year &gt; $p_year">
+                            <xsl:message>
+                                <xsl:text>Found a single match for </xsl:text>
+                                <xsl:value-of select="$p_title"/>
+                                <xsl:text> in the authority file but publication dates suggest it is erroneous</xsl:text>
+                            </xsl:message>
+                            <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>Found a single match for </xsl:text>
+                                    <xsl:value-of select="$p_title"/>
+                                    <xsl:text> in the authority file.</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                            <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:when>
                 <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) gt 1">
                     <!--                    <xsl:if test="$p_verbose = true()">-->
@@ -1456,7 +1482,7 @@
                             <xsl:when test="$v_bibl != 'NA' and oape:query-biblstruct($v_bibl, 'id-location', '', $v_gazetteer, $p_local-authority) != 'NA'">
                                 <xsl:value-of select="oape:query-biblstruct($v_bibl, 'id-location', '', $v_gazetteer, $p_local-authority)"/>
                             </xsl:when>
-                            <!-- prxomity to the source a text is mentioned in -->
+                            <!-- proximity to the source a text is mentioned in -->
                             <xsl:when test="$p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct">
                                 <xsl:value-of
                                     select="oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'id-location', '', $v_gazetteer, $p_local-authority)"
@@ -1595,7 +1621,7 @@
         <xsl:param as="xs:string" name="p_date"/>
         <xsl:choose>
             <xsl:when test="matches($p_date, '^\d{4}$|^\d{4}-.{2}-.{2}$')">
-                <xsl:value-of select="replace($p_date, '^(\d{4})', '$1')"/>
+                <xsl:value-of select="number(replace($p_date, '^(\d{4}).*$', '$1'))"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="'NA'"/>
