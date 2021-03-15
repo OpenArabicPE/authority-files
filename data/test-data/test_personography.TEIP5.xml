@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
+<TEI xml:lang="en" xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+    <teiHeader xml:id="teiHeader_1.d1e5" xml:lang="en">
+        <fileDesc xml:id="fileDesc" xml:lang="en">
+            <titleStmt xml:id="titleStmt_1.d1e9" xml:lang="en">
+                <title xml:id="title_1.d1e11" xml:lang="en">OpenArabicPE: Personography</title>
+                <author xml:id="pers_TG" xml:lang="en"> <persName xml:id="persName_1.d1e16" xml:lang="en"> <forename xml:id="forename_1.d1e18" xml:lang="en">Till</forename> <surname
+                    xml:id="surname_1.d1e21" xml:lang="en">Grallert</surname> </persName> </author>
+            </titleStmt>
+            <publicationStmt xml:id="publicationStmt" xml:lang="en">
+                <authority xml:id="authority_1.d1e32" xml:lang="en"> <persName xml:id="persName_3.d1e34" xml:lang="en">Till Grallert</persName> </authority>
+                <pubPlace xml:id="pubPlace_1.d1e41" xml:lang="en">Berlin</pubPlace>
+                <date when="2017" xml:id="date_1.d1e44" xml:lang="en">2017</date>
+                <availability status="restricted" xml:id="availability_1.d1e47" xml:lang="en">
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:id="licence_1.d1e49" xml:lang="en"
+                        >Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
+                </availability>
+                <idno type="url" xml:id="idno_1.d1e53" xml:lang="en">https://github.com/OpenArabicPE/authority-files/blob/master/tei/personography_OpenArabicPE.TEIP5.xml</idno>
+            </publicationStmt>
+            <sourceDesc xml:id="sourceDesc_1.d1e57" xml:lang="en">
+                <p xml:id="p_1.d1e59" xml:lang="en">This is a born-digital file.</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc xml:id="profileDesc" xml:lang="en">
+            <particDesc xml:id="particDesc_1.d1e66" xml:lang="ar">
+                <listPerson change="#d2e18656" xml:id="listPerson_1.d2e72" xml:lang="ar">
+                    <person change="#d2e65816 #d2e85573" xml:id="person_2880" xml:lang="ar">
+                        <persName change="#d2e85573" ref="viaf:1245 jaraid:567 oape:pers:89" xml:id="persName_2880.1" xml:lang="ar"> <choice change="#d2e65816 #d2e85573" xml:id="choice_14.d2e52105"
+                            xml:lang="ar">
+                            <orig change="#d2e65816 #d2e85573" xml:id="orig_1.d2e52107" xml:lang="ar">قسطنطين</orig>
+                            <corr change="#d2e65816 #d2e85573" resp="#org_MS" xml:id="corr_5.d2e52110" xml:lang="ar">قسطنيطين</corr>
+                            </choice> </persName>
+                        <tei:persName change="#d9e86179" corresp="#persName_2880.1" ref="wiki:Q567" type="flattened" xml:id="persName_2880.1.1" xml:lang="ar">قسطنطينقسطنيطين</tei:persName>
+                        <idno change="#d2e85573" type="oape" xml:id="idno_3.d2e130" xml:lang="ar">2880</idno>
+                    </person>
+                    <person change="#d2e65816 #d2e85573" xml:id="person_3173" xml:lang="ar">
+                        <persName xml:id="persName_3173.1" xml:lang="ar"> <addName change="#d3e52435 #d2e85573" type="nasab" xml:lang="ar"> <nameLink change="#d3e52435 #d2e85573" xml:lang="ar"
+                            >ابن</nameLink> <addName change="#d3e52435 #d2e85573" type="kunyah" xml:lang="ar"><nameLink change="#d3e52435 #d2e85573" xml:lang="ar">ابي</nameLink> اصبعة</addName>
+                            </addName> </persName>
+                        <tei:persName change="#d9e86179" corresp="#persName_3173.1" type="flattened" xml:id="persName_3173.1.1" xml:lang="ar">ابنابياصبعة</tei:persName>
+                        <idno change="#d2e85573" type="oape" xml:id="idno_579.d2e7546" xml:lang="ar">3173</idno>
+                    </person>
+                    <person xml:id="person_42" xml:lang="ar">
+                        <persName xml:id="persName_42.1" xml:lang="ar"> <addName change="#d3e52435 #d2e85573" type="nasab" xml:lang="ar"> <nameLink change="#d3e52435 #d2e85573" xml:lang="ar"
+                            >ابن</nameLink> <addName change="#d3e52435 #d2e85573" type="kunyah" xml:lang="ar"><nameLink change="#d3e52435 #d2e85573" xml:lang="ar">ابي</nameLink> اصيبعة</addName>
+                            </addName> </persName>
+                        <tei:persName change="#d9e86179" corresp="#persName_42.1" type="flattened" xml:id="persName_42.1.1" xml:lang="ar">ابنابياصيبعة</tei:persName>
+                        <idno change="#d2e85573" type="oape" xml:id="idno_41.d2e668" xml:lang="ar">42</idno>
+                    </person>
+                    <tei:person change="#d2e85573" source="../../../../OpenArabicPE/authority-files/data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml" xml:id="person_4106" xml:lang="ar">
+                        <persName change="#d2e85573" xml:id="persName_4106.1" xml:lang="ar"> <tei:addName change="#d5e414 #d2e85573" type="nasab" xml:lang="ar"> <tei:nameLink
+                            change="#d5e414 #d2e85573" xml:lang="ar">ابن</tei:nameLink>المنذر</tei:addName> </persName>
+                        <tei:persName change="#d9e86179" corresp="#persName_4106.1" type="flattened" xml:id="persName_4106.1.1" xml:lang="ar">ابنالمنذر</tei:persName>
+                        <idno change="#d2e85573" type="oape" xml:lang="ar">4106</idno>
+                    </tei:person>
+                    <tei:person change="#d2e85573" source="../../../../OpenArabicPE/authority-files/data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml" xml:id="person_4107" xml:lang="ar">
+                        <persName change="#d2e85573" xml:id="persName_4107.1" xml:lang="ar"> <tei:addName change="#d5e414 #d2e85573" type="nasab" xml:lang="ar"> <tei:nameLink
+                            change="#d5e414 #d2e85573" xml:lang="ar">ابن</tei:nameLink>عون</tei:addName> </persName>
+                        <tei:persName change="#d9e86179" corresp="#persName_4107.1" type="flattened" xml:id="persName_4107.1.1" xml:lang="ar">ابنعون</tei:persName>
+                        <idno change="#d2e85573" type="oape" xml:lang="ar">4107</idno>
+                    </tei:person>
+                    <person xml:id="person_31" xml:lang="ar">
+                        <persName xml:id="persName_31.1" xml:lang="ar"> <addName change="#d3e52435 #d2e85573" type="kunyah" xml:lang="ar"> <nameLink change="#d3e52435 #d2e85573" xml:lang="ar"
+                            >ابي</nameLink> <addName change="#d3e52435 #d2e85573" type="theophoric" xml:lang="ar">عبد الله</addName> </addName> <addName change="#d3e52435 #d2e85573" type="nasab"
+                            xml:lang="ar"><nameLink change="#d3e52435 #d2e85573" xml:lang="ar">ابن</nameLink> الحداد يصف اسطول المعتصم <addName change="#d3e52435 #d2e85573" type="nasab" xml:lang="ar"
+                            ><nameLink change="#d3e52435 #d2e85573" xml:lang="ar">بن</nameLink> صمادح</addName></addName> </persName>
+                        <tei:persName change="#d9e86179" corresp="#persName_31.1" type="flattened" xml:id="persName_31.1.1" xml:lang="ar">ابيعبداللهابنالحداديصفاسطولالمعتصمبنصمادح</tei:persName>
+                        <idno change="#d2e85573" type="oape" xml:id="idno_32.d2e550" xml:lang="ar">31</idno>
+                    </person>
+                    <person change="#d2e65816 #d2e85573" xml:id="person_2881" xml:lang="ar">
+                        <persName change="#d2e85573" xml:id="persName_2881.1" xml:lang="ar"> <roleName change="#d2e65816 #d2e85573" type="pseudonym" xml:id="roleName_75.d2e52123" xml:lang="ar"
+                            >(سائح) في <placeName change="#d2e65816 #d2e85573" ref="oape:place:162 geon:277130" xml:id="placeName_27.d2e52125" xml:lang="ar">بعلبك</placeName></roleName> </persName>
+                        <tei:persName change="#d9e86179" corresp="#persName_2881.1" type="flattened" xml:id="persName_2881.1.1" xml:lang="ar">سائحفيبعلبك</tei:persName>
+                        <idno change="#d2e85573" type="oape" xml:id="idno_4.d2e147" xml:lang="ar">2881</idno>
+                    </person>
+                </listPerson>
+                <listOrg change="#d2e28640 #d2e85573" xml:id="listOrg_1.d2e27706" xml:lang="ar">
+                    <org change="#d2e85573" xml:id="org_1" xml:lang="ar">
+                        <orgName change="#d2e28640" xml:id="orgName_13.d2e27710" xml:lang="en"> <persName change="#d2e85573" corresp="#person_5.d1e290" xml:id="persName_5899.d2e27712" xml:lang="en"
+                            >Ṭāhir al-Jazāʾirī</persName>'s first circle</orgName>
+                    </org>
+                    <org change="#d2e85573" xml:id="org_2" xml:lang="ar">
+                        <orgName change="#d2e28640" xml:id="orgName_14.d2e27719" xml:lang="en"> <persName change="#d2e85573" corresp="#person_5.d1e290" xml:id="persName_5900.d2e27721" xml:lang="en"
+                            >Ṭāhir al-Jazāʾirī</persName>'s second circle</orgName>
+                    </org>
+                </listOrg>
+            </particDesc>
+        </profileDesc>
+    </teiHeader>
+    <text xml:id="text_1.d1e6471" xml:lang="en">
+        <body xml:id="body_1.d1e6473" xml:lang="en">
+            <p xml:id="p_2.d1e6475" xml:lang="en">Some text here.</p>
+            <p xml:id="p_16.d1e700" xml:lang="ar"
+                >نحمدهُ تعالى عَلَى أن يسر لنا الوفاء بما وعدنا به يوم إنشاء هذه المجلة مجلة المجلات الباريزية من إرادة التحسين في موضوعاتها وتكثير موادها وتكبير حجمها وتجميل مظهرها بحسب سنة النمو الطبيعي. وها نحن أولاء نبدأ الآن بنشر السنة السابعة بزيادة عدد صفحات مجلد السنة بحيث يقع المجلد في <num
+                resp="#pers_TG" type="auto-markup" value="960" xml:id="num_1.d1e702" xml:lang="ar">٩٦٠</num> صفحة وكان كل مجلد في السنين ال<num resp="#pers_TG" subtype="d1" type="auto-markup"
+                value="4" xml:id="num_2.d1e1026" xml:lang="ar">أربع</num> الأخيرة يصدر في <num resp="#pers_TG" type="auto-markup" value="800" xml:id="num_1.d1e705" xml:lang="ar"
+                >٨٠٠</num> وفي السنتين الأوليين في <num resp="#pers_TG" type="auto-markup" value="672" xml:id="num_1.d1e708" xml:lang="ar"
+                >٦٧٢</num> وتوسيع الحجم يقتضي ولا جرم التوسع في الأبحاث وإشباعها نظراً وتدقيقاً.</p>
+        </body>
+    </text>
+</TEI>
