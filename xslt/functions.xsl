@@ -1380,6 +1380,7 @@
     <xsl:param name="p_update-existing-refs" select="false()"/>
     <xsl:function name="oape:link-title-to-authority-file">
         <xsl:param as="node()" name="p_title"/>
+        <xsl:param name="p_year"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_bibliography"/>
         <!-- try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
@@ -1388,7 +1389,8 @@
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
                 <!-- assuming that a single match is actually correct might not always prove true -->
-                <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1">
+                <!-- add date as condition: referenced periodical must have been published before the source was written -->
+                <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and oape:date-year-only(oape:query-biblstruct($v_corresponding-bibls/descendant-or-self::tei:biblStruct, 'date', '', '', '')) &lt;= $p_year">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
                             <xsl:text>Found a single match for </xsl:text>
@@ -1397,6 +1399,16 @@
                         </xsl:message>
                     </xsl:if>
                     <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>
+                </xsl:when>
+                <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1">
+<!--                    <xsl:if test="$p_verbose = true()">-->
+                        <xsl:message>
+                            <xsl:text>Found a single match for </xsl:text>
+                            <xsl:value-of select="$p_title"/>
+                            <xsl:text> in the authority file but publication dates suggest it is erroneous</xsl:text>
+                        </xsl:message>
+                    <!--</xsl:if>-->
+<!--                    <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>-->
                 </xsl:when>
                 <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) gt 1">
                     <!--                    <xsl:if test="$p_verbose = true()">-->

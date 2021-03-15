@@ -50,21 +50,13 @@
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <!--<!-\- replicate everything except @xml:id and @xml:change -\->
-    <xsl:template match="node() | @*" mode="m_copy-from-authority-file" name="t_10">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_10 master: </xsl:text>
-                <xsl:value-of select="."/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:copy>
-            <xsl:apply-templates mode="m_copy-from-authority-file" select="@* | node()"/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="@xml:id | @change" mode="m_copy-from-authority-file" priority="100"/>-->
+    
+    <xsl:variable name="v_year-publication" select="if (/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct)
+        then (oape:date-year-only(oape:query-biblstruct(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', '')))
+       else(2020)"/>
+
     <xsl:template match="tei:title[ancestor::tei:text | ancestor::tei:standOff][@level = 'j'][not(@type = 'sub')]" priority="10">
-        <xsl:copy-of select="oape:link-title-to-authority-file(., $p_local-authority, $v_bibliography)"/>
+        <xsl:copy-of select="oape:link-title-to-authority-file(., $v_year-publication, $p_local-authority, $v_bibliography)"/>
     </xsl:template>
     
     <!-- document the changes to source file -->
