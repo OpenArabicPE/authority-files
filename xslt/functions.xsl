@@ -1537,7 +1537,13 @@
                             <xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][@oape:frequency = $v_frequency]"/>
                         </xsl:when>
                         <!-- involved editors -->
-                        <!-- date -->
+                        <!-- date: onset, terminus, range -->
+                        <!--<xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:date-year-only(oape:query-biblstruct(., 'date', '', '', '')) &lt;= $p_year]) = 1">
+                            <xsl:message>
+                                <xsl:text>Found a single match based on publication date.</xsl:text>
+                            </xsl:message>
+                            <xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:date-year-only(oape:query-biblstruct(., 'date', '', '', '')) &lt;= $p_year]"/>
+                        </xsl:when>-->
                         <xsl:otherwise>
                             <!-- this is a duplicate message -->
                             <!--<xsl:message>
