@@ -19,6 +19,9 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
+         <tei:change when="2021-03-15" who="#pers_TG" xml:id="d9e545" xml:lang="en">Added references to local authority file (<tei:ref
+            target="/BachUni/BachBibliothek/GitHub/ProjectJaraid/jaraid_source/authority-files/../tei/jaraid_master-biblStruct.TEIP5.xml"
+            >/BachUni/BachBibliothek/GitHub/ProjectJaraid/jaraid_source/authority-files/../tei/jaraid_master-biblStruct.TEIP5.xml</tei:ref>) and to OCLC (WorldCat) IDs to <tei:gi>titles</tei:gi>s without such references based on  <tei:gi>biblStruct</tei:gi>s mentioned in the authority file (bibliography).</tei:change>
          <tei:change when="2021-01-27" who="#pers_TG" xml:id="d9e530" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml"
             >../data/tei/personography_OpenArabicPE.TEIP5.xml</tei:ref>) and VIAF to <tei:gi>persName</tei:gi>s without such references based on <tei:gi>person</tei:gi>s in the local authority file. If the source <tei:gi>persName</tei:gi> did not contain any further TEI mark-up, this has been added from the local authority file.</tei:change>
          <tei:change when="2021-01-19" who="#pers_TG" xml:id="d5e515" xml:lang="en">Added references to local authority file (<tei:ref target="../data/tei/personography_OpenArabicPE.TEIP5.xml"
@@ -154,9 +157,9 @@
                <biblStruct oape:frequency="monthly" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_85.TEIP5.xml#bibl_9.d2e8415" subtype="journal" type="periodical"
                   xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:14" level="j" ref="jaraid:bibl:t1r3250" xml:lang="ar">لغة العرب</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة شهرية ادبية علمية تاريخية</title>
-                     <title corresp="sakhrit:jid:14" level="j" xml:lang="ar-Latn-x-ijmes">Lughat al-ʿArab</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:14" level="j" ref="jaraid:bibl:t1r3250" xml:lang="ar-Latn-x-ijmes">Lughat al-ʿArab</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla shahriyya adabiyya ʿilmiyya tārīkhiyya</title>
                      <idno change="#d2e69" type="oape">1</idno>
                      <idno type="jid" xml:lang="ar">14</idno>
@@ -185,7 +188,7 @@
             <listBibl xml:lang="ar">
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_7.TEIP5.xml#bibl_13.d2e3797" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title corresp="sakhrit:jid:33" level="j" xml:lang="ar">المنار</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:33" level="j" ref="jaraid:bibl:t1r678" xml:lang="ar">المنار</title>
                      <title corresp="sakhrit:jid:33" level="j" xml:lang="ar-Latn-x-ijmes">al-Manār</title>
                      <idno change="#d2e69" type="oape">2</idno>
                      <idno type="jid" xml:lang="ar">33</idno>
@@ -210,7 +213,7 @@
             <listBibl xml:lang="ar">
                <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title corresp="sakhrit:jid:40" level="j" xml:lang="ar">الزهور</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:40" level="j" ref="jaraid:bibl:t1r1668" xml:lang="ar">الزهور</title>
                      <title corresp="sakhrit:jid:40" level="j" xml:lang="ar">مجلة أدبية فنية علمية</title>
                      <title corresp="sakhrit:jid:40" level="j" xml:lang="ar-Latn-x-ijmes">al-Zuhūr</title>
                      <title corresp="sakhrit:jid:40" level="j" xml:lang="ar-Latn-x-ijmes">Majalla adabiyya fanniyya ʿilmiyya</title>
@@ -241,7 +244,7 @@
             <listBibl>
                <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr>
-                     <title level="j">الزهور</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2854">الزهور</title>
                      <idno change="#d2e286" type="oape">532</idno>
                      <textLang mainLang="ar"/>
                      <editor><persName change="#d3e399 #d9e530" ref="oape:pers:4189">نوري <tei:roleName type="title" xml:lang="ar">افندي</tei:roleName></persName></editor>
@@ -282,7 +285,7 @@
             <listBibl xml:lang="ar">
                <biblStruct next="oape:bibl:6" oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title corresp="sakhrit:jid:107" level="j" xml:lang="ar">المقتطف</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:107" level="j" ref="jaraid:bibl:t1r104" xml:lang="ar">المقتطف</title>
                      <title corresp="sakhrit:jid:107" level="j" xml:lang="ar">جريدة علمية وصناعية</title>
                      <title corresp="sakhrit:jid:107" level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtaṭaf</title>
                      <title corresp="sakhrit:jid:107" level="j" xml:lang="ar-Latn-x-ijmes">Jarīda ʿilmiyya wa-ṣināʿiyya</title>
@@ -311,7 +314,7 @@
                </biblStruct>
                <biblStruct oape:frequency="monthly" prev="oape:bibl:5" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title corresp="sakhrit:jid:107" level="j" xml:lang="ar">المقتطف</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:107" level="j" ref="jaraid:bibl:t1r104" xml:lang="ar">المقتطف</title>
                      <idno change="#d2e69" type="oape">6</idno>
                      <idno type="jid" xml:lang="ar">107</idno>
                      <idno type="OCLC">931941685</idno>
@@ -337,7 +340,7 @@
             <listBibl xml:lang="ar">
                <biblStruct xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title corresp="sakhrit:jid:108" level="j" xml:lang="ar">المشرق</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:108" level="j" ref="jaraid:bibl:t1r679" xml:lang="ar">المشرق</title>
                      <title level="j" type="sub">مجلة كاثوليكية تصدر مرة في الشهر برسوم وتصاوير عند اللزوم</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Mashriq</title>
                      <title level="j" xml:lang="ar-Latn-FR">Al-Machriq</title>
@@ -367,8 +370,8 @@
             <listBibl xml:lang="ar">
                <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title corresp="sakhrit:jid:114" level="j" type="short" xml:lang="ar">الجامعة</title>
-                     <title corresp="sakhrit:jid:114" level="j" xml:lang="ar">الجامعة العثمانية</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:114" level="j" ref="jaraid:bibl:t1r741" type="short" xml:lang="ar">الجامعة</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:114" level="j" ref="jaraid:bibl:t1r742" xml:lang="ar">الجامعة العثمانية</title>
                      <title corresp="sakhrit:jid:114" level="j" type="sub" xml:lang="ar">مجلة سياسية ادبية علمية تهذيبية</title>
                      <title corresp="sakhrit:jid:114" level="j" type="short" xml:lang="ar-Latn-x-ijmes">al-Jāmiʿ</title>
                      <title corresp="sakhrit:jid:114" level="j" xml:lang="ar-Latn-x-ijmes">al-Jāmiʿ a-ʿuthmāniyya</title>
@@ -457,7 +460,7 @@
             <listBibl xml:lang="ar">
                <biblStruct next="oape:bibl:53" oape:frequency="daily" prev="oape:bibl:51" subtype="newspaper" type="periodical">
                   <monogr>
-                     <title level="j" xml:lang="ar-Latn-x-ijmes">al-Qabas</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2616" xml:lang="ar-Latn-x-ijmes">al-Qabas</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
                      <title level="j" xml:lang="ar">القبس</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية اقتصادية اجتماعية</title>
@@ -591,7 +594,7 @@
             <listBibl xml:lang="ar">
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title corresp="sakhrit:jid:134" level="j" xml:lang="ar">الهلال</title>
+                     <title change="#d9e545" corresp="sakhrit:jid:134" level="j" ref="jaraid:bibl:t1r375" xml:lang="ar">الهلال</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Hilāl</title>
                      <idno change="#d2e69" type="oape">10</idno>
                      <idno type="OCLC">1639361</idno>
@@ -662,7 +665,7 @@
                </biblStruct>
                <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical">
                   <monogr>
-                     <title level="j" xml:lang="ar">البيان</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2113" xml:lang="ar">البيان</title>
                      <idno change="#d2e286" type="oape">535</idno>
                      <textLang mainLang="ar"/>
                      <editor source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_3226.d2e26341"><persName change="#d3e399 #d9e530" ref="oape:pers:4150"
@@ -741,7 +744,7 @@
             <listBibl xml:lang="ar">
                <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr>
-                     <title level="j" xml:lang="ar">الآثار</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3134" xml:lang="ar">الآثار</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة عامة مصورة</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Āthār</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿāmma muṣawwara</title>
@@ -769,7 +772,7 @@
             <listBibl xml:lang="ar">
                <biblStruct next="oape:bibl:95" oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاتحاد العثماني</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2365" xml:lang="ar">الاتحاد العثماني</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-ʿUthmānī</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية ادبية اجتماعية عمرانية</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya adabiyya ijtimāʿiyya ʿumrāniyya</title>
@@ -806,7 +809,7 @@
             <listBibl xml:lang="ar">
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الجنان</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r61" xml:lang="ar">الجنان</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jinān</title>
                      <idno change="#d2e69" type="oape">34</idno>
                      <idno type="OCLC" xml:lang="en">987291181</idno>
@@ -845,7 +848,7 @@
                   <monogr>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥasnāʾ</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majallat Nisāʾiyya Adabiyya Akhlāqiyya Ijtimāʿiyya</title>
-                     <title level="j" xml:lang="ar">الحسناء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3042" xml:lang="ar">الحسناء</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة نسائية ادبية اخلاقية اجتماعية</title>
                      <idno change="#d2e69" type="oape">23</idno>
                      <idno type="OCLC">792756327</idno>
@@ -872,7 +875,7 @@
             <listBibl xml:lang="ar">
                <biblStruct xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الحقائق</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3156" xml:lang="ar">الحقائق</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة علمية دينية اخلاقية اجتماعية</title>
                      <title level="j" xml:lang="ar">مجلة علمية دينية أخلاقية اجتماعية عمرانية</title>
                      <title level="j" xml:lang="ar">مجلة الحقائق</title>
@@ -961,7 +964,7 @@
             <listBibl xml:lang="ar">
                <biblStruct xml:lang="ar">
                   <monogr>
-                     <title level="j" xml:lang="ar">الحقيقة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2372" xml:lang="ar">الحقيقة</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة يومية سياسية أدبية</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥaqīqa</title>
                      <title level="j" type="sub" xml:lang="ar">Jarīda yawmiyya siyāsiyya adabiyya</title>
@@ -987,7 +990,7 @@
             <listBibl xml:lang="ar">
                <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr>
-                     <title level="j" xml:lang="ar">الحياة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r733" xml:lang="ar">الحياة</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥayāt</title>
                      <idno change="#d2e78" type="oape">39</idno>
                      <editor> <persName change="#d3e53 #d3e399 #d9e530" ref="oape:pers:980 viaf:53094077" xml:lang="ar"> <forename xml:lang="ar">محمد</forename> <forename xml:lang="ar">فريد</forename>
@@ -1004,7 +1007,7 @@
             <listBibl xml:lang="ar">
                <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr>
-                     <title level="j" xml:lang="ar">الحياة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3249" xml:lang="ar">الحياة</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥayāt</title>
                      <idno type="oape">531</idno>
                      <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_7"> <persName change="#d3e399 #d9e530"
@@ -1053,7 +1056,7 @@
             <listBibl xml:lang="ar">
                <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الرياض</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2856" xml:lang="ar">الرياض</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Riyāḍ</title>
                      <idno change="#d2e78" type="oape">41</idno>
                      <editor change="#d2e33" source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_3320.d2e27480" xml:lang="ar"> <persName change="#d3e130 #d3e399 #d9e530"
@@ -1074,7 +1077,7 @@
             <listBibl xml:lang="ar">
                <biblStruct oape:frequency="biweekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الزوراء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r55" xml:lang="ar">الزوراء</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Zawrāʾ</title>
                      <idno change="#d2e78" type="oape">42</idno>
                      <idno type="URI">https://www.wdl.org/en/search/?collection=al-zaura-newspaper-collection&amp;grouping=9956</idno>
@@ -1094,9 +1097,9 @@
             <listBibl xml:lang="ar">
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_3.TEIP5.xml#bibl_7.d2e3075" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr>
-                     <title level="j" xml:lang="ar">الضياء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r651" xml:lang="ar">الضياء</title>
                      <title level="j" type="sub" xml:lang="ar">مجلة علمية أدبية صحية صناعية</title>
-                     <title level="j" xml:lang="ar">مجلة الضياء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1938" xml:lang="ar">مجلة الضياء</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḍiyāʾ</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿilmiyya adabiyya ṣiḥḥiyya ṣināʿiyya</title>
                      <idno change="#d2e69" type="oape">27</idno>
@@ -1158,7 +1161,7 @@
             <listBibl xml:lang="ar">
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_9.TEIP5.xml#bibl_2.d2e1732" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العالمين</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1111" xml:lang="ar">العالمين</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿĀlamayn</title>
                      <idno change="#d2e78" type="oape">43</idno>
                      <textLang mainLang="fr"/>
@@ -1212,7 +1215,7 @@
             <listBibl xml:lang="ar">
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العصر الجديد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2588" xml:lang="ar">العصر الجديد</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿAṣr al-Jadīd</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة سياسية تجارية علمية صناعية ادبية زراعية</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda siyāsiyya tujāriyya ʿilmiyya ṣināʿiyya adabiyya zirāʿiyya</title>
@@ -1266,7 +1269,7 @@
                </biblStruct>
                <biblStruct xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العلم</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3300" xml:lang="ar">العلم</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿAlam</title>
                      <idno change="#d2e167" type="oape">60</idno>
                      <textLang mainLang="ar"/>
@@ -1287,7 +1290,7 @@
             <listBibl xml:lang="ar">
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الكلية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3047" xml:lang="ar">الكلية</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Kulliyya</title>
                      <idno change="#d2e78" type="oape">47</idno>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_7.d2e1408"> <persName change="#d3e399 #d9e530"
@@ -1373,7 +1376,7 @@
             <listBibl xml:lang="ar">
                <biblStruct oape:frequency="daily" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المفيد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2374" xml:lang="ar">المفيد</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Mufīd</title>
                      <idno change="#d2e69" type="oape">20</idno>
                      <idno type="OCLC">1034548778</idno>
@@ -1426,7 +1429,7 @@
                </biblStruct>
                <biblStruct subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الوطن</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r122" xml:lang="ar">الوطن</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Waṭan</title>
                      <idno change="#d2e167" type="oape">61</idno>
                      <editor change="#d2e33" source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_23.TEIP5.xml#p_9433.d2e68311" type="owner"> <persName change="#d3e399 #d9e530"
@@ -1492,7 +1495,7 @@
             <listBibl xml:lang="ar">
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">مجلة المجلات</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1754" xml:lang="ar">مجلة المجلات</title>
                      <title level="j" xml:lang="ar">مجلة المجلات الفرنسية</title>
                      <title level="j" xml:lang="ar">مجلة المجلات الباريزية</title>
                      <title level="j" xml:lang="fr">Revue des Revues</title>
@@ -1512,7 +1515,7 @@
             <listBibl xml:lang="ar">
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">مجلة المجلات</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1754" xml:lang="ar">مجلة المجلات</title>
                      <title level="j" xml:lang="ar">مجلة المجلات الأميركية</title>
                      <title level="j" xml:lang="ar">مجلة المجلات الأمريكية</title>
                      <title level="j" xml:lang="ar">مجلة المجلات النيويوركية</title>
@@ -1531,7 +1534,7 @@
             <listBibl xml:lang="ar">
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">مجلة المجلات</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1754" xml:lang="ar">مجلة المجلات</title>
                      <title level="j" xml:lang="ar">مجلة المجلات الإنكليزية</title>
                      <title level="j" xml:lang="en">The Review of Reviews</title>
                      <idno change="#d2e69" type="oape">17</idno>
@@ -1550,8 +1553,8 @@
             <listBibl xml:lang="ar">
                <biblStruct next="oape:bibl:56" xml:lang="ar">
                   <monogr>
-                     <title level="j" xml:lang="ar">الأهرام</title>
-                     <title level="j" xml:lang="ar">الاهرام</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r100" xml:lang="ar">الأهرام</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r100" xml:lang="ar">الاهرام</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ahrām</title>
                      <idno change="#d2e102" type="oape">55</idno>
                      <idno type="OCLC">508226561</idno>
@@ -1575,8 +1578,8 @@
                </biblStruct>
                <biblStruct prev="oape:bibl:55" xml:lang="ar">
                   <monogr>
-                     <title level="j" xml:lang="ar">الأهرام</title>
-                     <title level="j" xml:lang="ar">الاهرام</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r100" xml:lang="ar">الأهرام</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r100" xml:lang="ar">الاهرام</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ahrām</title>
                      <idno change="#d2e102" type="oape">56</idno>
                      <idno type="OCLC">508226561</idno>
@@ -1646,10 +1649,10 @@
             <listBibl xml:lang="ar">
                <tei:biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:id="biblStruct_2.d1e163" xml:lang="ar">
                   <tei:monogr xml:id="monogr_2.d1e165" xml:lang="ar">
-                     <title level="j" xml:id="title_8.d1e167" xml:lang="ar">ثمرات الفنون</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r98" xml:id="title_8.d1e167" xml:lang="ar">ثمرات الفنون</title>
                      <title level="j" type="sub" xml:id="title_9.d1e170" xml:lang="ar">ان هذه الصحيفة تحتوي على حوادث سياسية ومحلية وتجارة وفنون</title>
                      <title level="j" type="sub" xml:id="title_10.d1e173" xml:lang="ar">صدورها في يوم الثلاثا من كل اسبوع</title>
-                     <title level="j" xml:id="title_11.d1e176" xml:lang="ar-Latn-x-ijmes">Thamarāt al-Funūn</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r98" xml:id="title_11.d1e176" xml:lang="ar-Latn-x-ijmes">Thamarāt al-Funūn</title>
                      <title level="j" type="sub" xml:id="title_12.d1e179" xml:lang="ar-Latn-x-ijmes">Inna hadhihi al-ṣaḥīfa taḥtawī ʿalā ḥawādith siyāsiyya wa-maḥalliyya wa-tijāra wa-funūn</title>
                      <title level="j" type="sub" xml:id="title_13.d1e183" xml:lang="ar-Latn-x-ijmes">ṣudūruhā fī yawm al-thulāthā min kull usbūʿ</title>
                      <idno change="#d2e167" type="oape">62</idno>
@@ -1861,7 +1864,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="fr">
                   <monogr xml:lang="fr">
-                     <title level="j" xml:lang="fr">التربية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1579" xml:lang="fr">التربية</title>
                      <idno change="#d2e167" type="oape">125</idno>
                      <textLang mainLang="fr"/>
                      <imprint>
@@ -1873,7 +1876,7 @@
                </biblStruct>
                <biblStruct>
                   <monogr>
-                     <title level="j">الجوائب المصرية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r903">الجوائب المصرية</title>
                      <idno change="#d2e167" type="oape">137</idno>
                      <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_7977.d2e73191" type="owner"> <persName change="#d3e188 #d3e399 #d9e530"
                         ref="oape:pers:931 viaf:102460074"> <forename xml:lang="ar">خليل</forename> <surname xml:lang="ar">مطران</surname> </persName> </editor>
@@ -2251,7 +2254,7 @@
                </biblStruct>
                <biblStruct change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#bibl_2.d2e3399">
                   <monogr>
-                     <title level="j">البرق</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2363">البرق</title>
                      <idno change="#d2e167" type="oape">514</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_3.d2e3407" type="owner"> <persName change="#d3e399 #d9e530"
@@ -2264,7 +2267,7 @@
                </biblStruct>
                <biblStruct change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#bibl_9.d2e3567">
                   <monogr>
-                     <title level="j">لسان الاتحاد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2373">لسان الاتحاد</title>
                      <idno change="#d2e167" type="oape">516</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_11.d2e3575" type="owner"> <persName ref="oape:pers:4164"
@@ -2277,7 +2280,7 @@
                </biblStruct>
                <biblStruct change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#bibl_10.d2e3595">
                   <monogr>
-                     <title level="j">أبابيل</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2375">أبابيل</title>
                      <idno change="#d2e167" type="oape">517</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_12.d2e3603" type="owner"> <persName change="#d3e399 #d9e530"
@@ -2290,7 +2293,7 @@
                </biblStruct>
                <biblStruct change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#bibl_13.d2e3678">
                   <monogr>
-                     <title level="j">الصفاء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r270">الصفاء</title>
                      <idno change="#d2e167" type="oape">518</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_17.d2e3689" type="owner"> <persName change="#d3e399 #d9e530"
@@ -2320,7 +2323,7 @@
                </biblStruct>
                <biblStruct change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#bibl_15.d2e3745">
                   <monogr>
-                     <title level="j">البردوني</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2570">البردوني</title>
                      <idno change="#d2e167" type="oape">520</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_21.d2e3753" type="owner"> <persName change="#d3e399 #d9e530"
@@ -2346,7 +2349,7 @@
                </biblStruct>
                <biblStruct change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#bibl_8.d2e1453">
                   <monogr>
-                     <title level="j">الرابطة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3054">الرابطة</title>
                      <idno change="#d2e167" type="oape">522</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_10.d2e1476" type="publisher"> <persName
@@ -2365,7 +2368,7 @@
                </biblStruct>
                <biblStruct change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#bibl_11.d2e1555">
                   <monogr>
-                     <title level="j">النفائس العصرية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3234">النفائس العصرية</title>
                      <idno change="#d2e167" type="oape">523</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_14.d2e1567" type="owner"> <persName ref="oape:pers:1648"
@@ -2380,7 +2383,7 @@
                </biblStruct>
                <biblStruct change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#bibl_17.d2e1689">
                   <monogr>
-                     <title level="j">اللطائف الأهلية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3046">اللطائف الأهلية</title>
                      <idno change="#d2e167" type="oape">524</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_20.d2e1693"> <persName ref="oape:pers:4172"
@@ -2420,7 +2423,7 @@
                </biblStruct>
                <biblStruct change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" subtype="newspaper" type="periodical">
                   <monogr>
-                     <title level="j">تفكر</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2870">تفكر</title>
                      <idno change="#d2e286" type="oape">537</idno>
                      <textLang mainLang="ota" otherLangs="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9">تركية عربية</textLang>
                      <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_9" type="owner"> <persName change="#d3e399 #d9e530"
@@ -2442,7 +2445,7 @@
                <biblStruct change="#d2e197" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2" subtype="newspaper"
                   type="periodical">
                   <monogr>
-                     <title level="j">المسامرات</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2398">المسامرات</title>
                      <idno change="#d2e286" type="oape">538</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_2" type="owner"> <persName ref="oape:pers:4110"
@@ -2461,7 +2464,7 @@
                <biblStruct change="#d2e197" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4" subtype="newspaper"
                   type="periodical">
                   <monogr>
-                     <title level="j">المنير</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2975">المنير</title>
                      <idno change="#d2e286" type="oape">539</idno>
                      <textLang change="#d2e197" mainLang="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4">عربية</textLang>
                      <editor change="#d2e197" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_7.TEIP5.xml#bibl_4" type="owner"> <persName ref="oape:pers:4109"
@@ -2478,7 +2481,7 @@
                <biblStruct change="#d2e488" oape:frequency="weekly" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" subtype="newspaper"
                   type="periodical">
                   <monogr>
-                     <title level="j">المضحكات</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2868">المضحكات</title>
                      <idno change="#d2e286" type="oape">540</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e488" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_4" type="owner"> <persName change="#d3e399 #d9e530"
@@ -2509,10 +2512,11 @@
                </biblStruct>
                <biblStruct change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" subtype="journal" type="periodical">
                   <monogr>
-                     <title level="j">زهيرة <placeName ref="oape:place:216 geon:98182">بغداد</placeName> </title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3246">زهيرة <placeName ref="oape:place:216 geon:98182">بغداد</placeName> </title>
                      <idno change="#d2e286" type="oape">542</idno>
                      <textLang change="#d2e448" mainLang="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#">عربية</textLang>
-                     <editor change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" type="owner"><orgName>آباء الكرمليين المرسلين</orgName></editor>
+                     <editor change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" type="owner"
+                        ><orgName>آباء الكرمليين المرسلين</orgName></editor>
                      <imprint>
                         <date calendar="#cal_gregorian" change="#d2e448" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_4.TEIP5.xml#" when="1905-03-25"> <num
                            type="auto-markup" value="25" xml:lang="ar">٢٥</num> آذار سنة <num type="auto-markup" value="1905" xml:lang="ar">١٩٠٥</num> </date>
@@ -2591,7 +2595,7 @@
                </biblStruct>
                <biblStruct change="#d3e788" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_86.TEIP5.xml#" subtype="journal" type="periodical">
                   <monogr>
-                     <title level="j">لسان العرب</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r670">لسان العرب</title>
                      <idno change="#d2e414" type="oape">552</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -2641,7 +2645,7 @@
                <biblStruct change="#d3e439" ns:frequency="weekly" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494" subtype="newspaper"
                   type="periodical" xmlns:ns="https://openarabicpe.github.io/ns">
                   <monogr>
-                     <title level="j">البيرق</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2556">البيرق</title>
                      <idno change="#d2e414" type="oape">556</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d3e439" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_3.d2e2494"><persName change="#d3e399 #d9e530"
@@ -2655,7 +2659,7 @@
                </biblStruct>
                <biblStruct change="#d3e723" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174" subtype="journal" type="periodical">
                   <monogr>
-                     <title level="j">الشرق المصور</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r883">الشرق المصور</title>
                      <idno change="#d2e414" type="oape">557</idno>
                      <textLang change="#d3e723" mainLang="ar" otherLangs="ota" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_2.d2e6174"
                         >بالعربية والتركية</textLang>
@@ -2852,7 +2856,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">إقدام</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r601" xml:lang="ar">إقدام</title>
                      <idno change="#d2e167" type="oape">71</idno>
                      <textLang mainLang="ar"/>
                      <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_6834.d2e56280"> <persName change="#d3e399 #d9e530" ref="oape:pers:4117"> <tei:addName
@@ -2991,7 +2995,7 @@
                </biblStruct>
                <biblStruct oape:frequency="daily" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأحوال</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r350" xml:lang="ar">الأحوال</title>
                      <idno change="#d2e167" type="oape">79</idno>
                      <editor
                         source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_8040.d2e73961 ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_2.d2e2874"
@@ -3041,7 +3045,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأرز</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r484" xml:lang="ar">الأرز</title>
                      <idno change="#d2e167" type="oape">82</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -3142,7 +3146,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الأمم</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1950" xml:lang="ar">الأمم</title>
                      <idno change="#d2e167" type="oape">85</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -3299,7 +3303,7 @@
                </biblStruct>
                <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإقبال</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2353" xml:lang="ar">الإقبال</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة علمية تاريخية اخبارية فنية</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Iqbāl</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda ʿilmiyya tārīkhiyya akhbāriyya fanniyya</title>
@@ -3327,7 +3331,7 @@
                </biblStruct>
                <biblStruct oape:frequency="fortnightly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الإنسانية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3198" xml:lang="ar">الإنسانية</title>
                      <title level="j" xml:lang="ar">مجلة علمية أخلاقية اجتماعية انتقادية عمرانية</title>
                      <idno change="#d2e167" type="oape">97</idno>
                      <editor
@@ -3360,7 +3364,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاحياء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2026" xml:lang="ar">الاحياء</title>
                      <idno change="#d2e167" type="oape">101</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -3396,7 +3400,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الاقتصاد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3298" xml:lang="ar">الاقتصاد</title>
                      <title level="j" xml:lang="ar">زراعية صناعية تجارية مصورة</title>
                      <idno change="#d2e167" type="oape">104</idno>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_22.d2e1716"> <persName change="#d5e515 #d9e530"
@@ -3461,7 +3465,7 @@
                </biblStruct>
                <biblStruct source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البرهان</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2512" xml:lang="ar">البرهان</title>
                      <idno change="#d2e167" type="oape">116</idno>
                      <editor change="#d3e439" source=" ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_2.d2e2477"><persName change="#d3e399 #d9e530"
                         ref="oape:pers:536 viaf:118432135" xml:lang="ar"> <roleName type="honorific" xml:lang="ar">الشيخ</roleName> <addName type="theophoric" xml:lang="ar">عبد القادر</addName>
@@ -3489,7 +3493,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البشير</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r58" xml:lang="ar">البشير</title>
                      <idno change="#d2e167" type="oape">118</idno>
                      <idno type="OCLC">472081984</idno>
                      <idno type="OCLC">1034540410</idno>
@@ -3515,7 +3519,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البصائر</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3059" xml:lang="ar">البصائر</title>
                      <idno change="#d2e167" type="oape">120</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -3527,7 +3531,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البصرة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r488" xml:lang="ar">البصرة</title>
                      <idno change="#d2e167" type="oape">121</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -3539,7 +3543,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">البلاد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2961" xml:lang="ar">البلاد</title>
                      <idno change="#d2e167" type="oape">122</idno>
                      <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_956.d2e7509" type="publisher"> <persName ref="oape:pers:4142" xml:lang="ar"
                         >روفائيل بطي</persName> </editor>
@@ -3614,7 +3618,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">التعليم الابتدائي</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1536" xml:lang="ar">التعليم الابتدائي</title>
                      <idno change="#d2e167" type="oape">415</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -3722,7 +3726,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الثبات</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2368" xml:lang="ar">الثبات</title>
                      <idno change="#d2e167" type="oape">466</idno>
                      <editor xml:lang="ar"> <persName change="#d3e399 #d9e530" ref="oape:pers:703" xml:lang="ar"> <forename xml:lang="ar">خليل</forename> <roleName type="title" xml:lang="ar"
                         >أفندي</roleName> <surname xml:lang="ar">زبية</surname> </persName> </editor>
@@ -3754,7 +3758,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الجريدة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2498" xml:lang="ar">الجريدة</title>
                      <idno change="#d2e167" type="oape">133</idno>
                      <ref>Tarrazi:4:22</ref>
                      <textLang mainLang="ar"/>
@@ -3767,7 +3771,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الجسمانية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3045" xml:lang="ar">الجسمانية</title>
                      <idno change="#d2e167" type="oape">134</idno>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_19.d2e1684">أب <persName ref="oape:pers:4192"
                         >يوسف علوان</persName> </editor>
@@ -3793,7 +3797,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الجوائب</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r25" xml:lang="ar">الجوائب</title>
                      <idno change="#d2e167" type="oape">136</idno>
                      <idno type="OCLC">695008193</idno>
                      <idno type="OCLC">1034555233</idno>
@@ -3837,7 +3841,7 @@
                </biblStruct>
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_3.d2e6196" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الحجاز</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3003" xml:lang="ar">الحجاز</title>
                      <idno change="#d2e167" type="oape">142</idno>
                      <editor change="#d3e726" source=" ../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_94.TEIP5.xml#bibl_3.d2e6196" type="editor"><persName change="#d5e515 #d9e530"
                         ref="oape:pers:4239">محمد <addName type="nasab" xml:lang="ar"><nameLink xml:lang="ar">بن</nameLink> <addName type="khitab" xml:lang="ar">بدر الدين</addName><roleName
@@ -3908,7 +3912,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الحق يعلو</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r861" xml:lang="ar">الحق يعلو</title>
                      <idno change="#d2e167" type="oape">145</idno>
                      <textLang mainLang="ar"/>
                      <editor source="jaraid"> <persName change="#d5e515 #d9e530" ref="oape:pers:4308" xml:lang="ar"> <forename xml:lang="ar"> <tei:addName type="theophoric" xml:lang="ar"
@@ -3981,7 +3985,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الخالدات</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2187" xml:lang="ar">الخالدات</title>
                      <idno change="#d2e167" type="oape">148</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4102,7 +4106,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الرئيس</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r824" xml:lang="ar">الرئيس</title>
                      <idno change="#d2e167" type="oape">162</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4128,7 +4132,7 @@
                </biblStruct>
                <biblStruct oape:frequency="weekly" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الراوي</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2598" xml:lang="ar">الراوي</title>
                      <idno change="#d2e167" type="oape">164</idno>
                      <textLang mainLang="ar"/>
                      <editor source="tarazi"> <persName change="#d5e515 #d9e530" ref="oape:pers:4309" xml:lang="ar-Latn-x-ijmes"> <forename xml:lang="ar-Latn-x-ijmes">Tawfīq</forename> <surname
@@ -4168,7 +4172,7 @@
                </biblStruct>
                <biblStruct type="periodical">
                   <monogr>
-                     <title level="j" xml:lang="ar">الرقيب</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2846" xml:lang="ar">الرقيب</title>
                      <idno change="#d2e167" type="oape">529</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4178,7 +4182,7 @@
                </biblStruct>
                <biblStruct type="periodical">
                   <monogr>
-                     <title level="j" xml:lang="ar">الرقيب</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r697" xml:lang="ar">الرقيب</title>
                      <idno change="#d2e167" type="oape">530</idno>
                      <textLang mainLang="ar"/>
                      <editor source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_15.TEIP5.xml#p_6950.d2e46787"> <persName change="#d3e432 #d9e530" ref="oape:pers:4186"> <forename
@@ -4232,7 +4236,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الزهراء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1781" xml:lang="ar">الزهراء</title>
                      <idno change="#d2e167" type="oape">168</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4260,7 +4264,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">السائح</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2117" xml:lang="ar">السائح</title>
                      <idno change="#d2e167" type="oape">170</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4376,7 +4380,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الشام</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r567" xml:lang="ar">الشام</title>
                      <idno change="#d2e167" type="oape">179</idno>
                      <ref>Tarrazi:4:43</ref>
                      <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_5657.d2e66880"> <persName change="#d3e130 #d3e399 #d9e530" ref="oape:pers:963"> <forename
@@ -4409,7 +4413,7 @@
                <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
                      <title level="j" xml:lang="ar">الشتاء</title>
-                     <title level="j" xml:lang="ar">مجلة الشتاء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1598" xml:lang="ar">مجلة الشتاء</title>
                      <idno change="#d2e167" type="oape">181</idno>
                      <idno change="#d2e167" type="oape">368</idno>
                      <idno type="url">https://catalog.hathitrust.org/Record/009030706</idno>
@@ -4421,7 +4425,8 @@
                      <imprint>
                         <date from="1906" source="https://catalog.hathitrust.org/Record/009030706">١٩٠٦</date>
                         <pubPlace source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_3149.d2e25406"><placeName>القاهرة</placeName></pubPlace>
-                        <publisher source="https://catalog.hathitrust.org/Record/009030706"><orgName>مطبعة <title level="j">الهلال</title></orgName></publisher>
+                        <publisher source="https://catalog.hathitrust.org/Record/009030706"><orgName>مطبعة <title change="#d9e545" level="j" ref="jaraid:bibl:t1r375"
+                           >الهلال</title></orgName></publisher>
                      </imprint>
                   </monogr>
                </biblStruct>
@@ -4498,7 +4503,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الشمس</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r837" xml:lang="ar">الشمس</title>
                      <idno change="#d2e167" type="oape">186</idno>
                      <textLang mainLang="ar"/>
                      <editor type="owner"> <persName change="#d5e515 #d9e530" ref="oape:pers:4310" xml:lang="ar"> <forename xml:lang="ar">جورج</forename> <surname xml:lang="ar">متى</surname>
@@ -4622,7 +4627,7 @@
                </biblStruct>
                <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العالم الجديد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2167" xml:lang="ar">العالم الجديد</title>
                      <idno change="#d2e167" type="oape">501</idno>
                      <editor xml:lang="ar"> <persName change="#d3e130 #d3e399 #d9e530" ref="oape:pers:105" xml:lang="ar">سلوم <roleName type="title" xml:lang="ar">أفندي</roleName>مكرزل</persName> </editor>
                      <textLang mainLang="ar"/>
@@ -4649,7 +4654,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العالم العربي</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2917" xml:lang="ar">العالم العربي</title>
                      <idno change="#d2e167" type="oape">194</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4673,7 +4678,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العراق</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2894" xml:lang="ar">العراق</title>
                      <idno change="#d2e167" type="oape">196</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4702,7 +4707,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العروس</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3157" xml:lang="ar">العروس</title>
                      <title level="j" xml:lang="ar">مجلة نسائية علمية أدبية صحية</title>
                      <idno change="#d2e167" type="oape">511</idno>
                      <editor xml:lang="ar"> <persName change="#d3e130 #d3e399 #d9e530" ref="oape:pers:2844 viaf:219321857" xml:lang="ar"> <forename xml:lang="ar">ماري</forename> <surname xml:lang="ar"
@@ -4715,7 +4720,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العريس</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3194" xml:lang="ar">العريس</title>
                      <title level="j" xml:lang="ar">مجلة علمية أدبية اجتماعية فكاهية</title>
                      <idno change="#d2e167" type="oape">503</idno>
                      <editor xml:lang="ar"> <persName change="#d3e130 #d3e399 #d9e530" ref="oape:pers:4039" xml:lang="ar">نسيب <roleName type="title" xml:lang="ar">أفندي</roleName>نصار</persName> </editor>
@@ -4755,7 +4760,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العصور</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1850" xml:lang="ar">العصور</title>
                      <idno change="#d2e167" type="oape">200</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -4793,7 +4798,7 @@
                </biblStruct>
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_10.TEIP5.xml#bibl_15.d2e4311" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">العمران</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r889" xml:lang="ar">العمران</title>
                      <idno change="#d2e167" type="oape">202</idno>
                      <ref>Tarrazi:4:180</ref>
                      <editor source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_1.TEIP5.xml#p_3279.d2e18971" type="owner"> <persName change="#d3e188 #d3e399 #d9e530"
@@ -4927,7 +4932,7 @@
                </biblStruct>
                <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">القسطاس</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2869" xml:lang="ar">القسطاس</title>
                      <idno change="#d2e167" type="oape">212</idno>
                      <editor change="#d2e466" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_5" type="owner"> <persName change="#d3e399 #d9e530"
                         ref="oape:pers:3137">اعظمي <addName type="theophoric" xml:lang="ar">عبد الجبار</addName> <roleName type="title" xml:lang="ar">أفندي</roleName></persName> </editor>
@@ -4963,7 +4968,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الكائنات</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2605" xml:lang="ar">الكائنات</title>
                      <idno change="#d2e167" type="oape">214</idno>
                      <editor change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_22.d2e3242"> <persName
                         change="#d3e399 #d2e414 #d3e399 #d9e530" ref="oape:pers:963"> <forename xml:lang="ar">اديب</forename> <surname xml:lang="ar">نظمي</surname> </persName> </editor>
@@ -4978,7 +4983,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الكرخ</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2939" xml:lang="ar">الكرخ</title>
                      <idno change="#d2e167" type="oape">215</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -5002,7 +5007,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الكرمل</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2830" xml:lang="ar">الكرمل</title>
                      <idno change="#d2e167" type="oape">472</idno>
                      <textLang mainLang="ar"/>
                      <editor source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_6.TEIP5.xml#p_5109.d2e32351" type="owner"> <persName change="#d3e399 #d9e530" ref="oape:pers:4184"
@@ -5027,7 +5032,7 @@
                </biblStruct>
                <biblStruct subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الكوثر</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3043" xml:lang="ar">الكوثر</title>
                      <title level="j" xml:lang="ar-Latn-x-ijmes">al-Kawthar</title>
                      <title level="j" xml:lang="ar">مجلة علمية فنية سياسية</title>
                      <idno change="#d2e167" type="oape">505</idno>
@@ -5132,7 +5137,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">اللواء</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r807" xml:lang="ar">اللواء</title>
                      <idno change="#d2e167" type="oape">224</idno>
                      <textLang mainLang="ar"/>
                      <editor source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_23.TEIP5.xml#p_9133.d2e65691 ../../../../TEI/oclc_165855925/tei/oclc_165855925-v_7.TEIP5.xml#p_4475.d2e53563"
@@ -5315,7 +5320,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المجلة الجديدة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1899" xml:lang="ar">المجلة الجديدة</title>
                      <idno change="#d2e167" type="oape">477</idno>
                      <textLang mainLang="ar">Not Arabic. al-Muqtabas published articles in translation</textLang>
                      <imprint>
@@ -5337,7 +5342,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المجلة المدرسية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1549" xml:lang="ar">المجلة المدرسية</title>
                      <idno change="#d2e167" type="oape">235</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -5349,7 +5354,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المجلة المصرية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r810" xml:lang="ar">المجلة المصرية</title>
                      <idno change="#d2e167" type="oape">236</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -5489,7 +5494,7 @@
                </biblStruct>
                <biblStruct source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#bibl_4.d2e2513" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المراقب</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2371" xml:lang="ar">المراقب</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة سياسية ادبية اجتماعية صناعية زراعية فكاهية</title>
                      <idno change="#d2e167" type="oape">244</idno>
                      <idno type="OCLC">1034549493</idno>
@@ -5508,7 +5513,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المرج</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2584" xml:lang="ar">المرج</title>
                      <idno change="#d2e167" type="oape">479</idno>
                      <editor xml:lang="ar"> <persName change="#d3e130 #d3e399 #d9e530" ref="oape:pers:3295" xml:lang="ar"> <roleName type="title" xml:lang="ar">الدكتور</roleName> <forename
                         xml:lang="ar">اسعد</forename> <surname xml:lang="ar">رحال</surname> </persName> </editor>
@@ -5558,7 +5563,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المسرة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3148" xml:lang="ar">المسرة</title>
                      <idno change="#d2e167" type="oape">248</idno>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_12.d2e1511"> <persName change="#d3e399 #d9e530"
                         ref="oape:pers:4118"> <tei:roleName type="nobility" xml:lang="ar">السيد</tei:roleName>جرمانوس</persName> </editor>
@@ -5687,7 +5692,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المقطم</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r329" xml:lang="ar">المقطم</title>
                      <idno change="#d2e167" type="oape">257</idno>
                      <idno type="OCLC">243472096</idno>
                      <ref target="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_4023.d2e33479"/>
@@ -5750,7 +5755,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المنتقد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3037" xml:lang="ar">المنتقد</title>
                      <idno change="#d2e167" type="oape">481</idno>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_3.d2e1270" type="owner"> <persName change="#d3e399 #d9e530"
                         ref="oape:pers:583"> <forename xml:lang="ar">محمد</forename> <surname xml:lang="ar">باقر</surname> </persName> </editor>
@@ -5768,7 +5773,7 @@
                </biblStruct>
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_8.TEIP5.xml#bibl_10.d1e2498" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المنهل الصافي</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1606" xml:lang="ar">المنهل الصافي</title>
                      <idno change="#d2e167" type="oape">261</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -5792,7 +5797,7 @@
                </biblStruct>
                <biblStruct source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_90.TEIP5.xml#bibl_1.d2e4150" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">المورد الصافي</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3044" xml:lang="ar">المورد الصافي</title>
                      <title level="j">مجلة المورد الصافي</title>
                      <idno change="#d2e167" type="oape">263</idno>
                      <idno change="#d2e167" type="oape">482</idno>
@@ -5913,7 +5918,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">النديم</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2473" xml:lang="ar">النديم</title>
                      <title level="j" xml:lang="ar">مجلة كاثوليكية سياسية إخبارية تاريخية أدبية علمية</title>
                      <idno change="#d2e167" type="oape">508</idno>
                      <idno change="#d2e167" type="oape">357</idno>
@@ -5945,7 +5950,7 @@
                </biblStruct>
                <biblStruct change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#bibl_8.d2e3538">
                   <monogr>
-                     <title level="j" xml:lang="ar">النشرة الأسبوعية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r76" xml:lang="ar">النشرة الأسبوعية</title>
                      <idno change="#d2e167" type="oape">515</idno>
                      <textLang mainLang="ar"/>
                      <editor change="#d2e432" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_10.d2e3550"> <persName change="#d3e399 #d9e530"
@@ -5980,7 +5985,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">النعمة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3155" xml:lang="ar">النعمة</title>
                      <title level="j" xml:lang="ar">مجلة دينية علمية إخبارية</title>
                      <idno change="#d2e167" type="oape">273</idno>
                      <tei:idno type="OCLC">792755094</tei:idno>
@@ -5996,7 +6001,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">النفائس</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3048" xml:lang="ar">النفائس</title>
                      <idno change="#d2e167" type="oape">274</idno>
                      <editor change="#d2e435" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_9.d2e1442" type="owner"> <persName change="#d3e399 #d9e530"
                         ref="oape:pers:4100">انيس <tei:addName type="nisbah" xml:lang="ar">الخوري</tei:addName></persName> </editor>
@@ -6072,7 +6077,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الهلال العثماني</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2056" xml:lang="ar">الهلال العثماني</title>
                      <idno change="#d2e167" type="oape">278</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6123,7 +6128,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">الوقائع المصرية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r5" xml:lang="ar">الوقائع المصرية</title>
                      <idno change="#d2e167" type="oape">281</idno>
                      <ref>Tarrazi:4:162</ref>
                      <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_775.d2e5787&#34;"> <persName change="#d3e130 #d3e399 #d9e530" ref="oape:pers:2863 viaf:96964876">
@@ -6159,7 +6164,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">اليقين</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3262" xml:lang="ar">اليقين</title>
                      <idno change="#d2e167" type="oape">282</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6171,7 +6176,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">اليمن</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r81" xml:lang="ar">اليمن</title>
                      <idno change="#d2e167" type="oape">283</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6207,7 +6212,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">بغداد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2845" xml:lang="ar">بغداد</title>
                      <idno change="#d2e167" type="oape">285</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6306,7 +6311,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">ترجمان</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2058" xml:lang="ar">ترجمان</title>
                      <idno change="#d2e167" type="oape">485</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6391,7 +6396,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">تنوير الأفكار</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3247" xml:lang="ar">تنوير الأفكار</title>
                      <title level="j" xml:lang="ar">مجلة دينية أدبية سياسية</title>
                      <idno change="#d2e167" type="oape">498</idno>
                      <editor type="owner"> <persName change="#d3e130 #d3e399 #d9e530" ref="oape:pers:3773" xml:lang="ar">عبد <addName type="nisbah" xml:lang="ar">الهادي</addName><roleName type="title"
@@ -6477,7 +6482,7 @@
                </biblStruct>
                <biblStruct subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">جريدة عسكرية</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r451" xml:lang="ar">جريدة عسكرية</title>
                      <idno change="#d2e167" type="oape">304</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6527,7 +6532,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">جورنال بيروت</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2421" xml:lang="ar">جورنال بيروت</title>
                      <idno change="#d2e167" type="oape">307</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6551,10 +6556,10 @@
                </biblStruct>
                <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">حديقة الاخبار</title>
-                     <title level="j" xml:lang="ar">حديقة الأخبار</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r21" xml:lang="ar">حديقة الاخبار</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r21" xml:lang="ar">حديقة الأخبار</title>
                      <title level="j" type="sub" xml:lang="ar">جرنال مدني علمي متجري تاريخي</title>
-                     <title level="j" xml:lang="ar-Latn-x-ijmes">Ḥadīqat al-Akhbār</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r21" xml:lang="ar-Latn-x-ijmes">Ḥadīqat al-Akhbār</title>
                      <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jurnāl madanī ʿilmī mutajjarī tārīkhī</title>
                      <idno change="#d2e414" type="oape">546</idno>
                      <idno change="#d2e167" type="oape">490</idno>
@@ -6601,7 +6606,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">حلب</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2726" xml:lang="ar">حلب</title>
                      <idno change="#d2e167" type="oape">310</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6613,7 +6618,7 @@
                </biblStruct>
                <biblStruct oape:frequency="weekly" source="oape:bibl:311" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">حمص</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2682" xml:lang="ar">حمص</title>
                      <title level="j" type="sub" xml:lang="ar">جريدة علمية ادبية اخبارية</title>
                      <title level="j" xml:lang="fr">Emessa</title>
                      <idno change="#d2e167" type="oape">311</idno>
@@ -6688,7 +6693,7 @@
                </biblStruct>
                <biblStruct oape:frequency="weekly" subtype="newspaper" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">دير القمر</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2566" xml:lang="ar">دير القمر</title>
                      <idno change="#d2e167" type="oape">315</idno>
                      <editor change="#d2e481"
                         source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_4 file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_7.TEIP5.xml#p_4012.d2e48605"
@@ -6731,7 +6736,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">روضة</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2850" xml:lang="ar">روضة</title>
                      <idno change="#d2e167" type="oape">317</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6755,7 +6760,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">روضة المدارس</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1697" xml:lang="ar">روضة المدارس</title>
                      <idno change="#d2e167" type="oape">318</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -6794,7 +6799,7 @@
                </biblStruct>
                <biblStruct oape:frequency="monthly" subtype="journal" type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">سبل الرشاد</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r3251" xml:lang="ar">سبل الرشاد</title>
                      <title change="#d2e481" level="j" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_13.TEIP5.xml#bibl_2" type="sub"
                         >مجلة دينية علمية اجتماعية فلسفية تاريخية</title>
                      <idno change="#d2e167" type="oape">319</idno>
@@ -6952,7 +6957,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">صحيفة نادي دار العلوم</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1656" xml:lang="ar">صحيفة نادي دار العلوم</title>
                      <idno change="#d2e167" type="oape">327</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -7026,7 +7031,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">طرابلس الغرب</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r41" xml:lang="ar">طرابلس الغرب</title>
                      <idno change="#d2e167" type="oape">331</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -7123,7 +7128,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">فتاة الشرق</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1612" xml:lang="ar">فتاة الشرق</title>
                      <idno change="#d2e167" type="oape">338</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -7325,7 +7330,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">لسان الحال</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r112" xml:lang="ar">لسان الحال</title>
                      <idno change="#d2e167" type="oape">349</idno>
                      <editor change="#d2e433" source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_4.d2e2905"> <persName change="#d3e399 #d2e414 #d3e399 #d9e530"
                         ref="oape:pers:720 viaf:73737825"> <forename xml:lang="ar">خليل</forename> <surname xml:lang="ar">سركيس</surname> </persName> </editor>
@@ -7341,7 +7346,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">لسان الشرق</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r2693" xml:lang="ar">لسان الشرق</title>
                      <idno change="#d2e167" type="oape">350</idno>
                      <editor source="file:///BachUni/BachBibliothek/GitHub/TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_1616.d2e17170" type="owner"><persName change="#d3e399 #d9e530"
                         ref="oape:pers:451"> <forename xml:lang="ar">احمد</forename> <surname xml:lang="ar"> <addName type="nisbah" xml:lang="ar">الصابوني</addName> </surname> </persName></editor>
@@ -7743,7 +7748,7 @@
                </biblStruct>
                <biblStruct change="#d3e891" source="../../../../OpenArabicPE/digital-muqtabas/xml/oclc_4770057679-i_5.TEIP5.xml#bibl_8.d1e2586" xml:lang="ar">
                   <monogr>
-                     <title level="j" xml:lang="ar">مسامرات الشعب</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r1566" xml:lang="ar">مسامرات الشعب</title>
                      <idno change="#d2e414" type="oape">548</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
@@ -7821,7 +7826,7 @@
                </biblStruct>
                <biblStruct type="periodical" xml:lang="ar">
                   <monogr xml:lang="ar">
-                     <title level="j" xml:lang="ar">مكارم الأخلاق</title>
+                     <title change="#d9e545" level="j" ref="jaraid:bibl:t1r282" xml:lang="ar">مكارم الأخلاق</title>
                      <idno change="#d2e167" type="oape">391</idno>
                      <textLang mainLang="ar"/>
                      <imprint>
