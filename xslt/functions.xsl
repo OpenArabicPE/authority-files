@@ -1625,13 +1625,19 @@
     <xsl:function name="oape:find-references-to-periodicals">
         <xsl:param name="p_text" as="xs:string"/>
         <!-- find the token identifying a periodical and followed by a likely title -->
-        <xsl:variable name="v_regex-1" select="'(\W|و|^)((مجلة|جريدة)\s+)((ال\w+\s*)+?)(\s*ال\w+ية*)'"/>
+        <!-- there was a problem with the first regex trying to match 1 or more words starting with "al-" and a possible additional adjective -->
+        <!-- I fixed this by explicitly excluding words ending on "iyya" from the first group of words -->
+        <xsl:variable name="v_regex-1" select="'(\W|و|^)((مجلة|جريدة)\s+)((ال\w+[^ية]\s+)+?)(ال\w+ية)*'"/>
         <xsl:variable name="v_regex-2" select="'(\W|و|^)((مجلة|جريدة)\s+\()(.+?)(\)\s*(ال\w+ية)*)'"/>
-        <xsl:analyze-string regex="{concat($v_regex-1, '|', $v_regex-2)}" select="$p_text">
+        <xsl:analyze-string regex="{concat($v_regex-1, '|', $v_regex-2)}" flags="m" select="$p_text">
             <xsl:matching-substring>
                 <xsl:choose>
                     <!-- sequence matters -->
-                    <xsl:when test="matches($p_text, $v_regex-2)">
+                    <xsl:when test="matches(., $v_regex-2)">
+                        <!-- quick debugging -->
+                        <xsl:message>
+                            <xsl:text>found $v_regex-2</xsl:text>
+                        </xsl:message>
                         <xsl:value-of select="regex-group(7)"/>
                         <xsl:call-template name="t_ner-add-bibl">
                             <xsl:with-param name="p_prefix" select="regex-group(8)"/>
@@ -1639,11 +1645,16 @@
                             <xsl:with-param name="p_suffix" select="regex-group(11)"/>
                         </xsl:call-template>
                     </xsl:when>
-                    <xsl:when test="matches($p_text, $v_regex-1)">
+                    <xsl:when test="matches(., $v_regex-1)">
+                        <!-- quick debugging -->
+                        <xsl:message>
+                            <xsl:text>found $v_regex-1</xsl:text>
+                        </xsl:message>
                         <xsl:value-of select="regex-group(1)"/>
                         <xsl:call-template name="t_ner-add-bibl">
                             <xsl:with-param name="p_prefix" select="regex-group(2)"/>
-                            <xsl:with-param name="p_title" select="normalize-space(regex-group(4))"/>
+                            <!--<xsl:with-param name="p_title" select="normalize-space(regex-group(4))"/>-->
+                            <xsl:with-param name="p_title" select="regex-group(4)"/>
                             <xsl:with-param name="p_suffix" select="regex-group(6)"/>
                         </xsl:call-template>
                     </xsl:when>
@@ -1661,10 +1672,10 @@
         <!-- test if the suffix string contains a toponym -->
         <xsl:variable name="v_place-ref">
             <xsl:choose>
-                <xsl:when test="matches($p_suffix, '\sال\w+ية$')">
+                <xsl:when test="matches($p_suffix, '^.*ال(\w+)ية\s*$')">
                     <xsl:variable name="v_entity">
                         <xsl:element name="placeName">
-                            <xsl:value-of select="replace($p_suffix, '^.*ال(\w+)ية$', '$1')"/>
+                            <xsl:value-of select="replace($p_suffix, '^.*ال(\w+)ية\s*$', '$1')"/>
                         </xsl:element>
                     </xsl:variable>
                     <xsl:value-of select="oape:query-gazetteer($v_entity/descendant-or-self::tei:placeName, $v_gazetteer, $p_local-authority, 'tei-ref', '')"/>
