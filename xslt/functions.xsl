@@ -864,20 +864,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-    <!-- get OpenArabicPE ID from authority file with an @xml:id -->
-    <xsl:function name="oape:get-id-for-person">
-        <xsl:param name="p_xml-id"/>
-        <xsl:param name="p_authority"/>
-        <xsl:param name="p_authority-file"/>
-        <xsl:value-of select="$p_authority-file//tei:person[tei:persName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"/>
-    </xsl:function>
-    <!-- get OpenArabicPE ID from authority file with an @xml:id -->
-    <xsl:function name="oape:get-id-for-place">
-        <xsl:param name="p_xml-id"/>
-        <xsl:param name="p_authority"/>
-        <xsl:param name="p_authority-file"/>
-        <xsl:value-of select="$p_authority-file/tei:place[tei:placeName[@xml:id = $p_xml-id]]/tei:idno[@type = $p_authority][1]"/>
-    </xsl:function>
+    
     <xsl:function name="oape:date-get-onset">
         <xsl:param name="p_date"/>
         <xsl:choose>
