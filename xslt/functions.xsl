@@ -1409,7 +1409,7 @@
                                 <xsl:value-of select="$p_title"/>
                                 <xsl:text> in the authority file but publication dates suggest it is erroneous</xsl:text>
                             </xsl:message>
-                            <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>
+<!--                            <xsl:copy-of select="$v_corresponding-bibls/self::tei:biblStruct"/>-->
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:if test="$p_verbose = true()">
@@ -1685,6 +1685,27 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <!-- test if the suffix string contains information on frequency -->
+        <xsl:variable name="v_frequency">
+            <xsl:analyze-string select="$p_suffix" regex="'^.*ال(\w+)ية\s*$'">
+                <xsl:matching-substring>
+                    <xsl:choose>
+                        <xsl:when test="regex-group(1) = 'يوم'">
+                            <xsl:text>daily</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="regex-group(1) = 'اسبوع'">
+                            <xsl:text>weekly</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="regex-group(1) = 'شهر'">
+                            <xsl:text>monthly</xsl:text>
+                        </xsl:when>
+                    </xsl:choose>
+                </xsl:matching-substring>
+                <xsl:non-matching-substring>
+                    <xsl:value-of select="'NA'"/>
+                </xsl:non-matching-substring>
+            </xsl:analyze-string>
+        </xsl:variable>
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>Found reference to a periodical with </xsl:text>
@@ -1711,6 +1732,9 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:attribute>
+            <xsl:if test="$v_frequency != 'NA'">
+                <xsl:attribute name="oape:frequency" select="$v_frequency"/>
+            </xsl:if>
             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
             <xsl:value-of select="$p_prefix"/>
             <!-- title -->
