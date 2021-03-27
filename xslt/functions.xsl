@@ -1627,7 +1627,10 @@
         <!-- find the token identifying a periodical and followed by a likely title -->
         <!-- there was a problem with the first regex trying to match 1 or more words starting with "al-" and a possible additional adjective -->
         <!-- I fixed this by explicitly excluding words ending on "iyya" from the first group of words -->
-        <xsl:variable name="v_regex-1" select="'(\W|و|^)((مجلة|جريدة)\s+)((ال\w+[^ية]\s+)+?)(ال\w+ية)*'"/>
+        <!-- <xsl:variable name="v_regex-1" select="'(\W|و|^)((مجلة|جريدة)\s+)((ال\w+[^ية]\s+)+?)(ال\w+ية)*'"/> -->
+        <!-- regex 1: 7 groups -->
+        <xsl:variable name="v_regex-1" select="'(\W|و|^)((مجلة|جريدة)\s+)((ال\w+)(ال\w+[^ية])?)(\W*ال\w+ية)?'"/>
+        <!-- regex 2: 6 groups,  works well -->
         <xsl:variable name="v_regex-2" select="'(\W|و|^)((مجلة|جريدة)\s+\()(.+?)(\)\s*(ال\w+ية)*)'"/>
         <xsl:analyze-string regex="{concat($v_regex-1, '|', $v_regex-2)}" flags="m" select="$p_text">
             <xsl:matching-substring>
@@ -1638,11 +1641,11 @@
                         <xsl:message>
                             <xsl:text>found $v_regex-2</xsl:text>
                         </xsl:message>
-                        <xsl:value-of select="regex-group(7)"/>
+                        <xsl:value-of select="regex-group(8)"/>
                         <xsl:call-template name="t_ner-add-bibl">
-                            <xsl:with-param name="p_prefix" select="regex-group(8)"/>
-                            <xsl:with-param name="p_title" select="regex-group(10)"/>
-                            <xsl:with-param name="p_suffix" select="regex-group(11)"/>
+                            <xsl:with-param name="p_prefix" select="regex-group(9)"/>
+                            <xsl:with-param name="p_title" select="regex-group(11)"/>
+                            <xsl:with-param name="p_suffix" select="regex-group(12)"/>
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:when test="matches(., $v_regex-1)">
@@ -1655,7 +1658,7 @@
                             <xsl:with-param name="p_prefix" select="regex-group(2)"/>
                             <!--<xsl:with-param name="p_title" select="normalize-space(regex-group(4))"/>-->
                             <xsl:with-param name="p_title" select="regex-group(4)"/>
-                            <xsl:with-param name="p_suffix" select="regex-group(6)"/>
+                            <xsl:with-param name="p_suffix" select="regex-group(7)"/>
                         </xsl:call-template>
                     </xsl:when>
                 </xsl:choose>
