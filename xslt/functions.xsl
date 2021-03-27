@@ -1686,25 +1686,21 @@
             </xsl:choose>
         </xsl:variable>
         <!-- test if the suffix string contains information on frequency -->
-        <xsl:variable name="v_frequency">
-            <xsl:analyze-string select="$p_suffix" regex="'^.*ال(\w+)ية\s*$'">
-                <xsl:matching-substring>
-                    <xsl:choose>
-                        <xsl:when test="regex-group(1) = 'يوم'">
+        <xsl:variable name="v_frequency" as="xs:string">
+            <xsl:choose>
+                <xsl:when test="matches($p_suffix, '^.*اليومية\s*$')">
                             <xsl:text>daily</xsl:text>
                         </xsl:when>
-                        <xsl:when test="regex-group(1) = 'اسبوع'">
+                <xsl:when test="matches($p_suffix, '^.*الاسبوعية\s*$')">
                             <xsl:text>weekly</xsl:text>
                         </xsl:when>
-                        <xsl:when test="regex-group(1) = 'شهر'">
+                    <xsl:when test="matches($p_suffix, '^.*الشهرية\s*$')">
                             <xsl:text>monthly</xsl:text>
                         </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="'NA'"/>
+                        </xsl:otherwise>
                     </xsl:choose>
-                </xsl:matching-substring>
-                <xsl:non-matching-substring>
-                    <xsl:value-of select="'NA'"/>
-                </xsl:non-matching-substring>
-            </xsl:analyze-string>
         </xsl:variable>
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
@@ -1715,11 +1711,13 @@
                 <xsl:value-of select="$p_suffix"/>
                 <xsl:text>, toponym: </xsl:text>
                 <xsl:value-of select="$v_place-ref"/>
+                <xsl:text>, frequency: </xsl:text>
+                <xsl:value-of select="$v_frequency"/>
             </xsl:message>
         </xsl:if>
         <!-- wrap everything in a bibl -->
         <xsl:element name="bibl">
-            <xsl:attribute name="resp" select="'xslt'"/>
+            <xsl:attribute name="resp" select="'#xslt'"/>
             <xsl:attribute name="type" select="'periodical'"/>
             <!-- add @subtype based on $p_prefix -->
             <xsl:attribute name="subtype">
@@ -1742,13 +1740,13 @@
                 <xsl:attribute name="level" select="'j'"/>
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                 <!-- this will remove toponyms from the title. They need to be added after the title -->
-                <xsl:value-of select="$p_title"/>
+                <xsl:value-of select="normalize-space($p_title)"/>
             </xsl:element>
             <xsl:value-of select="$p_suffix"/>
             <!-- empty content with attributes to provide machine-readable data -->
             <xsl:if test="$v_place-ref != 'NA'">
                 <xsl:element name="pubPlace">
-                    <xsl:attribute name="resp" select="'xslt'"/>
+                    <xsl:attribute name="resp" select="'#xslt'"/>
                     <xsl:element name="placeName">
                         <xsl:attribute name="ref" select="$v_place-ref"/>
                     </xsl:element>
