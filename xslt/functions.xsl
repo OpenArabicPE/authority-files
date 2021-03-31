@@ -1265,6 +1265,89 @@
     </xsl:template>
     <xsl:template match="@xml:id" mode="m_remove-rolename"/>
     <!-- this function takes a <tei:persName> as input, tries to look it up in an authority file and returns a <tei:persName> -->
+    <xsl:function name="oape:link-placename-to-authority-file">
+        <xsl:param name="p_placename"/>
+        <xsl:param as="xs:string" name="p_local-authority"/>
+        <xsl:param name="p_authority-file"/>
+        <!-- flatened version of the persName without non-word characters -->
+        <xsl:variable name="v_name-normalised" select="oape:string-normalise-characters($p_placename)"/>
+        <!-- remove all roleNames, flatten and test again -->
+        <!-- test if the flattened name is present in the authority file -->
+        <!-- returns a single <person> node -->
+        <xsl:variable name="v_corresponding-place">
+            <xsl:choose>
+                <!-- test if this node already points to an authority file -->
+                <xsl:when test="$p_placename/@ref">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The input already points to an authority file</xsl:message>
+                    </xsl:if>
+                    <!-- there seems to be a problem with this function -->
+                    <xsl:copy-of select="oape:get-entity-from-authority-file($p_placename, $p_local-authority, $p_authority-file)"/>
+                </xsl:when>
+                <!-- test if the name is found in the authority file -->
+                <xsl:when test="$p_authority-file//tei:place[tei:placeName = $v_name-normalised]">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The normalised input has been found in the authority file</xsl:message>
+                    </xsl:if>
+                    <xsl:copy-of select="$p_authority-file//tei:place[tei:placeName = $v_name-normalised][1]"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The input has not been found in the authority file</xsl:message>
+                    </xsl:if>
+                    <!-- one cannot use a boolean value if the default result is non-boolean -->
+                    <xsl:value-of select="'NA'"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:choose>
+            <!-- name is found in the authority file. it will be linked and potentially updated -->
+            <xsl:when test="$v_corresponding-place/descendant-or-self::tei:place">
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>"</xsl:text>
+                        <xsl:value-of select="normalize-space($p_placename)"/>
+                        <xsl:text>" is present in the authority file and will be linked</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+                <!-- construct @ref pointing to the corresponding entry -->
+                <xsl:variable name="v_ref" select="oape:query-place($v_corresponding-place/descendant-or-self::tei:place, 'tei-ref', '', $p_local-authority)"/>
+                <!-- replicate node -->
+                <xsl:copy select="$p_placename">
+                    <!-- replicate attributes -->
+                    <xsl:apply-templates mode="m_identity-transform" select="$p_placename/@*"/>
+                    <!-- add references to IDs -->
+                    <xsl:attribute name="ref" select="$v_ref"/>
+                    <!-- document change -->
+                    <!-- this test does not catch all changes -->
+                    <xsl:if
+                        test="($p_placename/@ref != $v_ref)">
+                        <xsl:choose>
+                            <xsl:when test="not($p_placename/@change)">
+                                <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates mode="m_documentation" select="$p_placename/@change"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:if>
+                    <!-- replicate content -->
+                    <xsl:apply-templates mode="m_identity-transform" select="node()"/>
+                </xsl:copy>
+            </xsl:when>
+            <!-- fallback: name is not found in the authority file -->
+            <xsl:when test="$v_corresponding-place = 'NA'">
+                <!--                <xsl:if test="$p_verbose = true()">-->
+                <xsl:message>
+                    <xsl:text> The input "</xsl:text>
+                    <xsl:value-of select="normalize-space($p_placename)"/>
+                    <xsl:text>" was not found in authority file.</xsl:text>
+                </xsl:message>
+                <xsl:apply-templates select="$p_placename" mode="m_identity-transform"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:function>
+    <!-- this function takes a <tei:persName> as input, tries to look it up in an authority file and returns a <tei:persName> -->
     <xsl:function name="oape:link-persname-to-authority-file">
         <xsl:param name="p_persname"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
@@ -1370,6 +1453,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:function>
+
     <!-- link bibliographic data to bibliography -->
     <xsl:param name="p_update-existing-refs" select="false()"/>
     <xsl:function name="oape:link-title-to-authority-file">
