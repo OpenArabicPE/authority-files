@@ -266,14 +266,14 @@
                                 <xsl:when test="tei:persName/@ref">
                                     <!-- test if the value of the @ref attributes are part of the target -->
                                     <xsl:choose>
-                                        <xsl:when test="contains($v_id-editors-target, tokenize(tei:persName/@ref, ' ')[1])">
+                                        <xsl:when test="contains($v_id-editors-target, tokenize(tei:persName[@ref][1]/@ref, ' ')[1])">
                                             <xsl:if test="$p_verbose = true()">
                                             <xsl:message>
                                                 <xsl:text>editor (ID) found in target</xsl:text>
                                             </xsl:message>
                                             </xsl:if>
                                         </xsl:when>
-                                        <xsl:when test="contains($v_id-editors-target, tokenize(tei:persName/@ref, ' ')[2])">
+                                        <xsl:when test="contains($v_id-editors-target, tokenize(tei:persName[@ref][1]/@ref, ' ')[2])">
                                             <xsl:if test="$p_verbose = true()">
                                             <xsl:message>
                                                 <xsl:text>editor (ID) found in target</xsl:text>
@@ -311,14 +311,14 @@
                                 <xsl:when test="tei:placeName/@ref">
                                     <!-- test if the value of the @ref attributes are part of the target -->
                                     <xsl:choose>
-                                        <xsl:when test="contains($v_id-place-target, tokenize(tei:placeName/@ref, ' ')[1])">
+                                        <xsl:when test="contains($v_id-place-target, tokenize(tei:placeName[@ref][1]/@ref, ' ')[1])">
                                             <xsl:if test="$p_verbose = true()">
                                                 <xsl:message>
                                                 <xsl:text>pubPlace (ID) found in target</xsl:text>
                                             </xsl:message>
                                             </xsl:if>
                                         </xsl:when>
-                                        <xsl:when test="contains($v_id-place-target, tokenize(tei:placeName/@ref, ' ')[2])">
+                                        <xsl:when test="contains($v_id-place-target, tokenize(tei:placeName[@ref][1]/@ref, ' ')[2])">
                                             <xsl:if test="$p_verbose = true()">
                                                 <xsl:message>
                                                 <xsl:text>pubPlace (ID) found in target</xsl:text>
