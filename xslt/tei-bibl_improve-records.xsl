@@ -180,9 +180,9 @@
     
     <xsl:template name="t_generate-oape-id">
         <xsl:param name="p_oape-id" select="$v_oape-id-highest + count(preceding::tei:monogr[not(tei:idno[@type = 'oape'])]) + 1"/>
-        <xsl:message>
+        <!--<xsl:message>
             <xsl:value-of select="$p_oape-id"/>
-        </xsl:message>
+        </xsl:message>-->
         <xsl:element name="idno">
                 <xsl:attribute name="type" select="'oape'"/>
                 <xsl:attribute name="change" select="concat('#',$p_id-change)"/>
