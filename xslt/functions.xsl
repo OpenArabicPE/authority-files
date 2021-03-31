@@ -1407,7 +1407,7 @@
                     <!-- document change -->
                     <!-- this test does not catch all changes -->
                     <xsl:if
-                        test="($p_persname/@ref != $v_ref) or ($p_persname/descendant::node() != $v_corresponding-person/descendant-or-self::tei:persName[@xml:id = $v_corresponding-xml-id]/descendant::node())">
+                        test="$p_persname/@ref != $v_ref">
                         <xsl:choose>
                             <xsl:when test="not($p_persname/@change)">
                                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
