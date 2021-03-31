@@ -291,17 +291,17 @@
     <!-- query a local TEI bibliography for titles, editors, locations, IDs etc. -->
     <xsl:function name="oape:query-bibliography">
         <!-- input is a tei <title> node -->
-        <xsl:param name="title"/>
+        <xsl:param name="title" as="node()"/>
         <!-- $bibliography expects a document -->
         <xsl:param name="bibliography"/>
         <!-- $gazetteer expects a path to a file -->
         <xsl:param name="gazetteer"/>
         <!-- local authority -->
-        <xsl:param name="p_local-authority"/>
+        <xsl:param name="p_local-authority" as="xs:string"/>
         <!-- values for $p_mode are 'pubPlace', 'location', 'name', 'local-authority', 'textLang', ID -->
-        <xsl:param name="p_output-mode"/>
+        <xsl:param name="p_output-mode" as="xs:string"/>
         <!-- select a target language for toponyms -->
-        <xsl:param name="p_output-language"/>
+        <xsl:param name="p_output-language" as="xs:string"/>
         <!-- load data from authority file -->
         <!--<xsl:variable name="v_bibl" select="oape:get-biblstruct-from-bibliography($title, $p_local-authority, $bibliography)"/>-->
         <xsl:variable name="v_listbibl">
@@ -1628,38 +1628,70 @@
         <!-- there was a problem with the first regex trying to match 1 or more words starting with "al-" and a possible additional adjective -->
         <!-- I fixed this by explicitly excluding words ending on "iyya" from the first group of words -->
         <!-- <xsl:variable name="v_regex-1" select="'(\W|و|^)((مجلة|جريدة)\s+)((ال\w+[^ية]\s+)+?)(ال\w+ية)*'"/> -->
-        <!-- regex 1: 7 groups -->
-        <xsl:variable name="v_regex-1" select="'(\W|و|^)((مجلة|جريدة)\s+)((ال\w+)(ال\w+[^ية])?)(\W*ال\w+ية)?'"/>
+        <!-- regex: 3 groups -->
+        <xsl:variable name="v_regex-marker" select="'(\W|و|^)((مجلة|جريدة)\s+)'"/>
+        <!-- regex 1: 3 + 4 groups -->
+        <!-- PROBLEM: negative lookahead assertion is seemingly unsupported -->
+<!--        <xsl:variable name="v_regex-1" select="concat($v_regex-marker, '(((?!ال\w+ية)(ال\w+)\s+)+)(\W*ال\w+ية)?')"/>-->
+        <!-- regex 1: 3 + 2 groups -->
+        <xsl:variable name="v_regex-1" select="concat($v_regex-marker, '((ال\w+\s*)+)')"/>
         <!-- regex 2: 6 groups,  works well -->
         <xsl:variable name="v_regex-2" select="'(\W|و|^)((مجلة|جريدة)\s+\()(.+?)(\)\s*(ال\w+ية)*)'"/>
-        <xsl:analyze-string regex="{concat($v_regex-1, '|', $v_regex-2)}" flags="m" select="$p_text">
+        <!-- regex 3: 3 + 2 groups. matches single words or iḍāfa after the marker -->
+        <xsl:variable name="v_regex-3" select="concat($v_regex-marker, '(\w+(\s+ال\w+)*)')"/>
+        <xsl:analyze-string regex="{concat($v_regex-1, '|', $v_regex-2, '|', $v_regex-3)}" flags="m" select="$p_text">
             <xsl:matching-substring>
+                 <xsl:variable name="v_regex-1-count-groups" select="5"/>
+                <xsl:variable name="v_regex-2-count-groups" select="$v_regex-1-count-groups + 6"/>
                 <xsl:choose>
                     <!-- sequence matters -->
                     <xsl:when test="matches(., $v_regex-2)">
-                        <!-- quick debugging -->
-                        <xsl:message>
-                            <xsl:text>found $v_regex-2</xsl:text>
-                        </xsl:message>
-                        <xsl:value-of select="regex-group(8)"/>
+                        <xsl:value-of select="regex-group($v_regex-1-count-groups + 1)"/>
                         <xsl:call-template name="t_ner-add-bibl">
-                            <xsl:with-param name="p_prefix" select="regex-group(9)"/>
-                            <xsl:with-param name="p_title" select="regex-group(11)"/>
-                            <xsl:with-param name="p_suffix" select="regex-group(12)"/>
+                            <xsl:with-param name="p_prefix" select="regex-group($v_regex-1-count-groups + 2)"/>
+                            <xsl:with-param name="p_title" select="regex-group($v_regex-1-count-groups + 4)"/>
+                            <xsl:with-param name="p_suffix" select="regex-group($v_regex-1-count-groups + 5)"/>
                         </xsl:call-template>
                     </xsl:when>
-                    <xsl:when test="matches(., $v_regex-1)">
-                        <!-- quick debugging -->
-                        <xsl:message>
-                            <xsl:text>found $v_regex-1</xsl:text>
-                        </xsl:message>
+                    <!-- regex 1 with ending with  al-....iyya -->
+                    <xsl:when test="matches(., $v_regex-1) and matches(., '^(.+)ال\w+ية\s*$')">
                         <xsl:value-of select="regex-group(1)"/>
                         <xsl:call-template name="t_ner-add-bibl">
                             <xsl:with-param name="p_prefix" select="regex-group(2)"/>
-                            <!--<xsl:with-param name="p_title" select="normalize-space(regex-group(4))"/>-->
-                            <xsl:with-param name="p_title" select="regex-group(4)"/>
-                            <xsl:with-param name="p_suffix" select="regex-group(7)"/>
+                            <xsl:with-param name="p_title" select="replace(regex-group(4), '^(.+)(ال\w+ية)\s*$', '$1')"/>
+                            <xsl:with-param name="p_suffix" select="replace(regex-group(4), '^(.+)(ال\w+ية)\s*$', '$2')"/>
                         </xsl:call-template>
+                    </xsl:when>
+                    <xsl:when test="matches(., $v_regex-1)">
+                        <xsl:value-of select="regex-group(1)"/>
+                        <xsl:call-template name="t_ner-add-bibl">
+                            <xsl:with-param name="p_prefix" select="regex-group(2)"/>
+                            <xsl:with-param name="p_title" select="regex-group(4)"/>
+                        </xsl:call-template>
+                    </xsl:when>
+                    <xsl:when test="matches(., $v_regex-3)">
+                        <xsl:variable name="v_title">
+                            <xsl:element name="title">
+                                <xsl:attribute name="level" select="''"/>
+                                <xsl:value-of select="normalize-space(regex-group($v_regex-2-count-groups + 4))"/>
+                            </xsl:element>
+                        </xsl:variable>
+                        <xsl:variable name="v_title-linked" select="oape:link-title-to-authority-file($v_title//tei:title, 1906, $p_local-authority, $v_bibliography)"/>
+                        <xsl:message>
+                            <xsl:text>Found a potential periodical title (</xsl:text><xsl:value-of select="$v_title"/><xsl:text>), which needs to be checked against the authority file.</xsl:text>
+                        </xsl:message>
+                        <xsl:choose>
+                            <xsl:when test="$v_title-linked/self::tei:title/@ref">
+                                <xsl:value-of select="regex-group($v_regex-2-count-groups + 1)"/>
+                                <xsl:call-template name="t_ner-add-bibl">
+                            <xsl:with-param name="p_prefix" select="regex-group($v_regex-2-count-groups + 2)"/>
+                            <xsl:with-param name="p_title" select="$v_title-linked/self::tei:title"/>
+                        </xsl:call-template>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="."/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                 </xsl:choose>
             </xsl:matching-substring>
