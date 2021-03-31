@@ -758,7 +758,7 @@
                 <xsl:choose>
                     <xsl:when test="$p_person/tei:idno[not(@type = 'URI')]">
                         <xsl:for-each-group group-by="@type" select="$p_person/descendant::tei:idno[not(@type = 'URI')]">
-                            <xsl:sort order="ascending" select="@type"/>
+                            <xsl:sort order="ascending" select="current-grouping-key()"/>
                             <xsl:if test="current-grouping-key() = 'VIAF'">
                                 <xsl:value-of select="concat('viaf:', current-group()[1])"/>
                             </xsl:if>
@@ -1265,7 +1265,7 @@
         <xsl:param name="p_persname"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
-        <xsl:param name="p_add-mark-up"/>
+        <xsl:param name="p_add-mark-up" as="xs:boolean"/>
         <!-- flatened version of the persName without non-word characters -->
         <xsl:variable name="v_name-flat" select="oape:string-remove-spaces(oape:string-normalise-characters($p_persname))"/>
         <!-- remove all roleNames, flatten and test again -->
@@ -1310,7 +1310,7 @@
                 <!-- get @xml:id of corresponding entry in authority file -->
                 <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
                 <!-- construct @ref pointing to the corresponding entry -->
-                <xsl:variable name="v_ref" select="oape:query-person($v_corresponding-person, 'tei-ref', '', '')"/>
+                <xsl:variable name="v_ref" select="oape:query-person($v_corresponding-person/descendant-or-self::tei:person, 'tei-ref', '', $p_local-authority)"/>
                 <!-- replicate node -->
                 <xsl:copy select="$p_persname">
                     <!-- replicate attributes -->
