@@ -134,6 +134,7 @@
                                     <xsl:value-of select="$v_idno"/>
                                     <xsl:text> in the authority file</xsl:text>
                                 </xsl:message>
+                                <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -151,6 +152,7 @@
                                     <xsl:value-of select="$v_idno"/>
                                     <xsl:text> in the authority file</xsl:text>
                                 </xsl:message>
+                                <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -168,6 +170,7 @@
                                     <xsl:value-of select="$v_idno"/>
                                     <xsl:text> in the authority file</xsl:text>
                                 </xsl:message>
+                                <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -185,6 +188,7 @@
                                     <xsl:value-of select="$v_idno"/>
                                     <xsl:text> in the authority file</xsl:text>
                                 </xsl:message>
+                                <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
