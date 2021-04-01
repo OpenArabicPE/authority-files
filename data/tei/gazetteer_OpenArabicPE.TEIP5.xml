@@ -42,6 +42,8 @@
             </editorialDecl>
         </encodingDesc>
         <revisionDesc>
+            <tei:change when="2021-04-01" who="#pers_TG" xml:id="d9e322" xml:lang="en"
+                >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
             <tei:change when="2021-04-01" who="#pers_TG" xml:id="d9e316" xml:lang="en"
                 >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
             <change when="2021-04-01" who="#pers_TG" xml:id="d9e310" xml:lang="en"
@@ -245,20 +247,6 @@
                         <idno type="geon">321062</idno>
                         <idno type="oape">164</idno>
                     </place>
-                    <place type="town" xml:id="place_532">
-                        <placeName xml:lang="ar-Latn-x-ijmes">Mardin</placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ماردين</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Mardin</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Mardin</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Mardin</tei:placeName>
-                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Mardin</tei:placeName>
-                        <tei:location source="#org_geon">
-                            <tei:geo>37.31309, 40.74357</tei:geo>
-                        </tei:location>
-                        <idno type="jaraid">231</idno>
-                        <idno type="geon">304797</idno>
-                        <idno type="oape">532</idno>
-                    </place>
                     <place type="town" xml:id="place_13">
                         <placeName xml:lang="en">Alexandretta</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="ar">إسكندرونة</placeName>
@@ -344,6 +332,20 @@
                         </location>
                         <idno type="geon">9233</idno>
                         <idno type="oape">17</idno>
+                    </place>
+                    <place type="town" xml:id="place_532">
+                        <placeName xml:lang="ar-Latn-x-ijmes">Mardin</placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ماردين</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="en">Mardin</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Mardin</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="de">Mardin</tei:placeName>
+                        <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Mardin</tei:placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>37.31309, 40.74357</tei:geo>
+                        </tei:location>
+                        <idno type="jaraid">231</idno>
+                        <idno type="geon">304797</idno>
+                        <idno type="oape">532</idno>
                     </place>
                     <listPlace type="district">
                         <head>Sancak of Latakia</head>
@@ -2159,6 +2161,19 @@
                         <idno type="geon">6254930</idno>
                         <idno type="oape">202</idno>
                     </place>
+                    <place type="town" xml:id="place_378">
+                        <placeName xml:lang="ar">الخليل</placeName>
+                        <placeName xml:lang="en">Hebron</placeName>
+                        <placeName source="#org_geon" type="alt" xml:lang="fr">Hébron</placeName>
+                        <placeName source="#org_geon" type="alt" xml:lang="de">Hebron</placeName>
+                        <placeName source="#org_geon" type="alt" xml:lang="tr">El Halil</placeName>
+                        <location source="#org_geon">
+                            <geo>31.52935, 35.0938</geo>
+                        </location>
+                        <idno type="url">https://en.wikipedia.org/wiki/Hebron</idno>
+                        <idno type="geon">285066</idno>
+                        <idno type="oape">378</idno>
+                    </place>
                     <place type="town" xml:id="place_425">
                         <placeName xml:lang="en">Bethlehem</placeName>
                         <placeName xml:lang="en">Betlehem</placeName>
@@ -2174,19 +2189,6 @@
                         <idno type="jaraid">197</idno>
                         <idno type="geon">284315</idno>
                         <idno type="oape">425</idno>
-                    </place>
-                    <place type="town" xml:id="place_378">
-                        <placeName xml:lang="ar">الخليل</placeName>
-                        <placeName xml:lang="en">Hebron</placeName>
-                        <placeName source="#org_geon" type="alt" xml:lang="fr">Hébron</placeName>
-                        <placeName source="#org_geon" type="alt" xml:lang="de">Hebron</placeName>
-                        <placeName source="#org_geon" type="alt" xml:lang="tr">El Halil</placeName>
-                        <location source="#org_geon">
-                            <geo>31.52935, 35.0938</geo>
-                        </location>
-                        <idno type="url">https://en.wikipedia.org/wiki/Hebron</idno>
-                        <idno type="geon">285066</idno>
-                        <idno type="oape">378</idno>
                     </place>
                     <place type="town" xml:id="place_504">
                         <placeName xml:lang="ar-Latn-x-ijmes">Ṭūl Karam</placeName>
@@ -2227,6 +2229,16 @@
                 </listPlace>
                 <listPlace type="district">
                     <head>Mount Lebanon</head>
+                    <place type="town" xml:id="place_566">
+                        <placeName xml:lang="und-Latn">Ḥarīṣā</placeName>
+                        <placeName xml:lang="ar">حريسا</placeName>
+                        <tei:location source="#org_geon">
+                            <tei:geo>33.98222, 35.65917</tei:geo>
+                        </tei:location>
+                        <idno type="jaraid">223</idno>
+                        <idno type="geon">274349</idno>
+                        <idno type="oape">566</idno>
+                    </place>
                     <place xml:id="place_413">
                         <placeName xml:lang="ar-Latn-x-ijmes">Kiftīn (<placeName xml:lang="en"> <country xml:lang="en">Lebanon</country> </placeName>)</placeName>
                         <placeName change="#d2e182" xml:lang="ar">كفتين (لبنان)</placeName>
@@ -2539,19 +2551,6 @@
             </listPlace>
             <listPlace type="region">
                 <head>Iraq</head>
-                <place type="town" xml:id="place_421">
-                    <placeName xml:lang="ar-Latn-x-ijmes">Al-Ḥilla</placeName>
-                    <placeName change="#d2e154" xml:lang="ar">الحلة</placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Al Hillah</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Hilla</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Hilla</tei:placeName>
-                    <tei:location source="#org_geon">
-                        <tei:geo>32.46367, 44.41963</tei:geo>
-                    </tei:location>
-                    <idno type="jaraid">205</idno>
-                    <idno type="geon">99347</idno>
-                    <idno type="oape">421</idno>
-                </place>
                 <place type="region" xml:id="place_371">
                     <placeName xml:lang="ar">بين النهرين</placeName>
                     <placeName xml:lang="ar">ما بين النهرين</placeName>
@@ -2612,6 +2611,19 @@
                     <idno type="url">http://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D1%81%D1%83%D0%BB</idno>
                     <idno type="geon">99072</idno>
                     <idno type="oape">211</idno>
+                </place>
+                <place type="town" xml:id="place_421">
+                    <placeName xml:lang="ar-Latn-x-ijmes">Al-Ḥilla</placeName>
+                    <placeName change="#d2e154" xml:lang="ar">الحلة</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Al Hillah</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Hilla</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Hilla</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>32.46367, 44.41963</tei:geo>
+                    </tei:location>
+                    <idno type="jaraid">205</idno>
+                    <idno type="geon">99347</idno>
+                    <idno type="oape">421</idno>
                 </place>
                 <place type="town" xml:id="place_373">
                     <placeName xml:lang="ar">الديوانية</placeName>
@@ -2876,6 +2888,7 @@
                 <place type="town" xml:id="place_225">
                     <placeName xml:lang="ar">الإسكندرية</placeName>
                     <placeName xml:lang="ar">الاسكندرية</placeName>
+                    <placeName xml:lang="ar-Latn-x-ijmes">al-Iskandariyya</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">Alexandria</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Alexandrie</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Alexandria</placeName>
@@ -3380,10 +3393,6 @@
                     </choice> </placeName>
                 <idno type="oape">404</idno>
             </place>
-            <place xml:id="place_382">
-                <placeName xml:lang="ar">أوبسال</placeName>
-                <idno type="oape">382</idno>
-            </place>
             <place xml:id="place_384">
                 <placeName xml:lang="ar">اطنة</placeName>
                 <idno type="oape">384</idno>
@@ -3634,6 +3643,7 @@
             </place>
             <place type="country" xml:id="place_416">
                 <placeName xml:lang="en">Lebanon</placeName>
+                <placeName xml:lang="ar-Latn-x-ijmes">Lubnān</placeName>
                 <placeName source="#org_geon" type="alt" xml:lang="ar">لبنان</placeName>
                 <placeName source="#org_geon" type="alt" xml:lang="fr">Liban</placeName>
                 <placeName source="#org_geon" type="alt" xml:lang="de">Libanon</placeName>
@@ -4926,6 +4936,19 @@
             </listPlace>
             <listPlace type="country">
                 <head>Sweden</head>
+                <place type="town" xml:id="place_382">
+                    <placeName>Uppsala</placeName>
+                    <placeName xml:lang="ar">أوبسال</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Uppsala</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Uppsala</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Uppsala</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>59.85882, 17.63889</tei:geo>
+                    </tei:location>
+                    <idno type="oape">382</idno>
+                    <tei:idno type="url">https://en.wikipedia.org/wiki/Uppsala</tei:idno>
+                    <tei:idno type="geon">2666199</tei:idno>
+                </place>
                 <place type="country" xml:id="place_390">
                     <placeName xml:lang="en">Sweden</placeName>
                     <placeName xml:lang="ar">بلاد السويد</placeName>
@@ -5206,7 +5229,7 @@
                 </place>
                 <place type="town" xml:id="place_364">
                     <placeName xml:lang="ar">سان باولو</placeName>
-                    <placeName xml:lang="en">São Paolo</placeName>
+                    <placeName xml:lang="en">Sao Paolo</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="ar">ساو باولو</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">São Paulo</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">São Paulo</placeName>
