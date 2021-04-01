@@ -39,6 +39,7 @@
         - input: an entity name such as <persName>, <orgName>, <placeName> or <title>
         - output: an entity: such as <person>, <org>, <place> or <biblStruct>
     -->
+    <!-- PROBLEM: entities pointing with a @ref to another authority file are missed -->
     <xsl:function name="oape:get-entity-from-authority-file">
         <!-- input: entity such as <persName>, <orgName>, <placeName> or <title> node -->
         <xsl:param as="node()" name="p_entity-name"/>
@@ -98,6 +99,12 @@
                         <xsl:when test="contains($v_ref, 'oclc:')">
                             <xsl:text>OCLC</xsl:text>
                         </xsl:when>
+                        <xsl:when test="contains($v_ref, 'jaraid:')">
+                            <xsl:text>jaraid</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="contains($v_ref, 'oape:')">
+                            <xsl:text>oape</xsl:text>
+                        </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="$p_local-authority"/>
                         </xsl:otherwise>
@@ -113,6 +120,9 @@
                         </xsl:when>
                         <xsl:when test="contains($v_ref, 'oclc:')">
                             <xsl:value-of select="replace($v_ref, '.*oclc:(\d+).*', '$1')"/>
+                        </xsl:when>
+                        <xsl:when test="contains($v_ref, concat($v_authority, ':', $v_entity-type, ':'))">
+                             <xsl:value-of select="replace($v_ref, concat('.*', $v_authority, ':', $v_entity-type, ':', '(\d+).*'), '$1')"/>
                         </xsl:when>
                         <xsl:when test="contains($v_ref, $v_local-uri-scheme)">
                             <xsl:value-of select="replace($v_ref, concat('.*', $v_local-uri-scheme, '(\d+).*'), '$1')"/>
