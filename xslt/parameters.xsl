@@ -69,7 +69,7 @@
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
             </xsl:when>
             <xsl:when test="$p_local-authority = 'oape'">
-                <xsl:value-of select="'gazetteer_levant-phd.TEIP5.xml'"/>
+                <xsl:value-of select="'gazetteer_OpenArabicPE.TEIP5.xml'"/>
             </xsl:when>
         </xsl:choose>
     </xsl:param>
