@@ -800,6 +800,7 @@
                 <xsl:variable name="v_name">
                     <xsl:choose>
                         <!-- preference for names without addNames -->
+                        <!-- at least in one case this leads to the more commonly referenced name not being returned in Arabic: "Kurd ʿAlī" for "Muḥammad Kurd ʿAlī" -->
                         <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language]">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language][1]"/>
                         </xsl:when>
@@ -959,11 +960,41 @@
     </xsl:template>
     <!-- problem: any mark-up from the input will be removed -->
     <!-- SOLVED: this strips symbols such as .,-' out of strings -->
+    <!-- sequence of name parts is relevant!
+        1. nisba: ... al-....ī
+            - remainder is again checked
+        2. nasab: ibn ...
+            - remaidner is again checked
+        3. kunya: abu ...
+            - remaidner is again checked
+        4. khitab: ... al-Dīn
+        5. theophoric: ... Allah
+        6. theophoric: ʿAbd ...
+        7. single words: titles, ranks etc.
+        8. strings consisting of only two words "... al-...". assume that these are forename and surname
+            - doesn't work properly
+    -->
     <xsl:function name="oape:string-mark-up-names">
         <xsl:param as="xs:string" name="p_input"/>
-        <xsl:param name="p_id-change"/>
+        <xsl:param name="p_id-change" as="xs:string"/>
         <xsl:variable name="v_input" select="oape:string-normalise-characters($p_input)"/>
         <xsl:choose>
+            <!-- 1. test for surname beginning with "al-.." but not ending in "ī" -->
+            <xsl:when test="matches($v_input, '^(.+)\s+(ال\w+[^ي])$')">
+                <xsl:analyze-string regex="\s(ال\w+[^ي])$" select="$v_input">
+                    <xsl:matching-substring>
+                        <xsl:element name="surname">
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'high'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="regex-group(1)"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
             <!-- 1. test for nisba -->
             <xsl:when test="matches($v_input, '^(.+\s)*(ال\w+ي)$')">
                 <!--<xsl:message>
@@ -972,8 +1003,10 @@
                 </xsl:message>-->
                 <xsl:analyze-string regex="(ال\w+ي)$" select="$v_input">
                     <xsl:matching-substring>
-                        <xsl:element name="tei:addName">
+                        <xsl:element name="addName">
                             <xsl:attribute name="type" select="'nisbah'"/>
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'high'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                             <xsl:value-of select="regex-group(1)"/>
                         </xsl:element>
@@ -992,11 +1025,16 @@
                 <xsl:analyze-string regex="(ابن|بن|بنت)\s(.+)$" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:variable name="v_trailing" select="regex-group(2)"/>
-                        <xsl:element name="tei:addName">
+                        <xsl:element name="addName">
                             <xsl:attribute name="type" select="'nasab'"/>
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <!-- medium: while it is clear that we encounter the beginning of a nasab, the length is not clear  -->
+                            <xsl:attribute name="cert" select="'medium'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                            <xsl:element name="tei:nameLink">
+                            <xsl:element name="nameLink">
                                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                                <xsl:attribute name="resp" select="'#xslt'"/>
+                                <xsl:attribute name="cert" select="'high'"/>
                                 <xsl:value-of select="regex-group(1)"/>
                             </xsl:element>
                             <xsl:text> </xsl:text>
@@ -1018,11 +1056,16 @@
                 <xsl:analyze-string regex="(ابو|ابي|ابا)\s(.+)$" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:variable name="v_trailing" select="regex-group(2)"/>
-                        <xsl:element name="tei:addName">
+                        <xsl:element name="addName">
                             <xsl:attribute name="type" select="'kunyah'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                            <xsl:element name="tei:nameLink">
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <!-- medium: while it is clear that we encounter the beginning of a kunyah, the length is not clear  -->
+                            <xsl:attribute name="cert" select="'medium'"/>
+                            <xsl:element name="nameLink">
                                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                                <xsl:attribute name="resp" select="'#xslt'"/>
+                                <xsl:attribute name="cert" select="'high'"/>
                                 <xsl:value-of select="regex-group(1)"/>
                             </xsl:element>
                             <xsl:text> </xsl:text>
@@ -1042,8 +1085,10 @@
                 </xsl:message>-->
                 <xsl:analyze-string regex="(\w+)\s(الدين)" select="$v_input">
                     <xsl:matching-substring>
-                        <xsl:element name="tei:addName">
+                        <xsl:element name="addName">
                             <xsl:attribute name="type" select="'khitab'"/>
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'high'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                             <xsl:value-of select="concat(regex-group(1), ' ', regex-group(2))"/>
                         </xsl:element>
@@ -1061,8 +1106,10 @@
                 </xsl:message>-->
                 <xsl:analyze-string regex="(\w+)\s(الله)" select="$v_input">
                     <xsl:matching-substring>
-                        <xsl:element name="tei:addName">
+                        <xsl:element name="addName">
                             <xsl:attribute name="type" select="'theophoric'"/>
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'high'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                             <xsl:value-of select="concat(regex-group(1), ' ', regex-group(2))"/>
                         </xsl:element>
@@ -1081,8 +1128,10 @@
                 </xsl:message>-->
                 <xsl:analyze-string regex="(عبد)\s(\w+)" select="$v_input">
                     <xsl:matching-substring>
-                        <xsl:element name="tei:addName">
+                        <xsl:element name="addName">
                             <xsl:attribute name="type" select="'theophoric'"/>
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'high'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
                             <xsl:value-of select="concat(regex-group(1), ' ', regex-group(2))"/>
                         </xsl:element>
@@ -1103,16 +1152,34 @@
                         <!-- try to find it in the nymlist -->
                         <xsl:copy-of select="oape:look-up-nym-and-mark-up-name($v_word, $v_file-nyms, $p_id-change)"/>
                         <xsl:value-of select="$v_trailing-space"/>
-                        <!-- debugging -->
-                        <!--<xsl:message>
-                            <xsl:value-of select="$v_word"/>
-                        </xsl:message>-->
                     </xsl:matching-substring>
                     <!-- there ARE non-matching substrings -->
                     <!-- otherwise this strips symbols such as .,-' out of strings -->
                     <xsl:non-matching-substring>
                         <xsl:value-of select="."/>
                         <!--                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>-->
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
+            <!-- 8. to do: <persNames> consisting of only two words "... al-...". assume that these are forename and surname -->
+            <xsl:when test="matches($v_input, '^(\w+)\s+(ال\w+)$')">
+                <xsl:analyze-string regex="(\w+)\s+(ال\w+)" select="$v_input">
+                    <xsl:matching-substring>
+                        <xsl:element name="forename">
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'low'"/>
+                            <xsl:value-of select="regex-group(1)"/>
+                        </xsl:element>
+                        <xsl:text> </xsl:text>
+                        <xsl:element name="surname">
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'low'"/>
+                            <xsl:value-of select="regex-group(2)"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <!-- this should not be necessary -->
+                    <xsl:non-matching-substring>
+                        <xsl:value-of select="."/>
                     </xsl:non-matching-substring>
                 </xsl:analyze-string>
             </xsl:when>
@@ -1141,8 +1208,10 @@
                 <!-- establish the kind of nym -->
                 <xsl:choose>
                     <xsl:when test="$v_type = ('title', 'honorific', 'nobility', 'rank')">
-                        <xsl:element name="tei:roleName">
+                        <xsl:element name="roleName">
                             <xsl:attribute name="type" select="$v_type"/>
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'high'"/>
                             <xsl:if test="$v_nymlist/@subtype">
                                 <xsl:copy-of select="$v_nymlist/@subtype"/>
                             </xsl:if>
@@ -1371,11 +1440,12 @@
         <xsl:variable name="v_corresponding-person">
             <xsl:choose>
                 <!-- test if this node already points to an authority file -->
-                <xsl:when test="$p_persname/@ref">
+                <xsl:when test="$p_persname/@ref and not(oape:get-entity-from-authority-file($p_persname, $p_local-authority, $p_authority-file) = 'NA')">
                     <xsl:if test="$p_verbose = true()">
-                        <xsl:message>The input already points to an authority file</xsl:message>
+                        <xsl:message>The input already points to the local authority file</xsl:message>
                     </xsl:if>
                     <!-- there seems to be a problem with this function -->
+                    <!-- PROBLEM: names that point to another authority are not found -->
                     <xsl:copy-of select="oape:get-entity-from-authority-file($p_persname, $p_local-authority, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
