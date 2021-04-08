@@ -447,10 +447,20 @@
                 </xsl:choose>
             </xsl:when>
             <!-- return language -->
-            <xsl:when test="$p_output-mode = 'textLang'">
+            <xsl:when test="$p_output-mode = ('textLang', 'mainLang')">
                 <xsl:choose>
                     <xsl:when test="$p_bibl/descendant::tei:monogr/tei:textLang/@mainLang">
                         <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:textLang/@mainLang"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'otherLangs'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:textLang/@otherLangs">
+                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:textLang/@otherLangs"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
