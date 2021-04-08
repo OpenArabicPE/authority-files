@@ -1,7 +1,7 @@
 ---
 title: "readme: OpenArabicPE/authority-files"
 author: Till Grallert
-date: 2020-04-06
+date: 2021-04-08
 ---
 
 # locations and file names
@@ -14,6 +14,14 @@ date: 2020-04-06
     * folder for tools: `xslt/`
 
 # stylesheets
+## to do
+
+- deal with the problem of multiple unicode encodings for the same Arabic character. This at least effects all instances of *alif maqṣūra*.
+    + examples
+        * `رضی` and `رضى`
+        * `مصطفى` and `مصطفی`
+    - It is not clear if XSLT automatically does such normalising.
+
 ## Persons
 
 1. `tei-person_improve-records.xsl`: This stylesheet is meant to be run on authority files containing `<tei:person>` elements with at least one `<tei:persName>` child and will try to enrich the data.
