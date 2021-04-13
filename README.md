@@ -21,6 +21,28 @@ date: 2021-04-08
         * `رضی` and `رضى`
         * `مصطفى` and `مصطفی`
     - It is not clear if XSLT automatically does such normalising.
+    - keyboard outputs
+        + macOS: danger zone
+            * there is a real problem with *alif maqṣūra* on this keyboard: It uses `U+06CC`, which is the `Arabic Letter Farsi Yeh`
+        + macOS: Arabic
+            * 'اآأإبتثحخجدذرزسشصضطظعغفقكلمنهوؤيئىةء'
+            * '٠١٢٣٤٥٦٧٨٩'
+        + macOS: Arabic - North Africa
+            * 'اآأإبتثحخجدذرزسشصضطظعغفقكلمنهوؤيئىةء'
+            * '٠١٢٣٤٥٦٧٨٩'
+        + macOS: Arabic - PC
+            * 'اآأإبتثحخجدذرزسشصضطظعغفقكلمنهوؤيئىةء'
+        + macOS: Persian
+            * 'اآأإبتثحخجدذرزسشصضطظعغفقکلمنهوؤيئیةء'
+        + transliteration: Arabic DMG
+            * 'ʾāʾʾbtṯḥḫǧdḏrzsšṣḍṭẓʿġfḳklmnhwʾyʾátʾ'
+            * '0123456789'
+        + transliteration: betaCode-ish
+            * 'EāAIbtṯḥḫǧdḏrzsšṣḍṭẓʿġfḳklmnhwUyJáŧʾ'
+        + transliteration: arabicStemR
+            * macOS: Arabic: 'aaaabtU7KjdirzsWSDTZ3GfQklmnhwoy5y0q'
+                - *alif maqṣūra* is transliterated like *yāʾ*
+            * macOS: Arabic - North Africa: 'aaaabtU7KjdirzsWSDTZ3GfQklmnhwoy5A0q'
 
 ## Persons
 

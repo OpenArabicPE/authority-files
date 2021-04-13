@@ -35,6 +35,15 @@
         <xsl:param name="p_input"/>
         <xsl:value-of select="replace($p_input, '\W', '')"/>
     </xsl:function>
+    <xsl:function name="oape:string-normalise-arabic-alphabet">
+        <xsl:param name="p_input" as="xs:string"/>
+        <!-- unicode encodings, transliterations -->
+        <!-- macOS: Arabic -->
+        <xsl:variable name="v_alphabet-fa-mac" select="'اآأإبتثحخجدذرزسشصضطظعغفقکلمنهوؤيئیةء'"/>
+        <!-- macOS: Arabic - North Africa -->
+        <xsl:variable name="v_alphabet-ar-mac" select="'اآأإبتثحخجدذرزسشصضطظعغفقكلمنهوؤيئىةء'"/>
+        <xsl:value-of select="translate($p_input, $v_alphabet-fa-mac, $v_alphabet-ar-mac)"/>
+    </xsl:function>
     <!-- this function queries a local authority file
         - input: an entity name such as <persName>, <orgName>, <placeName> or <title>
         - output: an entity: such as <person>, <org>, <place> or <biblStruct>
