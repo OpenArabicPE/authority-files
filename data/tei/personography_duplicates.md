@@ -1,28 +1,4 @@
 
-
-The persName Muḥammad Ibrāhīm already exists in this file.
-The persName Muḥammad Tawfīq al-Azharī already exists in this file.
-The persName Muḥammad Ḥilmī ʿAzīz already exists in this file.
-The persName Muḥammad Ṭāhir al-Tannīr already exists in this file.
-The persName Muḥammad Ṭāhir al-Tanīr already exists in this file.
-The persName Muḥibb al-Dīn al-Khaṭīb already exists in this file.
-The persName Muḥibb al-Dīn al-Khaṭīb, already exists in this file.
-The persName Muṣṭafā al-Dumyāṭī already exists in this file.
-The persName Mīkhāʾīl Murād already exists in this file.
-The persName Najīb Baʿqlīnī already exists in this file.
-The persName Najīb Naṣṣār already exists in this file.
-The persName Sijʿān ʿĀrij Saʿāda already exists in this file.
-The persName Sāmī Yuwākīm al-Rāsī already exists in this file.
-The persName Yūsuf al-Khāzin already exists in this file.
-The persName Yūsuf Najm al-Rishmānī already exists in this file.
-The persName Yūsuf Ḥamdī Yakan already exists in this file.
-The persName ʿAbbās Abū Shaqrā already exists in this file.
-The persName ʿAbd al-Hādī al-Aʿẓamī already exists in this file.
-The persName ʿAbd al-Qādir al-Iskandarānī already exists in this file.
-The persName ʿAbd al-Qādir Badrān already exists in this file.
-The persName ʿAbd al-Raḥmān al-Barqūqī already exists in this file.
-The persName ʿAbd al-Ḥamīd Ḥamdī already exists in this file.
-The persName ʿAbduh Badrān already exists in this file.
 The persName أبو الضيا توفيق already exists in this file.
 The persName ابراهيم الاحدب already exists in this file.
 The persName ابراهيم العرب already exists in this file.
