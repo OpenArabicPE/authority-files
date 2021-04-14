@@ -16,6 +16,8 @@ date: 2021-04-08
 # stylesheets
 ## to do
 
+- `@type='noAddName'` is missing whitespace between name components in some cases
+
 - deal with the problem of multiple unicode encodings for the same Arabic character. This at least effects all instances of *alif maqṣūra*.
     + examples
         * `رضی` and `رضى`
