@@ -49,6 +49,7 @@
         - output: an entity: such as <person>, <org>, <place> or <biblStruct>
     -->
     <!-- PROBLEM: entities pointing with a @ref to another authority file are missed -->
+    <!-- if no match is found, the function returns 'NA' -->
     <xsl:function name="oape:get-entity-from-authority-file">
         <!-- input: entity such as <persName>, <orgName>, <placeName> or <title> node -->
         <xsl:param as="node()" name="p_entity-name"/>
@@ -80,7 +81,6 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <xsl:variable name="v_local-uri-scheme" select="concat($p_local-authority, ':', $v_entity-type, ':')"/>
         <!-- debugging -->
         <!--<xsl:if test="$p_verbose = true()">
             <xsl:message>
@@ -119,6 +119,7 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
+                <xsl:variable name="v_local-uri-scheme" select="concat($v_authority, ':', $v_entity-type, ':')"/>
                 <xsl:variable name="v_idno">
                     <xsl:choose>
                         <xsl:when test="contains($v_ref, 'viaf:')">
@@ -131,11 +132,12 @@
                             <xsl:value-of select="replace($v_ref, '.*oclc:(\d+).*', '$1')"/>
                         </xsl:when>
                         <xsl:when test="contains($v_ref, concat($v_authority, ':', $v_entity-type, ':'))">
-                             <xsl:value-of select="replace($v_ref, concat('.*', $v_authority, ':', $v_entity-type, ':', '(\d+).*'), '$1')"/>
+                             <xsl:value-of select="replace($v_ref, concat('.*', $v_authority, ':', $v_entity-type, ':', '(\w+).*'), '$1')"/>
                         </xsl:when>
-                        <xsl:when test="contains($v_ref, $v_local-uri-scheme)">
-                            <xsl:value-of select="replace($v_ref, concat('.*', $v_local-uri-scheme, '(\d+).*'), '$1')"/>
-                        </xsl:when>
+                        <!--<xsl:when test="contains($v_ref, $v_local-uri-scheme)">
+                            <!-\- local IDs in Project Jaraid are not nummeric for biblStructs -\->
+                            <xsl:value-of select="replace($v_ref, concat('.*', $v_local-uri-scheme, '(\w+).*'), '$1')"/>
+                        </xsl:when>-->
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:choose>

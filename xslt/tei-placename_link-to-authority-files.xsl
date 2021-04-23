@@ -22,6 +22,9 @@
     exclude-result-prefixes="#all" version="2.0">
     
     <!-- PROBLEM: in some instance this stylesheet produces empty <placeName> nodes in the source file upon adding GeoNames references to them -->
+    <!-- necessary improvements:
+        - disambiguation: There is a very small number of ambiguous Arabic toponyms, such as al-Jazāʾir for the country and the city. These should alsways point to the town
+    -->
     
     <!-- this stylesheet queries an external authority files for every <placeName> and attempts to provide links via the @ref attribute -->
     <!-- The now unnecessary code to updated the master file needs to be removed -->

@@ -17,8 +17,12 @@ date: 2021-04-08
 ## to do
 
 - `@type='noAddName'` is missing whitespace between name components in some cases
+- NOT all periodicals from Jarāʾid have made it into OpenArabicPE. This needs to be fixed! E.g. t1r3024 and two more from Batavia. There are total of 548 missing IDs!
+    + `tei-biblstruct_merge-multiple-sources.xsl` seems to be in need of updating
 
-- deal with the problem of multiple unicode encodings for the same Arabic character. This at least effects all instances of *alif maqṣūra*.
+- XSLT for generating the mapping data needs to be improved (not very important to the workflow/tutorial)
+
+- **done** deal with the problem of multiple unicode encodings for the same Arabic character. This at least effects all instances of *alif maqṣūra*.
     + examples
         * `رضی` and `رضى`
         * `مصطفى` and `مصطفی`
