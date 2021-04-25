@@ -20,6 +20,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <!-- this stylesheet queries an external authority files for every <title> and attempts to provide links via the @ref attribute -->
+    <!-- note that some of the matching is based on location. Therefore, the placeName nodes in the source file should be linked to the gazetteer first -->
     <!-- The now unnecessary code to updated the master file needs to be removed -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     
