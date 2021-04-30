@@ -18,7 +18,9 @@ date: 2021-04-08
 
 - `@type='noAddName'` is missing whitespace between name components in some cases
 - NOT all periodicals from Jarāʾid have made it into OpenArabicPE. This needs to be fixed! E.g. t1r3024 and two more from Batavia. There are total of 548 missing IDs!
-    + `tei-biblstruct_merge-multiple-sources.xsl` seems to be in need of updating
+    + `tei-biblstruct_merge-multiple-sources.xsl` has been updated and the two authority files have be re-merged
+    + I have checked the merged information until line 2000
+    + the only merged `<biblStruct>` in need for checking are those that carry two jaraid IDs
 
 - XSLT for generating the mapping data needs to be improved (not very important to the workflow/tutorial)
 
