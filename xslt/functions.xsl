@@ -478,6 +478,17 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'subtype'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/@subtype">
+                        <xsl:value-of select="$p_bibl/@subtype"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <!-- reurn date           -->
             <xsl:when test="$p_output-mode = 'date'">
                 <xsl:choose>
                     <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@type = 'onset'][@when]">
