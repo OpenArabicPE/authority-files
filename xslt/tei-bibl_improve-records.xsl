@@ -45,11 +45,20 @@
             <xsl:variable name="v_subtype">
                 <xsl:variable name="v_id" select="number(replace(descendant::tei:idno[@type = 'jaraid'][1], 't\dr(\d+)$', '$1'))"/>
                 <xsl:choose>
-                    <xsl:when test="870 &lt;= $v_id and $v_id &lt;= 1403">
+                    <xsl:when test="870 &lt;= $v_id and $v_id &lt;= 1533">
+                        <xsl:text>newspaper</xsl:text>
+                    </xsl:when>
+                     <xsl:when test="2035 &lt;= $v_id and $v_id &lt;= 2083">
                         <xsl:text>newspaper</xsl:text>
                     </xsl:when>
                     <xsl:when test="2349 &lt;= $v_id and $v_id &lt;= 3024">
                         <xsl:text>newspaper</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="1534  &lt;= $v_id and $v_id &lt;= 2029">
+                        <xsl:text>journal</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="2084  &lt;= $v_id and $v_id &lt;= 2097">
+                        <xsl:text>journal</xsl:text>
                     </xsl:when>
                     <xsl:when test="3025 &lt;= $v_id and $v_id &lt;= 3323">
                         <xsl:text>journal</xsl:text>
