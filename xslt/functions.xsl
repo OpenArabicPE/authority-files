@@ -1621,24 +1621,36 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
-            <xsl:variable name="v_type"
-                select="
-                    if ($v_bibl/descendant-or-self::tei:bibl/@type) then
-                        ($v_bibl/descendant-or-self::tei:bibl/@type)
-                    else
-                        ()"/>
-            <xsl:variable name="v_subtype"
-                select="
-                    if ($v_bibl/descendant-or-self::tei:bibl/@subtype) then
-                        ($v_bibl/descendant-or-self::tei:bibl/@subtype)
-                    else
-                        ()"/>
-            <xsl:variable name="v_frequency"
-                select="
-                    if ($v_bibl/descendant-or-self::tei:bibl/@oape:frequency) then
-                        ($v_bibl/descendant-or-self::tei:bibl/@oape:frequency)
-                    else
-                        ()"/>
+            <xsl:variable name="v_type">
+                <xsl:choose>
+                    <xsl:when test="$v_bibl/descendant-or-self::tei:bibl/@type">
+                        <xsl:value-of select="$v_bibl/descendant-or-self::tei:bibl/@type"/>
+                    </xsl:when>
+                    <xsl:when test="$v_bibl/descendant-or-self::tei:biblStruct/@type">
+                        <xsl:value-of select="$v_bibl/descendant-or-self::tei:biblStruct/@type"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:variable name="v_subtype">
+                <xsl:choose>
+                    <xsl:when test="$v_bibl/descendant-or-self::tei:bibl/@subtype">
+                        <xsl:value-of select="$v_bibl/descendant-or-self::tei:bibl/@subtype"/>
+                    </xsl:when>
+                    <xsl:when test="$v_bibl/descendant-or-self::tei:biblStruct/@subtype">
+                        <xsl:value-of select="$v_bibl/descendant-or-self::tei:biblStruct/@subtype"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:variable name="v_frequency">
+                <xsl:choose>
+                    <xsl:when test="$v_bibl/descendant-or-self::tei:bibl/@oape:frequency">
+                        <xsl:value-of select="$v_bibl/descendant-or-self::tei:bibl/@oape:frequency"/>
+                    </xsl:when>
+                    <xsl:when test="$v_bibl/descendant-or-self::tei:biblStruct/@oape:frequency">
+                        <xsl:value-of select="$v_bibl/descendant-or-self::tei:biblStruct/@oape:frequency"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:variable>
             <!-- get the place of publication -->
             <xsl:variable name="v_place-publication">
                 <xsl:choose>
@@ -1656,6 +1668,11 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
+            <!-- quick debugging -->
+            <!--<xsl:message>
+                <xsl:value-of select="concat('type: ', $v_type, '; ')"/>
+                <xsl:value-of select="concat('place: ', $v_place-publication)"/>
+            </xsl:message>-->
             <!-- try to use further match criteria -->
             <xsl:choose>
                 <!-- location: single match -->
