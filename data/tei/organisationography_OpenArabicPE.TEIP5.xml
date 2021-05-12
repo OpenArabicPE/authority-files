@@ -1,0 +1,1845 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Authority file of organisations relevant for the history of Arabic Periodicals</title>
+                <respStmt>
+                    <resp>Prepared by</resp>
+                    <persName>Till Grallert</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listOrg>
+            <head>Holding Institutions</head>
+            <org xml:id="hAPESP">
+                <orgName>Arquivo Público do Estado de São Paulo</orgName>
+                <orgName type="jaraid">APESP</orgName>
+                <idno type="jaraid">hAPESP</idno>
+                <idno type="oape">1</idno>
+                <location>
+                    <placeName ref="geon:3448439 jaraid:place:49 oape:place:364 ">São Paulo</placeName>
+                </location>
+            </org>
+            <org xml:id="hAH">
+                <orgName>Arshīf ʿĀmm al-Ḥukūma, Tunis</orgName>
+                <orgName type="jaraid">AʿH</orgName>
+                <idno type="jaraid">hAH</idno>
+                <idno type="oape">2</idno>
+                <location>
+                    <placeName ref="geon:2464470 oape:place:333 ">Tunis</placeName>
+                </location>
+            </org>
+            <org xml:id="hAKID">
+                <orgName>Atatürk Kitapliği, Digital Collection (available only at computers in the AKI), Istanbul</orgName>
+                <orgName type="jaraid">AKID</orgName>
+                <idno type="jaraid">hAKID</idno>
+                <idno type="oape">3</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+            </org>
+            <org xml:id="hAKI">
+                <orgName>Atatürk Kitapliği, Istanbul</orgName>
+                <orgName type="jaraid">AKI</orgName>
+                <idno type="jaraid">hAKI</idno>
+                <idno type="oape">4</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+            </org>
+            <org xml:id="hAEK">
+                <orgName>Atıf Effendi (Yazma Eser) Kütüphanesi, Istanbul</orgName>
+                <orgName type="jaraid">AEK</orgName>
+                <idno type="jaraid">hAEK</idno>
+                <idno type="oape">5</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+            </org>
+            <org xml:id="hBS">
+                <orgName>Bayerische Staatsbibliothek, München</orgName>
+                <orgName type="jaraid">BS</orgName>
+                <idno type="jaraid">hBS</idno>
+                <idno type="oape">6</idno>
+                <location>
+                    <placeName>Munich</placeName>
+                </location>
+            </org>
+            <org xml:id="hBDK">
+                <orgName>Beyazit Kütüphanesi, Istanbul</orgName>
+                <orgName type="jaraid">BDK</orgName>
+                <idno type="jaraid">hBDK</idno>
+                <idno type="oape">7</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+            </org>
+            <org xml:id="hBIBAL">
+                <orgName>Bibliotheca Alexandrina</orgName>
+                <orgName type="jaraid">BibAlex</orgName>
+                <idno type="jaraid">hBIBAL</idno>
+                <idno type="oape">8</idno>
+                <location>
+                    <placeName ref="geon:361058 oape:place:225">Alexandria</placeName>
+                </location>
+                <note>. Some holdings are currently in the process of digitization and are made availabe through the <ref target="http://dar.bibalex.org/webpages/advancedsearch.jsf"
+                    xml:lang="und-Latn">Digital Assets Repository</ref>.</note>
+            </org>
+            <org xml:id="hTET">
+                <orgName>Bibliothèque Générale et Archives de Tétouan, Tetouan,
+                           Morocco</orgName>
+                <orgName type="jaraid">Tet</orgName>
+                <idno type="jaraid">hTET</idno>
+                <idno type="oape">9</idno>
+                <location>
+                    <placeName>Tetouan</placeName>
+                </location>
+            </org>
+            <org xml:id="hBOSJ">
+                <orgName>Bibliothèque Orientale, Université de Saint Joseph, Beirut</orgName>
+                <orgName type="jaraid">BOSJ</orgName>
+                <idno type="jaraid">hBOSJ</idno>
+                <idno type="oape">10</idno>
+                <location>
+                    <placeName ref="geon:276781 oape:place:26 ">Beirut</placeName>
+                </location>
+            </org>
+            <org xml:id="hINA">
+                <orgName>Bibliothèque interuniversitaire des langues orientales, INALCO (Institut National des Langues et Civilisations Orientales, Paris)</orgName>
+                <orgName type="jaraid">INALCO</orgName>
+                <idno type="jaraid">hINA</idno>
+                <idno type="oape">11</idno>
+                <location>
+                    <placeName ref="geon:2988507 oape:place:322">Paris</placeName>
+                </location>
+            </org>
+            <org xml:id="hBNF">
+                <orgName>Bibliothèque national de France, Paris</orgName>
+                <orgName type="jaraid">BnF</orgName>
+                <idno type="jaraid">hBNF</idno>
+                <idno type="oape">12</idno>
+                <location>
+                    <placeName ref="geon:2988507 oape:place:322">Paris</placeName>
+                </location>
+            </org>
+            <org xml:id="hBNA">
+                <orgName>Bibliothèque nationale d'Algerie, Algiers</orgName>
+                <orgName type="jaraid">BnA</orgName>
+                <idno type="jaraid">hBNA</idno>
+                <idno type="oape">13</idno>
+                <location>
+                    <placeName ref="geon:2507480 jaraid:place:7 oape:place:437 ">Algiers</placeName>
+                </location>
+            </org>
+            <org xml:id="hBOD">
+                <orgName>Bodleian Library, Oxford</orgName>
+                <orgName type="jaraid">Bod</orgName>
+                <idno type="jaraid">hBOD</idno>
+                <idno type="oape">14</idno>
+                <location>
+                    <placeName ref="geon:2640729 oape:place:328">Oxford</placeName>
+                </location>
+            </org>
+            <org xml:id="hBL">
+                <orgName>British Library, London</orgName>
+                <orgName type="jaraid">BL</orgName>
+                <idno type="jaraid">hBL</idno>
+                <idno type="oape">15</idno>
+                <location>
+                    <placeName ref="geon:2643743 oape:place:331 ">London</placeName>
+                </location>
+            </org>
+            <org xml:id="hCRL">
+                <orgName>Center for Research Libraries</orgName>
+                <orgName type="jaraid">CRL</orgName>
+                <idno type="jaraid">hCRL</idno>
+                <idno type="oape">16</idno>
+                <note>. Provides access to inter-library loan of microfilms as well as digital collections. Access to the <ref target="http://catalog.crl.edu/search~S3" xml:lang="und-Latn"
+                    >collection</ref> is restricted to member institutions.</note>
+            </org>
+            <org xml:id="hCEAL">
+                <orgName>Centre d'Études Alexandrines, Alexandria</orgName>
+                <orgName type="jaraid">CEALEX</orgName>
+                <idno type="jaraid">hCEAL</idno>
+                <idno type="oape">17</idno>
+                <location>
+                    <placeName ref="geon:361058 oape:place:225">Alexandria</placeName>
+                </location>
+            </org>
+            <org xml:id="hCADC">
+                <orgName>Centre des Archives Diplomatiques, la Courneuve, Paris</orgName>
+                <orgName type="jaraid">CADC</orgName>
+                <idno type="jaraid">hCADC</idno>
+                <idno type="oape">18</idno>
+                <location>
+                    <placeName ref="geon:2988507 oape:place:322">Paris</placeName>
+                </location>
+            </org>
+            <org xml:id="hCOL">
+                <orgName>Columbia University Library</orgName>
+                <orgName type="jaraid">Col</orgName>
+                <idno type="jaraid">hCOL</idno>
+                <idno type="oape">19</idno>
+                <location>
+                    <placeName ref="geon:5128581 oape:place:303 ">New York</placeName>
+                </location>
+            </org>
+            <org xml:id="hCORN">
+                <orgName>Cornell University Library, Cornell University</orgName>
+                <orgName type="jaraid">Cornell</orgName>
+                <idno type="jaraid">hCORN</idno>
+                <idno type="oape">20</idno>
+            </org>
+            <org xml:id="hDM">
+                <orgName>Dayr al-Mukhlis, Lebanon</orgName>
+                <orgName type="jaraid">Dayr al-Mukh</orgName>
+                <idno type="jaraid">hDM</idno>
+                <idno type="oape">21</idno>
+                <location>
+                    <placeName>Dayr al-Mukhlis</placeName>
+                </location>
+            </org>
+            <org xml:id="hDUL">
+                <orgName>Duke University Library</orgName>
+                <orgName type="jaraid">DUL</orgName>
+                <idno type="jaraid">hDUL</idno>
+                <idno type="oape">22</idno>
+                <location>
+                    <placeName>Durham, NC</placeName>
+                </location>
+            </org>
+            <org xml:id="hDUR">
+                <orgName>Durham University Library</orgName>
+                <orgName type="jaraid">Dur</orgName>
+                <idno type="jaraid">hDUR</idno>
+                <idno type="oape">23</idno>
+                <location>
+                    <placeName>Durham</placeName>
+                </location>
+            </org>
+            <org xml:id="hDKQ">
+                <orgName>Dār al-Kutub al-Qawmiyya (Egyptian National Library), Cairo</orgName>
+                <orgName type="jaraid">DKQ</orgName>
+                <idno type="jaraid">hDKQ</idno>
+                <idno type="oape">24</idno>
+                <location>
+                    <placeName ref="geon:360630 oape:place:226 ">Cairo</placeName>
+                </location>
+            </org>
+            <org xml:id="hDKQM">
+                <orgName>Dār al-Kutub al-Qawmiyya Microfilm Collection (Egyptian National Library), Cairo</orgName>
+                <orgName type="jaraid">DKQM</orgName>
+                <idno type="jaraid">hDKQM</idno>
+                <idno type="oape">25</idno>
+                <location>
+                    <placeName ref="geon:360630 oape:place:226 ">Cairo</placeName>
+                </location>
+            </org>
+            <org xml:id="hDKW">
+                <orgName>Dār al-Kutub al-Waṭaniyya (Lebanese National Library), Beirut (closed,
+                        its collections moved)</orgName>
+                <orgName type="jaraid">DKW</orgName>
+                <idno type="jaraid">hDKW</idno>
+                <idno type="oape">26</idno>
+                <location>
+                    <placeName ref="geon:276781 oape:place:26 ">Beirut</placeName>
+                </location>
+            </org>
+            <org xml:id="hDKWT">
+                <orgName>Dār al-Kutub al-Waṭaniyya, Tunis</orgName>
+                <orgName type="jaraid">DKWT</orgName>
+                <idno type="jaraid">hDKWT</idno>
+                <idno type="oape">27</idno>
+                <location>
+                    <placeName ref="geon:2464470 oape:place:333 ">Tunis</placeName>
+                </location>
+            </org>
+            <org xml:id="hDMW">
+                <orgName>Dāʾirat al-Maktaba al-Waṭaniyya, al-Urdun (Administration of National Library, Jordan)</orgName>
+                <orgName type="jaraid">DMW</orgName>
+                <idno type="jaraid">hDMW</idno>
+                <idno type="oape">28</idno>
+                <location>
+                    <placeName ref="geon:250441 jaraid:place:73 oape:place:508 ">Amman</placeName>
+                </location>
+            </org>
+            <org xml:id="hFUI">
+                <orgName>Freie Universität Berlin, Library of the Institut für Islamwissenschaft</orgName>
+                <orgName type="jaraid">FUI</orgName>
+                <idno type="jaraid">hFUI</idno>
+                <idno type="oape">29</idno>
+                <location>
+                    <placeName ref="geon:2950159 oape:place:343 ">Berlin</placeName>
+                </location>
+            </org>
+            <org xml:id="hFUAS">
+                <orgName>Freie Universität Berlin, Library of the Seminar für Semitistik und Arabistik</orgName>
+                <orgName type="jaraid">FUAS</orgName>
+                <idno type="jaraid">hFUAS</idno>
+                <idno type="oape">30</idno>
+                <location>
+                    <placeName ref="geon:2950159 oape:place:343 ">Berlin</placeName>
+                </location>
+            </org>
+            <org xml:id="hHTU">
+                <orgName>Hakkı Tarık Us Collection of Beyazit State Library, Istanbul</orgName>
+                <orgName type="jaraid">HTU</orgName>
+                <idno type="jaraid">hHTU</idno>
+                <idno type="oape">31</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+                <note>. The collection of periodicals was digitized by the Beyazit State Library and the Tokyo University of Foreign Studies and is available <ref
+                    target="http://www.tufs.ac.jp/common/fs/asw/tur/htu/" xml:lang="und-Latn">online</ref>.</note>
+            </org>
+            <org xml:id="hIHRC">
+                <orgName>Immigration History Research Center Archives, University of Minnesota</orgName>
+                <orgName type="jaraid">IHRC</orgName>
+                <idno type="jaraid">hIHRC</idno>
+                <idno type="oape">32</idno>
+                <location>
+                    <placeName ref="geon:5037649 jaraid:place:135 oape:place:542 ">Minneapolis</placeName>
+                </location>
+            </org>
+            <org xml:id="hIO">
+                <orgName>India Office Library, London</orgName>
+                <orgName type="jaraid">Ind Off</orgName>
+                <idno type="jaraid">hIO</idno>
+                <idno type="oape">33</idno>
+                <location>
+                    <placeName ref="geon:2643743 oape:place:331 ">London</placeName>
+                </location>
+            </org>
+            <org xml:id="hIDEO">
+                <orgName>Institut Dominicain d'Études Orientales au Caire, Cairo</orgName>
+                <orgName type="jaraid">IDEO</orgName>
+                <idno type="jaraid">hIDEO</idno>
+                <idno type="oape">34</idno>
+                <location>
+                    <placeName ref="geon:360630 oape:place:226 ">Cairo</placeName>
+                </location>
+            </org>
+            <org xml:id="hIE">
+                <orgName>Institut Egyptien, Cairo</orgName>
+                <orgName type="jaraid">IE</orgName>
+                <idno type="jaraid">hIE</idno>
+                <idno type="oape">35</idno>
+                <location>
+                    <placeName ref="geon:360630 oape:place:226 ">Cairo</placeName>
+                </location>
+            </org>
+            <org xml:id="hIMA">
+                <orgName>Institut du Monde Arabe, Paris</orgName>
+                <orgName type="jaraid">IMA</orgName>
+                <idno type="jaraid">hIMA</idno>
+                <idno type="oape">36</idno>
+                <location>
+                    <placeName ref="geon:2988507 oape:place:322">Paris</placeName>
+                </location>
+            </org>
+            <org xml:id="hLEN">
+                <orgName>Institute of Oriental Manuscripts, Russian Academy of Sciences, St.
+                        Petersburg</orgName>
+                <orgName type="jaraid">Len</orgName>
+                <idno type="jaraid">hLEN</idno>
+                <idno type="oape">37</idno>
+                <location>
+                    <placeName ref="geon:498817 oape:place:355 ">St. Petersburg</placeName>
+                </location>
+            </org>
+            <org xml:id="hIM">
+                <orgName>Iraq Museum, Baghdād, Iraq</orgName>
+                <orgName type="jaraid">Ir Mus</orgName>
+                <idno type="jaraid">hIM</idno>
+                <idno type="oape">38</idno>
+                <location>
+                    <placeName ref="geon:98182 oape:place:216 ">Baghdad</placeName>
+                </location>
+            </org>
+            <org xml:id="hINL">
+                <orgName>Iraqi National Library and Archives</orgName>
+                <orgName type="jaraid">INL</orgName>
+                <idno type="jaraid">hINL</idno>
+                <idno type="oape">39</idno>
+                <location>
+                    <placeName ref="geon:98182 oape:place:216 ">Baghdad</placeName>
+                </location>
+                <note>. Some of its holdings were digitized and are available through the
+                        <ref target="http://www.wdl.org/en/search/?institution=iraqi-national-library-and-archives" xml:lang="und-Latn">World Digital Library</ref>.</note>
+            </org>
+            <org xml:id="hIU">
+                <orgName>Istanbul Üniversitesi Merkez Kütüphanesi, Istanbul</orgName>
+                <orgName type="jaraid">IÜ</orgName>
+                <idno type="jaraid">hIU</idno>
+                <idno type="oape">40</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+            </org>
+            <org xml:id="hKEW">
+                <orgName>Kew Library, Royal Botanic Gardens, Kew</orgName>
+                <orgName type="jaraid">Kew</orgName>
+                <idno type="jaraid">hKEW</idno>
+                <idno type="oape">41</idno>
+                <location>
+                    <placeName ref="geon:2643743 oape:place:331 ">London</placeName>
+                </location>
+            </org>
+            <org xml:id="hLONA">
+                <orgName>League of Nations Archives (Geneva, Switzerland)</orgName>
+                <orgName type="jaraid">LONA</orgName>
+                <idno type="jaraid">hLONA</idno>
+                <idno type="oape">42</idno>
+                <location>
+                    <placeName ref="geon:2660646 oape:place:291 ">Geneva</placeName>
+                </location>
+            </org>
+            <org xml:id="hHARV">
+                <orgName>Libraries of Harvard University, Cambridge, MA, USA</orgName>
+                <orgName type="jaraid">Harv</orgName>
+                <idno type="jaraid">hHARV</idno>
+                <idno type="oape">43</idno>
+                <location>
+                    <placeName>Cambridge, MA</placeName>
+                </location>
+            </org>
+            <org xml:id="hCAM">
+                <orgName>Libraries of the University of Cambridge</orgName>
+                <orgName type="jaraid">Cam</orgName>
+                <idno type="jaraid">hCAM</idno>
+                <idno type="oape">44</idno>
+                <location>
+                    <placeName>Cambridge</placeName>
+                </location>
+            </org>
+            <org xml:id="hCU">
+                <orgName>Library of Cairo University</orgName>
+                <orgName type="jaraid">CU</orgName>
+                <idno type="jaraid">hCU</idno>
+                <idno type="oape">45</idno>
+                <location>
+                    <placeName ref="geon:360630 oape:place:226 ">Cairo</placeName>
+                </location>
+                <note> <note xml:lang="und-Latn">this is our guess</note> </note>
+            </org>
+            <org xml:id="hLOC">
+                <orgName>Library of Congress, Washington, DC</orgName>
+                <orgName type="jaraid">LoC</orgName>
+                <idno type="jaraid">hLOC</idno>
+                <idno type="oape">46</idno>
+                <location>
+                    <placeName ref="geon:4140963 jaraid:place:140 oape:place:433 ">Washington, DC</placeName>
+                </location>
+            </org>
+            <org xml:id="hTUB">
+                <orgName>Library of Tübingen University, Tübingen</orgName>
+                <orgName type="jaraid">TUB</orgName>
+                <idno type="jaraid">hTUB</idno>
+                <idno type="oape">47</idno>
+                <location>
+                    <placeName>Tübingen</placeName>
+                </location>
+            </org>
+            <org xml:id="hMJA">
+                <orgName>Maktabat Jāmiʿat al-Azhar, Cairo</orgName>
+                <orgName type="jaraid">MJA</orgName>
+                <idno type="jaraid">hMJA</idno>
+                <idno type="oape">48</idno>
+                <location>
+                    <placeName ref="geon:360630 oape:place:226 ">Cairo</placeName>
+                </location>
+            </org>
+            <org xml:id="hAYN">
+                <orgName>Maktabat Sāmī al-ʿAyntābī, Aleppo </orgName>
+                <orgName type="jaraid">Ayn</orgName>
+                <idno type="jaraid">hAYN</idno>
+                <idno type="oape">49</idno>
+                <location>
+                    <placeName ref="geon:170063 oape:place:15 ">Aleppo</placeName>
+                </location>
+            </org>
+            <org xml:id="hMB">
+                <orgName>Maktabat al-Būlīsiyya, Lebanon</orgName>
+                <orgName type="jaraid">Mak al-Bulisiyya</orgName>
+                <idno type="jaraid">hMB</idno>
+                <idno type="oape">50</idno>
+                <location>
+                    <placeName ref="geon:272103 jaraid:place:21 oape:place:416 ">Lebanon</placeName>
+                </location>
+            </org>
+            <org xml:id="hMJU">
+                <orgName>Maktabt al-Jāmiʿa al-Urduniyya, ʿAmmān, Jordan</orgName>
+                <orgName type="jaraid">MJU</orgName>
+                <idno type="jaraid">hMJU</idno>
+                <idno type="oape">51</idno>
+                <location>
+                    <placeName ref="geon:250441 jaraid:place:73 oape:place:508 ">Amman</placeName>
+                </location>
+            </org>
+            <org xml:id="hMTQ">
+                <orgName>Markaz al-Tawthīq al-Qawmī, Tunis</orgName>
+                <orgName type="jaraid">MTQ</orgName>
+                <idno type="jaraid">hMTQ</idno>
+                <idno type="oape">52</idno>
+                <location>
+                    <placeName ref="geon:2464470 oape:place:333 ">Tunis</placeName>
+                </location>
+            </org>
+            <org xml:id="hZAGH">
+                <orgName>Matḥaf Saʿd Zaghl­l (Bayt al-Umma), Cairo</orgName>
+                <orgName type="jaraid">Zagh</orgName>
+                <idno type="jaraid">hZAGH</idno>
+                <idno type="oape">53</idno>
+                <location>
+                    <placeName ref="geon:360630 oape:place:226 ">Cairo</placeName>
+                </location>
+            </org>
+            <org xml:id="hMEC">
+                <orgName>Middle East Centre Library, St Antony's College, Oxford</orgName>
+                <orgName type="jaraid">MEC</orgName>
+                <idno type="jaraid">hMEC</idno>
+                <idno type="oape">54</idno>
+                <location>
+                    <placeName ref="geon:2640729 oape:place:328">Oxford</placeName>
+                </location>
+            </org>
+            <org xml:id="hMK">
+                <orgName>Millet (Yazma Eser) Kütüphanesi, Istanbul</orgName>
+                <orgName type="jaraid">MK</orgName>
+                <idno type="jaraid">hMK</idno>
+                <idno type="oape">55</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+            </org>
+            <org xml:id="hMKAD">
+                <orgName>Milli Kütüphanesi (National Library of Turkey), Digital Periodical Collection (available online), Ankara</orgName>
+                <orgName type="jaraid">MKAD</orgName>
+                <idno type="jaraid">hMKAD</idno>
+                <idno type="oape">56</idno>
+                <location>
+                    <placeName>Ankara</placeName>
+                </location>
+                <note> <note xml:lang="und-Latn">no entries in the table match this holding</note> </note>
+            </org>
+            <org xml:id="hMKHC">
+                <orgName>Moise A. Khayrallah Center for Lebanese Diaspora Studies, NC State University</orgName>
+                <orgName type="jaraid">MKHC</orgName>
+                <idno type="jaraid">hMKHC</idno>
+                <idno type="oape">57</idno>
+                <location>
+                    <placeName>Raleigh</placeName>
+                </location>
+            </org>
+            <org xml:id="hAM">
+                <orgName>Municipality Library, Alexandria</orgName>
+                <orgName type="jaraid">Alex Mun</orgName>
+                <idno type="jaraid">hAM</idno>
+                <idno type="oape">58</idno>
+                <location>
+                    <placeName ref="geon:361058 oape:place:225">Alexandria</placeName>
+                </location>
+            </org>
+            <org xml:id="hMMWB">
+                <orgName>Muʾassasat al-Maḥfūẓāt al-Waṭaniyya, Beirut (Centre des Archives Nationales)</orgName>
+                <orgName type="jaraid">MMWB</orgName>
+                <idno type="jaraid">hMMWB</idno>
+                <idno type="oape">59</idno>
+                <location>
+                    <placeName ref="geon:276781 oape:place:26 ">Beirut</placeName>
+                </location>
+            </org>
+            <org xml:id="hNLI">
+                <orgName>National Library of Israel</orgName>
+                <orgName type="jaraid">NLoI</orgName>
+                <idno type="jaraid">hNLI</idno>
+                <idno type="oape">60</idno>
+                <location>
+                    <placeName ref="geon:281184 oape:place:6 ">Jerusalem</placeName>
+                </location>
+                <note> Their collection of Ottoman and mandate Arabic Palestinian newspapers are digitalized in a dedicated website: <ref
+                    target="https://web.nli.org.il/sites/nlis/en/jrayed/Pages/all-titles.aspx" xml:lang="und-Latn">Jrayed - Arabic Newspaper Archive of Ottoman and Mandatory Palestine</ref> </note>
+            </org>
+            <org xml:id="hNEST">
+                <orgName>Near East School of Theology / Maktabat Kulliyyat al-Lāhu­t li'l-Sharq al-Adnā, Beirut</orgName>
+                <orgName type="jaraid">NEST</orgName>
+                <idno type="jaraid">hNEST</idno>
+                <idno type="oape">61</idno>
+                <location>
+                    <placeName ref="geon:276781 oape:place:26 ">Beirut</placeName>
+                </location>
+            </org>
+            <org xml:id="hOIB">
+                <orgName>Orient-Institut Beirut</orgName>
+                <orgName type="jaraid">OIB</orgName>
+                <idno type="jaraid">hOIB</idno>
+                <idno type="oape">62</idno>
+                <location>
+                    <placeName ref="geon:276781 oape:place:26 ">Beirut</placeName>
+                </location>
+            </org>
+            <org xml:id="hEAP119">
+                <orgName>Periodical collections at the al-Aqṣā Mosque Library in East Jerusalem</orgName>
+                <orgName type="jaraid">Aqṣā</orgName>
+                <idno type="jaraid">hEAP119</idno>
+                <idno type="oape">63</idno>
+                <location>
+                    <placeName ref="geon:281184 oape:place:6 ">Jerusalem</placeName>
+                </location>
+                <note>. The collection was digitized by the "Endangered Archives Program" of the British Library and is available <ref
+                    target="http://eap.bl.uk/database/overview_project.a4d?projID=EAP119" xml:lang="und-Latn">online</ref>.</note>
+            </org>
+            <org xml:id="hPN">
+                <orgName>Perpustakaan Nasional - Indonasian National Library</orgName>
+                <orgName type="jaraid">PN</orgName>
+                <idno type="jaraid">hPN</idno>
+                <idno type="oape">64</idno>
+                <location>
+                    <placeName ref="geon:1642911 jaraid:place:211 oape:place:474 ">Jakarta</placeName>
+                </location>
+            </org>
+            <org xml:id="hPUL">
+                <orgName>Princeton University Library, Princeton</orgName>
+                <orgName type="jaraid">Prin</orgName>
+                <idno type="jaraid">hPUL</idno>
+                <idno type="oape">65</idno>
+                <location>
+                    <placeName>Princeton</placeName>
+                </location>
+            </org>
+            <org xml:id="hNYPL">
+                <orgName>Public Library of New York</orgName>
+                <orgName type="jaraid">NYPL</orgName>
+                <idno type="jaraid">hNYPL</idno>
+                <idno type="oape">66</idno>
+                <location>
+                    <placeName ref="geon:5128581 oape:place:303 ">New York</placeName>
+                </location>
+            </org>
+            <org xml:id="hSOAS">
+                <orgName>School of Oriental and African Studies Library, University of London</orgName>
+                <orgName type="jaraid">SOAS</orgName>
+                <idno type="jaraid">hSOAS</idno>
+                <idno type="oape">67</idno>
+                <location>
+                    <placeName ref="geon:2643743 oape:place:331 ">London</placeName>
+                </location>
+            </org>
+            <org xml:id="hSPL">
+                <orgName>St. Petersburg University Library, Russia</orgName>
+                <orgName type="jaraid">StPL</orgName>
+                <idno type="jaraid">hSPL</idno>
+                <idno type="oape">68</idno>
+                <location>
+                    <placeName ref="geon:498817 oape:place:355 ">St. Petersburg</placeName>
+                </location>
+            </org>
+            <org xml:id="hSBB">
+                <orgName>Staatsbibliothek zu Berlin, Preußischer Kulturbesitz, Berlin</orgName>
+                <orgName type="jaraid">SBB</orgName>
+                <idno type="jaraid">hSBB</idno>
+                <idno type="oape">69</idno>
+                <location>
+                    <placeName ref="geon:2950159 oape:place:343 ">Berlin</placeName>
+                </location>
+            </org>
+            <org xml:id="hSTAN">
+                <orgName>Stanford University, Hoover Library</orgName>
+                <orgName type="jaraid">Stan</orgName>
+                <idno type="jaraid">hSTAN</idno>
+                <idno type="oape">70</idno>
+                <location>
+                    <placeName>Stanford</placeName>
+                </location>
+            </org>
+            <org xml:id="hSK">
+                <orgName>Süleymaniye Kütüphanesi, Istanbul</orgName>
+                <orgName type="jaraid">SK</orgName>
+                <idno type="jaraid">hSK</idno>
+                <idno type="oape">71</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+            </org>
+            <org xml:id="hBOA">
+                <orgName>T.C. Başbakanlık – Osmanlı Arşıvı, İstanbul</orgName>
+                <orgName type="jaraid">BOA</orgName>
+                <idno type="jaraid">hBOA</idno>
+                <idno type="oape">72</idno>
+                <location>
+                    <placeName ref="geon:745044 oape:place:3 ">Istanbul</placeName>
+                </location>
+                <note> <note xml:lang="und-Latn">no entries in the table match this holding</note> </note>
+            </org>
+            <org xml:id="hAUB">
+                <orgName>The Library of the American University in Beirut</orgName>
+                <orgName type="jaraid">AUB</orgName>
+                <idno type="jaraid">hAUB</idno>
+                <idno type="oape">73</idno>
+                <location>
+                    <placeName ref="geon:276781 oape:place:26 ">Beirut</placeName>
+                </location>
+            </org>
+            <org xml:id="hAUC">
+                <orgName>The Library of the American University in Cairo</orgName>
+                <orgName type="jaraid">AUC</orgName>
+                <idno type="jaraid">hAUC</idno>
+                <idno type="oape">74</idno>
+                <location>
+                    <placeName ref="geon:360630 oape:place:226 ">Cairo</placeName>
+                </location>
+            </org>
+            <org xml:id="hBONN">
+                <orgName>Translatio, Universität Bonn, Germany</orgName>
+                <orgName type="jaraid">Bonn</orgName>
+                <idno type="jaraid">hBONN</idno>
+                <idno type="oape">75</idno>
+                <location>
+                    <placeName>Bonn</placeName>
+                </location>
+                <note>. Holdings are constantly digitized and made publicly available <ref target="http://www.translatio.uni-bonn.de" xml:lang="und-Latn">online</ref>.</note>
+            </org>
+            <org xml:id="hBU">
+                <orgName>University of Baghdad</orgName>
+                <orgName type="jaraid">UBagh</orgName>
+                <idno type="jaraid">hBU</idno>
+                <idno type="oape">76</idno>
+                <location>
+                    <placeName ref="geon:98182 oape:place:216 ">Baghdad</placeName>
+                </location>
+            </org>
+            <org xml:id="hUH">
+                <orgName>University of Haifa</orgName>
+                <orgName type="jaraid">UH</orgName>
+                <idno type="jaraid">hUH</idno>
+                <idno type="oape">77</idno>
+                <location>
+                    <placeName ref="geon:294801 oape:place:35 ">Haifa</placeName>
+                </location>
+            </org>
+            <org xml:id="hUPEN">
+                <orgName>University of Pennsylvania Libraries</orgName>
+                <orgName type="jaraid">UPenn</orgName>
+                <idno type="jaraid">hUPEN</idno>
+                <idno type="oape">78</idno>
+                <location>
+                    <placeName ref="geon:4560349 oape:place:315 ">Philadelphia</placeName>
+                </location>
+            </org>
+            <org xml:id="hUTL">
+                <orgName>University of Tokio, General Library</orgName>
+                <orgName type="jaraid">UTL</orgName>
+                <idno type="jaraid">hUTL</idno>
+                <idno type="oape">79</idno>
+                <location>
+                    <placeName>Tokio</placeName>
+                </location>
+            </org>
+            <org xml:id="hUUL">
+                <orgName>University of Utah Library</orgName>
+                <orgName type="jaraid">Utah</orgName>
+                <idno type="jaraid">hUUL</idno>
+                <idno type="oape">80</idno>
+                <location>
+                    <placeName>Salt Lake City</placeName>
+                </location>
+            </org>
+            <org xml:id="hUWL">
+                <orgName>University of Washington Library</orgName>
+                <orgName type="jaraid">UWL</orgName>
+                <idno type="jaraid">hUWL</idno>
+                <idno type="oape">81</idno>
+                <location>
+                    <placeName>Seattle</placeName>
+                </location>
+            </org>
+            <org xml:id="hYL">
+                <orgName>Yale University Libraries</orgName>
+                <orgName type="jaraid">Yale</orgName>
+                <idno type="jaraid">hYL</idno>
+                <idno type="oape">82</idno>
+                <location>
+                    <placeName>New Haven</placeName>
+                </location>
+            </org>
+            <org xml:id="hZAH">
+                <orgName>al-Maktaba al-Ẓāhiriyya, Damascus</orgName>
+                <orgName type="jaraid">Zāh</orgName>
+                <idno type="jaraid">hZAH</idno>
+                <idno type="oape">83</idno>
+                <location>
+                    <placeName ref="geon:170654 oape:place:61 ">Damascus</placeName>
+                </location>
+            </org>
+        </listOrg>
+        <listOrg>
+            <head>Publishers of periodicals</head>
+            <org>
+                <orgName xml:lang="und-Latn"> <persName ref="jaraid:pers:477" xml:lang="fr">Eugène Clavel</persName> and Co</orgName>
+                <idno type="jaraid">243</idno>
+                <idno type="oape">84</idno>
+            </org>
+            <org>
+                <orgName xml:lang="fr">Institut d'Égypte</orgName>
+                <idno type="jaraid">2</idno>
+                <idno type="oape">85</idno>
+            </org>
+            <org>
+                <orgName xml:lang="fr">Société FKN</orgName>
+                <idno type="jaraid">32</idno>
+                <idno type="oape">86</idno>
+            </org>
+            <org>
+                <orgName xml:lang="fr">École de Médecine et de Pharmacie</orgName>
+                <idno type="jaraid">13</idno>
+                <idno type="oape">87</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en"> <persName xml:lang="fr">Eugène Clavel</persName>and Co</orgName>
+                <idno type="jaraid">51</idno>
+                <idno type="oape">88</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">4th Ottoman Army</orgName>
+                <idno type="jaraid">240</idno>
+                <idno type="oape">89</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Beylical government</orgName>
+                <idno type="jaraid">11</idno>
+                <idno type="oape">90</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Church Missionary Society</orgName>
+                <idno type="jaraid">67</idno>
+                <idno type="oape">91</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">French government</orgName>
+                <idno type="jaraid">70</idno>
+                <idno type="oape">92</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Jesuits</orgName>
+                <idno type="jaraid">17</idno>
+                <idno type="oape">93</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Spanish government</orgName>
+                <idno type="jaraid">71</idno>
+                <idno type="jaraid">73</idno>
+                <idno type="oape">94</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ābāʾ al-Dūminīkiyyūn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الاباء الدومنيكيون</orgName>
+                <idno type="jaraid">175</idno>
+                <idno type="oape">95</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ābāʾ al-Kabūshiyūn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الاباء الكبوشيون</orgName>
+                <idno type="jaraid">130</idno>
+                <idno type="oape">96</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ābāʾ al-Karmiliyūn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الاباء الكرمليون</orgName>
+                <idno type="jaraid">167</idno>
+                <idno type="oape">97</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ābāʾ al-Mursalūn al-Bawlisiyyūn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الاباء المرسلون البولسيون</orgName>
+                <idno type="jaraid">142</idno>
+                <idno type="oape">98</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Abāʾ al-Yasūʿiyyīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الاباء اليسوعيين</orgName>
+                <idno type="jaraid">104</idno>
+                <idno type="oape">99</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ittiḥād al-Islāmī al-Firansī</orgName>
+                <orgName change="#d2e245" xml:lang="ar">الاتحاد الاسلامي الفرنسي</orgName>
+                <idno type="jaraid">241</idno>
+                <idno type="oape">100</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ittiḥād al-Yahūd al-Tūnisiyyīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">اتحاد اليهود التونسيين</orgName>
+                <idno type="jaraid">41</idno>
+                <idno type="oape">101</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes"> <persName xml:lang="ar-Latn-x-ijmes">Aḥmad Samīr</persName>and Co</orgName>
+                <orgName change="#d2e154" xml:lang="ar">احمد سمير وشاركه</orgName>
+                <idno type="jaraid">46</idno>
+                <idno type="oape">102</idno>
+            </org>
+            <org>
+                <orgName xml:lang="und-Latn"> <persName ref="jaraid:pers:162" xml:lang="ar-Latn-x-ijmes">Aḥmad Samīr</persName> and Co</orgName>
+                <orgName xml:lang="ar"><persName change="#d2e245" ref="jaraid:pers:162" xml:lang="ar">احمد سمير</persName> وشركاؤه</orgName>
+                <idno type="jaraid">242</idno>
+                <idno type="oape">103</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ikhwat al-Madāris al-Masīḥiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">اخوة المدارس المسيحية</orgName>
+                <idno type="jaraid">101</idno>
+                <idno type="oape">104</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-Barīd al-Miṣrī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ادارة البريد المصري</orgName>
+                <idno type="jaraid">31</idno>
+                <idno type="oape">105</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-Maṭbaʿa al-Adabiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ادارة المطبعة الادبية</orgName>
+                <idno type="jaraid">131</idno>
+                <idno type="oape">106</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-Maʿārif al-ʿĀmma</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ادارة المعارف العامة</orgName>
+                <idno type="jaraid">146</idno>
+                <idno type="oape">107</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-Maʿārif bi-l-Mufawwaḍiyya al-ʿUlyā</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ادارة المعارف بالمفوضية العليا</orgName>
+                <idno type="jaraid">134</idno>
+                <idno type="oape">108</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-Nādī al-ʿIlmī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ادارة النادي العلمي</orgName>
+                <idno type="jaraid">176</idno>
+                <idno type="oape">109</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Idārat Majallat al-Marʾa al-Jadīda</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ادارة مجلة المرءة الجديدة</orgName>
+                <idno type="jaraid">108</idno>
+                <idno type="oape">110</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Egyptian Army's General Staff (Arkān Ḥarb)</orgName>
+                <orgName change="#d2e154" xml:lang="ar">اركان حرب الجيش المصري</orgName>
+                <idno type="jaraid">21</idno>
+                <idno type="oape">111</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Batrīrkiyya Anṭākiyya al-Urthūdhuksiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">بتريركية انطاكية الارثوذكسية</orgName>
+                <idno type="jaraid">144</idno>
+                <idno type="oape">112</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Baṭrīrkiyya al-Suryāniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">البطريركية السريانية</orgName>
+                <idno type="jaraid">136</idno>
+                <idno type="oape">113</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Baṭrīrkiyya al-Kaldāniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">البطريركية الكلدانية</orgName>
+                <idno type="jaraid">177</idno>
+                <idno type="oape">114</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Baṭrīrkiyya al-Lāqīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">بطريركية اللاقين</orgName>
+                <idno type="jaraid">117</idno>
+                <idno type="oape">115</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Talāmidhat Madrasat al-Irshād</orgName>
+                <orgName change="#d2e154" xml:lang="ar">تلامذة مدرسة الارشاد</orgName>
+                <idno type="jaraid">179</idno>
+                <idno type="oape">116</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Talāmidhat Madrasat al-Dustūr</orgName>
+                <orgName change="#d2e154" xml:lang="ar">تلامذة مدرسة الدستور</orgName>
+                <idno type="jaraid">161</idno>
+                <idno type="oape">117</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jāmiʿa al-Sūriyya fī Būsṭun</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجامعة السورية في بوسطن</orgName>
+                <idno type="jaraid">83</idno>
+                <idno type="oape">118</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Group of Egyptian writers</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جماعة الأدباء المصريين</orgName>
+                <idno type="jaraid">60</idno>
+                <idno type="oape">119</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamāʿat al-Muʾāḍaba al-Ṭibbiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جماعة المؤاضبة الطبية</orgName>
+                <idno type="jaraid">49</idno>
+                <idno type="oape">120</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Arzat Lubnān</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية ارزة لبنان</orgName>
+                <idno type="jaraid">85</idno>
+                <idno type="oape">121</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Ittiḥād al-Akhawī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الاتحاد الاخوي</orgName>
+                <idno type="jaraid">45</idno>
+                <idno type="oape">122</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Ittiḥād al-Lubnānī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الاتحاد اللبناني</orgName>
+                <idno type="jaraid">94</idno>
+                <idno type="oape">123</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Ikhāʾ al-Madrasī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الاخاء المدرسي</orgName>
+                <idno type="jaraid">103</idno>
+                <idno type="oape">124</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Ūrthūdhūksiyya bi-Bayrūt</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الارثوذوكسية البيروت</orgName>
+                <idno type="jaraid">65</idno>
+                <idno type="oape">125</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Irshād al-ʿIlmiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الارشاد العلمية</orgName>
+                <idno type="jaraid">57</idno>
+                <idno type="oape">126</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Iʿtidāl</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الاعتدال</orgName>
+                <idno type="jaraid">58</idno>
+                <idno type="oape">127</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Taʾlīf al-ʿIlmiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الت العلمية</orgName>
+                <idno type="jaraid">53</idno>
+                <idno type="oape">128</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Taḥāluf al-Lubnānī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية التحالف اللبناني</orgName>
+                <idno type="jaraid">95</idno>
+                <idno type="oape">129</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Taʿāwun al-Islāmī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية التعاون الاسلامي</orgName>
+                <idno type="jaraid">42</idno>
+                <idno type="oape">130</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Taʿlīm al-Masīḥī al-Ūrthūdhūksiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية التعليم المسيحي الارثوذوكسية</orgName>
+                <idno type="jaraid">54</idno>
+                <idno type="oape">131</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Taʿlīm al-Masīḥī al-Ūrthūdhūksiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية التعليم المسيحي الارثوذوكسية</orgName>
+                <idno type="jaraid">61</idno>
+                <idno type="oape">132</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Taʿlīm al-Masīḥī li-Ṭāʾifat al-Urthūdhuks</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية التعليم المسيحي الطائفة الارثوذكس</orgName>
+                <idno type="jaraid">43</idno>
+                <idno type="oape">133</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Tahdhībiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية التهذيبية</orgName>
+                <idno type="jaraid">126</idno>
+                <idno type="oape">134</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Tawfīq al-Qubṭiyya al-Markaziyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية التوفيق القبطية المركزية</orgName>
+                <idno type="jaraid">50</idno>
+                <idno type="oape">135</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Thamra bi-l-Madrasa al-Waṭaniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الثمرة بالمدرسة الوطنية</orgName>
+                <idno type="jaraid">141</idno>
+                <idno type="oape">136</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Khayriyya al-Islāmiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية الخيرية الاسلامية</orgName>
+                <idno type="jaraid">80</idno>
+                <idno type="oape">137</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Khayriyya al-Mārūniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية الخيرية المارونية</orgName>
+                <idno type="jaraid">86</idno>
+                <idno type="oape">138</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Khayriyya fī Baynū wa-Qabūlā</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية الخيرية في بينو القبولى</orgName>
+                <idno type="jaraid">143</idno>
+                <idno type="oape">139</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Rābiṭa al-Adabiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الرابطة الادبية</orgName>
+                <idno type="jaraid">149</idno>
+                <idno type="oape">140</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Zirāʿiyya al-Miṣriyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية الزراعية المصرية</orgName>
+                <idno type="jaraid">24</idno>
+                <idno type="oape">141</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Zirāʿiyya al-Miṣriyya</orgName>
+                <orgName xml:lang="fr">Société Egyptienne d'Agriculture</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية الزراعية المصرية</orgName>
+                <idno type="jaraid">27</idno>
+                <idno type="oape">142</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Sūriyya li'l-Iktisāb al-ʿUlūm wa'l-Funūn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية السورية للاكتساب العلوم والفنون</orgName>
+                <idno type="jaraid">8</idno>
+                <idno type="oape">143</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Sūriyya li'l-funūn wa'l-ʿulūm</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية السورية للفنون والعلوم</orgName>
+                <idno type="jaraid">9</idno>
+                <idno type="oape">144</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Shubbān al-Sūriyyīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الشبان السوريين</orgName>
+                <idno type="jaraid">84</idno>
+                <idno type="oape">145</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Shabība al-Muttaḥida</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الشبيبة المتحدة</orgName>
+                <idno type="jaraid">96</idno>
+                <idno type="oape">146</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-ʿArabiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية العربية</orgName>
+                <idno type="jaraid">93</idno>
+                <idno type="oape">147</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-ʿIlmiyya al-Sūriyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية العلمية السورية</orgName>
+                <idno type="jaraid">16</idno>
+                <idno type="oape">148</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-ʿIlmiyya bi-l-Kulliyya al-Islāmiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية العلمية بالكلية الاسلامية</orgName>
+                <idno type="jaraid">133</idno>
+                <idno type="oape">149</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Funūn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الفنون</orgName>
+                <idno type="jaraid">22</idno>
+                <idno type="oape">150</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Kardīnāl Farrārī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الكردينال فراري</orgName>
+                <idno type="jaraid">120</idno>
+                <idno type="oape">151</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Kawkab al-Sārī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الكوكب الساري</orgName>
+                <idno type="jaraid">59</idno>
+                <idno type="oape">152</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Mabāḥith al-ʿIlmiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية المباحث العلمية</orgName>
+                <idno type="jaraid">62</idno>
+                <idno type="oape">153</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Najm al-Thāqib</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية النجم الثاقب</orgName>
+                <idno type="jaraid">44</idno>
+                <idno type="oape">154</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Nahda al-Marjaʿuyūniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية النحضة المرجعيونية</orgName>
+                <idno type="jaraid">112</idno>
+                <idno type="oape">155</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Nahḍa</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية النهضة</orgName>
+                <idno type="jaraid">66</idno>
+                <idno type="oape">156</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Nahḍa al-Lubnāniyya</orgName>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyya al-Nahḍa al-Lubnāniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية النهضة اللبنانية</orgName>
+                <idno type="jaraid">87</idno>
+                <idno type="jaraid">88</idno>
+                <idno type="oape">157</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Nahḍa bi-l-Kulliyya al-Sharqiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية النهضة بالكلية الشرقية</orgName>
+                <idno type="jaraid">110</idno>
+                <idno type="oape">158</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Waḥda al-Murqusiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية الوحدة المرقسية</orgName>
+                <idno type="jaraid">56</idno>
+                <idno type="oape">159</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Waṭaniyya al-Āthūriyya al-Kaldāniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجمعية الوطنية الاثورية الكلدانية</orgName>
+                <idno type="jaraid">82</idno>
+                <idno type="oape">160</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Ghurrat al-Ṣabāḥ al-Kulliyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية غرة الصباح الكلية</orgName>
+                <idno type="jaraid">38</idno>
+                <idno type="oape">161</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Mār Manṣūr</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية مار منصور</orgName>
+                <idno type="jaraid">102</idno>
+                <idno type="oape">162</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Makārim al-Akhlāq al-Islāmiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية مكارم الاخلاق الاسلامية</orgName>
+                <idno type="jaraid">64</idno>
+                <idno type="oape">163</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Nashr al-Maʿārif wa'l-Ādāb</orgName>
+                <orgName change="#d2e154" xml:lang="ar">جمعية نشر المعارف والآداب</orgName>
+                <idno type="jaraid">47</idno>
+                <idno type="oape">164</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">French army</orgName>
+                <orgName xml:lang="ar">الجيش الفرنسي</orgName>
+                <idno type="jaraid">1</idno>
+                <idno type="oape">165</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ḥizb al-Istiqlāl al-ʿIrāqī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">حزب الاستقلال العراقي</orgName>
+                <idno type="jaraid">123</idno>
+                <idno type="oape">166</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ḥizb al-Iṣlāḥ al-Waṭanī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">حزب الاصلاح الوطني</orgName>
+                <idno type="jaraid">69</idno>
+                <idno type="oape">167</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ḥizb al-Shuyūʿī al-Filasṭīnī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الحزب الشيوعي الفلسطيني</orgName>
+                <idno type="jaraid">121</idno>
+                <idno type="oape">168</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ḥizb al-Waṭanī al-Sūrī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الحزب الوطني السوري</orgName>
+                <idno type="jaraid">90</idno>
+                <idno type="oape">169</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Government</orgName>
+                <orgName xml:lang="ar">الحكومة</orgName>
+                <idno type="jaraid">4</idno>
+                <idno type="oape">170</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ḥukūmat al-Iḥtilāl al-Bariṭāniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">حكومة الاحتلال البرطانية</orgName>
+                <idno type="jaraid">124</idno>
+                <idno type="oape">171</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ottoman government</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الحكومة العثمانية</orgName>
+                <idno type="jaraid">20</idno>
+                <idno type="oape">172</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ḥukūma al-ʿArabiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الحكومة العربية</orgName>
+                <idno type="jaraid">114</idno>
+                <idno type="oape">173</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Ḥukūma al-Lubnāniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الحكومة اللبنانية</orgName>
+                <idno type="jaraid">135</idno>
+                <idno type="oape">174</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Egyptian government</orgName>
+                <orgName xml:lang="ar">الحكومة المصرية</orgName>
+                <idno type="jaraid">3</idno>
+                <idno type="oape">175</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ḥukūmat Bilād al-ʿAlawiyyīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">حكومة بلاد العلويين</orgName>
+                <idno type="jaraid">158</idno>
+                <idno type="oape">176</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ḥukūma mutaṣarrifa, Jabal Lubnān</orgName>
+                <orgName change="#d2e154" xml:lang="ar">حكومة متصرفة , جبل لبنان</orgName>
+                <idno type="jaraid">15</idno>
+                <idno type="oape">177</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Khristiyān wa-Shurakāhu</orgName>
+                <orgName change="#d2e154" xml:lang="ar">خرستيان وشركاه</orgName>
+                <idno type="jaraid">79</idno>
+                <idno type="oape">178</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Dāʾirat al-Umūr al-Iqtiṣādiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">دائرة الامور الاقتصادية</orgName>
+                <idno type="jaraid">137</idno>
+                <idno type="oape">179</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Dāʾirat Maʿārif Dimashq</orgName>
+                <orgName change="#d2e154" xml:lang="ar">دائرة معارف دمشق</orgName>
+                <idno type="jaraid">151</idno>
+                <idno type="oape">180</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Dār al-Kutub al-Miṣriyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">دار الكتب المصرية</orgName>
+                <idno type="jaraid">76</idno>
+                <idno type="oape">181</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Dawlat al-ʿAlawiyyīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">دولة العلويين</orgName>
+                <idno type="jaraid">159</idno>
+                <idno type="oape">182</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Dīwān al-Būlis bi-Niẓārat al-Dākhiliyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ديوان البولس النظارة الداخلية</orgName>
+                <orgName xml:lang="en">Police Head Quarters, Ministry of Interior</orgName>
+                <idno type="jaraid">39</idno>
+                <idno type="jaraid">40</idno>
+                <idno type="oape">183</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Dīwān al-Jihādiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ديوان الجهادية</orgName>
+                <orgName xml:lang="en">Ministry of War</orgName>
+                <idno type="jaraid">6</idno>
+                <idno type="jaraid">12</idno>
+                <idno type="oape">184</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Dīwān al-Madāris</orgName>
+                <orgName change="#d2e154" xml:lang="ar">ديوان المدارس</orgName>
+                <idno type="jaraid">5</idno>
+                <idno type="oape">185</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Rābiṭa al-Waṭaniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الرابطة الوطنية</orgName>
+                <idno type="jaraid">92</idno>
+                <idno type="oape">186</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Rābiṭa al-Waṭaniyya al-Sūriyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الرابطة الوطنية السورية</orgName>
+                <idno type="jaraid">91</idno>
+                <idno type="oape">187</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">official</orgName>
+                <orgName change="#d2e154" xml:lang="ar">رسمية</orgName>
+                <idno type="jaraid">7</idno>
+                <idno type="jaraid">72</idno>
+                <idno type="oape">188</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Zuʿamā al-Thawra al-ʿIrāqiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">زعمى الثورة العراقية</orgName>
+                <idno type="jaraid">125</idno>
+                <idno type="oape">189</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Shubbān Miṣr wa'l-Iskandariyya Jams Sānuwā</orgName>
+                <orgName change="#d2e154" xml:lang="ar">شبان مصر والاسكندرية جمس سانوا</orgName>
+                <idno type="jaraid">25</idno>
+                <idno type="oape">190</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Sharika al-Zirāʿiyya al-Ḥalabiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الشركة الزراعية الحلبية</orgName>
+                <idno type="jaraid">154</idno>
+                <idno type="oape">191</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Sharika al-Zirāʿiyya al-Miṣriyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الشركة الزراعية المصرية</orgName>
+                <idno type="jaraid">26</idno>
+                <idno type="oape">192</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Sharikat al-Qiddīs Manṣūr dī Būl</orgName>
+                <orgName change="#d2e154" xml:lang="ar">شركة القديس منصور دي بول</orgName>
+                <idno type="jaraid">48</idno>
+                <idno type="oape">193</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Sharikat Jarīdat al-Waṭan al-Musāhima</orgName>
+                <orgName change="#d2e154" xml:lang="ar">شركة جريدة الوطن المساهمة</orgName>
+                <idno type="jaraid">97</idno>
+                <idno type="oape">194</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Sharikat Mār Manṣūr Dī Būl</orgName>
+                <orgName change="#d2e154" xml:lang="ar">شركة مار منصور دي بول</orgName>
+                <idno type="jaraid">111</idno>
+                <idno type="oape">195</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Sharikat Mār Manṣūr dī Būl</orgName>
+                <orgName change="#d2e154" xml:lang="ar">شركة مار منصور دي بول</orgName>
+                <idno type="jaraid">14</idno>
+                <idno type="oape">196</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ṭalbat al-Madrasa al-Zirāʿiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">طلبة المدرسة الزراعية</orgName>
+                <idno type="jaraid">178</idno>
+                <idno type="oape">197</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ghurfat al-Tijāra</orgName>
+                <orgName change="#d2e154" xml:lang="ar">غرفة التجارة</orgName>
+                <idno type="jaraid">150</idno>
+                <idno type="oape">198</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ghurfat Tijārat Ḥalab</orgName>
+                <orgName change="#d2e154" xml:lang="ar">غرفة تجارة حلب</orgName>
+                <idno type="jaraid">155</idno>
+                <idno type="oape">199</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ghurfat Tijārat Ḥayfā</orgName>
+                <orgName change="#d2e154" xml:lang="ar">غرفة تجارة حيفا</orgName>
+                <idno type="jaraid">165</idno>
+                <idno type="oape">200</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Ghurfat Tijārat Yāfā al-Waṭaniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">غرفة تجارة يافى الوطنية</orgName>
+                <idno type="jaraid">166</idno>
+                <idno type="oape">201</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Qism al-Ḍabṭ bi-Niẓārat al-Dākhiliyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">قسم الضبط النظارة الداخلية</orgName>
+                <idno type="jaraid">52</idno>
+                <idno type="oape">202</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Qalam Taḥrīr Jarīdat al-Istiqlāl</orgName>
+                <orgName change="#d2e154" xml:lang="ar">قلم تحرير جريدة الاستقلال</orgName>
+                <idno type="jaraid">153</idno>
+                <idno type="oape">203</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Qūmīsiriyya al-ʿUlyā al-Firansiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">القوميسرية العليى الفرنسية</orgName>
+                <idno type="jaraid">132</idno>
+                <idno type="oape">204</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Kashshāfat al-Qaddīs Jirjis</orgName>
+                <orgName change="#d2e154" xml:lang="ar">كشافة القديس جرجس</orgName>
+                <idno type="jaraid">118</idno>
+                <idno type="oape">205</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Syrian Protestant College</orgName>
+                <orgName xml:lang="en">American University of Beirut</orgName>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Kulliyya al-Sūriyya al-Injīliyya</orgName>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jāmiʿa al-Amīrikiyya</orgName>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Jāmiʿa al-Amīrikiyya fī Bayrūt</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الكلية السورية الانجيلية</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجامعة الاميركية</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الجامعة الاميركية في بيروت</orgName>
+                <idno type="jaraid">63</idno>
+                <idno type="jaraid">68</idno>
+                <idno type="jaraid">100</idno>
+                <idno type="oape">206</idno>
+                <location>
+                    <placeName>Beirut</placeName>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Kulliyya al-ʿArabiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">الكلية العربية</orgName>
+                <idno type="jaraid">164</idno>
+                <idno type="oape">207</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Lajnat Iʿānat Mankūbī Sūriyā wa-Lubnān</orgName>
+                <orgName change="#d2e154" xml:lang="ar">لجنة اعانة منكوبي سوريا ولبنان</orgName>
+                <idno type="jaraid">81</idno>
+                <idno type="oape">208</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Lajnat Ikrām al-Sūriyyīn li-l-Barāzīl</orgName>
+                <orgName change="#d2e154" xml:lang="ar">لجنة اكرام السوريين للبرازيل</orgName>
+                <idno type="jaraid">89</idno>
+                <idno type="oape">209</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Lajnat al-Daʿāya al-Duwaliyya li-ʿUmmāl al-Naql</orgName>
+                <orgName change="#d2e154" xml:lang="ar">لجنة الدعاية الدولية العمال النقل</orgName>
+                <idno type="jaraid">78</idno>
+                <idno type="oape">210</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Lajna al-Firansāwiyya al-Sharqiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">اللجنة الفرنساوية الشرقية</orgName>
+                <idno type="jaraid">98</idno>
+                <idno type="oape">211</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Lisān al-Shaʿb al-Miṣrī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">لسان الشعب المصري</orgName>
+                <idno type="jaraid">75</idno>
+                <idno type="oape">212</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Lisān Ḥāl al-ʿUmmāl fī Filasṭīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">لسان حال العمال في فلسطين</orgName>
+                <idno type="jaraid">119</idno>
+                <idno type="oape">213</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Mutakharrijū al-Kulliyya al-ʿIlmāniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">متخرجو الكلية العلمانية</orgName>
+                <idno type="jaraid">128</idno>
+                <idno type="oape">214</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Majmaʿ al-ʿIlmī al-ʿArabī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المجمع العلمي العربي</orgName>
+                <idno type="jaraid">147</idno>
+                <idno type="oape">215</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Majmaʿ al-Lugha al-ʿArabiyya</orgName>
+                <orgName xml:lang="ar">مجمع اللغة العربية</orgName>
+                <idno type="jaraid">240</idno>
+                <idno type="oape">216</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Madrasa al-Batrīrkiyya al-Kāthūlikiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المدرسة البتريركية الكاثولكية</orgName>
+                <idno type="jaraid">129</idno>
+                <idno type="oape">217</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Madrasa al-Dāwudiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المدرسة الداودية</orgName>
+                <idno type="jaraid">140</idno>
+                <idno type="oape">218</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Madrasa al-Dustūriyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المدرسة الدستورية</orgName>
+                <idno type="jaraid">116</idno>
+                <idno type="oape">219</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Madrasa al-ʿUthmāniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المدرسة العثمانية</orgName>
+                <idno type="jaraid">127</idno>
+                <idno type="oape">220</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Madrasa al-ʿIlmiyya al-Waṭaniyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المدرسة العلمية الوطنية</orgName>
+                <idno type="jaraid">145</idno>
+                <idno type="oape">221</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Madrasa al-Fārūqiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المدرسة الفاروقية</orgName>
+                <idno type="jaraid">156</idno>
+                <idno type="oape">222</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Madrasat al-Qaddīs Buṭrus</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مدرسة القديس بطرس</orgName>
+                <idno type="jaraid">109</idno>
+                <idno type="oape">223</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Madrasat Rawḍat al-Maʿārif</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مدرسة روضة المعارف</orgName>
+                <idno type="jaraid">162</idno>
+                <idno type="oape">224</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Madrasat Ṣihyawn al-Inklīziyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مدرسة صهيون الانكليزية</orgName>
+                <idno type="jaraid">115</idno>
+                <idno type="oape">225</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Madrasat Ṣihyūn al-Inklīziyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مدرسة صهيون الانكليزية</orgName>
+                <idno type="jaraid">160</idno>
+                <idno type="oape">226</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Madrasat Kiftīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مدرسة كفتين</orgName>
+                <idno type="jaraid">30</idno>
+                <idno type="oape">227</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Mudīriyyat al-Shurṭa al-ʿĀmma</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مديرية الشرطة العامة</orgName>
+                <idno type="jaraid">148</idno>
+                <idno type="oape">228</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Mudīriyyat al-Maṭbūʿāt</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مديرية المطبوعات</orgName>
+                <idno type="jaraid">122</idno>
+                <idno type="oape">229</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Mursilūn al-Amīrkān</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المرسلون الاميركان</orgName>
+                <idno type="jaraid">107</idno>
+                <idno type="oape">230</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">American missionaries</orgName>
+                <orgName xml:lang="ar">المرسلون الاميركييون</orgName>
+                <idno type="jaraid">10</idno>
+                <idno type="oape">231</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maṣlaḥat al-Barīd</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مصلحة البريد</orgName>
+                <idno type="jaraid">33</idno>
+                <idno type="oape">232</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maṣlaḥat al-Barīd al-Miṣriyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مصلحة البريد المصرية</orgName>
+                <idno type="jaraid">34</idno>
+                <idno type="oape">233</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maṣlaḥat ʿUmūm al-Iḥṣāʾ</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مصلحة عموم الاحصاء</orgName>
+                <idno type="jaraid">35</idno>
+                <idno type="oape">234</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa Hindiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مطبعة هندية</orgName>
+                <idno type="jaraid">55</idno>
+                <idno type="oape">235</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maṭrāniyyat al-Rūm al-Ūrthūdhūks/ Jamʿiyyat al-Taʿlīm al-Masīḥī fī Bayrūt</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مطرانية الروم الورثوذوكس جمعية التعليم المسيحي في بيروت /</orgName>
+                <idno type="jaraid">29</idno>
+                <idno type="oape">236</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Maʿhad al-Ṭibbī al-ʿArabī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المعهد الطبي العربي</orgName>
+                <idno type="jaraid">152</idno>
+                <idno type="oape">237</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Mufawwaḍiyya al-ʿUlyā</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المفوضية العليى</orgName>
+                <idno type="jaraid">105</idno>
+                <idno type="oape">238</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maqarr al-Kashshāf al-ʿĀmm</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مقر الكشاف العام</orgName>
+                <idno type="jaraid">138</idno>
+                <idno type="oape">239</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Maktab al-Mukhtaṣṣ bi-Shuʾūn al-Mustaʿmarāt</orgName>
+                <orgName change="#d2e154" xml:lang="ar">المكتب المختص الشؤون المستعمرات</orgName>
+                <idno type="jaraid">77</idno>
+                <idno type="oape">240</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maktab Bayt al-Maqdis</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مكتب بيت المقدس</orgName>
+                <idno type="jaraid">163</idno>
+                <idno type="oape">241</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maktab Jarīdat al-Balāgh</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مكتب جريدة البلاغ</orgName>
+                <idno type="jaraid">106</idno>
+                <idno type="oape">242</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Maktabat al-Salām</orgName>
+                <orgName change="#d2e154" xml:lang="ar">مكتبة السلام</orgName>
+                <idno type="jaraid">172</idno>
+                <idno type="oape">243</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Nādī al-Iṣlāḥ</orgName>
+                <orgName change="#d2e154" xml:lang="ar">نادي الاصلاح</orgName>
+                <idno type="jaraid">174</idno>
+                <idno type="oape">244</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Nādī al-Aʿlāb al-Riyāḍiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">نادي الاعلاب الرياضية</orgName>
+                <idno type="jaraid">171</idno>
+                <idno type="oape">245</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">al-Nādī al-Sūrī al-Lubnānī</orgName>
+                <orgName change="#d2e154" xml:lang="ar">النادي السوري اللبناني</orgName>
+                <idno type="jaraid">99</idno>
+                <idno type="oape">246</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Nādī Dār al-ʿUlūm</orgName>
+                <orgName change="#d2e154" xml:lang="ar">نادي دار العلوم</orgName>
+                <idno type="jaraid">74</idno>
+                <idno type="oape">247</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Niẓārat al-ʿAdliyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">نظارة العدلية</orgName>
+                <idno type="jaraid">168</idno>
+                <idno type="oape">248</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Niẓārat al-Madāris</orgName>
+                <orgName change="#d2e154" xml:lang="ar">نظارة المدارس</orgName>
+                <idno type="jaraid">19</idno>
+                <idno type="oape">249</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Niẓārat al-Maʿārif</orgName>
+                <orgName change="#d2e154" xml:lang="ar">نظارة المعارف</orgName>
+                <idno type="jaraid">169</idno>
+                <idno type="oape">250</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Niqābat al-Muḥāmīn</orgName>
+                <orgName change="#d2e154" xml:lang="ar">نقابة المحامين</orgName>
+                <idno type="jaraid">157</idno>
+                <idno type="oape">251</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Nikābat ʿUmmāl al-Maṭābiʿ</orgName>
+                <orgName change="#d2e154" xml:lang="ar">نكابة عمال المطابع</orgName>
+                <idno type="jaraid">139</idno>
+                <idno type="oape">252</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Wizārat al-Tijāra</orgName>
+                <orgName change="#d2e154" xml:lang="ar">وزارة التجارة</orgName>
+                <idno type="jaraid">170</idno>
+                <idno type="oape">253</idno>
+            </org>
+            <org>
+                <orgName xml:lang="fr">Ministre de l'Intérieur; Direction Général de la Statistique</orgName>
+                <orgName change="#d2e154" xml:lang="ar">وزارة الداخلية</orgName>
+                <idno type="jaraid">28</idno>
+                <idno type="oape">254</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Wizārat al-Dākhiliyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">وزارة الداخلية</orgName>
+                <orgName xml:lang="en">Ministry of Interior</orgName>
+                <idno type="jaraid">18</idno>
+                <idno type="jaraid">36</idno>
+                <idno type="jaraid">37</idno>
+                <idno type="oape">255</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Wizārat al-Difāʿa</orgName>
+                <orgName change="#d2e154" xml:lang="ar">وزارة الدفاعة</orgName>
+                <idno type="jaraid">173</idno>
+                <idno type="oape">256</idno>
+            </org>
+            <org>
+                <orgName xml:lang="ar-Latn-x-ijmes">Wizārat al-Maʿārif al-Faransiyya</orgName>
+                <orgName change="#d2e154" xml:lang="ar">وزارة المعارف الفرنسية</orgName>
+                <idno type="jaraid">23</idno>
+                <idno type="oape">257</idno>
+            </org>
+        </listOrg>
+    </standOff>
+</TEI>
