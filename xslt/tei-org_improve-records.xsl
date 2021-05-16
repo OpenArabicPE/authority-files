@@ -16,12 +16,11 @@
     <xsl:include href="functions.xsl"/>
 
       <!-- variables for local IDs (OpenArabicPE) -->
-    <xsl:param name="p_local-authority" select="'oape'"/>
     <xsl:variable name="v_local-id-count" select="count(//tei:org/tei:idno[@type = $p_local-authority])"/>
     <xsl:variable name="v_local-id-highest"
         select="
             if ($v_local-id-count gt 0) then
-                (max(//tei:place/tei:idno[@type = $p_local-authority]))
+                (max(//tei:org/tei:idno[@type = $p_local-authority]))
             else
                 (0)"/>
     <xsl:template match="@* | node()" name="t_1">
@@ -59,6 +58,7 @@
             <xsl:apply-templates select="tei:idno"/>
             <!-- our own ID -->
             <xsl:apply-templates mode="m_generate-id" select="."/>
+            <xsl:apply-templates select="node()[not( local-name() = ('orgName', 'idno'))]"/>
         </xsl:copy>
     </xsl:template>
     <!-- mode to generate OpenArabicPE IDs -->
