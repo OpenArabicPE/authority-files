@@ -83,12 +83,24 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
+    <xsl:param name="p_file-organizationography">
+        <xsl:choose>
+            <xsl:when test="$p_local-authority = 'jaraid'">
+                <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
+            </xsl:when>
+            <xsl:when test="$p_local-authority = 'oape'">
+                <xsl:value-of select="'organizationography_OpenArabicPE.TEIP5.xml'"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:param>
     <xsl:variable name="v_file-entities-master" select="doc(concat($p_path-base, $p_path-authority-files-folder, $p_file-authority))"/>
      <!-- load the authority files -->
     <xsl:param name="p_url-gazetteer" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-gazetteer)"/>
     <xsl:variable name="v_gazetteer" select="doc($p_url-gazetteer)"/>
     <xsl:param name="p_url-personography" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-personography)"/>
     <xsl:variable name="v_personography" select="doc($p_url-personography)"/>
+    <xsl:param name="p_url-organizationography" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-organizationography)"/>
+    <xsl:variable name="v_organizationography" select="doc($p_url-organizationography)"/>
     <xsl:param name="p_url-bibliography" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-bibliography)"/>
     <xsl:variable name="v_bibliography" select="doc($p_url-bibliography)"/>
     <!-- strings -->
