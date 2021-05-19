@@ -24,8 +24,8 @@
     <!-- The now unnecessary code to updated the master file needs to be removed -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     
-    <xsl:include href="functions.xsl"/>
-   
+    <xsl:import href="functions.xsl"/>
+<!--    <xsl:param name="p_verbose" select="true()"/>-->
     
     <!-- identity transform -->
     <xsl:template match="node() | @*">
