@@ -6,6 +6,10 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <!-- This stylesheet takes a TEI personography as input. It resorts the persons by names, queries VIAF for additional information (based on VIAF IDs already present in the personography), and adds normalized versions of names for each person. -->
     <!-- Note 1: It DOES NOT try to find names on VIAF without an ID -->
+    <!-- PROBLEM: 
+        - nested listPerson are deleted
+        - successive listPerson are deleted
+    -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     <xsl:include href="functions.xsl"/>
     <!-- variables for local IDs (OpenArabicPE) -->
@@ -24,15 +28,10 @@
     </xsl:template>
     <!-- resort the contents of listPerson by surname, forename -->
     <xsl:template match="tei:listPerson" name="t_2">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_2: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="tei:person">
+            <xsl:apply-templates select="tei:head" mode="m_identity-transform"/>
+            <xsl:apply-templates select="tei:person" mode="m_improve">
                 <!-- this sort should consider the Arabic "al-" -->
                 <xsl:sort select="descendant::tei:surname[1]"/>
                 <xsl:sort select="descendant::tei:addName[@type = 'nisbah'][1]"/>
@@ -42,6 +41,8 @@
                 <xsl:sort select="tei:persName[1]"/>
                 <xsl:sort order="ascending" select="tei:idno[@type = 'VIAF'][1]"/>
             </xsl:apply-templates>
+            <!-- other children? -->
+            <xsl:apply-templates select="node()[not( local-name() = ('head', 'person'))]" mode="m_identity-transform"/>
         </xsl:copy>
     </xsl:template>
     <!--<!-\- improve tei:person records with VIAF references -\->
@@ -104,7 +105,7 @@
         </xsl:copy>
     </xsl:template>-->
     <!-- improve tei:person records without VIAF references -->
-    <xsl:template match="tei:person" priority="10">
+    <xsl:template match="tei:person" priority="10" mode="m_improve">
         <!-- ID -->
         <xsl:variable name="v_id">
             <xsl:choose>
