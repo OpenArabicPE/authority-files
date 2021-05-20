@@ -5,7 +5,7 @@
     xmlns:oape="https://openarabicpe.github.io/ns"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     version="3.0">
-    <!--  -->
+    <!-- currently supported local authorities: oape, jaraid, damascus -->
     <xsl:param name="p_local-authority" select="'oape'"/>
     <xsl:param name="p_github-action" select="false()"/>
     <xsl:variable name="v_id-file" select="if(tei:TEI/@xml:id) then(tei:TEI/@xml:id) else(substring-before(tokenize(base-uri(),'/')[last()],'.TEIP5'))"/>    
@@ -35,6 +35,9 @@
         <!-- note that these paths are relative to the computer they are run on. 
             If called from Github, these need to be adopted-->
         <xsl:choose>
+            <xsl:when test="$p_local-authority = 'damascus'">
+                <xsl:value-of select="'Damascus/damascus_data/authority-files/'"/>
+            </xsl:when>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'ProjectJaraid/jaraid_source/authority-files/'"/>
             </xsl:when>
@@ -43,8 +46,12 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
+    <!-- this param falls back to a personography -->
     <xsl:param name="p_file-authority">
         <xsl:choose>
+            <xsl:when test="$p_local-authority = 'damascus'">
+                <xsl:value-of select="'personography.TEIP5.xml'"/>
+            </xsl:when>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
             </xsl:when>
@@ -65,6 +72,9 @@
     </xsl:param>
     <xsl:param name="p_file-gazetteer">
         <xsl:choose>
+            <xsl:when test="$p_local-authority = 'damascus'">
+                <xsl:value-of select="'gazetteer_levant-phd.TEIP5.xml'"/>
+            </xsl:when>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
             </xsl:when>
@@ -75,6 +85,9 @@
     </xsl:param>
     <xsl:param name="p_file-personography">
         <xsl:choose>
+            <xsl:when test="$p_local-authority = 'damascus'">
+                <xsl:value-of select="'personography.TEIP5.xml'"/>
+            </xsl:when>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
             </xsl:when>
