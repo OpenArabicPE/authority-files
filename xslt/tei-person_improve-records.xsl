@@ -41,8 +41,10 @@
                 <xsl:sort select="tei:persName[1]"/>
                 <xsl:sort order="ascending" select="tei:idno[@type = 'VIAF'][1]"/>
             </xsl:apply-templates>
+            <!-- listPerson -->
+            <xsl:apply-templates select="tei:listPerson"/>
             <!-- other children? -->
-            <xsl:apply-templates select="node()[not( local-name() = ('head', 'person'))]" mode="m_identity-transform"/>
+            <xsl:apply-templates select="node()[not( local-name() = ('head', 'person', 'listPerson'))]" mode="m_identity-transform"/>
         </xsl:copy>
     </xsl:template>
     <!--<!-\- improve tei:person records with VIAF references -\->
@@ -140,7 +142,12 @@
                 <!-- add flattened persName string  -->
                 <xsl:variable name="v_flat" select="oape:name-flattened($v_self, concat($v_xml-id-persName, '.1'), $p_id-change)"/>
                 <!-- to do: prevent duplicates  -->
-                <xsl:copy-of select="$v_flat"/>
+                <xsl:choose>
+                    <xsl:when test="preceding-sibling::tei:persName[oape:name-flattened(., '', '') = $v_flat]"/>
+                    <xsl:otherwise>
+                        <xsl:copy-of select="$v_flat"/>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:variable name="v_no-addName" select="oape:name-remove-addnames($v_self, concat($v_xml-id-persName, '.2'), $p_id-change)"/>
                 <!-- to do: prevent duplicates  -->
                 <xsl:choose>
