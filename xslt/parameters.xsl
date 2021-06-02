@@ -50,7 +50,7 @@
     <xsl:param name="p_file-authority">
         <xsl:choose>
             <xsl:when test="$p_local-authority = 'damascus'">
-                <xsl:value-of select="'personography.TEIP5.xml'"/>
+                <xsl:value-of select="'personography_damascus.TEIP5.xml'"/>
             </xsl:when>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
@@ -86,7 +86,7 @@
     <xsl:param name="p_file-personography">
         <xsl:choose>
             <xsl:when test="$p_local-authority = 'damascus'">
-                <xsl:value-of select="'personography.TEIP5.xml'"/>
+                <xsl:value-of select="'personography_damascus.TEIP5.xml'"/>
             </xsl:when>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
@@ -98,6 +98,9 @@
     </xsl:param>
     <xsl:param name="p_file-organizationography">
         <xsl:choose>
+            <xsl:when test="$p_local-authority = 'damascus'">
+                <xsl:value-of select="'organizationography_damascus.TEIP5.xml'"/>
+            </xsl:when>
             <xsl:when test="$p_local-authority = 'jaraid'">
                 <xsl:value-of select="'jaraid_authority-file.TEIP5.xml'"/>
             </xsl:when>
