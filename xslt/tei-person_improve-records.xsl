@@ -139,13 +139,20 @@
                 <xsl:copy-of select="$v_self"/>
                 <!-- add flattened persName string  -->
                 <xsl:variable name="v_flat" select="oape:name-flattened($v_self, concat($v_xml-id-persName, '.1'), $p_id-change)"/>
+                <!-- to do: prevent duplicates  -->
                 <xsl:copy-of select="$v_flat"/>
                 <xsl:variable name="v_no-addName" select="oape:name-remove-addnames($v_self, concat($v_xml-id-persName, '.2'), $p_id-change)"/>
-                <xsl:if test="$v_self != $v_no-addName">
-                    <xsl:variable name="v_no-addName-flat" select="oape:name-flattened($v_no-addName, concat($v_xml-id-persName, '.3'), $p_id-change)"/>
-                    <xsl:copy-of select="$v_no-addName"/>
-                    <xsl:copy-of select="$v_no-addName-flat"/>
-                </xsl:if>
+                <!-- to do: prevent duplicates  -->
+                <xsl:choose>
+                    <xsl:when test="parent::tei:person/tei:persName = $v_no-addName">
+                        <!--<xsl:message><xsl:value-of select="concat('&quot;', $v_no-addName, '&quot; is already present')"/></xsl:message>-->
+                    </xsl:when>
+                    <xsl:when test="$v_no-addName != ''">
+                        <xsl:variable name="v_no-addName-flat" select="oape:name-flattened($v_no-addName, concat($v_xml-id-persName, '.3'), $p_id-change)"/>
+                        <xsl:copy-of select="$v_no-addName"/>
+                        <xsl:copy-of select="$v_no-addName-flat"/>
+                    </xsl:when>
+                </xsl:choose>
             </xsl:for-each-group>
             <!-- replicate all existing children -->
             <xsl:apply-templates select="node()[not(self::tei:persName)]"/>
