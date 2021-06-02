@@ -956,6 +956,9 @@
                             <xsl:if test="current-grouping-key() = 'jaraid'">
                                 <xsl:value-of select="concat('jaraid:pers:', current-group()[1])"/>
                             </xsl:if>
+                            <xsl:if test="current-grouping-key() = 'damascus'">
+                                <xsl:value-of select="concat('damascus:pers:', current-group()[1])"/>
+                            </xsl:if>
                             <xsl:if test="position() != last()">
                                 <xsl:text> </xsl:text>
                             </xsl:if>
@@ -1646,7 +1649,7 @@
                 <!-- get @xml:id of corresponding entry in authority file -->
                 <xsl:variable name="v_corresponding-xml-id" select="substring-after($v_corresponding-person//tei:persName[@type = 'flattened'][. = $v_name-flat][1]/@corresp, '#')"/>
                 <!-- construct @ref pointing to the corresponding entry -->
-                <xsl:variable name="v_ref" select="oape:query-person($v_corresponding-person/descendant-or-self::tei:person, 'tei-ref', '', $p_local-authority)"/>
+                <xsl:variable name="v_ref" select="oape:query-person($v_corresponding-person/descendant-or-self::tei:person[1], 'tei-ref', '', $p_local-authority)"/>
                 <!-- replicate node -->
                 <xsl:copy select="$p_persname">
                     <!-- replicate attributes -->
