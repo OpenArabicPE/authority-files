@@ -35,7 +35,7 @@
         <!-- test if the URL of the personography resolves to an actual file -->
         <xsl:if test="not(doc-available($p_url-personography))">
             <xsl:message terminate="yes">
-                <xsl:text>The specified authority file has not been found.</xsl:text>
+                <xsl:text>The specified authority file has not been found at </xsl:text><xsl:value-of select="$p_url-personography"/>
             </xsl:message>
         </xsl:if>
         <xsl:copy>
