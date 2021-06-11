@@ -22,6 +22,34 @@
         <!--        <xsl:value-of select="replace($v_self, '\W', '')"/>-->
         <xsl:value-of select="$v_self"/>
     </xsl:function>
+    <xsl:function name="oape:string-normalise-arabic">
+        <xsl:param name="p_input"/>
+        <xsl:variable name="v_string-alif" select="'([إأآ])'"/>
+        <xsl:variable name="v_string-ya" select="'(ئىي)'"/>
+        <xsl:variable name="v_string-waw" select="'(ؤ)'"/> 
+        <xsl:variable name="v_string-ha" select="'(ةه)'"/> 
+        <xsl:analyze-string select="$p_input" regex="{concat($v_string-alif, '|', $v_string-ya, '|', $v_string-waw, '|', $v_string-ha)}">
+            <xsl:matching-substring>
+                <xsl:choose>
+                    <xsl:when test="matches(., $v_string-alif)">
+                        <xsl:value-of select="replace(., $v_string-alif, 'ا')"/>
+                    </xsl:when>
+                    <xsl:when test="matches(., $v_string-ya)">
+                        <xsl:value-of select="replace(., $v_string-ya, 'ي')"/>
+                    </xsl:when>
+                    <xsl:when test="matches(., $v_string-waw)">
+                        <xsl:value-of select="replace(., $v_string-waw, 'و')"/>
+                    </xsl:when>
+                    <xsl:when test="matches(., $v_string-ha)">
+                        <xsl:value-of select="replace(., $v_string-ha, 'ة')"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:function>
     <xsl:function name="oape:string-remove-characters">
         <xsl:param as="xs:string" name="p_input"/>
         <xsl:param name="p_string-match"/>
