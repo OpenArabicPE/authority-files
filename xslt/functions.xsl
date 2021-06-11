@@ -76,7 +76,11 @@
         - input: an entity name such as <persName>, <orgName>, <placeName> or <title>
         - output: an entity: such as <person>, <org>, <place> or <biblStruct>
     -->
-    <!-- PROBLEM: entities pointing with a @ref to another authority file are missed -->
+    <!-- PROBLEMs: 
+        + entities pointing with a @ref to another authority file are missed
+        + it seems that the entity is compiled based on @next and @prev attributes, which we don't want to happen if we query authority files by means of an ID
+            - debugging showed that this is not the case
+    -->
     <!-- if no match is found, the function returns 'NA' -->
     <xsl:function name="oape:get-entity-from-authority-file">
         <!-- input: entity such as <persName>, <orgName>, <placeName> or <title> node -->
@@ -133,6 +137,9 @@
                         <xsl:when test="contains($v_ref, 'geon:')">
                             <xsl:text>geon</xsl:text>
                         </xsl:when>
+                        <xsl:when test="contains($v_ref, 'geonames.org')">
+                            <xsl:text>geon</xsl:text>
+                        </xsl:when>
                         <xsl:when test="contains($v_ref, 'oclc:')">
                             <xsl:text>OCLC</xsl:text>
                         </xsl:when>
@@ -141,6 +148,9 @@
                         </xsl:when>
                         <xsl:when test="contains($v_ref, 'oape:')">
                             <xsl:text>oape</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="matches($v_ref, '^http')">
+                            <xsl:text>url</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="$p_local-authority"/>
@@ -156,11 +166,17 @@
                         <xsl:when test="contains($v_ref, 'geon:')">
                             <xsl:value-of select="replace($v_ref, '.*geon:(\d+).*', '$1')"/>
                         </xsl:when>
+                        <xsl:when test="matches($v_ref, 'geonames.org/\d+')">
+                            <xsl:value-of select="replace($v_ref, '.*geonames.org/(\d+).*', '$1')"/>
+                        </xsl:when>
                         <xsl:when test="contains($v_ref, 'oclc:')">
                             <xsl:value-of select="replace($v_ref, '.*oclc:(\d+).*', '$1')"/>
                         </xsl:when>
                         <xsl:when test="contains($v_ref, concat($v_authority, ':', $v_entity-type, ':'))">
                             <xsl:value-of select="replace($v_ref, concat('.*', $v_authority, ':', $v_entity-type, ':', '(\w+).*'), '$1')"/>
+                        </xsl:when>
+                        <xsl:when test="matches($v_ref, '^http')">
+                            <xsl:value-of select="$v_ref"/>
                         </xsl:when>
                         <!--<xsl:when test="contains($v_ref, $v_local-uri-scheme)">
                             <!-\- local IDs in Project Jaraid are not nummeric for biblStructs -\->
@@ -217,7 +233,16 @@
                                     <xsl:value-of select="$v_authority"/>
                                     <xsl:text>-ID </xsl:text>
                                     <xsl:value-of select="$v_idno"/>
-                                    <xsl:text> in the authority file</xsl:text>
+                                    <xsl:text> in the authority file. Add </xsl:text>
+                                    <xsl:element name="tei:place">
+                                        <xsl:element name="tei:placeName">
+                                            <xsl:value-of select="$p_entity-name"/>
+                                        </xsl:element>
+                                        <xsl:element name="tei:idno">
+                                            <xsl:attribute name="type" select="$v_authority"/>
+                                            <xsl:value-of select="$v_idno"/>
+                                        </xsl:element>
+                                    </xsl:element>
                                 </xsl:message>
                                 <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
@@ -225,8 +250,8 @@
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'bibl'">
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:biblStruct//tei:idno[@type = $v_authority] = $v_idno">
-                                <xsl:copy-of select="$p_authority-file//tei:biblStruct[.//tei:idno[@type = $v_authority] = $v_idno]"/>
+                            <xsl:when test="$p_authority-file//tei:biblStruct/tei:monogr/tei:idno[@type = $v_authority] = $v_idno">
+                                <xsl:copy-of select="$p_authority-file//tei:biblStruct[tei:monogr/tei:idno[@type = $v_authority] = $v_idno]"/>
                             </xsl:when>
                             <!-- even though the input claims that there is an entry in the authority file, there isn't -->
                             <xsl:otherwise>
