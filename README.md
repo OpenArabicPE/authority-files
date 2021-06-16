@@ -19,6 +19,14 @@ date: 2021-04-08
 - support full URLs in `@ref` in the XSLT linking entity names to authority files.
     + add param whether to output private URI scheme or full URLs
 
+- ambiguous matches for referenced periodicals
+    + the problem concerns important journals with minor competitors of the same name
+    + references do not include spatial information
+    + I already added a lot of conditions but the problem persists, when we have only a title
+    + idea: proximity
+        + spatial
+        + temporal: easier to check
+
 - `@type='noAddName'` is missing whitespace between name components in some cases
 - NOT all periodicals from Jarāʾid have made it into OpenArabicPE. This needs to be fixed! E.g. t1r3024 and two more from Batavia. There are total of 548 missing IDs!
     + `tei-biblstruct_merge-multiple-sources.xsl` has been updated and the two authority files have be re-merged
