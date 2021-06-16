@@ -295,7 +295,7 @@
             <!-- check if the string is found in the authority file -->
             <xsl:otherwise>
                 <!-- this fails for nested entities -->
-                <xsl:variable name="v_name-flat" select="oape:string-normalise-characters(string($p_entity-name))"/>
+                <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-arabic(string($p_entity-name)))"/>
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
                         <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity-name, '', $v_id-change)"/>
@@ -303,8 +303,8 @@
                         <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, '', $v_id-change)"/>
                         <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, '', $v_id-change)"/>
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flat]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-flat][1]"/>
+                            <xsl:when test="$p_authority-file//tei:person/tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:person/tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]/parent::tei:person"/>
                             </xsl:when>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flattened]">
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-flattened][1]"/>
@@ -315,7 +315,7 @@
                             <xsl:otherwise>
                                 <xsl:message>
                                     <xsl:text>The persName </xsl:text>
-                                    <xsl:value-of select="$v_name-flat"/>
+                                    <xsl:value-of select="$p_entity-name"/>
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- quick debugging -->
@@ -330,13 +330,13 @@
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'org'">
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:org[tei:orgName = $v_name-flat]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:org[tei:orgName = $v_name-flat][1]"/>
+                            <xsl:when test="$p_authority-file//tei:org/tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:org/tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]/parent::tei:org"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
                                     <xsl:text>The orgName </xsl:text>
-                                    <xsl:value-of select="$v_name-flat"/>
+                                    <xsl:value-of select="$p_entity-name"/>
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
@@ -346,13 +346,13 @@
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'place'">
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:place[tei:placeName = $v_name-flat]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:place[tei:placeName = $v_name-flat][1]"/>
+                            <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]/parent::tei:place"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
                                     <xsl:text>The placeName </xsl:text>
-                                    <xsl:value-of select="$v_name-flat"/>
+                                    <xsl:value-of select="$p_entity-name"/>
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
@@ -362,13 +362,13 @@
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'bibl'">
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title = $v_name-flat]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title = $v_name-flat]"/>
+                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]/ancestor::tei:biblStruct[1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
                                     <xsl:text>The title </xsl:text>
-                                    <xsl:value-of select="$v_name-flat"/>
+                                    <xsl:value-of select="$p_entity-name"/>
                                     <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
@@ -440,7 +440,7 @@
                     <xsl:copy-of select="$p_bibl/descendant::tei:pubPlace[tei:placeName[@ref]][1]/tei:placeName[@ref][1]"/>
                 </xsl:when>
                 <xsl:when test="$p_bibl/descendant::tei:pubPlace/tei:placeName">
-                    <xsl:copy-of select="$p_bibl/descendant::tei:pubPlace/tei:placeName[1]"/>
+                    <xsl:copy-of select="$p_bibl/descendant::tei:pubPlace[tei:placeName][1]/tei:placeName[1]"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <!--                    <xsl:value-of select="'NA'"/>-->
@@ -1785,7 +1785,7 @@
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_bibliography"/>
         <xsl:variable name="v_margin" select="1"/>
-        <xsl:variable name="v_year" select="oape:date-year-only(oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', ''))"/>
+        <xsl:variable name="v_year" select="if ($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct) then (oape:date-year-only(oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', ''))) else (2020)"/>
         <!-- compile the parent bibliographic entity for the title -->
         <xsl:variable name="v_bibl">
             <xsl:choose>
@@ -2041,7 +2041,14 @@
                     </xsl:message>
                     <xsl:message>
                         <xsl:text>Add </xsl:text>
-                        <xsl:apply-templates mode="m_bibl-to-biblStruct" select="$v_bibl"/>
+                        <xsl:choose>
+                            <xsl:when test="$v_bibl != 'NA'">
+                                <xsl:apply-templates mode="m_bibl-to-biblStruct" select="$v_bibl"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates mode="m_copy-from-source" select="$p_title"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:message>
                     <xsl:value-of select="'NA'"/>
                 </xsl:otherwise>
