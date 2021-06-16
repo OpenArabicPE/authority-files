@@ -329,7 +329,7 @@
     </xsl:template>
     
     <!-- convert <bibl> to <biblStruct> -->
-    <xsl:template match="tei:bibl" mode="m_bibl-to-biblStruct">
+    <xsl:template match="tei:bibl" mode="m_bibl-to-biblStruct" priority="10">
         <xsl:variable name="v_source">
             <xsl:choose>
                 <xsl:when test="@source">

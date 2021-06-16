@@ -16,6 +16,9 @@ date: 2021-04-08
 # stylesheets
 ## to do
 
+- support full URLs in `@ref` in the XSLT linking entity names to authority files.
+    + add param whether to output private URI scheme or full URLs
+
 - `@type='noAddName'` is missing whitespace between name components in some cases
 - NOT all periodicals from Jarāʾid have made it into OpenArabicPE. This needs to be fixed! E.g. t1r3024 and two more from Batavia. There are total of 548 missing IDs!
     + `tei-biblstruct_merge-multiple-sources.xsl` has been updated and the two authority files have be re-merged

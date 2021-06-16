@@ -2003,6 +2003,7 @@
                             </xsl:message>
                             <xsl:value-of select="'NA'"/>
                         </xsl:when>
+                        <!-- calculate distance between locations of publication -->
                         <!-- we know that many periodicals are first and foremost self-referential. If the referenced title matches the title of the current periodical, we consider it a match -->
                         <xsl:when test="$p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:title = $p_title">
                             <xsl:if test="$p_verbose = true()">
