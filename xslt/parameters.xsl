@@ -8,7 +8,14 @@
     <!-- currently supported local authorities: oape, jaraid, damascus -->
     <xsl:param name="p_local-authority" select="'oape'"/>
     <xsl:param name="p_github-action" select="false()"/>
-    <xsl:variable name="v_id-file" select="if(tei:TEI/@xml:id) then(tei:TEI/@xml:id) else(substring-before(tokenize(base-uri(),'/')[last()],'.TEIP5'))"/>    
+    <!-- file IDs -->
+    <xsl:variable name="v_id-file" select="if(tei:TEI/@xml:id) then(tei:TEI/@xml:id) else(substring-before(tokenize(base-uri(),'/')[last()],'.TEIP5'))"/>
+    <xsl:variable name="v_url-file" select="base-uri(/tei:TEI)"/>
+    <!-- options for functions -->
+    <!-- link titles to bibliography: toggle whether to link weak matches or not -->
+    <xsl:param name="p_link-matches-based-on-title-only" select="true()"/>
+    <!-- currently not used: toggle whether existing @ref  should be updated-->
+    <xsl:param name="p_update-existing-refs" select="false()"/>
     <!-- files -->
     <xsl:param name="p_url-nyms" select="'../data/tei/nymlist.TEIP5.xml'"/>
     <xsl:variable name="v_file-nyms" select="doc($p_url-nyms)"/>

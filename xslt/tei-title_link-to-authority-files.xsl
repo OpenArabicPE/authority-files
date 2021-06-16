@@ -57,7 +57,7 @@
        else(2020)"/>
 
     <xsl:template match="tei:title[ancestor::tei:text | ancestor::tei:standOff][@level = 'j'][not(@type = 'sub')]" priority="10">
-        <xsl:copy-of select="oape:link-title-to-authority-file(., $v_year-publication, $p_local-authority, $v_bibliography)"/>
+        <xsl:copy-of select="oape:link-title-to-authority-file(., $p_local-authority, $v_bibliography)"/>
     </xsl:template>
     
     <!-- document the changes to source file -->
