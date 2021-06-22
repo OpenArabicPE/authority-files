@@ -33,7 +33,16 @@
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:head"/>
             <xsl:apply-templates select="tei:biblStruct">
+                <!-- sorting can be much improved -->
+                <!-- titles -->
                 <xsl:sort order="ascending" select="tei:monogr/tei:title[@xml:lang = 'ar'][1]"/>
+                <xsl:sort order="ascending" select="tei:monogr/tei:title[1]"/>
+                <!-- locations -->
+                <xsl:sort order="ascending" select="tei:monogr/tei:imprint/tei:pubPlace[1]/tei:placeName[@ref][1]/@ref"/>
+                <xsl:sort order="ascending" select="tei:monogr/tei:imprint/tei:pubPlace[1]/tei:placeName[1]"/>
+                <!-- dates -->
+                <xsl:sort order="ascending" select="tei:monogr/tei:imprint/tei:date[@type = 'onset'][1]/@when"/>
+                <xsl:sort order="ascending" select="tei:monogr/tei:imprint/tei:date[1]/@when"/>
             </xsl:apply-templates>
             <xsl:apply-templates select="tei:listBibl"/>
         </xsl:copy>
