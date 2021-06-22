@@ -491,21 +491,24 @@
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
                     <xsl:when test="$p_bibl/descendant::tei:idno[not(@type = 'URI')]">
-                        <xsl:for-each-group group-by="@type" select="$p_bibl/descendant::tei:idno[not(@type = 'URI')]">
-                            <xsl:sort order="ascending" select="@type"/>
-                            <xsl:if test="current-grouping-key() = 'OCLC'">
-                                <xsl:value-of select="concat('oclc:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'oape'">
-                                <xsl:value-of select="concat('oape:bibl:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'jaraid'">
-                                <xsl:value-of select="concat('jaraid:bibl:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="position() != last()">
-                                <xsl:text> </xsl:text>
-                            </xsl:if>
-                        </xsl:for-each-group>
+                        <xsl:variable name="v_temp">
+                            <xsl:for-each-group group-by="@type" select="$p_bibl/descendant::tei:idno[not(@type = 'URI')]">
+                                <xsl:sort order="ascending" select="current-grouping-key()"/>
+                                <xsl:if test="current-grouping-key() = 'OCLC'">
+                                    <xsl:value-of select="concat('oclc:', .)"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'oape'">
+                                    <xsl:value-of select="concat('oape:bibl:', .)"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'jaraid'">
+                                    <xsl:value-of select="concat('jaraid:bibl:', .)"/>
+                                </xsl:if>
+                                <xsl:if test="position() != last()">
+                                    <xsl:text> </xsl:text>
+                                </xsl:if>
+                            </xsl:for-each-group>
+                        </xsl:variable>
+                        <xsl:value-of select="normalize-space($v_temp)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -715,21 +718,24 @@
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
                     <xsl:when test="$p_place/tei:idno[not(@type = 'URI')]">
-                        <xsl:for-each-group group-by="@type" select="$p_place/tei:idno[not(@type = 'URI')]">
-                            <xsl:sort order="ascending" select="@type"/>
-                            <xsl:if test="current-grouping-key() = 'geon'">
-                                <xsl:value-of select="concat('geon:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'oape'">
-                                <xsl:value-of select="concat('oape:place:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'jaraid'">
-                                <xsl:value-of select="concat('jaraid:place:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="position() != last()">
-                                <xsl:text> </xsl:text>
-                            </xsl:if>
-                        </xsl:for-each-group>
+                        <xsl:variable name="v_temp">
+                            <xsl:for-each-group group-by="@type" select="$p_place/tei:idno[not(@type = 'URI')]">
+                                <xsl:sort order="ascending" select="@type"/>
+                                <xsl:if test="current-grouping-key() = 'geon'">
+                                    <xsl:value-of select="concat('geon:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'oape'">
+                                    <xsl:value-of select="concat('oape:place:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'jaraid'">
+                                    <xsl:value-of select="concat('jaraid:place:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="position() != last()">
+                                    <xsl:text> </xsl:text>
+                                </xsl:if>
+                            </xsl:for-each-group>
+                        </xsl:variable>
+                        <xsl:value-of select="normalize-space($v_temp)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -857,24 +863,27 @@
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:idno[not(@type = 'URI')]">
-                        <xsl:for-each-group group-by="@type" select="$p_org/descendant::tei:idno[not(@type = 'URI')]">
-                            <xsl:sort order="ascending" select="current-grouping-key()"/>
-                            <xsl:if test="current-grouping-key() = 'VIAF'">
-                                <xsl:value-of select="concat('viaf:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'wiki'">
-                                <xsl:value-of select="concat('wiki:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'oape'">
-                                <xsl:value-of select="concat('oape:org:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'jaraid'">
-                                <xsl:value-of select="concat('jaraid:org:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="position() != last()">
-                                <xsl:text> </xsl:text>
-                            </xsl:if>
-                        </xsl:for-each-group>
+                        <xsl:variable name="v_temp">
+                            <xsl:for-each-group group-by="@type" select="$p_org/descendant::tei:idno[not(@type = 'URI')]">
+                                <xsl:sort order="ascending" select="current-grouping-key()"/>
+                                <xsl:if test="current-grouping-key() = 'VIAF'">
+                                    <xsl:value-of select="concat('viaf:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'wiki'">
+                                    <xsl:value-of select="concat('wiki:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'oape'">
+                                    <xsl:value-of select="concat('oape:org:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'jaraid'">
+                                    <xsl:value-of select="concat('jaraid:org:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="position() != last()">
+                                    <xsl:text> </xsl:text>
+                                </xsl:if>
+                            </xsl:for-each-group>
+                        </xsl:variable>
+                        <xsl:value-of select="normalize-space($v_temp)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -1018,27 +1027,30 @@
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
                     <xsl:when test="$p_person/tei:idno[not(@type = 'URI')]">
-                        <xsl:for-each-group group-by="@type" select="$p_person/descendant::tei:idno[not(@type = 'URI')]">
-                            <xsl:sort order="ascending" select="current-grouping-key()"/>
-                            <xsl:if test="current-grouping-key() = 'VIAF'">
-                                <xsl:value-of select="concat('viaf:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'wiki'">
-                                <xsl:value-of select="concat('wiki:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'oape'">
-                                <xsl:value-of select="concat('oape:pers:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'jaraid'">
-                                <xsl:value-of select="concat('jaraid:pers:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="current-grouping-key() = 'damascus'">
-                                <xsl:value-of select="concat('damascus:pers:', current-group()[1])"/>
-                            </xsl:if>
-                            <xsl:if test="position() != last()">
-                                <xsl:text> </xsl:text>
-                            </xsl:if>
-                        </xsl:for-each-group>
+                        <xsl:variable name="v_temp">
+                            <xsl:for-each-group group-by="@type" select="$p_person/descendant::tei:idno[not(@type = 'URI')]">
+                                <xsl:sort order="ascending" select="current-grouping-key()"/>
+                                <xsl:if test="current-grouping-key() = 'VIAF'">
+                                    <xsl:value-of select="concat('viaf:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'wiki'">
+                                    <xsl:value-of select="concat('wiki:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'oape'">
+                                    <xsl:value-of select="concat('oape:pers:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'jaraid'">
+                                    <xsl:value-of select="concat('jaraid:pers:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'damascus'">
+                                    <xsl:value-of select="concat('damascus:pers:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="position() != last()">
+                                    <xsl:text> </xsl:text>
+                                </xsl:if>
+                            </xsl:for-each-group>
+                        </xsl:variable>
+                        <xsl:value-of select="normalize-space($v_temp)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -1648,7 +1660,7 @@
                     <xsl:attribute name="ref" select="$v_ref"/>
                     <!-- document change -->
                     <!-- this test does not catch all changes -->
-                    <xsl:if test="($p_placename/@ref != $v_ref)">
+                    <xsl:if test="normalize-space($p_placename/@ref) != $v_ref">
                         <xsl:choose>
                             <xsl:when test="not($p_placename/@change)">
                                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
@@ -1734,7 +1746,7 @@
                     <xsl:attribute name="ref" select="$v_ref"/>
                     <!-- document change -->
                     <!-- this test does not catch all changes -->
-                    <xsl:if test="$p_persname/@ref != $v_ref">
+                    <xsl:if test="normalize-space($p_persname/@ref) != $v_ref">
                         <xsl:choose>
                             <xsl:when test="not($p_persname/@change)">
                                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
@@ -1863,7 +1875,7 @@
                     </xsl:if>
                     <!-- develop further matching criteria -->
                     <xsl:variable name="v_type" select="$v_bibl/descendant-or-self::tei:biblStruct/@type"/>
-                        <!--<xsl:choose>
+                    <!--<xsl:choose>
                             <xsl:when test="$v_bibl/descendant-or-self::tei:bibl/@type">
                                 <xsl:value-of select="$v_bibl/descendant-or-self::tei:bibl/@type"/>
                             </xsl:when>
@@ -1873,7 +1885,7 @@
                         </xsl:choose>
                     </xsl:variable>-->
                     <xsl:variable name="v_subtype" select="$v_bibl/descendant-or-self::tei:biblStruct/@subtype"/>
-                        <!--<xsl:choose>
+                    <!--<xsl:choose>
                             <xsl:when test="$v_bibl/descendant-or-self::tei:bibl/@subtype">
                                 <xsl:value-of select="$v_bibl/descendant-or-self::tei:bibl/@subtype"/>
                             </xsl:when>
@@ -1883,7 +1895,7 @@
                         </xsl:choose>
                     </xsl:variable>-->
                     <xsl:variable name="v_frequency" select="$v_bibl/descendant-or-self::tei:biblStruct/@oape:frequency"/>
-                        <!--<xsl:choose>
+                    <!--<xsl:choose>
                             <xsl:when test="$v_bibl/descendant-or-self::tei:bibl/@oape:frequency">
                                 <xsl:value-of select="$v_bibl/descendant-or-self::tei:bibl/@oape:frequency"/>
                             </xsl:when>
@@ -2066,7 +2078,7 @@
                         <xsl:text>Add </xsl:text>
                         <xsl:choose>
                             <xsl:when test="$v_bibl != 'NA'">
-                                <xsl:apply-templates mode="m_bibl-to-biblStruct" select="$v_bibl"/>
+                                <xsl:copy-of select="$v_bibl"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:apply-templates mode="m_copy-from-source" select="$p_title"/>
@@ -2096,7 +2108,7 @@
                     <xsl:if test="$v_ref != 'NA'">
                         <xsl:attribute name="ref" select="$v_ref"/>
                         <!-- document change -->
-                        <xsl:if test="not($p_title/@ref = $v_ref)">
+                        <xsl:if test="normalize-space($p_title/@ref) != $v_ref">
                             <xsl:choose>
                                 <xsl:when test="not($p_title/@change)">
                                     <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
@@ -2340,7 +2352,7 @@
             <monogr>
                 <xsl:apply-templates mode="m_copy-from-authority-file" select="tei:title[@level != 'a']"/>
                 <xsl:apply-templates mode="m_copy-from-authority-file" select="tei:idno"/>
-                <xsl:for-each select="tokenize(tei:title/@ref, '\s+')">
+                <xsl:for-each select="tokenize(tei:title[@level != 'a'][@ref][1]/@ref, '\s+')">
                     <xsl:variable name="v_authority">
                         <xsl:choose>
                             <xsl:when test="contains(., 'oclc:')">
