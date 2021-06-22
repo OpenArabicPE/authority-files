@@ -32,12 +32,13 @@
         <!--        <xsl:value-of select="replace($v_self, '\W', '')"/>-->
         <xsl:value-of select="$v_self"/>
     </xsl:function>
+    <!-- this function normalises an Arabic input string by replacing all hamzas on a carrier with the carrier letter, and final haʾ with taʾ marbita -->
     <xsl:function name="oape:string-normalise-arabic">
         <xsl:param name="p_input"/>
         <xsl:variable name="v_string-alif" select="'([إأآ])'"/>
-        <xsl:variable name="v_string-ya" select="'(ئىي)'"/>
-        <xsl:variable name="v_string-waw" select="'(ؤ)'"/>
-        <xsl:variable name="v_string-ha" select="'(ةه)'"/>
+        <xsl:variable name="v_string-ya" select="'([ئىي])'"/>
+        <xsl:variable name="v_string-waw" select="'([ؤ])'"/>
+        <xsl:variable name="v_string-ha" select="'([ةه])'"/>
         <!-- wrapping of output in a variable seems necessary as it is otherweise a sequence of strings -->
         <xsl:variable name="v_output">
             <xsl:analyze-string regex="{concat($v_string-alif, '|', $v_string-ya, '|', $v_string-waw, '|', $v_string-ha)}" select="$p_input">
