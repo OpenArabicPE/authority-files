@@ -70,13 +70,13 @@
                 <xsl:attribute name="xml:id" select="$p_id-change"/>
                 <xsl:attribute name="xml:lang" select="'en'"/>
                 <xsl:text>Added references to local authority file (</xsl:text>
-                <tei:ref target="{$p_url-bibliography}">
+                <tei:ref target="{$p_url-bibliography}" xml:lang="en">
                     <xsl:value-of select="$p_url-bibliography"/>
                 </tei:ref>
                 <xsl:text>) and to OCLC (WorldCat) IDs to </xsl:text>
-                <tei:gi>titles</tei:gi>
+                <tei:gi xml:lang="en">titles</tei:gi>
                 <xsl:text>s without such references based on  </xsl:text>
-                <tei:gi>biblStruct</tei:gi>
+                <tei:gi xml:lang="en">biblStruct</tei:gi>
                 <xsl:text>s mentioned in the authority file (bibliography).</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="node()"/>
