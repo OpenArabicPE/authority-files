@@ -8,6 +8,8 @@
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <xsl:include href="query-viaf.xsl"/>
     <xsl:include href="query-geonames.xsl"/>
+    
+    <xsl:param name="p_debug" select="true()"/>
     <!-- debugging -->
     <!--<xsl:template match="text()">
         <xsl:value-of select="oape:string-normalise-arabic(.)"/>
