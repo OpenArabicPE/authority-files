@@ -26,6 +26,10 @@ date: 2021-04-08
     + idea: proximity
         + spatial
         + temporal: easier to check
+- faulty historical matches
+    + the result of past matching needs to be validated, especially for *al-Muqtabas* and *al-Manār*
+    + check if the content of the `<title>` node matches the `@ref`.
+    + example: `مجلة <title level="j" ref="oape:bibl:46" xml:lang="ar">العلم في القرن العشرين</title>`
 
 - `@type='noAddName'` is missing whitespace between name components in some cases
 - NOT all periodicals from Jarāʾid have made it into OpenArabicPE. This needs to be fixed! E.g. t1r3024 and two more from Batavia. There are total of 548 missing IDs!
