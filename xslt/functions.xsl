@@ -1613,9 +1613,7 @@
         <xsl:param name="p_authority-file"/>
         <!-- flatened version of the persName without non-word characters -->
         <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-arabic($p_placename))"/>
-        <!-- remove all roleNames, flatten and test again -->
-        <!-- test if the flattened name is present in the authority file -->
-        <!-- returns a single <person> node -->
+        <!-- this can potentially return multiple places if the toponym matches to multiple places -->
         <xsl:variable name="v_corresponding-place">
             <xsl:choose>
                 <!-- test if this node already points to an authority file -->
@@ -1866,7 +1864,7 @@
                 <!-- test if there is a potential match -->
                 <xsl:when test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
                     <xsl:message>
-                        <xsl:text>Found possible match(es) for </xsl:text>
+                        <xsl:text>Found </xsl:text><xsl:value-of select="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct)"/><xsl:text> possible match(es) for </xsl:text>
                         <xsl:value-of select="$p_title"/>
                         <xsl:text> in the authority file.</xsl:text>
                     </xsl:message>
@@ -2101,10 +2099,11 @@
                 <xsl:variable name="v_ref" select="oape:query-biblstruct($v_corresponding-bibl, 'tei-ref', '', '', $p_local-authority)"/>
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>The title will be updated with a @ref pointing to the authority file.</xsl:text>
+                        <xsl:text>The title will be updated with a @ref pointing to the authority file </xsl:text>
                     </xsl:message>
                 </xsl:if>
-                <xsl:element name="title">
+                <xsl:variable name="v_title">
+                     <xsl:element name="title">
                     <xsl:apply-templates select="$p_title/@*"/>
                     <!-- add references to IDs -->
                     <xsl:if test="$v_ref != 'NA'">
@@ -2124,6 +2123,12 @@
                     <!-- replicate content -->
                     <xsl:apply-templates select="$p_title/node()"/>
                 </xsl:element>
+                </xsl:variable>
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message><xsl:text>updated title node: </xsl:text>
+                    <xsl:copy-of select="$v_title"/></xsl:message>
+                </xsl:if>
+                <xsl:copy-of select="$v_title"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
