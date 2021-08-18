@@ -72,21 +72,16 @@
                 <!-- add mark-up to the input name -->
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>No match found in the authority file "</xsl:text><xsl:value-of select="$p_url-personography"/><xsl:text>". </xsl:text>
+                        <xsl:text>No match found in the authority file "</xsl:text><xsl:value-of select="$p_url-gazetteer"/><xsl:text>". </xsl:text>
                     </xsl:message>
                 </xsl:if>
-                
                     <!-- fallback replicate original input -->
-                   
                         <xsl:copy>
                             <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>
                         </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
-    
-    
     
     <!-- document the changes to source file -->
     <xsl:template match="tei:revisionDesc" name="t_9">
