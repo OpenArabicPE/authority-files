@@ -95,6 +95,9 @@
     -->
     <!-- PROBLEMs: 
         + entities pointing with a @ref to another authority file are missed
+        + what about multiple matches in the authority file?
+            - should we return all?
+            - currently, I settled on returning the first hit, but this should be probably toggled by an additional parameter
         + it seems that the entity is compiled based on @next and @prev attributes, which we don't want to happen if we query authority files by means of an ID
             - debugging showed that this is not the case
     -->
@@ -307,7 +310,7 @@
                         <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, '', $v_id-change)"/>
                         <xsl:choose>
                             <xsl:when test="$p_authority-file//tei:person/tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:person/tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]/parent::tei:person"/>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flattened]">
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-flattened][1]"/>
@@ -334,7 +337,7 @@
                     <xsl:when test="$v_entity-type = 'org'">
                         <xsl:choose>
                             <xsl:when test="$p_authority-file//tei:org/tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:org/tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]/parent::tei:org"/>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:org[tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
@@ -350,7 +353,7 @@
                     <xsl:when test="$v_entity-type = 'place'">
                         <xsl:choose>
                             <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]/parent::tei:place"/>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:place[tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
@@ -367,7 +370,7 @@
                         <xsl:choose>
                             <xsl:when test="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]">
                                 <xsl:copy-of
-                                    select="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]/ancestor::tei:biblStruct[1]"/>
+                                    select="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
@@ -1651,7 +1654,7 @@
                     </xsl:message>
                 </xsl:if>
                 <!-- construct @ref pointing to the corresponding entry -->
-                <xsl:variable name="v_ref" select="oape:query-place($v_corresponding-place/descendant-or-self::tei:place, 'tei-ref', '', $p_local-authority)"/>
+                <xsl:variable name="v_ref" select="oape:query-place($v_corresponding-place/descendant-or-self::tei:place[1], 'tei-ref', '', $p_local-authority)"/>
                 <!-- replicate node -->
                 <xsl:copy select="$p_placename">
                     <!-- replicate attributes -->
