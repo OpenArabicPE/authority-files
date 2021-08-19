@@ -32,7 +32,6 @@
         exclude-result-prefixes="#all"/>
     <xsl:output method="xml" encoding="UTF-8" omit-xml-declaration="no" indent="yes" name="xml_indented" exclude-result-prefixes="#all"/>
 
-<!--    <xsl:include href="query-geonames.xsl"/>-->
     <xsl:include href="functions.xsl"/>
 
    <!-- Identity transformation -->
@@ -44,11 +43,6 @@
     
     <xsl:template match="/">
         <!-- temporary debugging -->
-        <!--<xsl:message>
-            <xsl:value-of select="$p_local-authority"/><xsl:text>, </xsl:text>
-            <xsl:value-of select="$p_url-personography"/><xsl:text>, </xsl:text>
-            <xsl:value-of select="$p_add-mark-up-to-input"/><xsl:text>, </xsl:text>
-        </xsl:message>-->
         <!-- test if the URL of the personography resolves to an actual file -->
         <xsl:if test="not(doc-available($p_url-gazetteer))">
             <xsl:message terminate="yes">

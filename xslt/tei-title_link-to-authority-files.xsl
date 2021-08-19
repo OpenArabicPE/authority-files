@@ -25,7 +25,6 @@
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     
     <xsl:import href="functions.xsl"/>
-<!--    <xsl:param name="p_verbose" select="true()"/>-->
     
     <!-- identity transform -->
     <xsl:template match="node() | @*">
@@ -37,9 +36,7 @@
     <xsl:template match="/">
         <!-- temporary debugging -->
         <!--<xsl:message>
-            <xsl:value-of select="$p_local-authority"/><xsl:text>, </xsl:text>
-            <xsl:value-of select="$p_url-personography"/><xsl:text>, </xsl:text>
-            <xsl:value-of select="$p_add-mark-up-to-input"/><xsl:text>, </xsl:text>
+            <xsl:value-of select="$v_bibliography"/>
         </xsl:message>-->
         <!-- test if the URL of the personography resolves to an actual file -->
         <xsl:if test="not(doc-available($p_url-bibliography))">
