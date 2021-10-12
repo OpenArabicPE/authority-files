@@ -151,11 +151,13 @@
                     </xsl:otherwise>
                 </xsl:choose>
                 <xsl:variable name="v_no-addName" select="oape:name-remove-addnames($v_self, concat($v_xml-id-persName, '.2'), '')"/>
-                <!-- to do: prevent duplicates  -->
+                <!-- prevent duplicates of noAddName -->
                 <xsl:choose>
                     <xsl:when test="parent::tei:person/tei:persName[not(@type)] = $v_no-addName">
                         <!--<xsl:message><xsl:value-of select="concat('&quot;', $v_no-addName, '&quot; is already present')"/></xsl:message>-->
                     </xsl:when>
+                    <!-- as I am stripping out roleNames, the additional names shoule not be triggered without roleNames being present -->
+                    <xsl:when test="not(descendant::tei:roleName) and not(tei:nameLink)"/>
                     <xsl:when test="$v_no-addName != ''">
                         <xsl:variable name="v_no-addName-flat" select="oape:name-flattened($v_no-addName, concat($v_xml-id-persName, '.3'), '')"/>
                         <xsl:copy-of select="$v_no-addName"/>
