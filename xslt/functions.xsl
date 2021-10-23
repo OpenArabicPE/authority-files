@@ -104,10 +104,11 @@
     <!-- if no match is found, the function returns 'NA' -->
     <xsl:function name="oape:get-entity-from-authority-file">
         <!-- input: entity such as <persName>, <orgName>, <placeName> or <title> node -->
-        <xsl:param as="node()" name="p_entity-name"/>
+        <xsl:param name="p_entity-name"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
-        <!-- this is a rather ridiculous hack, but I don't need change IDs in the context of this function -->
+<!--        <xsl:if test="$p_entity-name/@ref or $p_entity-name != ''">-->
+            <!-- this is a rather ridiculous hack, but I don't need change IDs in the context of this function -->
         <xsl:variable name="v_id-change" select="'a1'"/>
         <xsl:variable name="v_ref" select="$p_entity-name/@ref"/>
         <xsl:variable name="v_entity-type">
@@ -396,6 +397,7 @@
                 </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
+<!--        </xsl:if>-->
     </xsl:function>
     <!-- query a local TEI bibliography for titles, editors, locations, IDs etc. -->
     <xsl:function name="oape:query-bibliography">
@@ -931,7 +933,7 @@
     <!-- query a local TEI personography  -->
     <xsl:function name="oape:query-personography">
         <!-- input is a tei <placeName> node -->
-        <xsl:param as="node()" name="persName"/>
+        <xsl:param name="persName"/>
         <!-- $gazetteer expects a path to a file -->
         <xsl:param name="personography"/>
         <!-- local authority -->
@@ -1191,8 +1193,19 @@
     </xsl:function>
     <xsl:function name="oape:compile-next-prev">
         <xsl:param name="p_node"/>
-        <xsl:variable name="v_next-id" select="substring-after($p_node/@next, '#')"/>
-        <xsl:variable name="v_prev-id" select="substring-after($p_node/@prev, '#')"/>
+         <xsl:variable name="v_next-id" select="substring-after($p_node/@next, '#')"/>
+        <xsl:variable name="v_next-url" select="substring-before($p_node/@next, '#')"/>
+        <!-- same or different file -->
+        <xsl:variable name="v_next">
+            <xsl:choose>
+                <xsl:when test="$v_next-url != ''">
+                    <xsl:copy-of select="doc(concat( $v_url-base, '/', $v_next-url))/descendant::node()[@xml:id = $v_next-id]"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="$p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:choose>
             <!-- first -->
             <xsl:when test="$p_node/@next and not($p_node/@prev)">
@@ -1201,15 +1214,29 @@
                     <xsl:apply-templates mode="m_identity-transform" select="$p_node/@*"/>
                     <xsl:copy-of select="$p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/@*"/>
                     <xsl:apply-templates mode="m_identity-transform" select="$p_node/node()"/>
-                    <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
-                    <!--                    <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>-->
+                    <xsl:copy-of select="oape:compile-next-prev($v_next)"/>
+                    <!--<xsl:choose>
+                        <xsl:when test="$v_next-url != ''">
+                            <xsl:copy-of select="oape:compile-next-prev($v_next/descendant::node()[@xml:id = $v_next-id])"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
+                        </xsl:otherwise>
+                    </xsl:choose>-->
                 </xsl:copy>
             </xsl:when>
             <!-- middle -->
             <xsl:when test="$p_node/@next and $p_node/@prev">
                 <xsl:apply-templates mode="m_identity-transform" select="$p_node/node()"/>
-                <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
-                <!--                <xsl:apply-templates select="ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]" mode="m_compile"/>-->
+                <xsl:copy-of select="oape:compile-next-prev($v_next)"/>
+                    <!--<xsl:choose>
+                        <xsl:when test="$v_next-url != ''">
+                            <xsl:copy-of select="oape:compile-next-prev($v_next/descendant::node()[@xml:id = $v_next-id])"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
+                        </xsl:otherwise>
+                    </xsl:choose>-->
             </xsl:when>
             <!-- last -->
             <xsl:when test="$p_node/@prev and not($p_node/@next)">
