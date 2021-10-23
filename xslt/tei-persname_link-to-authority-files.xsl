@@ -26,12 +26,6 @@
     </xsl:template>
     
     <xsl:template match="/">
-        <!-- temporary debugging -->
-        <!--<xsl:message>
-            <xsl:value-of select="$p_local-authority"/><xsl:text>, </xsl:text>
-            <xsl:value-of select="$p_url-personography"/><xsl:text>, </xsl:text>
-            <xsl:value-of select="$p_add-mark-up-to-input"/><xsl:text>, </xsl:text>
-        </xsl:message>-->
         <!-- test if the URL of the personography resolves to an actual file -->
         <xsl:if test="not(doc-available($p_url-personography))">
             <xsl:message terminate="yes">
