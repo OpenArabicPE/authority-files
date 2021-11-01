@@ -1277,6 +1277,24 @@
         <xsl:param as="xs:string" name="p_id-change"/>
         <xsl:variable name="v_input" select="oape:string-normalise-characters($p_input)"/>
         <xsl:choose>
+            <!-- test for Ottoman honorific addresses: ending in lū -->
+            <xsl:when test="matches($v_input, '^(\w+لو)(\W.+)*$')">
+                <xsl:analyze-string regex="^(\w+لو)\W*" select="$v_input">
+                    <xsl:matching-substring>
+                        <xsl:element name="addName">
+                            <xsl:attribute name="type" select="'honorific'"/>
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="cert" select="'high'"/>
+                            <xsl:attribute name="xml:lang" select="'ota'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:value-of select="regex-group(1)"/>
+                        </xsl:element>
+                    </xsl:matching-substring>
+                    <xsl:non-matching-substring>
+                        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+                    </xsl:non-matching-substring>
+                </xsl:analyze-string>
+            </xsl:when>
             <!-- 1. test for surname beginning with "al-.." but not ending in "ī" -->
             <xsl:when test="matches($v_input, '^(.+)\s+(ال\w+[^ي])$')">
                 <xsl:analyze-string regex="\s(ال\w+[^ي])$" select="$v_input">
