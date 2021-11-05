@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet exclude-result-prefixes="xs" version="3.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+<xsl:stylesheet exclude-result-prefixes="xs" version="3.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" method="xml" omit-xml-declaration="no"/>
     <xsl:include href="parameters.xsl"/>
     <!-- identify the author of the change by means of a @xml:id -->
@@ -10,15 +9,8 @@
     <xsl:include href="query-geonames.xsl"/>
     <xsl:param name="p_debug" select="true()"/>
     <!-- debugging -->
-    <!--<xsl:template match="text()">
-        <xsl:value-of select="oape:string-normalise-arabic(.)"/>
-    </xsl:template>
--->
-    <!--<xsl:template match="/">
-<!-\-        <xsl:apply-templates select="descendant::tei:date" mode="m_debug"/>-\->
-        <xsl:apply-templates select="descendant::tei:title" mode="m_debug"/>
-    </xsl:template>
--->
+    <!--<xsl:template match="text()"><xsl:value-of select="oape:string-normalise-arabic(.)"/></xsl:template>-->
+    <!--<xsl:template match="/"><!-\-        <xsl:apply-templates select="descendant::tei:date" mode="m_debug"/>-\-><xsl:apply-templates select="descendant::tei:title" mode="m_debug"/></xsl:template>-->
     <xsl:template match="tei:title[@ref]" mode="m_debug">
         <xsl:copy-of select="oape:get-entity-from-authority-file(., $p_local-authority, $v_bibliography)"/>
     </xsl:template>
@@ -89,9 +81,7 @@
         <xsl:value-of select="translate($p_input, $v_alphabet-fa-mac, $v_alphabet-ar-mac)"/>
     </xsl:function>
     <!-- this function queries a local authority file
-        - input: an entity name such as <persName>, <orgName>, <placeName> or <title>
-        - output: an entity: such as <person>, <org>, <place> or <biblStruct>
-    -->
+        - input: an entity name such as <persName>, <orgName>, <placeName>or <title>- output: an entity: such as <person>, <org>, <place>or <biblStruct>-->
     <!-- PROBLEMs: 
         + entities pointing with a @ref to another authority file are missed
         + what about multiple matches in the authority file?
@@ -209,10 +199,7 @@
                         <xsl:when test="matches($v_ref, '^http')">
                             <xsl:value-of select="$v_ref"/>
                         </xsl:when>
-                        <!--<xsl:when test="contains($v_ref, $v_local-uri-scheme)">
-                            <!-\- local IDs in Project Jaraid are not nummeric for biblStructs -\->
-                            <xsl:value-of select="replace($v_ref, concat('.*', $v_local-uri-scheme, '(\w+).*'), '$1')"/>
-                        </xsl:when>-->
+                        <!--<xsl:when test="contains($v_ref, $v_local-uri-scheme)"><!-\- local IDs in Project Jaraid are not nummeric for biblStructs -\-><xsl:value-of select="replace($v_ref, concat('.*', $v_local-uri-scheme, '(\w+).*'), '$1')"/></xsl:when>-->
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:choose>
@@ -328,13 +315,10 @@
                                 <xsl:message>
                                     <xsl:text>The persName </xsl:text>
                                     <xsl:value-of select="$p_entity-name"/>
-                                    <xsl:text> was not found in the authority file</xsl:text>
+                                    <xsl:text>was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- quick debugging -->
-                                <!--<xsl:message>
-                                    <xsl:copy-of select="$v_name-marked-up"/>
-                                    <xsl:copy-of select="$v_name-no-addnames"/>
-                                </xsl:message>-->
+                                <!--<xsl:message><xsl:copy-of select="$v_name-marked-up"/><xsl:copy-of select="$v_name-no-addnames"/></xsl:message>-->
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
                                 <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
@@ -465,9 +449,7 @@
         <xsl:choose>
             <!-- return publication place -->
             <xsl:when test="$p_output-mode = 'pubPlace'">
-                <!--<xsl:message>
-                        <xsl:copy-of select="$v_pubPlace//tei:placeName"/>
-                    </xsl:message>-->
+                <!--<xsl:message><xsl:copy-of select="$v_pubPlace//tei:placeName"/></xsl:message>-->
                 <xsl:value-of select="oape:query-gazetteer($v_pubPlace//tei:placeName[1], $gazetteer, $p_local-authority, 'name', $p_output-language)"/>
             </xsl:when>
             <!-- return location -->
@@ -801,9 +783,7 @@
             <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:location/tei:placeName">
-                        <xsl:copy-of
-                            select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location/tei:placeName, $p_local-authority, $v_gazetteer), $p_output-mode, $p_output-language, $p_local-authority)"
-                        />
+                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location/tei:placeName, $p_local-authority, $v_gazetteer), $p_output-mode, $p_output-language, $p_local-authority)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="$p_verbose = true()">
@@ -1313,10 +1293,7 @@
             </xsl:when>
             <!-- 1. test for nisba -->
             <xsl:when test="matches($v_input, '^(.+\s)*(ال\w+ي)$')">
-                <!--<xsl:message>
-                    <xsl:value-of select="$v_input"/>
-                    <xsl:text> contains a nisba</xsl:text>
-                </xsl:message>-->
+                <!--<xsl:message><xsl:value-of select="$v_input"/><xsl:text>contains a nisba</xsl:text></xsl:message>-->
                 <xsl:analyze-string regex="(ال\w+ي)$" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:element name="addName">
@@ -1334,10 +1311,7 @@
             </xsl:when>
             <!-- 2. test for nasab -->
             <xsl:when test="matches($v_input, '^(.+\s)*(ابن|بن|بنت)(\s.+)$')">
-                <!--<xsl:message>
-                    <xsl:value-of select="$v_input"/>
-                    <xsl:text> contains a nasab</xsl:text>
-                </xsl:message>-->
+                <!--<xsl:message><xsl:value-of select="$v_input"/><xsl:text>contains a nasab</xsl:text></xsl:message>-->
                 <xsl:analyze-string regex="(ابن|بن|بنت)\s(.+)$" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:variable name="v_trailing" select="regex-group(2)"/>
@@ -1365,10 +1339,7 @@
             </xsl:when>
             <!-- 3. kunya -->
             <xsl:when test="matches($v_input, '^(.+\s)*(ابو|ابي|ابا)\s(.+)$')">
-                <!--<xsl:message>
-                    <xsl:value-of select="$v_input"/>
-                    <xsl:text> contains a kunya</xsl:text>
-                </xsl:message>-->
+                <!--<xsl:message><xsl:value-of select="$v_input"/><xsl:text>contains a kunya</xsl:text></xsl:message>-->
                 <xsl:analyze-string regex="(ابو|ابي|ابا)\s(.+)$" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:variable name="v_trailing" select="regex-group(2)"/>
@@ -1395,10 +1366,7 @@
             </xsl:when>
             <!-- test for khitab (... al-Dīn) -->
             <xsl:when test="matches($v_input, '^(.+\s)*(\w+)\s(الدين)(.*)$')">
-                <!--<xsl:message>
-                    <xsl:value-of select="$v_input"/>
-                    <xsl:text> contains a khitab</xsl:text>
-                </xsl:message>-->
+                <!--<xsl:message><xsl:value-of select="$v_input"/><xsl:text>contains a khitab</xsl:text></xsl:message>-->
                 <xsl:analyze-string regex="(\w+)\s(الدين)" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:element name="addName">
@@ -1416,10 +1384,7 @@
             </xsl:when>
             <!-- test for theophoric names ending with Allah -->
             <xsl:when test="matches($v_input, '^(.+\s)*(\w+)\s(الله)(.*)$')">
-                <!--<xsl:message>
-                    <xsl:value-of select="$v_input"/>
-                    <xsl:text> contains a theophoric name</xsl:text>
-                </xsl:message>-->
+                <!--<xsl:message><xsl:value-of select="$v_input"/><xsl:text>contains a theophoric name</xsl:text></xsl:message>-->
                 <xsl:analyze-string regex="(\w+)\s(الله)" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:element name="addName">
@@ -1438,10 +1403,7 @@
             </xsl:when>
             <!-- test for theophoric names beginning with ʿAbd -->
             <xsl:when test="matches($v_input, '^(.+\s)*(عبد)\s(\w+)(.*)$')">
-                <!--<xsl:message>
-                    <xsl:value-of select="$v_input"/>
-                    <xsl:text> contains a theophoric name</xsl:text>
-                </xsl:message>-->
+                <!--<xsl:message><xsl:value-of select="$v_input"/><xsl:text>contains a theophoric name</xsl:text></xsl:message>-->
                 <xsl:analyze-string regex="(عبد)\s(\w+)" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:element name="addName">
@@ -1514,11 +1476,7 @@
         <!-- try to find it in the nymlist -->
         <xsl:choose>
             <xsl:when test="$p_authority-file/descendant::tei:listNym/tei:nym/tei:form = $p_input">
-                <!-- <xsl:message>
-                    <xsl:text>found </xsl:text>
-                    <xsl:value-of select="$p_input"/>
-                    <xsl:text> in nymList</xsl:text>
-                </xsl:message> -->
+                <!-- <xsl:message><xsl:text>found </xsl:text><xsl:value-of select="$p_input"/><xsl:text>in nymList</xsl:text></xsl:message>-->
                 <xsl:variable name="v_nymlist" select="$v_file-nyms/descendant::tei:listNym[tei:nym/tei:form = $p_input]"/>
                 <xsl:variable name="v_type" select="$v_nymlist/@type"/>
                 <!-- establish the kind of nym -->
@@ -1903,13 +1861,7 @@
         <!-- step 1: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
         <!-- possible results: none, one, multiple -->
         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($p_title, $p_local-authority, $p_bibliography)"/>
-        <!--<xsl:if test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
-        <xsl:message terminate="no">
-            <xsl:text>title: </xsl:text><xsl:value-of select="oape:query-biblstruct($v_corresponding-bibls[1], 'title', 'ar', '', '')"/>
-            <xsl:text>, date: </xsl:text><xsl:value-of select="oape:query-biblstruct($v_corresponding-bibls[1], 'date', '', '', '')"/>
-            <xsl:text>, year: </xsl:text><xsl:value-of select="oape:date-year-only(oape:query-biblstruct($v_corresponding-bibls[1], 'date', '', '', ''))"/>
-            </xsl:message>
-        </xsl:if>-->
+        <!--<xsl:if test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct"><xsl:message terminate="no"><xsl:text>title: </xsl:text><xsl:value-of select="oape:query-biblstruct($v_corresponding-bibls[1], 'title', 'ar', '', '')"/><xsl:text>, date: </xsl:text><xsl:value-of select="oape:query-biblstruct($v_corresponding-bibls[1], 'date', '', '', '')"/><xsl:text>, year: </xsl:text><xsl:value-of select="oape:date-year-only(oape:query-biblstruct($v_corresponding-bibls[1], 'date', '', '', ''))"/></xsl:message></xsl:if>-->
         <!-- step 2: filter by publication date  -->
         <xsl:variable name="v_corresponding-bibls">
             <xsl:message>
@@ -1972,9 +1924,7 @@
                             </xsl:when>
                             <!-- proximity to the source a text is mentioned in -->
                             <xsl:when test="$p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct">
-                                <xsl:value-of
-                                    select="oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'id-location', '', $v_gazetteer, $p_local-authority)"
-                                />
+                                <xsl:value-of select="oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'id-location', '', $v_gazetteer, $p_local-authority)"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="'NA'"/>
@@ -1992,18 +1942,15 @@
                     <!-- try to use further match criteria -->
                     <xsl:choose>
                         <!-- location: single match -->
-                        <xsl:when
-                            test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) = 1">
+                        <xsl:when test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) = 1">
                             <xsl:if test="$p_verbose = true()">
                                 <xsl:message>
                                     <xsl:text>Found a single match for </xsl:text>
                                     <xsl:value-of select="$v_title"/>
-                                    <xsl:text> based on location.</xsl:text>
+                                    <xsl:text>based on location.</xsl:text>
                                 </xsl:message>
                             </xsl:if>
-                            <xsl:copy-of
-                                select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]"
-                            />
+                            <xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]"/>
                         </xsl:when>
                         <!-- this should start with @type and @subtype criteria -->
                         <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype]) = 1">
@@ -2017,18 +1964,15 @@
                             <xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype]"/>
                         </xsl:when>
                         <!-- @types and location -->
-                        <xsl:when
-                            test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) = 1">
+                        <xsl:when test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) = 1">
                             <xsl:if test="$p_verbose = true()">
                                 <xsl:message>
                                     <xsl:text>Found a single match for </xsl:text>
                                     <xsl:value-of select="$v_title"/>
-                                    <xsl:text> based on @type @subtype, and location.</xsl:text>
+                                    <xsl:text>based on @type @subtype, and location.</xsl:text>
                                 </xsl:message>
                             </xsl:if>
-                            <xsl:copy-of
-                                select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]"
-                            />
+                            <xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]"/>
                         </xsl:when>
                         <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][@oape:frequency = $v_frequency]) = 1">
                             <xsl:if test="$p_verbose = true()">
@@ -2042,12 +1986,7 @@
                         </xsl:when>
                         <!-- involved editors -->
                         <!-- date: onset, terminus, range -->
-                        <!--<xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:date-year-only(oape:query-biblstruct(., 'date', '', '', '')) &lt;= $p_year]) = 1">
-                            <xsl:message>
-                                <xsl:text>Found a single match based on publication date.</xsl:text>
-                            </xsl:message>
-                            <xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:date-year-only(oape:query-biblstruct(., 'date', '', '', '')) &lt;= $p_year]"/>
-                        </xsl:when>-->
+                        <!--<xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:date-year-only(oape:query-biblstruct(., 'date', '', '', '')) &lt;= $p_year]) = 1"><xsl:message><xsl:text>Found a single match based on publication date.</xsl:text></xsl:message><xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:date-year-only(oape:query-biblstruct(., 'date', '', '', '')) &lt;= $p_year]"/></xsl:when>-->
                         <!-- single match based on @ref -->
                         <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and $p_title/@ref">
                             <xsl:if test="$p_verbose = true()">
@@ -2088,8 +2027,7 @@
                             </xsl:choose>
                         </xsl:when>
                         <!-- location: multiple matches -->
-                        <xsl:when
-                            test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) &gt; 1">
+                        <xsl:when test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) &gt; 1">
                             <xsl:message>
                                 <xsl:text>Found multiple matches for </xsl:text>
                                 <xsl:value-of select="$v_title"/>
@@ -2130,9 +2068,7 @@
                             </xsl:message>
                             <xsl:value-of select="'NA'"/>
                             <!-- quick debugging -->
-                            <!--<xsl:message>
-                                <xsl:copy-of select="$v_corresponding-bibls"/>
-                            </xsl:message>-->
+                            <!--<xsl:message><xsl:copy-of select="$v_corresponding-bibls"/></xsl:message>-->
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
@@ -2160,6 +2096,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <!-- output -->
         <xsl:choose>
             <!-- fallback: name is not found in the authority file, return input -->
             <xsl:when test="$v_corresponding-bibl = 'NA'">
@@ -2372,27 +2309,20 @@
                             </xsl:message>
                             <xsl:message>
                                 <xsl:text>$v_window: </xsl:text>
-                                <xsl:apply-templates select="$v_window" mode="m_plain-text"/>
+                                <xsl:apply-templates mode="m_plain-text" select="$v_window"/>
                             </xsl:message>
                             <xsl:message>
                                 <xsl:text>$v_trailing: </xsl:text>
-                                <xsl:apply-templates select="$v_trailing" mode="m_plain-text"/>
+                                <xsl:apply-templates mode="m_plain-text" select="$v_trailing"/>
                             </xsl:message>
                         </xsl:if>
                         <xsl:copy-of select="$v_group/tei:name"/>
                         <xsl:text> </xsl:text>
                         <xsl:for-each select="$v_window/tei:w">
-                            <xsl:apply-templates select="." mode="m_link-nym"/>
-                            <!--<xsl:if test="position() != last()">
-                                <xsl:text> </xsl:text>
-                            </xsl:if>-->
+                            <xsl:apply-templates mode="m_link-nym" select="."/>
+                            <!--<xsl:if test="position() != last()"><xsl:text></xsl:text></xsl:if>-->
                         </xsl:for-each>
-                        <!--<xsl:for-each select="$v_trailing/tei:w">
-                            <xsl:copy-of select="."/>
-                            <xsl:if test="position() != last()">
-                                <xsl:text> </xsl:text>
-                            </xsl:if>
-                        </xsl:for-each>-->
+                        <!--<xsl:for-each select="$v_trailing/tei:w"><xsl:copy-of select="."/><xsl:if test="position() != last()"><xsl:text></xsl:text></xsl:if></xsl:for-each>-->
                         <xsl:copy-of select="$v_trailing"/>
                     </xsl:when>
                     <xsl:otherwise>
@@ -2426,21 +2356,19 @@
                             </xsl:message>
                             <xsl:message>
                                 <xsl:text>$v_window: </xsl:text>
-                                <xsl:apply-templates select="$v_window" mode="m_plain-text"/>
+                                <xsl:apply-templates mode="m_plain-text" select="$v_window"/>
                             </xsl:message>
                             <xsl:message>
                                 <xsl:text>$v_preceding: </xsl:text>
-                                <xsl:apply-templates select="$v_preceding" mode="m_plain-text"/>
+                                <xsl:apply-templates mode="m_plain-text" select="$v_preceding"/>
                             </xsl:message>
                         </xsl:if>
                         <xsl:copy-of select="$v_preceding"/>
                         <xsl:for-each select="$v_window/tei:w">
-                            <xsl:apply-templates select="." mode="m_link-nym"/>
-                            <!--<xsl:if test="position() != last()">
-                                <xsl:text> </xsl:text>
-                            </xsl:if>-->
+                            <xsl:apply-templates mode="m_link-nym" select="."/>
+                            <!--<xsl:if test="position() != last()"><xsl:text></xsl:text></xsl:if>-->
                         </xsl:for-each>
-                        <xsl:copy-of select="$v_group/tei:name"/>                        
+                        <xsl:copy-of select="$v_group/tei:name"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:copy-of select="$v_group"/>
