@@ -1237,34 +1237,31 @@
         <xsl:choose>
             <!-- first -->
             <xsl:when test="$p_node/@next and not($p_node/@prev)">
+                <xsl:message>
+                    <xsl:text>position: first</xsl:text>
+                </xsl:message>
                 <!-- problem: the namespace is not provided! -->
                 <xsl:copy copy-namespaces="yes" inherit-namespaces="yes" select="$p_node">
+                    <!-- combine attributes -->
+                    <!-- to do: omit @prev and @next -->
                     <xsl:apply-templates mode="m_identity-transform" select="$p_node/@*"/>
                     <xsl:copy-of select="$p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id]/@*"/>
+                    <!-- reproduce current node -->
                     <xsl:apply-templates mode="m_identity-transform" select="$p_node/node()"/>
-                    <xsl:copy-of select="oape:compile-next-prev($v_next)"/>
-                    <!--<xsl:choose>
-                        <xsl:when test="$v_next-url != ''">
-                            <xsl:copy-of select="oape:compile-next-prev($v_next/descendant::node()[@xml:id = $v_next-id])"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
-                        </xsl:otherwise>
-                    </xsl:choose>-->
+                    <!-- add following node -->
+                    <xsl:apply-templates mode="m_identity-transform" select="oape:compile-next-prev($v_next/node())"/>
                 </xsl:copy>
             </xsl:when>
             <!-- middle -->
             <xsl:when test="$p_node/@next and $p_node/@prev">
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>position: middle</xsl:text>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:apply-templates mode="m_identity-transform" select="$p_node/node()"/>
-                <xsl:copy-of select="oape:compile-next-prev($v_next)"/>
-                    <!--<xsl:choose>
-                        <xsl:when test="$v_next-url != ''">
-                            <xsl:copy-of select="oape:compile-next-prev($v_next/descendant::node()[@xml:id = $v_next-id])"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:copy-of select="oape:compile-next-prev($p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_next-id])"/>
-                        </xsl:otherwise>
-                    </xsl:choose>-->
+                <!-- add following node -->
+                <xsl:apply-templates mode="m_identity-transform" select="oape:compile-next-prev($v_next/node())"/>
             </xsl:when>
             <!-- last -->
             <xsl:when test="$p_node/@prev and not($p_node/@next)">
