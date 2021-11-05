@@ -124,19 +124,23 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <!-- establish who was responsible for the mark-up -->
+        <xsl:variable name="v_resp">
+            <xsl:call-template name="t_resp">
+                <xsl:with-param name="p_node" select="$p_entity-name"/>
+            </xsl:call-template>
+        </xsl:variable>
         <!-- debugging -->
-        <!--<xsl:if test="$p_debug = true()">
-            <xsl:message>
-                <xsl:text>p_entity-name: </xsl:text>
-                <xsl:copy-of select="$p_entity-name"/>
-            </xsl:message>
-        </xsl:if>
         <xsl:if test="$p_debug = true()">
             <xsl:message>
                 <xsl:text>v_entity-type: </xsl:text>
                 <xsl:value-of select="$v_entity-type"/>
             </xsl:message>
-        </xsl:if>-->
+            <xsl:message>
+                <xsl:text>v_resp: </xsl:text>
+                <xsl:value-of select="$v_resp"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:if test="$p_verbose = true() and $p_ignore-existing-refs = true()">
             <xsl:message>
                 <xsl:text>As the user opted to ignore existing @ref attributes, the entity retrieval from the authority file will be solely based on the entity name</xsl:text>
@@ -144,7 +148,7 @@
         </xsl:if>
         <xsl:choose>
             <!-- check if the entity already links to an authority file by means of the @ref attribute -->
-            <xsl:when test="$v_ref != '' and $p_ignore-existing-refs = false()">
+            <xsl:when test="$v_ref != '' and ($p_ignore-existing-refs = false() or $v_resp = 'ref_manual')">
                 <xsl:variable name="v_authority">
                     <!-- order matters here: while our local IDs must be unique, we can have multiple entries pointing to the same ID in an external reference file -->
                     <xsl:choose>
@@ -1823,6 +1827,28 @@
             </xsl:when>
         </xsl:choose>
     </xsl:function>
+    <xsl:template name="t_resp">
+        <xsl:param name="p_node"/>
+        <xsl:choose>
+            <!-- existing automated links -->
+            <xsl:when test="$p_node/@ref and $p_node/@resp = '#xslt'">
+                <xsl:text>ref_xslt</xsl:text>
+            </xsl:when>
+            <!-- manual links -->
+            <xsl:when test="$p_node/@ref and $p_node/@resp != ''">
+                <xsl:text>ref_manual</xsl:text>
+            </xsl:when>
+            <xsl:when test="$p_node/@resp = '#xslt'">
+                <xsl:text>node_xslt</xsl:text>
+            </xsl:when>
+            <xsl:when test="$p_node/@resp != ''">
+                <xsl:text>node_manual</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>NA</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
     <!-- link bibliographic data to bibliography -->
     <xsl:function name="oape:link-title-to-authority-file">
         <xsl:param as="node()" name="p_title"/>
@@ -1831,12 +1857,13 @@
         <xsl:param name="p_bibliography"/>
         <xsl:variable name="v_title" select="normalize-space($p_title)"/>
         <xsl:variable name="v_margin" select="1"/>
-        <xsl:variable name="v_year"
-            select="
-                if ($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct) then
-                    (oape:date-year-only(oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', '')))
-                else
-                    (2020)"/>
+        <xsl:variable name="v_year" select="                 if ($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct) then                     (oape:date-year-only(oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', '')))                 else                     (2020)"/>
+        <!-- establish who was responsible for the mark-up -->
+        <xsl:variable name="v_resp">
+            <xsl:call-template name="t_resp">
+                <xsl:with-param name="p_node" select="$p_title"/>
+            </xsl:call-template>
+        </xsl:variable>
         <!-- compile the parent bibliographic entity for the title -->
         <xsl:variable name="v_bibl">
             <xsl:choose>
@@ -2126,6 +2153,10 @@
                                         <xsl:apply-templates mode="m_documentation" select="$p_title/@change"/>
                                     </xsl:otherwise>
                                 </xsl:choose>
+                            </xsl:if>
+                            <!-- document agent of change -->
+                            <xsl:if test="$v_resp != 'ref_manual'">
+                                <xsl:attribute name="resp" select="'#xslt'"/>
                             </xsl:if>
                         </xsl:if>
                         <!-- replicate content -->
