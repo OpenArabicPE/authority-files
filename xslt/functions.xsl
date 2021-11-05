@@ -368,9 +368,9 @@
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
-                                    <xsl:text>The title </xsl:text>
+                                    <xsl:text>The title "</xsl:text>
                                     <xsl:value-of select="$p_entity-name"/>
-                                    <xsl:text> was not found in the authority file</xsl:text>
+                                    <xsl:text>" was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
                                 <xsl:value-of select="'NA'"/>
@@ -1932,9 +1932,11 @@
                 <xsl:otherwise>
                     <!-- the original 'NA' was not making sense anymore -->
                     <!--<xsl:value-of select="'NA'"/>-->
-                    <bibl type="periodical">
-                        <xsl:apply-templates mode="m_identity-transform" select="$p_title"/>
-                    </bibl>
+                    <biblStruct type="periodical">
+                        <monogr>
+                            <xsl:apply-templates mode="m_identity-transform" select="$p_title"/>
+                        </monogr>
+                    </biblStruct>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -2163,9 +2165,9 @@
                 <xsl:otherwise>
                     <!-- this is a duplicate message -->
                     <xsl:message>
-                        <xsl:text>Found no match for </xsl:text>
+                        <xsl:text>Found no match for "</xsl:text>
                         <xsl:value-of select="$v_title"/>
-                        <xsl:text> at </xsl:text>
+                        <xsl:text>" at </xsl:text>
                         <xsl:value-of select="concat(base-uri($p_title), '#', $p_title/@xml:id)"/>
                         <xsl:text>.</xsl:text>
                     </xsl:message>
