@@ -1190,6 +1190,21 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <!-- debugging -->
+        <xsl:if test="$p_debug = true()">
+            <xsl:message>
+                <xsl:text>$v_next-url: </xsl:text>
+                <xsl:value-of select="$v_next-url"/>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>$v_next-id: </xsl:text>
+                <xsl:value-of select="$v_next-id"/>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>$v_next: </xsl:text>
+                <xsl:copy-of select="$v_next/node()"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:choose>
             <!-- first -->
             <xsl:when test="$p_node/@next and not($p_node/@prev)">
@@ -1224,10 +1239,20 @@
             </xsl:when>
             <!-- last -->
             <xsl:when test="$p_node/@prev and not($p_node/@next)">
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>position: last</xsl:text>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:apply-templates mode="m_identity-transform" select="$p_node/node()"/>
             </xsl:when>
             <!-- nothing to compile -->
             <xsl:otherwise>
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>nothing to compile</xsl:text>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:copy copy-namespaces="yes" inherit-namespaces="yes" select="$p_node">
                     <xsl:apply-templates mode="m_identity-transform" select="$p_node/@* | $p_node/node()"/>
                 </xsl:copy>
@@ -1961,11 +1986,19 @@
                     <!-- language -->
                     <xsl:variable name="v_textlang" select="oape:query-biblstruct($v_bibl, 'mainLang', '', '', '')"/>
                     <!-- quick debugging -->
-                    <!--<xsl:message>
-                        <xsl:value-of select="concat('type: ', $v_type, '; ')"/>
-                        <xsl:value-of select="concat('place: ', $v_place-publication, '; ')"/>
-                        <xsl:value-of select="concat('mainLang: ', $v_textlang)"/>
-                    </xsl:message>-->
+                    <xsl:if test="$p_debug = true()">
+                        <xsl:message>
+                            <xsl:copy-of select="$v_bibl"/>
+                        </xsl:message>
+                        <xsl:message>
+                            <xsl:value-of select="concat('type: ', $v_type, '; ')"/>
+                            <xsl:value-of select="concat('mainLang: ', $v_textlang)"/>
+                        </xsl:message>
+                        <xsl:message>
+                            <xsl:text>place: </xsl:text>
+                            <xsl:copy-of select="$v_place-publication"/>
+                        </xsl:message>
+                    </xsl:if>
                     <!-- try to use further match criteria -->
                     <xsl:choose>
                         <!-- location: single match -->
