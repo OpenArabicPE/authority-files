@@ -1175,6 +1175,32 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <!-- this function returns the first node in a series of nodes linked with @prev  -->
+    <xsl:function name="oape:find-first-part">
+        <xsl:param as="node()" name="p_node"/>
+        <xsl:choose>
+            <!-- as previous parts -->
+            <xsl:when test="$p_node/@prev != ''">
+                <xsl:variable name="v_prev-id" select="substring-after($p_node/@prev, '#')"/>
+                <xsl:variable name="v_prev-url" select="substring-before($p_node/@prev, '#')"/>
+                <!-- same or different file -->
+                <xsl:variable name="v_prev">
+                    <xsl:choose>
+                        <xsl:when test="$v_prev-url != ''">
+                            <xsl:apply-templates mode="m_identity-transform" select="doc(concat( $v_url-base, '/', $v_prev-url))/descendant::node()[@xml:id = $v_prev-id]"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates mode="m_identity-transform" select="$p_node/ancestor::tei:text/descendant::node()[@xml:id = $v_prev-id]"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:copy-of select="oape:find-first-part($v_prev)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates mode="m_identity-transform" select="$p_node"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
     <xsl:function name="oape:compile-next-prev">
         <xsl:param name="p_node"/>
          <xsl:variable name="v_next-id" select="substring-after($p_node/@next, '#')"/>
