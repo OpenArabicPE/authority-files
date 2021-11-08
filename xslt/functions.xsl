@@ -132,14 +132,10 @@
         </xsl:variable>
         <!-- debugging -->
         <xsl:if test="$p_debug = true()">
-            <xsl:message>
-                <xsl:text>v_entity-type: </xsl:text>
-                <xsl:value-of select="$v_entity-type"/>
-            </xsl:message>
-            <xsl:message>
+            <!--<xsl:message>
                 <xsl:text>v_resp: </xsl:text>
                 <xsl:value-of select="$v_resp"/>
-            </xsl:message>
+            </xsl:message>-->
         </xsl:if>
         <xsl:if test="$p_verbose = true() and $p_ignore-existing-refs = true()">
             <xsl:message>
@@ -445,15 +441,17 @@
                     <xsl:copy-of select="$p_bibl/descendant::tei:pubPlace[tei:placeName][1]/tei:placeName[1]"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <!--                    <xsl:value-of select="'NA'"/>-->
-                    <tei:placeName/>
+                    <xsl:value-of select="'NA'"/>
+<!--                    <tei:placeName/>-->
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:choose>
             <!-- return publication place -->
+            <xsl:when test="$v_pubPlace = 'NA' and $p_output-mode = ('pubPlace', 'location', 'lat', 'long', 'id-location')">
+                <xsl:value-of select="'NA'"/>
+            </xsl:when>
             <xsl:when test="$p_output-mode = 'pubPlace'">
-                <!--<xsl:message><xsl:copy-of select="$v_pubPlace//tei:placeName"/></xsl:message>-->
                 <xsl:value-of select="oape:query-gazetteer($v_pubPlace//tei:placeName[1], $gazetteer, $p_local-authority, 'name', $p_output-language)"/>
             </xsl:when>
             <!-- return location -->
