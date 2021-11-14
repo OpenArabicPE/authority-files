@@ -22,6 +22,10 @@
     <!-- this stylesheet queries an external authority files for every <title> and attempts to provide links via the @ref attribute -->
     <!-- note that some of the matching is based on location. Therefore, the placeName nodes in the source file should be linked to the gazetteer first -->
     <!-- The now unnecessary code to updated the master file needs to be removed -->
+    
+    <!-- NOTE/ to do:
+        - serialised bibls are compiled BUT only for the first part. All other parts are discarded upon compilation.
+    -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     
     <xsl:import href="functions.xsl"/>
@@ -34,10 +38,6 @@
     </xsl:template>
     
     <xsl:template match="/">
-        <!-- temporary debugging -->
-        <!--<xsl:message>
-            <xsl:value-of select="$v_bibliography"/>
-        </xsl:message>-->
         <!-- test if the URL of the personography resolves to an actual file -->
         <xsl:if test="not(doc-available($p_url-bibliography))">
             <xsl:message terminate="yes">
