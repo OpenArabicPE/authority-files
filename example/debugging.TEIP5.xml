@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <p>Some text <title level="j" xml:lang="ar">النحلة</title> here.<bibl next="#bibl_2" xml:id="bibl_1"
+            >Some book was published in <pubPlace><placeName>Buenos Aires</placeName></pubPlace></bibl> Lorem ipsum dolor sit amet consectetur adipiscing <bibl prev="#bibl_1" xml:id="bibl_2"><title
+            level="j">الزمان</title></bibl> and another <title level="j">periodical title</title> and another <title level="j">الزمان</title> and another <bibl next=""><title level="j"
+            >الاتحاد</title></bibl></p>
+         <p change="#d2e73 #d2e223 #d2e228" xml:lang="ar">وأوَّل من استعمل لفظة الصحافة بمعناها الحالي كان <bibl subtype="newspaper" type="periodical">الشيخ <editor type="publisher"><persName
+            change="#d3e209 #d2e223 #d2e228 #d9e462" ref="jaraid:pers:530 oape:pers:2586" xml:id="persName_11.d2e1355" xml:lang="ar"><forename xml:lang="ar">نجيب</forename><surname xml:lang="ar"
+            >الحداد</surname></persName></editor> منشئ جريدة <title change="#d9e543" level="j" ref="jaraid:bibl:t1r2408 oape:bibl:3460" resp="#xslt"
+            >لسان العرب</title> في <pubPlace><placeName>الإسكندرية</placeName></pubPlace></bibl> وحفيد <persName>الشيخ ناصيف اليازجي</persName>. وإليهِ يرجع الفضل في اختيارها , فقلّده سائر الصحافيين من بعده. وكانت تسمى الصحف في أول عهدها الوقائع ومنها <bibl
+            change="#d9e395 #d2e417 #d2e429" resp="#xslt" subtype="newspaper" type="periodical" xml:id="bibl_2.d2e1807" xml:lang="ar">جريدة <title change="#d9e395 #d2e417 #d2e429 #d9e432" level="j"
+            ref="jaraid:bibl:t1r5 oape:bibl:281" rend="quotation-marks" resp="#xslt" xml:id="title_8.d2e1809" xml:lang="ar">الوقائع المصرية</title> <pubPlace change="#d2e417" resp="#xslt"
+            xml:id="pubPlace_3.d2e1812"><placeName change="#d2e417" ref="geon:360630 oape:place:226 " xml:id="placeName_5.d2e1813"
+            /></pubPlace></bibl> كما دعاها بهِ <persName>رفاعة بك الطهطاوي</persName>. وسمُيت أيضاً <term rend="quotation-marks"
+            >غزتة</term> نسبة إلى قطعة من النقود بهذا الاِسم كانت تباع الصحيفة بها فعُرّفت كذلك. وقيل أيضاً أنَّ أول صحيفة ظهرت في <pb change="#d2e228"
+            corresp="../epub/shamela_36534/OEBPS/xhtml/P1995.xhtml" ed="shamela" n="n4-p313" xml:id="pb_33.d2e1367"/><pb change="#d2e269 #d2e279 #d2e145" ed="print" edRef="#edition_1" facs="#facs_313"
+            n="313" xml:id="pb_66.d2e1645"/> البندقية <date calendar="#cal_gregorian" cert="low" change="#d3e403 #d2e417" resp="#xslt" when="1566" xml:id="date_20.d2e1818" xml:lang="ar"
+            >سنة ١٥٦٦</date> كانت تسمى <term rend="quotation-marks"
+            >غزتة</term> فشملت هذه التسمية كل صحيفة بلا استثناء. ولما نشأت الصحافة العربية أُطلقت عليها لفظة غزتة لأنَّ هذه الصناعة كانت حديثة العهد عند الناطقين بالضاد ولا أثر لها لدى كتابهم الأقدمين. </p>
+         <p><placeName change="#d9e603" xml:lang="und-Latn">Valetta (Malta)</placeName></p>
+         <p><bibl change="#d9e395 #d2e417 #d2e429" resp="#xslt" subtype="journal" type="periodical" xml:id="bibl_4.d2e1857" xml:lang="ar"
+               >الشيخ <persName change="#d3e209 #d2e223 #d2e228 #d9e462" ref="viaf:64154472 oape:pers:2808 wiki:Q1399375" xml:id="persName_13.d2e1399" xml:lang="ar"><forename xml:lang="ar"
+               >ابراهيم</forename><surname xml:lang="ar"><addName type="nisbah" xml:lang="ar">اليازجي</addName></surname></persName> إدارة مجلة <title change="#d9e395 #d2e417 #d2e429 #d9e432"
+               level="j" ref="oclc:173830042 jaraid:bibl:t1r240 oape:bibl:37" rend="quotation-marks" xml:id="title_11.d2e1859" xml:lang="ar">الطبيب</title> البيروتية<pubPlace change="#d2e417"
+               resp="#xslt" xml:id="pubPlace_4.d2e1862"><placeName change="#d2e417" ref="geon:276781 oape:place:26 " xml:id="placeName_6.d2e1863"/></pubPlace> <date calendar="#cal_gregorian"
+               cert="low" change="#d3e403 #d2e417" resp="#xslt" when="1884" xml:id="date_22.d2e1866" xml:lang="ar"
+               >سنة ١٨٨٤</date> بالاشتراك مع <persName>الدكتورين بشارة زلزل</persName> و<persName>خليل بك سعادة</persName></bibl></p>
+      </body>
+   </text>
+</TEI>
