@@ -85,12 +85,6 @@
                 <xsl:variable name="v_ref">
                     <xsl:value-of
                         select="concat($p_local-authority, ':org:', $v_corresponding-org/descendant::tei:idno[@type = $p_local-authority][1])"/>
-                    <!--<xsl:if test="$v_corresponding-org/descendant::tei:idno[@type = 'geon']">
-                        <xsl:text> </xsl:text>
-                        <xsl:value-of
-                            select="concat('geon:', $v_corresponding-org/descendant::tei:idno[@type = 'geon'][1])"
-                        />
-                    </xsl:if>-->
                 </xsl:variable>   
                 <xsl:copy>
                     <xsl:apply-templates select="@*"/>

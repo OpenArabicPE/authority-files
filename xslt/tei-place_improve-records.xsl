@@ -163,7 +163,7 @@
             <!-- IDs -->
             <xsl:apply-templates select="tei:idno"/>
             <!-- GeoNames ID -->
-            <xsl:if test="not(tei:idno[@type = 'geon'])">
+            <xsl:if test="not(tei:idno[@type = $p_acronym-geonames])">
                 <xsl:copy-of select="$v_geonames-result-tei/descendant::tei:place[1]/tei:idno"/>
             </xsl:if>
             <!-- our own OpenArabicPE ID -->

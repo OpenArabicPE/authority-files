@@ -78,7 +78,7 @@
                 </xsl:message>
             </xsl:if>
             <xsl:element name="tei:idno">
-            <xsl:attribute name="type" select="'wiki'"/>
+            <xsl:attribute name="type" select="$p_acronym-wikidata"/>
             <xsl:value-of select="replace(.,'.+?(Q\d+)','$1')"/>
         </xsl:element>
         </xsl:if>

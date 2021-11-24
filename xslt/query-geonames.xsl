@@ -56,8 +56,8 @@
                 <xsl:when test="$v_input-data-type = 'int'">
                     <xsl:value-of select="$p_input"/>
                 </xsl:when>
-                <xsl:when test="starts-with($p_input/@ref, 'geon:')">
-                    <xsl:value-of select="substring-after($p_input/@ref, 'geon:')"/>
+                <xsl:when test="starts-with($p_input/@ref, concat($p_acronym-geonames, ':'))">
+                    <xsl:value-of select="substring-after($p_input/@ref, concat($p_acronym-geonames, ':'))"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="'NA'"/>

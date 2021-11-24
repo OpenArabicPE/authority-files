@@ -25,7 +25,7 @@
             <xsl:element name="tei:idno">
                     <xsl:choose>
                         <xsl:when test="starts-with(@xml:id, 'lgn')">
-                            <xsl:attribute name="type" select="'geon'"/>
+                            <xsl:attribute name="type" select="$p_acronym-geonames"/>
                             <xsl:analyze-string select="@xml:id" regex="lgn(\d+)p*$">
                                 <xsl:matching-substring>
                                     <xsl:value-of select="regex-group(1)"/>

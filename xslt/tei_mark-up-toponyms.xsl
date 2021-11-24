@@ -57,7 +57,7 @@
                 <xsl:element name="tei:placeName">
                     <xsl:attribute name="type" select="'auto-markup'"/>
                     <xsl:attribute name="resp" select="concat('#',$p_id-editor)"/>
-                    <xsl:attribute name="ref" select="concat('geon:',$v_id)"/>
+                    <xsl:attribute name="ref" select="concat($p_acronym-geonames, ':', $v_id)"/>
                     <xsl:value-of select="$v_toponym"/>
                 </xsl:element>
             </xsl:matching-substring>

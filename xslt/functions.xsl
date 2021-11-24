@@ -160,11 +160,11 @@
                         <xsl:when test="contains($v_ref, 'viaf:')">
                             <xsl:text>VIAF</xsl:text>
                         </xsl:when>
-                        <xsl:when test="contains($v_ref, 'geon:')">
-                            <xsl:text>geon</xsl:text>
+                        <xsl:when test="contains($v_ref, concat($p_acronym-geonames, ':'))">
+                            <xsl:value-of select="$p_acronym-geonames"/>
                         </xsl:when>
                         <xsl:when test="contains($v_ref, 'geonames.org')">
-                            <xsl:text>geon</xsl:text>
+                            <xsl:value-of select="$p_acronym-geonames"/>
                         </xsl:when>
                         <xsl:when test="contains($v_ref, 'oclc:')">
                             <xsl:text>OCLC</xsl:text>
@@ -187,8 +187,8 @@
                         <xsl:when test="contains($v_ref, 'viaf:')">
                             <xsl:value-of select="replace($v_ref, '.*viaf:(\d+).*', '$1')"/>
                         </xsl:when>
-                        <xsl:when test="contains($v_ref, 'geon:')">
-                            <xsl:value-of select="replace($v_ref, '.*geon:(\d+).*', '$1')"/>
+                        <xsl:when test="contains($v_ref, concat($p_acronym-geonames, ':')">
+                            <xsl:value-of select="replace($v_ref, concat('.*', $p_acronym-geonames, ':(\d+).*', '$1'))"/>
                         </xsl:when>
                         <xsl:when test="matches($v_ref, 'geonames.org/\d+')">
                             <xsl:value-of select="replace($v_ref, '.*geonames.org/(\d+).*', '$1')"/>
@@ -685,8 +685,8 @@
             <!-- return IDs -->
             <xsl:when test="$p_output-mode = 'id'">
                 <xsl:choose>
-                    <xsl:when test="$p_place/descendant::tei:idno[@type = 'geon']">
-                        <xsl:value-of select="concat('geon:', $p_place/descendant::tei:idno[@type = 'geon'][1])"/>
+                    <xsl:when test="$p_place/descendant::tei:idno[@type = $p_acronym-geonames]">
+                        <xsl:value-of select="concat($p_acronym-geonames, ':', $p_place/descendant::tei:idno[@type = $p_acronym-geonames][1])"/>
                     </xsl:when>
                     <xsl:when test="$p_place/descendant::tei:idno[@type = $p_local-authority]">
                         <xsl:value-of select="concat($p_local-authority, ':', $p_place/descendant::tei:idno[@type = $p_local-authority][1])"/>
@@ -711,8 +711,8 @@
             </xsl:when>
             <xsl:when test="$p_output-mode = 'id-geon'">
                 <xsl:choose>
-                    <xsl:when test="$p_place/tei:idno[@type = 'geon']">
-                        <xsl:value-of select="$p_place/tei:idno[@type = 'geon'][1]"/>
+                    <xsl:when test="$p_place/tei:idno[@type = $p_acronym-geonames]">
+                        <xsl:value-of select="$p_place/tei:idno[@type = $p_acronym-geonames][1]"/>
                     </xsl:when>
                     <xsl:when test="$p_place/tei:placeName[matches(@ref, 'geon:\d+')]">
                         <xsl:value-of select="replace($p_place/tei:placeName[matches(@ref, 'geon:\d+')][1]/@ref, '^.*geon:(\d+).*$', '$1')"/>
@@ -728,8 +728,8 @@
                         <xsl:variable name="v_temp">
                             <xsl:for-each-group group-by="@type" select="$p_place/tei:idno[not(@type = 'URI')]">
                                 <xsl:sort order="ascending" select="@type"/>
-                                <xsl:if test="current-grouping-key() = 'geon'">
-                                    <xsl:value-of select="concat('geon:', current-group()[1])"/>
+                                <xsl:if test="current-grouping-key() = $p_acronym-geonames">
+                                    <xsl:value-of select="concat($p_acronym-geonames, ':', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
                                     <xsl:value-of select="concat('oape:place:', current-group()[1])"/>
@@ -817,8 +817,8 @@
                         <xsl:value-of select="concat('viaf:', $p_org/tei:idno[@type = 'VIAF'][1])"/>
                     </xsl:when>
                     <!-- Wikidata -->
-                    <xsl:when test="$p_org/tei:idno[@type = 'wiki']">
-                        <xsl:value-of select="concat('wiki:', $p_org/tei:idno[@type = 'wiki'][1])"/>
+                    <xsl:when test="$p_org/tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="concat('wiki:', $p_org/tei:idno[@type = $p_acronym-wikidata][1])"/>
                     </xsl:when>
                     <xsl:when test="$p_org/tei:idno[@type = $p_local-authority]">
                         <xsl:value-of select="concat($p_local-authority, ':', $p_org/tei:idno[@type = $p_local-authority][1])"/>
@@ -857,8 +857,8 @@
             </xsl:when>
             <xsl:when test="$p_output-mode = 'id-wiki'">
                 <xsl:choose>
-                    <xsl:when test="$p_org/tei:idno[@type = 'wiki']">
-                        <xsl:value-of select="$p_org/tei:idno[@type = 'wiki'][1]"/>
+                    <xsl:when test="$p_org/tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="$p_org/tei:idno[@type = $p_acronym-wikidata][1]"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -874,7 +874,7 @@
                                 <xsl:if test="current-grouping-key() = 'VIAF'">
                                     <xsl:value-of select="concat('viaf:', current-group()[1])"/>
                                 </xsl:if>
-                                <xsl:if test="current-grouping-key() = 'wiki'">
+                                <xsl:if test="current-grouping-key() = $p_acronym-wikidata">
                                     <xsl:value-of select="concat('wiki:', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
@@ -981,8 +981,8 @@
                         <xsl:value-of select="concat('viaf:', $p_person/tei:idno[@type = 'VIAF'][1])"/>
                     </xsl:when>
                     <!-- Wikidata -->
-                    <xsl:when test="$p_person/tei:idno[@type = 'wiki']">
-                        <xsl:value-of select="concat('wiki:', $p_person/tei:idno[@type = 'wiki'][1])"/>
+                    <xsl:when test="$p_person/tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="concat('wiki:', $p_person/tei:idno[@type = $p_acronym-wikidata][1])"/>
                     </xsl:when>
                     <xsl:when test="$p_person/tei:idno[@type = $p_local-authority]">
                         <xsl:value-of select="concat($p_local-authority, ':', $p_person/tei:idno[@type = $p_local-authority][1])"/>
@@ -1021,8 +1021,8 @@
             </xsl:when>
             <xsl:when test="$p_output-mode = 'id-wiki'">
                 <xsl:choose>
-                    <xsl:when test="$p_person/tei:idno[@type = 'wiki']">
-                        <xsl:value-of select="$p_person/tei:idno[@type = 'wiki'][1]"/>
+                    <xsl:when test="$p_person/tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="$p_person/tei:idno[@type = $p_acronym-wikidata][1]"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -1036,10 +1036,10 @@
                             <xsl:for-each-group group-by="@type" select="$p_person/descendant::tei:idno[not(@type = 'URI')]">
                                 <xsl:sort order="ascending" select="current-grouping-key()"/>
                                 <xsl:if test="current-grouping-key() = 'VIAF'">
-                                    <xsl:value-of select="concat('viaf:', current-group()[1])"/>
+                                    <xsl:value-of select="concat($p_acronym-viaf, ':', current-group()[1])"/>
                                 </xsl:if>
-                                <xsl:if test="current-grouping-key() = 'wiki'">
-                                    <xsl:value-of select="concat('wiki:', current-group()[1])"/>
+                                <xsl:if test="current-grouping-key() = $p_acronym-wikidata">
+                                    <xsl:value-of select="concat($p_acronym-wikidata, ':', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
                                     <xsl:value-of select="concat('oape:pers:', current-group()[1])"/>

@@ -224,13 +224,13 @@
                     <!--                <xsl:value-of select="$v_viaf-id"/>-->
                 </xsl:if>
                 <!-- Wikidata ID -->
-                <xsl:if test="not(tei:idno[@type = 'wiki'])">
+                <xsl:if test="not(tei:idno[@type = $p_acronym-wikidata])">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>
                             <xsl:text>This person has no Wikidata ID</xsl:text>
                         </xsl:message>
                     </xsl:if>
-                    <xsl:apply-templates mode="m_documentation" select="$v_viaf-person/tei:idno[@type = 'wiki']"/>
+                    <xsl:apply-templates mode="m_documentation" select="$v_viaf-person/tei:idno[@type = $p_acronym-wikidata]"/>
                 </xsl:if>
                 <!-- birth -->
                 <xsl:if test="not(tei:birth)">

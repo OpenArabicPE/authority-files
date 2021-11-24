@@ -65,7 +65,7 @@
                     <xsl:value-of select="normalize-space(replace(.,'([إ|أ|آ])','ا'))"/>
                 </xsl:variable>
                 <xsl:variable name="v_geonames-id"
-                    select="replace(tokenize(@ref, ' ')[matches(., 'geon:\d+')][1], 'geon:(\d+)', '$1')"/>
+                    select="replace(tokenize(@ref, ' ')[matches(., concat($p_acronym-geonames, ':\d+'))][1], concat($p_acronym-geonames, ':(\d+))', '$1')"/>
                 <xsl:variable name="v_name-flat" select="replace($v_self, '\W', '')"/>
                 <!-- construct nodes -->
                 <xsl:element name="tei:place">
@@ -80,7 +80,7 @@
                     <!-- construct the idno child -->
                     <xsl:if test="./@ref">
                         <xsl:element name="tei:idno">
-                            <xsl:attribute name="type" select="'geon'"/>
+                            <xsl:attribute name="type" select="$p_acronym-geonames"/>
                             <xsl:value-of select="$v_geonames-id"/>
                         </xsl:element>
                     </xsl:if>
@@ -113,7 +113,7 @@
     This generates only new entries -->
     <xsl:template match="tei:place" mode="m_settingDesc" name="t_6">
         <xsl:variable name="v_name" select="tei:placeName"/>
-        <xsl:variable name="v_geonames-id" select="tei:idno[@type = 'geon']"/>
+        <xsl:variable name="v_geonames-id" select="tei:idno[@type = $p_acronym-geonames]"/>
         <xsl:if test="$p_verbose = true()">
             <xsl:message>
                 <xsl:text>t_6 master: </xsl:text>
@@ -125,7 +125,7 @@
         <xsl:choose>
             <!-- test if a name has a @ref attribute pointing to GeoNames and an entry for the GeoNames ID is already present in the master file -->
             <xsl:when
-                test="tei:idno[@type = 'geon'] and $v_file-entities-master//tei:place[tei:idno[@type = 'geon'] = $v_geonames-id]">
+                test="tei:idno[@type = $p_acronym-geonames] and $v_file-entities-master//tei:place[tei:idno[@type = $p_acronym-geonames] = $v_geonames-id]">
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
                         <xsl:text>t_6 master #1: </xsl:text><xsl:value-of select="$v_name"/><xsl:text> has a GeoNames ID that is already present in the master file.</xsl:text>
@@ -172,7 +172,7 @@
             <xsl:choose>
                 <!-- test if a person has no GeoNames ID and if a person with the same name is present in $v_places-source with GeoNames ID -->
                 <xsl:when
-                    test="not(tei:idno[@type = 'geon']) and $v_places-source/descendant-or-self::tei:place[tei:placeName = $v_name][tei:idno[@type = 'geon']]">
+                    test="not(tei:idno[@type = $p_acronym-geonames]) and $v_places-source/descendant-or-self::tei:place[tei:placeName = $v_name][tei:idno[@type = $p_acronym-geonames]]">
                    <xsl:if test="$p_verbose = true()">
                        <xsl:message>
                            <xsl:text>master #1: GeoNames ID was added from source to </xsl:text>
@@ -182,7 +182,7 @@
                     <xsl:apply-templates select="@* | node()" mode="m_identity-transform"/>
                     <!-- add idno -->
                     <xsl:copy-of
-                        select="$v_places-source/descendant-or-self::tei:place[tei:placeName = $v_name]/tei:idno[@type = 'geon']"
+                        select="$v_places-source/descendant-or-self::tei:place[tei:placeName = $v_name]/tei:idno[@type = $p_acronym-geonames]"
                     />
                 </xsl:when>
                 <!-- potentially test if there is an additional spelling in $v_places-source not precent in the entity master -->

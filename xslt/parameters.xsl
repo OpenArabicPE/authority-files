@@ -19,6 +19,11 @@
     <xsl:param name="p_ignore-existing-refs" select="false()"/>
     <!-- currently not used: toggle whether existing @ref  should be updated-->
     <xsl:param name="p_update-existing-refs" select="false()"/>
+    <!-- authorities -->
+    <xsl:param name="p_acronym-geonames" select="'geon'"/> <!-- in WHG this is 'gn' -->
+    <xsl:param name="p_acronym-viaf" select="'viaf'"/>
+    <xsl:param name="p_acronym-wikidata" select="'wiki'"/> <!-- in WHG this is 'wd' -->
+    <xsl:param name="p_acronym-wikimapia" select="'lwm'"/>
     <!-- files -->
     <xsl:param name="p_url-nyms" select="'../data/tei/nymlist.TEIP5.xml'"/>
     <xsl:variable name="v_file-nyms" select="doc($p_url-nyms)"/>

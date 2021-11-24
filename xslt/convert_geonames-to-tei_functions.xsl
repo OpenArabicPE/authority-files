@@ -46,7 +46,7 @@
             </xsl:choose>
             <!-- not sure such information is needed, since it is also present in the <idno> element -->
             <!--<xsl:attribute name="corresp">
-                <xsl:value-of select="concat('geon:',./geonameId)"/>
+                <xsl:value-of select="concat($p_acronym-geonames, ':',./geonameId)"/>
             </xsl:attribute>-->
             <xsl:apply-templates mode="m_geon-to-tei" select="./toponymName, ./name"/>
             <!-- alternateNames provides a list of CSV. This is not necessarily needed -->
@@ -59,7 +59,8 @@
     </xsl:template>
     <!-- idno -->
     <xsl:template match="geonameId" mode="m_geon-to-tei">
-        <tei:idno type="geon">
+        <tei:idno>
+            <xsl:attribute name="type" select="$p_acronym-geonames"/>
             <xsl:value-of select="."/>
         </tei:idno>
     </xsl:template>
