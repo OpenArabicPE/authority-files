@@ -187,8 +187,8 @@
                         <xsl:when test="contains($v_ref, 'viaf:')">
                             <xsl:value-of select="replace($v_ref, '.*viaf:(\d+).*', '$1')"/>
                         </xsl:when>
-                        <xsl:when test="contains($v_ref, concat($p_acronym-geonames, ':')">
-                            <xsl:value-of select="replace($v_ref, concat('.*', $p_acronym-geonames, ':(\d+).*', '$1'))"/>
+                        <xsl:when test="contains($v_ref, concat($p_acronym-geonames, ':'))">
+                            <xsl:value-of select="replace($v_ref, concat('.*', $p_acronym-geonames, ':(\d+).*'), '$1')"/>
                         </xsl:when>
                         <xsl:when test="matches($v_ref, 'geonames.org/\d+')">
                             <xsl:value-of select="replace($v_ref, '.*geonames.org/(\d+).*', '$1')"/>
