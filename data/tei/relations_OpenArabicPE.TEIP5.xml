@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="/BachUni/BachBibliothek/GitHub/OpenArabicPE/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Relations between entities in OpenArabicPE and related projects</title>
+            <editor xml:id="pers_TG"> <persName>Till Grallert</persName> </editor>
+         </titleStmt>
+         <publicationStmt xml:id="publicationStmt" xml:lang="en">
+            <authority xml:id="authority_1.d1e32" xml:lang="en"> <persName xml:id="persName_3.d1e34" xml:lang="en">Till Grallert</persName> </authority>
+            <pubPlace xml:id="pubPlace_1.d1e41" xml:lang="en">Berlin</pubPlace>
+            <date when="2021" xml:id="date_1.d1e44" xml:lang="en">2021</date>
+            <availability status="restricted" xml:id="availability_1.d1e47" xml:lang="en">
+               <licence target="http://creativecommons.org/licenses/by-sa/4.0/" xml:id="licence_1.d1e49" xml:lang="en"
+                  >Distributed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license</licence>
+            </availability>
+            <idno type="url" xml:id="idno_1.d1e53" xml:lang="en">https://github.com/OpenArabicPE/authority-files/blob/master/tei/relations_OpenArabicPE.TEIP5.xml</idno>
+         </publicationStmt>
+         <sourceDesc>
+            <p>This is a born-digital file. It holds information on relations between entities in machine-actionale form. It will be edited in a combination of manual and automated efforts. Automated efforts have the danger to bloat this file.</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc xml:lang="en">
+         <change when="2021-11-26" who="#pers_TG">initial set-up of this file</change>
+      </revisionDesc>
+   </teiHeader>
+   <standOff>
+      <listRelation>
+         <!-- between people -->
+         <listRelation>
+            <head>Parents</head>
+            <!-- https://www.wikidata.org/wiki/Property:P8810: Only use if neither father (P22) nor mother (P25) is applicable  -->
+            <!-- parent: https://www.wikidata.org/wiki/Q7566 -->
+            <relation active="oape:pers:4744" passive="oape:pers:307" ref="https://www.wikidata.org/wiki/Property:P8810"/>
+            <relation active="oape:pers:436" passive="oape:pers:1170" ref="https://www.wikidata.org/wiki/Property:P8810"/>
+            <relation active="oape:pers:436" passive="oape:pers:2063" ref="https://www.wikidata.org/wiki/Property:P8810"/>
+            <relation active="oape:pers:4744" passive="oape:pers:58" ref="https://www.wikidata.org/wiki/Property:P8810"/>
+         </listRelation>
+         <listRelation>
+            <head>Children</head>
+            <!-- this duplicates the information on parents and should be omitted -->
+            <!-- https://www.wikidata.org/wiki/Property:P40 -->
+            <!-- offspring:  https://www.wikidata.org/wiki/Q239526 -->
+            <relation active="oape:pers:307" passive="oape:pers:4744" ref="https://www.wikidata.org/wiki/Property:P40"/>
+         </listRelation>
+         <listRelation>
+            <head>Siblings</head>
+            <!-- https://www.wikidata.org/wiki/Property:P3373 -->
+            <!-- https://www.wikidata.org/wiki/Q31184 -->
+            <relation mutual="oape:pers:877 oape:pers:878" ref="https://www.wikidata.org/wiki/Property:P3373"/>
+            <relation mutual="oape:pers:436 oape:pers:435" ref="https://www.wikidata.org/wiki/Property:P3373"/>
+            <relation mutual="oape:pers:382 oape:pers:378" ref="https://www.wikidata.org/wiki/Property:P3373"/>
+         </listRelation>
+         <listRelation>
+            <head>Siblings-in-law</head>
+            <!-- https://www.wikidata.org/wiki/Property:P1038: relative -->
+            <relation ref="https://www.wikidata.org/wiki/Property:P1038" mutual="oape:pers:963 oape:pers:5672"/>
+            <relation ref="https://www.wikidata.org/wiki/Property:P1038" mutual="oape:pers:721 oape:pers:307"/>
+         </listRelation>
+      </listRelation>
+      <listRelation>
+         <!-- between people and organisations -->
+         <!--
+            - https://www.wikidata.org/wiki/Property:P463, "member of" formal or informal membership but not ethnicity or class
+         -->
+         <relation active="oape:pers:878" passive="oape:org:259" ref="https://www.wikidata.org/wiki/Property:P463"/>
+      </listRelation>
+   </standOff>
+   <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+   </text>
+</TEI>
