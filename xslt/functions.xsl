@@ -453,31 +453,14 @@
         <xsl:variable name="v_monogr" select="$p_bibl/descendant::tei:monogr"/>
         <!-- dates -->
         <xsl:variable name="v_date-onset">
-            <xsl:for-each  select="$v_monogr/tei:imprint/tei:date[@type = ('onset', 'official')]">
-                <xsl:copy>
-                    <xsl:attribute name="when">
-                        <xsl:apply-templates select="." mode="m_iso"/>
-                    </xsl:attribute>
-                </xsl:copy>
-            </xsl:for-each>
+            <xsl:apply-templates select="$v_monogr/tei:imprint/tei:date[@type = ('onset', 'official')]" mode="m_iso"/>
+            <xsl:apply-templates select="$v_monogr/tei:imprint/tei:date[not(@type)][@when]" mode="m_iso"/>
         </xsl:variable>
         <xsl:variable name="v_date-terminus">
-            <xsl:for-each  select="$v_monogr/tei:imprint/tei:date[@type = 'terminus']">
-                <xsl:copy>
-                    <xsl:attribute name="when">
-                        <xsl:apply-templates select="." mode="m_iso"/>
-                    </xsl:attribute>
-                </xsl:copy>
-            </xsl:for-each>
+            <xsl:apply-templates select="$v_monogr/tei:imprint/tei:date[@type = 'terminus']" mode="m_iso"/>
         </xsl:variable>
         <xsl:variable name="v_date-documented">
-            <xsl:for-each  select="$v_monogr/tei:imprint/tei:date[@type = 'documented']">
-                <xsl:copy>
-                    <xsl:attribute name="when">
-                        <xsl:apply-templates select="." mode="m_iso"/>
-                    </xsl:attribute>
-                </xsl:copy>
-            </xsl:for-each>
+            <xsl:apply-templates select="$v_monogr/tei:imprint/tei:date[@type = 'documented']" mode="m_iso"/>
         </xsl:variable>
         <!-- languages -->
         <xsl:variable name="v_mainLang">
@@ -668,10 +651,15 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-    
     <xsl:template match="tei:date" mode="m_iso">
         <xsl:variable name="v_temp">
         <xsl:choose>
+            <xsl:when test="@type = 'onset'">
+                <xsl:value-of select="oape:date-get-onset(.)"/>
+            </xsl:when>
+            <xsl:when test="@type = 'terminus'">
+                <xsl:value-of select="oape:date-get-terminus(.)"/>
+            </xsl:when>
             <xsl:when test="@when">
                 <xsl:value-of select="@when"/>
             </xsl:when>
@@ -689,6 +677,9 @@
             </xsl:when>
         </xsl:choose>
         </xsl:variable>
+        <!-- output -->
+        <xsl:copy>
+            <xsl:attribute name="when">
         <xsl:choose>
             <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
                 <xsl:value-of select="$v_temp"/>
@@ -698,6 +689,8 @@
                 <xsl:value-of select="concat($v_temp, '-12-31')"/>
             </xsl:when>
         </xsl:choose>
+            </xsl:attribute>
+        </xsl:copy>
     </xsl:template>
     <!-- query a local TEI gazetteer for toponyms, locations, IDs etc. -->
     <xsl:function name="oape:query-gazetteer">
@@ -1245,13 +1238,20 @@
         <xsl:param name="p_date"/>
         <xsl:choose>
             <xsl:when test="$p_date/@when">
-                <xsl:copy-of select="$p_date/@when"/>
+                <xsl:value-of select="$p_date/@when"/>
             </xsl:when>
             <xsl:when test="$p_date/@from">
-                <xsl:copy-of select="$p_date/@from"/>
+                <xsl:value-of select="$p_date/@from"/>
             </xsl:when>
             <xsl:when test="$p_date/@notBefore">
-                <xsl:copy-of select="$p_date/@notBefore"/>
+                <xsl:value-of select="$p_date/@notBefore"/>
+            </xsl:when>
+            <!-- this should act as a fallback -->
+            <xsl:when test="$p_date/@to">
+                <xsl:value-of select="$p_date/@to"/>
+            </xsl:when>
+            <xsl:when test="$p_date/@notAfter">
+                <xsl:value-of select="$p_date/@notAfter"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:message>
@@ -1264,13 +1264,20 @@
         <xsl:param name="p_date"/>
         <xsl:choose>
             <xsl:when test="$p_date/@when">
-                <xsl:copy-of select="$p_date/@when"/>
+                <xsl:value-of select="$p_date/@when"/>
             </xsl:when>
             <xsl:when test="$p_date/@to">
-                <xsl:copy-of select="$p_date/@to"/>
+                <xsl:value-of select="$p_date/@to"/>
             </xsl:when>
             <xsl:when test="$p_date/@notAfter">
-                <xsl:copy-of select="$p_date/@notAfter"/>
+                <xsl:value-of select="$p_date/@notAfter"/>
+            </xsl:when>
+            <!-- this should act as a fallback -->
+            <xsl:when test="$p_date/@from">
+                <xsl:value-of select="$p_date/@from"/>
+            </xsl:when>
+            <xsl:when test="$p_date/@notBefore">
+                <xsl:value-of select="$p_date/@notBefore"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:message>
