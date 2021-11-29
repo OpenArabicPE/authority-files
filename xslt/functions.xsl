@@ -453,7 +453,7 @@
         <xsl:variable name="v_monogr" select="$p_bibl/descendant::tei:monogr"/>
         <!-- dates -->
         <xsl:variable name="v_date-onset">
-            <xsl:for-each  select="$v_monogr/tei:imprint/tei:date[@type = 'onset']">
+            <xsl:for-each  select="$v_monogr/tei:imprint/tei:date[@type = ('onset', 'official')]">
                 <xsl:copy>
                     <xsl:attribute name="when">
                         <xsl:apply-templates select="." mode="m_iso"/>
