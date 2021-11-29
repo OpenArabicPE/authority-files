@@ -5,6 +5,7 @@
     <!-- identify the author of the change by means of a @xml:id -->
     <!-- toggle debugging messages -->
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    <xsl:import href="../../../xslt-calendar-conversion/functions/date-functions.xsl"/>
     <xsl:include href="query-viaf.xsl"/>
     <xsl:include href="query-geonames.xsl"/>
     <xsl:param name="p_debug" select="true()"/>
@@ -446,6 +447,59 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <!-- Problem:
+            - the content model allows for multiple <monogr> children of <biblStruct> 
+        -->
+        <xsl:variable name="v_monogr" select="$p_bibl/descendant::tei:monogr"/>
+        <!-- dates -->
+        <xsl:variable name="v_date-onset">
+            <xsl:for-each  select="$v_monogr/tei:imprint/tei:date[@type = 'onset']">
+                <xsl:copy>
+                    <xsl:attribute name="when">
+                        <xsl:apply-templates select="." mode="m_iso"/>
+                    </xsl:attribute>
+                </xsl:copy>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:variable name="v_date-terminus">
+            <xsl:for-each  select="$v_monogr/tei:imprint/tei:date[@type = 'terminus']">
+                <xsl:copy>
+                    <xsl:attribute name="when">
+                        <xsl:apply-templates select="." mode="m_iso"/>
+                    </xsl:attribute>
+                </xsl:copy>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:variable name="v_date-documented">
+            <xsl:for-each  select="$v_monogr/tei:imprint/tei:date[@type = 'documented']">
+                <xsl:copy>
+                    <xsl:attribute name="when">
+                        <xsl:apply-templates select="." mode="m_iso"/>
+                    </xsl:attribute>
+                </xsl:copy>
+            </xsl:for-each>
+        </xsl:variable>
+        <!-- languages -->
+        <xsl:variable name="v_mainLang">
+            <xsl:choose>
+                <xsl:when test="$v_monogr/tei:textLang/@mainLang">
+                    <xsl:value-of select="$v_monogr[tei:textLang/@mainLang][1]/tei:textLang/@mainLang"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="'NA'"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="v_otherLangs">
+            <xsl:choose>
+                <xsl:when test="$v_monogr/tei:textLang/@otherLangs">
+                    <xsl:value-of select="$v_monogr[tei:textLang/@otherLangs][1]/tei:textLang/@otherLangs"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="'NA'"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:choose>
             <!-- return publication place -->
             <xsl:when test="$v_pubPlace = 'NA' and $p_output-mode = ('pubPlace', 'location', 'lat', 'long', 'id-location')">
@@ -514,42 +568,29 @@
             <!-- return the publication title in selected language -->
             <xsl:when test="$p_output-mode = ('name', 'title')">
                 <xsl:choose>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_output-language]">
-                        <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_output-language][1])"/>
+                    <xsl:when test="$v_monogr/tei:title[@xml:lang = $p_output-language]">
+                        <xsl:value-of select="normalize-space($v_monogr[tei:title[@xml:lang = $p_output-language]][1]/tei:title[@xml:lang = $p_output-language][1])"/>
                     </xsl:when>
                     <!-- possible transcriptions into other script -->
-                    <xsl:when test="($p_output-language = 'ar') and ($p_bibl/descendant::tei:monogr/tei:title[contains(@xml:lang, '-Arab-')])">
-                        <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[contains(@xml:lang, '-Arab-')][1])"/>
+                    <xsl:when test="($p_output-language = 'ar') and ($v_monogr/tei:title[contains(@xml:lang, '-Arab-')])">
+                        <xsl:value-of select="normalize-space($v_monogr[tei:title[contains(@xml:lang, '-Arab-')]][1]/tei:title[contains(@xml:lang, '-Arab-')][1])"/>
                     </xsl:when>
                     <!-- fallback to main language of publication -->
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_bibl/descendant::tei:monogr/tei:textLang/@mainLang]">
-                        <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[@xml:lang = $p_bibl/descendant::tei:monogr/tei:textLang/@mainLang][1])"/>
+                    <xsl:when test="$v_monogr/tei:title[@xml:lang = $v_mainLang]">
+                        <xsl:value-of select="normalize-space($v_monogr[tei:title[@xml:lang = $v_mainLang]][1]/tei:title[@xml:lang = $v_mainLang][1])"/>
                     </xsl:when>
+                    <!-- fallback: first title in any language -->
                     <xsl:otherwise>
-                        <xsl:value-of select="normalize-space($p_bibl/descendant::tei:monogr/tei:title[1])"/>
+                        <xsl:value-of select="normalize-space($v_monogr/tei:title[1])"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
             <!-- return language -->
             <xsl:when test="$p_output-mode = ('textLang', 'mainLang')">
-                <xsl:choose>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:textLang/@mainLang">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:textLang/@mainLang"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="'NA'"/>
-                    </xsl:otherwise>
-                </xsl:choose>
+                <xsl:value-of select="$v_mainLang"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'otherLangs'">
-                <xsl:choose>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:textLang/@otherLangs">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:textLang/@otherLangs"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="'NA'"/>
-                    </xsl:otherwise>
-                </xsl:choose>
+                <xsl:value-of select="$v_otherLangs"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'subtype'">
                 <xsl:choose>
@@ -564,20 +605,43 @@
             <!-- return date           -->
             <xsl:when test="$p_output-mode = 'date'">
                 <xsl:choose>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@type = 'onset'][@when]">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@type = 'onset'][@when][1]/@when"/>
+                    <xsl:when test="$v_monogr/tei:imprint/tei:date[@type = 'onset'][@when]">
+                        <xsl:value-of select="$v_monogr/tei:imprint/tei:date[@type = 'onset'][@when][1]/@when"/>
                     </xsl:when>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date/@from">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@from][1]/@from"/>
+                    <xsl:when test="$v_monogr/tei:imprint/tei:date/@from">
+                        <xsl:value-of select="$v_monogr/tei:imprint/tei:date[@from][1]/@from"/>
                     </xsl:when>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date/@notBefore">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@notBefore][1]/@notBefore"/>
+                    <xsl:when test="$v_monogr/tei:imprint/tei:date/@notBefore">
+                        <xsl:value-of select="$v_monogr/tei:imprint/tei:date[@notBefore][1]/@notBefore"/>
                     </xsl:when>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date/@notAfter">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[@notAfter][1]/@notAfter"/>
+                    <xsl:when test="$v_monogr/tei:imprint/tei:date/@notAfter">
+                        <xsl:value-of select="$v_monogr/tei:imprint/tei:date[@notAfter][1]/@notAfter"/>
                     </xsl:when>
-                    <xsl:when test="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[not(@type = 'onset')][@when]">
-                        <xsl:value-of select="$p_bibl/descendant::tei:monogr/tei:imprint/tei:date[not(@type = 'onset')][@when][1]/@when"/>
+                    <xsl:when test="$v_monogr/tei:imprint/tei:date[not(@type = 'onset')][@when]">
+                        <xsl:value-of select="$v_monogr/tei:imprint/tei:date[not(@type = 'onset')][@when][1]/@when"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'date-onset'">
+                <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date/@when/xs:date(.))"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'date-terminus'">
+                <xsl:choose>
+                    <xsl:when test="$v_date-terminus/descendant-or-self::tei:date/@when">
+                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date/@when/xs:date(.))"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'date-documented'">
+                <xsl:choose>
+                    <xsl:when test="$v_date-documented/descendant-or-self::tei:date/@when">
+                        <xsl:value-of select="max($v_date-documented/descendant-or-self::tei:date/@when/xs:date(.))"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -604,6 +668,37 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    
+    <xsl:template match="tei:date" mode="m_iso">
+        <xsl:variable name="v_temp">
+        <xsl:choose>
+            <xsl:when test="@when">
+                <xsl:value-of select="@when"/>
+            </xsl:when>
+            <xsl:when test="@from">
+                <xsl:value-of select="@from"/>
+            </xsl:when>
+            <xsl:when test="@notBefore">
+                <xsl:value-of select="@notBefore"/>
+            </xsl:when>
+            <xsl:when test="@notAfter">
+                <xsl:value-of select="@notAfter"/>
+            </xsl:when>
+            <xsl:when test="@when-custom and @datingMethod">
+                <xsl:value-of select="oape:date-convert-calendars(@when-custom, @datingMethod, '#cal_gregorian')"/>
+            </xsl:when>
+        </xsl:choose>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
+                <xsl:value-of select="$v_temp"/>
+            </xsl:when>
+            <xsl:when test="matches($v_temp, '^\d{4}$')">
+                <!-- latest possible date: this will prevent the originally less precise dates to take precedent -->
+                <xsl:value-of select="concat($v_temp, '-12-31')"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
     <!-- query a local TEI gazetteer for toponyms, locations, IDs etc. -->
     <xsl:function name="oape:query-gazetteer">
         <!-- input is a tei <placeName> node -->
