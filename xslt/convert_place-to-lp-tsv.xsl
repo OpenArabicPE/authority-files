@@ -13,7 +13,7 @@
     <xsl:param name="p_project-start" select="'1850'"/>
     
     <xsl:template match="/">
-        <xsl:result-document format="text" href="{$v_url-base}/{$v_id-file}.csv">
+        <xsl:result-document format="text" href="{$v_url-base}/{$v_id-file}.lp.tsv">
             <!-- csv head -->
             <xsl:value-of select="$v_csv-head"/>
             <xsl:apply-templates select="descendant::tei:place" mode="m_tei-to-csv"/>

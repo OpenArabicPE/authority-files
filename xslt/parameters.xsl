@@ -138,9 +138,10 @@
     <xsl:variable name="v_new-line" select="'&#x0A;'"/>
     <xsl:variable name="v_quot" select="'&quot;'"/>
     <xsl:variable name="v_comma" select="','"/>
-    <xsl:variable name="v_seperator" select="concat($v_quot,$v_comma,$v_quot)"/>
-    <xsl:variable name="v_beginning-of-line" select="$v_quot"/>
-    <xsl:variable name="v_end-of-line" select="concat($v_quot, $v_new-line)"/>
+    <xsl:variable name="v_tab" select="'    '"/>
+    <xsl:param name="v_seperator" select="concat($v_quot,$v_comma,$v_quot)"/>
+    <xsl:param name="v_beginning-of-line" select="$v_quot"/>
+    <xsl:param name="v_end-of-line" select="concat($v_quot, $v_new-line)"/>
     <!-- parameters for string-replacements -->
     <xsl:param name="p_string-match" select="'([إ|أ|آ])'"/>
     <xsl:param name="p_string-replace" select="'ا'"/>
