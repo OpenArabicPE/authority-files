@@ -65,7 +65,7 @@
         <xsl:value-of select="$v_url-file"/><xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$v_seperator"/>
         <xsl:if test="not(oape:query-place(., 'id-geon', '', $p_local-authority) = 'NA')">
-            <xsl:value-of select="concat('gnd:',oape:query-place(., 'id-geon', '', $p_local-authority))"/>
+            <xsl:value-of select="concat('gn:',oape:query-place(., 'id-geon', '', $p_local-authority))"/>
         </xsl:if><xsl:value-of select="$v_seperator"/>
         <!-- variants:  -->
         <xsl:apply-templates select="tei:placeName" mode="m_alternate-names"/><xsl:value-of select="$v_seperator"/>
@@ -73,8 +73,12 @@
         <!-- optional -->
         <xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$v_seperator"/>
-        <xsl:value-of select="oape:query-place(., 'long', '', $p_local-authority)"/><xsl:value-of select="$v_seperator"/>
-        <xsl:value-of select="oape:query-place(., 'lat', '', $p_local-authority)"/><xsl:value-of select="$v_seperator"/>
+        <xsl:if test="not(oape:query-place(., 'long', '', $p_local-authority) = 'NA')">
+            <xsl:value-of select="oape:query-place(., 'long', '', $p_local-authority)"/>
+        </xsl:if><xsl:value-of select="$v_seperator"/>
+        <xsl:if test="not(oape:query-place(., 'lat', '', $p_local-authority) = 'NA')">
+            <xsl:value-of select="oape:query-place(., 'lat', '', $p_local-authority)"/>
+        </xsl:if><xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$v_seperator"/>
@@ -82,8 +86,11 @@
         <xsl:value-of select="$v_end-of-line"/>
     </xsl:template>
     <xsl:template match="tei:placeName" mode="m_alternate-names">
-        <!-- variants: {name}@lang-script, semicolon-delimited -->
-        <xsl:text>{</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>}@</xsl:text><xsl:value-of select="@xml:lang"/>
+        <!-- variants: {name}@lang-script, semicolon-delimited. Karl Grossner clarified that the brackets should be omitted -->
+        <!--<xsl:text>{</xsl:text>-->
+        <xsl:value-of select="normalize-space(.)"/>
+        <!--<xsl:text>}</xsl:text>-->
+        <xsl:text>@</xsl:text><xsl:value-of select="@xml:lang"/>
         <xsl:if test="following-sibling::tei:placeName">
             <xsl:text>; </xsl:text>
         </xsl:if>
