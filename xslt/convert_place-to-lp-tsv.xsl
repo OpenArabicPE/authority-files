@@ -9,7 +9,7 @@
     
     <!-- this stylesheet converts tei:place nodes into Linked Places TSV v0.3 (https://github.com/LinkedPasts/linked-places-format/blob/master/tsv_0.3.md) -->
     
-    <xsl:include href="functions.xsl"/>
+    <xsl:import href="functions.xsl"/>
     <xsl:param name="p_project-start" select="'1850'"/>
     
     <xsl:template match="/">

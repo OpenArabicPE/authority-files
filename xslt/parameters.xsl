@@ -134,14 +134,45 @@
     <xsl:variable name="v_organizationography" select="doc($p_url-organizationography)"/>
     <xsl:param name="p_url-bibliography" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-bibliography)"/>
     <xsl:variable name="v_bibliography" select="doc($p_url-bibliography)"/>
+    <!-- select tsv or csv as output -->
+    <xsl:param name="p_format" select="'csv'"/>
+    <xsl:param name="p_quoted" select="true()"/>
     <!-- strings -->
     <xsl:variable name="v_new-line" select="'&#x0A;'"/>
     <xsl:variable name="v_quot" select="'&quot;'"/>
     <xsl:variable name="v_comma" select="','"/>
-    <xsl:variable name="v_tab" select="'    '"/>
-    <xsl:param name="v_seperator" select="concat($v_quot,$v_comma,$v_quot)"/>
-    <xsl:param name="v_beginning-of-line" select="$v_quot"/>
-    <xsl:param name="v_end-of-line" select="concat($v_quot, $v_new-line)"/>
+    <xsl:variable name="v_tab" select="'&#0009;'"/>
+    <xsl:variable name="v_seperator">
+        <xsl:if test="$p_quoted = true()">
+            <xsl:value-of select="$v_quot"/>
+        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="$p_format = 'tsv'">
+                <xsl:value-of  select="$v_tab"/>
+            </xsl:when>
+            <xsl:when test="$p_format = 'csv'">
+                <xsl:value-of  select="$v_comma"/>
+            </xsl:when>
+            <!-- fallback: csv -->
+            <xsl:otherwise>
+                 <xsl:value-of  select="$v_comma"/>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:if test="$p_quoted = true()">
+            <xsl:value-of select="$v_quot"/>
+        </xsl:if>
+    </xsl:variable>
+    <xsl:variable name="v_beginning-of-line">
+        <xsl:if test="$p_quoted = true()">
+            <xsl:value-of select="$v_quot"/>
+        </xsl:if>
+    </xsl:variable>
+    <xsl:variable name="v_end-of-line">
+        <xsl:if test="$p_quoted = true()">
+            <xsl:value-of select="$v_quot"/>
+        </xsl:if>
+        <xsl:value-of select="$v_new-line"/>
+    </xsl:variable>
     <!-- parameters for string-replacements -->
     <xsl:param name="p_string-match" select="'([إ|أ|آ])'"/>
     <xsl:param name="p_string-replace" select="'ا'"/>
