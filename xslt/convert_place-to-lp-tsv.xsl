@@ -13,12 +13,19 @@
     <xsl:param name="p_project-start" select="'1850'"/>
     
     <xsl:template match="/">
-        <xsl:result-document format="text" href="{$v_url-base}/{$v_id-file}.lp.tsv">
+        <xsl:result-document format="text" href="{$v_url-base}/../csv/{$v_id-file}.lp.tsv">
             <!-- csv head -->
             <xsl:value-of select="$v_csv-head"/>
-            <xsl:apply-templates select="descendant::tei:place" mode="m_tei-to-csv"/>
+            <xsl:apply-templates select="/tei:TEI/tei:standOff/tei:listPlace/descendant::tei:place" mode="m_tei-to-lp-tsv"/>
+             <xsl:variable name="v_toponyms">
+                 <xsl:apply-templates select="/tei:TEI/tei:text/descendant::tei:placeName" mode="m_placename-to-place"/>
+             </xsl:variable>
+            <xsl:for-each-group select="$v_toponyms/tei:place" group-by="tei:idno[@type = $p_local-authority]">
+                <xsl:apply-templates select="." mode="m_tei-to-lp-tsv"/>
+            </xsl:for-each-group>
         </xsl:result-document>
     </xsl:template>
+   
     
      <xsl:variable name="v_csv-head">
         <xsl:value-of select="$v_beginning-of-line"/>
@@ -45,7 +52,7 @@
          <xsl:text>description</xsl:text>
          <xsl:value-of select="$v_end-of-line"/>
      </xsl:variable>
-    <xsl:template match="tei:place" mode="m_tei-to-csv">
+    <xsl:template match="tei:place" mode="m_tei-to-lp-tsv">
         <xsl:value-of select="$v_beginning-of-line"/>
         <!-- required -->
         <xsl:value-of select="oape:query-place(., 'id-local', '', $p_local-authority)"/><xsl:value-of select="$v_seperator"/>
@@ -59,7 +66,7 @@
             <xsl:value-of select="concat('gnd:',oape:query-place(., 'id-geon', '', $p_local-authority))"/>
         </xsl:if><xsl:value-of select="$v_seperator"/>
         <!-- variants:  -->
-        <xsl:apply-templates select="tei:placeName" mode="m_tei-to-csv"/><xsl:value-of select="$v_seperator"/>
+        <xsl:apply-templates select="tei:placeName" mode="m_alternate-names"/><xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$v_seperator"/>
         <!-- optional -->
         <xsl:value-of select="$v_seperator"/>
@@ -72,12 +79,14 @@
         <xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$v_end-of-line"/>
     </xsl:template>
-    <xsl:template match="tei:placeName" mode="m_tei-to-csv">
+    <xsl:template match="tei:placeName" mode="m_alternate-names">
         <!-- variants: {name}@lang-script, semicolon-delimited -->
         <xsl:text>{</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>}@</xsl:text><xsl:value-of select="@xml:lang"/>
         <xsl:if test="following-sibling::tei:placeName">
             <xsl:text>; </xsl:text>
         </xsl:if>
     </xsl:template>
-    
+    <xsl:template match="tei:placeName" mode="m_placename-to-place">
+        <xsl:copy-of select="oape:get-entity-from-authority-file(., $p_local-authority, $v_gazetteer)"/>
+    </xsl:template>
 </xsl:stylesheet>
