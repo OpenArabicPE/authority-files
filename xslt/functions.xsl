@@ -642,6 +642,16 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'subtype'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/@subtype">
+                        <xsl:value-of select="$p_bibl/@subtype"/>
+                    </xsl:when>
+                    <xsl:when test="$v_monogr/@subtype">
+                        <xsl:value-of select="$v_monogr[@subtype][1]/@subtype"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
             <!-- fallback -->
             <xsl:otherwise>
                 <xsl:message>
