@@ -20,7 +20,9 @@
              <xsl:variable name="v_toponyms">
                  <xsl:apply-templates select="/tei:TEI/tei:text/descendant::tei:placeName" mode="m_placename-to-place"/>
              </xsl:variable>
-            <xsl:for-each-group select="$v_toponyms/tei:place" group-by="tei:idno[@type = $p_local-authority]">
+            <xsl:for-each-group select="$v_toponyms/descendant-or-self::tei:place" group-by=".">
+                <xsl:sort select="tei:placeName[@xml:lang = 'ar'][1]"/>
+                <xsl:sort select="tei:placeName[1]"/>
                 <xsl:apply-templates select="." mode="m_tei-to-lp-tsv"/>
             </xsl:for-each-group>
         </xsl:result-document>
@@ -60,7 +62,7 @@
         <xsl:value-of select="$p_local-authority"/><xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$p_project-start"/><xsl:value-of select="$v_seperator"/>
         <!-- encouraged -->
-        <xsl:value-of select="$v_seperator"/>
+        <xsl:value-of select="$v_url-file"/><xsl:value-of select="$v_seperator"/>
         <xsl:value-of select="$v_seperator"/>
         <xsl:if test="not(oape:query-place(., 'id-geon', '', $p_local-authority) = 'NA')">
             <xsl:value-of select="concat('gnd:',oape:query-place(., 'id-geon', '', $p_local-authority))"/>
@@ -87,6 +89,16 @@
         </xsl:if>
     </xsl:template>
     <xsl:template match="tei:placeName" mode="m_placename-to-place">
-        <xsl:copy-of select="oape:get-entity-from-authority-file(., $p_local-authority, $v_gazetteer)"/>
+        <xsl:variable name="v_place" select="oape:get-entity-from-authority-file(., $p_local-authority, $v_gazetteer)"/>
+        <xsl:choose>
+            <xsl:when test="$v_place = 'NA'">
+                <xsl:element name="tei:place">
+                    <xsl:copy-of select="."/>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy-of select="$v_place"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
