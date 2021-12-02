@@ -89,7 +89,7 @@
                         <xsl:copy-of select="$v_name-marked-up"/>
                         <!-- message to add the missing name to the authority file -->
                         <xsl:message>
-                            <xsl:text>Add the following to the authority file: </xsl:text>
+                            <xsl:text>Add the following person to the authority file: </xsl:text>
                             <xsl:element name="tei:person">
                                 <xsl:copy-of select="$v_name-marked-up"/>
                             </xsl:element>
