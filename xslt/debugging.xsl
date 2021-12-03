@@ -33,9 +33,16 @@
         <xsl:copy>
             <list>
 <!--                <xsl:apply-templates select="descendant::tei:placeName" mode="m_debug"/>-->
-                <xsl:apply-templates select="descendant::tei:title[@level = 'j']" mode="m_debug"/>
+                <!--<xsl:apply-templates select="descendant::tei:title[@level = 'j']" mode="m_debug"/>-->
+                <xsl:apply-templates select="descendant::tei:orgName" mode="m_debug"/>
             </list>
         </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="tei:orgName" mode="m_debug">
+        <item>
+            <ab><xsl:copy-of select="oape:get-entity-from-authority-file(., $p_local-authority, $v_organizationography)"/></ab>
+        </item>
     </xsl:template>
     <xsl:template match="tei:placeName" mode="m_debug">
         <!-- output -->

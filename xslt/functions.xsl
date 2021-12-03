@@ -881,7 +881,7 @@
     </xsl:function>
     <!-- query a TEI org node -->
     <xsl:function name="oape:query-org">
-        <!-- input is a tei <place> node -->
+        <!-- input is a tei <org> node -->
         <xsl:param as="node()" name="p_org"/>
         <!-- values for $mode are 'location', 'name', 'type', 'id-local', 'id', 'id-geon' -->
         <xsl:param as="xs:string" name="p_output-mode"/>
@@ -895,6 +895,22 @@
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:location/tei:placeName">
                         <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location/tei:placeName, $p_local-authority, $v_gazetteer), $p_output-mode, $p_output-language, $p_local-authority)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:if test="$p_verbose = true()">
+                            <xsl:message>
+                                <xsl:text>No location data for </xsl:text>
+                                <xsl:value-of select="oape:query-org($p_org, 'name', 'en', $p_local-authority)"/>
+                            </xsl:message>
+                        </xsl:if>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = ('location-name')">
+                <xsl:choose>
+                    <xsl:when test="$p_org/tei:location/tei:placeName">
+                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location/tei:placeName, $p_local-authority, $v_gazetteer), 'name', $p_output-language, $p_local-authority)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="$p_verbose = true()">
@@ -993,7 +1009,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-- return toponym in selected language -->
+            <!-- return name in selected language -->
             <xsl:when test="$p_output-mode = 'name'">
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:orgName[@xml:lang = $p_output-language]">
@@ -1831,7 +1847,7 @@
         </xsl:copy>
     </xsl:template>
     <xsl:template match="@xml:id" mode="m_remove-rolename"/>
-    <!-- this function takes a <tei:persName> as input, tries to look it up in an authority file and returns a <tei:persName> -->
+    <!-- this function takes a <tei:placeName> as input, tries to look it up in an authority file and returns a <tei:placeName> -->
     <xsl:function name="oape:link-placename-to-authority-file">
         <xsl:param name="p_placename"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
@@ -1908,6 +1924,86 @@
                     <xsl:text>" was not found in authority file.</xsl:text>
                 </xsl:message>
                 <xsl:apply-templates mode="m_identity-transform" select="$p_placename"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:function>
+    <!-- this function takes a <tei:placeName> as input, tries to look it up in an authority file and returns a <tei:placeName> -->
+    <xsl:function name="oape:link-orgname-to-authority-file">
+        <xsl:param name="p_orgname"/>
+        <xsl:param as="xs:string" name="p_local-authority"/>
+        <xsl:param name="p_authority-file"/>
+        <!-- flatened version of the persName without non-word characters -->
+        <xsl:variable name="v_name-normalised" select="lower-case(normalize-space(oape:string-normalise-arabic($p_orgname)))"/>
+        <!-- this can potentially return multiple places if the toponym matches to multiple places -->
+        <xsl:variable name="v_corresponding-org">
+            <xsl:choose>
+                <!-- test if this node already points to an authority file -->
+                <xsl:when test="$p_ignore-existing-refs = false() and $p_orgname/@ref">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The input already points to an authority file</xsl:message>
+                    </xsl:if>
+                    <!-- there seems to be a problem with this function -->
+                    <xsl:copy-of select="oape:get-entity-from-authority-file($p_orgname, $p_local-authority, $p_authority-file)"/>
+                </xsl:when>
+                <!-- test if the name is found in the authority file -->
+                <xsl:when test="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-arabic(.)) = $v_name-normalised]">
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The normalised input has been found in the authority file</xsl:message>
+                    </xsl:if>
+                    <xsl:copy-of select="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-arabic(.)) = $v_name-normalised]/parent::tei:org"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:if test="$p_verbose = true()">
+                        <xsl:message>The input has not been found in the authority file</xsl:message>
+                    </xsl:if>
+                    <!-- one cannot use a boolean value if the default result is non-boolean -->
+                    <xsl:value-of select="'NA'"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:choose>
+            <!-- name is found in the authority file. it will be linked and potentially updated -->
+            <xsl:when test="$v_corresponding-org/descendant-or-self::tei:org">
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>"</xsl:text>
+                        <xsl:value-of select="normalize-space($p_orgname)"/>
+                        <xsl:text>" is present in the authority file and will be linked</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+                <!-- construct @ref pointing to the corresponding entry -->
+                <xsl:variable name="v_ref" select="oape:query-org($v_corresponding-org/descendant-or-self::tei:org[1], 'tei-ref', '', $p_local-authority)"/>
+                <!-- replicate node -->
+                <xsl:copy select="$p_orgname">
+                    <!-- replicate attributes -->
+                    <xsl:apply-templates mode="m_identity-transform" select="$p_orgname/@*"/>
+                    <!-- add references to IDs -->
+                    <xsl:attribute name="ref" select="$v_ref"/>
+                    <!-- document change -->
+                    <!-- this test does not catch all changes -->
+                    <xsl:if test="normalize-space($p_orgname/@ref) != $v_ref">
+                        <xsl:choose>
+                            <xsl:when test="not($p_orgname/@change)">
+                                <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates mode="m_documentation" select="$p_orgname/@change"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:if>
+                    <!-- replicate content -->
+                    <xsl:apply-templates mode="m_identity-transform" select="node()"/>
+                </xsl:copy>
+            </xsl:when>
+            <!-- fallback: name is not found in the authority file -->
+            <xsl:when test="$v_corresponding-org = 'NA'">
+                <!--                <xsl:if test="$p_verbose = true()">-->
+                <xsl:message>
+                    <xsl:text> The input "</xsl:text>
+                    <xsl:value-of select="normalize-space($p_orgname)"/>
+                    <xsl:text>" was not found in authority file.</xsl:text>
+                </xsl:message>
+                <xsl:apply-templates mode="m_identity-transform" select="$p_orgname"/>
             </xsl:when>
         </xsl:choose>
     </xsl:function>
