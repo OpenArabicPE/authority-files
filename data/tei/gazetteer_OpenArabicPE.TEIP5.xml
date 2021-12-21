@@ -38,51 +38,24 @@
                 <p>The transscription of Arabic and Ottoman toponyms follows the IJMES paradigm.</p>
                 <p>Languages: According to TEI P5 <att>xml:lang</att> should follow BCP 47 <note target="http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
                     /> , which specifies for Arabic in Latin transcription "ar-Latn". The specific type of transcription should be added as a private use subtag, i.e. "ar-Latn-x-ijmes" for the IJMES transcription of Arabic in Latin script. The tag for Ottoman Turkish is "ota". For transcription in Latin script following an adapted IJMES transcription, it would be "ota-Latn-x-ijmes". The English variant of Latinised Arabic would be "ar-Latn-EN" and the French "ar-Latn-FR"</p>
-                <p>the structur of the element <gi>geo</gi> is lat, long</p>
+                <p>the structure of the element <gi>geo</gi> is lat, long</p>
             </editorialDecl>
         </encodingDesc>
         <revisionDesc>
-            <tei:change when="2021-11-30" who="#pers_TG" xml:id="d10e365" xml:lang="en"
-                >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
-            <tei:change when="2021-11-30" who="#pers_TG" xml:id="d10e359" xml:lang="en"
-                >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
-            <tei:change when="2021-11-25" who="#pers_TG" xml:id="d9e353" xml:lang="en"
-                >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
+            <change who="#pers_TG" when="2021-12-21" xml:lang="en">Added toponyms (mainly in Germany) based on the ZDB data.</change>
+            <change who="#pers_TG" when="2022-11-30" xml:lang="en">Added toponyms</change>
+            <change who="#pers_TG" when="2022-11-25" xml:lang="en">Added toponyms</change>
             <tei:change when="2021-11-02" who="#pers_TG" xml:id="d9e347" xml:lang="en"
                 >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
-            <tei:change when="2021-06-11" who="#pers_TG" xml:id="d9e341" xml:lang="en"
-                >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
             <change when="2021-06-11" who="#pers_TG" xml:id="d9e334" xml:lang="en"
-                >Improved <gi>place</gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</change>
+                >Added toponyms. Improved <gi>place</gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</change>
             <change when="2021-04-08" who="#pers_TG" xml:id="d9e328" xml:lang="en"
                 >Improved <gi>place</gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</change>
+            <change who="#pers_TG" when="2022-04-01" xml:lang="en">Moved all gazetteer data to <gi>standOff</gi></change>
             <change when="2021-04-01" who="#pers_TG" xml:id="d9e322" xml:lang="en"
-                >Improved <gi>place</gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</change>
-            <change when="2021-04-01" who="#pers_TG" xml:id="d9e316" xml:lang="en"
-                >Improved <gi>place</gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</change>
-            <change when="2021-04-01" who="#pers_TG" xml:id="d9e310" xml:lang="en"
                 >Improved <gi>place</gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</change>
             <change when="2021-01-21" who="#pers_TG" xml:id="d8e12007" xml:lang="en"
                 >Improved <gi>place</gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</change>
-            <change when="2020-08-24" who="#pers_TG">Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi>, <gi>death</gi>, and <gi>idno</gi>.</change>
-            <change when="2019-05-17" who="#pers_TG"
-                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
-            <change when="2019-03-24" who="#pers_TG"
-                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
-            <change when="2018-07-23" who="#pers_TG"
-                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
-            <change when="2018-05-20" who="#pers_TG"
-                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
-            <change when="2018-05-19" who="#pers_TG"
-                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
-            <change when="2018-05-18" who="#pers_TG"
-                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
-            <change when="2018-05-18" who="#pers_TG"
-                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
-            <change when="2018-05-17" who="#pers_TG"
-                >Improved <gi>person</gi> nodes that had references to VIAF, by querying VIAF and adding <gi>birth</gi> , <gi>death</gi> , and <gi>idno</gi> .</change>
-            <change when="2018-05-16" who="#pers_TG"
-                >Automatically fixed mark-up by adding <gi>idno</gi> pointing to Geonames or Wikimapia to <gi>place</gi> nodes and <att>source</att> to <tag>placeName type="alt"</tag> pointing to the source for this information.</change>
             <change when="2012-11-24">originally created</change>
             <change when="2012-11-29">added places</change>
             <change when="2013-02-25">added and corrected places</change>
@@ -118,7 +91,7 @@
                 </place>
                 <place type="town" xml:id="place_3">
                     <placeName type="simple">Constantinople</placeName>
-                    <placeName type="toponym">İstanbul</placeName>
+                    <placeName type="toponym" xml:lang="tr">İstanbul</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">Astāna</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">al-Astāna</placeName>
                     <placeName xml:lang="en">Istanbul</placeName>
@@ -131,6 +104,7 @@
                     <placeName xml:lang="ar-Latn-x-ijmes">Dār al-Salṭana</placeName>
                     <placeName xml:lang="ar">دار السعادة</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">Dār al-Saʿāda</placeName>
+                    <placeName xml:lang="ar-Latn-x-dmg">Dār as-Saʿāda</placeName>
                     <placeName xml:lang="ar">القسطنطينية</placeName>
                     <placeName xml:lang="ar">استانبول</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Byzance</placeName>
@@ -801,6 +775,7 @@
                     <place type="town" xml:id="place_26">
                         <placeName type="simple">Beirut</placeName>
                         <placeName xml:lang="ar-Latn-x-ijmes">Bayrūt</placeName>
+                        <placeName xml:lang="ar-Latn-x-dmg">Bairūt</placeName>
                         <placeName n="1" source="#org_geon" type="alt">Beyrout</placeName>
                         <placeName n="2" source="#org_geon" type="alt">Beirout</placeName>
                         <placeName xml:lang="en">Beirut</placeName>
@@ -1272,12 +1247,15 @@
                                     <placeName type="simple">Damascus</placeName>
                                     <placeName type="toponym">Damascus</placeName>
                                     <placeName xml:lang="ar-Latn-x-ijmes">Dimashq</placeName>
+                                    <placeName xml:lang="ar-Latn-x-dmg">Dimašq</placeName>
                                     <placeName xml:lang="ota-Latn-x-ijmes">Şām-i şerīf</placeName>
                                     <placeName xml:lang="tr">Şam-i şerif</placeName>
                                     <placeName xml:lang="en">Damascus</placeName>
                                     <placeName xml:lang="de">Damaskus</placeName>
                                     <placeName xml:lang="fr">Damas</placeName>
-                                    <placeName source="#org_geon" type="alt" xml:lang="ar">دمشق</placeName>
+                                    <placeName source="#org_geon" xml:lang="ar">دمشق</placeName>
+                                    <placeName xml:lang="ar" type="alt">الدمشق</placeName>
+                                    <placeName xml:lang="ar-Latn-x-dmg" type="alt">ad-Dimašq</placeName>
                                     <placeName xml:lang="ar">الشام</placeName>
                                     <placeName xml:lang="ar">الفيحاء</placeName>
                                     <location>
@@ -3180,6 +3158,7 @@
                 <place type="ST" xml:id="place_222">
                     <placeName xml:lang="ar">طرابلس الغرب</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">Ṭarāblus al-Gharb</placeName>
+                    <placeName xml:lang="ar-Latn-x-dmg">Ṭarābulus al-Ġarb</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">Tripoli</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Tripoli</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Tripolis</placeName>
@@ -3248,6 +3227,7 @@
                     <placeName xml:lang="ar">الإسكندرية</placeName>
                     <placeName xml:lang="ar">الاسكندرية</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">al-Iskandariyya</placeName>
+                    <placeName xml:lang="ar-Latn-x-dmg">al-Iskandarīya</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">Alexandria</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Alexandrie</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Alexandria</placeName>
@@ -5071,6 +5051,8 @@
                 </place>
                 <place type="town" xml:id="place_333">
                     <placeName xml:lang="ar">تونس</placeName>
+                    <placeName xml:lang="ar-Latn-x-ijmes">Tūnis</placeName>
+                    <placeName xml:lang="ar-Latn-x-dmg">Tūnis</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">Tunis</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Tunis</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Tunis</placeName>
@@ -5256,6 +5238,7 @@
                 </place>
                 <place type="town" xml:id="place_342">
                     <placeName xml:lang="de">Halle</placeName>
+                    <placeName xml:lang="de" type="alt">Halle/Saale</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">Halle</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Halle</placeName>
                     <location>
@@ -5281,6 +5264,7 @@
                 <place type="town" xml:id="place_405">
                     <placeName xml:lang="ar">فرانكفورت</placeName>
                     <placeName xml:lang="de">Frankfurt</placeName>
+                    <placeName xml:lang="de" type="alt">Frankfurt/Main</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">Frankfurt</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">Frankfurt am Main</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Francfort-sur-le-Main</placeName>
@@ -5330,6 +5314,59 @@
                     <idno type="geon">2907911</idno>
                     <idno type="oape">345</idno>
                 </place>
+                <place type="town"><placeName xml:lang="de">Angers</placeName></place>
+<place type="town"><placeName xml:lang="de">Ansbach</placeName></place>
+<place type="town"><placeName xml:lang="de">Augsburg</placeName></place>
+<place type="town"><placeName xml:lang="de">Bamberg</placeName></place>
+<place type="town"><placeName xml:lang="de">Bayreuth</placeName></place>
+<place type="town"><placeName xml:lang="de">Bochum</placeName></place>
+<place type="town"><placeName xml:lang="de">Bonn</placeName></place>
+<place type="town"><placeName xml:lang="de">Braunschweig</placeName></place>
+<place type="town"><placeName xml:lang="de">Bremen</placeName></place>
+<place type="town"><placeName xml:lang="de">Clausthal-Zellerfeld</placeName></place>
+<place type="town"><placeName xml:lang="de">Cottbus</placeName></place>
+<place type="town"><placeName xml:lang="de">Eichstätt</placeName></place>
+<place type="town"><placeName xml:lang="de">Erfurt</placeName></place>
+<place type="town"><placeName xml:lang="de">Erlangen</placeName></place>
+<place type="town"><placeName xml:lang="de">Firenze</placeName></place>
+<place type="town"><placeName xml:lang="de">Frankfurt/Oder</placeName></place>
+<place type="town"><placeName xml:lang="de">Freiberg/Sachsen</placeName></place>
+<place type="town"><placeName xml:lang="de">Freiburg/Breisgau</placeName></place>
+<place type="town"><placeName xml:lang="de">Gießen</placeName></place>
+<place type="town"><placeName xml:lang="de">Gotha</placeName></place>
+<place type="town"><placeName xml:lang="de">Greifswald</placeName></place>
+<place type="town"><placeName xml:lang="de">Göttingen</placeName></place>
+<place type="town"><placeName xml:lang="de">Hannover</placeName></place>
+<place type="town"><placeName xml:lang="de">Hof/Saale</placeName></place>
+<place type="town"><placeName xml:lang="de">Ingolstadt</placeName></place>
+<place type="town"><placeName xml:lang="de">Jena</placeName></place>
+<place type="town"><placeName xml:lang="de">Karlsruhe</placeName></place>
+<place type="town"><placeName xml:lang="de">Kiel</placeName></place>
+<place type="town"><placeName xml:lang="de">Konstanz</placeName></place>
+<place type="town"><placeName xml:lang="de">Köln</placeName></place>
+<place type="town"><placeName xml:lang="de">Köthen/Anhalt</placeName></place>
+<place type="town"><placeName xml:lang="de">Lüneburg</placeName></place>
+<place type="town"><placeName xml:lang="de">Magdeburg</placeName></place>
+<place type="town"><placeName xml:lang="de">Mainz</placeName></place>
+<place type="town"><placeName xml:lang="de">Marburg/Lahn</placeName></place>
+<place type="town"><placeName xml:lang="de">Merseburg</placeName></place>
+<place type="town"><placeName xml:lang="de">Metten</placeName></place>
+<place type="town"><placeName xml:lang="de">München</placeName></place>
+<place type="town"><placeName xml:lang="de">Münster</placeName></place>
+<place type="town"><placeName xml:lang="de">Neubiberg</placeName></place>
+<place type="town"><placeName xml:lang="de">Neuburg/Donau</placeName></place>
+<place type="town"><placeName xml:lang="de">Nürnberg</placeName></place>
+<place type="town"><placeName xml:lang="de">Passau</placeName></place>
+<place type="town"><placeName xml:lang="de">Potsdam</placeName></place>
+<place type="town"><placeName xml:lang="de">Regensburg</placeName></place>
+<place type="town"><placeName xml:lang="de">Rosenheim</placeName></place>
+<place type="town"><placeName xml:lang="de">Rostock</placeName></place>
+<place type="town"><placeName xml:lang="de">Stendal</placeName></place>
+<place type="town"><placeName xml:lang="de">Stuttgart</placeName></place>
+<place type="town"><placeName xml:lang="de">Tübingen</placeName></place>
+<place type="town"><placeName xml:lang="de">Vechta</placeName></place>
+<place type="town"><placeName xml:lang="de">Witzenhausen</placeName></place>
+<place type="town"><placeName xml:lang="de">Würzburg</placeName></place>
             </listPlace>
             <listPlace type="country">
                 <head>Austria-Hungary</head>
