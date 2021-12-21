@@ -39,6 +39,21 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="tei:orgName[matches(., '^[A-Z]{2}\-')]" mode="m_debug">
+        <xsl:variable name="v_orgName">
+            <xsl:element name="orgName">
+                <xsl:attribute name="ref" select="concat('isil:', .)"/>
+            </xsl:element>
+        </xsl:variable>
+        <xsl:variable name="v_org" select="oape:get-entity-from-authority-file($v_orgName/descendant-or-self::tei:orgName, $p_local-authority, $v_organizationography)"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="m_identity-transform"/>
+            <xsl:apply-templates select="$v_org/descendant::tei:placeName[1]" mode="m_identity-transform"/>
+            <xsl:text>, </xsl:text>
+             <xsl:apply-templates select="$v_org/descendant::tei:orgName[1]" mode="m_identity-transform"/>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="tei:orgName" mode="m_debug">
         <item>
             <ab><xsl:copy-of select="oape:get-entity-from-authority-file(., $p_local-authority, $v_organizationography)"/></ab>
