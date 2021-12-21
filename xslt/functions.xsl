@@ -173,6 +173,9 @@
                         <xsl:when test="matches($v_ref, '^http')">
                             <xsl:text>url</xsl:text>
                         </xsl:when>
+                        <xsl:when test="matches($v_ref, '^\w+:')">
+                            <xsl:value-of select="replace($v_ref,'^(\w+):.+$', '$1')"/>
+                        </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="$p_local-authority"/>
                         </xsl:otherwise>
@@ -199,6 +202,9 @@
                         </xsl:when>
                         <xsl:when test="matches($v_ref, '^http')">
                             <xsl:value-of select="$v_ref"/>
+                        </xsl:when>
+                        <xsl:when test="matches($v_ref, '^\w+:')">
+                            <xsl:value-of select="replace($v_ref,'^(\w+):(.+)$', '$2')"/>
                         </xsl:when>
                         <!--<xsl:when test="contains($v_ref, $v_local-uri-scheme)"><!-\- local IDs in Project Jaraid are not nummeric for biblStructs -\-><xsl:value-of select="replace($v_ref, concat('.*', $v_local-uri-scheme, '(\w+).*'), '$1')"/></xsl:when>-->
                     </xsl:choose>
