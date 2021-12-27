@@ -417,8 +417,8 @@
                 <xsl:element name="head">
                     <xsl:text>Entries from </xsl:text>
                     <xsl:value-of select="$v_name-file"/>
-                    <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>
                 </xsl:element>
+                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>
             </xsl:element>
         </xsl:copy>
     </xsl:template>
