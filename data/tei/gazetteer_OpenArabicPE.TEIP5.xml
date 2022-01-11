@@ -42,6 +42,8 @@
             </editorialDecl>
         </encodingDesc>
         <revisionDesc>
+            <tei:change when="2022-01-11" who="#pers_TG" xml:id="d10e182" xml:lang="en"
+                >Added toponyms for holding institutions in ZDB and HathiTrust. Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
             <tei:change when="2021-12-31" who="#pers_TG" xml:id="d10e204" xml:lang="en"
                 >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
             <tei:change when="2021-12-21" who="#pers_TG" xml:id="d10e197" xml:lang="en"
@@ -190,6 +192,20 @@
                     <tei:idno type="geon">163808</tei:idno>
                     <idno type="oape">635</idno>
                 </place>
+                <place type="town" xml:id="place_712">
+                    <placeName>Tel-Aviv</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">تل أبيب</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Tel Aviv</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Tel-Aviv</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Tel Aviv</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Tel Aviv</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>32.08088, 34.78057</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Tel_Aviv</tei:idno>
+                    <tei:idno type="geon">293397</tei:idno>
+                    <idno type="oape">712</idno>
+                </place>
                 <place type="town" xml:id="place_12">
                     <placeName type="simple">Jaffa</placeName>
                     <placeName type="toponym">Yafo</placeName>
@@ -206,20 +222,6 @@
                     <idno type="url">http://ru.wikipedia.org/wiki/%D0%AF%D1%84%D1%84%D0%B0</idno>
                     <idno type="geon">293253</idno>
                     <idno type="oape">12</idno>
-                </place>
-                <place type="town" xml:id="place_712">
-                    <placeName>Tel-Aviv</placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">تل أبيب</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Tel Aviv</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Tel-Aviv</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Tel Aviv</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Tel Aviv</tei:placeName>
-                    <tei:location source="#org_geon">
-                        <tei:geo>32.08088, 34.78057</tei:geo>
-                    </tei:location>
-                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Tel_Aviv</tei:idno>
-                    <tei:idno type="geon">293397</tei:idno>
-                    <idno type="oape">712</idno>
                 </place>
                 <listPlace>
                     <head>Jabal ʿĀmil</head>
@@ -4403,6 +4405,75 @@
             </listPlace>
             <listPlace type="country">
                 <head>USA</head>
+                <place type="town" xml:id="place_714">
+                    <placeName>Cambridge, MA</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">كامبريدج</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Cambridge</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Cambridge</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Cambridge</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Cambridge</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>42.3751, -71.10561</tei:geo>
+                    </tei:location>
+                    <tei:idno resp="#pers_TG" type="geon">4931972</tei:idno>
+                    <idno type="oape">714</idno>
+                </place>
+                <place type="town" xml:id="place_720">
+                    <placeName>Ithaca</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">إثاكا</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ithaca</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>42.44063, -76.49661</tei:geo>
+                    </tei:location>
+                    <tei:idno resp="#pers_TG" type="geon">5122432</tei:idno>
+                    <idno type="oape">720</idno>
+                </place>
+                <place type="town" xml:id="place_721">
+                    <placeName>Durham, NC</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">دورهام</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Durham</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Durham</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>35.99403, -78.89862</tei:geo>
+                    </tei:location>
+                    <tei:idno resp="#pers_TG" type="geon">4464368</tei:idno>
+                    <idno type="oape">721</idno>
+                </place>
+                <place type="town" xml:id="place_724">
+                    <placeName>Columbus</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">كولومبوس</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Columbus</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Columbus</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Columbus</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Columbus</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>39.96118, -82.99879</tei:geo>
+                    </tei:location>
+                    <tei:idno resp="#pers_TG" type="geon">4509177</tei:idno>
+                    <idno type="oape">724</idno>
+                </place>
+                <place type="town" xml:id="place_725">
+                    <placeName>University Park</placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>40.80201, -77.85639</tei:geo>
+                    </tei:location>
+                    <tei:idno resp="#pers_TG" type="geon">5216774</tei:idno>
+                    <idno type="oape">725</idno>
+                </place>
+                <place type="town" xml:id="place_729">
+                    <placeName>St. Paul</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">سانت باول</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Saint Paul</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">St. Paul</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Saint Paul</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Saint Paul</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">St. Paul</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>44.94441, -93.09327</tei:geo>
+                    </tei:location>
+                    <tei:idno resp="#pers_TG" type="geon">5045360</tei:idno>
+                    <idno type="oape">729</idno>
+                </place>
                 <place type="country" xml:id="place_301">
                     <placeName xml:lang="ar">الولايات المتحدة</placeName>
                     <placeName xml:lang="ar">الولايات المتحدة الأميركية</placeName>
@@ -4433,6 +4504,47 @@
                     <idno type="geon">4140963</idno>
                     <idno type="oape">433</idno>
                 </place>
+                <place type="town" xml:id="place_728">
+                    <placeName>Ann Arbor</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">آن آربر</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ann Arbor</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Ann Arbor</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ann Arbor</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Ann Arbor</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>42.27756, -83.74088</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Ann_Arbor%2C_Michigan</tei:idno>
+                    <tei:idno type="geon">4984247</tei:idno>
+                    <idno type="oape">728</idno>
+                </place>
+                <place type="town" xml:id="place_730">
+                    <placeName>Austin</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">أوستن</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Austin</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Austin</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Austin</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Austin</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>30.26715, -97.74306</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Austin%2C_Texas</tei:idno>
+                    <tei:idno type="geon">4671654</tei:idno>
+                    <idno type="oape">730</idno>
+                </place>
+                <place type="town" xml:id="place_723">
+                    <placeName>Evanston</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">إيفانستون</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Evanston</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Evanston</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Evanston</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>42.04114, -87.69006</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Evanston</tei:idno>
+                    <tei:idno type="geon">4891382</tei:idno>
+                    <idno type="oape">723</idno>
+                </place>
                 <place type="town" xml:id="place_302">
                     <placeName xml:lang="ar">بروفيدنس</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="en">Providence</placeName>
@@ -4444,6 +4556,136 @@
                     <idno type="url">http://en.wikipedia.org/wiki/Providence%2C_Rhode_Island</idno>
                     <idno type="geon">5224151</idno>
                     <idno type="oape">302</idno>
+                </place>
+                <place type="town" xml:id="place_715">
+                    <placeName>Princeton</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">برينستون</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Princeton</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Princeton</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Princeton</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>40.34872, -74.65905</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Princeton%2C_New_Jersey</tei:idno>
+                    <tei:idno type="geon">5102922</tei:idno>
+                    <idno type="oape">715</idno>
+                </place>
+                <place type="town" xml:id="place_722">
+                    <placeName>Bloomington</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">بلومنغتون</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Bloomington</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Bloomington</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>39.16533, -86.52639</tei:geo>
+                    </tei:location>
+                    <idno type="geon">4254679</idno>
+                    <idno type="oape">722</idno>
+                </place>
+                <place type="town" xml:id="place_727">
+                    <placeName>Urbana-Champaign</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">تشامبيغن</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Champaign</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Champaign</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Champaign</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>40.11642, -88.24338</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Champaign%2C_Illinois</tei:idno>
+                    <tei:idno type="geon">4887158</tei:idno>
+                    <idno type="oape">727</idno>
+                </place>
+                <place type="town" xml:id="place_739">
+                    <placeName>Raleigh</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">رالي</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Raleigh</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Raleigh</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Raleigh</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>35.7721, -78.63861</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Raleigh,_North_Carolina</tei:idno>
+                    <tei:idno type="geon">4487042</tei:idno>
+                    <idno type="oape">739</idno>
+                </place>
+                <place type="town" xml:id="place_717">
+                    <placeName>Salt Lake City</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">سالت ليك</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Salt Lake City</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Salt Lake City</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Salt Lake City</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Salt Lake City</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>40.76078, -111.89105</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Salt_Lake_City</tei:idno>
+                    <tei:idno type="geon">5780993</tei:idno>
+                    <idno type="oape">717</idno>
+                </place>
+                <place type="town" xml:id="place_716">
+                    <placeName>Stanford</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ستانفورد</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Stanford</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Stanford</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>37.42411, -122.16608</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Stanford%2C_California</tei:idno>
+                    <tei:idno type="geon">5398563</tei:idno>
+                    <idno type="oape">716</idno>
+                </place>
+                <place type="town" xml:id="place_718">
+                    <placeName>Seattle</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">سياتل</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Seattle</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Seattle</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Seattle</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Seattle</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>47.60621, -122.33207</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Seattle</tei:idno>
+                    <tei:idno type="geon">5809844</tei:idno>
+                    <idno type="oape">718</idno>
+                </place>
+                <place type="town" xml:id="place_731">
+                    <placeName>Charlottesville</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">شارلوتسفيل</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Charlottesville</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Charlottesville</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Charlottesville</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>38.02931, -78.47668</tei:geo>
+                    </tei:location>
+                    <tei:idno type="geon">4752031</tei:idno>
+                    <idno type="oape">731</idno>
+                </place>
+                <place type="town" xml:id="place_726">
+                    <placeName>Los Angeles</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">لوس أنجلوس</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Los Angeles</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Los Angeles</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Los Angeles</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Los Angeles</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>34.05223, -118.24368</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Los_Angeles</tei:idno>
+                    <tei:idno type="geon">5368361</tei:idno>
+                    <idno type="oape">726</idno>
+                </place>
+                <place type="town" xml:id="place_719">
+                    <placeName>New Haven</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">نيو هيفن</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">New Haven</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">New Haven</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">New Haven</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">New Haven</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>41.30815, -72.92816</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/New_Haven%2C_Connecticut</tei:idno>
+                    <tei:idno type="geon">4839366</tei:idno>
+                    <idno type="oape">719</idno>
                 </place>
                 <place type="town" xml:id="place_303">
                     <placeName xml:lang="en">New York City</placeName>
@@ -5225,6 +5467,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Tétouan</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Tétouan</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">Tetuan</placeName>
+                    <placeName>Tetouan</placeName>
                     <location source="#org_geon">
                         <geo>35.57845, -5.36837</geo>
                     </location>
@@ -5299,10 +5542,13 @@
                     <idno type="geon">3082436</idno>
                     <idno type="oape">341</idno>
                 </place>
-                <place type="town" xml:id="place_669">
-                    <placeName xml:lang="de">Freiberg/Sachsen</placeName>
-                    <idno type="oape">669</idno>
-                    <idno type="geon">2925192</idno>
+                <place type="town" xml:id="place_733">
+                    <placeName>Eggenstein-Leopoldshafen</placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>49.09006, 8.39879</tei:geo>
+                    </tei:location>
+                    <tei:idno type="geon">2933101</tei:idno>
+                    <idno type="oape">733</idno>
                 </place>
                 <place type="town" xml:id="place_689">
                     <placeName xml:lang="de">Metten</placeName>
@@ -5457,6 +5703,19 @@
                     <tei:idno type="geon">2929567</tei:idno>
                     <idno type="oape">666</idno>
                 </place>
+                <place type="town" xml:id="place_735">
+                    <placeName>Paderborn</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">بادربورن</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Paderborn</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Paderborn</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Paderborn</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Paderborn</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>51.71905, 8.75439</tei:geo>
+                    </tei:location>
+                    <tei:idno type="geon">2855745</tei:idno>
+                    <idno type="oape">735</idno>
+                </place>
                 <place type="town" xml:id="place_656">
                     <placeName xml:lang="de">Bamberg</placeName>
                     <tei:placeName source="#org_geon" type="alt" xml:lang="ar">بامبرغ</tei:placeName>
@@ -5528,6 +5787,20 @@
                     <tei:idno type="geon">2946447</tei:idno>
                     <idno type="oape">659</idno>
                 </place>
+                <place type="town" xml:id="place_713">
+                    <placeName>Trier</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ترير</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Trier</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Trèves</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Trier</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Trier</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>49.75565, 6.63935</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D1%80</tei:idno>
+                    <tei:idno type="geon">2821164</tei:idno>
+                    <idno type="oape">713</idno>
+                </place>
                 <place type="town" xml:id="place_702">
                     <placeName xml:lang="de">Tübingen</placeName>
                     <tei:placeName source="#org_geon" type="alt" xml:lang="ar">توبينغن</tei:placeName>
@@ -5540,6 +5813,34 @@
                     <tei:idno type="url">https://en.wikipedia.org/wiki/T%C3%BCbingen</tei:idno>
                     <tei:idno type="geon">2820860</tei:idno>
                     <idno type="oape">702</idno>
+                </place>
+                <place type="town" xml:id="place_732">
+                    <placeName>Dresden</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">دريسدن</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Dresden</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Dresde</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Dresden</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Dresden</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>51.05089, 13.73832</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Dresden</tei:idno>
+                    <tei:idno type="geon">2935022</tei:idno>
+                    <idno type="oape">732</idno>
+                </place>
+                <place type="town" xml:id="place_734">
+                    <placeName>Dessau</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ديساو</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Dessau</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Dessau</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Dessau</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Dessau</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>51.83864, 12.24555</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Dessau</tei:idno>
+                    <tei:idno type="geon">2937959</tei:idno>
+                    <idno type="oape">734</idno>
                 </place>
                 <place type="town" xml:id="place_699">
                     <placeName xml:lang="de">Rostock</placeName>
@@ -5564,6 +5865,20 @@
                     </tei:location>
                     <tei:idno type="geon">2849483</tei:idno>
                     <idno type="oape">697</idno>
+                </place>
+                <place type="town" xml:id="place_711">
+                    <placeName>Saarbrücken</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ساربروكن</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Saarbrücken</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Sarrebruck</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Saarbrücken</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Saarbrücken</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>49.23262, 7.00982</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Saarbr%C3%BCcken</tei:idno>
+                    <tei:idno type="geon">2842647</tei:idno>
+                    <idno type="oape">711</idno>
                 </place>
                 <place type="town" xml:id="place_700">
                     <placeName xml:lang="de">Stendal</placeName>
@@ -5648,6 +5963,18 @@
                     </location>
                     <idno type="geon">2925533</idno>
                     <idno type="oape">405</idno>
+                </place>
+                <place type="town" xml:id="place_669">
+                    <placeName xml:lang="de">Freiberg/Sachsen</placeName>
+                    <placeName xml:lang="de">Freiberg</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">فرايبرغ</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Freiberg</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Freiberg</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>50.91089, 13.33881</tei:geo>
+                    </tei:location>
+                    <idno type="oape">669</idno>
+                    <idno type="geon">2925192</idno>
                 </place>
                 <place type="town" xml:id="place_670">
                     <placeName xml:lang="de">Freiburg/Breisgau</placeName>
@@ -5812,6 +6139,20 @@
                     <tei:idno type="geon">2874545</tei:idno>
                     <idno type="oape">685</idno>
                 </place>
+                <place type="town" xml:id="place_709">
+                    <placeName>Mannheim</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">مانهايم</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Mannheim</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Mannheim</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Mannheim</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Mannheim</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>49.4891, 8.46694</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Mannheim</tei:idno>
+                    <tei:idno type="geon">2873891</tei:idno>
+                    <idno type="oape">709</idno>
+                </place>
                 <place type="town" xml:id="place_686">
                     <placeName xml:lang="de">Mainz</placeName>
                     <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ماينتس</tei:placeName>
@@ -5961,48 +6302,6 @@
                     </tei:location>
                     <tei:idno type="geon">2895044</tei:idno>
                     <idno type="oape">678</idno>
-                </place>
-                <place type="town" xml:id="place_709">
-                    <placeName>Mannheim</placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">مانهايم</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Mannheim</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Mannheim</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Mannheim</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Mannheim</tei:placeName>
-                    <tei:location source="#org_geon">
-                        <tei:geo>49.4891, 8.46694</tei:geo>
-                    </tei:location>
-                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Mannheim</tei:idno>
-                    <tei:idno type="geon">2873891</tei:idno>
-                    <idno type="oape">709</idno>
-                </place>
-                <place type="town" xml:id="place_711">
-                    <placeName>Saarbrücken</placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ساربروكن</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Saarbrücken</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Sarrebruck</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Saarbrücken</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Saarbrücken</tei:placeName>
-                    <tei:location source="#org_geon">
-                        <tei:geo>49.23262, 7.00982</tei:geo>
-                    </tei:location>
-                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Saarbr%C3%BCcken</tei:idno>
-                    <tei:idno type="geon">2842647</tei:idno>
-                    <idno type="oape">711</idno>
-                </place>
-                <place type="town" xml:id="place_713">
-                    <placeName>Trier</placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">ترير</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Trier</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Trèves</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Trier</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Trier</tei:placeName>
-                    <tei:location source="#org_geon">
-                        <tei:geo>49.75565, 6.63935</tei:geo>
-                    </tei:location>
-                    <tei:idno subtype="about" type="url">https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D1%80</tei:idno>
-                    <tei:idno type="geon">2821164</tei:idno>
-                    <idno type="oape">713</idno>
                 </place>
             </listPlace>
             <listPlace type="country">
@@ -7363,10 +7662,34 @@
         </listPlace>
         <listPlace>
             <head xml:lang="en">Places of unknown location</head>
-            <place xml:id="place_710">
-                <placeName>Rankun</placeName>
-                <idno type="oape">710</idno>
-                <idno type="geon">1298824</idno>
+            <place type="town" xml:id="place_736">
+                <placeName>Durham</placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">درم</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Durham</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Durham</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Durham</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Durham</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>54.77676, -1.57566</tei:geo>
+                </tei:location>
+                <tei:idno resp="#pers_TG" type="geon">2650628</tei:idno>
+                <idno type="oape">736</idno>
+            </place>
+            <place type="town" xml:id="place_737">
+                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">كامبريدج</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Cambridge</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Cambridge</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Cambridge</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Cambridge</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>52.2, 0.11667</tei:geo>
+                </tei:location>
+                <tei:idno resp="#pers_TG" type="geon">2653941</tei:idno>
+                <idno type="oape">737</idno>
+            </place>
+            <place xml:id="place_741">
+                <placeName>Dayr al-Mukhlis</placeName>
+                <idno type="oape">741</idno>
             </place>
             <place xml:id="place_627">
                 <placeName source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_41.TEIP5.xml" xml:lang="ar">البلقا</placeName>
@@ -7429,20 +7752,6 @@
                 <placeName source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_41.TEIP5.xml" xml:lang="ar">قلعة سنير</placeName>
                 <idno type="oape">647</idno>
             </place>
-            <place type="town" xml:id="place_708">
-                <placeName xml:lang="ar">كابل</placeName>
-                <placeName xml:lang="ar-Latn-x-ijmes">Kābul</placeName>
-                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Kabul</tei:placeName>
-                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Kaboul</tei:placeName>
-                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Kabul</tei:placeName>
-                <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Kâbil</tei:placeName>
-                <tei:location source="#org_geon">
-                    <tei:geo>34.52813, 69.17233</tei:geo>
-                </tei:location>
-                <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Kabul</tei:idno>
-                <tei:idno type="geon">1138958</tei:idno>
-                <idno type="oape">708</idno>
-            </place>
             <place xml:id="place_414">
                 <placeName xml:lang="ar-Latn-x-ijmes">Madīna ʿĀliyya</placeName>
                 <placeName change="#d2e154" xml:lang="ar">مدينة عالية</placeName>
@@ -7464,6 +7773,20 @@
                 <tei:idno type="url">https://en.wikipedia.org/wiki/Beqaa_Governorate</tei:idno>
                 <tei:idno type="geon">280282</tei:idno>
                 <idno type="oape">626</idno>
+            </place>
+            <place type="town" xml:id="place_738">
+                <placeName>Ankara</placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">أنقرة</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ankara</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Ankara</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ankara</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Ankara</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>39.91987, 32.85427</tei:geo>
+                </tei:location>
+                <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Ankara</tei:idno>
+                <tei:idno type="geon">323786</tei:idno>
+                <idno type="oape">738</idno>
             </place>
             <place type="town" xml:id="place_630">
                 <placeName source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_41.TEIP5.xml" xml:lang="ar">القريتين</placeName>
@@ -7522,6 +7845,34 @@
                 <tei:idno type="geon">443105</tei:idno>
                 <idno type="oape">642</idno>
             </place>
+            <place type="town" xml:id="place_740">
+                <placeName>Tokio</placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">طوكيو</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Tokyo</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Tokyo</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Tokio</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Tokyo</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>35.6895, 139.69171</tei:geo>
+                </tei:location>
+                <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Tokyo</tei:idno>
+                <tei:idno type="geon">1850147</tei:idno>
+                <idno type="oape">740</idno>
+            </place>
+            <place type="town" xml:id="place_708">
+                <placeName xml:lang="ar">كابل</placeName>
+                <placeName xml:lang="ar-Latn-x-ijmes">Kābul</placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Kabul</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Kaboul</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Kabul</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Kâbil</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>34.52813, 69.17233</tei:geo>
+                </tei:location>
+                <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Kabul</tei:idno>
+                <tei:idno type="geon">1138958</tei:idno>
+                <idno type="oape">708</idno>
+            </place>
             <place type="town" xml:id="place_648">
                 <placeName source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_41.TEIP5.xml" xml:lang="ar">معربا</placeName>
                 <tei:placeName source="#org_geon" type="alt" xml:lang="ar">معربا</tei:placeName>
@@ -7530,6 +7881,20 @@
                 </tei:location>
                 <tei:idno type="geon">167275</tei:idno>
                 <idno type="oape">648</idno>
+            </place>
+            <place type="town" xml:id="place_710">
+                <placeName>Rankun</placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="ar">يانغون</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Rangoon</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Yangon</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Rangoun</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Yangon</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Rangun</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>16.80528, 96.15611</tei:geo>
+                </tei:location>
+                <idno type="oape">710</idno>
+                <idno type="geon">1298824</idno>
             </place>
             <place type="AREA" xml:id="place_643">
                 <placeName source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_41.TEIP5.xml" xml:lang="ar">قارا</placeName>
