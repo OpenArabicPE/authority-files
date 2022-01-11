@@ -1613,7 +1613,7 @@
                 </location>
             </org>
             <org xml:id="hIHRC">
-                <orgName>Immigration History Research Center Archives, University of Minnesota</orgName>
+                <orgName xml:lang="en">Immigration History Research Center Archives, University of Minnesota</orgName>
                 <orgName type="jaraid">IHRC</orgName>
                 <idno type="jaraid">hIHRC</idno>
                 <idno type="oape">32</idno>
@@ -1622,7 +1622,7 @@
                 </location>
             </org>
             <org xml:id="hIO">
-                <orgName>India Office Library, London</orgName>
+                <orgName xml:lang="en">India Office Library</orgName>
                 <orgName type="jaraid">Ind Off</orgName>
                 <idno type="jaraid">hIO</idno>
                 <idno type="oape">33</idno>
@@ -1646,7 +1646,7 @@
                 </location>
             </org>
             <org xml:id="hIDEO">
-                <orgName>Institut Dominicain d'Études Orientales au Caire, Cairo</orgName>
+                <orgName xml:lang="fr">Institut Dominicain d'Études Orientales au Caire</orgName>
                 <orgName type="jaraid">IDEO</orgName>
                 <idno type="jaraid">hIDEO</idno>
                 <idno type="oape">34</idno>
@@ -1655,7 +1655,7 @@
                 </location>
             </org>
             <org xml:id="hIE">
-                <orgName>Institut Egyptien, Cairo</orgName>
+                <orgName xml:lang="fr">Institut Egyptien</orgName>
                 <orgName type="jaraid">IE</orgName>
                 <idno type="jaraid">hIE</idno>
                 <idno type="oape">35</idno>
@@ -1664,7 +1664,7 @@
                 </location>
             </org>
             <org xml:id="hIMA">
-                <orgName>Institut du Monde Arabe, Paris</orgName>
+                <orgName xml:lang="fr">Institut du Monde Arabe</orgName>
                 <orgName type="jaraid">IMA</orgName>
                 <idno type="jaraid">hIMA</idno>
                 <idno type="oape">36</idno>
@@ -1673,8 +1673,7 @@
                 </location>
             </org>
             <org xml:id="hLEN">
-                <orgName>Institute of Oriental Manuscripts, Russian Academy of Sciences, St.
-                        Petersburg</orgName>
+                <orgName>Institute of Oriental Manuscripts, Russian Academy of Sciences</orgName>
                 <orgName type="jaraid">Len</orgName>
                 <idno type="jaraid">hLEN</idno>
                 <idno type="oape">37</idno>
@@ -1683,7 +1682,7 @@
                 </location>
             </org>
             <org xml:id="hIM">
-                <orgName>Iraq Museum, Baghdād, Iraq</orgName>
+                <orgName>Iraq Museum</orgName>
                 <orgName type="jaraid">Ir Mus</orgName>
                 <idno type="jaraid">hIM</idno>
                 <idno type="oape">38</idno>
@@ -1700,11 +1699,10 @@
                     <placeName ref="geon:98182 oape:place:216 ">Baghdad</placeName>
                 </location>
                 <note>. Some of its holdings were digitized and are available through the
-                        <ref
-                    target="http://www.wdl.org/en/search/?institution=iraqi-national-library-and-archives" xml:lang="und-Latn">World Digital Library</ref>.</note>
+                        <ref target="http://www.wdl.org/en/search/?institution=iraqi-national-library-and-archives" xml:lang="und-Latn">World Digital Library</ref>.</note>
             </org>
             <org xml:id="hIU">
-                <orgName>Istanbul Üniversitesi Merkez Kütüphanesi, Istanbul</orgName>
+                <orgName>Istanbul Üniversitesi Merkez Kütüphanesi</orgName>
                 <orgName type="jaraid">IÜ</orgName>
                 <idno type="jaraid">hIU</idno>
                 <idno type="oape">40</idno>
@@ -1908,7 +1906,7 @@
                 </location>
             </org>
             <org xml:id="hLONA">
-                <orgName>League of Nations Archives (Geneva, Switzerland)</orgName>
+                <orgName>League of Nations Archives</orgName>
                 <orgName type="jaraid">LONA</orgName>
                 <idno type="jaraid">hLONA</idno>
                 <idno type="oape">42</idno>
@@ -1977,12 +1975,17 @@
                 </location>
             </org>
             <org xml:id="hHARV">
-                <orgName>Libraries of Harvard University, Cambridge, MA, USA</orgName>
+                <orgName>Libraries of Harvard University</orgName>
                 <orgName type="jaraid">Harv</orgName>
                 <idno type="jaraid">hHARV</idno>
                 <idno type="oape">43</idno>
+                <idno type="isil">US-hvd</idno>
+                <idno type="hathi">HVD</idno>
                 <location>
-                    <placeName>Cambridge, MA</placeName>
+                    <address>
+                        <placeName>Cambridge, MA</placeName>
+                        <country>United States of America</country>
+                    </address>
                 </location>
             </org>
             <org xml:id="hCAM">
@@ -2005,7 +2008,7 @@
                 <note> <note xml:lang="und-Latn">this is our guess</note> </note>
             </org>
             <org xml:id="hLOC">
-                <orgName>Library of Congress, Washington, DC</orgName>
+                <orgName>Library of Congress</orgName>
                 <orgName type="jaraid">LoC</orgName>
                 <idno type="jaraid">hLOC</idno>
                 <idno type="oape">46</idno>
@@ -2014,7 +2017,7 @@
                 </location>
             </org>
             <org xml:id="hTUB">
-                <orgName>Library of Tübingen University, Tübingen</orgName>
+                <orgName>Library of Tübingen University</orgName>
                 <orgName type="jaraid">TUB</orgName>
                 <idno type="jaraid">hTUB</idno>
                 <idno type="oape">47</idno>
@@ -2623,21 +2626,35 @@
                 </location>
             </org>
             <org xml:id="hPUL">
-                <orgName>Princeton University Library, Princeton</orgName>
+                <orgName>Princeton University</orgName>
                 <orgName type="jaraid">Prin</orgName>
                 <idno type="jaraid">hPUL</idno>
                 <idno type="oape">65</idno>
+                <idno type="isil">US-njp</idno>
+                <idno type="hathi">NJP</idno>
                 <location>
-                    <placeName>Princeton</placeName>
+                    <address>
+                        <placeName>Princeton</placeName>
+                        <postCode>New Jersey 08540</postCode>
+                        <country>United States of America</country>
+                    </address>
                 </location>
             </org>
             <org xml:id="hNYPL">
+                <orgName xml:lang="en">New York Public Library</orgName>
                 <orgName>Public Library of New York</orgName>
                 <orgName type="jaraid">NYPL</orgName>
                 <idno type="jaraid">hNYPL</idno>
                 <idno type="oape">66</idno>
+                <idno type="isil">US-nn</idno>
+                <idno type="hathi">NYP</idno>
                 <location>
-                    <placeName ref="geon:5128581 oape:place:303 ">New York</placeName>
+                    <address>
+                        <street>Fifth Ave. &amp; 42nd St.</street>
+                        <placeName ref="geon:5128581 oape:place:303 ">New York</placeName>
+                        <postCode>New York 10018</postCode>
+                        <country>United States of America</country>
+                    </address>
                 </location>
             </org>
             <org source="https://ld.zdb-services.de/resource/organisations/DE-898">
@@ -2995,6 +3012,18 @@
                     <placeName ref="geon:4560349 oape:place:315 ">Philadelphia</placeName>
                 </location>
             </org>
+            <org>
+                <orgName xml:lang="en">Pennsylvania State University, Pattee Library</orgName>
+                <orgName xml:lang="en">Penn State</orgName>
+                <idno type="isil">US-pst</idno>
+                <location>
+                    <address>
+                        <placeName>University Park</placeName>
+                        <postCode>Pennsylvania 16802-1805</postCode>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+            </org>
             <org xml:id="hUTL">
                 <orgName>University of Tokio, General Library</orgName>
                 <orgName type="jaraid">UTL</orgName>
@@ -3250,6 +3279,138 @@
                 <location>
                     <geo>34.008333, -6.8425</geo>
                     <placeName>Tetouan</placeName>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Michigan</orgName>
+                <idno type="isil">US-miu</idno>
+                <idno type="hathi">MIU</idno>
+                <location>
+                    <address>
+                        <placeName>Ann Arbor</placeName>
+                        <postCode>Michigan 48104</postCode>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of California</orgName>
+                <idno type="hathi">UC</idno>
+                <location>
+                    <address>
+                        <placeName>Los Angeles</placeName>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+                <note type="comments"> <list>
+                    <item>The MARC Org code from HathiTrust does not return a hit from the official dereferencer. Clicking on an item revealed that this might be UCLA</item>
+                    </list> </note>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Minnesota</orgName>
+                <idno type="hathi">UMN</idno>
+                <idno type="isil">US-mnu</idno>
+                <location>
+                    <address>
+                        <placeName>St. Paul</placeName>
+                        <country>United States of America</country>
+                    </address>
+                    <address>
+                        <placeName>Minneapolis</placeName>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+                <note type="comments"> <list>
+                    <item>The MARC Org code from HathiTrust does not return a hit from the official dereferencer.</item>
+                    </list> </note>
+            </org>
+            <org>
+                <orgName xml:lang="en">Indiana University</orgName>
+                <idno type="isil">US-inu</idno>
+                <idno type="hathi">INU</idno>
+                <location>
+                    <address>
+                        <placeName>Bloomington</placeName>
+                        <postCode>Indiana 47401</postCode>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Virginia</orgName>
+                <idno type="hathi">UVA</idno>
+                <idno type="isil">US-viu</idno>
+                <location>
+                    <address>
+                        <placeName>Charlottesville</placeName>
+                        <postCode>Virginia 22904</postCode>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+                <note type="comments"> <list>
+                    <item>The MARC Org code from HathiTrust does not return a hit from the official dereferencer.</item>
+                    </list> </note>
+            </org>
+            <org>
+                <orgName xml:lang="en">Ohio State University</orgName>
+                <idno type="isil">US-ou</idno>
+                <idno type="hathi">OU</idno>
+                <location>
+                    <address>
+                        <street>1858 Neil Ave. Mall</street>
+                        <placeName>Columbus</placeName>
+                        <postCode>Ohio 43210</postCode>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Illinois</orgName>
+                <idno type="hathi">UIU</idno>
+                <location>
+                    <address>
+                        <placeName>Urbana-Champaign</placeName>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+                <note type="comments"> <list>
+                    <item>The MARC Org code from HathiTrust does not return a hit from the official dereferencer.</item>
+                    </list> </note>
+            </org>
+            <org>
+                <orgName xml:lang="en">Cornell University</orgName>
+                <idno type="isil">US-nic</idno>
+                <idno type="hathi">COO</idno>
+                <location>
+                    <address>
+                        <placeName>Ithaca</placeName>
+                        <postCode>New York 14850</postCode>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">Northwestern University</orgName>
+                <idno type="isil">US-ien</idno>
+                <idno type="hathi">IEN</idno>
+                <location>
+                    <address>
+                        <placeName>Evanston</placeName>
+                        <postCode>Illinois 60201</postCode>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Texas</orgName>
+                <idno type="isil">US-txu</idno>
+                <idno type="hathi">TXU</idno>
+                <location>
+                    <address>
+                        <placeName>Austin</placeName>
+                        <postCode>Texas 78712</postCode>
+                        <country>United States of America</country>
+                    </address>
                 </location>
             </org>
         </listOrg>
