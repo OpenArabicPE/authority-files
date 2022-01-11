@@ -872,6 +872,31 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'name-tei'">
+                <xsl:variable name="v_placeName">
+                <xsl:choose>
+                    <xsl:when test="$p_place/tei:placeName[@xml:lang = $p_output-language]">
+                        <xsl:copy-of select="$p_place/tei:placeName[@xml:lang = $p_output-language][1]"/>
+                    </xsl:when>
+                    <!-- possible transcriptions into other script -->
+                    <xsl:when test="($p_output-language = 'ar') and ($p_place/tei:placeName[contains(@xml:lang, '-Arab-')])">
+                        <xsl:copy-of select="$p_place/tei:placeName[contains(@xml:lang, '-Arab-')][1]"/>
+                    </xsl:when>
+                    <!-- fallback to english -->
+                    <xsl:when test="$p_place/tei:placeName[@xml:lang = 'en']">
+                        <xsl:copy-of select="$p_place/tei:placeName[@xml:lang = 'en'][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:copy-of select="$p_place/tei:placeName[1]"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                </xsl:variable>
+                <xsl:copy select="$v_placeName/descendant-or-self::tei:placeName">
+                    <xsl:apply-templates select="$v_placeName/descendant-or-self::tei:placeName/@xml:lang" mode="m_copy-from-authority-file"/>
+                    <xsl:attribute name="ref" select="oape:query-place($p_place, 'tei-ref', '', $p_local-authority)"/>
+                    <xsl:apply-templates select="$v_placeName/descendant-or-self::tei:placeName/node()" mode="m_copy-from-authority-file"/>
+                </xsl:copy>
+            </xsl:when>
             <!-- return type -->
             <xsl:when test="$p_output-mode = 'type'">
                 <xsl:value-of select="$p_place/@type"/>
@@ -886,6 +911,45 @@
         </xsl:choose>
     </xsl:function>
     <!-- query a TEI org node -->
+    <xsl:function name="oape:query-organizationography">
+        <!-- input is a tei <placeName> node -->
+        <xsl:param name="orgName"/>
+        <!-- $gazetteer expects a path to a file -->
+        <xsl:param name="organizationography"/>
+        <!-- local authority -->
+        <xsl:param as="xs:string" name="p_local-authority"/>
+        <!-- values for $mode are 'id', 'id-local', 'name', 'date-birth', 'date-death' -->
+        <xsl:param as="xs:string" name="p_output-mode"/>
+        <!-- select a target language for names -->
+        <xsl:param as="xs:string" name="p_output-language"/>
+        <!-- load data from authority file -->
+        <xsl:variable name="v_org" select="oape:get-entity-from-authority-file($orgName, $p_local-authority, $organizationography)"/>
+        <xsl:choose>
+            <!-- test for @ref pointing to auhority files -->
+            <xsl:when test="$v_org != 'NA'">
+                <xsl:copy-of select="oape:query-org($v_org, $p_output-mode, $p_output-language, $p_local-authority)"/>
+            </xsl:when>
+            <!-- return original input toponym if nothing else is fond -->
+            <xsl:when test="$p_output-mode = 'name'">
+                <xsl:choose>
+                    <xsl:when test="$orgName != ''">
+                        <xsl:value-of select="normalize-space($orgName)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <!-- otherwise: no location data -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>no authority data found for </xsl:text>
+                    <xsl:value-of select="normalize-space($orgName)"/>
+                </xsl:message>
+                <xsl:value-of select="'NA'"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
     <xsl:function name="oape:query-org">
         <!-- input is a tei <org> node -->
         <xsl:param as="node()" name="p_org"/>
@@ -915,8 +979,24 @@
             </xsl:when>
             <xsl:when test="$p_output-mode = ('location-name')">
                 <xsl:choose>
-                    <xsl:when test="$p_org/tei:location/tei:placeName">
-                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location/tei:placeName, $p_local-authority, $v_gazetteer), 'name', $p_output-language, $p_local-authority)"/>
+                    <xsl:when test="$p_org/tei:location//tei:placeName">
+                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location//tei:placeName[1], $p_local-authority, $v_gazetteer), 'name', $p_output-language, $p_local-authority)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:if test="$p_verbose = true()">
+                            <xsl:message>
+                                <xsl:text>No location data for </xsl:text>
+                                <xsl:value-of select="oape:query-org($p_org, 'name', 'en', $p_local-authority)"/>
+                            </xsl:message>
+                        </xsl:if>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = ('location-tei')">
+                <xsl:choose>
+                    <xsl:when test="$p_org/tei:location//tei:placeName">
+                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location//tei:placeName[1], $p_local-authority, $v_gazetteer), 'name-tei', $p_output-language, $p_local-authority)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="$p_verbose = true()">
@@ -1002,6 +1082,9 @@
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'jaraid'">
                                     <xsl:value-of select="concat('jaraid:org:', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = 'isil'">
+                                    <xsl:value-of select="concat('isil:', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="position() != last()">
                                     <xsl:text> </xsl:text>
