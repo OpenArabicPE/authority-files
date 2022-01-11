@@ -964,7 +964,7 @@
             <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:location/tei:placeName">
-                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location/tei:placeName, $p_local-authority, $v_gazetteer), $p_output-mode, $p_output-language, $p_local-authority)"/>
+                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/descendant::tei:placeName[ancestor::tei:location][1], $p_local-authority, $v_gazetteer), $p_output-mode, $p_output-language, $p_local-authority)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="$p_verbose = true()">
@@ -980,7 +980,7 @@
             <xsl:when test="$p_output-mode = ('location-name')">
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:location//tei:placeName">
-                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location//tei:placeName[1], $p_local-authority, $v_gazetteer), 'name', $p_output-language, $p_local-authority)"/>
+                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/descendant::tei:placeName[ancestor::tei:location][1], $p_local-authority, $v_gazetteer), 'name', $p_output-language, $p_local-authority)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="$p_verbose = true()">
@@ -996,7 +996,13 @@
             <xsl:when test="$p_output-mode = ('location-tei')">
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:location//tei:placeName">
-                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/tei:location//tei:placeName[1], $p_local-authority, $v_gazetteer), 'name-tei', $p_output-language, $p_local-authority)"/>
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>Query gazetteer for full placeName node: </xsl:text>
+                                <xsl:copy-of select="$p_org/descendant::tei:placeName[ancestor::tei:location][1]"/>
+                            </xsl:message>
+                        </xsl:if>
+                        <xsl:copy-of select="oape:query-place(oape:get-entity-from-authority-file($p_org/descendant::tei:placeName[ancestor::tei:location][1], $p_local-authority, $v_gazetteer), 'name-tei', $p_output-language, $p_local-authority)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="$p_verbose = true()">
