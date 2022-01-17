@@ -9,7 +9,7 @@
     exclude-result-prefixes="xs pj"
     version="3.0">
     
-    <xsl:include href="../../tools/xslt/functions_arabic-transcription.xsl"/>
+    <xsl:import href="../../tools/xslt/functions_arabic-transcription.xsl"/>
     <xsl:include href="functions.xsl"/>
     
     <xsl:template match="/">
