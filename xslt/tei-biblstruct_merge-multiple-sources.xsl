@@ -283,6 +283,7 @@
                 <xsl:apply-templates mode="m_identity-transform" select="$v_source-monogr/tei:respStmt[not(. = $v_target-monogr/tei:respStmt)]"/>
                 <!-- imprint -->
                 <xsl:element name="imprint">
+                    <xsl:apply-templates select="$v_source-monogr/tei:imprint/@*"/>
                     <xsl:apply-templates select="$v_target-monogr/tei:imprint/@*"/>
                     <!-- date -->
                     <xsl:apply-templates mode="m_identity-transform" select="$v_target-monogr/tei:imprint/tei:date"/>

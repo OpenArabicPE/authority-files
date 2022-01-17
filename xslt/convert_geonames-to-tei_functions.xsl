@@ -61,6 +61,7 @@
     <xsl:template match="geonameId" mode="m_geon-to-tei">
         <tei:idno>
             <xsl:attribute name="type" select="$p_acronym-geonames"/>
+            <xsl:attribute name="resp" select="'#xslt'"/>
             <xsl:value-of select="."/>
         </tei:idno>
     </xsl:template>

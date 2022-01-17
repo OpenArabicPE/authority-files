@@ -27,5 +27,8 @@
     <xsl:template match="tei:date[ancestor::tei:biblStruct][preceding-sibling::tei:date = current()][preceding-sibling::tei:date[. = current()]/@type = current()/@type][preceding-sibling::tei:date[. = current()]/@when = current()/@when]"/>
     <xsl:template match="tei:idno[ancestor::tei:biblStruct][preceding-sibling::tei:idno = current()][preceding-sibling::tei:idno[. = current()]/@type = current()/@type]"/>
     <xsl:template match="tei:publisher[ancestor::tei:biblStruct][preceding-sibling::tei:publisher = current()]"/>
+    <xsl:template match="tei:note[parent::tei:biblStruct][preceding-sibling::tei:note = current()]"/>
+    
+    
     
 </xsl:stylesheet>
