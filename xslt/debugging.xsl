@@ -20,6 +20,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     
+    <xsl:include href="../../tools/xslt/functions_arabic-transcription.xsl"/>
     <xsl:import href="functions.xsl"/>
     <xsl:output method="xml" indent="true"/>
     
@@ -34,9 +35,46 @@
             <list>
 <!--                <xsl:apply-templates select="descendant::tei:placeName" mode="m_debug"/>-->
                 <!--<xsl:apply-templates select="descendant::tei:title[@level = 'j']" mode="m_debug"/>-->
-                <xsl:apply-templates select="descendant::tei:orgName" mode="m_debug"/>
+                <xsl:apply-templates select="descendant::tei:list/tei:item" mode="m_debug"/>
             </list>
         </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="tei:item[@xml:lang=('ar-Latn-x-ijmes', 'ar-Latn-x-dmg')]" mode="m_debug" priority="1">
+        <xsl:copy-of select="oape:string-mark-up-tokens(.)"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:item[@xml:lang=('ar-Latn-x-ijmes', 'ar-Latn-x-dmg')]" mode="m_debug" priority="2">
+        <!-- decomposed utf-8 -->
+        <xsl:variable name="v_self-latin" select="normalize-unicode(., 'NFKC')"/>
+        <xsl:variable name="v_self-arabic">
+            <xsl:value-of select="oape:string-transliterate-arabic_latin-to-arabic($v_self-latin)"/>
+        </xsl:variable>
+        <!-- reproduce content -->
+<!--        <xsl:apply-templates select="." mode="m_identity-transform"/>-->
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="m_identity-transform"/>
+            <xsl:value-of select="$v_self-latin"/>
+        </xsl:copy>
+        <!-- check if there is a sibling with the same content in Arabic script -->
+        <xsl:choose>
+            <xsl:when test="parent::node()/node()[name() = current()/name()][text() = $v_self-arabic]">
+                <xsl:message>
+                    <xsl:value-of select="$v_self-arabic"/>
+                    <xsl:text> is already present</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- add arabic script -->
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="m_identity-transform"/>
+            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+            <xsl:attribute name="resp" select="'#xslt'"/>
+            <xsl:attribute name="xml:lang" select="'ar'"/>
+            <xsl:value-of select="normalize-space($v_self-arabic)"/>
+        </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="tei:orgName[matches(., '^[A-Z]{2}\-')]" mode="m_debug">
