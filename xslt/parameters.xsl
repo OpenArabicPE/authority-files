@@ -17,9 +17,10 @@
     <!-- options for functions -->
     <!-- link titles to bibliography: toggle whether to link weak matches or not -->
     <xsl:param name="p_link-matches-based-on-title-only" select="true()"/>
+    <!-- select whether existing refs should be used for matching -->
     <xsl:param name="p_ignore-existing-refs" select="false()"/>
     <!-- currently not used: toggle whether existing @ref  should be updated-->
-    <xsl:param name="p_update-existing-refs" select="false()"/>
+    <!--<xsl:param name="p_update-existing-refs" select="false()"/>-->
     <!-- authorities -->
     <xsl:param name="p_acronym-geonames" select="'geon'"/> <!-- in WHG this is 'gn' -->
     <xsl:param name="p_acronym-viaf" select="'viaf'"/>

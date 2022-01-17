@@ -1381,9 +1381,9 @@
                 <xsl:value-of select="$p_date/@notAfter"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:message>
+                <xsl:if test="$p_verbose = true()"><xsl:message>
                     <xsl:text>date: no machine-readible onset found</xsl:text>
-                </xsl:message>
+                </xsl:message></xsl:if>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
@@ -1407,9 +1407,11 @@
                 <xsl:value-of select="$p_date/@notBefore"/>
             </xsl:when>
             <xsl:otherwise>
+                <xsl:if test="$p_verbose = true()">
                 <xsl:message>
                     <xsl:text>date: no machine-readible terminus found</xsl:text>
                 </xsl:message>
+                </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
