@@ -2,17 +2,17 @@
 <xsl:stylesheet exclude-result-prefixes="xs" version="3.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" method="xml" omit-xml-declaration="no"/>
-    <xsl:include href="parameters.xsl"/>
+    <xsl:import href="parameters.xsl"/>
     <!-- identify the author of the change by means of a @xml:id -->
-    <!-- toggle debugging messages -->
-    <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    <!-- toggle debugging messages, params for IDs -->
+    <xsl:import href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <xsl:import href="../../../xslt-calendar-conversion/functions/date-functions.xsl"/>
     <xsl:include href="query-viaf.xsl"/>
     <xsl:include href="query-geonames.xsl"/>
     <xsl:param name="p_debug" select="true()"/>
     <!-- debugging -->
     <!--<xsl:template match="text()"><xsl:value-of select="oape:string-normalise-arabic(.)"/></xsl:template>-->
-    <!--<xsl:template match="/"><!-\-        <xsl:apply-templates select="descendant::tei:date" mode="m_debug"/>-\-><xsl:apply-templates select="descendant::tei:title" mode="m_debug"/></xsl:template>-->
+    <!--<xsl:template match="/"><!-\-        <xsl:apply-templates selsect="descendant::tei:date" mode="m_debug"/>-\-><xsl:apply-templates select="descendant::tei:title" mode="m_debug"/></xsl:template>-->
     <xsl:template match="tei:title[@ref]" mode="m_debug">
         <xsl:copy-of select="oape:get-entity-from-authority-file(., $p_local-authority, $v_bibliography)"/>
     </xsl:template>
@@ -145,7 +145,7 @@
         </xsl:if>
         <xsl:choose>
             <!-- check if the entity already links to an authority file by means of the @ref attribute -->
-            <xsl:when test="$v_ref != '' and ($p_ignore-existing-refs = false() or $v_resp = 'ref_manual')">
+            <xsl:when test="$v_ref != ('', 'NA') and ($p_ignore-existing-refs = false() or $v_resp = 'ref_manual')">
                 <xsl:variable name="v_authority">
                     <!-- order matters here: while our local IDs must be unique, we can have multiple entries pointing to the same ID in an external reference file -->
                     <xsl:choose>
@@ -1381,9 +1381,11 @@
                 <xsl:value-of select="$p_date/@notAfter"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:if test="$p_verbose = true()"><xsl:message>
-                    <xsl:text>date: no machine-readible onset found</xsl:text>
-                </xsl:message></xsl:if>
+                <xsl:if test="$p_verbose = true()">
+                    <xsl:message>
+                        <xsl:text>date: no machine-readible onset found</xsl:text>
+                    </xsl:message>
+                </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
@@ -1408,9 +1410,9 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:if test="$p_verbose = true()">
-                <xsl:message>
-                    <xsl:text>date: no machine-readible terminus found</xsl:text>
-                </xsl:message>
+                    <xsl:message>
+                        <xsl:text>date: no machine-readible terminus found</xsl:text>
+                    </xsl:message>
                 </xsl:if>
             </xsl:otherwise>
         </xsl:choose>
@@ -2264,6 +2266,9 @@
                     <xsl:apply-templates mode="m_identity-transform" select="$p_title/ancestor::tei:biblStruct[1]"/>
                 </xsl:when>
                 <xsl:when test="$p_title/ancestor::tei:bibl">
+                    <!--<xsl:message>
+                        <xsl:copy-of select=" $p_title/ancestor::tei:bibl"/>
+                    </xsl:message>-->
                     <!-- 1. compile along @next and @prev -->
                     <xsl:variable name="v_compiled" select="oape:compile-next-prev(oape:find-first-part($p_title/ancestor::tei:bibl[1]))"/>
                     <!-- 2. convert to biblStruct for easier comparison -->
@@ -2480,9 +2485,14 @@
                         <xsl:when
                             test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) &gt; 1">
                             <xsl:message>
-                                <xsl:text>Found </xsl:text><xsl:value-of select="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication])"/><xsl:text> matches for "</xsl:text>
+                                <xsl:text>Found </xsl:text>
+                                <xsl:value-of
+                                    select="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication])"/>
+                                <xsl:text> matches for "</xsl:text>
                                 <xsl:value-of select="$v_title"/>
-                                <xsl:text>" based on location (</xsl:text><xsl:value-of select="$v_place-publication"/><xsl:text>), which have, therefore, not been linked</xsl:text>
+                                <xsl:text>" based on location (</xsl:text>
+                                <xsl:value-of select="$v_place-publication"/>
+                                <xsl:text>), which have, therefore, not been linked</xsl:text>
                             </xsl:message>
                             <xsl:value-of select="'NA'"/>
                         </xsl:when>
@@ -2553,7 +2563,14 @@
         <xsl:choose>
             <!-- fallback: name is not found in the authority file, return input -->
             <xsl:when test="$v_corresponding-bibl = 'NA'">
-                <xsl:copy-of select="$p_title"/>
+                <!--<xsl:copy-of select="$p_title"/>-->
+                <xsl:element name="title">
+                    <xsl:apply-templates mode="m_identity-transform" select="$p_title/@*"/>
+                    <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                    <xsl:attribute name="ref" select="'NA'"/>
+                    <xsl:attribute name="resp" select="'#xslt'"/>
+                    <xsl:apply-templates mode="m_identity-transform" select="$p_title/node()"/>
+                </xsl:element>
             </xsl:when>
             <!-- name is found in the authority file. it will be linked and potentially updated -->
             <xsl:otherwise>
@@ -2639,7 +2656,7 @@
         <!-- I fixed this by explicitly excluding words ending on "iyya" from the first group of words -->
         <!-- <xsl:variable name="v_regex-1" select="'(\W|و|^)((مجلة|جريدة)\s+)((ال\w+[^ية]\s+)+?)(ال\w+ية)*'"/> -->
         <!-- regex: 3 groups -->
-        <xsl:variable name="v_regex-marker" select="'(\W|و|^)((مجلة|جريدة)\s+)'"/>
+        <xsl:variable name="v_regex-marker" select="'(\W|و|ف|ب|^)((مجلة|جريدة)\s+)'"/>
         <!-- regex 1: 3 + 4 groups -->
         <!-- PROBLEM: negative lookahead assertion is seemingly unsupported -->
         <!--        <xsl:variable name="v_regex-1" select="concat($v_regex-marker, '(((?!ال\w+ية)(ال\w+)\s+)+)(\W*ال\w+ية)?')"/>-->
@@ -2653,9 +2670,22 @@
             <xsl:matching-substring>
                 <xsl:variable name="v_regex-1-count-groups" select="5"/>
                 <xsl:variable name="v_regex-2-count-groups" select="$v_regex-1-count-groups + 6"/>
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>The string"</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>" could be a reference to a periodical title</xsl:text>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:choose>
                     <!-- sequence matters -->
                     <xsl:when test="matches(., $v_regex-2)">
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>The potential title is wrapped in brackets, which strongly indicate a named entity</xsl:text>
+                                <!--<xsl:value-of select="."/><xsl:text> matches </xsl:text><xsl:value-of select="$v_regex-2"/>-->
+                            </xsl:message>
+                        </xsl:if>
                         <xsl:value-of select="regex-group($v_regex-1-count-groups + 1)"/>
                         <xsl:call-template name="t_ner-add-bibl">
                             <xsl:with-param name="p_prefix" select="regex-group($v_regex-1-count-groups + 2)"/>
@@ -2665,6 +2695,14 @@
                     </xsl:when>
                     <!-- regex 1 with ending with  al-....iyya -->
                     <xsl:when test="matches(., $v_regex-1) and matches(., '^(.+)ال\w+ية\s*$')">
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:value-of select="."/>
+                                <xsl:text> matches </xsl:text>
+                                <xsl:value-of select="$v_regex-1"/>
+                                <xsl:text> and ends in "iyya"</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
                         <xsl:value-of select="regex-group(1)"/>
                         <xsl:call-template name="t_ner-add-bibl">
                             <xsl:with-param name="p_prefix" select="regex-group(2)"/>
@@ -2673,6 +2711,15 @@
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:when test="matches(., $v_regex-1)">
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>The potential title is a single noun with the determinded article "al-".</xsl:text>
+                                <!--<xsl:value-of select="."/><xsl:text> matches </xsl:text><xsl:value-of select="$v_regex-1"/>-->
+                            </xsl:message>
+                            <xsl:message>
+                                <xsl:text>We consider this to be a good enough indicator and added mark-up.</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
                         <xsl:value-of select="regex-group(1)"/>
                         <xsl:call-template name="t_ner-add-bibl">
                             <xsl:with-param name="p_prefix" select="regex-group(2)"/>
@@ -2680,24 +2727,39 @@
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:when test="matches(., $v_regex-3)">
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>The potential title is a single indeterminded word or an iḍāfa.</xsl:text>
+                                <!--<xsl:value-of select="."/><xsl:text> matches </xsl:text><xsl:value-of select="$v_regex-3"/>-->
+                            </xsl:message>
+                        </xsl:if>
                         <xsl:variable name="v_title">
                             <xsl:element name="title">
-                                <xsl:attribute name="level" select="''"/>
+                                <xsl:attribute name="level" select="'j'"/>
                                 <xsl:value-of select="normalize-space(regex-group($v_regex-2-count-groups + 4))"/>
                             </xsl:element>
                         </xsl:variable>
-                        <xsl:variable name="v_title-linked" select="oape:link-title-to-authority-file($v_title//tei:title, $p_local-authority, $v_bibliography)"/>
-                        <xsl:message>
-                            <xsl:text>Found a potential periodical title (</xsl:text>
-                            <xsl:value-of select="$v_title"/>
-                            <xsl:text>), which needs to be checked against the authority file.</xsl:text>
-                        </xsl:message>
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>The potential title "</xsl:text>
+                                <xsl:value-of select="$v_title"/>
+                                <xsl:text>" will be checked against the authority file</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
+                        <xsl:variable name="v_title-linked">
+                            <xsl:copy-of select="oape:link-title-to-authority-file($v_title//tei:title, $p_local-authority, $v_bibliography)"/>
+                        </xsl:variable>
                         <xsl:choose>
-                            <xsl:when test="$v_title-linked/self::tei:title/@ref">
+                            <xsl:when test="$v_title-linked/tei:title/@ref != 'NA'">
+                                <xsl:if test="$p_debug = true()">
+                                    <xsl:message>
+                                        <xsl:text>The input was indeed a periodical title</xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
                                 <xsl:value-of select="regex-group($v_regex-2-count-groups + 1)"/>
                                 <xsl:call-template name="t_ner-add-bibl">
                                     <xsl:with-param name="p_prefix" select="regex-group($v_regex-2-count-groups + 2)"/>
-                                    <xsl:with-param name="p_title" select="$v_title-linked/self::tei:title"/>
+                                    <xsl:with-param name="p_title" select="$v_title-linked/tei:title"/>
                                 </xsl:call-template>
                             </xsl:when>
                             <xsl:otherwise>
