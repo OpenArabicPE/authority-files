@@ -20,9 +20,10 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     
-    <xsl:include href="../../tools/xslt/functions_arabic-transcription.xsl"/>
+    <xsl:import href="../../tools/xslt/functions_arabic-transcription.xsl"/>
     <xsl:import href="functions.xsl"/>
     <xsl:output method="xml" indent="true"/>
+    <xsl:param name="p_debug" select="true()"/>
     
         <xsl:template match="/">
         <!-- test if the URL of the personography resolves to an actual file -->
@@ -35,8 +36,14 @@
             <list>
 <!--                <xsl:apply-templates select="descendant::tei:placeName" mode="m_debug"/>-->
                 <!--<xsl:apply-templates select="descendant::tei:title[@level = 'j']" mode="m_debug"/>-->
-                <xsl:apply-templates select="descendant::tei:list/tei:item" mode="m_debug"/>
+                <xsl:apply-templates select="descendant::tei:list[1]/tei:item" mode="m_debug"/>
             </list>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="tei:item[@xml:lang = 'ar']" mode="m_debug">
+        <xsl:copy>
+            <xsl:apply-templates select="@*" mode="m_identity-transform"/>
+        <xsl:copy-of select="oape:find-references-to-periodicals(.)"/>
         </xsl:copy>
     </xsl:template>
     
