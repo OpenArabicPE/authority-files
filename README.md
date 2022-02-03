@@ -30,41 +30,11 @@ date: 2021-04-08
     + the result of past matching needs to be validated, especially for *al-Muqtabas* and *al-Manār*
     + check if the content of the `<title>` node matches the `@ref`.
     + example: `مجلة <title level="j" ref="oape:bibl:46" xml:lang="ar">العلم في القرن العشرين</title>`
+    + **DONE** for *al-Muqtabas*
 
 - `@type='noAddName'` is missing whitespace between name components in some cases
-- NOT all periodicals from Jarāʾid have made it into OpenArabicPE. This needs to be fixed! E.g. t1r3024 and two more from Batavia. There are total of 548 missing IDs!
-    + `tei-biblstruct_merge-multiple-sources.xsl` has been updated and the two authority files have be re-merged
-    + **done** the only merged `<biblStruct>` in need for checking are those that carry two jaraid IDs
 
 - XSLT for generating the mapping data needs to be improved (not very important to the workflow/tutorial)
-
-- **done** deal with the problem of multiple unicode encodings for the same Arabic character. This at least effects all instances of *alif maqṣūra*.
-    + examples
-        * `رضی` and `رضى`
-        * `مصطفى` and `مصطفی`
-    - It is not clear if XSLT automatically does such normalising.
-    - keyboard outputs
-        + macOS: danger zone
-            * there is a real problem with *alif maqṣūra* on this keyboard: It uses `U+06CC`, which is the `Arabic Letter Farsi Yeh`
-        + macOS: Arabic
-            * 'اآأإبتثحخجدذرزسشصضطظعغفقكلمنهوؤيئىةء'
-            * '٠١٢٣٤٥٦٧٨٩'
-        + macOS: Arabic - North Africa
-            * 'اآأإبتثحخجدذرزسشصضطظعغفقكلمنهوؤيئىةء'
-            * '٠١٢٣٤٥٦٧٨٩'
-        + macOS: Arabic - PC
-            * 'اآأإبتثحخجدذرزسشصضطظعغفقكلمنهوؤيئىةء'
-        + macOS: Persian
-            * 'اآأإبتثحخجدذرزسشصضطظعغفقکلمنهوؤيئیةء'
-        + transliteration: Arabic DMG
-            * 'ʾāʾʾbtṯḥḫǧdḏrzsšṣḍṭẓʿġfḳklmnhwʾyʾátʾ'
-            * '0123456789'
-        + transliteration: betaCode-ish
-            * 'EāAIbtṯḥḫǧdḏrzsšṣḍṭẓʿġfḳklmnhwUyJáŧʾ'
-        + transliteration: arabicStemR
-            * macOS: Arabic: 'aaaabtU7KjdirzsWSDTZ3GfQklmnhwoy5y0q'
-                - *alif maqṣūra* is transliterated like *yāʾ*
-            * macOS: Arabic - North Africa: 'aaaabtU7KjdirzsWSDTZ3GfQklmnhwoy5A0q'
 
 ## Persons
 
@@ -94,15 +64,6 @@ date: 2021-04-08
 
 ## bibliography
 
-- conversion between `<tei:biblStruct>` and `<mods:mods>` (including particularities of Zotero generated MODS)
-    + IDs?
-        * Zotero IDs are not included in the MODS output
-    + Problems:
-- XSLT to enrich Zotero-exports (file: `zotero_export-DRU8DnvU.xml`) with pre-exisiting data
-    + based on matching:
-        * title
-        * editors
-    + pre-existing data: copy everything except data edited in ZOtero
 - XSLT to copy data from biblio-biographic dictionaries, such as Zirikli to the bibliography
     + based on matching:
         * title
@@ -135,7 +96,7 @@ date: 2021-04-08
 
 ## bibliography of periodicals
 
-1. create original bibliography either manually or through gathering all `<biblStruct>` for periodicals from all OpenArabicPE editions.
+1. **DONE** created original bibliography through gathering all `<biblStruct>` for periodicals from all OpenArabicPE editions, merging information from Project Jarāʾid, and library catalogues (ZDB, HathiTrust, AUB).
 2. enrich bibliography
     - the most urgently needed information are all potential contributors to be then tested with stylometry
     - automatically with information found in full text editions of Zirikli and Sarkīs
@@ -227,67 +188,74 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
 
 - values of `@type`:
     + "book"
+    + "periodical"
+- values of `@subtype`
     + "journal": everything that is called *majalla* in Arabic
     + "newspaper": everything that is called *jarīda* in Arabic
 
+- changes in editorship etc.: Many periodicals underwent various changes in editorship, title, frequency etc. these can be encoded as multiple `<monogr>` children of `<biblStruct>`. The sequence is already established by the structure of the XML and there is currently no need for explicit linking with `@next` and `@prev`.
+- dating: `<date>` can carry a `@type` attribute to differentiate different dating information
+    + `@type`
+        * untyped: this data pertains to the volume and issue numbers provided in `<biblScope>`
+        * "onset": date of first publication
+        * "terminus": date of last publication
+        * "documented": date this periodical has been mentioned in another source
+    + `@source`: pointing to a source for the different type of source
+
 ```xml
-<!-- many periodicals underwent various changes in editorship, title, frequency etc. and should,
-    therefore, be wrapped in a <listBibl>.  -->
-<!-- the sequence is recorded explicitly by means of @next and @prev attributes  -->
-<listBibl xml:lang="ar">
-    <biblStruct xml:lang="ar">
-        <monogr xml:lang="ar">
-            <!-- titles in Arabic and transcription -->
-            <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
-            <title level="j" type="sub" xml:lang="ar">مجلة شهرية ادبية علمية تاريخية</title>
-            <title corresp="sakhrit:jid:14" level="j" xml:lang="ar-Latn-x-ijmes">Lughat al-ʿArab</title>
-            <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla shahriyya adabiyya ʿilmiyya tārīkhiyya</title>
-            <!-- identifiers -->
-            <idno change="#d2e69" type="oape">1</idno>
-            <idno type="jid" xml:lang="ar">14</idno>
-            <idno type="OCLC">472450345</idno>
-            <textLang mainLang="ar"/>
-            <editor xml:lang="ar">
-                <!-- persNames link back to the prosopography -->
-                <!-- only one is needed. Additional names could be looked up automatically -->
-                <persName ref="oape:pers:227 viaf:39370998" xml:lang="ar"> <roleName type="rank" xml:lang="ar">الأب</roleName> <forename xml:lang="ar">أنستاس</forename> <forename xml:lang="ar">ماري</forename> <surname xml:lang="ar"> <addName type="nisbah" xml:lang="ar">الكرملي</addName> </surname></persName>
-                <persName xml:lang="ar-Latn-x-ijmes">al-Abb Anastās Mārī al-Karamlī</persName>
-            </editor>
-            <editor xml:lang="ar">
-                <persName change="#d3e53" ref="oape:pers:396" xml:id="persName_195.d1e5884" xml:lang="ar"> <forename xml:id="forename_224.d1e5885" xml:lang="ar">كاظم</forename> <surname xml:id="surname_195.d1e5888" xml:lang="ar"> <addName type="nisbah">الدجيلي</addName> </surname> </persName>
-            </editor>
-            <imprint xml:lang="ar">
-                <publisher/>
-                <pubPlace xml:lang="ar">
-                    <!-- persNames link back to the prosopography -->
-                    <!-- only one is needed. Additional toponyms could be looked up automatically -->
-                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
-                    <placeName change="#d5e42"
-                    ref="oape:place:216 geon:98182" xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
-                    <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="en">Baghdad</placeName>
-                </pubPlace>
-                <date datingMethod="#cal_islamic" when="1911-06-30" when-custom="1329-07-01"/>
-            </imprint>
-            <biblScope from="1" to="1" unit="volume"/>
-            <biblScope from="1" to="1" unit="issue"/>
-            <!-- <biblScope from="505" unit="page">505</biblScope>-->
-        </monogr>
-        <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
-        <note type="param" n="p_weekdays-published">Tuesday, Friday</note>
-        <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
-            - daily: this includes any publication cycle that is at least weekly
-            - fortnightly:
-            - monthly: -->
-        <note type="param" n="p_step">daily</note>
-        <!-- the two above parameters have been converted to the following  -->
-        <note type="tagList">
-            <list>
-                <item>frequency_monthly</item>
-                <item>days_monday</item>
-            </list>
-        </note>
-    </biblStruct>
-</listBibl>
+
+<biblStruct xml:lang="ar">
+    <monogr xml:lang="ar">
+        <!-- titles in Arabic and transcription -->
+        <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
+        <title level="j" type="sub" xml:lang="ar">مجلة شهرية ادبية علمية تاريخية</title>
+        <title level="j" xml:lang="ar-Latn-x-ijmes">Lughat al-ʿArab</title>
+        <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla shahriyya adabiyya ʿilmiyya tārīkhiyya</title>
+        <!-- identifiers -->
+        <idno change="#d2e69" type="oape">1</idno>
+        <idno type="jid" xml:lang="ar">14</idno>
+        <idno type="OCLC">472450345</idno>
+        <textLang mainLang="ar"/>
+        <editor xml:lang="ar">
+            <!-- persNames link back to the prosopography -->
+            <!-- only one is needed. Additional names could be looked up automatically -->
+            <persName ref="oape:pers:227 viaf:39370998" xml:lang="ar"> <roleName type="rank" xml:lang="ar">الأب</roleName> <forename xml:lang="ar">أنستاس</forename> <forename xml:lang="ar">ماري</forename> <surname xml:lang="ar"> <addName type="nisbah" xml:lang="ar">الكرملي</addName> </surname></persName>
+            <persName xml:lang="ar-Latn-x-ijmes">al-Abb Anastās Mārī al-Karamlī</persName>
+        </editor>
+        <editor xml:lang="ar">
+            <persName change="#d3e53" ref="oape:pers:396" xml:id="persName_195.d1e5884" xml:lang="ar"> <forename xml:id="forename_224.d1e5885" xml:lang="ar">كاظم</forename> <surname xml:id="surname_195.d1e5888" xml:lang="ar"> <addName type="nisbah">الدجيلي</addName> </surname> </persName>
+        </editor>
+        <imprint xml:lang="ar">
+            <publisher/>
+            <pubPlace xml:lang="ar">
+                <!-- placeNames link back to the gazetteer -->
+                <!-- only one is needed. Additional toponyms could be looked up automatically -->
+                <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
+                <placeName change="#d5e42"
+                ref="oape:place:216 geon:98182" xml:lang="ar-Latn-x-ijmes">Baghdād</placeName>
+                <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="en">Baghdad</placeName>
+            </pubPlace>
+            <date datingMethod="#cal_islamic" when="1911-06-30" when-custom="1329-07-01"/>
+        </imprint>
+        <biblScope from="1" to="1" unit="volume"/>
+        <biblScope from="1" to="1" unit="issue"/>
+        <!-- <biblScope from="505" unit="page">505</biblScope>-->
+    </monogr>
+    <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
+    <note type="param" n="p_weekdays-published">Tuesday, Friday</note>
+    <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
+        - daily: this includes any publication cycle that is at least weekly
+        - fortnightly:
+        - monthly: -->
+    <note type="param" n="p_step">daily</note>
+    <!-- the two above parameters have been converted to the following  -->
+    <note type="tagList">
+        <list>
+            <item>frequency_monthly</item>
+            <item>days_monday</item>
+        </list>
+    </note>
+</biblStruct>
 ```
 
 ## encoding the source of bits of information
