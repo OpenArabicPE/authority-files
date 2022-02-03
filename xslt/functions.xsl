@@ -102,7 +102,16 @@
         <!--        <xsl:if test="$p_entity-name/@ref or $p_entity-name != ''">-->
         <!-- this is a rather ridiculous hack, but I don't need change IDs in the context of this function -->
         <xsl:variable name="v_id-change" select="'a1'"/>
-        <xsl:variable name="v_ref" select="$p_entity-name/@ref"/>
+        <xsl:variable name="v_ref">
+            <xsl:choose>
+                <xsl:when test="$p_entity-name/@ref">
+                    <xsl:value-of select="$p_entity-name/@ref"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>NA</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <xsl:variable name="v_entity-type">
             <xsl:choose>
                 <xsl:when test="local-name($p_entity-name) = 'persName'">
@@ -123,6 +132,7 @@
                         <xsl:value-of select="name($p_entity-name)"/>
                         <xsl:text>) cannot be looked up</xsl:text>
                     </xsl:message>
+                    <xsl:text>NA</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -145,7 +155,7 @@
         </xsl:if>
         <xsl:choose>
             <!-- check if the entity already links to an authority file by means of the @ref attribute -->
-            <xsl:when test="$v_ref != ('', 'NA') and ($p_ignore-existing-refs = false() or $v_resp = 'ref_manual')">
+            <xsl:when test="not($v_ref = 'NA') and ($p_ignore-existing-refs = false() or $v_resp = 'ref_manual')">
                 <xsl:variable name="v_authority">
                     <!-- order matters here: while our local IDs must be unique, we can have multiple entries pointing to the same ID in an external reference file -->
                     <xsl:choose>
@@ -207,6 +217,9 @@
                             <xsl:value-of select="replace($v_ref, '^(\w+):(.+)$', '$2')"/>
                         </xsl:when>
                         <!--<xsl:when test="contains($v_ref, $v_local-uri-scheme)"><!-\- local IDs in Project Jaraid are not nummeric for biblStructs -\-><xsl:value-of select="replace($v_ref, concat('.*', $v_local-uri-scheme, '(\w+).*'), '$1')"/></xsl:when>-->
+                        <xsl:otherwise>
+                            <xsl:text>NA</xsl:text>
+                        </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:choose>

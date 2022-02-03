@@ -40,10 +40,14 @@
             </list>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="tei:title[ancestor::tei:text | ancestor::tei:standOff][@level = 'j'][not(@type = 'sub')]" mode="m_debug">
+        <xsl:copy-of select="oape:link-title-to-authority-file(., $p_local-authority, $v_bibliography)"/>
+    </xsl:template>
     <xsl:template match="tei:item[@xml:lang = 'ar']" mode="m_debug">
         <xsl:copy>
             <xsl:apply-templates select="@*" mode="m_identity-transform"/>
-        <xsl:copy-of select="oape:find-references-to-periodicals(.)"/>
+        <!--<xsl:copy-of select="oape:find-references-to-periodicals(.)"/>-->
+            <xsl:apply-templates mode="m_debug"/>
         </xsl:copy>
     </xsl:template>
     
@@ -111,7 +115,7 @@
         </item>
     </xsl:template>
     
-       <xsl:template match="tei:title[ancestor::tei:bibl][@level = 'j'][not(@type = 'sub')]" mode="m_debug" priority="10">
+       <xsl:template match="tei:title[ancestor::tei:bibl][@level = 'j'][not(@type = 'sub')]" mode="m_debug" priority="1">
            <xsl:variable name="v_first" select="oape:find-first-part(ancestor::tei:bibl[1])"/>
            <xsl:variable name="v_compiled" select="oape:compile-next-prev(oape:find-first-part(ancestor::tei:bibl[1]))"/>
            <xsl:variable name="v_self" select="."/>
@@ -152,7 +156,7 @@
            </item>
     </xsl:template>
     <!-- no problems with titles without ancestor::tei:bibl -->
-    <xsl:template match="tei:title[@level = 'j']" mode="m_debug">
+    <xsl:template match="tei:title[@level = 'j']" mode="m_debug" priority="2">
         <item>
             <ab><xsl:copy-of select="oape:link-title-to-authority-file(., $p_local-authority, $v_bibliography)"/></ab>
         </item>
