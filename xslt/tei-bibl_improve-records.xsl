@@ -39,7 +39,7 @@
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:title[1]"/>
                 <!-- locations -->
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint/tei:pubPlace[1]/tei:placeName[@ref][1]/@ref"/>
-                <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint/tei:pubPlace[1]/tei:placeName[1]"/>
+                <xsl:sort order="ascending" select="descendant::tei:placeName[1][parent::tei:pubPlace]"/>
                 <!-- dates -->
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint/tei:date[@type = 'onset'][1]/@when"/>
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint/tei:date[1]/@when"/>
