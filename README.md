@@ -4,6 +4,12 @@ author: Till Grallert
 date: 2021-04-08
 ---
 
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Maintenance](https://img.shields.io/badge/maintained%3F-yes-green.svg)](https://github.com/openarabicpe/authority-files/graphs/commit-activity)
+![Commit activity](https://img.shields.io/github/commit-activity/m/openarabicpe/authority-files)
+[![GitHub release](https://img.shields.io/github/release/openarabicpe/authority-files.svg?maxAge=2592000)](https://github.com/openarabicpe/authority-files/releases)
+![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/openarabicpe/authority-files/latest)
+
 # locations and file names
 
 + main repository: `OpenArabicPE/authority-files/`
