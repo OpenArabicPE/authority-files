@@ -2225,7 +2225,7 @@
         <xsl:variable name="v_corresponding-person">
             <xsl:choose>
                 <!-- test if this node already points to an authority file -->
-                <xsl:when test="$p_persname/@ref and not(oape:get-entity-from-authority-file($p_persname, $p_local-authority, $p_authority-file) = 'NA')">
+                <xsl:when test="$p_persname/@ref[not(. = 'NA')] and not(oape:get-entity-from-authority-file($p_persname, $p_local-authority, $p_authority-file) = 'NA')">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>The input already points to the local authority file</xsl:message>
                     </xsl:if>
@@ -2272,6 +2272,7 @@
                     <!-- document change -->
                     <!-- this test does not catch all changes -->
                     <xsl:if test="normalize-space($p_persname/@ref) != $v_ref">
+                        <xsl:attribute name="resp" select="'#xslt'"/>
                         <xsl:choose>
                             <xsl:when test="not($p_persname/@change)">
                                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
@@ -2312,6 +2313,8 @@
                 </xsl:message>
                 <!--</xsl:if>-->
                 <xsl:copy select="$p_persname">
+                    <xsl:attribute name="ref" select="'NA'"/>
+                    <xsl:attribute name="resp" select="'#xslt'"/>
                     <xsl:apply-templates mode="m_identity-transform" select="$p_persname/@* | $p_persname/node()"/>
                 </xsl:copy>
             </xsl:when>
