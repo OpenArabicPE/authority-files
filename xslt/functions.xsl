@@ -2026,9 +2026,23 @@
             <xsl:apply-templates mode="m_mark-up"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()" mode="m_mark-up">
-        <!-- SOLVED: this strips symbols such as .,-' out of strings -->
-        <xsl:copy-of select="oape:string-mark-up-names(., $p_id-change)"/>
+    <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()" mode="m_mark-up" priority="10">
+        <xsl:choose>
+            <!-- make shure that the input is more than whitespace -->
+            <xsl:when test="matches(., '^\s+$')">
+                <xsl:text> </xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>Input: </xsl:text>
+                        <xsl:copy-of select="."/>
+                    </xsl:message>
+                </xsl:if>
+                <!-- SOLVED: this strips symbols such as .,-' out of strings -->
+                <xsl:copy-of select="oape:string-mark-up-names(string(.), $p_id-change)"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="tei:roleName | tei:nameLink[not(parent::tei:addName)]" mode="m_remove-rolename" priority="10"/>
     <xsl:template match="tei:persName | tei:persName/descendant::node() | @*" mode="m_remove-rolename">
