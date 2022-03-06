@@ -144,10 +144,18 @@
         </xsl:variable>
         <!-- debugging -->
         <xsl:if test="$p_debug = true()">
+            <xsl:message>
+                <xsl:text>oape:get-entity-from-authority-file</xsl:text>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>Input: </xsl:text>
+                <xsl:copy-of select="$p_entity-name"/>
+            </xsl:message>
             <!--<xsl:message>
                 <xsl:text>v_resp: </xsl:text>
                 <xsl:value-of select="$v_resp"/>
-            </xsl:message>--> </xsl:if>
+            </xsl:message>-->
+        </xsl:if>
         <xsl:if test="$p_verbose = true() and $p_ignore-existing-refs = true()">
             <xsl:message>
                 <xsl:text>As the user opted to ignore existing @ref attributes, the entity retrieval from the authority file will be solely based on the entity name</xsl:text>
@@ -313,22 +321,54 @@
             </xsl:when>
             <!-- check if the string is found in the authority file -->
             <xsl:otherwise>
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>The input carries no @ref attribute or the value is 'NA'</xsl:text>
+                    </xsl:message>
+                </xsl:if>
                 <!-- this fails for nested entities -->
                 <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-arabic(string($p_entity-name)))"/>
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
                         <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity-name, '', $v_id-change)"/>
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>$v_name-flattened: </xsl:text>
+                                <xsl:copy-of select="$v_name-flattened"/>
+                            </xsl:message>
+                        </xsl:if>
                         <xsl:variable name="v_name-marked-up" select="oape:name-add-markup($p_entity-name)"/>
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>$v_name-marked-up: </xsl:text>
+                                <xsl:copy-of select="$v_name-marked-up"/>
+                            </xsl:message>
+                        </xsl:if>
                         <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, '', $v_id-change)"/>
                         <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, '', $v_id-change)"/>
                         <xsl:choose>
                             <xsl:when test="$p_authority-file//tei:person/tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                                <xsl:if test="$p_debug = true()">
+                                    <xsl:message>
+                                        <xsl:text>The normalised name is found in the personography</xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flattened]">
+                                <xsl:if test="$p_debug = true()">
+                                    <xsl:message>
+                                        <xsl:text>The flattened name is found in the personography</xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-flattened][1]"/>
                             </xsl:when>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-no-addnames-flattened]">
+                                <xsl:if test="$p_debug = true()">
+                                    <xsl:message>
+                                        <xsl:text>The flattened name without addName components is found in the personography</xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName = $v_name-no-addnames-flattened][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
@@ -1165,9 +1205,20 @@
         <xsl:param as="xs:string" name="p_output-language"/>
         <!-- load data from authority file -->
         <xsl:variable name="v_person" select="oape:get-entity-from-authority-file($persName, $p_local-authority, $personography)"/>
+        <xsl:if test="$p_debug = true()">
+            <xsl:message>
+                <xsl:text>Return from the authority file: </xsl:text>
+                <xsl:copy-of select="$v_person"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:choose>
             <!-- test for @ref pointing to auhority files -->
             <xsl:when test="$v_person != 'NA'">
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>Input persName is linked to an entry in the authority file</xsl:text>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:copy-of select="oape:query-person($v_person, $p_output-mode, $p_output-language, $p_local-authority)"/>
             </xsl:when>
             <!-- return original input toponym if nothing else is fond -->
@@ -1584,6 +1635,11 @@
         <xsl:param as="xs:string" name="p_input"/>
         <xsl:param as="xs:string" name="p_id-change"/>
         <xsl:variable name="v_input" select="oape:string-normalise-characters($p_input)"/>
+        <xsl:if test="$p_debug = true()">
+            <xsl:text>oape:string-mark-up-names</xsl:text>
+            <xsl:text>Input: </xsl:text>
+            <xsl:value-of select="$v_input"/>
+        </xsl:if>
         <xsl:choose>
             <!-- test for Ottoman honorific addresses: ending in lū -->
             <xsl:when test="matches($v_input, '^(\w+لو)(\W.+)*$')">
@@ -1667,7 +1723,12 @@
             </xsl:when>
             <!-- 3. kunya -->
             <xsl:when test="matches($v_input, '^(.+\s)*(ابو|ابي|ابا)\s(.+)$')">
-                <!--<xsl:message><xsl:value-of select="$v_input"/><xsl:text>contains a kunya</xsl:text></xsl:message>-->
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:value-of select="$v_input"/>
+                        <xsl:text>contains a kunya</xsl:text>
+                    </xsl:message>
+                </xsl:if>
                 <xsl:analyze-string regex="(ابو|ابي|ابا)\s(.+)$" select="$v_input">
                     <xsl:matching-substring>
                         <xsl:variable name="v_trailing" select="regex-group(2)"/>
@@ -1942,6 +2003,17 @@
     <!-- SOLVED: this strips symbols such as .,-' out of strings -->
     <xsl:function name="oape:name-add-markup">
         <xsl:param name="p_persname"/>
+        <xsl:if test="$p_debug = true()">
+            <xsl:message>
+                <xsl:text>oape:name-add-markup</xsl:text>
+            </xsl:message>
+            <xsl:if test="$p_verbose = true()">
+                <xsl:message>
+                    <xsl:text>$p_persname: </xsl:text>
+                    <xsl:copy-of select="$p_persname"/>
+                </xsl:message>
+            </xsl:if>
+        </xsl:if>
         <xsl:apply-templates mode="m_mark-up" select="$p_persname"/>
     </xsl:function>
     <xsl:template match="tei:persName | tei:forename | tei:surname | tei:addName | tei:roleName | @*" mode="m_mark-up" priority="10">
@@ -1951,7 +2023,7 @@
             <xsl:if test="not(@xml:id)">
                 <xsl:attribute name="xml:id" select="oape:generate-xml-id(.)"/>
             </xsl:if>
-            <xsl:apply-templates mode="m_mark-up" select="node()"/>
+            <xsl:apply-templates mode="m_mark-up"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="tei:persName[not(@type = ('flattened', 'noAddName'))]/text() | tei:forename/text() | tei:surname/text()" mode="m_mark-up">
