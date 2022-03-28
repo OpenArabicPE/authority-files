@@ -20,7 +20,78 @@
       <body>
          <list>
             <head xml:lang="en">references to periodicals</head>
-            <item xml:lang="ar"><persName change="#d3e133" ref="oape:pers:647">إبراهيم حلمي العمر</persName>: صحافي، من كتاب العراق. اشتهر قبل الحرب العامة الأولى برسائل كان يبعث بها إلى صحف مصر والشام، وتولى تحرير <bibl type="periodical" subtype="newspaper" change="#d2e150">جريدة (<title level="j" change="#d10e155" ref="NA" resp="#xslt">النهضة</title>) ب<pubPlace><placeName>بغداد</placeName></pubPlace></bibl> سنة 1913 وكتب في <bibl type="periodical" subtype="journal" change="#d2e150">مجلة (<title level="j" change="#d10e155" ref="NA" resp="#xslt">لغة العرب</title></bibl>) البغدادية، واعتقله الترك في أواخر تلك الحرب فنقلوه إلى دمشق، فمرض فأطلقوه. واشترك بعد الحرب في إصدار <bibl type="periodical" subtype="newspaper" change="#d2e150">جريدة (<title level="j" change="#d10e155" ref="NA" resp="#xslt">لسان العرب</title>) ب<pubPlace><placeName>دمشق</placeName></pubPlace></bibl>، يومية، ثم انفرد بها.</item>
+            <item>
+               <label xml:lang="en">merge nodes</label>
+               <persName>Till Grallert</persName>
+               <persName>Yvonne Albers</persName>
+               <date when="1990-01-01"/>
+                     <date notAfter="1990-01-01"/>
+               <biblStruct xml:id="bibl_3" xml:lang="en" type="book" subtype="journal">
+                  <monogr>
+                     <title level="j" ref="oape:bibl:57" xml:lang="en">alternative title</title>
+
+<title level="j" type="sub" xml:lang="en">alternative subtitle</title>
+                     <imprint>
+                        <pubPlace><placeName>Rome</placeName></pubPlace>
+                     </imprint>
+                  </monogr>
+                  <note>Lorem ipsum</note>
+               </biblStruct>
+               <biblStruct xml:id="bibl_4">
+                  <monogr>
+                     <imprint></imprint>
+                  </monogr>
+               </biblStruct>
+            </item>
+            <item> <note>Debug duplicate children of biblStruct</note> <biblStruct>
+               <monogr>
+                  <title resp="#pers_TG" source="#bibl_1">Test</title>
+                  <title resp="#xslt" source="#bibl_2">Test</title>
+                  <title>Tost</title>
+                  <title resp="#xslt">Tost</title>
+                  <editor> <persName change="#bibl_2.d2e1807" xml:id="p12r6" xml:lang="ar">أحمد</persName> <persName xml:id="p12r5" xml:lang="ar">احمد</persName> </editor>
+                  <imprint>
+                     <date when="1990-01-01"/>
+                     <date when="1990-01-03"/>
+                  </imprint>
+               </monogr>
+               </biblStruct> </item>
+            <item xml:lang="ar"> <note xml:lang="en">It seems that there is a problem with the persName nodes</note> <p xml:lang="en"
+               ><persName>Till Grallert</persName>,<persName><forename>Till</forename> <surname>Grallert</surname></persName>,  <persName xml:lang="ar">احمد علي</persName></p> <p><persName ref="NA"
+               xml:id="persName_13.d9e1209" xml:lang="ar"> <forename xml:id="forename_13.d9e1211">احمد علي</forename> <surname xml:id="surname_13.d9e1214">شاذلي</surname> </persName></p> </item>
+            <item xml:lang="ar"> <note>There is a problem with the following biblStruct ("internal error evaluating template rule") caused by the editor</note> <biblStruct subtype="newspaper"
+               type="periodical">
+               <monogr>
+                  <title level="j" ref="oape:bibl:906" resp="#pers_TG" xml:lang="ar">الإسلام</title>
+                  <title level="j" type="sub" xml:lang="ar">جريدة علمية أدبية تاريخية</title>
+                  <idno type="AUBNO">Mic-NA:000148</idno>
+                  <respStmt>
+                     <resp>own</resp>
+                     <persName xml:id="persName_12.d9e1197" xml:lang="ar"> <forename xml:id="forename_12.d9e1199">احمد علي</forename> <surname xml:id="surname_12.d9e1202">شاذلي</surname> </persName>
+                  </respStmt>
+                  <editor> <persName xml:lang="ar"> <forename>احمد علي</forename> <surname>شاذلي</surname> </persName> </editor>
+                  <imprint>
+                     <pubPlace> <placeName change="#d9e44" ref="geon:357994 jaraid:place:3 oape:place:417">مصر</placeName> </pubPlace>
+                     <publisher>أحمد علي الشاذلي الأزهري</publisher>
+                     <date type="onset" when="1894">1894-1913</date>
+                     <date type="terminus" when="1913">1894-1913</date>
+                  </imprint>
+               </monogr>
+               <!--<note type="comments"> <list xml:lang="ar">
+               <item>لصاحبها ومحررها أحمد علي الشاذلي الأزهري</item>
+               </list> </note>
+            <note type="holdings"> <list>
+               <item> <label><placeName>Beirut</placeName>,  <orgName ref="jaraid:org:hAUB" xml:lang="en">AUB</orgName> </label> <ab xml:lang="ar"
+                  >في المكتبة :1895: يونيو- 1897:كانون الثاني .</ab><ab><bibl><idno subtype="AUB" type="classmark">Mic-NA:000148</idno></bibl></ab> </item>
+               </list> </note>-->
+               </biblStruct></item>
+            <item xml:lang="ar"><persName change="#d3e133" ref="oape:pers:647">إبراهيم حلمي العمر</persName>: صحافي، من كتاب العراق. اشتهر قبل الحرب العامة الأولى <bibl type="periodical"><title
+               level="j" xml:lang="ar">الإسلام</title> <pubPlace> <placeName change="#d9e44" ref="geon:357994 jaraid:place:3 oape:place:417">مصر</placeName>
+               </pubPlace></bibl> برسائل كان يبعث بها إلى صحف مصر والشام، وتولى تحرير <bibl change="#d2e150" subtype="newspaper" type="periodical">جريدة (<title change="#d10e155" level="j" ref="NA"
+               resp="#xslt">النهضة</title>) ب<pubPlace><placeName>بغداد</placeName></pubPlace></bibl> سنة 1913 وكتب في <bibl change="#d2e150" subtype="journal" type="periodical">مجلة (<title
+               change="#d10e155" level="j" ref="NA" resp="#xslt">لغة العرب</title></bibl>) البغدادية، واعتقله الترك في أواخر تلك الحرب فنقلوه إلى دمشق، فمرض فأطلقوه. واشترك بعد الحرب في إصدار <bibl
+               change="#d2e150" subtype="newspaper" type="periodical">جريدة (<title change="#d10e155" level="j" ref="NA" resp="#xslt"
+               >لسان العرب</title>) ب<pubPlace><placeName>دمشق</placeName></pubPlace></bibl>، يومية، ثم انفرد بها.</item>
             <item xml:lang="ar">ومنذ ربع قرن لم يكن في مصر سوى جريدة يومية واحدة وهي جريدة الأهرام وكان قراؤها لا يتجاوزون الألفين يفأصبح فجريدة لسان الحال وجريدة (ثمرات الفنون).</item>
             <item xml:lang="ar"
                >مجلة عمومية تبحث في كل فن ومطلب لمنشئيها الكاتبين البارعين جورج أفندي طنوس ومحمود أفندي أبي حسين وهي تصدر جريدة الشام البغدادية مرة في الشهر ويشترك في تحريرها خيرة الشعراء والمنشئين وقد تصفحنا الأعداد ال ثلاثة التي صدرت منها فقرأنا فيها من الآداب المنثورة والمنظومة ما يستفاد منه ويستملح وقيمة اشتراكها ٤٠ قرشاً صحيحاً في القطر و ١٥ فرنكاً في الخارج فنرجو لها الثبات والنجاح.</item>

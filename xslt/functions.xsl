@@ -3244,4 +3244,210 @@
             <xsl:apply-templates mode="m_copy-from-source" select="node()"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:function name="oape:merge-nodes">
+        <xsl:param as="node()" name="p_source"/>
+        <xsl:param as="node()" name="p_target"/>
+        <!-- a param to decide which node should get priority in case of conflicting attributes -->
+        <xsl:param name="p_attribute-priority"/>
+        <xsl:variable name="v_source-url" select="
+                concat(base-uri($p_source), '#', if ($p_source/@xml:id) then
+                    ($p_source/@xml:id)
+                else
+                    ($p_source/ancestor::node()[@xml:id][1]/@xml:id))"/>
+        <xsl:variable name="v_source-name" select="$p_source/local-name()"/>
+        <xsl:variable name="v_target-name" select="$p_target/local-name()"/>
+        <xsl:variable name="v_nodes-to-merge" select="('biblStruct', 'monogr', 'imprint')"/>
+        <xsl:if test="$p_debug = true()">
+            <xsl:message>
+                <xsl:text>oape:merge-nodes</xsl:text>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>Source: </xsl:text>
+                <xsl:copy-of select="$v_source-name"/>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>Target: </xsl:text>
+                <xsl:copy-of select="$v_target-name"/>
+            </xsl:message>
+        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="$v_source-name = $v_target-name">
+                <!-- decide whether to merge or not -->
+                <xsl:variable name="v_merge">
+                    <xsl:choose>
+                        <!-- check if content is similar and assume that their attributes should be merged -->
+                        <xsl:when test="$p_source = $p_target">
+                            <xsl:copy select="true()"/>
+                        </xsl:when>
+                        <!-- hard-coded list of elements to be merged if supplied to this function -->
+                        <!-- this is necessary, as I cannot possibly decide this based on the content allone  -->
+                        <xsl:when test="$v_source-name = $v_nodes-to-merge">
+                            <xsl:copy select="true()"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy select="false()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                    <!-- merge -->
+                    <xsl:when test="$v_merge = true()">
+                        <xsl:message>
+                            <xsl:text>Source and target will be merged</xsl:text>
+                        </xsl:message>
+                        <xsl:copy select="$p_target">
+                            <!-- attributes -->
+                            <xsl:if test="$p_debug = true()">
+                                <xsl:message>
+                                    <xsl:text>compare attributes</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                            <!-- any attribute that is not there should be reproduced -->
+                            <xsl:for-each select="$p_target/@*">
+                                <xsl:variable name="v_attr-name" select="name()"/>
+                                <xsl:choose>
+                                    <xsl:when test="not($p_source/@*[name() = $v_attr-name])">
+                                        <xsl:if test="$p_debug = true()">
+                                            <xsl:message>
+                                                <xsl:value-of select="concat('@', $v_attr-name)"/>
+                                                <xsl:text> is not present in the source and will be reproduced</xsl:text>
+                                            </xsl:message>
+                                        </xsl:if>
+                                        <xsl:apply-templates mode="m_identity-transform" select="."/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <!--<xsl:message>
+                                            <xsl:text>@</xsl:text>
+                                            <xsl:value-of select="$v_attr-name"/>
+                                            <xsl:text> is present on source and target</xsl:text>
+                                        </xsl:message>-->
+                                        <!-- some attributes might need special treatment -->
+                                        <!-- as I will version-control the target, it makes sense to just copy attributes from the source and validate changes with git -->
+                                        <xsl:choose>
+                                            <xsl:when test=". = $p_source/@*[name() = $v_attr-name]">
+                                                <xsl:apply-templates mode="m_identity-transform" select="."/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:message>
+                                                    <xsl:text>The value of @</xsl:text>
+                                                    <xsl:value-of select="$v_attr-name"/>
+                                                    <xsl:text> differs. Will use the value of </xsl:text>
+                                                    <xsl:value-of select="$p_attribute-priority"/>
+                                                </xsl:message>
+                                                <xsl:choose>
+                                                    <xsl:when test="$p_attribute-priority = 'target'">
+                                                        <xsl:apply-templates mode="m_identity-transform" select="."/>
+                                                    </xsl:when>
+                                                    <xsl:when test="$p_attribute-priority = 'source'">
+                                                        <xsl:apply-templates mode="m_identity-transform" select="$p_source/@*[name() = $v_attr-name]"/>
+                                                    </xsl:when>
+                                                </xsl:choose>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:for-each>
+                            <xsl:for-each select="$p_source/@*">
+                                <xsl:variable name="v_attr-name" select="name()"/>
+                                <xsl:if test="not($p_target/@*[name() = $v_attr-name])">
+                                    <xsl:if test="$p_debug = true()">
+                                        <xsl:message>
+                                            <xsl:value-of select="concat('@', $v_attr-name)"/>
+                                            <xsl:text> is not present in the target and will be added</xsl:text>
+                                        </xsl:message>
+                                    </xsl:if>
+                                    <!-- do not add @change and @xml:id -->
+                                    <xsl:apply-templates mode="m_copy-from-source" select="."/>
+                                </xsl:if>
+                            </xsl:for-each>
+                            <!-- source information -->
+                            <xsl:attribute name="source">
+                                <xsl:choose>
+                                    <xsl:when test="$p_target/@source">
+                                        <xsl:value-of select="concat($p_target/@source, ' ', $v_source-url)"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="$v_source-url"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:attribute>
+                            <!-- content -->
+                            <!-- for every child of the target, check if there is a child of the source with the same name. If not, copy it. Otherwise   -->
+                            <xsl:for-each select="$p_target/node()">
+                                <xsl:variable name="v_child-name" select="local-name()"/>
+                                <xsl:choose>
+                                    <!-- all children that are not found on the source should be reproduced -->
+                                    <xsl:when test="not($p_source/node()[local-name() = $v_child-name])">
+                                        <xsl:message>
+                                            <xsl:value-of select="concat('&lt;', $v_child-name, '&gt;')"/>
+                                            <xsl:text> is not present in the source and will be reproduced</xsl:text>
+                                        </xsl:message>
+                                        <xsl:apply-templates mode="m_identity-transform" select="."/>
+                                    </xsl:when>
+                                    <!-- children with the same name but different content -->
+                                    <xsl:otherwise>
+                                        <xsl:message>
+                                            <xsl:value-of select="concat('&lt;', $v_child-name, '&gt;')"/>
+                                            <xsl:text> is present in the source and the two need to be merged</xsl:text>
+                                        </xsl:message>
+                                        <xsl:variable name="v_target" select="."/>
+                                        <xsl:for-each select="$p_source/node()[local-name() = $v_child-name]">
+                                            <xsl:variable name="v_source" select="."/>
+                                            <!-- this is where we have to merge content -->
+                                            <!-- probably limit to monogr, imprint: won't do anything due to the above construction of $v_merge -->
+                                            <xsl:copy-of select="oape:merge-nodes($v_source, $v_target, $p_attribute-priority)"/>
+                                        </xsl:for-each>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:for-each>
+                            <xsl:for-each select="$p_source/node()">
+                                <xsl:variable name="v_child-name" select="local-name()"/>
+                                <xsl:message>
+                                    <xsl:text>processing &lt;</xsl:text>
+                                    <xsl:value-of select="$v_child-name"/>
+                                    <xsl:text>&gt;-child of source</xsl:text>
+                                </xsl:message>
+                                <xsl:if test="not($p_target/node()[local-name() = $v_child-name])">
+                                    <xsl:message>
+                                        <xsl:text>this child is not present in the target and will be reproduced</xsl:text>
+                                    </xsl:message>
+                                    <xsl:apply-templates mode="m_merge" select="."/>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:copy>
+                    </xsl:when>
+                    <xsl:when test="$v_merge = false()">
+                        <xsl:message>
+                            <xsl:text>The source will be amended to the target</xsl:text>
+                        </xsl:message>
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_target"/>
+                        <!-- add source only after all children of target of the same name -->
+                        <xsl:if test="not($p_target/following-sibling::node()[local-name() = $v_target-name])">
+                            <xsl:apply-templates mode="m_merge" select="$p_source"/>
+                        </xsl:if>
+                        <!--<xsl:choose>
+                            <xsl:when test="$p_attribute-priority = 'source'">
+                                <xsl:apply-templates mode="m_identity-transform" select="$p_source"/>
+                            </xsl:when>
+                            <xsl:when test="$p_attribute-priority = 'target'">
+                                <xsl:apply-templates mode="m_identity-transform" select="$p_target"/>
+                            </xsl:when>
+                        </xsl:choose>-->
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>Input and output elements are different and cannot be merged</xsl:text>
+                </xsl:message>
+                <xsl:apply-templates mode="m_identity-transform" select="$p_source"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:template match="@xml:id | @change" mode="m_merge"/>
+    <xsl:template match="node() | @*" mode="m_merge">
+        <xsl:copy>
+            <xsl:apply-templates mode="m_merge" select="@* | node()"/>
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>
