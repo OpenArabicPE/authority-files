@@ -2,7 +2,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -32,16 +32,38 @@
 
 <title level="j" type="sub" xml:lang="en">alternative subtitle</title>
                      <imprint>
-                        <pubPlace><placeName>Rome</placeName></pubPlace>
+                        <pubPlace><placeName ref="geon:4560349">Phili</placeName></pubPlace>
                      </imprint>
                   </monogr>
                   <note>Lorem ipsum</note>
                </biblStruct>
-               <biblStruct xml:id="bibl_4">
-                  <monogr>
-                     <imprint></imprint>
-                  </monogr>
-               </biblStruct>
+               <!--<biblStruct oape:frequency="fortnightly" subtype="newspaper" type="periodical">
+            <monogr>
+               <title change="#d10e88" level="j" ref="jaraid:bibl:t1r3031 oape:bibl:1371" resp="#xslt" xml:lang="ar">الدائرة</title>
+               <title level="j" type="sub" xml:lang="ar">جريدة علمية رياضية حكمية تصدر مرة في كل أسبوعين</title>
+               <title level="s">Student Magazines, 1899-1934</title>
+               <idno type="AUBNO">AA:4.2.1</idno>
+               <idno type="LEAUB">b17607474</idno>
+               <imprint>
+                  <pubPlace> <placeName change="#d9e44" ref="geon:276781 jaraid:place:2 oape:place:26">بيروت</placeName> </pubPlace>
+                  <publisher> <supplied resp="#aub">المدرسة الكلية السورية الإنجيلية</supplied> </publisher>
+                  <date type="onset" when="1903">1903-1904</date>
+                  <date type="terminus" when="1904">1903-1904</date>
+               </imprint>
+            </monogr>
+            <note type="comments"> <list xml:lang="ar">
+               <item xml:lang="ar">العنوان الجزئي يختلف عدد 3-4 "جريدة أدبية رياضية حكمية"</item>
+               <item xml:lang="ar">العنوان الجزئي يختف عدد 5-6 "جريدة علمية أدبية رياضية"</item>
+               <item xml:lang="ar">العنوان الجزئي يختلف عدد 7 "جريدة أدبية علمية رياضية حكمية"</item>
+               <item xml:lang="ar">المدير والمحرر مصطفى السعادة؛ الكاتب ضياء البغدادي</item>
+               <item xml:lang="ar">الأعداد مكتوبة بخط اليد</item>
+               </list> </note>
+            <note type="holdings"> <list>
+               <item> <label><placeName>Beirut</placeName>,  <orgName ref="jaraid:org:hAUB" xml:lang="en">AUB</orgName> </label>: <ab xml:lang="ar"
+                  >في المكتبة : ج. 1 ع. 1-7 (1903 - 1904)</ab><ab><bibl><idno subtype="AUB" type="classmark">AA:4.2.1</idno><idno type="url"
+                  >https://libcat.aub.edu.lb/record=b1760747</idno></bibl></ab> <ab xml:lang="en"> <ref target="https://libcat.aub.edu.lb/record=b1760747">catalogue</ref> </ab> </item>
+               </list> </note>
+         </biblStruct>-->
             </item>
             <item> <note>Debug duplicate children of biblStruct</note> <biblStruct>
                <monogr>
