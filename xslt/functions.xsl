@@ -879,6 +879,17 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'url-geon'">
+                <xsl:variable name="v_id" select="oape:query-place($p_place, 'id-geon', '', '')"/>
+                <xsl:choose>
+                    <xsl:when test="$v_id != 'NA'">
+                        <xsl:value-of select="concat($p_url-resolve-geonames, $v_id)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
                     <xsl:when test="$p_place/tei:idno[not(@type = 'URI')]">
@@ -1302,6 +1313,28 @@
                 <xsl:choose>
                     <xsl:when test="$p_person/tei:idno[@type = $p_acronym-wikidata]">
                         <xsl:value-of select="$p_person/tei:idno[@type = $p_acronym-wikidata][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'url-viaf'">
+                <xsl:variable name="v_id" select="oape:query-person($p_person, 'id-viaf', '', '')"/>
+                <xsl:choose>
+                    <xsl:when test="$v_id != 'NA'">
+                        <xsl:value-of select="concat($p_url-resolve-viaf, $v_id)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'url-wiki'">
+                <xsl:variable name="v_id" select="oape:query-person($p_person, 'id-wiki', '', '')"/>
+                <xsl:choose>
+                    <xsl:when test="$v_id != 'NA'">
+                        <xsl:value-of select="concat($p_url-resolve-wiki, $v_id)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
