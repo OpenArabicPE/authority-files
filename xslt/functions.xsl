@@ -1334,7 +1334,7 @@
                 <xsl:variable name="v_id" select="oape:query-person($p_person, 'id-wiki', '', '')"/>
                 <xsl:choose>
                     <xsl:when test="$v_id != 'NA'">
-                        <xsl:value-of select="concat($p_url-resolve-wiki, $v_id)"/>
+                        <xsl:value-of select="concat($p_url-resolve-wikidata, $v_id)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -3518,4 +3518,35 @@
             <xsl:apply-templates mode="m_merge" select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:function name="oape:resolve-id">
+        <xsl:param name="p_idno" as="node()"/>
+        <xsl:choose>
+            <xsl:when test="$p_idno/@type = $p_acronym-geonames">
+                <xsl:value-of select="concat($p_url-resolve-geonames, $p_idno)"/>
+            </xsl:when>
+            <xsl:when test="$p_idno/@type = $p_acronym-wikidata">
+                <xsl:value-of select="concat($p_url-resolve-wikidata, $p_idno)"/>
+            </xsl:when>
+            <xsl:when test="$p_idno/@type = $p_acronym-viaf">
+                <xsl:value-of select="concat($p_url-resolve-viaf, $p_idno)"/>
+            </xsl:when>
+            <xsl:when test="$p_idno/@type = 'ht_bib_key'">
+                <xsl:value-of select="concat($p_url-resolve-hathi, $p_idno)"/>
+            </xsl:when>
+            <xsl:when test="$p_idno/@type = 'OCLC'">
+                <xsl:value-of select="concat($p_url-resolve-oclc, $p_idno)"/>
+            </xsl:when>            
+            <xsl:when test="$p_idno/@type = 'LEAUB'">
+                <!-- the LEAUB number contains a control digit that must be removed for resolving -->
+                <xsl:value-of select="concat($p_url-resolve-aub, substring($p_idno, 1, string-length($p_idno) -1))"/>
+            </xsl:when>
+            <xsl:when test="$p_idno/@type = 'zdb'">
+                <xsl:value-of select="concat($p_url-resolve-zdb, $p_idno)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$p_idno"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+
 </xsl:stylesheet>
