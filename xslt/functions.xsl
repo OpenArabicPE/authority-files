@@ -623,7 +623,7 @@
                     </xsl:when>
                     <!-- fallback: first title in any language -->
                     <xsl:otherwise>
-                        <xsl:value-of select="normalize-space($v_monogr/tei:title[1])"/>
+                        <xsl:value-of select="normalize-space($v_monogr[1]/descendant-or-self::tei:title[1])"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
@@ -668,12 +668,19 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'date-onset'">
-                <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date/@when/xs:date(.))"/>
+                <xsl:choose>
+                    <xsl:when test="$v_date-onset/descendant-or-self::tei:date/@when">
+                        <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'date-terminus'">
                 <xsl:choose>
                     <xsl:when test="$v_date-terminus/descendant-or-self::tei:date/@when">
-                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date/@when/xs:date(.))"/>
+                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -683,7 +690,7 @@
             <xsl:when test="$p_output-mode = 'date-documented'">
                 <xsl:choose>
                     <xsl:when test="$v_date-documented/descendant-or-self::tei:date/@when">
-                        <xsl:value-of select="max($v_date-documented/descendant-or-self::tei:date/@when/xs:date(.))"/>
+                        <xsl:value-of select="max($v_date-documented/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -710,6 +717,10 @@
                         <xsl:value-of select="$v_monogr[@subtype][1]/@subtype"/>
                     </xsl:when>
                 </xsl:choose>
+            </xsl:when>
+            <!-- count of known holdings -->
+            <xsl:when test="$p_output-mode = 'holdings'">
+                <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item)"/>
             </xsl:when>
             <!-- fallback -->
             <xsl:otherwise>
@@ -748,17 +759,15 @@
         </xsl:variable>
         <!-- output -->
         <xsl:copy>
-            <xsl:attribute name="when">
-                <xsl:choose>
+            <xsl:choose>
                     <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
-                        <xsl:value-of select="$v_temp"/>
+                        <xsl:attribute name="when" select="$v_temp"/>
                     </xsl:when>
                     <xsl:when test="matches($v_temp, '^\d{4}$')">
-                        <!-- latest possible date: this will prevent the originally less precise dates to take precedent -->
-                        <xsl:value-of select="concat($v_temp, '-12-31')"/>
+                        <!-- latest possible date: this will prevent the originally less precise dates from taking precedent -->
+                        <xsl:attribute name="when" select="concat($v_temp, '-12-31')"/>
                     </xsl:when>
                 </xsl:choose>
-            </xsl:attribute>
         </xsl:copy>
     </xsl:template>
     <!-- query a local TEI gazetteer for toponyms, locations, IDs etc. -->
