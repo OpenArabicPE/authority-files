@@ -722,6 +722,10 @@
             <xsl:when test="$p_output-mode = 'holdings'">
                 <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item)"/>
             </xsl:when>
+            <!-- count of issues/copies in known holdings -->
+            <xsl:when test="$p_output-mode = 'copies'">
+                <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item/descendant::tei:bibl)"/>
+            </xsl:when>
             <!-- fallback -->
             <xsl:otherwise>
                 <xsl:message>
