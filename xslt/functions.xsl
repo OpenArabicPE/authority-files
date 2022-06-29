@@ -2391,10 +2391,8 @@
     <!-- link bibliographic data to bibliography -->
     <xsl:function name="oape:link-title-to-authority-file">
         <xsl:param as="node()" name="p_title"/>
-        <!--        <xsl:param name="p_year"/>-->
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_bibliography"/>
-        <xsl:variable name="v_title" select="normalize-space($p_title)"/>
         <xsl:variable name="v_margin" select="1"/>
         <xsl:variable name="v_year" select="
                 if ($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct) then
@@ -2433,15 +2431,44 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <!-- figure out if the title carries a ref attribute or if the parent bibl has an idno -->
+        <xsl:variable name="v_title">
+                <xsl:choose>
+                    <xsl:when test="$p_title/@ref">
+                        <xsl:copy-of select="$p_title"/>
+                    </xsl:when>
+                    <xsl:when test="$v_biblStruct/descendant::tei:monogr/tei:idno[@type = $p_local-authority]">
+                        <xsl:copy select="$p_title">
+                            <xsl:apply-templates select="$p_title/@*" mode="m_identity-transform"/>
+                            <xsl:attribute name="ref" select="concat($p_local-authority, ':bibl:', $v_biblStruct/descendant::tei:monogr/tei:idno[@type = $p_local-authority][1])"/>
+                            <xsl:apply-templates select="$p_title/node()" mode="m_identity-transform"/>
+                        </xsl:copy>
+                    </xsl:when>
+                    <xsl:when test="$v_biblStruct/descendant::tei:monogr/tei:idno[@type = 'OCLC']">
+                        <xsl:copy select="$p_title">
+                            <xsl:apply-templates select="$p_title/@*" mode="m_identity-transform"/>
+                            <xsl:attribute name="ref" select="concat( 'oclc:', $v_biblStruct/descendant::tei:monogr/tei:idno[@type = 'OCLC'][1])"/>
+                            <xsl:apply-templates select="$p_title/node()" mode="m_identity-transform"/>
+                        </xsl:copy>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:copy-of select="$p_title"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+        </xsl:variable>
+        <xsl:message>
+            <xsl:copy-of select="$v_title"/>
+        </xsl:message>
+        <xsl:variable name="v_title-string" select="normalize-space($v_title)"/>
         <!-- step 1: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
         <!-- possible results: none, one, multiple -->
-        <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($p_title, $p_local-authority, $p_bibliography)"/>
+        <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
         <!--<xsl:if test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct"><xsl:message terminate="no"><xsl:text>title: </xsl:text><xsl:value-of select="oape:query-biblstruct($v_corresponding-bibls[1], 'title', 'ar', '', '')"/><xsl:text>, date: </xsl:text><xsl:value-of select="oape:query-biblstruct($v_corresponding-bibls[1], 'date', '', '', '')"/><xsl:text>, year: </xsl:text><xsl:value-of select="oape:date-year-only(oape:query-biblstruct($v_corresponding-bibls[1], 'date', '', '', ''))"/></xsl:message></xsl:if>-->
         <!-- step 2: filter by publication date  -->
         <xsl:variable name="v_corresponding-bibls">
             <xsl:message>
                 <xsl:text>Trying to find "</xsl:text>
-                <xsl:value-of select="$v_title"/>
+                <xsl:value-of select="$v_title-string"/>
                 <xsl:text>" in the authority file</xsl:text>
             </xsl:message>
             <xsl:variable name="v_bibls-compiled">
@@ -2458,7 +2485,7 @@
                         <xsl:if test="$p_verbose = true()">
                             <xsl:message>
                                 <xsl:text>Found a corresponding entry for </xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text> in the authority file, but it hadn't been published yet.</xsl:text>
                             </xsl:message>
                         </xsl:if>
@@ -2482,7 +2509,7 @@
                         <xsl:text>Found </xsl:text>
                         <xsl:value-of select="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct)"/>
                         <xsl:text> possible match(es) for "</xsl:text>
-                        <xsl:value-of select="$v_title"/>
+                        <xsl:value-of select="$v_title-string"/>
                         <xsl:text>"</xsl:text>
                     </xsl:message>
                     <xsl:if test="$p_verbose = true() and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) gt 1">
@@ -2536,7 +2563,7 @@
                             <!--                            <xsl:if test="$p_verbose = true()">-->
                             <xsl:message>
                                 <xsl:text>Found a single match for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on @type @subtype, and location.</xsl:text>
                             </xsl:message>
                             <!---->
@@ -2548,7 +2575,7 @@
                             <!--                            <xsl:if test="$p_verbose = true()">-->
                             <xsl:message>
                                 <xsl:text>Found a single match for</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on @type @subtype, and @oape:frequency.</xsl:text>
                             </xsl:message>
                             <!---->
@@ -2560,7 +2587,7 @@
                             <!--                            <xsl:if test="$p_verbose = true()">-->
                             <xsl:message>
                                 <xsl:text>Found a single match for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on location.</xsl:text>
                             </xsl:message>
                             <!--</xsl:if>-->
@@ -2573,7 +2600,7 @@
                             test="$v_editor-1 != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-editor', '', $v_gazetteer, $p_local-authority) = $v_editor-1]) = 1">
                             <xsl:message>
                                 <xsl:text>Found a single match for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on the editor.</xsl:text>
                             </xsl:message>
                             <!---->
@@ -2584,7 +2611,7 @@
                             <!--                            <xsl:if test="$p_verbose = true()">-->
                             <xsl:message>
                                 <xsl:text>Found a single match for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on @type and @subtype.</xsl:text>
                             </xsl:message>
                             <!--</xsl:if>-->
@@ -2593,11 +2620,11 @@
                         <!-- date: onset, terminus, range -->
                         <!--<xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:date-year-only(oape:query-biblstruct(., 'date', '', '', '')) &lt;= $p_year]) = 1"><xsl:message><xsl:text>Found a single match based on publication date.</xsl:text></xsl:message><xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:date-year-only(oape:query-biblstruct(., 'date', '', '', '')) &lt;= $p_year]"/></xsl:when>-->
                         <!-- single match based on @ref -->
-                        <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and $p_title/@ref">
+                        <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and $v_title/descendant-or-self::tei:title/@ref">
                             <!--                            <xsl:if test="$p_verbose = true()">-->
                             <xsl:message>
                                 <xsl:text>Found a single match for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on the @ref attribute.</xsl:text>
                             </xsl:message>
                             <!---->
@@ -2608,7 +2635,7 @@
                             <!--                            <xsl:if test="$p_verbose = true()">-->
                             <xsl:message>
                                 <xsl:text>Found a single match for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" solely based on the title.</xsl:text>
                                 <xsl:choose>
                                     <xsl:when test="$p_link-matches-based-on-title-only = true()">
@@ -2637,7 +2664,7 @@
                                 <xsl:value-of
                                     select="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication])"/>
                                 <xsl:text> matches for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on location (</xsl:text>
                                 <xsl:value-of select="$v_place-publication"/>
                                 <xsl:text>), which have, therefore, not been linked</xsl:text>
@@ -2650,7 +2677,7 @@
                             <xsl:if test="$p_verbose = true()">
                                 <xsl:message>
                                     <xsl:text>We consider "</xsl:text>
-                                    <xsl:value-of select="$v_title"/>
+                                    <xsl:value-of select="$v_title-string"/>
                                     <xsl:text>" a self reference</xsl:text>
                                 </xsl:message>
                             </xsl:if>
@@ -2661,7 +2688,7 @@
                             <!--                            <xsl:if test="$p_verbose = true()">-->
                             <xsl:message>
                                 <xsl:text>Found a single match for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on textLang.</xsl:text>
                             </xsl:message>
                             <!---->
@@ -2670,7 +2697,7 @@
                         <xsl:otherwise>
                             <xsl:message>
                                 <xsl:text>Found no unambiguous match for "</xsl:text>
-                                <xsl:value-of select="$v_title"/>
+                                <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" at </xsl:text>
                                 <xsl:value-of select="concat(base-uri($p_title), '#', $p_title/@xml:id)"/>
                                 <xsl:text>.</xsl:text>
@@ -2685,7 +2712,7 @@
                     <!-- this is a duplicate message -->
                     <xsl:message>
                         <xsl:text>Found no match for "</xsl:text>
-                        <xsl:value-of select="$v_title"/>
+                        <xsl:value-of select="$v_title-string"/>
                         <xsl:text>" at </xsl:text>
                         <xsl:value-of select="concat(base-uri($p_title), '#', $p_title/@xml:id)"/>
                         <xsl:text>.</xsl:text>
@@ -2758,7 +2785,7 @@
                 <xsl:if test="$p_debug = true()">
                     <xsl:message>
                         <xsl:text>updated title node: </xsl:text>
-                        <xsl:copy-of select="$v_title"/>
+                        <xsl:copy-of select="$v_title-string"/>
                     </xsl:message>
                 </xsl:if>
                 <xsl:copy-of select="$v_title"/>
