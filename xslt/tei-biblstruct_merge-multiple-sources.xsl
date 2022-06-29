@@ -24,7 +24,14 @@
             </xsl:message>
         </xsl:if>
         <xsl:result-document href="_output/bibl_merged/{$p_file-bibliography}">
-            <xsl:apply-templates mode="m_merge" select="$v_bibliography"/>
+            <xsl:choose>
+                <xsl:when test="$p_debug = true()">
+                    <xsl:apply-templates mode="m_merge" select="$v_bibliography-test"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates mode="m_merge" select="$v_bibliography"/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:result-document>
     </xsl:template>
     <!-- identity transform -->

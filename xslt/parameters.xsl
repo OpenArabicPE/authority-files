@@ -70,6 +70,13 @@
             </xsl:when>
         </xsl:choose>
     </xsl:param>
+    <xsl:param name="p_path-authority-test-folder">
+        <xsl:choose>
+            <xsl:when test="$p_local-authority = 'oape'">
+                <xsl:value-of select="'OpenArabicPE/authority-files/data/test-data/'"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:param>
     <!-- this param falls back to a personography -->
     <xsl:param name="p_file-authority">
         <xsl:choose>
@@ -143,6 +150,7 @@
     <xsl:variable name="v_organizationography" select="doc($p_url-organizationography)"/>
     <xsl:param name="p_url-bibliography" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-bibliography)"/>
     <xsl:variable name="v_bibliography" select="doc($p_url-bibliography)"/>
+    <xsl:variable name="v_bibliography-test" select="doc(concat($p_path-base, $p_path-authority-test-folder, 'test-bibliography.TEIP5.xml'))"/>
     <!-- select tsv or csv as output -->
     <xsl:param name="p_format" select="'csv'"/>
     <xsl:param name="p_quoted" select="true()"/>
