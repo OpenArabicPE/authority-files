@@ -10,9 +10,12 @@
         </xsl:copy>
     </xsl:template>
     <xsl:template match="tei:note[@type = 'holdings']">
-        <listBibl>
-            <xsl:apply-templates select="descendant::tei:item" mode="m_update"/>
-        </listBibl>
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <listBibl>
+                <xsl:apply-templates mode="m_update" select="descendant::tei:item"/>
+            </listBibl>
+        </xsl:copy>
     </xsl:template>
     <xsl:template match="node() | @*" mode="m_update">
         <xsl:copy>
@@ -28,9 +31,9 @@
             <!-- holding institution -->
             <msIdentifier>
                 <xsl:apply-templates mode="m_update" select="tei:label/tei:placeName"/>
-                <repository>
+                <institution>
                     <xsl:apply-templates mode="m_update" select="tei:label/tei:orgName"/>
-                </repository>
+                </institution>
                 <xsl:apply-templates mode="m_update" select="tei:idno | tei:ref"/>
             </msIdentifier>
             <xsl:variable name="v_text">
@@ -53,7 +56,7 @@
         </msDesc>
     </xsl:template>
     <xsl:template match="tei:item[descendant::tei:bibl] | tei:ab[descendant::tei:bibl]" mode="m_update">
-        <xsl:apply-templates select="descendant::tei:bibl" mode="m_update"/>
+        <xsl:apply-templates mode="m_update" select="descendant::tei:bibl"/>
     </xsl:template>
     <xsl:template match="tei:bibl" mode="m_update">
         <msDesc>
@@ -63,9 +66,9 @@
             <msIdentifier>
                 <xsl:variable name="v_item" select="ancestor::tei:item[1]"/>
                 <xsl:apply-templates mode="m_update" select="$v_item/tei:label/tei:placeName"/>
-                <repository>
+                <institution>
                     <xsl:apply-templates mode="m_update" select="$v_item/tei:label/tei:orgName"/>
-                </repository>
+                </institution>
                 <xsl:apply-templates mode="m_update" select="tei:idno"/>
             </msIdentifier>
             <xsl:if test="tei:date | tei:biblScope">
