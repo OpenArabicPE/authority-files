@@ -3352,6 +3352,10 @@
                         <xsl:when test="$p_source = $p_target">
                             <xsl:copy select="true()"/>
                         </xsl:when>
+                        <!-- do not merge elements that are distinguished by their type attributes -->
+                        <xsl:when test="$p_source[@type]/@type != $p_target[@type]/@type">
+                            <xsl:copy select="false()"/>
+                        </xsl:when>
                         <!-- hard-coded list of elements to be merged if supplied to this function -->
                         <!-- this is necessary, as I cannot possibly decide this based on the content allone  -->
                         <xsl:when test="$v_source-name = $v_nodes-to-merge">
@@ -3477,7 +3481,7 @@
                                     </xsl:choose>
                                 </xsl:attribute>
                                 <!-- content -->
-                                <!-- for every child of the target, check if there is a child of the source with the same name. If not, copy it. Otherwise   -->
+                                <!-- for every child of the target, check if there is a child of the source with the same name. If not, copy it. Otherwise merge  -->
                                 <xsl:for-each select="$p_target/node()">
                                     <xsl:variable name="v_child-name" select="local-name()"/>
                                     <xsl:choose>
