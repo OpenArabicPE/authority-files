@@ -98,4 +98,18 @@
             <xsl:value-of select="@target"/>
         </idno>
     </xsl:template>
+    <!-- document the changes to source file -->
+    <xsl:template match="tei:revisionDesc">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:element name="tei:change">
+                <xsl:attribute name="when" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+                <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
+                <xsl:attribute name="xml:id" select="$p_id-change"/>
+                <xsl:attribute name="xml:lang" select="'en'"/>
+                <xsl:text>Changed the encoding of holding information from a list with bibls to msDesc.</xsl:text>
+            </xsl:element>
+            <xsl:apply-templates select="node()"/>
+        </xsl:copy>
+    </xsl:template>
 </xsl:stylesheet>
