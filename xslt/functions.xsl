@@ -96,7 +96,7 @@
     <!-- if no match is found, the function returns 'NA' -->
     <xsl:function name="oape:get-entity-from-authority-file">
         <!-- input: entity such as <persName>, <orgName>, <placeName> or <title> node -->
-        <xsl:param name="p_entity-name"/>
+        <xsl:param name="p_entity-name" as="node()"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
         <!--        <xsl:if test="$p_entity-name/@ref or $p_entity-name != ''">-->
@@ -1217,8 +1217,8 @@
     </xsl:function>
     <!-- query a local TEI personography  -->
     <xsl:function name="oape:query-personography">
-        <!-- input is a tei <placeName> node -->
-        <xsl:param name="persName"/>
+        <!-- input is a tei <persName> node -->
+        <xsl:param name="persName" as="node()"/>
         <!-- $gazetteer expects a path to a file -->
         <xsl:param name="personography"/>
         <!-- local authority -->
@@ -3329,7 +3329,7 @@
                     ($p_source/ancestor::node()[@xml:id][1]/@xml:id))"/>
         <xsl:variable name="v_source-name" select="$p_source/local-name()"/>
         <xsl:variable name="v_target-name" select="$p_target/local-name()"/>
-        <xsl:variable name="v_nodes-to-merge" select="('biblStruct', 'monogr', 'imprint')"/>
+        <xsl:variable name="v_nodes-to-merge" select="('biblStruct', 'monogr', 'imprint', 'note')"/>
         <xsl:if test="$p_debug = true()">
             <xsl:message>
                 <xsl:text>oape:merge-nodes</xsl:text>
