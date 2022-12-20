@@ -42,6 +42,10 @@
             </editorialDecl>
         </encodingDesc>
         <revisionDesc>
+            <tei:change when="2022-12-20" who="#pers_TG" xml:id="d10e202" xml:lang="en"
+                >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
+            <tei:change when="2022-12-20" who="#pers_TG" xml:id="d10e197" xml:lang="en"
+                >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
             <tei:change when="2022-04-12" who="#pers_TG" xml:id="d10e192" xml:lang="en"
                 >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
             <tei:change when="2022-01-14" who="#pers_TG" xml:id="d10e187" xml:lang="en"
@@ -159,6 +163,8 @@
                     <placeName xml:lang="ar">القدس</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="ar">القدس الشريف</placeName>
                     <placeName xml:lang="ar">بيت المقدس</placeName>
+                    <placeName change="#d10e634" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml" xml:lang="ar"
+                        >أورشليم</placeName>
                     <placeName type="simple" xml:lang="en">Jerusalem</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">al-Quds</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">al-Quds al-Sharīf</placeName>
@@ -228,6 +234,11 @@
                     <idno type="url">http://ru.wikipedia.org/wiki/%D0%AF%D1%84%D1%84%D0%B0</idno>
                     <idno type="geon">293253</idno>
                     <idno type="oape">12</idno>
+                </place>
+                <place type="building" xml:id="place_779">
+                    <placeName change="#d10e634" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#" xml:lang="ar"
+                        >المسجد الأقصى</placeName>
+                    <idno type="oape">779</idno>
                 </place>
                 <listPlace>
                     <head>Jabal ʿĀmil</head>
@@ -1293,6 +1304,8 @@
                                     <placeName type="alt" xml:lang="ar-Latn-x-dmg">ad-Dimašq</placeName>
                                     <placeName xml:lang="ar">الشام</placeName>
                                     <placeName xml:lang="ar">الفيحاء</placeName>
+                                    <placeName change="#d10e634" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#"
+                                        xml:lang="ar">دمشق الشام</placeName>
                                     <location>
                                         <geo>33.5102, 36.29128</geo>
                                     </location>
@@ -6544,29 +6557,6 @@
             </listPlace>
             <listPlace type="country">
                 <head>Russia</head>
-                <place type="town" xml:id="place_777">
-                    <placeName>Temir-Khan-Shura</placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Buynaksk</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Buinaksk</tei:placeName>
-                    <tei:location source="#org_geon">
-                        <tei:geo>42.819, 47.1192</tei:geo>
-                    </tei:location>
-                    <idno type="geon">570479</idno>
-                    <idno type="oape">777</idno>
-                </place>
-                <place type="town" xml:id="place_778">
-                    <placeName>Öfö</placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">أوفا</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ufa</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Oufa</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ufa</tei:placeName>
-                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Ufa</tei:placeName>
-                    <tei:location source="#org_geon">
-                        <tei:geo>54.74306, 55.96779</tei:geo>
-                    </tei:location>
-                    <idno type="geon">479561</idno>
-                    <idno type="oape">778</idno>
-                </place>
                 <place xml:id="place_255">
                     <placeName xml:lang="ar">شارتونبرغ</placeName>
                     <idno type="oape">255</idno>
@@ -6584,6 +6574,16 @@
                     <idno type="geon">2017370</idno>
                     <idno type="oape">351</idno>
                 </place>
+                <place type="town" xml:id="place_777">
+                    <placeName>Temir-Khan-Shura</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Buynaksk</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Buinaksk</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>42.819, 47.1192</tei:geo>
+                    </tei:location>
+                    <idno type="geon">570479</idno>
+                    <idno type="oape">777</idno>
+                </place>
                 <place type="town" xml:id="place_352">
                     <placeName xml:lang="en">Orenburg</placeName>
                     <placeName xml:lang="ru-Arab-145">أورنبورغ</placeName>
@@ -6596,6 +6596,19 @@
                     <idno type="url">http://en.wikipedia.org/wiki/Orenburg</idno>
                     <idno type="geon">515003</idno>
                     <idno type="oape">352</idno>
+                </place>
+                <place type="town" xml:id="place_778">
+                    <placeName>Öfö</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="ar">أوفا</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ufa</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Oufa</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ufa</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Ufa</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>54.74306, 55.96779</tei:geo>
+                    </tei:location>
+                    <idno type="geon">479561</idno>
+                    <idno type="oape">778</idno>
                 </place>
                 <place type="town" xml:id="place_353">
                     <placeName xml:lang="ar">الموسكي</placeName>
@@ -6882,7 +6895,7 @@
                     <idno type="oape">531</idno>
                 </place>
             </listPlace>
-            <listPlace>
+            <listPlace type="country">
                 <head>Pakistan</head>
                 <place type="country" xml:id="place_565">
                     <placeName xml:lang="en">Pakistan</placeName>
@@ -7028,6 +7041,22 @@
                     <tei:idno type="url">https://en.wikipedia.org/wiki/Jordan</tei:idno>
                     <tei:idno type="geon">248816</tei:idno>
                     <idno type="oape">611</idno>
+                </place>
+            </listPlace>
+            <listPlace type="country">
+                <place type="country" xml:id="place_786">
+                    <placeName xml:lang="en">Dominican Republic</placeName>
+                    <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_3.TEIP5.xml#" xml:lang="ar"
+                        >الجمهورية الدومينيكانية</placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="fr">République dominicaine</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="de">Dom. Republik</tei:placeName>
+                    <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Dominik Cumhuriyeti</tei:placeName>
+                    <tei:location source="#org_geon">
+                        <tei:geo>19, -70.66667</tei:geo>
+                    </tei:location>
+                    <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Dominican_Republic</tei:idno>
+                    <tei:idno resp="#xslt" type="geon">3508796</tei:idno>
+                    <idno type="oape">786</idno>
                 </place>
             </listPlace>
         </listPlace>
@@ -7820,6 +7849,10 @@
         </listPlace>
         <listPlace>
             <head xml:lang="en">Places of unknown location</head>
+            <place xml:id="place_785">
+                <placeName change="#d10e584" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_21.TEIP5.xml#">الخرجوم</placeName>
+                <idno type="oape">785</idno>
+            </place>
             <place xml:id="place_741">
                 <placeName>Dayr al-Mukhlis</placeName>
                 <idno type="oape">741</idno>
@@ -7854,6 +7887,11 @@
             <place xml:id="place_637">
                 <placeName source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_41.TEIP5.xml" xml:lang="ar">جبل سنير</placeName>
                 <idno type="oape">637</idno>
+            </place>
+            <place xml:id="place_782">
+                <placeName change="#d10e552" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_14.TEIP5.xml#bibl_2.d2e1980" xml:lang="ar"
+                    >جزيرة سيلان</placeName>
+                <idno type="oape">782</idno>
             </place>
             <place xml:id="place_407">
                 <placeName xml:lang="ar-Latn-x-ijmes">Jisr Nahr Bayrūt</placeName>
@@ -8113,6 +8151,16 @@
                 <tei:idno resp="#pers_TG" type="geon">88319</tei:idno>
                 <idno type="oape">754</idno>
             </place>
+            <place type="town" xml:id="place_781">
+                <placeName change="#d10e552" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_14.TEIP5.xml#" xml:lang="ar"
+                    >بيت جالا</placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>31.71545, 35.18788</tei:geo>
+                </tei:location>
+                <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Beit_Jala</tei:idno>
+                <tei:idno resp="#xslt" type="geon">284324</tei:idno>
+                <idno type="oape">781</idno>
+            </place>
             <place type="town" xml:id="place_748">
                 <placeName resp="#xslt" xml:lang="ar">بير زيت</placeName>
                 <placeName xml:lang="ar-Latn-x-ijmes">Bīr Zayt</placeName>
@@ -8167,6 +8215,17 @@
                 <tei:idno type="geon">170045</tei:idno>
                 <idno type="oape">639</idno>
             </place>
+            <place type="town" xml:id="place_784">
+                <placeName change="#d10e615" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_16.TEIP5.xml#" xml:lang="ar">حلفا</placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Wadi Halfa</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Wadi Halfa</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>21.79577, 31.37129</tei:geo>
+                </tei:location>
+                <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Wadi_Halfa</tei:idno>
+                <tei:idno resp="#xslt" type="geon">364132</tei:idno>
+                <idno type="oape">784</idno>
+            </place>
             <place type="town" xml:id="place_640">
                 <placeName source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_41.TEIP5.xml" xml:lang="ar">حوارين</placeName>
                 <tei:placeName source="#org_geon" type="alt" xml:lang="ar">حوارين</tei:placeName>
@@ -8216,6 +8275,17 @@
                 <idno type="oape">749</idno>
                 <idno type="geon">282239</idno>
             </place>
+            <place type="town" xml:id="place_783">
+                <placeName change="#d10e650" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#" xml:lang="ar"
+                    >سامراء</placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Samarra</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>34.1959, 43.88568</tei:geo>
+                </tei:location>
+                <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Samarra</tei:idno>
+                <tei:idno resp="#xslt" type="geon">91597</tei:idno>
+                <idno type="oape">783</idno>
+            </place>
             <place type="town" xml:id="place_642">
                 <placeName source="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_41.TEIP5.xml" xml:lang="ar">سنير</placeName>
                 <tei:location source="#org_geon">
@@ -8260,6 +8330,17 @@
                 <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Aden</tei:idno>
                 <tei:idno resp="#xslt" type="geon">415189</tei:idno>
                 <idno type="oape">755</idno>
+            </place>
+            <place type="town" xml:id="place_780">
+                <placeName change="#d10e634" source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#" xml:lang="ar">عطبرة</placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="en">Atbara</tei:placeName>
+                <tei:placeName source="#org_geon" type="alt" xml:lang="de">Atbara</tei:placeName>
+                <tei:location source="#org_geon">
+                    <tei:geo>17.70217, 33.98638</tei:geo>
+                </tei:location>
+                <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Atbara</tei:idno>
+                <tei:idno resp="#xslt" type="geon">378231</tei:idno>
+                <idno type="oape">780</idno>
             </place>
             <place type="town" xml:id="place_771">
                 <placeName>Wiesbaden</placeName>
