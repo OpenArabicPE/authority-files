@@ -2152,6 +2152,7 @@
                     <!-- document change -->
                     <!-- this test does not catch all changes -->
                     <xsl:if test="normalize-space($p_placename/@ref) != $v_ref">
+                        <xsl:attribute name="resp" select="'#xslt'"/>
                         <xsl:choose>
                             <xsl:when test="not($p_placename/@change)">
                                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
@@ -2173,7 +2174,18 @@
                     <xsl:value-of select="normalize-space($p_placename)"/>
                     <xsl:text>" was not found in authority file.</xsl:text>
                 </xsl:message>
-                <xsl:apply-templates mode="m_identity-transform" select="$p_placename"/>
+                <xsl:message>
+                      <xsl:text>Add the following place to the authority file: </xsl:text>
+                        <xsl:element name="place">
+                                <xsl:apply-templates mode="m_copy-from-source" select="$p_placename"/>
+                        </xsl:element>
+                    </xsl:message>
+                <!--</xsl:if>-->
+                <xsl:copy select="$p_placename">
+                    <xsl:attribute name="ref" select="'NA'"/>
+                    <xsl:attribute name="resp" select="'#xslt'"/>
+                    <xsl:apply-templates mode="m_identity-transform" select="$p_placename/@* | $p_placename/node()"/>
+                </xsl:copy>
             </xsl:when>
         </xsl:choose>
     </xsl:function>
