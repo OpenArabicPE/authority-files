@@ -51,7 +51,7 @@
                 <xsl:value-of select="'https://github.com/'"/>
             </xsl:when>
             <xsl:when test="$p_github-action = false()">
-                <xsl:value-of select="'/BachUni/BachBibliothek/GitHub/'"/>
+                <xsl:value-of select="'/Users/Shared/BachUni/BachBibliothek/GitHub/'"/>
             </xsl:when>
         </xsl:choose>
     </xsl:param>
