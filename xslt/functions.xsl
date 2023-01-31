@@ -82,6 +82,18 @@
         <xsl:variable name="v_alphabet-ar-mac" select="'اآأإبتثحخجدذرزسشصضطظعغفقكلمنهوؤيئىةء'"/>
         <xsl:value-of select="translate($p_input, $v_alphabet-fa-mac, $v_alphabet-ar-mac)"/>
     </xsl:function>
+    <xsl:function name="oape:string-parse-names">
+        <xsl:param name="p_input" as="node()"/>
+        <xsl:variable name="v_preprocessed">
+            <xsl:for-each select="$p_input/child::node()">
+                <xsl:value-of select="."/>
+                <xsl:if test="following-sibling::node()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:value-of select="normalize-space($v_preprocessed)"/>
+    </xsl:function>
     <!-- this function queries a local authority file
         - input: an entity name such as <persName>, <orgName>, <placeName>or <title>- output: an entity: such as <person>, <org>, <place>or <biblStruct>-->
     <!-- PROBLEMs: 
@@ -634,16 +646,6 @@
             <xsl:when test="$p_output-mode = 'otherLangs'">
                 <xsl:value-of select="$v_otherLangs"/>
             </xsl:when>
-            <xsl:when test="$p_output-mode = 'subtype'">
-                <xsl:choose>
-                    <xsl:when test="$p_bibl/@subtype">
-                        <xsl:value-of select="$p_bibl/@subtype"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="'NA'"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
             <!-- return date           -->
             <xsl:when test="$p_output-mode = 'date'">
                 <xsl:choose>
@@ -716,6 +718,22 @@
                     <xsl:when test="$v_monogr/@subtype">
                         <xsl:value-of select="$v_monogr[@subtype][1]/@subtype"/>
                     </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'type'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/@type">
+                        <xsl:value-of select="$p_bibl/@type"/>
+                    </xsl:when>
+                    <xsl:when test="$v_monogr/@type">
+                        <xsl:value-of select="$v_monogr[@type][1]/@type"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
             <!-- count of known holdings -->
@@ -1236,7 +1254,7 @@
             </xsl:message>
         </xsl:if>
         <xsl:choose>
-            <!-- test for @ref pointing to auhority files -->
+            <!-- If there is data from an authority file call other function to query that data. Results are passed through -->
             <xsl:when test="$v_person != 'NA'">
                 <xsl:if test="$p_debug = true()">
                     <xsl:message>
@@ -1388,8 +1406,7 @@
                 </xsl:choose>
             </xsl:when>
             <!-- return name in selected language -->
-            <xsl:when test="$p_output-mode = 'name'">
-                <xsl:variable name="v_name">
+            <xsl:when test="$p_output-mode = 'name-tei'">
                     <xsl:choose>
                         <!-- preference for names without addNames -->
                         <!-- at least in one case this leads to the more commonly referenced name not being returned in Arabic: "Kurd ʿAlī" for "Muḥammad Kurd ʿAlī" -->
@@ -1413,11 +1430,20 @@
                         <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en']">
                             <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en'][1]"/>
                         </xsl:when>
+                        <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')]">
+                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')][1]"/>
+                        </xsl:when>
+                        <xsl:when test="$p_person/tei:persName[@type = 'noAddName']">
+                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][1]"/>
+                        </xsl:when>
                         <xsl:otherwise>
                             <xsl:copy-of select="$p_person/tei:persName[1]"/>
                         </xsl:otherwise>
                     </xsl:choose>
-                </xsl:variable>
+            </xsl:when>
+            <!-- name as string -->
+            <xsl:when test="$p_output-mode = 'name'">
+                <xsl:variable name="v_name" select="oape:query-person($p_person, 'name-tei', $p_output-language, $p_local-authority)"/>
                 <xsl:variable name="v_name">
                     <xsl:apply-templates mode="m_plain-text" select="$v_name"/>
                 </xsl:variable>
