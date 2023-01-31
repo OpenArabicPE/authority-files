@@ -986,10 +986,12 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
-                <xsl:copy select="$v_placeName/descendant-or-self::tei:placeName">
-                    <xsl:apply-templates mode="m_copy-from-authority-file" select="$v_placeName/descendant-or-self::tei:placeName/@xml:lang"/>
+                <!-- not entirely clear why there should be more than one <placeName> node -->
+                <!-- placeNames can self-nest -->
+                <xsl:copy select="$v_placeName/descendant-or-self::tei:placeName[1]">
+                    <xsl:apply-templates mode="m_copy-from-authority-file" select="$v_placeName/descendant-or-self::tei:placeName[1]/@xml:lang"/>
                     <xsl:attribute name="ref" select="oape:query-place($p_place, 'tei-ref', '', $p_local-authority)"/>
-                    <xsl:apply-templates mode="m_copy-from-authority-file" select="$v_placeName/descendant-or-self::tei:placeName/node()"/>
+                    <xsl:apply-templates mode="m_copy-from-authority-file" select="$v_placeName/descendant-or-self::tei:placeName[1]/node()"/>
                 </xsl:copy>
             </xsl:when>
             <!-- return type -->
