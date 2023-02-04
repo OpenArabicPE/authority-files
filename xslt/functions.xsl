@@ -736,13 +736,30 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-- count of known holdings -->
+            <xsl:when test="$p_output-mode = 'frequency'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/@oape:frequency">
+                        <xsl:value-of select="$p_bibl/@oape:frequency"/>
+                    </xsl:when>
+                    <xsl:when test="$v_monogr/@oape:frequency">
+                        <xsl:value-of select="$v_monogr[@oape:frequency][1]/@oape:frequency"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+
+            <!-- count known holdings -->
             <xsl:when test="$p_output-mode = 'holdings'">
                 <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item)"/>
             </xsl:when>
-            <!-- count of issues/copies in known holdings -->
+            <!-- count issues/copies in known holdings -->
             <xsl:when test="$p_output-mode = 'copies'">
                 <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item/descendant::tei:bibl)"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'digitised'">
+                <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item[(descendant::tei:ref[not(@type = 'about')]/@target[starts-with(., 'http')]) | descendant::tei:idno[@type = 'URI'][@subtype = 'self']])"/>
             </xsl:when>
             <!-- fallback -->
             <xsl:otherwise>
