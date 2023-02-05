@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
    <teiHeader>
       <fileDesc>
@@ -24,6 +19,9 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc xml:lang="en">
+         <tei:change when="2023-02-05" who="#pers_TG" xml:id="d10e54" xml:lang="en">Added references to local authority file (<tei:ref
+            target="/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/organizationography_OpenArabicPE.TEIP5.xml"
+            >/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/organizationography_OpenArabicPE.TEIP5.xml</tei:ref>)  to <tei:gi>orgName</tei:gi>s without such references based on  <tei:gi>org</tei:gi>s mentioned in the authority file.</tei:change>
          <change when="2022-06-29" who="#pers_TG">Created this file</change>
       </revisionDesc>
    </teiHeader>
@@ -101,21 +99,21 @@
             <note type="holdings"> <list>
                <item source="https://projectjaraid.github.io #hAUB #zdb #hathi"> <label> <orgName change="#d10e1003" ref="jaraid:org:hCAM oape:org:44" xml:lang="und-Latn">Cam</orgName>
                   </label>,</item>
-               <item source="https://projectjaraid.github.io #hAUB #zdb #hathi"> <label> <orgName change="#d10e1003" ref="jaraid:org:hHARV oape:org:43" xml:lang="und-Latn">Harv</orgName>
-                  </label>:</item>
+               <item source="https://projectjaraid.github.io #hAUB #zdb #hathi"> <label> <orgName change="#d10e1003 #d10e54" ref="isil:US-hvd jaraid:org:hHARV oape:org:43" xml:lang="und-Latn"
+                  >Harv</orgName> </label>:</item>
                <item source="https://projectjaraid.github.io #hAUB #zdb #hathi"> <label> <orgName ref="#hOAPE">OpenArabicPE</orgName> </label> <ref
                   target="https://www.zotero.org/groups/904125/openarabicpe/collections/XZ6Y3L7X">index</ref>.</item>
-               <item source="https://projectjaraid.github.io #hAUB #zdb #hathi"> <label> <orgName change="#d10e1003" ref="jaraid:org:hPUL oape:org:65" xml:lang="und-Latn">Prin</orgName>
-                  </label>complete (online at )
+               <item source="https://projectjaraid.github.io #hAUB #zdb #hathi"> <label> <orgName change="#d10e1003 #d10e54" ref="isil:US-njp jaraid:org:hPUL oape:org:65" xml:lang="und-Latn"
+                  >Prin</orgName> </label>complete (online at )
                      
                      <ref target="http://catalog.hathitrust.org/Record/008882426" xml:lang="und-Latn">HathiTrust</ref>
                      ,</item>
                <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2952984 oape:place:656"
                   source="#zdb">Bamberg</placeName>, 
                         
-                        <orgName change="#d12e97" ref="oape:org:273" source="#zdb" type="short" xml:lang="de">Bamberg UB</orgName></label> <ab change="#d12e97" source="#zdb"> <bibl
-                  change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-473" type="classmark"/> <date change="#d12e97" source="#zdb" type="onset" when="1870">1870</date>
-                  <date change="#d12e97" source="#zdb" type="terminus">1985/86</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
+                        <orgName change="#d12e97 #d10e54" ref="isil:DE-473 oape:org:273" source="#zdb" type="short" xml:lang="de">Bamberg UB</orgName></label> <ab change="#d12e97"
+                  source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-473" type="classmark"/> <date change="#d12e97" source="#zdb" type="onset"
+                  when="1870">1870</date> <date change="#d12e97" source="#zdb" type="terminus">1985/86</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
                         
                         <orgName change="#d12e97" source="#zdb" xml:lang="de">ZDB</orgName>
                         (
@@ -127,7 +125,7 @@
                         <orgName change="#d10e1003" ref="jaraid:org:hAUB oape:org:73" xml:lang="und-Latn">AUB</orgName></label>,</item>
                <item change="#d10e96" source="#hAUB"> <label> <placeName change="#d10e966" ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>,  
                         
-                        <orgName ref="jaraid:org:hAUB" xml:lang="en">AUB</orgName></label>: 
+                        <orgName change="#d10e54" ref="jaraid:org:hAUB oape:org:73" xml:lang="en">AUB</orgName></label>: 
                      
                      <ab change="#d10e96" source="#hAUB" xml:lang="ar">في المكتبة :مج. 1-16(1870:كانون الثاني- 1886:آذار)</ab> <ab> <bibl> <idno change="#d10e96" source="#hAUB"
                   type="url">https://libcat.aub.edu.lb/record=b1282869</idno></bibl> </ab> <ab xml:lang="en"> <ref change="#d10e96" source="#hAUB" target="https://libcat.aub.edu.lb/record=b1282869"
@@ -135,9 +133,9 @@
                <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97"
                   ref="geon:276781 jaraid:place:2 oape:place:26" source="#zdb">Beirut</placeName>, 
                         
-                        <orgName change="#d12e97" ref="oape:org:266" source="#zdb" type="short" xml:lang="de">Beirut Orient-Institut</orgName></label> <ab change="#d12e97"
-                  source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="http://ld.zdb-services.de/data/organisations/DE-Y9.rdf" type="classmark">B 457</idno> </bibl>
-                  </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
+                        <orgName change="#d12e97 #d10e54" ref="isil:DE-Y9 oape:org:266" source="#zdb" type="short" xml:lang="de">Beirut Orient-Institut</orgName></label> <ab
+                  change="#d12e97" source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="http://ld.zdb-services.de/data/organisations/DE-Y9.rdf" type="classmark"
+                  >B 457</idno> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
                         
                         <orgName change="#d12e97" source="#zdb" xml:lang="de">ZDB</orgName>
                         (
@@ -150,23 +148,10 @@
                <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2950159 oape:place:343"
                   source="#zdb">Berlin</placeName>, 
                         
-                        <orgName change="#d12e97" ref="oape:org:265" source="#zdb" type="short" xml:lang="de">Berlin SBB Haus Unter d.Linden</orgName></label> <ab change="#d12e97"
-                  source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="http://ld.zdb-services.de/data/organisations/DE-1.rdf" type="classmark">4&quot;@Ad 5922</idno>
-                  <date change="#d12e97" source="#zdb" type="onset" when="1870">1870</date> <date change="#d12e97" source="#zdb" type="onset" when="1871">1871</date> <date change="#d12e97"
-                  source="#zdb" type="onset" when="1874">1874</date> <date change="#d12e97" source="#zdb" type="terminus" when="1873">1873</date> </bibl> </ab> <ab change="#d12e97" source="#zdb"
-                  xml:lang="en">source: 
-                        
-                        <orgName change="#d12e97" source="#zdb" xml:lang="de">ZDB</orgName>
-                        (
-                        
-                        <ref change="#d12e97" source="#zdb" target="https://ld.zdb-services.de/resource/404149-5">catalogue</ref>
-                        )</ab> </item>
-               <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2950159 oape:place:343"
-                  source="#zdb">Berlin</placeName>, 
-                        
-                        <orgName change="#d12e97" ref="oape:org:265" source="#zdb" type="short" xml:lang="de">Berlin SBB Haus Unter d.Linden</orgName></label> <ab change="#d12e97"
-                  source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="http://ld.zdb-services.de/data/organisations/DE-1.rdf" type="classmark">50 PF 12</idno> <date
-                  change="#d12e97" source="#zdb" type="onset" when="1870">1870</date> <date change="#d12e97" source="#zdb" type="terminus">1885/86</date> </bibl> </ab> <ab change="#d12e97"
+                        <orgName change="#d12e97 #d10e54" ref="isil:DE-1 oape:org:265" source="#zdb" type="short" xml:lang="de">Berlin SBB Haus Unter d.Linden</orgName></label> <ab
+                  change="#d12e97" source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="http://ld.zdb-services.de/data/organisations/DE-1.rdf" type="classmark"
+                  >4"@Ad 5922</idno> <date change="#d12e97" source="#zdb" type="onset" when="1870">1870</date> <date change="#d12e97" source="#zdb" type="onset" when="1871">1871</date> <date
+                  change="#d12e97" source="#zdb" type="onset" when="1874">1874</date> <date change="#d12e97" source="#zdb" type="terminus" when="1873">1873</date> </bibl> </ab> <ab change="#d12e97"
                   source="#zdb" xml:lang="en">source: 
                         
                         <orgName change="#d12e97" source="#zdb" xml:lang="de">ZDB</orgName>
@@ -177,10 +162,23 @@
                <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2950159 oape:place:343"
                   source="#zdb">Berlin</placeName>, 
                         
-                        <orgName change="#d12e97" ref="oape:org:267" source="#zdb" type="short" xml:lang="de">Berlin UBFU Campusbibliothek</orgName></label> <ab change="#d12e97"
-                  source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-188-930" type="classmark"/> <date change="#d12e97" source="#zdb" type="onset"
-                  when="1870">1870</date> <date change="#d12e97" source="#zdb" type="onset" when="1876">1876</date> <date change="#d12e97" source="#zdb" type="onset" when="1984">1984</date> <date
-                  change="#d12e97" source="#zdb" type="terminus" when="1874">1874</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
+                        <orgName change="#d12e97 #d10e54" ref="isil:DE-1 oape:org:265" source="#zdb" type="short" xml:lang="de">Berlin SBB Haus Unter d.Linden</orgName></label> <ab
+                  change="#d12e97" source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="http://ld.zdb-services.de/data/organisations/DE-1.rdf" type="classmark"
+                  >50 PF 12</idno> <date change="#d12e97" source="#zdb" type="onset" when="1870">1870</date> <date change="#d12e97" source="#zdb" type="terminus">1885/86</date> </bibl> </ab> <ab
+                  change="#d12e97" source="#zdb" xml:lang="en">source: 
+                        
+                        <orgName change="#d12e97" source="#zdb" xml:lang="de">ZDB</orgName>
+                        (
+                        
+                        <ref change="#d12e97" source="#zdb" target="https://ld.zdb-services.de/resource/404149-5">catalogue</ref>
+                        )</ab> </item>
+               <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2950159 oape:place:343"
+                  source="#zdb">Berlin</placeName>, 
+                        
+                        <orgName change="#d12e97 #d10e54" ref="isil:DE-188-930 oape:org:267" source="#zdb" type="short" xml:lang="de">Berlin UBFU Campusbibliothek</orgName></label>
+                  <ab change="#d12e97" source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-188-930" type="classmark"/> <date change="#d12e97"
+                  source="#zdb" type="onset" when="1870">1870</date> <date change="#d12e97" source="#zdb" type="onset" when="1876">1876</date> <date change="#d12e97" source="#zdb" type="onset"
+                  when="1984">1984</date> <date change="#d12e97" source="#zdb" type="terminus" when="1874">1874</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
                         
                         <orgName change="#d12e97" source="#zdb" xml:lang="de">ZDB</orgName>
                         (
@@ -192,13 +190,13 @@
                         <orgName change="#d10e1003" ref="jaraid:org:hFUAS oape:org:30" xml:lang="und-Latn">FUAS</orgName></label>,</item>
                <item source="https://projectjaraid.github.io #hAUB #zdb #hathi"> <label> <placeName change="#d10e966" ref="geon:2950159 oape:place:343">Berlin</placeName>, 
                         
-                        <orgName change="#d10e1003" ref="jaraid:org:hSBB oape:org:69" xml:lang="und-Latn">SBB</orgName></label>complete (50 PF 12, 4&quot; Ad 5922),</item>
+                        <orgName change="#d10e1003" ref="jaraid:org:hSBB oape:org:69" xml:lang="und-Latn">SBB</orgName></label>complete (50 PF 12, 4" Ad 5922),</item>
                <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2946447 oape:place:659"
                   source="#zdb">Bonn</placeName>, 
                         
-                        <orgName change="#d12e97" ref="oape:org:271" source="#zdb" type="short" xml:lang="de">Bonn IOA</orgName></label> <ab change="#d12e97" source="#zdb"> <bibl
-                  change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-5-141" type="classmark"/> <date change="#d12e97" source="#zdb" type="onset" when="1870">1870</date>
-                  <date change="#d12e97" source="#zdb" type="terminus">1885/86</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
+                        <orgName change="#d12e97 #d10e54" ref="isil:DE-5-141 oape:org:271" source="#zdb" type="short" xml:lang="de">Bonn IOA</orgName></label> <ab change="#d12e97"
+                  source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-5-141" type="classmark"/> <date change="#d12e97" source="#zdb" type="onset"
+                  when="1870">1870</date> <date change="#d12e97" source="#zdb" type="terminus">1885/86</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
                         
                         <orgName change="#d12e97" source="#zdb" xml:lang="de">ZDB</orgName>
                         (
@@ -230,9 +228,9 @@
                <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2891122 oape:place:680"
                   source="#zdb">Kiel</placeName>, 
                         
-                        <orgName change="#d12e97" ref="oape:org:272" source="#zdb" type="short" xml:lang="de">Kiel UB</orgName></label> <ab change="#d12e97" source="#zdb"> <bibl
-                  change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-8" type="classmark">332</idno> <date change="#d12e97" source="#zdb" type="onset" when="1870"
-                  >1870</date> <date change="#d12e97" source="#zdb" type="terminus" when="1885">1885</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
+                        <orgName change="#d12e97 #d10e54" ref="isil:DE-8 oape:org:272" source="#zdb" type="short" xml:lang="de">Kiel UB</orgName></label> <ab change="#d12e97"
+                  source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-8" type="classmark">332</idno> <date change="#d12e97" source="#zdb" type="onset"
+                  when="1870">1870</date> <date change="#d12e97" source="#zdb" type="terminus" when="1885">1885</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: 
                         
                         <orgName change="#d12e97" source="#zdb" xml:lang="de">ZDB</orgName>
                         (
@@ -242,9 +240,9 @@
                <item change="#d12e97" source="https://ld.zdb-services.de/resource/404149-5"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2867714 oape:place:690"
                   source="#zdb">München</placeName>, 
                         
-                        <orgName change="#d12e97" ref="oape:org:262" source="#zdb" type="short" xml:lang="de">München BSB</orgName></label> <ab change="#d12e97" source="#zdb"> <bibl
-                  change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-12" type="classmark">4 A.or. 3793 e</idno> <date change="#d12e97" source="#zdb" type="onset"
-                  when="1870">1870</date> <date change="#d12e97" source="#zdb" type="terminus" when="1885">1885</date> </bibl> <bibl> <idno source="#zdb" subtype="DE-12" type="classmark"
+                        <orgName change="#d12e97 #d10e54" ref="isil:DE-12 oape:org:262" source="#zdb" type="short" xml:lang="de">München BSB</orgName></label> <ab change="#d12e97"
+                  source="#zdb"> <bibl change="#d12e97" source="#zdb"> <idno change="#d12e97" source="#zdb" subtype="DE-12" type="classmark">4 A.or. 3793 e</idno> <date change="#d12e97" source="#zdb"
+                  type="onset" when="1870">1870</date> <date change="#d12e97" source="#zdb" type="terminus" when="1885">1885</date> </bibl> <bibl> <idno source="#zdb" subtype="DE-12" type="classmark"
                   >4 A.or. 3793 e-5</idno> <idno type="URN">urn:nbn:de:bvb:12-bsb11176233-5</idno> <date when="1875">1875</date> <biblScope from="5" to="5" unit="volume"/> </bibl> <bibl> <idno
                   source="#zdb" subtype="DE-12" type="classmark">4 A.or. 3793 e-6</idno> <idno type="URN">urn:nbn:de:bvb:12-bsb11307790-2</idno> <date when="1875">1875</date> <biblScope from="6"
                   to="6" unit="volume"/> </bibl> <bibl> <idno source="#zdb" subtype="DE-12" type="classmark">4 A.or. 3793 e-2</idno> <idno type="URN">urn:nbn:de:bvb:12-bsb11030396-9</idno> <date
