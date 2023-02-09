@@ -850,6 +850,21 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <xsl:function name="oape:query-geo">
+        <xsl:param name="p_geo" as="node()"/>
+        <xsl:param as="xs:string" name="p_output-mode"/>
+        <xsl:choose>
+                            <xsl:when test="$p_output-mode = 'location'">
+                                <xsl:value-of select="$p_geo"/>
+                            </xsl:when>
+                            <xsl:when test="$p_output-mode = 'lat'">
+                                <xsl:value-of select="replace($p_geo, '^(.+?),\s*(.+?)$', '$1')"/>
+                            </xsl:when>
+                            <xsl:when test="$p_output-mode = 'long'">
+                                <xsl:value-of select="replace($p_geo, '^(.+?),\s*(.+?)$', '$2')"/>
+                            </xsl:when>
+                        </xsl:choose>
+    </xsl:function>
     <xsl:function name="oape:query-place">
         <!-- input is a tei <place> node -->
         <xsl:param as="node()" name="p_place"/>
@@ -864,17 +879,7 @@
             <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
                 <xsl:choose>
                     <xsl:when test="$p_place/tei:location/tei:geo">
-                        <xsl:choose>
-                            <xsl:when test="$p_output-mode = 'location'">
-                                <xsl:value-of select="$p_place/tei:location/tei:geo"/>
-                            </xsl:when>
-                            <xsl:when test="$p_output-mode = 'lat'">
-                                <xsl:value-of select="replace($p_place/tei:location/tei:geo, '^(.+?),\s*(.+?)$', '$1')"/>
-                            </xsl:when>
-                            <xsl:when test="$p_output-mode = 'long'">
-                                <xsl:value-of select="replace($p_place/tei:location/tei:geo, '^(.+?),\s*(.+?)$', '$2')"/>
-                            </xsl:when>
-                        </xsl:choose>
+                       <xsl:value-of select="oape:query-geo($p_place/tei:location/tei:geo, $p_output-mode)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="$p_verbose = true()">
@@ -1077,7 +1082,10 @@
             <!-- return location -->
             <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
                 <xsl:choose>
-                    <xsl:when test="$p_org/tei:location/tei:placeName">
+                    <xsl:when test="$p_org/tei:location/tei:geo">
+                        <xsl:value-of select="oape:query-geo($p_org/tei:location[tei:geo][1]/tei:geo[1], $p_output-mode)"/>
+                    </xsl:when>
+                    <xsl:when test="$p_org/tei:location//tei:placeName">
                         <xsl:copy-of
                             select="oape:query-place(oape:get-entity-from-authority-file($p_org/descendant::tei:placeName[ancestor::tei:location][1], $p_local-authority, $v_gazetteer), $p_output-mode, $p_output-language, $p_local-authority)"
                         />
