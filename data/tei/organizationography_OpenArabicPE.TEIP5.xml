@@ -6,7 +6,7 @@
                 <title>Authority file of organisations relevant for the history of Arabic Periodicals</title>
                 <respStmt>
                     <resp>Prepared by</resp>
-                    <persName>Till Grallert</persName>
+                    <persName xml:id="pers_TG">Till Grallert</persName>
                 </respStmt>
             </titleStmt>
             <publicationStmt>
@@ -17,6 +17,9 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc xml:lang="en">
+            <tei:change when="2023-02-05" who="#pers_TG" xml:id="d10e37" xml:lang="en">Added references to local authority file (<tei:ref
+                target="/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/gazetteer_OpenArabicPE.TEIP5.xml"
+                >/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/gazetteer_OpenArabicPE.TEIP5.xml</tei:ref>) and to GeoNames IDs to <tei:gi>placeName</tei:gi>s without such references based on  <tei:gi>place</tei:gi>s mentioned in the authority file.</tei:change>
             <change when="2021-05-21">Created this file</change>
         </revisionDesc>
     </teiHeader>
@@ -1984,7 +1987,7 @@
                 <idno type="jaraid">hCAM</idno>
                 <idno type="oape">44</idno>
                 <location>
-                    <placeName ref="oape:place:737">Cambridge</placeName>
+                    <placeName change="#d10e37" ref="geon:2653941 oape:place:737" resp="#xslt">Cambridge</placeName>
                     <country>United Kingdom</country>
                 </location>
             </org>
