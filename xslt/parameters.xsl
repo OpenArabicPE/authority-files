@@ -17,14 +17,22 @@
     <!-- options for functions -->
     <!-- link titles to bibliography: toggle whether to link weak matches or not -->
     <xsl:param name="p_link-matches-based-on-title-only" select="true()"/>
+    <!-- select whether existing refs should be used for matching -->
     <xsl:param name="p_ignore-existing-refs" select="false()"/>
     <!-- currently not used: toggle whether existing @ref  should be updated-->
-    <xsl:param name="p_update-existing-refs" select="false()"/>
+    <!--<xsl:param name="p_update-existing-refs" select="false()"/>-->
     <!-- authorities -->
     <xsl:param name="p_acronym-geonames" select="'geon'"/> <!-- in WHG this is 'gn' -->
     <xsl:param name="p_acronym-viaf" select="'viaf'"/>
     <xsl:param name="p_acronym-wikidata" select="'wiki'"/> <!-- in WHG this is 'wd' -->
     <xsl:param name="p_acronym-wikimapia" select="'lwm'"/>
+    <xsl:param name="p_url-resolve-wikidata" select="'https://wikidata.org/'"/>
+    <xsl:param name="p_url-resolve-viaf" select="'https://viaf.org/'"/>
+    <xsl:param name="p_url-resolve-geonames" select="'https://geonames.org/'"/>
+    <xsl:param name="p_url-resolve-oclc" select="'https://worldcat.org/oclc/'"/>
+    <xsl:param name="p_url-resolve-hathi" select="'https://catalog.hathitrust.org/Record/'"/>
+    <xsl:param name="p_url-resolve-zdb" select="'https://ld.zdb-services.de/resource/'"/>
+    <xsl:param name="p_url-resolve-aub" select="'https://libcat.aub.edu.lb/record='"/>
     <!-- files -->
     <xsl:param name="p_url-nyms" select="'../data/tei/nymlist.TEIP5.xml'"/>
     <xsl:variable name="v_file-nyms" select="doc($p_url-nyms)"/>
@@ -43,7 +51,7 @@
                 <xsl:value-of select="'https://github.com/'"/>
             </xsl:when>
             <xsl:when test="$p_github-action = false()">
-                <xsl:value-of select="'/BachUni/BachBibliothek/GitHub/'"/>
+                <xsl:value-of select="'/Users/Shared/BachUni/BachBibliothek/GitHub/'"/>
             </xsl:when>
         </xsl:choose>
     </xsl:param>
@@ -59,6 +67,13 @@
             </xsl:when>
             <xsl:when test="$p_local-authority = 'oape'">
                 <xsl:value-of select="'OpenArabicPE/authority-files/data/tei/'"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:param>
+    <xsl:param name="p_path-authority-test-folder">
+        <xsl:choose>
+            <xsl:when test="$p_local-authority = 'oape'">
+                <xsl:value-of select="'OpenArabicPE/authority-files/data/test-data/'"/>
             </xsl:when>
         </xsl:choose>
     </xsl:param>
@@ -135,6 +150,7 @@
     <xsl:variable name="v_organizationography" select="doc($p_url-organizationography)"/>
     <xsl:param name="p_url-bibliography" select="concat($p_path-base, $p_path-authority-files-folder, $p_file-bibliography)"/>
     <xsl:variable name="v_bibliography" select="doc($p_url-bibliography)"/>
+    <xsl:variable name="v_bibliography-test" select="doc(concat($p_path-base, $p_path-authority-test-folder, 'test_bibliography.TEIP5.xml'))"/>
     <!-- select tsv or csv as output -->
     <xsl:param name="p_format" select="'csv'"/>
     <xsl:param name="p_quoted" select="true()"/>

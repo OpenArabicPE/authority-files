@@ -2,7 +2,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -18,6 +18,115 @@
    </teiHeader>
    <text>
       <body>
+         <list>
+            <head xml:lang="en">references to periodicals</head>
+            <item>
+               <label xml:lang="en">merge nodes</label>
+               <persName>Till Grallert</persName>
+               <persName>Yvonne Albers</persName>
+               <date when="1990-01-01"/>
+                     <date notAfter="1990-01-01"/>
+               <biblStruct xml:id="bibl_3" xml:lang="en" type="book" subtype="journal">
+                  <monogr>
+                     <title level="j" ref="oape:bibl:57" xml:lang="en">alternative title</title>
+
+<title level="j" type="sub" xml:lang="en">alternative subtitle</title>
+                     <imprint>
+                        <pubPlace><placeName ref="geon:4560349">Phili</placeName></pubPlace>
+                     </imprint>
+                  </monogr>
+                  <note>Lorem ipsum</note>
+               </biblStruct>
+               <!--<biblStruct oape:frequency="fortnightly" subtype="newspaper" type="periodical">
+            <monogr>
+               <title change="#d10e88" level="j" ref="jaraid:bibl:t1r3031 oape:bibl:1371" resp="#xslt" xml:lang="ar">الدائرة</title>
+               <title level="j" type="sub" xml:lang="ar">جريدة علمية رياضية حكمية تصدر مرة في كل أسبوعين</title>
+               <title level="s">Student Magazines, 1899-1934</title>
+               <idno type="AUBNO">AA:4.2.1</idno>
+               <idno type="LEAUB">b17607474</idno>
+               <imprint>
+                  <pubPlace> <placeName change="#d9e44" ref="geon:276781 jaraid:place:2 oape:place:26">بيروت</placeName> </pubPlace>
+                  <publisher> <supplied resp="#aub">المدرسة الكلية السورية الإنجيلية</supplied> </publisher>
+                  <date type="onset" when="1903">1903-1904</date>
+                  <date type="terminus" when="1904">1903-1904</date>
+               </imprint>
+            </monogr>
+            <note type="comments"> <list xml:lang="ar">
+               <item xml:lang="ar">العنوان الجزئي يختلف عدد 3-4 "جريدة أدبية رياضية حكمية"</item>
+               <item xml:lang="ar">العنوان الجزئي يختف عدد 5-6 "جريدة علمية أدبية رياضية"</item>
+               <item xml:lang="ar">العنوان الجزئي يختلف عدد 7 "جريدة أدبية علمية رياضية حكمية"</item>
+               <item xml:lang="ar">المدير والمحرر مصطفى السعادة؛ الكاتب ضياء البغدادي</item>
+               <item xml:lang="ar">الأعداد مكتوبة بخط اليد</item>
+               </list> </note>
+            <note type="holdings"> <list>
+               <item> <label><placeName>Beirut</placeName>,  <orgName ref="jaraid:org:hAUB" xml:lang="en">AUB</orgName> </label>: <ab xml:lang="ar"
+                  >في المكتبة : ج. 1 ع. 1-7 (1903 - 1904)</ab><ab><bibl><idno subtype="AUB" type="classmark">AA:4.2.1</idno><idno type="url"
+                  >https://libcat.aub.edu.lb/record=b1760747</idno></bibl></ab> <ab xml:lang="en"> <ref target="https://libcat.aub.edu.lb/record=b1760747">catalogue</ref> </ab> </item>
+               </list> </note>
+         </biblStruct>-->
+            </item>
+            <item> <note>Debug duplicate children of biblStruct</note> <biblStruct>
+               <monogr>
+                  <title resp="#pers_TG" source="#bibl_1">Test</title>
+                  <title resp="#xslt" source="#bibl_2">Test</title>
+                  <title>Tost</title>
+                  <title resp="#xslt">Tost</title>
+                  <editor> <persName change="#bibl_2.d2e1807" xml:id="p12r6" xml:lang="ar">أحمد</persName> <persName xml:id="p12r5" xml:lang="ar">احمد</persName> </editor>
+                  <imprint>
+                     <date when="1990-01-01"/>
+                     <date when="1990-01-03"/>
+                  </imprint>
+               </monogr>
+               </biblStruct> </item>
+            <item xml:lang="ar"> <note xml:lang="en">It seems that there is a problem with the persName nodes</note> <p xml:lang="en"
+               ><persName>Till Grallert</persName>,<persName><forename>Till</forename> <surname>Grallert</surname></persName>,  <persName xml:lang="ar">احمد علي</persName></p> <p><persName ref="NA"
+               xml:id="persName_13.d9e1209" xml:lang="ar"> <forename xml:id="forename_13.d9e1211">احمد علي</forename> <surname xml:id="surname_13.d9e1214">شاذلي</surname> </persName></p> </item>
+            <item xml:lang="ar"> <note>There is a problem with the following biblStruct ("internal error evaluating template rule") caused by the editor</note> <biblStruct subtype="newspaper"
+               type="periodical">
+               <monogr>
+                  <title level="j" ref="oape:bibl:906" resp="#pers_TG" xml:lang="ar">الإسلام</title>
+                  <title level="j" type="sub" xml:lang="ar">جريدة علمية أدبية تاريخية</title>
+                  <idno type="AUBNO">Mic-NA:000148</idno>
+                  <respStmt>
+                     <resp>own</resp>
+                     <persName xml:id="persName_12.d9e1197" xml:lang="ar"> <forename xml:id="forename_12.d9e1199">احمد علي</forename> <surname xml:id="surname_12.d9e1202">شاذلي</surname> </persName>
+                  </respStmt>
+                  <editor> <persName xml:lang="ar"> <forename>احمد علي</forename> <surname>شاذلي</surname> </persName> </editor>
+                  <imprint>
+                     <pubPlace> <placeName change="#d9e44" ref="geon:357994 jaraid:place:3 oape:place:417">مصر</placeName> </pubPlace>
+                     <publisher>أحمد علي الشاذلي الأزهري</publisher>
+                     <date type="onset" when="1894">1894-1913</date>
+                     <date type="terminus" when="1913">1894-1913</date>
+                  </imprint>
+               </monogr>
+               <!--<note type="comments"> <list xml:lang="ar">
+               <item>لصاحبها ومحررها أحمد علي الشاذلي الأزهري</item>
+               </list> </note>
+            <note type="holdings"> <list>
+               <item> <label><placeName>Beirut</placeName>,  <orgName ref="jaraid:org:hAUB" xml:lang="en">AUB</orgName> </label> <ab xml:lang="ar"
+                  >في المكتبة :1895: يونيو- 1897:كانون الثاني .</ab><ab><bibl><idno subtype="AUB" type="classmark">Mic-NA:000148</idno></bibl></ab> </item>
+               </list> </note>-->
+               </biblStruct></item>
+            <item xml:lang="ar"><persName change="#d3e133" ref="oape:pers:647">إبراهيم حلمي العمر</persName>: صحافي، من كتاب العراق. اشتهر قبل الحرب العامة الأولى <bibl type="periodical"><title
+               level="j" xml:lang="ar">الإسلام</title> <pubPlace> <placeName change="#d9e44" ref="geon:357994 jaraid:place:3 oape:place:417">مصر</placeName>
+               </pubPlace></bibl> برسائل كان يبعث بها إلى صحف مصر والشام، وتولى تحرير <bibl change="#d2e150" subtype="newspaper" type="periodical">جريدة (<title change="#d10e155" level="j" ref="NA"
+               resp="#xslt">النهضة</title>) ب<pubPlace><placeName>بغداد</placeName></pubPlace></bibl> سنة 1913 وكتب في <bibl change="#d2e150" subtype="journal" type="periodical">مجلة (<title
+               change="#d10e155" level="j" ref="NA" resp="#xslt">لغة العرب</title></bibl>) البغدادية، واعتقله الترك في أواخر تلك الحرب فنقلوه إلى دمشق، فمرض فأطلقوه. واشترك بعد الحرب في إصدار <bibl
+               change="#d2e150" subtype="newspaper" type="periodical">جريدة (<title change="#d10e155" level="j" ref="NA" resp="#xslt"
+               >لسان العرب</title>) ب<pubPlace><placeName>دمشق</placeName></pubPlace></bibl>، يومية، ثم انفرد بها.</item>
+            <item xml:lang="ar">ومنذ ربع قرن لم يكن في مصر سوى جريدة يومية واحدة وهي جريدة الأهرام وكان قراؤها لا يتجاوزون الألفين يفأصبح فجريدة لسان الحال وجريدة (ثمرات الفنون).</item>
+            <item xml:lang="ar"
+               >مجلة عمومية تبحث في كل فن ومطلب لمنشئيها الكاتبين البارعين جورج أفندي طنوس ومحمود أفندي أبي حسين وهي تصدر جريدة الشام البغدادية مرة في الشهر ويشترك في تحريرها خيرة الشعراء والمنشئين وقد تصفحنا الأعداد ال ثلاثة التي صدرت منها فقرأنا فيها من الآداب المنثورة والمنظومة ما يستفاد منه ويستملح وقيمة اشتراكها ٤٠ قرشاً صحيحاً في القطر و ١٥ فرنكاً في الخارج فنرجو لها الثبات والنجاح.</item>
+         </list>
+         <list>
+            <head>faulty transcriptions</head>
+            <!--<item xml:lang="ar-Latn-x-ijmes">al-Shāṭiʼ</item>-->
+            <item xml:lang="ar-Latn-x-ijmes">al-iḥṣāʼāt al-ʻāmmah li'l-Jumhūrīyah at-tārīkhiyya</item>
+            <item xml:lang="ar-Latn-x-ijmes">ʻĀlam li-qiṣṣah / yuṣdiruhā Nādī al-Qiṣṣah bi-al-Iskandarīyah</item>
+            <item xml:lang="ar-Latn-x-ijmes">al-Urdun bi-al-arqām wa-l-rusūm. Fī al-maḥākim</item>
+            <item xml:lang="ar-Latn-x-ijmes">al-Urdun bi-l-arqām</item>
+            <item xml:lang="ar-Latn-x-ijmes">Majallat al-thaqāfah al-qaṣaṣīyah al-muʻāṣirah al-rāqiyah</item>
+         </list>
          <p>Lorem ipsum dolor sit amet <orgName resp="#hAUB">AUB</orgName> consectetur adipiscing</p>
          <p>Some text <title level="j" xml:lang="ar">النحلة</title> here.<bibl next="#bibl_2" xml:id="bibl_1"
             >Some book was published in <pubPlace><placeName>Buenos Aires</placeName></pubPlace></bibl> Lorem ipsum dolor sit amet consectetur adipiscing <bibl prev="#bibl_1" xml:id="bibl_2"><title

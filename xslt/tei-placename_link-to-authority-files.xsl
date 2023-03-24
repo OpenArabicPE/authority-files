@@ -14,12 +14,14 @@
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="yes" method="xml" name="xml_indented" omit-xml-declaration="no"/>
     <xsl:include href="functions.xsl"/>
+    
     <!-- Identity transformation -->
     <xsl:template match="node() | @*">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
+    
     <xsl:template match="/">
         <!-- temporary debugging -->
         <!-- test if the URL of the personography resolves to an actual file -->
@@ -42,12 +44,12 @@
             </xsl:when>
             <!-- fall back -->
             <xsl:otherwise>
-                    <xsl:message>
+                    <!--<xsl:message>
                       <xsl:text>Add the following place to the authority file: </xsl:text>
                         <xsl:element name="place">
                                 <xsl:apply-templates mode="m_copy-from-source" select="."/>
                         </xsl:element>
-                    </xsl:message>
+                    </xsl:message>-->
                 <!-- fallback replicate original input -->
                     <xsl:apply-templates mode="m_identity-transform" select="."/> 
             </xsl:otherwise>

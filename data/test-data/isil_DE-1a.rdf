@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:agrelon="https://d-nb.info/standards/elementset/agrelon#" xmlns:bflc="http://id.loc.gov/ontologies/bflc/" xmlns:bibo="http://purl.org/ontology/bibo/"
+	xmlns:dbp="http://dbpedia.org/property/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:dnb_intern="http://dnb.de/" xmlns:dnbt="https://d-nb.info/standards/elementset/dnb#" xmlns:ebu="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+	xmlns:editeur="https://ns.editeur.org/thema/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:gbv="http://purl.org/ontology/gbv/" xmlns:geo="http://www.opengis.net/ont/geosparql#"
+	xmlns:gndo="https://d-nb.info/standards/elementset/gnd#" xmlns:isbd="http://iflastandards.info/ns/isbd/elements/" xmlns:lib="http://purl.org/library/"
+	xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:marcRole="http://id.loc.gov/vocabulary/relators/" xmlns:mo="http://purl.org/ontology/mo/" xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdau="http://rdaregistry.info/Elements/u/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="http://schema.org/"
+	xmlns:sf="http://www.opengis.net/ont/sf#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:umbel="http://umbel.org/umbel#" xmlns:v="http://www.w3.org/2006/vcard/ns#"
+	xmlns:vivo="http://vivoweb.org/ontology/core#" xmlns:wdrs="http://www.w3.org/2007/05/powder-s#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#"> <rdf:Description
+	rdf:about="https://ld.zdb-services.de/resource/organisations/DE-1a"> <wdrs:describedby> <rdf:Description rdf:about="https://ld.zdb-services.de/data/organisations/DE-1a"> <dcterms:license
+	rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/"/> <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-12-15T13:55:44.000</dcterms:modified>
+	</rdf:Description> </wdrs:describedby> <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(ISIL)DE-1a</dc:identifier> <owl:sameAs
+	rdf:resource="http://lobid.org/organisation/DE-1a"/> <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/> <foaf:homepage rdf:resource="http://www.staatsbibliothek-berlin.de"/>
+	<gbv:opac> <rdf:Description rdf:nodeID="node1flteqnqdx8735396"> <foaf:homepage rdf:resource="http://stabikat.de"/> <rdf:type rdf:resource="http://purl.org/cld/cdtype/CatalogueOrIndex"/>
+	</rdf:Description> </gbv:opac> <v:url> <rdf:Description rdf:about="http://staatsbibliothek-berlin.de/service/auskunft/"> <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Service"/>
+	<dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Online-Auskunft</dc:description> </rdf:Description> </v:url> <v:url> <rdf:Description
+	rdf:about="https://staatsbibliothek-berlin.de/vor-ort/opening-hours/"> <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Öffnungszeiten besonderer Bereiche</dc:description>
+	</rdf:Description> </v:url> <dbp:shortName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Berlin SBB Haus Potsdamer Str</dbp:shortName> <foaf:name
+	rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Staatsbibliothek zu Berlin - Preußischer Kulturbesitz, Haus Potsdamer Straße</foaf:name> 
+		<v:adr> 
+		<rdf:Description
+	rdf:nodeID="node1flteqnqdx8735397"> 
+			<v:street-address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potsdamer Str. 33</v:street-address> 
+			<v:locality
+	rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Berlin</v:locality> <v:postal-code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10785</v:postal-code> <rdf:type
+	rdf:resource="http://www.w3.org/2006/vcard/ns#Pref"/> <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/> </rdf:Description> </v:adr> <geo:location> <rdf:Description
+	rdf:nodeID="node1flteqnqdx8735398"> <geo:long rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13.37063</geo:long> <geo:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+	>52.50771</geo:lat> <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/> </rdf:Description> </geo:location> <schema:openingHoursSpecification> <rdf:Description
+	rdf:nodeID="node1flteqnqdx8735399"> <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mo-Sa 8.00-22.00</rdfs:comment> <schema:description
+	rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Servicezeiten und Öffnungszeiten besonderer Bereiche s. Link &quot;Öffnungszeiten besonderer Bereiche&quot;</schema:description> <rdf:type
+	rdf:resource="http://schema.org/OpeningHoursSpecification"/> </rdf:Description> </schema:openingHoursSpecification> <v:adr> <rdf:Description rdf:nodeID="node1flteqnqdx8735400"> <v:locality
+	rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Berlin</v:locality> <v:postal-code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10772</v:postal-code> <rdf:type
+	rdf:resource="http://www.w3.org/2006/vcard/ns#Parcel"/> <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Postal"/> <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+	</rdf:Description> </v:adr> <v:tel> <rdf:Description rdf:nodeID="node1flteqnqdx8735401"> <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-433888</rdf:value> <rdf:type
+	rdf:resource="http://www.w3.org/2006/vcard/ns#Pref"/> <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Voice"/> </rdf:Description> </v:tel> <v:tel> <rdf:Description
+	rdf:nodeID="node1flteqnqdx8735402"> <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-333501</rdf:value> <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Pref"/>
+	<rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Fax"/> </rdf:Description> </v:tel> <v:email> <rdf:Description rdf:about="mailto:info@sbb.spk-berlin.de"> <rdf:type
+	rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2006/vcard/ns#Pref</rdf:type> </rdf:Description> </v:email> <v:email rdf:resource="mailto:benutzung.h2@sbb.spk-berlin.de"/>
+	<v:tel> <rdf:Description rdf:nodeID="node1flteqnqdx8735403"> <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-433888</rdf:value> <rdf:value
+	rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-433888</rdf:value> <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-433640</rdf:value> <rdf:type
+	rdf:resource="http://www.w3.org/2006/vcard/ns#Voice"/> </rdf:Description> </v:tel> <v:tel> <rdf:Description rdf:nodeID="node1flteqnqdx8735404"> <rdf:value
+	rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-333501</rdf:value> <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-333501</rdf:value> <rdf:value
+	rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-338432</rdf:value> <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Fax"/> </rdf:Description> </v:tel> <v:email
+	rdf:resource="mailto:Fernleihe1@sbb.spk-berlin.de"/> <v:tel> <rdf:Description rdf:nodeID="node1flteqnqdx8735405"> <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+	>+49 30 2 66-433640</rdf:value> <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+49 30 2 66-433640</rdf:value> <rdf:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+	>+49 30 2 66-433650</rdf:value> <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Voice"/> </rdf:Description> </v:tel> <v:email rdf:resource="mailto:Fernleihe2@sbb.spk-berlin.de"/>
+	<dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+	>UNO- und UNESCO-Depositärbibliothek. Übernommene Bibliothek: B 3 (Bibliothek der ehemaligen Preußischen Geologischen Landesanstalt)</dc:description> </rdf:Description> </rdf:RDF>

@@ -14,8 +14,7 @@
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="yes" method="xml"
         name="xml_indented" omit-xml-declaration="no"/>
     <xsl:include href="convert_geonames-to-tei_functions.xsl"/>
-<!--    <xsl:include href="../data/api-credentials/api-credentials.xsl"/>-->
-    <xsl:include href="file:/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/api-credentials/api-credentials.xsl"/>
+    <xsl:include href="../../authority-files/data/api-credentials/api-credentials.xsl"/>
     
     <!-- this param establishes the path to the folder holding individual authority files from GeoNames. The file path is relative to this stylesheet!  -->
     <xsl:param name="p_path-geon-files" select="'../data/geonames/'"/>

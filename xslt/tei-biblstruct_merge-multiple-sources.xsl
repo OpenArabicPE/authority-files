@@ -24,7 +24,14 @@
             </xsl:message>
         </xsl:if>
         <xsl:result-document href="_output/bibl_merged/{$p_file-bibliography}">
-            <xsl:apply-templates mode="m_merge" select="$v_bibliography"/>
+            <xsl:choose>
+                <xsl:when test="$p_debug = true()">
+                    <xsl:apply-templates mode="m_merge" select="$v_bibliography-test"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates mode="m_merge" select="$v_bibliography"/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:result-document>
     </xsl:template>
     <!-- identity transform -->
@@ -166,8 +173,45 @@
     <!-- do not copy certain attributes from one file to another -->
     <xsl:template match="@xml:id | @change | @next | @prev" mode="m_copy-from-source"/>
     <!-- update existing <biblStruct -->
-    <!-- plan: 
-    -->
+   <!-- this is run on the target file -->
+    <xsl:template match="tei:biblStruct[ancestor::tei:standOff]" mode="m_merge" priority="11">
+        <xsl:variable name="v_target" select="."/>
+        <xsl:variable name="v_id-target" select="oape:query-biblstruct($v_target, 'id', '', $v_gazetteer, $p_local-authority)"/>
+        <xsl:choose>
+            <!-- check if the target is part of the source -->
+            <xsl:when test="matches($v_bibls-source-ids, concat($v_id-target, '(,|$)'))">
+                <!-- get the source -->
+                <xsl:variable name="v_source">
+                    <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref]">
+                        <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
+                        <!-- match based on IDs -->
+                        <xsl:if test="$v_id-source = $v_id-target">
+                            <xsl:message>
+                                <xsl:text>Found a match with ID: "</xsl:text>
+                                <xsl:value-of select="$v_id-source"/>
+                                <xsl:text>"</xsl:text>
+                            </xsl:message>
+                            <xsl:apply-templates mode="m_identity-transform" select="."/>
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:variable>
+                <xsl:copy-of select="oape:merge-nodes($v_source/descendant-or-self::tei:biblStruct, $v_target, 'target')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>no additional information found for </xsl:text>
+                        <xsl:value-of select="$v_id-target"/>
+                    </xsl:message>
+                </xsl:if>
+                <xsl:copy>
+                    <xsl:apply-templates mode="m_identity-transform" select="@* | node()"/>
+                </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- everything below is not used anymore -->
     <xsl:template match="tei:biblStruct[ancestor::tei:standOff]" mode="m_merge" priority="10">
         <xsl:variable name="v_target" select="."/>
         <xsl:variable name="v_id-target" select="oape:query-biblstruct($v_target, 'id', '', $v_gazetteer, $p_local-authority)"/>
@@ -211,7 +255,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <!-- template that does the actial merging -->
+    <!-- template that does the actual merging -->
     <xsl:template name="t_merge-biblStruct">
         <xsl:param as="node()" name="p_target"/>
         <xsl:param as="node()" name="p_source"/>
@@ -247,6 +291,7 @@
             <!-- merged content -->
             <!-- monogr -->
             <xsl:element name="monogr">
+                <!-- add attributes from targat an source -->
                 <xsl:apply-templates mode="m_identity-transform" select="$v_target-monogr/@*"/>
                 <xsl:apply-templates mode="m_identity-transform" select="$v_source-monogr/@*"/>
                 <!-- titles -->
@@ -283,6 +328,7 @@
                 <xsl:apply-templates mode="m_identity-transform" select="$v_source-monogr/tei:respStmt[not(. = $v_target-monogr/tei:respStmt)]"/>
                 <!-- imprint -->
                 <xsl:element name="imprint">
+                    <xsl:apply-templates select="$v_source-monogr/tei:imprint/@*"/>
                     <xsl:apply-templates select="$v_target-monogr/tei:imprint/@*"/>
                     <!-- date -->
                     <xsl:apply-templates mode="m_identity-transform" select="$v_target-monogr/tei:imprint/tei:date"/>
@@ -417,8 +463,8 @@
                 <xsl:element name="head">
                     <xsl:text>Entries from </xsl:text>
                     <xsl:value-of select="$v_name-file"/>
-                    <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>
                 </xsl:element>
+                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>
             </xsl:element>
         </xsl:copy>
     </xsl:template>

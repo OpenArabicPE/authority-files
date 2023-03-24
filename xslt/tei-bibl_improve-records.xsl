@@ -38,8 +38,8 @@
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:title[@xml:lang = 'ar'][1]"/>
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:title[1]"/>
                 <!-- locations -->
-                <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint/tei:pubPlace[1]/tei:placeName[@ref][1]/@ref"/>
-                <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint/tei:pubPlace[1]/tei:placeName[1]"/>
+                <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint[1]/tei:pubPlace[1]/tei:placeName[@ref][1]/@ref"/>
+                <xsl:sort order="ascending" select="descendant::tei:placeName[1][parent::tei:pubPlace]"/>
                 <!-- dates -->
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint/tei:date[@type = 'onset'][1]/@when"/>
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint/tei:date[1]/@when"/>
@@ -57,20 +57,39 @@
                     <xsl:when test="870 &lt;= $v_id and $v_id &lt;= 1533">
                         <xsl:text>newspaper</xsl:text>
                     </xsl:when>
+                    <xsl:when test="1534  &lt;= $v_id and $v_id &lt;= 2029">
+                        <xsl:text>journal</xsl:text>
+                    </xsl:when>
                      <xsl:when test="2035 &lt;= $v_id and $v_id &lt;= 2083">
                         <xsl:text>newspaper</xsl:text>
+                    </xsl:when>
+                     <xsl:when test="2084  &lt;= $v_id and $v_id &lt;= 2097">
+                        <xsl:text>journal</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="2098 &lt;= $v_id and $v_id &lt;= 2163">
+                        <xsl:text>newspaper</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="2164 &lt;= $v_id and $v_id &lt;= 2192">
+                        <xsl:text>journal</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="2193 &lt;= $v_id and $v_id &lt;= 2318">
+                        <xsl:text>newspaper</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="2319 &lt;= $v_id and $v_id &lt;= 2348">
+                        <xsl:text>journal</xsl:text>
                     </xsl:when>
                     <xsl:when test="2349 &lt;= $v_id and $v_id &lt;= 3024">
                         <xsl:text>newspaper</xsl:text>
                     </xsl:when>
-                    <xsl:when test="1534  &lt;= $v_id and $v_id &lt;= 2029">
-                        <xsl:text>journal</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="2084  &lt;= $v_id and $v_id &lt;= 2097">
-                        <xsl:text>journal</xsl:text>
-                    </xsl:when>
                     <xsl:when test="3025 &lt;= $v_id and $v_id &lt;= 3323">
                         <xsl:text>journal</xsl:text>
+                    </xsl:when>
+                    <!-- based on the subtitle -->
+                    <xsl:when test="contains(tei:monogr[1]/tei:title[@type = 'sub'][@xml:lang = 'ar'][1], 'مجلة')">
+                        <xsl:text>journal</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="contains(tei:monogr[1]/tei:title[@type = 'sub'][@xml:lang = 'ar'][1], 'جريدة')">
+                        <xsl:text>newspaper</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:text>NA</xsl:text>

@@ -61,6 +61,7 @@
     <xsl:template match="geonameId" mode="m_geon-to-tei">
         <tei:idno>
             <xsl:attribute name="type" select="$p_acronym-geonames"/>
+            <xsl:attribute name="resp" select="'#xslt'"/>
             <xsl:value-of select="."/>
         </tei:idno>
     </xsl:template>
@@ -102,7 +103,7 @@
     <xsl:template match="alternateName" mode="m_geon-to-tei">
         <xsl:choose>
             <xsl:when test="@lang = 'link'">
-                <tei:idno type="url"><xsl:value-of select="."/></tei:idno>
+                <tei:idno type="url" subtype="about"><xsl:value-of select="."/></tei:idno>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
