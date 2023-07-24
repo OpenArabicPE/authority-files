@@ -2602,8 +2602,21 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:variable>
-                    <xsl:variable name="v_editor-1"
-                        select="oape:query-personography($v_biblStruct/descendant::tei:monogr/tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id', '')"/>
+                    <xsl:variable name="v_editor-1">
+                        <xsl:choose>
+                            <xsl:when test="$v_biblStruct/descendant::tei:monogr/tei:editor[tei:persName]">
+                                <xsl:copy-of select="oape:query-personography($v_biblStruct/descendant::tei:monogr/tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id', '')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:if test="$p_verbose">
+                                    <xsl:message>
+                                        <xsl:text>The reference has no machine-actionable information on editors</xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
+                                <xsl:value-of select="'NA'"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
                     <!-- language -->
                     <xsl:variable name="v_textlang" select="oape:query-biblstruct($v_biblStruct, 'mainLang', '', '', '')"/>
                     <!-- quick debugging -->
