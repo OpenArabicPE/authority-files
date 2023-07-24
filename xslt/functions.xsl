@@ -83,7 +83,7 @@
         <xsl:value-of select="translate($p_input, $v_alphabet-fa-mac, $v_alphabet-ar-mac)"/>
     </xsl:function>
     <xsl:function name="oape:string-parse-names">
-        <xsl:param name="p_input" as="node()"/>
+        <xsl:param as="node()" name="p_input"/>
         <xsl:variable name="v_preprocessed">
             <xsl:for-each select="$p_input/child::node()">
                 <xsl:value-of select="."/>
@@ -108,7 +108,7 @@
     <!-- if no match is found, the function returns 'NA' -->
     <xsl:function name="oape:get-entity-from-authority-file">
         <!-- input: entity such as <persName>, <orgName>, <placeName> or <title> node -->
-        <xsl:param name="p_entity-name" as="node()"/>
+        <xsl:param as="node()" name="p_entity-name"/>
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
         <!--        <xsl:if test="$p_entity-name/@ref or $p_entity-name != ''">-->
@@ -749,7 +749,6 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-
             <!-- count known holdings -->
             <xsl:when test="$p_output-mode = 'holdings'">
                 <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item)"/>
@@ -759,7 +758,9 @@
                 <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item/descendant::tei:bibl)"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'digitised'">
-                <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item[(descendant::tei:ref[not(@type = 'about')]/@target[starts-with(., 'http')]) | descendant::tei:idno[@type = 'URI'][@subtype = 'self']])"/>
+                <xsl:value-of
+                    select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item[(descendant::tei:ref[not(@type = 'about')]/@target[starts-with(., 'http')]) | descendant::tei:idno[@type = 'URI'][@subtype = 'self']])"
+                />
             </xsl:when>
             <!-- fallback -->
             <xsl:otherwise>
@@ -799,14 +800,14 @@
         <!-- output -->
         <xsl:copy>
             <xsl:choose>
-                    <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
-                        <xsl:attribute name="when" select="$v_temp"/>
-                    </xsl:when>
-                    <xsl:when test="matches($v_temp, '^\d{4}$')">
-                        <!-- latest possible date: this will prevent the originally less precise dates from taking precedent -->
-                        <xsl:attribute name="when" select="concat($v_temp, '-12-31')"/>
-                    </xsl:when>
-                </xsl:choose>
+                <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
+                    <xsl:attribute name="when" select="$v_temp"/>
+                </xsl:when>
+                <xsl:when test="matches($v_temp, '^\d{4}$')">
+                    <!-- latest possible date: this will prevent the originally less precise dates from taking precedent -->
+                    <xsl:attribute name="when" select="concat($v_temp, '-12-31')"/>
+                </xsl:when>
+            </xsl:choose>
         </xsl:copy>
     </xsl:template>
     <!-- query a local TEI gazetteer for toponyms, locations, IDs etc. -->
@@ -851,19 +852,19 @@
         </xsl:choose>
     </xsl:function>
     <xsl:function name="oape:query-geo">
-        <xsl:param name="p_geo" as="node()"/>
+        <xsl:param as="node()" name="p_geo"/>
         <xsl:param as="xs:string" name="p_output-mode"/>
         <xsl:choose>
-                            <xsl:when test="$p_output-mode = 'location'">
-                                <xsl:value-of select="$p_geo"/>
-                            </xsl:when>
-                            <xsl:when test="$p_output-mode = 'lat'">
-                                <xsl:value-of select="replace($p_geo, '^(.+?),\s*(.+?)$', '$1')"/>
-                            </xsl:when>
-                            <xsl:when test="$p_output-mode = 'long'">
-                                <xsl:value-of select="replace($p_geo, '^(.+?),\s*(.+?)$', '$2')"/>
-                            </xsl:when>
-                        </xsl:choose>
+            <xsl:when test="$p_output-mode = 'location'">
+                <xsl:value-of select="$p_geo"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'lat'">
+                <xsl:value-of select="replace($p_geo, '^(.+?),\s*(.+?)$', '$1')"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'long'">
+                <xsl:value-of select="replace($p_geo, '^(.+?),\s*(.+?)$', '$2')"/>
+            </xsl:when>
+        </xsl:choose>
     </xsl:function>
     <xsl:function name="oape:query-place">
         <!-- input is a tei <place> node -->
@@ -879,7 +880,7 @@
             <xsl:when test="$p_output-mode = ('location', 'lat', 'long')">
                 <xsl:choose>
                     <xsl:when test="$p_place/tei:location/tei:geo">
-                       <xsl:value-of select="oape:query-geo($p_place/tei:location/tei:geo, $p_output-mode)"/>
+                        <xsl:value-of select="oape:query-geo($p_place/tei:location/tei:geo, $p_output-mode)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:if test="$p_verbose = true()">
@@ -1263,7 +1264,7 @@
     <!-- query a local TEI personography  -->
     <xsl:function name="oape:query-personography">
         <!-- input is a tei <persName> node -->
-        <xsl:param name="persName" as="node()"/>
+        <xsl:param as="node()" name="persName"/>
         <!-- $gazetteer expects a path to a file -->
         <xsl:param name="personography"/>
         <!-- local authority -->
@@ -1434,6 +1435,7 @@
             </xsl:when>
             <!-- return name in selected language -->
             <xsl:when test="$p_output-mode = 'name-tei'">
+                <xsl:variable name="v_name">
                     <xsl:choose>
                         <!-- preference for names without addNames -->
                         <!-- at least in one case this leads to the more commonly referenced name not being returned in Arabic: "Kurd ʿAlī" for "Muḥammad Kurd ʿAlī" -->
@@ -1467,6 +1469,13 @@
                             <xsl:copy-of select="$p_person/tei:persName[1]"/>
                         </xsl:otherwise>
                     </xsl:choose>
+                </xsl:variable>
+                <xsl:copy select="$v_name/tei:persName">
+                    <xsl:apply-templates select="@*" mode="m_copy-from-authority-file"/>
+                    <!-- add ref attribute -->
+                    <xsl:attribute name="ref" select="oape:query-person($p_person, 'tei-ref', '', $p_local-authority)"></xsl:attribute>
+                    <xsl:apply-templates select="node()" mode="m_copy-from-authority-file"/>
+                </xsl:copy>
             </xsl:when>
             <!-- name as string -->
             <xsl:when test="$p_output-mode = 'name'">
@@ -2228,11 +2237,11 @@
                     <xsl:text>" was not found in authority file.</xsl:text>
                 </xsl:message>
                 <xsl:message>
-                      <xsl:text>Add the following place to the authority file: </xsl:text>
-                        <xsl:element name="place">
-                                <xsl:apply-templates mode="m_copy-from-source" select="$p_placename"/>
-                        </xsl:element>
-                    </xsl:message>
+                    <xsl:text>Add the following place to the authority file: </xsl:text>
+                    <xsl:element name="place">
+                        <xsl:apply-templates mode="m_copy-from-source" select="$p_placename"/>
+                    </xsl:element>
+                </xsl:message>
                 <!--</xsl:if>-->
                 <xsl:copy select="$p_placename">
                     <xsl:attribute name="ref" select="'NA'"/>
@@ -2498,28 +2507,28 @@
         </xsl:variable>
         <!-- figure out if the title carries a ref attribute or if the parent bibl has an idno -->
         <xsl:variable name="v_title">
-                <xsl:choose>
-                    <xsl:when test="$p_title/@ref">
-                        <xsl:copy-of select="$p_title"/>
-                    </xsl:when>
-                    <xsl:when test="$v_biblStruct/descendant::tei:monogr/tei:idno[@type = $p_local-authority]">
-                        <xsl:copy select="$p_title">
-                            <xsl:apply-templates select="$p_title/@*" mode="m_identity-transform"/>
-                            <xsl:attribute name="ref" select="concat($p_local-authority, ':bibl:', $v_biblStruct/descendant::tei:monogr/tei:idno[@type = $p_local-authority][1])"/>
-                            <xsl:apply-templates select="$p_title/node()" mode="m_identity-transform"/>
-                        </xsl:copy>
-                    </xsl:when>
-                    <xsl:when test="$v_biblStruct/descendant::tei:monogr/tei:idno[@type = 'OCLC']">
-                        <xsl:copy select="$p_title">
-                            <xsl:apply-templates select="$p_title/@*" mode="m_identity-transform"/>
-                            <xsl:attribute name="ref" select="concat( 'oclc:', $v_biblStruct/descendant::tei:monogr/tei:idno[@type = 'OCLC'][1])"/>
-                            <xsl:apply-templates select="$p_title/node()" mode="m_identity-transform"/>
-                        </xsl:copy>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:copy-of select="$p_title"/>
-                    </xsl:otherwise>
-                </xsl:choose>
+            <xsl:choose>
+                <xsl:when test="$p_title/@ref">
+                    <xsl:copy-of select="$p_title"/>
+                </xsl:when>
+                <xsl:when test="$v_biblStruct/descendant::tei:monogr/tei:idno[@type = $p_local-authority]">
+                    <xsl:copy select="$p_title">
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_title/@*"/>
+                        <xsl:attribute name="ref" select="concat($p_local-authority, ':bibl:', $v_biblStruct/descendant::tei:monogr/tei:idno[@type = $p_local-authority][1])"/>
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_title/node()"/>
+                    </xsl:copy>
+                </xsl:when>
+                <xsl:when test="$v_biblStruct/descendant::tei:monogr/tei:idno[@type = 'OCLC']">
+                    <xsl:copy select="$p_title">
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_title/@*"/>
+                        <xsl:attribute name="ref" select="concat('oclc:', $v_biblStruct/descendant::tei:monogr/tei:idno[@type = 'OCLC'][1])"/>
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_title/node()"/>
+                    </xsl:copy>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="$p_title"/>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:variable>
         <xsl:message>
             <xsl:copy-of select="$v_title"/>
@@ -2605,7 +2614,9 @@
                     <xsl:variable name="v_editor-1">
                         <xsl:choose>
                             <xsl:when test="$v_biblStruct/descendant::tei:monogr/tei:editor[tei:persName]">
-                                <xsl:copy-of select="oape:query-personography($v_biblStruct/descendant::tei:monogr/tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id', '')"/>
+                                <xsl:copy-of
+                                    select="oape:query-personography($v_biblStruct/descendant::tei:monogr/tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id', '')"
+                                />
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:if test="$p_verbose">
@@ -3641,7 +3652,7 @@
         </xsl:copy>
     </xsl:template>
     <xsl:function name="oape:resolve-id">
-        <xsl:param name="p_idno" as="node()"/>
+        <xsl:param as="node()" name="p_idno"/>
         <xsl:choose>
             <xsl:when test="$p_idno/@type = $p_acronym-geonames">
                 <xsl:value-of select="concat($p_url-resolve-geonames, $p_idno)"/>
@@ -3657,10 +3668,10 @@
             </xsl:when>
             <xsl:when test="$p_idno/@type = 'OCLC'">
                 <xsl:value-of select="concat($p_url-resolve-oclc, $p_idno)"/>
-            </xsl:when>            
+            </xsl:when>
             <xsl:when test="$p_idno/@type = 'LEAUB'">
                 <!-- the LEAUB number contains a control digit that must be removed for resolving -->
-                <xsl:value-of select="concat($p_url-resolve-aub, substring($p_idno, 1, string-length($p_idno) -1))"/>
+                <xsl:value-of select="concat($p_url-resolve-aub, substring($p_idno, 1, string-length($p_idno) - 1))"/>
             </xsl:when>
             <xsl:when test="$p_idno/@type = 'zdb'">
                 <xsl:value-of select="concat($p_url-resolve-zdb, $p_idno)"/>
@@ -3670,5 +3681,4 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-
 </xsl:stylesheet>
