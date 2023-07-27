@@ -522,32 +522,12 @@
             - the content model allows for multiple <monogr> children of <biblStruct> 
         -->
         <xsl:variable name="v_monogr" select="$p_bibl/descendant::tei:monogr"/>
-        <!-- dates -->
-        <xsl:variable name="v_date-onset">
-            <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = ('onset', 'official')]"/>
-            <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[not(@type)][@when]"/>
-        </xsl:variable>
-        <xsl:variable name="v_date-terminus">
-            <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = 'terminus']"/>
-        </xsl:variable>
-        <xsl:variable name="v_date-documented">
-            <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = 'documented']"/>
-        </xsl:variable>
+        <!-- dates: moved to the output modes, where they were needed -->
         <!-- languages -->
         <xsl:variable name="v_mainLang">
             <xsl:choose>
                 <xsl:when test="$v_monogr/tei:textLang/@mainLang">
                     <xsl:value-of select="$v_monogr[tei:textLang/@mainLang][1]/tei:textLang/@mainLang"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:value-of select="'NA'"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="v_otherLangs">
-            <xsl:choose>
-                <xsl:when test="$v_monogr/tei:textLang/@otherLangs">
-                    <xsl:value-of select="$v_monogr[tei:textLang/@otherLangs][1]/tei:textLang/@otherLangs"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="'NA'"/>
@@ -644,6 +624,16 @@
                 <xsl:value-of select="$v_mainLang"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'otherLangs'">
+                <xsl:variable name="v_otherLangs">
+                    <xsl:choose>
+                        <xsl:when test="$v_monogr/tei:textLang/@otherLangs">
+                            <xsl:value-of select="$v_monogr[tei:textLang/@otherLangs][1]/tei:textLang/@otherLangs"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="'NA'"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
                 <xsl:value-of select="$v_otherLangs"/>
             </xsl:when>
             <!-- return date           -->
@@ -670,6 +660,10 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'date-onset'">
+                <xsl:variable name="v_date-onset">
+                    <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = ('onset', 'official')]"/>
+                    <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[not(@type)][@when]"/>
+                </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-onset/descendant-or-self::tei:date/@when">
                         <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
@@ -680,6 +674,9 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'date-terminus'">
+                <xsl:variable name="v_date-terminus">
+                    <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = 'terminus']"/>
+                </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-terminus/descendant-or-self::tei:date/@when">
                         <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
@@ -690,6 +687,9 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'date-documented'">
+                <xsl:variable name="v_date-documented">
+                    <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = 'documented']"/>
+                </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-documented/descendant-or-self::tei:date/@when">
                         <xsl:value-of select="max($v_date-documented/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
@@ -1471,10 +1471,10 @@
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:copy select="$v_name/tei:persName">
-                    <xsl:apply-templates select="@*" mode="m_copy-from-authority-file"/>
+                    <xsl:apply-templates mode="m_copy-from-authority-file" select="@*"/>
                     <!-- add ref attribute -->
-                    <xsl:attribute name="ref" select="oape:query-person($p_person, 'tei-ref', '', $p_local-authority)"></xsl:attribute>
-                    <xsl:apply-templates select="node()" mode="m_copy-from-authority-file"/>
+                    <xsl:attribute name="ref" select="oape:query-person($p_person, 'tei-ref', '', $p_local-authority)"/>
+                    <xsl:apply-templates mode="m_copy-from-authority-file" select="node()"/>
                 </xsl:copy>
             </xsl:when>
             <!-- name as string -->
@@ -1533,6 +1533,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <!-- this function takes a tei:date node as input and returns an ISO string -->
     <xsl:function name="oape:date-get-onset">
         <xsl:param name="p_date"/>
         <xsl:choose>
@@ -1561,6 +1562,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <!-- this function takes a tei:date node as input and returns an ISO string -->
     <xsl:function name="oape:date-get-terminus">
         <xsl:param name="p_date"/>
         <xsl:choose>
