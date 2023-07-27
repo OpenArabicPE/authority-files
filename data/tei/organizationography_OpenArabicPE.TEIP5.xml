@@ -17,7 +17,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc xml:lang="en">
-            <tei:change when="2023-07-23" who="#pers_TG" xml:id="d10e54" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
+            <tei:change when="2023-07-27" who="#pers_TG" xml:id="d10e54" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
             <change when="2023-07-23" who="#pers_TG">Added missing publishers from the bibliography of periodicals</change>
             <change when="2023-07-23" who="#pers_TG">Added holding institutions from ZDB</change>
             <tei:change when="2023-02-05" who="#pers_TG" xml:id="d10e37" xml:lang="en">Added references to local authority file (<tei:ref
@@ -1698,6 +1698,23 @@
                 <note>. Some of its holdings were digitized and are available through the
                         <ref target="http://www.wdl.org/en/search/?institution=iraqi-national-library-and-archives" xml:lang="und-Latn">World Digital Library</ref>.</note>
             </org>
+            <org source="https://ld.zdb-services.de/resource/organisations/DE-Y11">
+                <orgName type="short">Istanbul Orient-Institut</orgName>
+                <orgName>Orient-Institut Istanbul</orgName>
+                <idno type="ISIL">DE-Y11</idno>
+                <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Y11</idno>
+                <idno type="OCLCsymbol">TROII</idno>
+                <idno type="url">http://ld.zdb-services.de/data/organisations/TROII</idno>
+                <idno type="oape">565</idno>
+                <location>
+                    <geo>41.03071, 28.98566</geo>
+                    <address>
+                        <street>Susam Sokak 16 D. 8</street>
+                        <postCode>34433</postCode>
+                        <placeName>Istanbul</placeName>
+                    </address>
+                </location>
+            </org>
             <org xml:id="hIU">
                 <orgName>Istanbul Üniversitesi Merkez Kütüphanesi</orgName>
                 <orgName type="jaraid">IÜ</orgName>
@@ -1776,6 +1793,21 @@
                         <street>Leibnizstr. 9</street>
                         <postCode>24118</postCode>
                         <placeName ref="geon:2891122 oape:place:680">Kiel</placeName>
+                    </address>
+                </location>
+            </org>
+            <org source="https://ld.zdb-services.de/resource/organisations/DE-8-51b">
+                <orgName type="short">Kiel UB FB Orientalistik</orgName>
+                <orgName>Universitätsbibliothek Kiel, Fachbibliothek am Seminar für Orientalistik</orgName>
+                <idno type="ISIL">DE-8-51b</idno>
+                <idno type="url">http://ld.zdb-services.de/data/organisations/DE-8-51b</idno>
+                <idno type="oape">563</idno>
+                <location>
+                    <geo>54.34556, 10.11111</geo>
+                    <address>
+                        <street>Leibnizstr. 8</street>
+                        <postCode>24118</postCode>
+                        <placeName>Kiel</placeName>
                     </address>
                 </location>
             </org>
@@ -2831,6 +2863,23 @@
                     </address>
                 </location>
             </org>
+            <org source="https://ld.zdb-services.de/resource/organisations/DE-287">
+                <orgName type="short">Strausberg ZInfoABw</orgName>
+                <orgName>Zentrum Informationsarbeit Bundeswehr, Bibliothek</orgName>
+                <idno type="ISIL">DE-287</idno>
+                <idno type="url">http://ld.zdb-services.de/data/organisations/DE-287</idno>
+                <idno type="OCLCsymbol">DEFAB</idno>
+                <idno type="url">http://ld.zdb-services.de/data/organisations/DEFAB</idno>
+                <idno type="oape">566</idno>
+                <location>
+                    <geo>52.59498, 13.91452</geo>
+                    <address>
+                        <street>Prötzeler Chaussee 20</street>
+                        <postCode>15344</postCode>
+                        <placeName>Strausberg</placeName>
+                    </address>
+                </location>
+            </org>
             <org source="https://ld.zdb-services.de/resource/organisations/DE-212">
                 <orgName type="short">Stuttgart Auslandsbeziehungen</orgName>
                 <orgName>Institut für Auslandsbeziehungen, Bibliothek</orgName>
@@ -3089,6 +3138,21 @@
                         <street>Dr.-Ignaz-Seipel-Pl. 2</street>
                         <postCode>A-1010</postCode>
                         <placeName ref="geon:2761369 oape:place:348">Wien</placeName>
+                    </address>
+                </location>
+            </org>
+            <org source="https://ld.zdb-services.de/resource/organisations/DE-Wi1">
+                <orgName type="short">Wiesbaden HauptstaatsarchBibl</orgName>
+                <orgName>Hessisches Hauptstaatsarchiv, Bibliothek</orgName>
+                <idno type="ISIL">DE-Wi1</idno>
+                <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Wi1</idno>
+                <idno type="oape">564</idno>
+                <location>
+                    <geo>50.06354, 8.23900</geo>
+                    <address>
+                        <street>Mosbacher Str. 55</street>
+                        <postCode>65187</postCode>
+                        <placeName>Wiesbaden</placeName>
                     </address>
                 </location>
             </org>
@@ -3475,99 +3539,9 @@
                     <placeName ref="geon:2528910 jaraid:place:103 oape:place:473">Tetouan</placeName>
                 </location>
             </org>
-            <org source="https://ld.zdb-services.de/resource/organisations/DE-8-51b">
-                <orgName type="short">Kiel UB FB Orientalistik</orgName>
-                <orgName>Universitätsbibliothek Kiel, Fachbibliothek am Seminar für Orientalistik</orgName>
-                <idno type="ISIL">DE-8-51b</idno>
-                <idno type="url">http://ld.zdb-services.de/data/organisations/DE-8-51b</idno>
-                <location>
-                    <geo>54.34556, 10.11111</geo>
-                    <address>
-                        <street>Leibnizstr. 8</street>
-                        <postCode>24118</postCode>
-                        <placeName>Kiel</placeName>
-                    </address>
-                </location>
-            </org>
-            <org source="https://ld.zdb-services.de/resource/organisations/DE-Wi1">
-                <orgName type="short">Wiesbaden HauptstaatsarchBibl</orgName>
-                <orgName>Hessisches Hauptstaatsarchiv, Bibliothek</orgName>
-                <idno type="ISIL">DE-Wi1</idno>
-                <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Wi1</idno>
-                <location>
-                    <geo>50.06354, 8.23900</geo>
-                    <address>
-                        <street>Mosbacher Str. 55</street>
-                        <postCode>65187</postCode>
-                        <placeName>Wiesbaden</placeName>
-                    </address>
-                </location>
-            </org>
-            <org source="https://ld.zdb-services.de/resource/organisations/DE-Y11">
-                <orgName type="short">Istanbul Orient-Institut</orgName>
-                <orgName>Orient-Institut Istanbul</orgName>
-                <idno type="ISIL">DE-Y11</idno>
-                <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Y11</idno>
-                <idno type="OCLCsymbol">TROII</idno>
-                <idno type="url">http://ld.zdb-services.de/data/organisations/TROII</idno>
-                <location>
-                    <geo>41.03071, 28.98566</geo>
-                    <address>
-                        <street>Susam Sokak 16 D. 8</street>
-                        <postCode>34433</postCode>
-                        <placeName>Istanbul</placeName>
-                    </address>
-                </location>
-            </org>
-            <org source="https://ld.zdb-services.de/resource/organisations/DE-287">
-                <orgName type="short">Strausberg ZInfoABw</orgName>
-                <orgName>Zentrum Informationsarbeit Bundeswehr, Bibliothek</orgName>
-                <idno type="ISIL">DE-287</idno>
-                <idno type="url">http://ld.zdb-services.de/data/organisations/DE-287</idno>
-                <idno type="OCLCsymbol">DEFAB</idno>
-                <idno type="url">http://ld.zdb-services.de/data/organisations/DEFAB</idno>
-                <location>
-                    <geo>52.59498, 13.91452</geo>
-                    <address>
-                        <street>Prötzeler Chaussee 20</street>
-                        <postCode>15344</postCode>
-                        <placeName>Strausberg</placeName>
-                    </address>
-                </location>
-            </org>
         </listOrg>
         <listOrg>
             <head>Publishers of periodicals</head>
-            <!--<org>
-                <idno type="oape">422</idno>
-                <persName xml:lang="ar-Latn-x-ijmes">Aḥmad ʿĀrif al-Zayn</persName>
-                <persName xml:lang="ar">احمد عارف الزين</persName>
-            </org>
-            <org>
-                <idno type="oape">423</idno>
-                <persName xml:lang="ar-Latn-x-ijmes">Faraḥ Anṭūn</persName>
-                <persName xml:lang="ar">فرح انطون</persName>
-            </org>
-            <org>
-                <idno type="oape">424</idno>
-                <persName xml:lang="ar-Latn-x-ijmes">Muḥammad Tawfīq</persName>
-                <persName xml:lang="ar">محمد توفيق</persName>
-            </org>
-            <org>
-                <idno type="oape">425</idno>
-                <persName xml:lang="ar-Latn-x-ijmes">R. Tādrus wa-K. Tādrus</persName>
-                <persName xml:lang="ar">ر . تادرس وك. تادرس</persName>
-            </org>
-            <org>
-                <idno type="oape">426</idno>
-                <persName xml:lang="ar-Latn-x-ijmes">Rāḥīl ʿAṭā</persName>
-                <persName xml:lang="ar">راحيل ها</persName>
-            </org>
-            <org>
-                <idno type="oape">427</idno>
-                <persName xml:lang="ar-Latn-x-ijmes">ʿA. Anṭākī</persName>
-                <persName xml:lang="ar">عة . انطاكي</persName>
-            </org>-->
             <org>
                 <orgName xml:lang="und-Latn"> <persName ref="jaraid:pers:477" xml:lang="fr">Eugène Clavel</persName> and Co</orgName>
                 <idno type="jaraid">243</idno>
