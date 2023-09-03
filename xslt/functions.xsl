@@ -5,11 +5,12 @@
     <xsl:import href="parameters.xsl"/>
     <!-- identify the author of the change by means of a @xml:id -->
     <!-- toggle debugging messages, params for IDs -->
-    <xsl:import href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    
     <xsl:import href="../../../xslt-calendar-conversion/functions/date-functions.xsl"/>
     <xsl:include href="query-viaf.xsl"/>
     <xsl:include href="query-geonames.xsl"/>
-    <xsl:param name="p_debug" select="true()"/>
+    <xsl:import href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
+    
     <!-- debugging -->
     <!--<xsl:template match="text()"><xsl:value-of select="oape:string-normalise-arabic(.)"/></xsl:template>-->
     <!--<xsl:template match="/"><!-\-        <xsl:apply-templates selsect="descendant::tei:date" mode="m_debug"/>-\-><xsl:apply-templates select="descendant::tei:title" mode="m_debug"/></xsl:template>-->
@@ -3284,6 +3285,7 @@
         <!-- add trailing whitespace -->
         <xsl:text> </xsl:text>
     </xsl:template>
+    <!-- why do we need this function here -->
     <xsl:template match="tei:bibl" mode="m_bibl-to-biblStruct">
         <xsl:variable name="v_source">
             <xsl:choose>
