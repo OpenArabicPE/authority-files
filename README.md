@@ -15,33 +15,48 @@ date: 2022-02-04
 + main repository: `OpenArabicPE/authority-files/`
     * folder for all data: `data/`
         * `tei/`: main folder for authority data generated within OpenArabicPE
+            - bibliography
+            - personography
+            - organizationography
+            - gazetteer
+        * `csv/`: folder for derivatives of the main `tei/` folder, serialised as CSV or TSV.
         * `geonames/`: this folder acts as a cache for linked data from [GeoNames](https://geonames.org) in order to minimise traffic. The file naming scheme in this folder is `geon_[ID].xml`
         * `viaf/`: this folder acts as a cache for linked data from [VIAF](https://viaf.org) in order to minimise traffic. The file naming scheme in this folder is `viaf_[ID].SRW.xml`.
     * folder for tools: `xslt/`
 
-# stylesheets
-## to do
+# to do
 
-- support full URLs in `@ref` in the XSLT linking entity names to authority files.
+- [ ] add sources as TEI/XML to the bibliography
+    + some are encoded as `<ref type="pandoc">`
+    + [@LaPresseMusulmane+1909, 106]
+    + [@Campos+2008+TheVoiceOf, 245]
+- [ ] wrap content in `<publisher source="#hAUB">` originating from AUB in a `<orgName>` element
+- [ ] The holding information from Jaraid needs to become more machine-actionable:
+    + example 1
+        * we have: `<ref resp="#pAM" target="https://gpa.eastview.com/crl/mena/newspapers/msbh" xml:lang="und-Latn">online 1899-1900</ref>` 
+        * we want: `<bibl><date type="onset">1899</date>-<date type="terminus">1900</date></bibl>`
+- [ ] support full URLs in `@ref` in the XSLT linking entity names to authority files.
     + add param whether to output private URI scheme or full URLs
 
-- ambiguous matches for referenced periodicals
+- [ ] ambiguous matches for referenced periodicals
     + the problem concerns important journals with minor competitors of the same name
     + references do not include spatial information
     + I already added a lot of conditions but the problem persists, when we have only a title
     + idea: proximity
         + spatial
         + temporal: easier to check
-- faulty historical matches
-    + the result of past matching needs to be validated, especially for *al-Muqtabas* and *al-Manār*
+- [ ] faulty historical matches
+    + the result of past matching needs to be validated, especially for 
+        * [x] *al-Muqtabas* 
+        * [ ] *al-Manār*
     + check if the content of the `<title>` node matches the `@ref`.
     + example: `مجلة <title level="j" ref="oape:bibl:46" xml:lang="ar">العلم في القرن العشرين</title>`
-    + **DONE** for *al-Muqtabas*
 
-- `@type='noAddName'` is missing whitespace between name components in some cases
+- [ ] `@type='noAddName'` is missing whitespace between name components in some cases
 
 - XSLT for generating the mapping data needs to be improved (not very important to the workflow/tutorial)
 
+# stylesheets
 ## Persons
 
 1. `tei-person_improve-records.xsl`: This stylesheet is meant to be run on authority files containing `<tei:person>` elements with at least one `<tei:persName>` child and will try to enrich the data.
