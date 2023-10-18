@@ -620,6 +620,14 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <!-- return a tei:title node in selected language -->
+            <xsl:when test="$p_output-mode = ('title-tei')">
+                <xsl:element name="title">
+                    <xsl:attribute name="ref" select="oape:query-biblstruct($p_bibl, 'tei-ref', '', '', $p_local-authority)"/>
+                    <xsl:attribute name="xml:lang" select="$p_output-language"/>
+                    <xsl:value-of select="oape:query-biblstruct($p_bibl, 'title', $p_output-language, '', $p_local-authority)"/>
+                </xsl:element>
+            </xsl:when>
             <!-- return language -->
             <xsl:when test="$p_output-mode = ('textLang', 'mainLang')">
                 <xsl:value-of select="$v_mainLang"/>
