@@ -164,7 +164,7 @@
                 </xsl:choose>
             </xsl:for-each-group>
             <!-- replicate all existing children other than persName -->
-            <xsl:apply-templates select="node()[not(self::tei:persName)]"/>
+            <xsl:apply-templates select="node()[not(self::tei:persName | self::tei:occupation[@resp = '#xslt'])]"/>
             <!-- add data -->
             <!-- our own ID -->
             <xsl:if test="not(tei:idno[@type = $p_local-authority])">
