@@ -119,6 +119,12 @@
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="v_xml-id" select="concat('person_', $v_id)"/>
+        <xsl:if test="$p_debug = true()">
+            <xsl:message>
+                <xsl:text>Processing @xml:id </xsl:text>
+                <xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- new @xml:id  -->
@@ -185,36 +191,41 @@
                 </xsl:for-each-group>
             </xsl:if>
             <!-- test for occupation -->
-            <!-- note that this is extremely expensive to compute -->
-            <xsl:if test="not(tei:occupation)">
-                <!-- test each periodical -->
-                <!-- the XPath selector assumes that all persons in the bibliography have been linked to the personography -->
-                <xsl:for-each select="$v_bibliography//tei:biblStruct[@type = 'periodical'][descendant::tei:persName[contains(@ref, concat($p_local-authority, ':pers:', $v_id))]]">
-                    <xsl:variable name="v_bibl" select="."/>
-                    <!-- test each mentioned person -->
-                    <xsl:for-each select="tei:monogr//node()[tei:persName[@ref]]/tei:persName[@ref][1]">
-                        <!-- get local id -->
-                        <xsl:variable name="v_id-temp" select="oape:query-personography(., $v_personography, $p_local-authority, 'id-local', '')"/>
-                        <!-- if the IDs are the same, we can write a new occupation note -->
-                        <xsl:if test="$v_id = $v_id-temp">
-                            <xsl:if test="$p_verbose = true()">
-                                <xsl:message>
-                                    <xsl:text>Found person </xsl:text>
-                                    <xsl:value-of select="$v_id"/>
-                                    <xsl:text> in the bibliography. Creating a new occupation node.</xsl:text>
-                                </xsl:message>
-                            </xsl:if>
-                            <xsl:element name="occupation">
-                                <xsl:attribute name="resp" select="'#xslt'"/>
-                                <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                                <xsl:attribute name="xml:lang" select="'en'"/>
-                                <xsl:text>Editor of </xsl:text>
-                                <xsl:copy-of select="oape:query-biblstruct($v_bibl, 'title-tei', 'ar', '', $p_local-authority)"/>
-                            </xsl:element>
+            <!-- note that this can be extremely expensive to compute -->
+            <!-- test each periodical -->
+            <!-- the XPath selector assumes that all persons in the bibliography have been linked to the personography -->
+            <xsl:for-each select="$v_bibliography//tei:biblStruct[@type = 'periodical'][descendant::tei:persName[contains(@ref, concat($p_local-authority, ':pers:', $v_id))]]">
+                <xsl:variable name="v_bibl" select="."/>
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>Test periodical (</xsl:text>
+                        <xsl:value-of select="oape:query-biblstruct($v_bibl, 'tei-ref', '', '', $p_local-authority)"/>
+                        <xsl:text>) for editorship</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+                <!-- test each mentioned person -->
+                <xsl:for-each select="tei:monogr//node()[tei:persName[@ref]]/tei:persName[@ref][1]">
+                    <!-- get local id -->
+                    <xsl:variable name="v_id-temp" select="oape:query-personography(., $v_personography, $p_local-authority, 'id-local', '')"/>
+                    <!-- if the IDs are the same, we can write a new occupation note -->
+                    <xsl:if test="$v_id = $v_id-temp">
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>Found person </xsl:text>
+                                <xsl:value-of select="$v_id"/>
+                                <xsl:text> in the bibliography. Creating a new occupation node.</xsl:text>
+                            </xsl:message>
                         </xsl:if>
-                    </xsl:for-each>
+                        <xsl:element name="occupation">
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:attribute name="xml:lang" select="'en'"/>
+                            <xsl:text>Editor of </xsl:text>
+                            <xsl:copy-of select="oape:query-biblstruct($v_bibl, 'title-tei', 'ar', '', $p_local-authority)"/>
+                        </xsl:element>
+                    </xsl:if>
                 </xsl:for-each>
-            </xsl:if>
+            </xsl:for-each>
             <!-- VIAF data -->
             <xsl:if test="oape:query-person(., 'id-viaf', '', '') != 'NA'">
                 <xsl:variable name="v_viaf-id" select="oape:query-person(., 'id-viaf', '', '')"/>
