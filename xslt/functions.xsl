@@ -3,8 +3,6 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" method="xml" omit-xml-declaration="no"/>
     <xsl:import href="parameters.xsl"/>
-    <!-- identify the author of the change by means of a @xml:id -->
-    <!-- toggle debugging messages, params for IDs -->
     
     <xsl:import href="../../../xslt-calendar-conversion/functions/date-functions.xsl"/>
     <xsl:include href="query-viaf.xsl"/>
@@ -1454,6 +1452,7 @@
                         <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language]">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = $p_output-language][1]"/>
                         </xsl:when>
+                        <!-- I will never want to get the flattened node -->
                         <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = $p_output-language]">
                             <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = $p_output-language][1]"/>
                         </xsl:when>

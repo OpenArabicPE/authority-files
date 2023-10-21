@@ -9,7 +9,9 @@
     <!-- PROBLEM: 
         - nested listPerson are deleted
         - successive listPerson are deleted
+        - is this still the case (2023-10-21)
     -->
+
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     <xsl:include href="functions.xsl"/>
     <!-- variables for local IDs (OpenArabicPE) -->
