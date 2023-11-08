@@ -2485,6 +2485,13 @@
                 <xsl:with-param name="p_node" select="$p_title"/>
             </xsl:call-template>
         </xsl:variable>
+        <!-- get the ID of the input -->
+        <xsl:variable name="v_id-source" select="
+                if ($p_title/@xml:id) then
+                    ($p_title/@xml:id)
+                else
+                    ($p_title/ancestor::node()[@xml:id][1]/@xml:id)"/>
+        <xsl:variable name="v_url-source" select="concat(base-uri($p_title), '#', $v_id-source)"/>
         <!-- compile the parent bibliographic entity for the title -->
         <xsl:variable name="v_biblStruct">
             <xsl:choose>
@@ -2670,8 +2677,7 @@
                                 </xsl:message>
                             </xsl:if>
                             <xsl:copy-of
-                                select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]"
-                            />
+                                select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]"/>
                             <xsl:message>
                                 <xsl:copy-of select="$v_message-success"/>
                             </xsl:message>
@@ -2700,8 +2706,7 @@
                                 </xsl:message>
                             </xsl:if>
                             <xsl:copy-of
-                                select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]"
-                            />
+                                select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]"/>
                             <xsl:message>
                                 <xsl:copy-of select="$v_message-success"/>
                             </xsl:message>
@@ -2753,21 +2758,23 @@
                         </xsl:when>
                         <!-- matching only the title: weak match -->
                         <xsl:when test="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1">
-                            <!--                            <xsl:if test="$p_verbose = true()">-->
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>Found a single match for "</xsl:text>
+                                    <xsl:value-of select="$v_title-string"/>
+                                    <xsl:text>" solely based on the title.</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
                             <xsl:message>
-                                <xsl:text>Found a single match for "</xsl:text>
-                                <xsl:value-of select="$v_title-string"/>
-                                <xsl:text>" solely based on the title.</xsl:text>
                                 <xsl:choose>
                                     <xsl:when test="$p_link-matches-based-on-title-only = true()">
-                                        <xsl:text>This weak match was linked</xsl:text>
+                                        <xsl:text>SUCCESS: A weak match was linked to the authority file.</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$p_link-matches-based-on-title-only = false()">
-                                        <xsl:text>This weak match was not linked</xsl:text>
+                                        <xsl:text>WARNING: A weak match was not linked to the authority file.</xsl:text>
                                     </xsl:when>
                                 </xsl:choose>
                             </xsl:message>
-                            <!---->
                             <xsl:choose>
                                 <xsl:when test="$p_link-matches-based-on-title-only = true()">
                                     <xsl:copy-of select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct"/>
@@ -2822,13 +2829,15 @@
                             </xsl:message>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:message>
-                                <xsl:text>Found no unambiguous match for "</xsl:text>
-                                <xsl:value-of select="$v_title-string"/>
-                                <xsl:text>" at </xsl:text>
-                                <xsl:value-of select="concat(base-uri($p_title), '#', $p_title/@xml:id)"/>
-                                <xsl:text>.</xsl:text>
-                            </xsl:message>
+                            <xsl:if test="$p_debug = true()">
+                                <xsl:message>
+                                    <xsl:text>Found no unambiguous match for "</xsl:text>
+                                    <xsl:value-of select="$v_title-string"/>
+                                    <xsl:text>" at </xsl:text>
+                                    <xsl:value-of select="$v_url-source"/>
+                                    <xsl:text>.</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
                             <xsl:message>
                                 <xsl:text>WARNING: "</xsl:text>
                                 <xsl:value-of select="$v_title-string"/>
@@ -2846,7 +2855,7 @@
                         <xsl:text>Found no match for "</xsl:text>
                         <xsl:value-of select="$v_title-string"/>
                         <xsl:text>" at </xsl:text>
-                        <xsl:value-of select="concat(base-uri($p_title), '#', $p_title/@xml:id)"/>
+                        <xsl:value-of select="$v_url-source"/>
                         <xsl:text>.</xsl:text>
                     </xsl:message>
                     <xsl:message>
