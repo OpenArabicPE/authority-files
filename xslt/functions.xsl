@@ -2496,7 +2496,11 @@
         <xsl:variable name="v_biblStruct">
             <xsl:choose>
                 <xsl:when test="$p_title/ancestor::tei:biblStruct">
-                    <xsl:apply-templates mode="m_identity-transform" select="$p_title/ancestor::tei:biblStruct[1]"/>
+                    <xsl:copy select="$p_title/ancestor::tei:biblStruct[1]">
+                        <xsl:apply-templates select="$p_title/ancestor::tei:biblStruct[1]/@*" mode="m_identity-transform"/>
+                        <xsl:attribute name="source" select="$v_url-source"/>
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_title/ancestor::tei:biblStruct[1]/node()"/>
+                    </xsl:copy>
                 </xsl:when>
                 <xsl:when test="$p_title/ancestor::tei:bibl">
                     <!-- 1. compile along @next and @prev -->
@@ -2775,10 +2779,12 @@
                             <xsl:message>
                                 <xsl:choose>
                                     <xsl:when test="$p_link-matches-based-on-title-only = true()">
-                                        <xsl:text>SUCCESS: A weak match was linked to the authority file.</xsl:text>
+                                        <xsl:text>SUCCESS: A weak match for "</xsl:text><xsl:value-of select="$v_title-string"/>
+<xsl:text>" was linked to the authority file.</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$p_link-matches-based-on-title-only = false()">
-                                        <xsl:text>WARNING: A weak match was not linked to the authority file.</xsl:text>
+                                        <xsl:text>WARNING: A weak match for "</xsl:text><xsl:value-of select="$v_title-string"/>
+<xsl:text>" was not linked to the authority file.</xsl:text>
                                     </xsl:when>
                                 </xsl:choose>
                             </xsl:message>
