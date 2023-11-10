@@ -215,6 +215,16 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
     + "newspaper": everything that is called *jarīda* in Arabic
 
 - changes in editorship etc.: Many periodicals underwent various changes in editorship, title, frequency etc. these can be encoded as multiple `<monogr>` children of `<biblStruct>`. The sequence is already established by the structure of the XML and there is currently no need for explicit linking with `@next` and `@prev`.
+- contributors
+    + the main contributors are encoded as `<editor>`, which can carry a `@type` attribute
+        * `@type`
+            - "owner": The owner-cum-editor, commonly referred to as *ṣāḥib*.
+            - "publisher": The publisher-cum-editor, commonly referred to as *munshiʾ*.
+            - "editor": Implicitly assumed type of all editors, used for all of the following:
+                + *mudīr masʾūl* (responsible director)
+                + *raʾis al-taḥrīr* (editor-in-chief)
+                + *mudīr al-taḥrīr* (managing editor)
+                + *muḥarrir* (editor)
 - dating: `<date>` can carry a `@type` attribute to differentiate different dating information
     + `@type`
         * untyped: this data pertains to the volume and issue numbers provided in `<biblScope>`
