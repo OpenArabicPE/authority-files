@@ -17,6 +17,10 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc xml:lang="en">
+            <tei:change when="2023-11-14" who="#pers_TG" xml:id="d10e65" xml:lang="en">Added references to local authority file (<tei:ref
+                target="/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/gazetteer_OpenArabicPE.TEIP5.xml"
+                >/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/gazetteer_OpenArabicPE.TEIP5.xml</tei:ref>) and to GeoNames IDs to <tei:gi>placeName</tei:gi>s without such references based on  <tei:gi>place</tei:gi>s mentioned in the authority file.</tei:change>
+            <tei:change when="2023-11-14" who="#pers_TG" xml:id="d10e59" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
             <tei:change when="2023-07-27" who="#pers_TG" xml:id="d10e54" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
             <change when="2023-07-23" who="#pers_TG">Added missing publishers from the bibliography of periodicals</change>
             <change when="2023-07-23" who="#pers_TG">Added holding institutions from ZDB</change>
@@ -1711,7 +1715,7 @@
                     <address>
                         <street>Susam Sokak 16 D. 8</street>
                         <postCode>34433</postCode>
-                        <placeName>Istanbul</placeName>
+                        <placeName change="#d10e65" ref="geon:745044 jaraid:place:9 oape:place:3" resp="#xslt">Istanbul</placeName>
                     </address>
                 </location>
             </org>
@@ -1807,7 +1811,7 @@
                     <address>
                         <street>Leibnizstr. 8</street>
                         <postCode>24118</postCode>
-                        <placeName>Kiel</placeName>
+                        <placeName change="#d10e65" ref="geon:2891122 oape:place:680" resp="#xslt">Kiel</placeName>
                     </address>
                 </location>
             </org>
@@ -2876,7 +2880,7 @@
                     <address>
                         <street>Prötzeler Chaussee 20</street>
                         <postCode>15344</postCode>
-                        <placeName>Strausberg</placeName>
+                        <placeName ref="NA" resp="#xslt">Strausberg</placeName>
                     </address>
                 </location>
             </org>
@@ -2891,11 +2895,11 @@
                     <address>
                         <street>Charlottenplatz 17</street>
                         <postCode>70173</postCode>
-                        <placeName>Stuttgart</placeName>
+                        <placeName change="#d10e65" ref="geon:2825297 oape:place:701" resp="#xslt">Stuttgart</placeName>
                     </address>
                     <address>
                         <postCode>70020</postCode>
-                        <placeName>Stuttgart</placeName>
+                        <placeName change="#d10e65" ref="geon:2825297 oape:place:701" resp="#xslt">Stuttgart</placeName>
                     </address>
                 </location>
             </org>
@@ -3152,7 +3156,7 @@
                     <address>
                         <street>Mosbacher Str. 55</street>
                         <postCode>65187</postCode>
-                        <placeName>Wiesbaden</placeName>
+                        <placeName change="#d10e65" ref="geon:2809346 oape:place:771" resp="#xslt">Wiesbaden</placeName>
                     </address>
                 </location>
             </org>
@@ -3291,6 +3295,16 @@
                 <idno type="oape">22</idno>
                 <location>
                     <placeName ref="geon:4464368 oape:place:721">Durham, NC</placeName>
+                </location>
+            </org>
+            <org xml:id="hUSEK">
+                <orgName xml:lang="fr">Université Saint-Esprit de Kaslik</orgName>
+                <orgName xml:lang="en">Holy Spirit University of Kaslik Library</orgName>
+                <orgName type="short">USEK</orgName>
+                <idno type="url">https://www.usek.edu.lb/</idno>
+                <idno type="oape">567</idno>
+                <location>
+                    <placeName change="#d10e65" ref="geon:8041193 oape:place:206" resp="#xslt">Jounieh</placeName>
                 </location>
             </org>
             <org xml:id="hIHRC">
@@ -3505,7 +3519,7 @@
                 <orgName xml:lang="ar-Latn-x-ijmes">Dār al-Kutub al-Waṭaniyya al-Ẓāhiriyya</orgName>
                 <idno type="oape">418</idno>
                 <location>
-                    <placeName>Damascus</placeName>
+                    <placeName change="#d10e65" ref="geon:170654 jaraid:place:15 oape:place:61" resp="#xslt">Damascus</placeName>
                 </location>
             </org>
             <org xml:id="hDKQ">
@@ -4677,7 +4691,7 @@
                 <idno type="jaraid">240</idno>
                 <idno type="oape">216</idno>
                 <location>
-                    <placeName>Damascus</placeName>
+                    <placeName change="#d10e65" ref="geon:170654 jaraid:place:15 oape:place:61" resp="#xslt">Damascus</placeName>
                 </location>
             </org>
             <org>
