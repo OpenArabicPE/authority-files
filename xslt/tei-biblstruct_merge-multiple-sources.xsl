@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet exclude-result-prefixes="#all" version="3.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:zot="https://zotero.org" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-    <xsl:output encoding="UTF-8" indent="no" method="xml" omit-xml-declaration="no" version="1.0"/>
+    <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
     <!-- this stylesheet enriches an existing bibliography by adding information **to** a master file  -->
     <!-- workflow
         - collect a list of all biblStruct in the source based on their IDs
@@ -17,6 +17,9 @@
     -->
     <xsl:import href="functions.xsl"/>
     <xsl:param name="p_include-bibl" select="false()"/>
+    <!-- temporary variables -->
+    <xsl:variable name="v_bibliography-test" select="doc('../data/test-data/test_bibliography-merge_target.TEIP5.xml')"/>
+    
     <xsl:template match="/">
         <xsl:if test="$p_debug = true()">
             <xsl:message>
