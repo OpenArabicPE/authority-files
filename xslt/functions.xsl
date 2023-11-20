@@ -2565,6 +2565,20 @@
             <xsl:value-of select="$v_title-string"/>
             <xsl:text>" was linked to the authority file.</xsl:text>
         </xsl:variable>
+        <xsl:variable name="v_message-warning">
+            <xsl:text>WARNING: "</xsl:text>
+            <xsl:value-of select="$v_title-string"/>
+            <xsl:text>" at </xsl:text>
+            <xsl:value-of select="$v_url-source"/>
+            <xsl:text> could not be linked to the authority file due to ambiguous matches.</xsl:text>
+        </xsl:variable>
+        <xsl:variable name="v_message-failure">
+            <xsl:text>FAILURE: "</xsl:text>
+            <xsl:value-of select="$v_title-string"/>
+            <xsl:text>" at </xsl:text>
+            <xsl:value-of select="$v_url-source"/>
+            <xsl:text> could not be found in the authority file.</xsl:text>
+        </xsl:variable>
         <!-- step 1: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
         <!-- possible results: none, one, multiple -->
         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
@@ -2779,12 +2793,14 @@
                             <xsl:message>
                                 <xsl:choose>
                                     <xsl:when test="$p_link-matches-based-on-title-only = true()">
-                                        <xsl:text>SUCCESS: A weak match for "</xsl:text><xsl:value-of select="$v_title-string"/>
-<xsl:text>" was linked to the authority file.</xsl:text>
+                                        <xsl:text>SUCCESS: A weak match for "</xsl:text>
+                                        <xsl:value-of select="$v_title-string"/>
+                                        <xsl:text>" was linked to the authority file.</xsl:text>
                                     </xsl:when>
                                     <xsl:when test="$p_link-matches-based-on-title-only = false()">
-                                        <xsl:text>WARNING: A weak match for "</xsl:text><xsl:value-of select="$v_title-string"/>
-<xsl:text>" was not linked to the authority file.</xsl:text>
+                                        <xsl:text>WARNING: A weak match for "</xsl:text>
+                                        <xsl:value-of select="$v_title-string"/>
+                                        <xsl:text>" was not linked to the authority file.</xsl:text>
                                     </xsl:when>
                                 </xsl:choose>
                             </xsl:message>
@@ -2852,11 +2868,7 @@
                                 </xsl:message>
                             </xsl:if>
                             <xsl:message>
-                                <xsl:text>WARNING: "</xsl:text>
-                                <xsl:value-of select="$v_title-string"/>
-                                <xsl:text>" at </xsl:text>
-                                <xsl:value-of select="$v_url-source"/>
-                                <xsl:text> could not be linked to the authority file due to ambiguous matches.</xsl:text>
+                                <xsl:copy-of select="$v_message-warning"/>
                             </xsl:message>
                             <xsl:value-of select="'NA'"/>
                             <!-- quick debugging -->
@@ -2866,19 +2878,15 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <!-- this is a duplicate message -->
-                    <xsl:message>
+                    <!--<xsl:message>
                         <xsl:text>Found no match for "</xsl:text>
                         <xsl:value-of select="$v_title-string"/>
                         <xsl:text>" at </xsl:text>
                         <xsl:value-of select="$v_url-source"/>
                         <xsl:text>.</xsl:text>
-                    </xsl:message>
+                    </xsl:message>-->
                     <xsl:message>
-                        <xsl:text>FAILURE: "</xsl:text>
-                        <xsl:value-of select="$v_title-string"/>
-                        <xsl:text>" at </xsl:text>
-                        <xsl:value-of select="$v_url-source"/>
-                        <xsl:text> could not be found in the authority file.</xsl:text>
+                        <xsl:copy-of select="$v_message-failure"/>
                     </xsl:message>
                     <!--                    <xsl:if test="$p_verbose = true()">-->
                     <xsl:message>
