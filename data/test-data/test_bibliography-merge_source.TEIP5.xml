@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <standOff>
+      <listBibl>
+         <biblStruct source="https://sierra.usek.edu.lb/" type="periodical">
+            <monogr>
+               <title level="j" ref="oclc:792755775 jaraid:bibl:t1r2472 oape:bibl:2888" resp="#xslt">الأحرار المصورة</title>
+               <title level="j" type="sub">أدبية، إنتقادية، فكاهية، روائية</title>
+               <idno type="classmark">JRN A051</idno>
+               <idno type="classmark">b1234578</idno>
+               <idno type="URI">https://sierra.usek.edu.lb/record=b1234578</idno>
+               <idno type="url">/search?/XJRN+A&amp;SORT=D/XJRN+A&amp;SORT=D&amp;SUBKEY=JRN+A/51%2C111%2C111%2CB/frameset&amp;FF=XJRN+A&amp;SORT=D&amp;66%2C66%2C</idno>
+               <imprint> 
+دار النهار للنشر، هيئة إصدار.
+<pubPlace> <placeName ref="geon:276781 jaraid:place:2 oape:place:26" resp="#xslt" xml:lang="ar">بيروت</placeName> </pubPlace> <date type="onset" when="1926">1926</date> <date
+                  type="terminus" when="1927">1927</date> : دار النهار للنشر، 1926-1927.
+الأحرار المصورة </imprint>
+            </monogr>
+            <note type="holdings"> <list>
+               <item> <label> <placeName ref="geon:8041193 oape:place:206" resp="#xslt">Jounieh</placeName>, <orgName ref="oape:org:567">USEK</orgName> </label> <ab> <listBibl>
+                  <bibl> <idno type="classmark">JRN A051</idno> <date when="1977">1977</date> <biblScope unit="issue">262</biblScope> <biblScope>1977 #262</biblScope> <date>الاثنين 30/05/1977</date> </bibl>
+                  <bibl> <idno type="classmark">JRN A051</idno> <date when="1977">1977</date> <biblScope unit="issue">261</biblScope> <biblScope>1977 #261</biblScope> <date>السبت 28/05/1977</date> </bibl>
+                  <bibl> <idno type="classmark">JRN A051</idno> <date when="1977">1977</date> <biblScope unit="issue">260</biblScope> <biblScope>1977 #260</biblScope> <date>الجمعة 27/05/1977</date>
+                  </bibl>
+                  </listBibl> </ab> </item>
+               </list> </note>
+         </biblStruct>
+      </listBibl>
+   </standOff>
+   <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+   </text>
+</TEI>
