@@ -294,6 +294,7 @@
                     <xsl:call-template name="t_merge-groups">
                         <xsl:with-param name="p_current-group" select="current-group()"/>
                         <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                        <xsl:with-param name="p_grouping-key-is-attribute-value" select="true()"/>
                     </xsl:call-template>
                 </xsl:for-each-group>
                 <!-- editors -->
@@ -357,6 +358,7 @@
     <xsl:template name="t_merge-groups">
         <xsl:param name="p_current-group"/>
         <xsl:param name="p_current-grouping-key"/>
+        <xsl:param name="p_grouping-key-is-attribute-value" select="false()"/>
         <xsl:copy select="$p_current-group[1]">
             <xsl:choose>
                 <xsl:when test="count($p_current-group) > 1">
@@ -367,6 +369,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:choose>
+                <!-- run merging on child elements -->
                 <xsl:when test="$p_current-group/element()">
                     <!-- this seems to work sufficiently well for persName, placeName, and orgName children -->
                     <xsl:for-each-group group-by="text()" select="$p_current-group/element()">
@@ -376,6 +379,8 @@
                         </xsl:call-template>
                     </xsl:for-each-group>
                 </xsl:when>
+                <!-- suppress content when the input had none -->
+                <xsl:when test="$p_grouping-key-is-attribute-value = true()"/>
                 <xsl:otherwise>
                     <xsl:copy-of select="$p_current-grouping-key"/>
                 </xsl:otherwise>
