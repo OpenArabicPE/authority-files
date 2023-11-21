@@ -225,13 +225,17 @@
     <xsl:function name="oape:merge-biblStruct">
         <xsl:param as="node()" name="p_source"/>
         <xsl:param as="node()" name="p_target"/>
-        <!-- combine all monogr -->
+        <!-- combine source and target -->
         <xsl:variable name="v_combined-monogr">
             <xsl:copy-of select="$p_target/tei:monogr/element()"/>
             <xsl:copy-of select="$p_source/tei:monogr/element()"/>
         </xsl:variable>
         <xsl:variable name="v_combined-imprint">
             <xsl:copy-of select="$v_combined-monogr/tei:imprint/element()"/>
+        </xsl:variable>
+        <xsl:variable name="v_combined-note">
+            <xsl:copy-of select="$p_target/tei:note"/>
+            <xsl:copy-of select="$p_source/tei:note"/>
         </xsl:variable>
         <xsl:copy select="$p_target">
             <!-- merge attributes -->
@@ -353,12 +357,42 @@
                 </xsl:for-each-group>
             </xsl:copy>
             <!-- note -->
+            <xsl:for-each-group group-by="@type" select="$v_combined-note/tei:note">
+                <xsl:sort select="current-grouping-key()"/>
+                <xsl:variable name="v_combined-list">
+                    <xsl:copy-of select="current-group()/tei:list"/>
+                </xsl:variable>
+                <xsl:copy select="current-group()[1]">
+                    <xsl:copy-of select="oape:merge-attributes(current-group()[1], current-group()[2])"/>
+                    <!-- deal with lists -->
+                    <xsl:copy select="$v_combined-list/tei:list[1]">
+                        <!-- I do not current want to check whether some items should be merged -->
+                        <xsl:apply-templates mode="m_identity-transform" select="$v_combined-list/tei:list/tei:item">
+                            <!-- sort by location, institution, label -->
+                            <xsl:sort select="tei:label/tei:orgName"/>
+                            <xsl:sort select="tei:label/tei:placeName"/>
+                            <xsl:sort select="tei:label"/>
+                        </xsl:apply-templates>
+                        <!--<xsl:for-each-group group-by="tei:label" select="$v_combined-list/tei:list/tei:item">
+                            <xsl:call-template name="t_merge-groups">
+                                <xsl:with-param name="p_current-group" select="current-group()"/>
+                                <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                                <xsl:with-param name="p_depth-of-merging" select="0"/>
+                            </xsl:call-template>
+                        </xsl:for-each-group>-->
+                    </xsl:copy>
+                    <!-- other children -->
+                    <xsl:apply-templates select="current-group()/element()[not(self::tei:list)]" mode="m_identity-transform"/>
+                </xsl:copy>
+            </xsl:for-each-group>
         </xsl:copy>
     </xsl:function>
     <xsl:template name="t_merge-groups">
         <xsl:param name="p_current-group"/>
         <xsl:param name="p_current-grouping-key"/>
         <xsl:param name="p_grouping-key-is-attribute-value" select="false()"/>
+        <!--<xsl:param name="p_merge-children" select="true()"/>-->
+        <xsl:param name="p_depth-of-merging" select="1"/>
         <xsl:copy select="$p_current-group[1]">
             <xsl:choose>
                 <xsl:when test="count($p_current-group) > 1">
@@ -369,13 +403,17 @@
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:choose>
-                <!-- run merging on child elements -->
-                <xsl:when test="$p_current-group/element()">
+                <!-- run merging only on the first level of child elements -->
+                <xsl:when test="$p_depth-of-merging > 0 and $p_current-group/element()">
                     <!-- this seems to work sufficiently well for persName, placeName, and orgName children -->
+                    <!-- PROBLEM: some persName contain a lot of mark-up -->
                     <xsl:for-each-group group-by="text()" select="$p_current-group/element()">
                         <xsl:call-template name="t_merge-groups">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                             <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                            <xsl:with-param name="p_grouping-key-is-attribute-value" select="false()"/>
+                            <!-- decrease the depth of merging with increading progress -->
+                            <xsl:with-param name="p_depth-of-merging" select="$p_depth-of-merging - 1"/>
                         </xsl:call-template>
                     </xsl:for-each-group>
                 </xsl:when>
@@ -387,18 +425,6 @@
             </xsl:choose>
         </xsl:copy>
     </xsl:template>
-    <xsl:function name="oape:merge-nodes-3">
-        <xsl:param as="node()" name="p_source"/>
-        <xsl:param as="node()" name="p_target"/>
-        <xsl:copy select="$p_target">
-            <!-- merge attributes -->
-            <xsl:copy-of select="oape:merge-attributes($p_source, $p_target)"/>
-            <xsl:choose>
-                <!-- no children -->
-                <xsl:when test="not($p_source/element()) and not($p_target/element())"> </xsl:when>
-            </xsl:choose>
-        </xsl:copy>
-    </xsl:function>
     <xsl:function name="oape:merge-nodes-2">
         <xsl:param as="node()" name="p_source"/>
         <xsl:param as="node()" name="p_target"/>
