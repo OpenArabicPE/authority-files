@@ -13,28 +13,36 @@
         - add all biblStruct from the source without ID to the target
     -->
     <!-- to do
-        - make sure to test if notes from source exist in the target
+        - $p_id-change should derive from the target and not the source
     -->
     <xsl:import href="functions.xsl"/>
     <xsl:param name="p_include-bibl" select="false()"/>
-    <!-- temporary variables -->
-    <xsl:variable name="v_bibliography-test" select="doc('../data/test-data/test_bibliography-merge_target.TEIP5.xml')"/>
+    
+    <!-- define the target -->
+    <xsl:variable name="v_bibliography-target">
+        <xsl:choose>
+            <xsl:when test="$p_debug = true()">
+                <xsl:copy-of select="doc('../data/test-data/test_bibliography-merge_target.TEIP5.xml')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy-of select="$v_bibliography"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    <!-- re-define $p_id-change -->
+    <xsl:param name="p_id-change" select="generate-id($v_bibliography-target/descendant::tei:revisionDesc[1]/tei:change[1])"/>
     <xsl:template match="/">
         <xsl:if test="$p_debug = true()">
+            <xsl:message terminate="no">
+                <xsl:value-of select="$p_id-change"/>
+            </xsl:message>
             <xsl:message>
                 <xsl:text>The source file contains bibliographic data for the following IDs: </xsl:text>
                 <xsl:value-of select="$v_bibls-source-ids"/>
             </xsl:message>
         </xsl:if>
         <xsl:result-document href="_output/bibl_merged/{$p_file-bibliography}">
-            <xsl:choose>
-                <xsl:when test="$p_debug = true()">
-                    <xsl:apply-templates mode="m_merge" select="$v_bibliography-test"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates mode="m_merge" select="$v_bibliography"/>
-                </xsl:otherwise>
-            </xsl:choose>
+            <xsl:apply-templates mode="m_merge" select="$v_bibliography-target"/>
         </xsl:result-document>
     </xsl:template>
     <!-- identity transform -->
