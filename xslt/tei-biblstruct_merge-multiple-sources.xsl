@@ -195,11 +195,6 @@
                         <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
                         <!-- match based on IDs -->
                         <xsl:if test="$v_id-source = $v_id-target">
-                            <!--<xsl:message>
-                                <xsl:text>Found a match with ID: "</xsl:text>
-                                <xsl:value-of select="$v_id-source"/>
-                                <xsl:text>"</xsl:text>
-                            </xsl:message>-->
                             <xsl:apply-templates mode="m_identity-transform" select="."/>
                         </xsl:if>
                     </xsl:for-each>
@@ -230,32 +225,6 @@
                     (true())
                 else
                     (false())"/>
-        <!-- check if source and target have meaningful content  -->
-        <xsl:variable name="v_source-text">
-            <xsl:value-of select="$p_source/text()"/>
-        </xsl:variable>
-        <xsl:variable name="v_target-text">
-            <xsl:value-of select="$p_target/text()"/>
-        </xsl:variable>
-        <xsl:variable name="v_input-text-matches" select="
-                if (normalize-space($v_source-text) = normalize-space($v_target-text)) then
-                    (true())
-                else
-                    (false())"/>
-        <xsl:if test="$v_input-text-matches = true()">
-            <xsl:message>
-                <xsl:text>Source and target have the same content: </xsl:text>
-                <xsl:value-of select="normalize-space($v_source-text)"/>
-            </xsl:message>
-        </xsl:if>
-        <xsl:if test="$v_input-text-matches = false()">
-            <xsl:message>
-                <xsl:value-of select="normalize-space($v_source-text)"/>
-            </xsl:message>
-            <xsl:message>
-                <xsl:value-of select="normalize-space($v_target-text)"/>
-            </xsl:message>
-        </xsl:if>
         <!-- when should source and target be merged? -->
         <xsl:choose>
             <!-- fundamental condition: same element name -->
@@ -263,35 +232,13 @@
                 <!-- 1. condition: similar textual content -->
                 <!-- 2. condition: decisive attributes -->
                 <!-- the combination of these conditions depends on the element name -->
-                <xsl:variable name="v_match">
-                    <xsl:choose>
-                        <!-- attributes that prevent merging -->
-                        <xsl:when test="$p_source/@type != $p_target/@type">
-                            <xsl:message>
-                                <xsl:text>The @type attributes on source and target do not match</xsl:text>
-                            </xsl:message>
-                            <xsl:copy-of select="false()"/>
-                        </xsl:when>
-                        <xsl:when test="$p_source/@level != $p_target/@level">
-                            <xsl:message>
-                                <xsl:text>The @type attributes on source and target do not match</xsl:text>
-                            </xsl:message>
-                            <xsl:copy-of select="false()"/>
-                        </xsl:when>
-                        <xsl:when test="1 = 2">
-                            <xsl:copy-of select="false()"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:copy-of select="true()"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
+                <!-- these decisions have been moved into the selection of child elements to be merged -->
+                <xsl:variable name="v_merge" select="true()"> </xsl:variable>
                 <xsl:choose>
-                    <xsl:when test="$v_match = true()">
+                    <xsl:when test="$v_merge = true()">
                         <xsl:copy select="$p_source">
                             <!-- merge attributes -->
                             <xsl:copy-of select="oape:merge-attributes($p_source, $p_target)"/>
-                            <!-- content -->
                             <!-- list all elements -->
                             <xsl:variable name="v_source-nodes">
                                 <xsl:for-each select="$p_source/element()">
@@ -309,16 +256,84 @@
                                     </xsl:if>
                                 </xsl:for-each>
                             </xsl:variable>
-                            <xsl:message>
-                                <xsl:value-of select="$v_source-nodes"/>
-                            </xsl:message>
                             <!-- copy unique elements -->
+                            <!-- PROBLEM: this changes the order of child elements -->
+                            <xsl:for-each select="$p_source/element()[not(contains($v_target-nodes, name()))]">
+                                <xsl:apply-templates mode="m_identity-transform" select="."/>
+                            </xsl:for-each>
+                            <xsl:for-each select="$p_target/element()[not(contains($v_source-nodes, name()))]">
+                                <xsl:apply-templates mode="m_identity-transform" select="."/>
+                            </xsl:for-each>
+                            <!-- The folllowing needs more work!!! -->
                             <!-- merge elements present on both source and target -->
                             <xsl:for-each select="$p_target/element()[contains($v_source-nodes, name())]">
-                                <xsl:variable name="v_name" select="name()"/>
+                                <xsl:variable name="v_target" select="."/>
                                 <!-- NOTE: this is a place holder, as it only looks at the first child element of the source with a given name -->
-                                <xsl:copy-of select="oape:merge-nodes-2($p_source/element()[name() = $v_name][1], .)"/>
+                                <xsl:for-each select="$p_source/element()[name() = $v_target/name()]">
+                                    <xsl:variable name="v_source" select="."/>
+                                    <xsl:variable name="v_source-text">
+                                        <xsl:value-of select="$v_source/text()"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="v_target-text">
+                                        <xsl:value-of select="$v_target/text()"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="v_input-text-matches" select="
+                                            if (normalize-space($v_source-text) = normalize-space($v_target-text)) then
+                                                (true())
+                                            else
+                                                (false())"/>
+                                    <xsl:variable name="v_merge">
+                                        <xsl:choose>
+                                            <!-- attributes that prevent merging -->
+                                            <xsl:when test="$v_source/@type != $v_target/@type">
+                                                <xsl:message>
+                                                    <xsl:value-of select="$v_source/name()"/>
+                                                    <xsl:text>: The @type attribute values on source (</xsl:text>
+                                                    <xsl:value-of select="$v_source/@type"/>
+                                                    <xsl:text>) and target (</xsl:text>
+                                                    <xsl:value-of select="$v_target/@type"/>
+                                                    <xsl:text>) do not match</xsl:text>
+                                                </xsl:message>
+                                                <xsl:copy-of select="false()"/>
+                                            </xsl:when>
+                                            <xsl:when test="$v_source/@level != $v_target/@level">
+                                               <xsl:message>
+                                                    <xsl:value-of select="$v_source/name()"/>
+                                                    <xsl:text>: The @level attribute values on source (</xsl:text>
+                                                    <xsl:value-of select="$v_source/@level"/>
+                                                    <xsl:text>) and target (</xsl:text>
+                                                    <xsl:value-of select="$v_target/@level"/>
+                                                    <xsl:text>) do not match</xsl:text>
+                                                </xsl:message>
+                                                <xsl:copy-of select="false()"/>
+                                            </xsl:when>
+                                            <xsl:when test="$v_input-text-matches = false()">
+                                                 <xsl:message>
+                                                    <xsl:value-of select="$v_source/name()"/>
+                                                    <xsl:text>: The text() of source and target do not match</xsl:text>
+                                                 </xsl:message>
+                                                <xsl:copy-of select="false()"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:copy-of select="true()"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:variable>
+                                    <xsl:choose>
+                                        <!-- children shall be merged -->
+                                        <xsl:when test="$v_merge = true()">
+                                            <xsl:copy-of select="oape:merge-nodes-2($v_source, $v_target)"/>
+                                        </xsl:when>
+                                        <xsl:when test="$v_merge = false()">
+                                            <!--<oape:notMerged>
+                                                <xsl:apply-templates mode="m_identity-transform"/>
+                                            </oape:notMerged>-->
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </xsl:for-each>
                             </xsl:for-each>
+                            <!-- reproduce the textual content -->
+                            <xsl:value-of select="$p_target/text()"/>
                         </xsl:copy>
                     </xsl:when>
                     <xsl:otherwise>
@@ -379,7 +394,6 @@
             </xsl:attribute>
         </xsl:for-each>
     </xsl:function>
-    
     <!-- add <biblStruct> from source not currently available in the target -->
     <xsl:template match="tei:standOff" mode="m_merge">
         <xsl:copy>
@@ -395,7 +409,6 @@
             </xsl:element>
         </xsl:copy>
     </xsl:template>
-
     <xsl:template name="t_add-biblstruct-from-master">
         <xsl:param name="p_source"/>
         <!-- as I am matching all references with the proper idno children, I must add all others to the back of this file -->
