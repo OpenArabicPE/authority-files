@@ -62,8 +62,11 @@
             </xsl:variable>
             <xsl:apply-templates mode="m_bibl-to-biblStruct" select="$v_bibl/descendant-or-self::tei:bibl"/>
         </xsl:if>
-        <!-- find all <biblStruct> in the curent file -->
-        <xsl:apply-templates mode="m_copy-from-source" select="/descendant::tei:biblStruct[ancestor::tei:standOff or ancestor::tei:text]"/>
+        <!-- find all <biblStruct> in the curent file and add @change, @source -->
+        <xsl:apply-templates mode="m_copy-from-source" select="/descendant::tei:biblStruct[ancestor::tei:standOff or ancestor::tei:text]">
+            <!-- 5 seems a good choice to reduce the polution of notes with documentary attributes -->
+            <xsl:with-param name="p_depth-of-documentation" select="5"/>
+        </xsl:apply-templates>
     </xsl:variable>
     <!-- variable holding a comma-separated list of IDs -->
     <xsl:variable name="v_bibls-source-ids">
@@ -78,6 +81,7 @@
         </xsl:if>
     </xsl:template>
     <xsl:template match="node() | @*" mode="m_copy-from-source">
+        <xsl:param name="p_depth-of-documentation" select="1"/>
         <!-- source information -->
         <xsl:variable name="v_source">
             <xsl:variable name="v_base-uri" select="base-uri()"/>
@@ -98,12 +102,16 @@
         </xsl:variable>
         <xsl:copy>
             <xsl:apply-templates mode="m_copy-from-source" select="@*"/>
-            <!-- document change -->
-            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-            <!-- document source of additional information -->
-            <xsl:attribute name="source" select="$v_source"/>
+            <xsl:if test="$p_depth-of-documentation > 0">
+                <!-- document change -->
+                <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                <!-- document source of additional information -->
+                <xsl:attribute name="source" select="$v_source"/>
+            </xsl:if>
             <!-- content -->
-            <xsl:apply-templates mode="m_copy-from-source" select="node()"/>
+            <xsl:apply-templates mode="m_copy-from-source" select="node()">
+                <xsl:with-param name="p_depth-of-documentation" select="$p_depth-of-documentation - 1"/>
+            </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="tei:title" mode="m_copy-from-source">
