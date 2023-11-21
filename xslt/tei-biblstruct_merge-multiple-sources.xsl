@@ -2,7 +2,7 @@
 <xsl:stylesheet exclude-result-prefixes="#all" version="3.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:zot="https://zotero.org" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
-    <!-- this stylesheet enriches an existing bibliography by adding information **to** a master file  -->
+    <!-- this stylesheet goes through the target file and tries to pull-in information from the source file (the TEI XML this XSLT is run on) -->
     <!-- workflow
         - collect a list of all biblStruct in the source based on their IDs
         - go over every biblStruct in the target
@@ -19,10 +19,10 @@
     <xsl:param name="p_include-bibl" select="false()"/>
     <!-- temporary variables -->
     <xsl:variable name="v_bibliography-test" select="doc('../data/test-data/test_bibliography-merge_target.TEIP5.xml')"/>
-    
     <xsl:template match="/">
         <xsl:if test="$p_debug = true()">
             <xsl:message>
+                <xsl:text>The source file contains bibliographic data for the following IDs: </xsl:text>
                 <xsl:value-of select="$v_bibls-source-ids"/>
             </xsl:message>
         </xsl:if>
@@ -65,6 +65,7 @@
         <!-- find all <biblStruct> in the curent file -->
         <xsl:apply-templates mode="m_copy-from-source" select="/descendant::tei:biblStruct[ancestor::tei:standOff or ancestor::tei:text]"/>
     </xsl:variable>
+    <!-- variable holding a comma-separated list of IDs -->
     <xsl:variable name="v_bibls-source-ids">
         <xsl:apply-templates mode="m_bibl-to-id" select="$v_bibls-source/tei:biblStruct"/>
     </xsl:variable>
@@ -176,29 +177,34 @@
     <!-- do not copy certain attributes from one file to another -->
     <xsl:template match="@xml:id | @change | @next | @prev" mode="m_copy-from-source"/>
     <!-- update existing <biblStruct -->
-   <!-- this is run on the target file -->
+    <!-- this is run on the target file -->
     <xsl:template match="tei:biblStruct[ancestor::tei:standOff]" mode="m_merge" priority="11">
         <xsl:variable name="v_target" select="."/>
         <xsl:variable name="v_id-target" select="oape:query-biblstruct($v_target, 'id', '', $v_gazetteer, $p_local-authority)"/>
         <xsl:choose>
-            <!-- check if the target is part of the source -->
+            <!-- check if the target is also mentioned in the source file -->
             <xsl:when test="matches($v_bibls-source-ids, concat($v_id-target, '(,|$)'))">
-                <!-- get the source -->
+                <xsl:message>
+                    <xsl:text>The source contains data with the ID "</xsl:text>
+                    <xsl:value-of select="$v_id-target"/>
+                    <xsl:text>" to update the target</xsl:text>
+                </xsl:message>
+                <!-- get the source: this should only every return a single biblStruct -->
                 <xsl:variable name="v_source">
                     <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref]">
                         <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
                         <!-- match based on IDs -->
                         <xsl:if test="$v_id-source = $v_id-target">
-                            <xsl:message>
+                            <!--<xsl:message>
                                 <xsl:text>Found a match with ID: "</xsl:text>
                                 <xsl:value-of select="$v_id-source"/>
                                 <xsl:text>"</xsl:text>
-                            </xsl:message>
+                            </xsl:message>-->
                             <xsl:apply-templates mode="m_identity-transform" select="."/>
                         </xsl:if>
                     </xsl:for-each>
                 </xsl:variable>
-                <xsl:copy-of select="oape:merge-nodes($v_source/descendant-or-self::tei:biblStruct, $v_target, 'target')"/>
+                <xsl:copy-of select="oape:merge-nodes-2($v_source/descendant-or-self::tei:biblStruct, $v_target)"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:if test="$p_debug = true()">
@@ -213,7 +219,129 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+    <xsl:function name="oape:merge-nodes-2">
+        <xsl:param name="p_source"/>
+        <xsl:param name="p_target"/>
+        <!-- check if source and target are the same element -->
+        <xsl:variable name="v_input-names-matches" select="
+                if ($p_source/name() = $p_target/name()) then
+                    (true())
+                else
+                    (false())"/>
+        <xsl:if test="$v_input-names-matches = true()">
+            <xsl:message>
+                <xsl:text>Source and target have the same name: </xsl:text>
+                <xsl:value-of select="$p_source/name()"/>
+            </xsl:message>
+        </xsl:if>
+        <!-- check if source and target have meaningful content  -->
+        <xsl:variable name="v_source-text">
+            <xsl:value-of select="$p_source/text()"/>
+        </xsl:variable>
+        <xsl:variable name="v_target-text">
+            <xsl:value-of select="$p_target/text()"/>
+        </xsl:variable>
+        <xsl:variable name="v_input-text-matches" select="
+                if (normalize-space($v_source-text) = normalize-space($v_target-text)) then
+                    (true())
+                else
+                    (false())"/>
+        <xsl:if test="$v_input-text-matches = true()">
+            <xsl:message>
+                <xsl:text>Source and target have the same content: </xsl:text>
+                <xsl:value-of select="normalize-space($v_source-text)"/>
+            </xsl:message>
+        </xsl:if>
+        <xsl:if test="$v_input-text-matches = false()">
+            <xsl:message>
+                <xsl:value-of select="normalize-space($v_source-text)"/>
+            </xsl:message>
+            <xsl:message>
+                <xsl:value-of select="normalize-space($v_target-text)"/>
+            </xsl:message>
+        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="$v_input-names-matches = true() and $v_input-text-matches = true()">
+                <xsl:copy select="$p_source">
+                    <!-- merge attributes -->
+                   <xsl:copy-of select="oape:merge-attributes($p_source, $p_target)"/>
+                    <!-- content -->
+                    <!-- list all elements -->
+                    <xsl:variable name="v_source-nodes">
+                        <xsl:for-each select="$p_source/element()">
+                            <xsl:value-of select="name()"/>
+                            <xsl:if test="not(position() = last())">
+                                <xsl:value-of select="$v_comma"/>
+                            </xsl:if>
+                        </xsl:for-each>
+                    </xsl:variable>
+                    <xsl:variable name="v_target-nodes">
+                        <xsl:for-each select="$p_target/element()">
+                            <xsl:value-of select="name()"/>
+                            <xsl:if test="not(position() = last())">
+                                <xsl:value-of select="$v_comma"/>
+                            </xsl:if>
+                        </xsl:for-each>
+                    </xsl:variable>
+                    <xsl:message>
+                        <xsl:value-of select="$v_source-nodes"/>
+                    </xsl:message>
+                    <!-- copy unique elements -->
+                    <!-- merge elements present on both source and target -->
+                    <xsl:for-each select="$p_target/element()[contains($v_source-nodes, name())]">
+                        <xsl:variable name="v_name" select="name()"/>
+                        <!-- NOTE: this is a place holder, as it only looks at the first child element of the source with a given name -->
+                        <xsl:copy-of select="oape:merge-nodes-2($p_source/element()[name() = $v_name][1], .)"/>
+                    </xsl:for-each>
+                </xsl:copy>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>The source cannot be merged with the target as they are different elements.</xsl:text>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:function name="oape:merge-attributes">
+        <xsl:param name="p_source"/>
+        <xsl:param name="p_target"/>
+        <!-- list all attributes -->
+        <xsl:variable name="v_source-attr">
+            <xsl:for-each select="$p_source/@*">
+                <xsl:value-of select="name()"/>
+                <xsl:if test="not(position() = last())">
+                    <xsl:value-of select="$v_comma"/>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:variable name="v_target-attr">
+            <xsl:for-each select="$p_target/@*">
+                <xsl:value-of select="name()"/>
+                <xsl:if test="not(position() = last())">
+                    <xsl:value-of select="$v_comma"/>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
+        <!-- copy unique attributes -->
+        <xsl:for-each select="$p_source/@*[not(contains($v_target-attr, name()))]">
+            <xsl:apply-templates mode="m_identity-transform" select="."/>
+        </xsl:for-each>
+        <xsl:for-each select="$p_target/@*[not(contains($v_source-attr, name()))]">
+            <xsl:apply-templates mode="m_identity-transform" select="."/>
+        </xsl:for-each>
+        <!-- merge attributes present on both source and target -->
+        <xsl:for-each select="$p_target/@*[contains($v_source-attr, name())]">
+            <xsl:variable name="v_name" select="name()"/>
+            <xsl:variable name="v_source-value" select="$p_source/@*[name() = $v_name]"/>
+            <xsl:attribute name="{$v_name}">
+                <!-- copy value of target -->
+                <xsl:value-of select="."/>
+                <xsl:if test="not(. = $v_source-value)">
+                    <xsl:value-of select="concat(' ', $v_source-value)"/>
+                </xsl:if>
+            </xsl:attribute>
+        </xsl:for-each>
+    </xsl:function>
     <!-- everything below is not used anymore -->
     <xsl:template match="tei:biblStruct[ancestor::tei:standOff]" mode="m_merge" priority="10">
         <xsl:variable name="v_target" select="."/>
