@@ -654,14 +654,12 @@
                 <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
                 <xsl:attribute name="xml:lang" select="'en'"/>
                 <xsl:attribute name="xml:id" select="$p_id-change"/>
-                <xsl:text>Enriched all </xsl:text>
-                <gi>biblStruct</gi>
-                <xsl:text> with information from file </xsl:text>
+                <xsl:text>Merged bibliographic information from "</xsl:text>
                 <xsl:element name="ref">
                     <xsl:attribute name="target" select="$v_url-file"/>
                     <xsl:value-of select="$v_name-file"/>
                 </xsl:element>
-                <xsl:text> using matching of titles.</xsl:text>
+                <xsl:text>" into this file.</xsl:text>
             </xsl:element>
             <xsl:apply-templates mode="m_identity-transform" select="node()"/>
         </xsl:copy>
