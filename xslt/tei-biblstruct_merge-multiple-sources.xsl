@@ -223,17 +223,13 @@
         <xsl:param name="p_source"/>
         <xsl:param name="p_target"/>
         <!-- check if source and target are the same element -->
+        <xsl:variable name="v_source-name" select="$p_source/name()"/>
+        <xsl:variable name="v_target-name" select="$p_target/name()"/>
         <xsl:variable name="v_input-names-matches" select="
-                if ($p_source/name() = $p_target/name()) then
+                if ($v_source-name = $v_target-name) then
                     (true())
                 else
                     (false())"/>
-        <xsl:if test="$v_input-names-matches = true()">
-            <xsl:message>
-                <xsl:text>Source and target have the same name: </xsl:text>
-                <xsl:value-of select="$p_source/name()"/>
-            </xsl:message>
-        </xsl:if>
         <!-- check if source and target have meaningful content  -->
         <xsl:variable name="v_source-text">
             <xsl:value-of select="$p_source/text()"/>
@@ -260,45 +256,86 @@
                 <xsl:value-of select="normalize-space($v_target-text)"/>
             </xsl:message>
         </xsl:if>
+        <!-- when should source and target be merged? -->
         <xsl:choose>
-            <xsl:when test="$v_input-names-matches = true() and $v_input-text-matches = true()">
-                <xsl:copy select="$p_source">
-                    <!-- merge attributes -->
-                   <xsl:copy-of select="oape:merge-attributes($p_source, $p_target)"/>
-                    <!-- content -->
-                    <!-- list all elements -->
-                    <xsl:variable name="v_source-nodes">
-                        <xsl:for-each select="$p_source/element()">
-                            <xsl:value-of select="name()"/>
-                            <xsl:if test="not(position() = last())">
-                                <xsl:value-of select="$v_comma"/>
-                            </xsl:if>
-                        </xsl:for-each>
-                    </xsl:variable>
-                    <xsl:variable name="v_target-nodes">
-                        <xsl:for-each select="$p_target/element()">
-                            <xsl:value-of select="name()"/>
-                            <xsl:if test="not(position() = last())">
-                                <xsl:value-of select="$v_comma"/>
-                            </xsl:if>
-                        </xsl:for-each>
-                    </xsl:variable>
-                    <xsl:message>
-                        <xsl:value-of select="$v_source-nodes"/>
-                    </xsl:message>
-                    <!-- copy unique elements -->
-                    <!-- merge elements present on both source and target -->
-                    <xsl:for-each select="$p_target/element()[contains($v_source-nodes, name())]">
-                        <xsl:variable name="v_name" select="name()"/>
-                        <!-- NOTE: this is a place holder, as it only looks at the first child element of the source with a given name -->
-                        <xsl:copy-of select="oape:merge-nodes-2($p_source/element()[name() = $v_name][1], .)"/>
-                    </xsl:for-each>
-                </xsl:copy>
+            <!-- fundamental condition: same element name -->
+            <xsl:when test="$v_input-names-matches = true()">
+                <!-- 1. condition: similar textual content -->
+                <!-- 2. condition: decisive attributes -->
+                <!-- the combination of these conditions depends on the element name -->
+                <xsl:variable name="v_match">
+                    <xsl:choose>
+                        <!-- attributes that prevent merging -->
+                        <xsl:when test="$p_source/@type != $p_target/@type">
+                            <xsl:message>
+                                <xsl:text>The @type attributes on source and target do not match</xsl:text>
+                            </xsl:message>
+                            <xsl:copy-of select="false()"/>
+                        </xsl:when>
+                        <xsl:when test="$p_source/@level != $p_target/@level">
+                            <xsl:message>
+                                <xsl:text>The @type attributes on source and target do not match</xsl:text>
+                            </xsl:message>
+                            <xsl:copy-of select="false()"/>
+                        </xsl:when>
+                        <xsl:when test="1 = 2">
+                            <xsl:copy-of select="false()"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="true()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:choose>
+                    <xsl:when test="$v_match = true()">
+                        <xsl:copy select="$p_source">
+                            <!-- merge attributes -->
+                            <xsl:copy-of select="oape:merge-attributes($p_source, $p_target)"/>
+                            <!-- content -->
+                            <!-- list all elements -->
+                            <xsl:variable name="v_source-nodes">
+                                <xsl:for-each select="$p_source/element()">
+                                    <xsl:value-of select="name()"/>
+                                    <xsl:if test="not(position() = last())">
+                                        <xsl:value-of select="$v_comma"/>
+                                    </xsl:if>
+                                </xsl:for-each>
+                            </xsl:variable>
+                            <xsl:variable name="v_target-nodes">
+                                <xsl:for-each select="$p_target/element()">
+                                    <xsl:value-of select="name()"/>
+                                    <xsl:if test="not(position() = last())">
+                                        <xsl:value-of select="$v_comma"/>
+                                    </xsl:if>
+                                </xsl:for-each>
+                            </xsl:variable>
+                            <xsl:message>
+                                <xsl:value-of select="$v_source-nodes"/>
+                            </xsl:message>
+                            <!-- copy unique elements -->
+                            <!-- merge elements present on both source and target -->
+                            <xsl:for-each select="$p_target/element()[contains($v_source-nodes, name())]">
+                                <xsl:variable name="v_name" select="name()"/>
+                                <!-- NOTE: this is a place holder, as it only looks at the first child element of the source with a given name -->
+                                <xsl:copy-of select="oape:merge-nodes-2($p_source/element()[name() = $v_name][1], .)"/>
+                            </xsl:for-each>
+                        </xsl:copy>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:message>
+                            <xsl:text>WARNING: Source and target could not be merged.</xsl:text>
+                        </xsl:message>
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_source"/>
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_target"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:message>
-                    <xsl:text>The source cannot be merged with the target as they are different elements.</xsl:text>
+                    <xsl:text>WARNING: Source and target do not have the same name.</xsl:text>
                 </xsl:message>
+                <xsl:apply-templates mode="m_identity-transform" select="$p_source"/>
+                <xsl:apply-templates mode="m_identity-transform" select="$p_target"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
