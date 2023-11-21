@@ -12,12 +12,19 @@
                 - identity transform
         - add all biblStruct from the source without ID to the target
     -->
+    <!-- PROBLEM / BUG
+        - somehow biblStruct with @ref="NA" in the source are merged into the target based on their title.
+        - all child elements of <persName> inside <editor> are omitted 
+    -->
+    <!-- NOTE 
+        - that all biblStruct in the target file must have a local <idno> 
+    -->
     <!-- to do
-        - $p_id-change should derive from the target and not the source
+        - this stylesheet failes on biblStruct in the target file with multiple monogr children
+            - these multiple monogr children are all merged into one ...
     -->
     <xsl:import href="functions.xsl"/>
     <xsl:param name="p_include-bibl" select="false()"/>
-    
     <!-- define the target -->
     <xsl:variable name="v_bibliography-target">
         <xsl:choose>
@@ -213,8 +220,10 @@
                     <xsl:text>" to update the target</xsl:text>
                 </xsl:message>
                 <!-- get the source: this should only every return a single biblStruct -->
+                <!-- BUT it doesn't given that the source file could hold multiple biblStruct nodes pointing to the same biblStruct in the target -->
                 <xsl:variable name="v_source">
                     <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref]">
+                        <!-- this function call is computationally expensive as it is invoked every time a match has been found in the source file -->
                         <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
                         <!-- match based on IDs -->
                         <xsl:if test="$v_id-source = $v_id-target">
@@ -222,8 +231,19 @@
                         </xsl:if>
                     </xsl:for-each>
                 </xsl:variable>
+                <xsl:variable name="v_source-compiled">
+                    <xsl:choose>
+                        <xsl:when test="count($v_source/tei:biblStruct) = 2">
+                            <xsl:copy-of select="oape:merge-biblStruct($v_source/tei:biblStruct[2], $v_source/tei:biblStruct[1])"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="$v_source/tei:biblStruct"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
                 <!--                <xsl:copy-of select="oape:merge-nodes-2($v_source/descendant-or-self::tei:biblStruct, $v_target)"/>-->
-                <xsl:copy-of select="oape:merge-biblStruct($v_source/descendant-or-self::tei:biblStruct, $v_target)"/>
+                <!-- TO DO: I currently only use the first biblStruct from the source -->
+                <xsl:copy-of select="oape:merge-biblStruct($v_source-compiled/tei:biblStruct, $v_target)"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:if test="$p_debug = true()">
@@ -258,7 +278,7 @@
             <xsl:copy-of select="oape:merge-attributes($p_source, $p_target)"/>
             <!-- analytic -->
             <!-- monogr -->
-            <xsl:copy select="$p_target/tei:monogr">
+            <xsl:copy select="$p_target/tei:monogr[1]">
                 <!-- merge attributes -->
                 <xsl:copy-of select="oape:merge-attributes($p_source/tei:monogr, $p_target/tei:monogr)"/>
                 <!-- title -->
