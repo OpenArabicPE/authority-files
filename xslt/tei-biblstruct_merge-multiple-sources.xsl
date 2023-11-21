@@ -46,20 +46,20 @@
     <!-- find all <bibl>s in current file and convert them to <biblStruct> -->
     <xsl:variable name="v_bibls-source">
         <!-- find all <bibl>s in current file and compile them if necessary -->
-        <xsl:variable name="v_bibl">
-            <xsl:for-each select="/descendant::tei:bibl[ancestor::tei:standOff or ancestor::tei:text]">
-                <xsl:choose>
-                    <xsl:when test="@next">
-                        <xsl:copy-of select="oape:compile-next-prev(.)"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:copy-of select="."/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:for-each>
-        </xsl:variable>
         <!-- convert <bibl>s to <biblStruct> -->
         <xsl:if test="$p_include-bibl = true()">
+            <xsl:variable name="v_bibl">
+                <xsl:for-each select="/descendant::tei:bibl[ancestor::tei:standOff or ancestor::tei:text]">
+                    <xsl:choose>
+                        <xsl:when test="@next">
+                            <xsl:copy-of select="oape:compile-next-prev(.)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="."/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+            </xsl:variable>
             <xsl:apply-templates mode="m_bibl-to-biblStruct" select="$v_bibl/descendant-or-self::tei:bibl"/>
         </xsl:if>
         <!-- find all <biblStruct> in the curent file -->
@@ -382,7 +382,7 @@
                         </xsl:for-each-group>-->
                     </xsl:copy>
                     <!-- other children -->
-                    <xsl:apply-templates select="current-group()/element()[not(self::tei:list)]" mode="m_identity-transform"/>
+                    <xsl:apply-templates mode="m_identity-transform" select="current-group()/element()[not(self::tei:list)]"/>
                 </xsl:copy>
             </xsl:for-each-group>
         </xsl:copy>
