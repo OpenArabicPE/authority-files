@@ -263,7 +263,7 @@
                 <xsl:copy-of select="oape:merge-attributes($p_source/tei:monogr, $p_target/tei:monogr)"/>
                 <!-- title -->
                 <xsl:for-each-group group-by="normalize-space(.)" select="$v_combined-monogr/tei:title">
-                    <xsl:sort select="current-group()/@type"/>
+                    <xsl:sort select="current-group()[1]/@type"/>
                     <xsl:sort select="current-grouping-key()"/>
                     <xsl:call-template name="t_merge-groups">
                         <xsl:with-param name="p_current-group" select="current-group()"/>
