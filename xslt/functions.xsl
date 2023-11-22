@@ -2497,7 +2497,7 @@
             <xsl:choose>
                 <xsl:when test="$p_title/ancestor::tei:biblStruct">
                     <xsl:copy select="$p_title/ancestor::tei:biblStruct[1]">
-                        <xsl:apply-templates select="$p_title/ancestor::tei:biblStruct[1]/@*" mode="m_identity-transform"/>
+                        <xsl:apply-templates mode="m_identity-transform" select="$p_title/ancestor::tei:biblStruct[1]/@*"/>
                         <xsl:attribute name="source" select="$v_url-source"/>
                         <xsl:apply-templates mode="m_identity-transform" select="$p_title/ancestor::tei:biblStruct[1]/node()"/>
                     </xsl:copy>
@@ -2514,11 +2514,11 @@
                         <monogr>
                             <xsl:apply-templates mode="m_identity-transform" select="$p_title"/>
                             <xsl:element name="textLang">
-                                <xsl:attribute name="mainLang" select="if ($p_title/@xml:lang) then
-                    ($p_title/@xml:lang)
-                else
-                    ($p_title/ancestor::node()[@xml:lang][1]/@xml:lang)">
-                                </xsl:attribute>
+                                <xsl:attribute name="mainLang" select="
+                                        if ($p_title/@xml:lang) then
+                                            ($p_title/@xml:lang)
+                                        else
+                                            ($p_title/ancestor::node()[@xml:lang][1]/@xml:lang)"> </xsl:attribute>
                             </xsl:element>
                             <imprint>
                                 <!-- this should be improved -->
@@ -2691,6 +2691,22 @@
                     </xsl:if>
                     <!-- try to use further match criteria -->
                     <xsl:choose>
+                        <!-- location: single biblStruct and miss-match of locations -->
+                        <!-- WHy should this be added? -->
+                        <xsl:when
+                            test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and  $v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) != $v_place-publication]">
+                            <xsl:if test="$p_verbose = true()">
+                                <xsl:message>
+                                    <xsl:text>Found a single match for "</xsl:text>
+                                    <xsl:value-of select="$v_title-string"/>
+                                    <xsl:text>" but with a different place of publication</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                           <xsl:value-of select="'NA'"/>
+                            <xsl:message>
+                                <xsl:copy-of select="$v_message-failure"/>
+                            </xsl:message>
+                        </xsl:when>
                         <!-- @types and location -->
                         <xsl:when
                             test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) = 1">
