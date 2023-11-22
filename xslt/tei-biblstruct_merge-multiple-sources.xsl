@@ -13,8 +13,9 @@
         - add all biblStruct from the source without ID to the target
     -->
     <!-- PROBLEM / BUG
-        - somehow biblStruct with @ref="NA" in the source are merged into the target based on their title.
         - all child elements of <persName> inside <editor> are omitted 
+        - there is a problem with <title level="j" ref="NA" resp="#xslt" xml:lang="es">El Diario Sirio Libanés</title> in the source title
+            - all other <title level="j" ref="NA"/> seem to not cause this problem
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
@@ -78,7 +79,7 @@
             <xsl:apply-templates mode="m_bibl-to-biblStruct" select="$v_bibl/descendant-or-self::tei:bibl"/>
         </xsl:if>
         <!-- find all <biblStruct> in the curent file and add @change, @source -->
-        <xsl:apply-templates mode="m_copy-from-source" select="/descendant::tei:biblStruct[ancestor::tei:standOff or ancestor::tei:text]">
+        <xsl:apply-templates mode="m_copy-from-source" select="/descendant::tei:biblStruct[tei:monogr/tei:title/@ref[. != 'NA']][ancestor::tei:standOff or ancestor::tei:text]">
             <!-- 5 seems a good choice to reduce the polution of notes with documentary attributes -->
             <xsl:with-param name="p_depth-of-documentation" select="5"/>
         </xsl:apply-templates>
@@ -222,7 +223,7 @@
                 <!-- get the source: this should only every return a single biblStruct -->
                 <!-- BUT it doesn't given that the source file could hold multiple biblStruct nodes pointing to the same biblStruct in the target -->
                 <xsl:variable name="v_source">
-                    <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref]">
+                    <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref[. != 'NA']]">
                         <!-- this function call is computationally expensive as it is invoked every time a match has been found in the source file -->
                         <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
                         <!-- match based on IDs -->
