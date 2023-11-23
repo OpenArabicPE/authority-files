@@ -373,6 +373,7 @@
                     <!-- date -->
                     <!-- NOTE: there are 200+ dates without @type in the target -->
                     <xsl:for-each-group group-by="@type" select="$v_combined-imprint/tei:date[@type]">
+                        <xsl:sort select="current-group()[@when][1]/@when"/>
                         <xsl:sort select="current-grouping-key()"/>
                         <xsl:call-template name="t_merge-groups-attr.datable">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
