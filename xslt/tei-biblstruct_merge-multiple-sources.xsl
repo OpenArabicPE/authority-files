@@ -12,16 +12,18 @@
                 - identity transform
         - add all biblStruct from the source without ID to the target
     -->
+    <!-- achievements
+        - a file can be merged into itself without creating additional redundant descendants of any biblStruct!
+    -->
     <!-- BUGs
         - all child elements of <persName> inside <editor> are omitted
-        - <date> deleted when @notAfter, @notBefore
+        - this stylesheet failes on biblStruct in the target file with multiple monogr children
+            - these multiple monogr children are all merged into one ...
+        - respStmt: have not been tested yet
+        - note: without child elements are deleted all other are properly merged
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
-    -->
-    <!-- to do
-        - this stylesheet failes on biblStruct in the target file with multiple monogr children
-            - these multiple monogr children are all merged into one ...
     -->
     <xsl:import href="functions.xsl"/>
     <xsl:param name="p_include-bibl" select="false()"/>
@@ -349,6 +351,13 @@
                     </xsl:call-template>
                 </xsl:for-each-group>
                 <!-- respStmt -->
+                <xsl:for-each-group group-by="tei:resp" select="$v_combined-monogr/tei:respStmt">
+                    <xsl:call-template name="t_merge-groups">
+                        <xsl:with-param name="p_current-group" select="current-group()"/>
+                        <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                        <xsl:with-param name="p_depth-of-merging" select="2"/>
+                    </xsl:call-template>
+                </xsl:for-each-group>
                 <!-- imprint -->
                 <xsl:copy select="$v_combined-monogr/tei:imprint[1]">
                     <xsl:copy-of select="oape:merge-attributes($p_source/tei:monogr/tei:imprint, $p_target/tei:monogr/tei:imprint)"/>
