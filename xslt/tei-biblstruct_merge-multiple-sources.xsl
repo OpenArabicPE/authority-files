@@ -38,7 +38,7 @@
         </xsl:choose>
     </xsl:variable>
     <!-- re-define $p_id-change -->
-    <xsl:param name="p_id-change" select="generate-id($v_bibliography-target/descendant::tei:revisionDesc[1]/tei:change[1])"/>
+    <xsl:param name="p_id-change" select="generate-id($v_bibliography-target/descendant::tei:revisionDesc[1]/tei:change[last()])"/>
     <xsl:template match="/">
         <xsl:if test="$p_debug = true()">
             <xsl:message terminate="no">
@@ -89,12 +89,17 @@
         <xsl:apply-templates mode="m_bibl-to-id" select="$v_bibls-source/tei:biblStruct"/>
     </xsl:variable>
     <xsl:template match="tei:biblStruct" mode="m_bibl-to-id">
-        <xsl:if test="tei:monogr/tei:title/@ref">
-            <xsl:value-of select="oape:query-bibliography(tei:monogr/tei:title[@ref][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
-            <xsl:if test="position() != last()">
-                <xsl:text>,</xsl:text>
-            </xsl:if>
-        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="tei:monogr/tei:title/@ref != 'NA'">
+                <xsl:value-of select="oape:query-bibliography(tei:monogr/tei:title[@ref != 'NA'][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
+                <xsl:if test="position() != last()">
+                    <xsl:text>,</xsl:text>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>INFO: found biblStruct not linked to the authority file</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="node() | @*" mode="m_copy-from-source">
         <xsl:param name="p_depth-of-documentation" select="1"/>
@@ -223,9 +228,9 @@
                 <!-- get the source: this should only every return a single biblStruct -->
                 <!-- BUT it doesn't given that the source file could hold multiple biblStruct nodes pointing to the same biblStruct in the target -->
                 <xsl:variable name="v_source">
-                    <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref[. != 'NA']]">
+                    <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref  != 'NA']">
                         <!-- this function call is computationally expensive as it is invoked every time a match has been found in the source file -->
-                        <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
+                        <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref != 'NA'][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
                         <!-- match based on IDs -->
                         <xsl:if test="$v_id-source = $v_id-target">
                             <xsl:apply-templates mode="m_identity-transform" select="."/>
