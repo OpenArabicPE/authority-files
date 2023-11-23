@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
    <teiHeader>
       <fileDesc>
@@ -19,9 +20,6 @@
    <standOff>
       <listBibl>
          <biblStruct source="https://sierra.usek.edu.lb/" type="periodical">
-            <analytic>
-               <title xml:lang="en">Test</title>
-            </analytic>
             <monogr>
                <title level="j" ref="oclc:792755775 jaraid:bibl:t1r2472 oape:bibl:2888" resp="#xslt">الأحرار المصورة</title>
                <title level="j" type="sub">أدبية، إنتقادية، فكاهية، روائية</title>
@@ -79,7 +77,11 @@
                <idno type="URI">https://sierra.usek.edu.lb/record=b1208963</idno>
                <idno type="url">/search?/XJRN+A&amp;SORT=D/XJRN+A&amp;SORT=D&amp;SUBKEY=JRN+A/1%2C111%2C111%2CB/frameset&amp;FF=XJRN+A&amp;SORT=D&amp;41%2C41%2C</idno>
                <imprint>
-                  <date type="documented" when="1937"/>
+                  <date source="https://sierra.usek.edu.lb/" type="documented" when="1937"/>
+                  <date datingMethod="#cal_ottomanfiscal" type="onset" when="1929-01-12" when-custom="1421-08-02"/>
+                  <date datingMethod="#cal_islamic" type="onset" when="1929-01-12" when-custom="1419-06-03"/>
+                  <date from="1884" to="1944">1884-1944</date>
+                  <date type="documented" from="1884" to="1944" source="#test">1884-1944</date>
                </imprint>
             </monogr>
             <note type="holdings"> <list>

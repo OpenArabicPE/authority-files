@@ -12,10 +12,9 @@
                 - identity transform
         - add all biblStruct from the source without ID to the target
     -->
-    <!-- PROBLEM / BUG
-        - all child elements of <persName> inside <editor> are omitted 
-        - there is a problem with <title level="j" ref="NA" resp="#xslt" xml:lang="es">El Diario Sirio Libanés</title> in the source title
-            - all other <title level="j" ref="NA"/> seem to not cause this problem
+    <!-- BUGs
+        - all child elements of <persName> inside <editor> are omitted
+        - <date> deleted when @notAfter, @notBefore
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
@@ -228,7 +227,7 @@
                 <!-- get the source: this should only every return a single biblStruct -->
                 <!-- BUT it doesn't given that the source file could hold multiple biblStruct nodes pointing to the same biblStruct in the target -->
                 <xsl:variable name="v_source">
-                    <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref  != 'NA']">
+                    <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref != 'NA']">
                         <!-- this function call is computationally expensive as it is invoked every time a match has been found in the source file -->
                         <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref != 'NA'][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
                         <!-- match based on IDs -->
@@ -326,13 +325,9 @@
                 <!-- idno -->
                 <xsl:for-each-group group-by="@type" select="$v_combined-monogr/tei:idno">
                     <xsl:sort select="current-grouping-key()"/>
-                    <xsl:for-each-group group-by="normalize-space(.)" select="current-group()">
-                        <xsl:sort select="current-grouping-key()"/>
-                        <xsl:call-template name="t_merge-groups">
-                            <xsl:with-param name="p_current-group" select="current-group()"/>
-                            <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
-                        </xsl:call-template>
-                    </xsl:for-each-group>
+                    <xsl:call-template name="t_merge-groups-by-text">
+                        <xsl:with-param name="p_current-group" select="current-group()"/>
+                    </xsl:call-template>
                 </xsl:for-each-group>
                 <!-- textLang -->
                 <xsl:for-each-group group-by="@mainLang" select="$v_combined-monogr/tei:textLang">
@@ -348,6 +343,9 @@
                     <xsl:call-template name="t_merge-groups">
                         <xsl:with-param name="p_current-group" select="current-group()"/>
                         <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                        <!-- cover persName children -->
+                        <!-- note: persNames might have a lot of mark-up that will thus be omitted -->
+                        <xsl:with-param name="p_depth-of-merging" select="1"/>
                     </xsl:call-template>
                 </xsl:for-each-group>
                 <!-- respStmt -->
@@ -359,6 +357,8 @@
                         <xsl:call-template name="t_merge-groups">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                             <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                            <!-- cover placeName children -->
+                            <xsl:with-param name="p_depth-of-merging" select="1"/>
                         </xsl:call-template>
                     </xsl:for-each-group>
                     <!-- publisher -->
@@ -366,36 +366,29 @@
                         <xsl:call-template name="t_merge-groups">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                             <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                            <!-- cover orgName children -->
+                            <xsl:with-param name="p_depth-of-merging" select="1"/>
                         </xsl:call-template>
                     </xsl:for-each-group>
                     <!-- date -->
-                    <xsl:for-each-group group-by="@type" select="$v_combined-imprint/tei:date">
+                    <!-- NOTE: there are 200+ dates without @type in the target -->
+                    <xsl:for-each-group group-by="@type" select="$v_combined-imprint/tei:date[@type]">
                         <xsl:sort select="current-grouping-key()"/>
-                        <xsl:for-each-group group-by="@when" select="current-group()">
-                            <xsl:sort select="current-grouping-key()"/>
-                            <xsl:for-each-group group-by="normalize-space(.)" select="current-group()">
-                                <xsl:sort select="current-grouping-key()"/>
-                                <xsl:call-template name="t_merge-groups">
-                                    <xsl:with-param name="p_current-group" select="current-group()"/>
-                                    <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
-                                </xsl:call-template>
-                            </xsl:for-each-group>
-                        </xsl:for-each-group>
+                        <xsl:call-template name="t_merge-groups-attr.datable">
+                            <xsl:with-param name="p_current-group" select="current-group()"/>
+                        </xsl:call-template>
                     </xsl:for-each-group>
+                    <!-- fall-back: reproduce all untyped dates -->
+                    <xsl:apply-templates mode="m_identity-transform" select="$v_combined-imprint/tei:date[not(@type)]"/>
                 </xsl:copy>
                 <!-- biblScope -->
                 <xsl:for-each-group group-by="@unit" select="$v_combined-monogr/tei:biblScope">
                     <xsl:sort select="current-grouping-key()"/>
-                    <xsl:for-each-group group-by="@from" select="current-group()">
-                        <xsl:for-each-group group-by="@to" select="current-group()">
-                            <xsl:for-each-group group-by="normalize-space(.)" select="current-group()">
-                                <xsl:sort select="current-grouping-key()"/>
-                                <xsl:call-template name="t_merge-groups">
-                                    <xsl:with-param name="p_current-group" select="current-group()"/>
-                                    <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
-                                </xsl:call-template>
-                            </xsl:for-each-group>
-                        </xsl:for-each-group>
+                    <!-- this will delete all biblScope without both attributes -->
+                    <xsl:for-each-group group-by="." select="current-group()[(@from, @to)]">
+                        <xsl:call-template name="t_merge-groups-attr_from-to">
+                            <xsl:with-param name="p_current-group" select="current-group()"/>
+                        </xsl:call-template>
                     </xsl:for-each-group>
                 </xsl:for-each-group>
             </xsl:copy>
@@ -434,7 +427,7 @@
         <xsl:param name="p_current-group"/>
         <xsl:param name="p_current-grouping-key"/>
         <xsl:param name="p_grouping-key-is-attribute-value" select="false()"/>
-        <!--<xsl:param name="p_merge-children" select="true()"/>-->
+        <!-- the default depth of merging is  1, which allows for merging of persName, placeName, and orgName children -->
         <xsl:param name="p_depth-of-merging" select="1"/>
         <xsl:copy select="$p_current-group[1]">
             <xsl:choose>
@@ -467,6 +460,85 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:copy>
+    </xsl:template>
+    <xsl:template name="t_merge-groups-by-text">
+        <xsl:param name="p_current-group"/>
+        <xsl:for-each-group group-by="normalize-space(.)" select="$p_current-group">
+            <xsl:sort select="current-grouping-key()"/>
+            <xsl:call-template name="t_merge-groups">
+                <xsl:with-param name="p_current-group" select="current-group()"/>
+                <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+            </xsl:call-template>
+        </xsl:for-each-group>
+    </xsl:template>
+    <xsl:template name="t_merge-groups-attr.datable">
+        <xsl:param name="p_current-group"/>
+        <!-- @when -->
+        <xsl:for-each-group group-by="@when" select="$p_current-group[@when]">
+            <xsl:sort select="current-grouping-key()"/>
+            <!-- do not merge dates from different dating systems -->
+            <!-- this removes all dates wich do not carry the @when-custom attribute -->
+            <xsl:for-each-group group-by="@when-custom" select="current-group()[@when-custom]">
+                <xsl:call-template name="t_merge-groups-by-text">
+                    <xsl:with-param name="p_current-group" select="current-group()"/>
+                </xsl:call-template>
+            </xsl:for-each-group>
+            <xsl:for-each-group group-by="." select="current-group()[not(@when-custom)]">
+                <xsl:call-template name="t_merge-groups-by-text">
+                    <xsl:with-param name="p_current-group" select="current-group()"/>
+                </xsl:call-template>
+            </xsl:for-each-group>
+        </xsl:for-each-group>
+        <!-- @notAfter and @notBefore can occur independtly from each other, but are not allowed if @when, @from or @to are present -->
+        <xsl:for-each-group group-by="@notAfter" select="$p_current-group[@notAfter][@notBefore]">
+            <xsl:sort select="current-grouping-key()"/>
+            <xsl:for-each-group group-by="@notBefore" select="current-group()">
+                <xsl:call-template name="t_merge-groups-by-text">
+                    <xsl:with-param name="p_current-group" select="current-group()"/>
+                </xsl:call-template>
+            </xsl:for-each-group>
+        </xsl:for-each-group>
+        <xsl:for-each-group group-by="@notAfter" select="$p_current-group[@notAfter][not(@notBefore)]">
+            <xsl:sort select="current-grouping-key()"/>
+            <xsl:call-template name="t_merge-groups-by-text">
+                <xsl:with-param name="p_current-group" select="current-group()"/>
+            </xsl:call-template>
+        </xsl:for-each-group>
+        <xsl:for-each-group group-by="@notBefore" select="$p_current-group[not(@notAfter)][@notBefore]">
+            <xsl:sort select="current-grouping-key()"/>
+            <xsl:call-template name="t_merge-groups-by-text">
+                <xsl:with-param name="p_current-group" select="current-group()"/>
+            </xsl:call-template>
+        </xsl:for-each-group>
+        <!-- @from and @to can occur independtly from each other, but are not allowed if @when, @notBefore or @notAfter are present -->
+        <xsl:for-each-group group-by="." select="$p_current-group[(@from, @to)]">
+            <xsl:call-template name="t_merge-groups-attr_from-to">
+                <xsl:with-param name="p_current-group" select="current-group()"/>
+            </xsl:call-template>
+        </xsl:for-each-group>
+    </xsl:template>
+    <xsl:template name="t_merge-groups-attr_from-to">
+        <xsl:param name="p_current-group"/>
+        <xsl:for-each-group group-by="@from" select="$p_current-group[@from][@to]">
+            <xsl:sort select="current-grouping-key()"/>
+            <xsl:for-each-group group-by="@to" select="current-group()">
+                <xsl:call-template name="t_merge-groups-by-text">
+                    <xsl:with-param name="p_current-group" select="current-group()"/>
+                </xsl:call-template>
+            </xsl:for-each-group>
+        </xsl:for-each-group>
+        <xsl:for-each-group group-by="@from" select="$p_current-group[@from][not(@to)]">
+            <xsl:sort select="current-grouping-key()"/>
+            <xsl:call-template name="t_merge-groups-by-text">
+                <xsl:with-param name="p_current-group" select="current-group()"/>
+            </xsl:call-template>
+        </xsl:for-each-group>
+        <xsl:for-each-group group-by="@to" select="$p_current-group[not(@from)][@to]">
+            <xsl:sort select="current-grouping-key()"/>
+            <xsl:call-template name="t_merge-groups-by-text">
+                <xsl:with-param name="p_current-group" select="current-group()"/>
+            </xsl:call-template>
+        </xsl:for-each-group>
     </xsl:template>
     <xsl:function name="oape:merge-nodes-2">
         <xsl:param as="node()" name="p_source"/>
