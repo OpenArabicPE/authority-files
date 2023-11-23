@@ -367,6 +367,7 @@
                     <xsl:for-each-group group-by="@type" select="$v_combined-imprint/tei:date">
                         <xsl:sort select="current-grouping-key()"/>
                         <xsl:for-each-group group-by="@when" select="current-group()">
+                            <xsl:sort select="current-grouping-key()"/>
                             <xsl:for-each-group group-by="normalize-space(.)" select="current-group()">
                                 <xsl:sort select="current-grouping-key()"/>
                                 <xsl:call-template name="t_merge-groups">
