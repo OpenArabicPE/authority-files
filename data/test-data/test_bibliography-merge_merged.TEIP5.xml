@@ -16,7 +16,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc xml:lang="en">
-         <change when="2023-11-22" who="#pers_TG" xml:id="d12e27" xml:lang="en">Merged bibliographic information from &quot;
+         <change when="2023-11-23" who="#pers_TG" xml:id="d12e27" xml:lang="en">Merged bibliographic information from &quot;
             <ref target="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/test-data/test_bibliography-merge_source.TEIP5.xml">test_bibliography-merge_source.TEIP5.xml</ref>
             &quot; into this file.</change>
          <tei:change when="2023-11-14" who="#pers_TG" xml:id="d10e1030" xml:lang="en">Created this file</tei:change>
@@ -246,6 +246,49 @@
                <list>
                   <item source="https://projectjaraid.github.io">
                      <rs ref="#agt" xml:lang="und-Latn">Ṭ</rs>
+                  </item>
+               </list>
+            </note>
+         </biblStruct>
+         <biblStruct change="#d12e27" source="https://projectjaraid.github.io https://sierra.usek.edu.lb/" subtype="newspaper" type="periodical">
+            <monogr change="#d12e27" source="https://sierra.usek.edu.lb/">
+               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jarīda al-Sūriyya al-Lubnāniyya</title>
+               <title change="#d12e27" level="j" ref="jaraid:bibl:t1r2298 oape:bibl:3166" resp="#xslt" source="https://sierra.usek.edu.lb/" xml:lang="ar">الجريدة السورية اللبنانية</title>
+               <idno change="#d12e27" source="https://sierra.usek.edu.lb/" type="URI">https://sierra.usek.edu.lb/record=b1208963</idno>
+               <idno change="#d12e27" source="https://sierra.usek.edu.lb/" subtype="USEK" type="classmark">JRN L021</idno>
+               <idno change="#d12e27" source="https://sierra.usek.edu.lb/" subtype="USEK" type="classmark">b1208963</idno>
+               <idno type="jaraid">t1r2298</idno>
+               <idno type="oape">3166</idno>
+               <idno change="#d12e27" source="https://sierra.usek.edu.lb/" type="url">/search?/XJRN+A&amp;SORT=D/XJRN+A&amp;SORT=D&amp;SUBKEY=JRN+A/1%2C111%2C111%2CB/frameset&amp;FF=XJRN+A&amp;SORT=D&amp;41%2C41%2C</idno>
+               <textLang mainLang="ar"/>
+               <editor>
+                  <persName ref="jaraid:pers:1875 oape:pers:5725" xml:lang="ar">موسى عزيزة</persName>
+               </editor>
+               <imprint change="#d12e27" source="https://sierra.usek.edu.lb/">
+                  <pubPlace>
+                     <placeName ref="geon:3435910 oape:place:362" xml:lang="ar">بونس أيرس</placeName>
+                  </pubPlace>
+                  <date change="#d12e27" source="https://sierra.usek.edu.lb/" type="documented" when="1937"/>
+                  <date type="onset" when="1929-01-12"/>
+               </imprint>
+            </monogr>
+            <note change="#d12e27" source="https://sierra.usek.edu.lb/" type="holdings">
+               <list>
+                  <item change="#d12e27" source="https://sierra.usek.edu.lb/">
+                     <label change="#d12e27" source="https://sierra.usek.edu.lb/">
+                        <placeName ref="geon:8041193 oape:place:206" resp="#xslt">Jounieh</placeName>,
+                        <orgName ref="oape:org:567">USEK</orgName></label>
+                     <ab change="#d12e27" source="https://sierra.usek.edu.lb/">
+                        <listBibl>
+                           <bibl>
+                              <idno subtype="USEK" type="classmark">JRN L021</idno>
+                              <date when="1937">1937</date>
+                              <biblScope unit="issue">2501-2550</biblScope>
+                              <biblScope>1937 #2501-2550</biblScope>
+                              <date/>
+                           </bibl>
+                        </listBibl>
+                     </ab>
                   </item>
                </list>
             </note>
