@@ -540,6 +540,87 @@
             </xsl:call-template>
         </xsl:for-each-group>
     </xsl:template>
+    <xsl:function name="oape:merge-attributes">
+        <xsl:param name="p_source"/>
+        <xsl:param name="p_target"/>
+        <!-- list all attributes -->
+        <xsl:variable name="v_source-attr">
+            <xsl:for-each select="$p_source/@*">
+                <xsl:value-of select="name()"/>
+                <xsl:if test="not(position() = last())">
+                    <xsl:value-of select="$v_comma"/>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:variable name="v_target-attr">
+            <xsl:for-each select="$p_target/@*">
+                <xsl:value-of select="name()"/>
+                <xsl:if test="not(position() = last())">
+                    <xsl:value-of select="$v_comma"/>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:variable>
+        <!-- copy unique attributes -->
+        <xsl:for-each select="$p_source/@*[not(contains($v_target-attr, name()))]">
+            <xsl:apply-templates mode="m_identity-transform" select="."/>
+        </xsl:for-each>
+        <xsl:for-each select="$p_target/@*[not(contains($v_source-attr, name()))]">
+            <xsl:apply-templates mode="m_identity-transform" select="."/>
+        </xsl:for-each>
+        <!-- merge attributes present on both source and target -->
+        <xsl:for-each select="$p_target/@*[contains($v_source-attr, name())]">
+            <xsl:variable name="v_name" select="name()"/>
+            <xsl:variable name="v_source-value" select="$p_source/@*[name() = $v_name]"/>
+            <xsl:attribute name="{$v_name}">
+                <!-- copy value of target -->
+                <xsl:value-of select="."/>
+                <xsl:if test="not(. = $v_source-value)">
+                    <xsl:value-of select="concat(' ', $v_source-value)"/>
+                </xsl:if>
+            </xsl:attribute>
+        </xsl:for-each>
+    </xsl:function>
+    <!-- add <biblStruct> from source not currently available in the target -->
+    <xsl:template match="tei:standOff" mode="m_merge">
+        <xsl:copy>
+            <!-- reproduce and update bibls found in the source  -->
+            <xsl:apply-templates mode="m_merge" select="@* | node()"/>
+            <!-- add bibls NOT found in the source -->
+            <xsl:element name="listBibl">
+                <xsl:element name="head">
+                    <xsl:text>Entries from </xsl:text>
+                    <xsl:value-of select="$v_name-file"/>
+                </xsl:element>
+                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>
+            </xsl:element>
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template name="t_add-biblstruct-from-master">
+        <xsl:param name="p_source"/>
+        <!-- as I am matching all references with the proper idno children, I must add all others to the back of this file -->
+        <xsl:copy-of select="$p_source/descendant-or-self::tei:biblStruct[not(tei:idno/@type = $p_local-authority)]"/>
+    </xsl:template>
+    <!-- document the changes -->
+    <xsl:template match="tei:revisionDesc" mode="m_merge">
+        <xsl:copy>
+            <xsl:apply-templates mode="m_identity-transform" select="@*"/>
+            <xsl:element name="change">
+                <xsl:attribute name="when" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+                <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
+                <xsl:attribute name="xml:lang" select="'en'"/>
+                <xsl:attribute name="xml:id" select="$p_id-change"/>
+                <xsl:text>Merged bibliographic information from "</xsl:text>
+                <xsl:element name="ref">
+                    <xsl:attribute name="target" select="$v_url-file"/>
+                    <xsl:value-of select="$v_name-file"/>
+                </xsl:element>
+                <xsl:text>" into this file.</xsl:text>
+            </xsl:element>
+            <xsl:apply-templates mode="m_identity-transform" select="node()"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <!-- PLAYGROUND -->
     <xsl:function name="oape:merge-nodes-2">
         <xsl:param as="node()" name="p_source"/>
         <xsl:param as="node()" name="p_target"/>
@@ -684,83 +765,4 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
-    <xsl:function name="oape:merge-attributes">
-        <xsl:param name="p_source"/>
-        <xsl:param name="p_target"/>
-        <!-- list all attributes -->
-        <xsl:variable name="v_source-attr">
-            <xsl:for-each select="$p_source/@*">
-                <xsl:value-of select="name()"/>
-                <xsl:if test="not(position() = last())">
-                    <xsl:value-of select="$v_comma"/>
-                </xsl:if>
-            </xsl:for-each>
-        </xsl:variable>
-        <xsl:variable name="v_target-attr">
-            <xsl:for-each select="$p_target/@*">
-                <xsl:value-of select="name()"/>
-                <xsl:if test="not(position() = last())">
-                    <xsl:value-of select="$v_comma"/>
-                </xsl:if>
-            </xsl:for-each>
-        </xsl:variable>
-        <!-- copy unique attributes -->
-        <xsl:for-each select="$p_source/@*[not(contains($v_target-attr, name()))]">
-            <xsl:apply-templates mode="m_identity-transform" select="."/>
-        </xsl:for-each>
-        <xsl:for-each select="$p_target/@*[not(contains($v_source-attr, name()))]">
-            <xsl:apply-templates mode="m_identity-transform" select="."/>
-        </xsl:for-each>
-        <!-- merge attributes present on both source and target -->
-        <xsl:for-each select="$p_target/@*[contains($v_source-attr, name())]">
-            <xsl:variable name="v_name" select="name()"/>
-            <xsl:variable name="v_source-value" select="$p_source/@*[name() = $v_name]"/>
-            <xsl:attribute name="{$v_name}">
-                <!-- copy value of target -->
-                <xsl:value-of select="."/>
-                <xsl:if test="not(. = $v_source-value)">
-                    <xsl:value-of select="concat(' ', $v_source-value)"/>
-                </xsl:if>
-            </xsl:attribute>
-        </xsl:for-each>
-    </xsl:function>
-    <!-- add <biblStruct> from source not currently available in the target -->
-    <xsl:template match="tei:standOff" mode="m_merge">
-        <xsl:copy>
-            <!-- reproduce and update bibls found in the source  -->
-            <xsl:apply-templates mode="m_merge" select="@* | node()"/>
-            <!-- add bibls NOT found in the source -->
-            <xsl:element name="listBibl">
-                <xsl:element name="head">
-                    <xsl:text>Entries from </xsl:text>
-                    <xsl:value-of select="$v_name-file"/>
-                </xsl:element>
-                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>
-            </xsl:element>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template name="t_add-biblstruct-from-master">
-        <xsl:param name="p_source"/>
-        <!-- as I am matching all references with the proper idno children, I must add all others to the back of this file -->
-        <xsl:copy-of select="$p_source/descendant-or-self::tei:biblStruct[not(tei:idno/@type = $p_local-authority)]"/>
-    </xsl:template>
-    <!-- document the changes -->
-    <xsl:template match="tei:revisionDesc" mode="m_merge">
-        <xsl:copy>
-            <xsl:apply-templates mode="m_identity-transform" select="@*"/>
-            <xsl:element name="change">
-                <xsl:attribute name="when" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
-                <xsl:attribute name="xml:lang" select="'en'"/>
-                <xsl:attribute name="xml:id" select="$p_id-change"/>
-                <xsl:text>Merged bibliographic information from "</xsl:text>
-                <xsl:element name="ref">
-                    <xsl:attribute name="target" select="$v_url-file"/>
-                    <xsl:value-of select="$v_name-file"/>
-                </xsl:element>
-                <xsl:text>" into this file.</xsl:text>
-            </xsl:element>
-            <xsl:apply-templates mode="m_identity-transform" select="node()"/>
-        </xsl:copy>
-    </xsl:template>
 </xsl:stylesheet>
