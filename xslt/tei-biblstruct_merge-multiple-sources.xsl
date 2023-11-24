@@ -17,10 +17,11 @@
     -->
     <!-- BUGs
         - all child elements of <persName> inside <editor> are omitted
+            - the underlying bug is the problem with mixed-content elementen, ergo node() mit element() und text() children
         - this stylesheet failes on biblStruct in the target file with multiple monogr children
             - these multiple monogr children are all merged into one ...
         - respStmt: have not been tested yet
-        - note: without child elements are deleted all other are properly merged
+        - note: without child elements are deleted, all other are properly merged
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
@@ -347,7 +348,7 @@
                         <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
                         <!-- cover persName children -->
                         <!-- note: persNames might have a lot of mark-up that will thus be omitted -->
-                        <xsl:with-param name="p_depth-of-merging" select="1"/>
+                        <xsl:with-param name="p_depth-of-merging" select="4"/>
                     </xsl:call-template>
                 </xsl:for-each-group>
                 <!-- respStmt -->
@@ -408,6 +409,9 @@
                 <xsl:variable name="v_combined-list">
                     <xsl:copy-of select="current-group()/tei:list"/>
                 </xsl:variable>
+                <xsl:variable name="v_combined-direct-text">
+                    <xsl:value-of select="current-group()/text()"/>
+                </xsl:variable>
                 <xsl:copy select="current-group()[1]">
                     <xsl:copy-of select="oape:merge-attributes(current-group()[1], current-group()[2])"/>
                     <!-- deal with lists -->
@@ -429,6 +433,12 @@
                     </xsl:copy>
                     <!-- other children -->
                     <xsl:apply-templates mode="m_identity-transform" select="current-group()/element()[not(self::tei:list)]"/>
+                    <!-- this seemingly doesn't work -->
+                    <xsl:if test="normalize-space($v_combined-direct-text) != ''">
+                        <xsl:element name="ab">
+                            <xsl:value-of select="normalize-space($v_combined-direct-text)"/>
+                        </xsl:element>
+                    </xsl:if>
                 </xsl:copy>
             </xsl:for-each-group>
         </xsl:copy>
@@ -450,10 +460,10 @@
             </xsl:choose>
             <xsl:choose>
                 <!-- run merging only on the first level of child elements -->
-                <xsl:when test="$p_depth-of-merging > 0 and $p_current-group/element()">
+                <xsl:when test="$p_depth-of-merging > 0 and $p_current-group/node()">
                     <!-- this seems to work sufficiently well for persName, placeName, and orgName children -->
                     <!-- PROBLEM: some persName contain a lot of mark-up -->
-                    <xsl:for-each-group group-by="text()" select="$p_current-group/element()">
+                    <xsl:for-each-group group-by="." select="$p_current-group/node()">
                         <xsl:call-template name="t_merge-groups">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                             <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
