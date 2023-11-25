@@ -2692,8 +2692,8 @@
                     <!-- try to use further match criteria -->
                     <xsl:choose>
                         <!-- location: single biblStruct and miss-match of locations -->
-                        <!-- WHy should this be added? -->
-                        <xsl:when
+                        <!-- WHy should this be added? In its current form, this condition prevents a lot of true positives-->
+                        <!--<xsl:when
                             test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and  $v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) != $v_place-publication]">
                             <xsl:if test="$p_verbose = true()">
                                 <xsl:message>
@@ -2706,7 +2706,7 @@
                             <xsl:message>
                                 <xsl:copy-of select="$v_message-failure"/>
                             </xsl:message>
-                        </xsl:when>
+                        </xsl:when>-->
                         <!-- @types and location -->
                         <xsl:when
                             test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct[@type = $v_type][@subtype = $v_subtype][oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) = $v_place-publication]) = 1">
