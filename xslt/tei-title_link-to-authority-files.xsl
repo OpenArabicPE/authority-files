@@ -25,6 +25,8 @@
     
     <!-- NOTE/ to do:
         - serialised bibls are compiled BUT only for the first part. All other parts are discarded upon compilation.
+    -->
+    <!-- BUGs:
         - $p_ignore-existing-refs = true() causes an error, which I have not yet managed to track down, as this param is used in only 3 locations
     -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
