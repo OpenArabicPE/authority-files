@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet exclude-result-prefixes="#all" version="3.0" xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:zot="https://zotero.org" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
     <!-- this stylesheet goes through the target file and tries to pull-in information from the source file (the TEI XML this XSLT is run on) -->
     <!-- workflow
@@ -16,12 +16,9 @@
         - a file can be merged into itself without creating additional redundant descendants of any biblStruct!
     -->
     <!-- BUGs
-        - all child elements of <persName> inside <editor> are omitted
-            - the underlying bug is the problem with mixed-content elementen, ergo node() mit element() und text() children
         - this stylesheet failes on biblStruct in the target file with multiple monogr children
             - these multiple monogr children are all merged into one ...
-        - respStmt: have not been tested yet
-        - note: without child elements are deleted, all other are properly merged
+            - therefore such biblStruct are not included in the merging process
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
@@ -49,6 +46,15 @@
             <xsl:message>
                 <xsl:text>The source file contains bibliographic data for the following IDs: </xsl:text>
                 <xsl:value-of select="$v_bibls-source-ids"/>
+            </xsl:message>
+        </xsl:if>
+        <!-- BUG?! Currently, this template cannot NOT MERGE existing monogr children of the target -->
+        <!-- this effects almost 30 biblStruct  in our main bibliography -->
+        <xsl:if test="$v_bibliography-target//tei:standOff//tei:biblStruct[count(tei:monogr) > 1]">
+            <xsl:message>
+                <xsl:text>WARNING: The target contains </xsl:text>
+                <xsl:value-of select="count($v_bibliography-target//tei:standOff//tei:biblStruct[count(tei:monogr) > 1])"/>
+                <xsl:text> biblStruct with multiple monogr children</xsl:text>
             </xsl:message>
         </xsl:if>
         <xsl:result-document href="_output/bibl_merged/{$p_file-bibliography}">
@@ -220,6 +226,16 @@
             </xsl:message>
         </xsl:if>
         <xsl:choose>
+            <!-- BUG?! Currently, this template cannot NOT MERGE existing monogr children of the target -->
+            <!-- this effects almost 30 biblStruct  in our main bibliography -->
+            <xsl:when test="count(tei:monogr) > 1">
+                <xsl:message>
+                    <xsl:text>WARNING: The target "</xsl:text>
+                    <xsl:value-of select="$v_id-target"/>
+                    <xsl:text>" has multiple monogr children and will be retained as is</xsl:text>
+                </xsl:message>
+                <xsl:apply-templates mode="m_identity-transform" select="."/>
+            </xsl:when>
             <!-- check if the target is also mentioned in the source file -->
             <xsl:when test="matches($v_bibls-source-ids, concat($v_id-target, '(,|$)'))">
                 <xsl:message>
@@ -228,7 +244,7 @@
                     <xsl:text>" to update the target</xsl:text>
                 </xsl:message>
                 <!-- get the source: this should only every return a single biblStruct -->
-                <!-- BUT it doesn't given that the source file could hold multiple biblStruct nodes pointing to the same biblStruct in the target -->
+                <!-- BUT  the source file could hold multiple biblStruct nodes pointing to the same biblStruct in the target -->
                 <xsl:variable name="v_source">
                     <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref != 'NA']">
                         <!-- this function call is computationally expensive as it is invoked every time a match has been found in the source file -->
@@ -242,6 +258,14 @@
                 <xsl:variable name="v_source-compiled">
                     <xsl:choose>
                         <xsl:when test="count($v_source/tei:biblStruct) = 2">
+                            <xsl:copy-of select="oape:merge-biblStruct($v_source/tei:biblStruct[2], $v_source/tei:biblStruct[1])"/>
+                        </xsl:when>
+                        <xsl:when test="count($v_source/tei:biblStruct) > 2">
+                            <xsl:message>
+                                <xsl:text>WARNING: The source contains more than two biblStruct for updating the target ID "</xsl:text>
+                                <xsl:value-of select="$v_id-target"/>
+                                <xsl:text>". Currently, only the FIRST TWO will be used.</xsl:text>
+                            </xsl:message>
                             <xsl:copy-of select="oape:merge-biblStruct($v_source/tei:biblStruct[2], $v_source/tei:biblStruct[1])"/>
                         </xsl:when>
                         <xsl:otherwise>
@@ -260,9 +284,7 @@
                         <xsl:value-of select="$v_id-target"/>
                     </xsl:message>
                 </xsl:if>
-                <xsl:copy>
-                    <xsl:apply-templates mode="m_identity-transform" select="@* | node()"/>
-                </xsl:copy>
+                <xsl:apply-templates mode="m_identity-transform" select="."/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -615,11 +637,6 @@
             </xsl:element>
         </xsl:copy>
     </xsl:template>
-    <xsl:template name="t_add-biblstruct-from-master">
-        <xsl:param name="p_source"/>
-        <!-- as I am matching all references with the proper idno children, I must add all others to the back of this file -->
-        <xsl:copy-of select="$p_source/descendant-or-self::tei:biblStruct[not(tei:idno/@type = $p_local-authority)]"/>
-    </xsl:template>
     <!-- document the changes -->
     <xsl:template match="tei:revisionDesc" mode="m_merge">
         <xsl:copy>
@@ -639,7 +656,6 @@
             <xsl:apply-templates mode="m_identity-transform" select="node()"/>
         </xsl:copy>
     </xsl:template>
-    
     <!-- PLAYGROUND -->
     <xsl:function name="oape:merge-nodes-2">
         <xsl:param as="node()" name="p_source"/>
