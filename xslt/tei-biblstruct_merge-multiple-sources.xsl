@@ -19,9 +19,12 @@
         - this stylesheet failes on biblStruct in the target file with multiple monogr children
             - these multiple monogr children are all merged into one ...
             - therefore such biblStruct are not included in the merging process
+       - sorting of idno
+           - the content is alphanumeric but pure numbers should be sorted as such, i.e. 90 before 100
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
+        - to which extent are <item>s in <notes> merged or not?
     -->
     <xsl:import href="functions.xsl"/>
     <xsl:param name="p_include-bibl" select="false()"/>
@@ -634,6 +637,8 @@
                     <xsl:value-of select="$v_name-file"/>
                 </xsl:element>
                 <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>
+                <!-- this condition will leas to many false positives -->
+<!--                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref = 'NA'][not(tei:monogr/tei:title/@ref != 'NA')]"/>-->
             </xsl:element>
         </xsl:copy>
     </xsl:template>
