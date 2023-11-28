@@ -325,17 +325,20 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                     <!-- one could potentially provide a title element with a @ref attribute pointing to the authority file -->
                     <date type="onset" when="1878"/>
                     <date type="terminus" when="1910"/>
-                    <idno type="url">http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=05C0204A80C79A91F11989B6E0AA9D48"</idno>
+                    <idno type="URI" subtype="self">http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=05C0204A80C79A91F11989B6E0AA9D48"</idno>
                 </bibl>
             </listBibl>
         </item>
         <!-- weird mix of encoding: originating from very early conversions of the Jaraid data -->
-        <item source="https://projectjaraid.github.io">online at <ref target="http://www.archive.org" xml:lang="und-Latn">archive.org</ref>, reprint <placeName change="#d9e576 #d9e603 #d9e966"
-          ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="und-Latn">Beirut</placeName> </item>
+        <item source="https://projectjaraid.github.io">online at <ref target="http://www.archive.org" xml:lang="und-Latn">archive.org</ref>, reprint <placeName ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="und-Latn">Beirut</placeName> </item>
         <item source="https://projectjaraid.github.io">1920-23 online at <ref target="https://catalog.hathitrust.org/Record/010495186">Hathitrust</ref> </item>
         <item source="https://projectjaraid.github.io"> 
             <label> <orgName ref="oape:org:421">Sakhrit</orgName> </label>
-            <ref target="http://archive.alsharekh.org/newmagazineYears.aspx?MID=107" xml:lang="und-Latn">facsimiles and (limited) index</ref>,</item>
+            <listBibl source="https://projectjaraid.github.io">
+                <bibl> 
+                    <idno change="#d10e912" subtype="self" type="URI">http://archive.alsharekh.org/newmagazineYears.aspx?MID=107</idno>facsimiles and (limited) index,</bibl>
+            </listBibl>
+        </item>
         <item source="https://projectjaraid.github.io"> 
             <label> 
                 <placeName ref="geon:250441 jaraid:place:73 oape:place:508">Amman</placeName>, 
@@ -347,7 +350,9 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                 <placeName ref="geon:281184 oape:place:6">Jerusalem</placeName>, 
                 <orgName ref="jaraid:org:hNLI oape:org:60" resp="#pAM" xml:lang="und-Latn">NLoI</orgName> 
             </label>: 
-            <ref target="https://jrayed.org/en/newspapers/annafir" xml:lang="und-Latn">1911, 1920-1932</ref> 
+            <listBibl source="https://projectjaraid.github.io">
+                <bibl>: <idno ctype="url">https://jrayed.org/en/newspapers/annafir</idno>1911, 1920-1932 </bibl>
+            </listBibl> 
         </item>
         <!-- ZDB data -->
         <item source="https://ld.zdb-services.de/resource/534650-2"> 
@@ -360,8 +365,6 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                     <idno source="http://ld.zdb-services.de/data/organisations/DE-101a.rdf" subtype="DE-101a" type="classmark">ZB 10293</idno> 
                 </bibl> 
             </listBibl> 
-            <!-- this human-readable reference to the source catalogue is redundant and can be found in the @source of the parent item -->
-            <ab xml:lang="en">source: <rs xml:lang="de">ZDB</rs> (<ref target="https://ld.zdb-services.de/resource/534650-2">catalogue</ref>)</ab> 
         </item>
         <item source="https://ld.zdb-services.de/resource/534650-2"> 
             <label> 
@@ -374,7 +377,6 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                     <date type="onset" when="1923">1923</date> 
                 </bibl> 
             </listBibl> 
-            <ab xml:lang="en">source: <rs xml:lang="de">ZDB</rs> (<ref target="https://ld.zdb-services.de/resource/534650-2">catalogue</ref>)</ab> 
         </item>
         <!-- AUB catalogue data -->
         <item source="oape:org:73"> 
@@ -403,8 +405,6 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                     <idno source="oape:org:73" type="url">https://libcat.aub.edu.lb/record=b1282668</idno> 
                 </bibl> 
             </listBibl>
-            <!-- this human-readable reference to the source catalogue is redundant and can be found in the @source of the parent item -->
-            <ab xml:lang="en"> <ref source="oape:org:73" target="https://libcat.aub.edu.lb/record=b1282668" type="about">catalogue</ref> </ab> 
         </item>
         <!-- full holding records from HathiTrust -->
         <item source="https://catalog.hathitrust.org/Record/008882426"> 
