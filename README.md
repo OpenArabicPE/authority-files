@@ -30,7 +30,7 @@ date: 2022-02-04
     + some are encoded as `<ref type="pandoc">`
     + [@LaPresseMusulmane+1909, 106]
     + [@Campos+2008+TheVoiceOf, 245]
-- [ ] wrap content in `<publisher source="#hAUB">` originating from AUB in a `<orgName>` element
+- [ ] wrap content in `<publisher source="oape:org:73">` originating from AUB in a `<orgName>` element
 - [ ] The holding information from Jaraid needs to become more machine-actionable:
     + example 1
         * we have: `<ref resp="#pAM" target="https://gpa.eastview.com/crl/mena/newspapers/msbh" xml:lang="und-Latn">online 1899-1900</ref>` 
@@ -51,6 +51,8 @@ date: 2022-02-04
         * [ ] *al-Manār*
     + check if the content of the `<title>` node matches the `@ref`.
     + example: `مجلة <title level="j" ref="oape:bibl:46" xml:lang="ar">العلم في القرن العشرين</title>`
+- [ ] extract dates from holding data
+    + dates in holding data can be used to improve our knowledge of publication histories. If a library has a copy and provides a publication date for this copy, assume that they catalogued it correctly, and add this dating information as `<date type="documented"/>` to the main entry's `<imprint/>`
 
 - [ ] `@type='noAddName'` is missing whitespace between name components in some cases
 
@@ -85,7 +87,10 @@ date: 2022-02-04
 
 ## bibliography
 
-- XSLT to copy data from biblio-biographic dictionaries, such as Zirikli to the bibliography
+- `tei-biblstruct_merge-multiple-sources.xsl`: Stylesheet to merge `<bibl>` and `<biblStruct>` from source files into the bibliography based on the `tei:title/@ref` values. 
+
+
+XSLT to copy data from biblio-biographic dictionaries, such as Zirikli to the bibliography
     + based on matching:
         * title
         * IDs
@@ -117,7 +122,7 @@ date: 2022-02-04
 
 ## bibliography of periodicals
 
-1. **DONE** created original bibliography through gathering all `<biblStruct>` for periodicals from all OpenArabicPE editions, merging information from Project Jarāʾid, and library catalogues (ZDB, HathiTrust, AUB).
+1. [x] created original bibliography through gathering all `<biblStruct>` for periodicals from all OpenArabicPE editions, merging information from Project Jarāʾid, and library catalogues (ZDB, HathiTrust, AUB).
 2. enrich bibliography
     - the most urgently needed information are all potential contributors to be then tested with stylometry
     - automatically with information found in full text editions of Zirikli and Sarkīs
@@ -287,6 +292,155 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
         </list>
     </note>
 </biblStruct>
+```
+
+### Holding information
+
+One of the main purposes of Project Jarāʾid and my own efforts is to locate periodicals in collections in order to guide researchers to material and inform digitisation efforts.
+
+
+#### current encoding
+
+```xml
+<note type="holdings"> 
+    <list>
+        <!-- each collection gets its own item -->
+        <item source="https://projectjaraid.github.io"> 
+            <!-- information on the collection is provided in the label -->
+            <label> 
+                <placeName ref="geon:2988507 oape:place:322">Paris</placeName>, 
+                <orgName ref="jaraid:org:hBNF oape:org:12" xml:lang="und-Latn">BnF</orgName> 
+            </label> 
+        </item>
+        <item source="https://projectjaraid.github.io"> 
+            <!-- information on the collection is provided in the label -->
+            <label> 
+                <placeName ref="geon:2988507 oape:place:322">Paris</placeName>, 
+                <orgName ref="jaraid:org:hIMA oape:org:36" xml:lang="und-Latn">IMA</orgName> 
+            </label>
+            <!-- information on the holdings is provided in a listBibl -->
+            <listBibl source="">
+                <!-- each item potentially gets its own bibl -->
+                <bibl>
+                    <!-- one could potentially provide a title element with a @ref attribute pointing to the authority file -->
+                    <date type="onset" when="1878"/>
+                    <date type="terminus" when="1910"/>
+                    <idno type="url">http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=05C0204A80C79A91F11989B6E0AA9D48"</idno>
+                </bibl>
+            </listBibl>
+        </item>
+        <!-- weird mix of encoding: originating from very early conversions of the Jaraid data -->
+        <item source="https://projectjaraid.github.io">online at <ref target="http://www.archive.org" xml:lang="und-Latn">archive.org</ref>, reprint <placeName change="#d9e576 #d9e603 #d9e966"
+          ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="und-Latn">Beirut</placeName> </item>
+        <item source="https://projectjaraid.github.io">1920-23 online at <ref target="https://catalog.hathitrust.org/Record/010495186">Hathitrust</ref> </item>
+        <item source="https://projectjaraid.github.io"> 
+            <label> <orgName ref="oape:org:421">Sakhrit</orgName> </label>
+            <ref target="http://archive.alsharekh.org/newmagazineYears.aspx?MID=107" xml:lang="und-Latn">facsimiles and (limited) index</ref>,</item>
+        <item source="https://projectjaraid.github.io"> 
+            <label> 
+                <placeName ref="geon:250441 jaraid:place:73 oape:place:508">Amman</placeName>, 
+                <orgName ref="jaraid:org:hDMW oape:org:28" xml:lang="und-Latn">DMW</orgName> 
+            </label>: 1877-1930s (with gaps),
+        </item>
+        <item source="https://projectjaraid.github.io"> 
+            <label> 
+                <placeName ref="geon:281184 oape:place:6">Jerusalem</placeName>, 
+                <orgName ref="jaraid:org:hNLI oape:org:60" resp="#pAM" xml:lang="und-Latn">NLoI</orgName> 
+            </label>: 
+            <ref target="https://jrayed.org/en/newspapers/annafir" xml:lang="und-Latn">1911, 1920-1932</ref> 
+        </item>
+        <!-- ZDB data -->
+        <item source="https://ld.zdb-services.de/resource/534650-2"> 
+            <label> 
+                <placeName ref="geon:2879139 oape:place:344" resp="#xslt">Leipzig</placeName>, 
+                <orgName ref="oape:org:386" type="short">Leipzig DNB</orgName> 
+            </label> 
+            <ab> 
+                <bibl> 
+                    <idno source="http://ld.zdb-services.de/data/organisations/DE-101a.rdf" subtype="DE-101a" type="classmark">ZB 10293</idno> 
+                </bibl> 
+            </ab> 
+            <!-- this human-readable reference to the source catalogue is redundant and can be found in the @source of the parent item -->
+            <ab xml:lang="en">source: <rs xml:lang="de">ZDB</rs> (<ref target="https://ld.zdb-services.de/resource/534650-2">catalogue</ref>)</ab> 
+        </item>
+        <item source="https://ld.zdb-services.de/resource/534650-2"> 
+            <label> 
+                <placeName ref="geon:2911522 oape:place:342" resp="#xslt">Halle/Saale</placeName>, 
+                <orgName ref="isil:DE-3-1 oape:org:268" type="short">Halle/S ZwB Vord. Orient</orgName> 
+            </label> 
+            <ab> 
+                <bibl> 
+                    <idno source="http://ld.zdb-services.de/data/organisations/DE-3-1.rdf" subtype="DE-3-1" type="classmark">D Ne 284</idno> 
+                    <date type="onset" when="1923">1923</date> 
+                </bibl> 
+            </ab> 
+            <ab xml:lang="en">source: <rs xml:lang="de">ZDB</rs> (<ref target="https://ld.zdb-services.de/resource/534650-2">catalogue</ref>)</ab> 
+        </item>
+        <!-- AUB catalogue data -->
+        <item source="oape:org:73"> 
+            <label> 
+                <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>,  
+                <orgName ref="jaraid:org:hAUB oape:org:73" xml:lang="en">AUB</orgName> 
+            </label>
+            <!-- unstructured bibliographic information that could/ has not been parsed (yet) --> 
+            <ab source="oape:org:73" xml:lang="ar">في المكتبة: مج.1:ع.31(1923:كانون الثاني)</ab>
+            <!-- failed attempt to add structured data --> 
+            <ab>
+                <bibl/> 
+            </ab> 
+        </item>
+        <item source="oape:org:73"> 
+            <label> 
+                <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>,  
+                <orgName ref="jaraid:org:hAUB oape:org:73" xml:lang="en">AUB</orgName> 
+            </label>: 
+            <!-- unstructured information on holdings -->
+            <ab source="oape:org:73" xml:lang="ar">في المكتبة :1902: نيسان -1912: كانون اول.</ab> 
+            <!-- structured information, which should be updated with data from the above <ab> -->
+            <ab>
+                <bibl> 
+                    <idno subtype="AUB" type="classmark">Mic-NA:000164</idno> 
+                    <idno source="oape:org:73" type="url">https://libcat.aub.edu.lb/record=b1282668</idno> 
+                </bibl> 
+            </ab>
+            <!-- this human-readable reference to the source catalogue is redundant and can be found in the @source of the parent item -->
+            <ab xml:lang="en"> <ref source="oape:org:73" target="https://libcat.aub.edu.lb/record=b1282668" type="about">catalogue</ref> </ab> 
+        </item>
+        <!-- full holding records from HathiTrust -->
+        <item source="https://catalog.hathitrust.org/Record/008882426"> 
+            <!-- the @source attribute on all children is redundant and should be removed -->
+            <label source="oape:org:417"> 
+                <placeName ref="geon:5102922 oape:place:715" source="oape:org:417" xml:lang="en">Princeton</placeName>, 
+                <orgName ref="isil:US-njp jaraid:org:hPUL oape:org:65" source="oape:org:417">Princeton University</orgName>
+            </label>
+            <!-- -->
+            <ab source="oape:org:417"> 
+                <bibl source="oape:org:417"> 
+                    <idno source="oape:org:417" type="classmark">njp.32101007749128</idno> 
+                    <idno source="oape:org:417" subtype="self" type="URI">https://hdl.handle.net/2027/njp.32101007749128</idno> 
+                    <date source="oape:org:417" when="1886">1886</date> 
+                    <biblScope from="2" source="oape:org:417" to="2" unit="volume">vol.2</biblScope> 
+                </bibl>
+            </ab>
+        </item>
+        <item source="https://catalog.hathitrust.org/Record/000060895"> 
+            <label source="oape:org:417"> 
+                <placeName ref="geon:4931972 oape:place:714" source="oape:org:417" xml:lang="en">Cambridge</placeName>, 
+                <orgName change="#d10e82" ref="isil:US-hvd jaraid:org:hHARV oape:org:43" source="oape:org:417"
+                  >Libraries of Harvard University</orgName> 
+              </label> 
+              <ab source="oape:org:417"> 
+                <bibl source="oape:org:417"> 
+                    <idno source="oape:org:417" type="classmark">hvd.32044014693741</idno> 
+                    <idno source="oape:org:417" subtype="self" type="URI">https://hdl.handle.net/2027/hvd.32044014693741</idno> 
+                    <date source="oape:org:417" when="1880">1880</date> 
+                    <!-- such biblScope can clearly be improved -->
+                    <biblScope source="oape:org:417">4:1-12 (1879-1880)</biblScope> 
+                </bibl>
+            </ab>
+        </item>
+    </list> 
+</note>
 ```
 
 ## encoding the source of bits of information
