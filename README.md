@@ -355,11 +355,11 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                 <placeName ref="geon:2879139 oape:place:344" resp="#xslt">Leipzig</placeName>, 
                 <orgName ref="oape:org:386" type="short">Leipzig DNB</orgName> 
             </label> 
-            <ab> 
+            <listBibl> 
                 <bibl> 
                     <idno source="http://ld.zdb-services.de/data/organisations/DE-101a.rdf" subtype="DE-101a" type="classmark">ZB 10293</idno> 
                 </bibl> 
-            </ab> 
+            </listBibl> 
             <!-- this human-readable reference to the source catalogue is redundant and can be found in the @source of the parent item -->
             <ab xml:lang="en">source: <rs xml:lang="de">ZDB</rs> (<ref target="https://ld.zdb-services.de/resource/534650-2">catalogue</ref>)</ab> 
         </item>
@@ -368,12 +368,12 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                 <placeName ref="geon:2911522 oape:place:342" resp="#xslt">Halle/Saale</placeName>, 
                 <orgName ref="isil:DE-3-1 oape:org:268" type="short">Halle/S ZwB Vord. Orient</orgName> 
             </label> 
-            <ab> 
+            <listBibl> 
                 <bibl> 
                     <idno source="http://ld.zdb-services.de/data/organisations/DE-3-1.rdf" subtype="DE-3-1" type="classmark">D Ne 284</idno> 
                     <date type="onset" when="1923">1923</date> 
                 </bibl> 
-            </ab> 
+            </listBibl> 
             <ab xml:lang="en">source: <rs xml:lang="de">ZDB</rs> (<ref target="https://ld.zdb-services.de/resource/534650-2">catalogue</ref>)</ab> 
         </item>
         <!-- AUB catalogue data -->
@@ -385,9 +385,9 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
             <!-- unstructured bibliographic information that could/ has not been parsed (yet) --> 
             <ab source="oape:org:73" xml:lang="ar">في المكتبة: مج.1:ع.31(1923:كانون الثاني)</ab>
             <!-- failed attempt to add structured data --> 
-            <ab>
+            <listBibl>
                 <bibl/> 
-            </ab> 
+            </listBibl> 
         </item>
         <item source="oape:org:73"> 
             <label> 
@@ -397,12 +397,12 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
             <!-- unstructured information on holdings -->
             <ab source="oape:org:73" xml:lang="ar">في المكتبة :1902: نيسان -1912: كانون اول.</ab> 
             <!-- structured information, which should be updated with data from the above <ab> -->
-            <ab>
+            <listBibl>
                 <bibl> 
                     <idno subtype="AUB" type="classmark">Mic-NA:000164</idno> 
                     <idno source="oape:org:73" type="url">https://libcat.aub.edu.lb/record=b1282668</idno> 
                 </bibl> 
-            </ab>
+            </listBibl>
             <!-- this human-readable reference to the source catalogue is redundant and can be found in the @source of the parent item -->
             <ab xml:lang="en"> <ref source="oape:org:73" target="https://libcat.aub.edu.lb/record=b1282668" type="about">catalogue</ref> </ab> 
         </item>
@@ -414,14 +414,14 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                 <orgName ref="isil:US-njp jaraid:org:hPUL oape:org:65" source="oape:org:417">Princeton University</orgName>
             </label>
             <!-- -->
-            <ab source="oape:org:417"> 
+            <listBibl source="oape:org:417"> 
                 <bibl source="oape:org:417"> 
                     <idno source="oape:org:417" type="classmark">njp.32101007749128</idno> 
                     <idno source="oape:org:417" subtype="self" type="URI">https://hdl.handle.net/2027/njp.32101007749128</idno> 
                     <date source="oape:org:417" when="1886">1886</date> 
                     <biblScope from="2" source="oape:org:417" to="2" unit="volume">vol.2</biblScope> 
                 </bibl>
-            </ab>
+            </listBibl>
         </item>
         <item source="https://catalog.hathitrust.org/Record/000060895"> 
             <label source="oape:org:417"> 
@@ -429,7 +429,7 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                 <orgName change="#d10e82" ref="isil:US-hvd jaraid:org:hHARV oape:org:43" source="oape:org:417"
                   >Libraries of Harvard University</orgName> 
               </label> 
-              <ab source="oape:org:417"> 
+              <listBibl source="oape:org:417"> 
                 <bibl source="oape:org:417"> 
                     <idno source="oape:org:417" type="classmark">hvd.32044014693741</idno> 
                     <idno source="oape:org:417" subtype="self" type="URI">https://hdl.handle.net/2027/hvd.32044014693741</idno> 
@@ -437,7 +437,7 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                     <!-- such biblScope can clearly be improved -->
                     <biblScope source="oape:org:417">4:1-12 (1879-1880)</biblScope> 
                 </bibl>
-            </ab>
+            </listBibl>
         </item>
     </list> 
 </note>
