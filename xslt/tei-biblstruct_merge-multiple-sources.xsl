@@ -25,6 +25,7 @@
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
         - to which extent are <item>s in <notes> merged or not?
+        - should Arabic strings  be normalised before matching?
     -->
     <xsl:import href="functions.xsl"/>
     <xsl:param name="p_include-bibl" select="false()"/>
