@@ -2840,7 +2840,10 @@
                                 <xsl:value-of select="$v_title-string"/>
                                 <xsl:text>" based on location (</xsl:text>
                                 <xsl:value-of select="$v_place-publication"/>
-                                <xsl:text>), which have, therefore, not been linked</xsl:text>
+                                <xsl:text>)</xsl:text>
+                            </xsl:message>
+                            <xsl:message>
+                                <xsl:copy-of select="$v_message-warning"/>
                             </xsl:message>
                             <xsl:value-of select="'NA'"/>
                         </xsl:when>
