@@ -129,6 +129,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="tr">İstanbul</placeName>
                     <placeName xml:lang="de">Konstantinopel</placeName>
                     <placeName xml:lang="ota-Latn-x-ijmes">Der-i Saʿadet</placeName>
+                    <placeName source="oape:org:60">استانه</placeName>
                     <location>
                         <geo>41.01384, 28.94966</geo>
                     </location>
@@ -173,6 +174,9 @@
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Jérusalem</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Jerusalem</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">Kudüs</placeName>
+                    <placeName source="oape:org:60">اورشليم - القدس</placeName>
+                    <placeName source="oape:org:60">اورشليم القدس</placeName>
+                    <placeName source="oape:org:60">اورشليم-القدس</placeName>
                     <location>
                         <geo>31.76904, 35.21633</geo>
                     </location>
@@ -839,6 +843,8 @@
                         <placeName type="simple">ʿAbayh</placeName>
                         <placeName xml:lang="ar">عبيه</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="ar">عبي</placeName>
+                        <placeName source="oape:org:60">عبيه (لبنان)</placeName>
+                        <placeName source="oape:org:60">عبيه [لبنان]</placeName>
                         <location>
                             <geo>33.73556, 35.52722</geo>
                         </location>
@@ -932,6 +938,8 @@
                             <placeName source="#org_geon" type="alt" xml:lang="fr">Tripoli</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="de">Tripoli</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="tr">Trablusşam</placeName>
+                            <placeName source="oape:org:60">طرابلس (لبنان)</placeName>
+                            <placeName source="oape:org:60">طرابلس، لبنان</placeName>
                             <location>
                                 <geo>34.43352, 35.84415</geo>
                             </location>
@@ -2675,6 +2683,7 @@
                     <place type="town" xml:id="place_370">
                         <placeName xml:lang="ar">الشويفات</placeName>
                         <placeName xml:lang="ar-Latn-x-ijmes">al-Shuwayfāt</placeName>
+                        <placeName source="oape:org:60">الشويفات، لبنان</placeName>
                         <location source="#org_geon">
                             <geo>30.00806, 31.40942</geo>
                         </location>
@@ -3243,6 +3252,9 @@
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Tripoli</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Tripolis</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">Trablus</placeName>
+                    <placeName source="oape:org:60">طرابلس (ليبيا)</placeName>
+                    <placeName source="oape:org:60">طرابلس - ليبيا</placeName>
+                    <placeName source="oape:org:60">طرابلس، ليبيا</placeName>
                     <location source="#org_geon">
                         <geo>33.49199, 36.24247</geo>
                     </location>
@@ -3324,6 +3336,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Alexandrie</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Alexandria</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">İskenderiye</placeName>
+                    <placeName source="oape:org:60">اسكندرية</placeName>
                     <location source="#org_geon">
                         <geo>31.20176, 29.91582</geo>
                     </location>
@@ -3716,6 +3729,7 @@
                         <placeName source="#org_geon" type="alt" xml:lang="fr">Khartoum</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="de">Khartum</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="tr">Hartum</placeName>
+                        <placeName source="oape:org:60">خرطوم</placeName>
                         <location source="#org_geon">
                             <geo>15.55177, 32.53241</geo>
                         </location>
@@ -3850,6 +3864,7 @@
         </listPlace>
         <listPlace>
             <place xml:id="place_404">
+                <placeName>Madagascar</placeName>
                 <placeName xml:lang="ar"> <choice>
                     <corr resp="#org_MS">مدغشقر</corr>
                     <orig>مدغكسر</orig>
@@ -4027,19 +4042,25 @@
                 <idno type="geon">1861060</idno>
                 <idno type="oape">281</idno>
             </place>
-            <place type="country" xml:id="place_282">
-                <placeName xml:lang="ar">اليونان</placeName>
-                <placeName source="#org_geon" type="alt" xml:lang="en">Greece</placeName>
-                <placeName source="#org_geon" type="alt" xml:lang="fr">Grèce</placeName>
-                <placeName source="#org_geon" type="alt" xml:lang="de">Griechenland</placeName>
-                <placeName source="#org_geon" type="alt" xml:lang="tr">Yunanistan</placeName>
-                <location>
-                    <geo>39, 22</geo>
-                </location>
-                <idno type="url">http://en.wikipedia.org/wiki/Greece</idno>
-                <idno type="geon">390903</idno>
-                <idno type="oape">282</idno>
-            </place>
+            <listPlace>
+                <place type="country" xml:id="place_282">
+                    <placeName xml:lang="ar">اليونان</placeName>
+                    <placeName source="#org_geon" type="alt" xml:lang="en">Greece</placeName>
+                    <placeName source="#org_geon" type="alt" xml:lang="fr">Grèce</placeName>
+                    <placeName source="#org_geon" type="alt" xml:lang="de">Griechenland</placeName>
+                    <placeName source="#org_geon" type="alt" xml:lang="tr">Yunanistan</placeName>
+                    <location>
+                        <geo>39, 22</geo>
+                    </location>
+                    <idno type="url">http://en.wikipedia.org/wiki/Greece</idno>
+                    <idno type="geon">390903</idno>
+                    <idno type="oape">282</idno>
+                </place>
+                <place type="town">
+                    <placeName>Athens</placeName>
+                    <placeName source="oape:org:60">اثينا (اليونان)</placeName>
+                </place>
+            </listPlace>
             <place type="country" xml:id="place_283">
                 <placeName xml:lang="ar">بلغاريا</placeName>
                 <placeName source="#org_geon" type="alt" xml:lang="en">Bulgaria</placeName>
@@ -4222,6 +4243,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="ar">قسنطينة</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Constantine</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Constantine</placeName>
+                    <placeName source="oape:org:60" xml:lang="fr">(Algerie) Constantine</placeName>
                     <location source="#org_geon">
                         <geo>36.365, 6.61472</geo>
                     </location>
@@ -4493,6 +4515,8 @@
                     <placeName source="#org_geon" type="alt" xml:lang="de">Teheran</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">Tahran</placeName>
                     <placeName xml:lang="fa-Latn-x-dmg">Tihrān</placeName>
+                    <placeName source="oape:org:60">الظهران</placeName>
+                    <placeName source="oape:org:60">تهران</placeName>
                     <location>
                         <geo>35.69439, 51.42151</geo>
                     </location>
@@ -4544,6 +4568,7 @@
                     <placeName xml:lang="ar-Latn-x-ijmes">Wāshinṭun</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Washington</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Washington</placeName>
+                    <placeName source="oape:org:60">واشنطن</placeName>
                     <location source="#org_geon">
                         <geo>38.89511, -77.03637</geo>
                     </location>
@@ -4776,6 +4801,8 @@
                     <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Los Angeles</tei:placeName>
                     <tei:placeName source="#org_geon" type="alt" xml:lang="de">Los Angeles</tei:placeName>
                     <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Los Angeles</tei:placeName>
+                    <placeName source="oape:org:60">لوس آنجلس</placeName>
+                    <placeName source="oape:org:60">لس آنجلس</placeName>
                     <tei:location source="#org_geon">
                         <tei:geo>34.05223, -118.24368</tei:geo>
                     </tei:location>
@@ -4800,6 +4827,7 @@
                 <place type="town" xml:id="place_303">
                     <placeName xml:lang="en">New York City</placeName>
                     <placeName xml:lang="ar">نيويورك</placeName>
+                    <placeName xml:lang="ar">نيو يورك</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">Niyūyurk</placeName>
                     <placeName xml:lang="ar">نيويرك</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">New York</placeName>
@@ -4969,6 +4997,7 @@
                         <placeName source="#org_geon" type="alt" xml:lang="fr">Chicago</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="de">Chicago</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="tr">Şikago</placeName>
+                        <placeName source="oape:org:60">شيكاغو (الينوي)</placeName>
                         <location>
                             <geo>41.85003, -87.65005</geo>
                         </location>
@@ -5045,6 +5074,8 @@
                         <placeName source="#org_geon" type="alt" xml:lang="fr">Détroit</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="de">Detroit</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="tr">Detroit</placeName>
+                        <placeName source="oape:org:60">ديترويت مشيغن</placeName>
+                        <placeName source="oape:org:60">ديترويت، مشيغن</placeName>
                         <location source="#org_geon">
                             <geo>42.33143, -83.04575</geo>
                         </location>
@@ -5062,6 +5093,7 @@
                         <placeName source="#org_geon" type="alt" xml:lang="fr">Minneapolis</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="de">Minneapolis</placeName>
                         <placeName source="#org_geon" type="alt" xml:lang="tr">Minneapolis</placeName>
+                        <placeName source="oape:org:60" xml:lang="en">Minneapolis, MN</placeName>
                         <location source="#org_geon">
                             <geo>44.97997, -93.26384</geo>
                         </location>
@@ -5206,6 +5238,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="en">Paris</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Paris</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">Paris</placeName>
+                    <placeName source="oape:org:60">بريس</placeName>
                     <location source="#org_geon">
                         <geo>48.85341, 2.3488</geo>
                     </location>
@@ -5357,6 +5390,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Nicosie</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Nikosia</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">Lefkoşa</placeName>
+                    <placeName source="oape:org:60" xml:lang="en">(Cyprus) Nicosia</placeName>
                     <location source="#org_geon">
                         <geo>35.17531, 33.3642</geo>
                     </location>
@@ -6494,6 +6528,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Vienne</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Wien</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">Viyana</placeName>
+                    <placeName source="oape:org:60">فيينا</placeName>
                     <location source="#org_geon">
                         <geo>48.20849, 16.37208</geo>
                     </location>
@@ -6666,6 +6701,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Moscou</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Moskau</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="tr">Moskova</placeName>
+                    <placeName source="oape:org:60">موسكو</placeName>
                     <location source="#org_geon">
                         <geo>55.75222, 37.61556</geo>
                     </location>
@@ -6868,6 +6904,7 @@
                     <placeName source="#org_geon" type="alt" xml:lang="en">Leiden</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="fr">Leyde</placeName>
                     <placeName source="#org_geon" type="alt" xml:lang="de">Leiden</placeName>
+                    <placeName source="oape:org:60">ليدن، هولندا</placeName>
                     <location>
                         <geo>52.15833, 4.49306</geo>
                     </location>
@@ -8080,6 +8117,7 @@
                 <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Doha</tei:placeName>
                 <tei:placeName source="#org_geon" type="alt" xml:lang="de">Doha</tei:placeName>
                 <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Doha</tei:placeName>
+                <placeName source="oape:org:60">الدوحة(قطر)</placeName>
                 <tei:location source="#org_geon">
                     <tei:geo>25.28545, 51.53096</tei:geo>
                 </tei:location>
@@ -8277,6 +8315,7 @@
                 <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ramallah</tei:placeName>
                 <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Ramallah</tei:placeName>
                 <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ramallah</tei:placeName>
+                <placeName source="oape:org:60" xml:lang="en">Ramallah, Palestine</placeName>
                 <tei:location source="#org_geon">
                     <tei:geo>31.89964, 35.20422</tei:geo>
                 </tei:location>
@@ -8538,6 +8577,11 @@
                 </tei:location>
                 <tei:idno resp="#xslt" type="geon">11672065</tei:idno>
                 <idno type="oape">764</idno>
+            </place>
+            <place type="town">
+                <placeName xml:lang="en">Jericho</placeName>
+                <placeName source="oape:org:60">أريحا</placeName>
+                <placeName source="oape:org:60">اريحا</placeName>
             </place>
         </listPlace>
     </standOff>
