@@ -2590,15 +2590,14 @@
         </xsl:variable>
         <xsl:variable name="v_margin" select="1"/>
         <!-- select a year, the reference to be linked was made in -->
-        <!--<xsl:variable name="v_year" select="
-                if ($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct) then
-                    (oape:date-year-only(oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', '')))
-                else
-                    (2020)"/>-->
+        <!-- somehow this does not return the correct dates -->
         <xsl:variable name="v_year-publication">
             <xsl:choose>
                 <!-- check if the input bibl has a date -->
                 <xsl:when test="$v_biblStruct//tei:imprint/tei:date[@when | @notAfter | @notBefore]">
+                    <xsl:if test="$p_debug = true()">
+                        <xsl:message><xsl:text>Publication year: from reference </xsl:text><xsl:value-of select="oape:query-biblstruct($v_biblStruct, 'date', '', '', '')"/></xsl:message>
+                    </xsl:if>
                     <xsl:value-of select="oape:date-year-only(oape:query-biblstruct($v_biblStruct, 'date-onset', '', '', ''))"/>
                 </xsl:when>
                 <!-- check if the input file, which is mostly the edition of a historical source, has a publication date -->
@@ -2628,9 +2627,16 @@
             </xsl:variable>
             <xsl:for-each select="$v_bibls-compiled/descendant-or-self::tei:biblStruct">
                 <xsl:variable name="v_corresponding-bibl-year" select="oape:date-year-only(oape:query-biblstruct(., 'date', '', '', ''))"/>
+                <xsl:message>
+                    <xsl:text>year of reference: </xsl:text>
+                    <xsl:value-of select="$v_year-publication"/>
+                    <xsl:text> | </xsl:text>
+                    <xsl:text>year in bibliography: </xsl:text>
+                    <xsl:value-of select="$v_corresponding-bibl-year"/>
+                </xsl:message>
                 <xsl:choose>
                     <!-- remove all corresponding biblStructs that were published after the referencing source -->
-                    <xsl:when test="$v_corresponding-bibl-year != 'NA' and $v_corresponding-bibl-year &gt; ($v_year-publication + $v_margin)">
+                    <xsl:when test="$v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA' and $v_corresponding-bibl-year &gt; ($v_year-publication + $v_margin)">
                         <xsl:if test="$p_verbose = true()">
                             <xsl:message>
                                 <xsl:text>Found a corresponding entry for </xsl:text>
@@ -2676,12 +2682,15 @@
                             <xsl:when test="$v_biblStruct != 'NA' and oape:query-biblstruct($v_biblStruct, 'id-location', '', $v_gazetteer, $p_local-authority) != 'NA'">
                                 <xsl:value-of select="oape:query-biblstruct($v_biblStruct, 'id-location', '', $v_gazetteer, $p_local-authority)"/>
                             </xsl:when>
-                            <!-- proximity to the source a text is mentioned in -->
-                            <xsl:when test="$p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct">
+                            <!-- proximity to the source a text is mentioned in: this causes a lot of false negatives -->
+                            <!--<xsl:when test="$p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct//tei:pubPlace">
+                                <xsl:message>
+                                    <xsl:text>WARNING: using the location found in the teiHeader for further matching based on proximity</xsl:text>
+                                </xsl:message>
                                 <xsl:value-of
                                     select="oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'id-location', '', $v_gazetteer, $p_local-authority)"
                                 />
-                            </xsl:when>
+                            </xsl:when>-->
                             <xsl:otherwise>
                                 <xsl:value-of select="'NA'"/>
                             </xsl:otherwise>
@@ -2725,7 +2734,7 @@
                     <xsl:choose>
                         <!-- 1. negative hits: excluding criteria -->
                         <!-- differne places of publication -->
-                        <!-- WHy should this be added? In its current form, this condition prevents a lot of true positives-->
+                        <!-- This currently generates a lot of false negatives due to the construction of $v_place-publication, which pulls in the publication place of the primary source as  -->
                         <xsl:when
                             test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and $v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) != $v_place-publication]">
                             <xsl:if test="$p_verbose = true()">
@@ -3473,6 +3482,7 @@
                         <textLang>
                             <xsl:attribute name="mainLang">
                                 <xsl:choose>
+                                    <!-- chose the language of the title -->
                                     <xsl:when test="tei:title[@level != 'a']/@xml:lang">
                                         <xsl:value-of select="tei:title[@level != 'a'][@xml:lang][1]/@xml:lang"/>
                                     </xsl:when>
@@ -3491,7 +3501,7 @@
                 <imprint>
                     <xsl:apply-templates mode="m_copy-from-authority-file" select="tei:date"/>
                     <!-- add a date at which this bibl was documented in the source file -->
-                    <date type="documented" when="{$v_source-date}"/>
+                    <date source="{$v_source}" type="documented" when="{$v_source-date}"/>
                     <xsl:apply-templates mode="m_copy-from-authority-file" select="tei:pubPlace"/>
                     <xsl:apply-templates mode="m_copy-from-authority-file" select="tei:publisher"/>
                 </imprint>

@@ -28,7 +28,6 @@
     -->
     <!-- BUGs:
         - $p_ignore-existing-refs = true() causes an error, which I have not yet managed to track down, as this param is used in only 3 locations
-        - matching is not further tested if there is a unique title. This leads to false positives (i.e. clearly wrong data and place).
     -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     
