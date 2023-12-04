@@ -28,6 +28,7 @@
     -->
     <!-- BUGs:
         - $p_ignore-existing-refs = true() causes an error, which I have not yet managed to track down, as this param is used in only 3 locations
+        - I THOUGHT I HAD FIXED IT: links many titles from the NLoI with unmatching locations and dates of publication
     -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     
