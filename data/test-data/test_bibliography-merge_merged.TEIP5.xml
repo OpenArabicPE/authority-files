@@ -17,7 +17,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc xml:lang="en">
-         <change when="2023-11-23" who="#pers_TG" xml:id="d12e29" xml:lang="en">Merged bibliographic information from &quot;
+         <change when="2023-11-24" who="#pers_TG" xml:id="d12e29" xml:lang="en">Merged bibliographic information from &quot;
             <ref target="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/test-data/test_bibliography-merge_source.TEIP5.xml">test_bibliography-merge_source.TEIP5.xml</ref>
             &quot; into this file.</change>
          <tei:change when="2023-11-14" who="#pers_TG" xml:id="d10e1030" xml:lang="en">Created this file</tei:change>
@@ -198,7 +198,8 @@
                <textLang mainLang="ar"/>
                <editor>
                   <persName change="#d9e642" ref="jaraid:pers:744 oape:pers:5670" xml:lang="en">Muṣṭafā Tawfīq al-Jarrāḥī</persName>
-                  <persName change="#d9e642" ref="jaraid:pers:744 oape:pers:5670" xml:lang="ar">مصطفى توفيق</persName>
+                  <persName change="#d9e642" ref="jaraid:pers:744 oape:pers:5670" xml:lang="ar">مصطفى توفيق
+                     <addName cert="high" resp="#xslt" type="nisbah">الجراحي</addName></persName>
                </editor>
                <imprint change="#d12e29" source="https://sierra.usek.edu.lb/">
                   <pubPlace>
@@ -272,12 +273,12 @@
                   <pubPlace>
                      <placeName ref="geon:3435910 oape:place:362" xml:lang="ar">بونس أيرس</placeName>
                   </pubPlace>
-                  <date change="#d12e29" source="https://sierra.usek.edu.lb/" type="documented" when="1937"/>
-                  <date change="#d12e29" from="1884" source="#test" to="1944" type="documented">1884-1944</date>
+                  <date notAfter="1946" type="terminus"/>
                   <date change="#d12e29" datingMethod="#cal_ottomanfiscal" source="https://sierra.usek.edu.lb/" type="onset" when="1929-01-12" when-custom="1421-08-02"/>
                   <date change="#d12e29" datingMethod="#cal_islamic" source="https://sierra.usek.edu.lb/" type="onset" when="1929-01-12" when-custom="1419-06-03"/>
                   <date type="onset" when="1929-01-12"/>
-                  <date notAfter="1946" type="terminus"/>
+                  <date change="#d12e29" source="https://sierra.usek.edu.lb/" type="documented" when="1937"/>
+                  <date change="#d12e29" from="1884" source="#test" to="1944" type="documented">1884-1944</date>
                   <date change="#d12e29" from="1884" source="https://sierra.usek.edu.lb/" to="1944">1884-1944</date>
                </imprint>
             </monogr>
