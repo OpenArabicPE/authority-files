@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc xml:lang="en">
+         <tei:change when="2023-11-14" who="#pers_TG" xml:id="d10e1030" xml:lang="en">Created this file</tei:change>
+      </revisionDesc>
+   </teiHeader>
+   <standOff>
+      <listBibl>
+         <biblStruct change="#d9e674 #d9e713 #d10e96 #d12e97" oape:frequency="weekly" resp="#pAM" source="https://projectjaraid.github.io #hAUB  #zdb" subtype="newspaper" type="periodical">
+            <monogr change="#d12e97" source="#zdb">
+               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Aḥrār al-Muṣawwara</title>
+               <title level="j" xml:lang="ar">الاحرار المصورة</title>
+               <title change="#d10e96" level="j" ref="jaraid:bibl:t1r2472 oape:bibl:2888" resp="#xslt" source="#hAUB" xml:lang="ar">الأحرار المصورة</title>
+               <title change="#d10e96" level="j" source="#hAUB" type="sub" xml:lang="ar">أدبية، انتقادية، فكاهية، روائية</title>
+               <title change="#d12e97" level="j" source="#zdb" xml:lang="ar-Latn-x-dmg">al-aḥrār al-muṣauwara</title>
+               <title change="#d12e97" level="j" source="#zdb" type="sub" xml:lang="ar-Latn-x-dmg">usbūʿīya, adabīya, intiqādīya, fukāhīya, riwāʾīya</title>
+               <title change="#d12e97" level="j" resp="#xslt" source="#zdb" type="sub" xml:lang="ar">اسبوعية , ادبية , انتقادية , فكاهية , روائية</title>
+               <title change="#d12e97" level="j" source="#zdb" xml:lang="ar-Latn-x-dmg">al-Āḥrār al-muṣawwarah</title>
+               <title change="#d12e97" level="j" ref="oclc:792755775 jaraid:bibl:t1r2472 oape:bibl:2888" resp="#xslt" source="#zdb" xml:lang="ar">الاحرار المصوره</title>
+               <idno change="#d2e566" type="oape">2888</idno>
+               <idno type="jaraid">t1r2472</idno>
+               <idno change="#d10e96" source="#hAUB" type="AUBNO">Mic-NA:000047</idno>
+               <idno subtype="AUB" type="classmark">Mic-NA:000047</idno>
+               <idno subtype="USEK" type="classmark">Mic-NA:000047</idno>
+               <idno change="#d10e96" source="#hAUB" type="LEAUB">b1282740x</idno>
+               <idno change="#d10e96" source="#hAUB" type="OCLC">792755775</idno>
+               <idno change="#d10e96" source="#hAUB" type="url">https://gpa.eastview.com/crl/mena/newspapers/ahrm</idno>
+               <idno change="#d10e96" source="#hAUB" type="LEAUB">b12821226</idno>
+               <idno change="#d10e96" source="#hAUB" type="LEAUB">b12821226</idno>
+               <idno change="#d10e96" source="#hAUB" type="LEAUB">b12821226</idno>
+               <idno change="#d12e97" source="#zdb" type="zdb">3096827-6</idno>
+               <idno change="#d12e97" source="#zdb" type="url">https://nbn-resolving.org/urn:nbn:de:hbz:5:1-292615</idno>
+               <idno change="#d12e97" source="#zdb" type="url">https://nbn-resolving.de/urn:nbn:de:hbz:5:1-292615</idno>
+               <idno change="#d12e97" source="#zdb" type="urn">urn:nbn:de:hbz:5:1-292615</idno>
+               <idno change="#d12e97" source="#zdb" type="zdb">3062199-9</idno>
+               <idno change="#d12e97" source="#zdb" type="fid">NAHOST</idno>
+               <textLang mainLang="ar"/>
+               <editor type="owner"> <persName change="#d9e642" ref="jaraid:pers:2003 oape:pers:5108" xml:lang="und-Latn">Jibrān Tuwaynī</persName> <persName change="#d9e642"
+                  ref="jaraid:pers:2003 oape:pers:5108" xml:lang="ar">جبران تويني</persName> </editor>
+               <imprint>
+                  <date type="onset" when="1926-01-11" xml:lang="und-Latn">1926</date>
+                  <date change="#d10e96" source="#hAUB" type="onset" when="1926">1926-1927</date>
+                  <date change="#d10e96" source="#hAUB" type="terminus" when="1927">1926-1927</date>
+                  <date change="#d12e97" source="#zdb">[1926-1927?]</date>
+                  <date change="#d12e97" source="#zdb" type="terminus" when="1927">1927</date>
+                  <date change="#d12e97" source="#zdb">[1926-1927]</date>
+                  <date change="#d12e97" source="#zdb" type="terminus" when="1927-06-26">1927</date>
+                  <pubPlace> <placeName change="#d9e576 #d9e603 #d9e966" ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="und-Latn">Beirut</placeName> <placeName
+                     change="#d9e576 #d9e603 #d9e966" ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="ar">بيروت</placeName> </pubPlace>
+                  <publisher change="#d10e96" source="#hAUB"><orgName xml:lang="ar">دار النهار للنشر</orgName></publisher>
+               </imprint>
+            </monogr>
+            <note type="sources"> <list>
+               <item source="https://projectjaraid.github.io #hAUB  #zdb"> <rs ref="#agt" xml:lang="und-Latn">Ṭ</rs> </item>
+               </list> </note>
+            <note type="holdings"><list>
+               <item source="https://projectjaraid.github.io #hAUB  #zdb"> <label> <orgName change="#d10e1003" ref="jaraid:org:hCRL oape:org:16" xml:lang="und-Latn">CRL</orgName> </label>:<ref
+                  resp="#pAM" target="https://gpa.eastview.com/crl/mena/newspapers/ahrm" xml:lang="und-Latn">online 1926-27</ref>,</item>
+               <item source="https://projectjaraid.github.io #hAUB  #zdb"> <label> <orgName change="#d10e1003" ref="jaraid:org:hUWL oape:org:81" resp="pAM" xml:lang="und-Latn">UWL</orgName>
+                  </label>: 1926-27.</item>
+               <item change="#d10e96" source="#hAUB"> <label> <placeName change="#d10e966" ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>,  <orgName change="#d10e976"
+                  ref="jaraid:org:hAUB oape:org:73" xml:lang="en">AUB</orgName> </label>: <ab change="#d10e96" source="#hAUB" xml:lang="ar">في المكتبة :1926:نيسان-1927: كانون الثاني.</ab> <ab> <bibl>
+                  <idno subtype="AUB" type="classmark">Mic-NA:000047</idno> <idno change="#d10e96" source="#hAUB" type="url">https://libcat.aub.edu.lb/record=b1282740</idno> </bibl> </ab> <ab
+                  xml:lang="en"> <ref change="#d10e96" source="#hAUB" target="https://libcat.aub.edu.lb/record=b1282740" type="about">catalogue</ref> </ab> </item>
+               <item change="#d10e96" source="#hAUB"> <label> <placeName change="#d10e966" ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>,  <orgName change="#d10e976"
+                  ref="jaraid:org:hAUB oape:org:73" xml:lang="en">AUB</orgName> </label>: <ab change="#d10e96" source="#hAUB" xml:lang="ar"
+                  >في المكتبة :ع.1-50 (1926: كانون الثاني11-1927: حزيران 27)</ab> <ab> <bibl> <idno change="#d10e96" source="#hAUB" type="url">https://libcat.aub.edu.lb/record=b1282122</idno> </bibl>
+                  </ab> <ab xml:lang="en"> <ref change="#d10e96" source="#hAUB" target="https://libcat.aub.edu.lb/record=b1282122" type="about">catalogue</ref> </ab> </item>
+               <item change="#d12e97" source="https://ld.zdb-services.de/resource/3096827-6"> <label change="#d12e97" source="#zdb"> <placeName change="#d12e97" ref="geon:2946447 oape:place:659"
+                  source="#zdb">Bonn</placeName>, <orgName change="#d12e97 #d10e976" ref="isil:DE-5 jaraid:org:hBONN oape:org:299" source="#zdb" type="short">Bonn ULB</orgName> </label> <ab
+                  change="#d12e97" source="#zdb"> <bibl change="#d12e97" source="#zdb"> <date change="#d12e97" source="#zdb" type="onset" when="1926">1926</date> <date change="#d12e97" source="#zdb"
+                  type="terminus" when="1927">1927</date> </bibl> </ab> <ab change="#d12e97" source="#zdb" xml:lang="en">source: <orgName change="#d12e97 #d10e1004" ref="oape:org:420" source="#zdb"
+                  xml:lang="de">ZDB</orgName> (<ref change="#d12e97" source="#zdb" target="https://ld.zdb-services.de/resource/3096827-6" type="about">catalogue</ref>)</ab> </item>
+               </list></note>
+            <note type="comments"><list>
+               <item change="#d10e96" source="#hAUB" xml:lang="ar">صاحب الامتياز: جبران التويني</item>
+               <item change="#d10e96" source="#hAUB" xml:lang="ar">توقفت عن الصدور</item>
+               <item change="#d10e96" source="#hAUB" xml:lang="ar">صاحبها ومديرها : جبران تويني</item>
+               <item change="#d12e97" source="#zdb" xml:lang="de">Gesehen am 8. Oktober 2021</item>
+               <item change="#d12e97" source="#zdb" xml:lang="de">Reproduktion</item>
+               <item change="#d12e97" source="#zdb" xml:lang="de">Mehr nicht digitalisiert</item>
+               <item change="#d12e97" source="#zdb" xml:lang="de">Gesehen am 29.04.2021</item>
+               <item change="#d12e97" source="#zdb" xml:lang="de">Reproduktion</item>
+               </list></note>
+         </biblStruct>
+         <biblStruct change="#d9e674 #d9e713" resp="#pAM" source="https://projectjaraid.github.io" subtype="newspaper" type="periodical">
+            <monogr>
+               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ṣiḥāfa</title>
+               <title level="j" xml:lang="ar">الصحافة</title>
+               <idno change="#d2e566" type="oape">1423</idno>
+               <idno type="jaraid">t1r938</idno>
+               <textLang mainLang="ar"/>
+               <editor> <persName change="#d9e642" ref="jaraid:pers:744 oape:pers:5670" xml:lang="en">Muṣṭafā Tawfīq al-Jarrāḥī</persName> <persName change="#d9e642"
+                  ref="jaraid:pers:744 oape:pers:5670" xml:lang="ar">مصطفى توفيق<addName cert="high" resp="#xslt" type="nisbah">الجراحي</addName></persName> </editor>
+               <imprint>
+                  <date type="onset" when="1905-01-08">1905</date>
+                  <pubPlace> <placeName change="#d9e576 #d9e603 #d9e966" ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="en">Cairo</placeName> <placeName change="#d9e576 #d9e603 #d9e966"
+                     ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
+               </imprint>
+            </monogr>
+            <note type="sources"> <list>
+               <item source="https://projectjaraid.github.io"> <rs ref="#agt" xml:lang="und-Latn">Ṭ</rs> </item>
+               </list> </note>
+         </biblStruct>
+         <biblStruct source="https://projectjaraid.github.io" subtype="newspaper" type="periodical">
+            <monogr>
+               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jarīda al-Sūriyya al-Lubnāniyya</title>
+               <title level="j" xml:lang="ar">الجريدة السورية اللبنانية</title>
+               <idno type="jaraid">t1r2298</idno>
+               <idno type="oape">3166</idno>
+               <textLang mainLang="ar"/>
+               <editor> <persName ref="jaraid:pers:1875 oape:pers:5725" xml:lang="ar">موسى عزيزة</persName> </editor>
+               <imprint>
+                  <date type="onset" when="1929-01-12"/>
+                  <date type="terminus" notAfter="1946"/>
+                  <pubPlace> <placeName ref="geon:3435910 oape:place:362" xml:lang="ar">بونس أيرس</placeName> </pubPlace>
+               </imprint>
+            </monogr>
+         </biblStruct>
+      </listBibl>
+   </standOff>
+   <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+   </text>
+</TEI>

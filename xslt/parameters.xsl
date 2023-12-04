@@ -98,6 +98,7 @@
             </xsl:when>
             <xsl:when test="$p_local-authority = 'oape'">
                 <xsl:value-of select="'bibliography_OpenArabicPE-periodicals.TEIP5.xml'"/>
+<!--                <xsl:value-of select="'bibliography_OpenArabicPE-periodicals_simple.TEIP5.xml'"/>-->
             </xsl:when>
         </xsl:choose>
     </xsl:param>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <standOff>
+      <listBibl>
+         <biblStruct source="https://sierra.usek.edu.lb/" type="periodical">
+            <monogr>
+               <title level="j" ref="oclc:792755775 jaraid:bibl:t1r2472 oape:bibl:2888" resp="#xslt">الأحرار المصورة</title>
+               <title level="j" type="sub">أدبية، إنتقادية، فكاهية، روائية</title>
+               <idno type="classmark">JRN A051</idno>
+               <idno type="OCLC">x786761871</idno>
+               <idno type="classmark">b1234578</idno>
+               <idno type="oape">2888</idno>
+               <idno type="URI">https://sierra.usek.edu.lb/record=b1234578</idno>
+               <idno type="url">/search?/XJRN+A&amp;SORT=D/XJRN+A&amp;SORT=D&amp;SUBKEY=JRN+A/51%2C111%2C111%2CB/frameset&amp;FF=XJRN+A&amp;SORT=D&amp;66%2C66%2C</idno>
+               <textLang mainLang="ota"/>
+               <imprint> 
+دار النهار للنشر، هيئة إصدار.
+<pubPlace> <placeName ref="geon:276781 jaraid:place:2 oape:place:26" resp="#xslt" xml:lang="ar">بيروت</placeName> </pubPlace> <date type="onset" when="1926">1926</date> <date
+                  type="terminus" when="1927">1927</date> : دار النهار للنشر، 1926-1927.
+الأحرار المصورة </imprint>
+               <biblScope from="1" to="3" unit="volume"/>
+            </monogr>
+            <tei:note type="holdings"> <list>
+               <item> <label> <placeName ref="geon:8041193 oape:place:206" resp="#xslt">Jounieh</placeName>, <orgName ref="oape:org:567">USEK</orgName> </label> <ab> <listBibl>
+                  <bibl> <idno type="classmark">JRN A051</idno> <date when="1977">1977</date> <biblScope unit="issue">262</biblScope> <biblScope>1977 #262</biblScope> <date>الاثنين 30/05/1977</date> </bibl>
+                  <bibl> <idno type="classmark">JRN A051</idno> <date when="1977">1977</date> <biblScope unit="issue">261</biblScope> <biblScope>1977 #261</biblScope> <date>السبت 28/05/1977</date> </bibl>
+                  <bibl> <idno type="classmark">JRN A051</idno> <date when="1977">1977</date> <biblScope unit="issue">260</biblScope> <biblScope>1977 #260</biblScope> <date>الجمعة 27/05/1977</date>
+                  </bibl>
+                  </listBibl> </ab> </item>
+               </list> </tei:note>
+         </biblStruct>
+         <biblStruct source="https://sierra.usek.edu.lb/" type="periodical">
+            <monogr>
+               <title level="j" ref="jaraid:bibl:t1r938 oape:bibl:1423" resp="#xslt">الصحافة</title>
+               <idno type="classmark">JRN AAN018</idno>
+               <idno type="classmark">b1256687</idno>
+               <idno type="URI">https://sierra.usek.edu.lb/record=b1256687</idno>
+               <idno type="url">/search?/XJRN+A&amp;SORT=D/XJRN+A&amp;SORT=D&amp;SUBKEY=JRN+A/1%2C111%2C111%2CB/frameset&amp;FF=XJRN+A&amp;SORT=D&amp;5%2C5%2C</idno>
+               <imprint> <pubPlace> <placeName ref="geon:276781 jaraid:place:2 oape:place:26" resp="#xslt" xml:lang="ar">بيروت</placeName> </pubPlace>:  [فوزي مكرزل]
+الصحافة </imprint>
+            </monogr>
+            <note type="holdings"> <list>
+               <item> <label> <placeName ref="geon:8041193 oape:place:206" resp="#xslt">Jounieh</placeName>, <orgName ref="oape:org:567">USEK</orgName> </label> <ab> <listBibl>
+                  <bibl> <idno type="classmark">JRN AAN018</idno> <date when="1957">1957</date> <biblScope unit="issue">1082</biblScope> <biblScope>1957 #1082</biblScope>
+                     <date>الجمعة 15 شباط 1957</date> </bibl>
+                  <bibl> <idno type="classmark">JRN AAN018</idno> <date when="1957">1957</date> <biblScope unit="issue">1093</biblScope> <biblScope>1957 #1093</biblScope>
+                     <date>الاربعاء 27 شباط 1957</date> </bibl>
+                  <bibl> <idno type="classmark">JRN A052</idno> <date when="1955">1955</date> <biblScope unit="issue">574</biblScope> <biblScope>1955 #574</biblScope> <date>28/05/1955السبت</date>
+                  </bibl>
+                  </listBibl> </ab> </item>
+               </list> </note>
+         </biblStruct>
+         <biblStruct source="https://sierra.usek.edu.lb/" type="periodical">
+            <monogr>
+               <!-- merging fails if the first title carries @ref="NA" -->
+               <title level="j" ref="NA" resp="#xslt" xml:lang="es">El Diario Sirio Libanés</title>
+               <title level="j" ref="jaraid:bibl:t1r2298 oape:bibl:3166" resp="#xslt" xml:lang="ar">الجريدة السورية اللبنانية</title>
+               <idno subtype="USEK" type="classmark">JRN L021</idno>
+               <idno subtype="USEK" type="classmark">b1208963</idno>
+               <idno type="URI">https://sierra.usek.edu.lb/record=b1208963</idno>
+               <idno type="url">/search?/XJRN+A&amp;SORT=D/XJRN+A&amp;SORT=D&amp;SUBKEY=JRN+A/1%2C111%2C111%2CB/frameset&amp;FF=XJRN+A&amp;SORT=D&amp;41%2C41%2C</idno>
+               <imprint>
+                  <date source="https://sierra.usek.edu.lb/" type="documented" when="1937"/>
+                  <date datingMethod="#cal_ottomanfiscal" type="onset" when="1929-01-12" when-custom="1421-08-02"/>
+                  <date datingMethod="#cal_islamic" type="onset" when="1929-01-12" when-custom="1419-06-03"/>
+                  <date from="1884" to="1944">1884-1944</date>
+                  <date from="1884" source="#test" to="1944" type="documented">1884-1944</date>
+               </imprint>
+            </monogr>
+            <note type="holdings"> <list>
+               <item> <label> <placeName ref="geon:8041193 oape:place:206" resp="#xslt">Jounieh</placeName>, <orgName ref="oape:org:567">USEK</orgName> </label> <ab> <listBibl>
+                  <bibl> <idno subtype="USEK" type="classmark">JRN L021</idno> <date when="1937">1937</date> <biblScope unit="issue">2501-2550</biblScope> <biblScope>1937 #2501-2550</biblScope>
+                     <date/> </bibl>
+                  </listBibl> </ab> </item>
+               </list> </note>
+         </biblStruct>
+      </listBibl>
+   </standOff>
+   <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+   </text>
+</TEI>

@@ -29,19 +29,19 @@
     <xsl:template match="dbp:shortName" mode="m_isil-to-tei">
         <xsl:element name="orgName">
             <xsl:attribute name="type" select="'short'"/>
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="m_isil-to-tei"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="foaf:name" mode="m_isil-to-tei">
         <xsl:element name="orgName">
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="m_isil-to-tei"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="geo:location" mode="m_isil-to-tei">
         <xsl:element name="geo">
-            <xsl:value-of select="rdf:Description/geo:lat"/>
+            <xsl:apply-templates mode="m_isil-to-tei" select="rdf:Description/geo:lat"/>
             <xsl:text>, </xsl:text>
-            <xsl:value-of select="rdf:Description/geo:long"/>
+            <xsl:apply-templates mode="m_isil-to-tei" select="rdf:Description/geo:long"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="dc:identifier" mode="m_isil-to-tei">
@@ -67,17 +67,21 @@
     </xsl:template>
     <xsl:template match="v:street-address" mode="m_isil-to-tei">
         <xsl:element name="street">
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="m_isil-to-tei"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="v:locality" mode="m_isil-to-tei">
         <xsl:element name="placeName">
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="m_isil-to-tei"/>
         </xsl:element>
     </xsl:template>
     <xsl:template match="v:postal-code" mode="m_isil-to-tei">
         <xsl:element name="postCode">
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="m_isil-to-tei"/>
         </xsl:element>
+    </xsl:template>
+    <!-- normalize whitespace and unicode decomposition -->
+    <xsl:template match="text()" mode="m_isil-to-tei">
+        <xsl:value-of select="normalize-space(normalize-unicode(., 'NFKC'))"/>
     </xsl:template>
 </xsl:stylesheet>

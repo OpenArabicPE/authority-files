@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Open Arabic Periodical Editions: Bibliography of periodicals</title>
+            <author> <persName ref="jaraid:pers:4 oape:pers:4312"> <forename>Till</forename> <surname>Grallert</surname> </persName> </author>
+            <respStmt>
+               <resp>Main author and editor of this file</resp>
+               <persName> <forename>Till</forename> <surname>Grallert</surname> </persName>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>this file is born-digital</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc xml:lang="en">
+         <tei:change when="2023-02-05" who="#pers_TG" xml:lang="en">Added references to local authority file (<tei:ref
+            target="/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/organizationography_OpenArabicPE.TEIP5.xml" xml:lang="en"
+            >/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/organizationography_OpenArabicPE.TEIP5.xml</tei:ref>)  to <tei:gi xml:lang="en"
+            >orgName</tei:gi>s without such references based on  <tei:gi xml:lang="en">org</tei:gi>s mentioned in the authority file.</tei:change>
+         <change when="2022-06-29" who="#pers_TG" xml:lang="en">Created this file</change>
+      </revisionDesc>
+   </teiHeader>
+   <standOff>
+      <listBibl>
+         <biblStruct source="https://projectjaraid.github.io" subtype="newspaper" type="periodical">
+            <monogr>
+               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Funūn al-Jamīla</title>
+               <title level="j" xml:lang="ar">الفنون الجميلة</title>
+               <idno type="jaraid">t1r2485</idno>
+               <idno type="oape">3006</idno>
+               <textLang mainLang="ar"/>
+               <editor> <persName ref="jaraid:pers:797 oape:pers:5749" xml:lang="ar">نجيب كرم</persName> <persName ref="jaraid:pers:797 oape:pers:5749" xml:lang="ar-Latn-x-ijmes"
+                  >Najīb Karam</persName> </editor>
+               <editor> <persName ref="jaraid:pers:2029 oape:pers:4534" xml:lang="ar">الكسي لاذقاني</persName> <persName ref="jaraid:pers:2029 oape:pers:4534" xml:lang="ar-Latn-x-ijmes"
+                  >Alaksī Lādhqānī</persName> </editor>
+               <imprint>
+                  <date type="onset" when="1927-04-03"/>
+                  <pubPlace> <placeName ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="ar">بيروت</placeName> <placeName ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="en"
+                     >Beirut</placeName> </pubPlace>
+               </imprint>
+            </monogr>
+         </biblStruct>
+         <biblStruct source="https://projectjaraid.github.io" subtype="journal" type="periodical">
+            <monogr>
+               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Funūn al-Jamīla</title>
+               <title level="j" xml:lang="ar">الفنون الجميلة</title>
+               <idno type="jaraid">t1r1689</idno>
+               <idno type="oape">2021</idno>
+               <textLang mainLang="ar"/>
+               <editor> <persName ref="jaraid:pers:1367 oape:pers:4414" xml:lang="ar">الجمعية الفوتوغرافية المصرية</persName> <persName ref="jaraid:pers:1367 oape:pers:4414" xml:lang="ar-Latn-x-ijmes"
+                  >al-Jamʿiyya al-Fūtūghrāfiyya al-Miṣriyya</persName> </editor>
+               <imprint>
+                  <date type="onset" when="1913-05-01"/>
+                  <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="en"
+                     >Cairo</placeName> </pubPlace>
+               </imprint>
+            </monogr>
+         </biblStruct>
+         <biblStruct oape:frequency="weekly" source="https://projectjaraid.github.io #hathi" type="periodical">
+            <monogr>
+               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Fayyūm</title>
+               <title level="j" xml:lang="ar">الفيوم</title>
+               <idno type="LCCN">sc 82002199</idno>
+               <idno type="OCLC">5167777</idno>
+               <idno type="ht_bib_key">100412687</idno>
+               <idno type="jaraid">t1r445</idno>
+               <idno type="oape">901</idno>
+               <textLang mainLang="ar"/>
+               <editor> <persName ref="jaraid:pers:338 oape:pers:4952" xml:lang="ar">ابراهيم رمزي</persName> <persName ref="jaraid:pers:338 oape:pers:4952" xml:lang="ar-Latn-x-ijmes"
+                  >Ibrāhīm Ramzī</persName> </editor>
+               <imprint>
+                  <date type="onset" when="1894-01-26"/>
+                  <pubPlace> <placeName ref="geon:361320 jaraid:place:50 oape:place:445" xml:lang="ar">الفيوم</placeName> <placeName ref="geon:361320 jaraid:place:50 oape:place:445" xml:lang="en"
+                     >Al Fayyum</placeName> </pubPlace>
+                  <publisher source="#hathi"> <orgName ref="oape:org:436">I. Ramzī</orgName> </publisher>
+               </imprint>
+            </monogr>
+         </biblStruct>
+         <biblStruct oape:frequency="Semiannual" source="https://projectjaraid.github.io #hAUB #zdb #hathi" subtype="journal" type="periodical">
+            <monogr xml:lang="ar">
+               <title level="j" xml:lang="ar">الجنان</title>
+               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jinān</title>
+               <title level="j" source="#zdb" xml:lang="ar-Latn-x-dmg">al-Ǧinān</title>
+               <title level="j" source="#hathi" xml:lang="ar-Latn-x-ijmes">al-Janān</title>
+               <idno type="LCCN">97648052 /NE</idno>
+               <idno type="LCCN">sc85006025</idno>
+               <idno type="LEAUB">b12828695</idno>
+               <idno type="OCLC">1681102</idno>
+               <idno type="OCLC">224771488</idno>
+               <idno type="OCLC">22757559</idno>
+               <idno type="OCLC">656797477</idno>
+               <idno type="OCLC">672061050</idno>
+               <idno type="OCLC">7565762</idno>
+               <idno type="OCLC">792755530</idno>
+               <idno type="OCLC">792755914</idno>
+               <idno type="OCLC">987291181</idno>
+               <idno type="ht_bib_key">008882426</idno>
+               <idno type="ht_bib_key">102729675</idno>
+               <idno type="jaraid">t1r61</idno>
+               <idno type="oape">34</idno>
+               <idno type="url">http://hdl.handle.net/2027/njp.32101007751447</idno>
+               <idno type="url">http://opacplus.bsb-muenchen.de/title/404149-5</idno>
+               <idno type="url">https://eap.bl.uk/collection/EAP119-1-6</idno>
+               <idno type="wiki">Q65563187</idno>
+               <idno type="zdb">2793557-7</idno>
+               <idno type="zdb">404149-5</idno>
+               <textLang mainLang="ar"/>
+               <editor> <persName ref="viaf:79119650 jaraid:pers:1989 oape:pers:4744 wiki:Q710866" xml:lang="ar"> <forename xml:lang="ar">بطرس</forename> <surname xml:lang="ar"/> </persName> <persName
+                  ref="viaf:79119650 jaraid:pers:1989 oape:pers:4744 wiki:Q710866" xml:lang="ar-Latn-x-ijmes"> <forename xml:lang="ar-Latn-x-ijmes">Buṭrus</forename> <surname
+                  xml:lang="ar-Latn-x-ijmes">al-Bustānī</surname> </persName> </editor>
+               <editor> <persName ref="viaf:21245607 oape:pers:307" xml:lang="ar"> <forename xml:lang="ar">سليم</forename> <surname xml:lang="ar"/> </persName> <persName
+                  ref="viaf:21245607 oape:pers:307" xml:lang="ar-Latn-x-ijmes"> <forename xml:lang="ar-Latn-x-ijmes">Salīm</forename> <surname xml:lang="ar-Latn-x-ijmes">al-Bustānī</surname>
+                  </persName> </editor>
+               <editor source="#agt"> <persName xml:lang="ar">سليمان البستاني</persName> </editor>
+               <imprint>
+                  <date type="onset" when="1870-01-01"/>
+                  <date source="#hAUB" type="onset" when="1870"/>
+                  <date source="#zdb" type="onset" when="1870"/>
+                  <pubPlace> <placeName ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="ar">بيروت</placeName> <placeName ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="en"
+                     >Beirut</placeName> </pubPlace>
+                  <publisher> <orgName xml:lang="ar">مطبعة المعارف</orgName> <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Maʿārif</orgName> </publisher>
+               </imprint>
+               <biblScope from="1" to="1" unit="volume"/>
+               <biblScope from="1" to="1" unit="issue"/>
+               <biblScope from="1" to="36" unit="page"/>
+            </monogr>
+         </biblStruct>
+      </listBibl>
+   </standOff>
+</TEI>

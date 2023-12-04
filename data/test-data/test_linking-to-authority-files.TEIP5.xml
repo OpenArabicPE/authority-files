@@ -18,15 +18,19 @@
    </teiHeader>
    <text>
       <body>
-         <div>
+         <div xml:id="div1">
             <head>Bibliographic items</head>
-            <p> <title level="j" xml:lang="ar">روضه</title> و<title level="j" xml:lang="ar">الجوائب</title> و<bibl type="periodical"><title level="j" xml:lang="ar">مجلة المجلات</title> <textLang
-               mainLang="fr">الانكليزية</textLang>
-               <!--<pubPlace> <placeName ref="geon:360630 oape:place:226 "/></pubPlace>--></bibl>.</p>
+            <p xml:lang="ar">و<bibl change="#d2e150" subtype="journal" type="periodical">مجلة <title change="#d10e163" level="j" ref="NA" resp="#xslt"
+               >الأحد</title></bibl> (البيروتية) 24 حزيران 1962 ومن هو في سورية 2: 432.(2) سركيس 1636 ومعجم المؤلفين العراقيين 1: 106 وهو فيه (أديب بن محمد) </p>
+            <p xml:id="p1" xml:lang="ar"> <title level="j" xml:lang="ar">روضه</title> و<title level="j" xml:lang="ar">الجوائب</title> و<bibl type="periodical"><title level="j" xml:lang="ar"
+               >مجلة المجلات</title> <textLang mainLang="fr">الانكليزية</textLang>
+               <!--<pubPlace> <placeName ref="geon:360630 oape:place:226 "/></pubPlace>--></bibl> ف<title change="#d10e163" level="j" ref="NA" resp="#xslt">تطوان</title> او <title change="#d10e163"
+               level="j" ref="NA" resp="#xslt">الأخبار</title>, <title level="j" ref="NA" resp="#xslt">الكتاب</title>.</p>
          </div>
          <div>
             <head>Organizations</head>
-            <p>Lorem <orgName>DE-12</orgName>  ipsum dolor sit amet consectetur adipiscing, elit eget nisl eleifend <orgName ref="isil:DE-830"/> lacus <orgName xml:lang="de">Heidelberg MPI Völkerrecht</orgName> nullam metus, malesuada pharetra justo accumsan arcu. Sem magna <orgName>AUB</orgName> duis suscipit mollis nullam diam habitasse habitant ipsum velit, <orgName>T.C. Başbakanlık – Osmanlı Arşıvı</orgName> tortor inceptos fermentum consequat potenti semper parturient litora hendrerit. Enim aenean auctor justo mi vel sagittis platea netus erat, dictum condimentum dolor varius lacus porta ultrices dignissim, est sociosqu cubilia etiam nullam curae orci ad.</p>
+            <p>Lorem <orgName>DE-12</orgName>  ipsum dolor sit amet consectetur adipiscing, elit eget nisl eleifend <orgName ref="isil:DE-830"/> lacus <orgName xml:lang="de"
+               >Heidelberg MPI Völkerrecht</orgName> nullam metus, malesuada pharetra justo accumsan arcu. Sem magna <orgName>AUB</orgName> duis suscipit mollis nullam diam habitasse habitant ipsum velit, <orgName>T.C. Başbakanlık – Osmanlı Arşıvı</orgName> tortor inceptos fermentum consequat potenti semper parturient litora hendrerit. Enim aenean auctor justo mi vel sagittis platea netus erat, dictum condimentum dolor varius lacus porta ultrices dignissim, est sociosqu cubilia etiam nullam curae orci ad.</p>
          </div>
       </body>
    </text>

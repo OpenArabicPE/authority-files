@@ -21,7 +21,7 @@
             <list>
                 <!--                <xsl:apply-templates select="descendant::tei:placeName" mode="m_debug"/>-->
                 <!--<xsl:apply-templates select="descendant::tei:title[@level = 'j']" mode="m_debug"/>-->
-                <xsl:apply-templates mode="m_debug" select="descendant::tei:list[1]/tei:item[1]"/>
+                <xsl:apply-templates mode="m_debug" select="descendant::tei:persName"/>
             </list>
         </xsl:copy>
     </xsl:template>
@@ -108,11 +108,14 @@
     <xsl:template match="tei:persName" mode="m_debug">
         <item>
             <ab>
+               <xsl:copy-of select="oape:query-personography(., $v_personography, $p_local-authority, 'name-tei', 'ar')"/>
+            </ab>
+            <!--<ab>
                 <xsl:copy-of select="oape:link-persname-to-authority-file(., $p_local-authority, $v_personography, false())"/>
             </ab>
             <ab>
                 <xsl:copy-of select="oape:query-personography(., $v_personography, $p_local-authority, 'id', '')"/>
-            </ab>
+            </ab>-->
         </item>
             
     </xsl:template>

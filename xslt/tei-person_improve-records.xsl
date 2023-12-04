@@ -9,13 +9,14 @@
     <!-- PROBLEM: 
         - nested listPerson are deleted
         - successive listPerson are deleted
+        - is this still the case (2023-10-21)
     -->
+
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     <xsl:include href="functions.xsl"/>
     <!-- variables for local IDs (OpenArabicPE) -->
     <xsl:variable name="v_local-id-count" select="count(//tei:person/tei:idno[@type = $p_local-authority])"/>
-    <xsl:variable name="v_local-id-highest"
-        select="
+    <xsl:variable name="v_local-id-highest" select="
             if ($v_local-id-count gt 0) then
                 (max(//tei:person/tei:idno[@type = $p_local-authority]))
             else
@@ -30,8 +31,8 @@
     <xsl:template match="tei:listPerson" name="t_2">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="tei:head" mode="m_identity-transform"/>
-            <xsl:apply-templates select="tei:person" mode="m_improve">
+            <xsl:apply-templates mode="m_identity-transform" select="tei:head"/>
+            <xsl:apply-templates mode="m_improve" select="tei:person">
                 <!-- this sort should consider the Arabic "al-" -->
                 <xsl:sort select="descendant::tei:surname[1]"/>
                 <xsl:sort select="descendant::tei:addName[@type = 'nisbah'][1]"/>
@@ -44,7 +45,7 @@
             <!-- listPerson -->
             <xsl:apply-templates select="tei:listPerson"/>
             <!-- other children? -->
-            <xsl:apply-templates select="node()[not( local-name() = ('head', 'person', 'listPerson'))]" mode="m_identity-transform"/>
+            <xsl:apply-templates mode="m_identity-transform" select="node()[not(local-name() = ('head', 'person', 'listPerson'))]"/>
         </xsl:copy>
     </xsl:template>
     <!--<!-\- improve tei:person records with VIAF references -\->
@@ -107,7 +108,7 @@
         </xsl:copy>
     </xsl:template>-->
     <!-- improve tei:person records without VIAF references -->
-    <xsl:template match="tei:person" priority="10" mode="m_improve">
+    <xsl:template match="tei:person" mode="m_improve" priority="10">
         <!-- ID -->
         <xsl:variable name="v_id">
             <xsl:choose>
@@ -120,6 +121,12 @@
             </xsl:choose>
         </xsl:variable>
         <xsl:variable name="v_xml-id" select="concat('person_', $v_id)"/>
+        <xsl:if test="$p_debug = true()">
+            <xsl:message>
+                <xsl:text>Processing @xml:id </xsl:text>
+                <xsl:value-of select="@xml:id"/>
+            </xsl:message>
+        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- new @xml:id  -->
@@ -154,8 +161,7 @@
                 <!-- prevent duplicates of noAddName -->
                 <xsl:choose>
                     <xsl:when test="parent::tei:person/tei:persName[not(@type)] = $v_no-addName">
-                        <!--<xsl:message><xsl:value-of select="concat('&quot;', $v_no-addName, '&quot; is already present')"/></xsl:message>-->
-                    </xsl:when>
+                        <!--<xsl:message><xsl:value-of select="concat('&quot;', $v_no-addName, '&quot; is already present')"/></xsl:message>--> </xsl:when>
                     <!-- as I am stripping out roleNames, the additional names shoule not be triggered without roleNames being present -->
                     <xsl:when test="not(descendant::tei:roleName) and not(tei:nameLink)"/>
                     <xsl:when test="$v_no-addName != ''">
@@ -166,7 +172,7 @@
                 </xsl:choose>
             </xsl:for-each-group>
             <!-- replicate all existing children other than persName -->
-            <xsl:apply-templates select="node()[not(self::tei:persName)]"/>
+            <xsl:apply-templates select="node()[not(self::tei:persName | self::tei:occupation[@resp = '#xslt'])]"/>
             <!-- add data -->
             <!-- our own ID -->
             <xsl:if test="not(tei:idno[@type = $p_local-authority])">
@@ -186,6 +192,42 @@
                     </xsl:if>
                 </xsl:for-each-group>
             </xsl:if>
+            <!-- test for occupation -->
+            <!-- note that this can be extremely expensive to compute -->
+            <!-- test each periodical -->
+            <!-- the XPath selector assumes that all persons in the bibliography have been linked to the personography -->
+            <xsl:for-each select="$v_bibliography//tei:biblStruct[@type = 'periodical'][descendant::tei:persName[contains(@ref, concat($p_local-authority, ':pers:', $v_id))]]">
+                <xsl:variable name="v_bibl" select="."/>
+                <xsl:if test="$p_debug = true()">
+                    <xsl:message>
+                        <xsl:text>Test periodical (</xsl:text>
+                        <xsl:value-of select="oape:query-biblstruct($v_bibl, 'tei-ref', '', '', $p_local-authority)"/>
+                        <xsl:text>) for editorship</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+                <!-- test each mentioned person -->
+                <xsl:for-each select="tei:monogr//node()[tei:persName[@ref]]/tei:persName[@ref][1]">
+                    <!-- get local id -->
+                    <xsl:variable name="v_id-temp" select="oape:query-personography(., $v_personography, $p_local-authority, 'id-local', '')"/>
+                    <!-- if the IDs are the same, we can write a new occupation note -->
+                    <xsl:if test="$v_id = $v_id-temp">
+                        <xsl:if test="$p_debug = true()">
+                            <xsl:message>
+                                <xsl:text>Found person </xsl:text>
+                                <xsl:value-of select="$v_id"/>
+                                <xsl:text> in the bibliography. Creating a new occupation node.</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
+                        <xsl:element name="occupation">
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                            <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <xsl:attribute name="xml:lang" select="'en'"/>
+                            <xsl:text>Editor of </xsl:text>
+                            <xsl:copy-of select="oape:query-biblstruct($v_bibl, 'title-tei', 'ar', '', $p_local-authority)"/>
+                        </xsl:element>
+                    </xsl:if>
+                </xsl:for-each>
+            </xsl:for-each>
             <!-- VIAF data -->
             <xsl:if test="oape:query-person(., 'id-viaf', '', '') != 'NA'">
                 <xsl:variable name="v_viaf-id" select="oape:query-person(., 'id-viaf', '', '')"/>
@@ -251,10 +293,22 @@
             <xsl:apply-templates select="@*"/>
             <xsl:element name="tei:change">
                 <xsl:attribute name="when" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
-                <xsl:attribute name="who" select="concat('#',$p_id-editor)"/>
+                <xsl:attribute name="who" select="concat('#', $p_id-editor)"/>
                 <xsl:attribute name="xml:id" select="$p_id-change"/>
                 <xsl:attribute name="xml:lang" select="'en'"/>
-                <xsl:text>Improved </xsl:text><tei:gi>person</tei:gi><xsl:text> nodes with </xsl:text><tei:tag>persName type="noAddName"</tei:tag><xsl:text> and </xsl:text><tei:tag>persName type="flattened"</tei:tag><xsl:text> children and by querying VIAF for those with VIAF IDs, adding </xsl:text><tei:gi>birth</tei:gi><xsl:text>, </xsl:text><tei:gi>death</tei:gi><xsl:text>, and </xsl:text><tei:gi>idno</tei:gi><xsl:text>.</xsl:text>
+                <xsl:text>Improved </xsl:text>
+                <tei:gi>person</tei:gi>
+                <xsl:text> nodes with </xsl:text>
+                <tei:tag>persName type="noAddName"</tei:tag>
+                <xsl:text> and </xsl:text>
+                <tei:tag>persName type="flattened"</tei:tag>
+                <xsl:text> children and by querying VIAF for those with VIAF IDs, adding </xsl:text>
+                <tei:gi>birth</tei:gi>
+                <xsl:text>, </xsl:text>
+                <tei:gi>death</tei:gi>
+                <xsl:text>, and </xsl:text>
+                <tei:gi>idno</tei:gi>
+                <xsl:text>.</xsl:text>
             </xsl:element>
             <xsl:apply-templates select="node()"/>
         </xsl:copy>
