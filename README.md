@@ -345,6 +345,7 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                 <orgName ref="jaraid:org:hDMW oape:org:28" xml:lang="und-Latn">DMW</orgName> 
             </label>: 1877-1930s (with gaps),
         </item>
+        <!-- some structured information BUT room for improvement -->
         <item source="https://projectjaraid.github.io"> 
             <label> 
                 <placeName ref="geon:281184 oape:place:6">Jerusalem</placeName>, 
@@ -354,6 +355,14 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                 <bibl>: <idno ctype="url">https://jrayed.org/en/newspapers/annafir</idno>1911, 1920-1932 </bibl>
             </listBibl> 
         </item>
+        <item source="https://projectjaraid.github.io"> 
+            <label> 
+                <placeName ref="geon:281184 oape:place:6">Jerusalem</placeName>, 
+                <orgName ref="jaraid:org:hEAP119 oape:org:63" resp="#pTG" xml:lang="und-Latn">Aqṣā</orgName> 
+            </label>
+            <!-- missing listBibl wrapper -->
+            <bibl> <date type="onset" when="1933">1933</date>-<date type="terminus" when="1936"
+                  >1936</date> <ref target="https://eap.bl.uk/collection/EAP119-1-23" xml:lang="und-Latn">EAP119/1/23</ref> </bibl> </item>
         <!-- ZDB data -->
         <item source="https://ld.zdb-services.de/resource/534650-2"> 
             <label> 
