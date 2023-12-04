@@ -15,6 +15,14 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    <xsl:template match="tei:item[ancestor::tei:note/@type = 'holdings']/tei:bibl">
+        <xsl:element name="listBibl">
+            <xsl:attribute name="source" select="ancestor::node()[@source][1]/@source"/>
+            <xsl:copy>
+                <xsl:apply-templates select="@* | node()"/>
+            </xsl:copy>
+        </xsl:element>
+    </xsl:template>
     <xsl:template match="tei:note[@type = 'holdings']/tei:list/tei:item[tei:label][tei:ref]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
