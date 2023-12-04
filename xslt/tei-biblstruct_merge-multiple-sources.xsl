@@ -21,6 +21,7 @@
             - therefore such biblStruct are not included in the merging process
        - sorting of idno
            - the content is alphanumeric but pure numbers should be sorted as such, i.e. 90 before 100
+      - pubPlaces without placeName/@ref are omitted
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
@@ -608,10 +609,10 @@
         </xsl:variable>
         <!-- copy unique attributes -->
         <xsl:for-each select="$p_source/@*[not(contains($v_target-attr, name()))]">
-            <xsl:apply-templates mode="m_identity-transform" select="."/>
+            <xsl:apply-templates mode="m_merge" select="."/>
         </xsl:for-each>
         <xsl:for-each select="$p_target/@*[not(contains($v_source-attr, name()))]">
-            <xsl:apply-templates mode="m_identity-transform" select="."/>
+            <xsl:apply-templates mode="m_merge" select="."/>
         </xsl:for-each>
         <!-- merge attributes present on both source and target -->
         <xsl:for-each select="$p_target/@*[contains($v_source-attr, name())]">
@@ -626,6 +627,10 @@
             </xsl:attribute>
         </xsl:for-each>
     </xsl:function>
+    <!-- omit attributes:
+        - @xml:lang on some nodes that should not have any textual content 
+    -->
+    <xsl:template match="@change | tei:title/@ref | tei:biblStruct/@xml:lang | tei:monogr/@xml:lang | tei:imprint/@xml:lang" mode="m_merge"/>
     <!-- add <biblStruct> from source not currently available in the target -->
     <xsl:template match="tei:standOff" mode="m_merge">
         <xsl:copy>
@@ -637,9 +642,9 @@
                     <xsl:text>Entries from </xsl:text>
                     <xsl:value-of select="$v_name-file"/>
                 </xsl:element>
-                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>
+<!--                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>-->
                 <!-- this condition will leas to many false positives -->
-<!--                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref = 'NA'][not(tei:monogr/tei:title/@ref != 'NA')]"/>-->
+                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title[@ref = 'NA'][not(parent::tei:monogr/tei:title/@ref != 'NA')]]"/>
             </xsl:element>
         </xsl:copy>
     </xsl:template>
