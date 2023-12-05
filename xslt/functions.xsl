@@ -2588,7 +2588,8 @@
                 </xsl:choose>
             </xsl:if>
         </xsl:variable>
-        <xsl:variable name="v_margin" select="1"/>
+        <!-- legitimate difference between years of publication -->
+        <xsl:variable name="v_margin" select="2"/>
         <!-- select a year, the reference to be linked was made in -->
         <!-- somehow this does not return the correct dates -->
         <xsl:variable name="v_year-publication">
@@ -2596,7 +2597,10 @@
                 <!-- check if the input bibl has a date -->
                 <xsl:when test="$v_biblStruct//tei:imprint/tei:date[@when | @notAfter | @notBefore]">
                     <xsl:if test="$p_debug = true()">
-                        <xsl:message><xsl:text>Publication year: from reference </xsl:text><xsl:value-of select="oape:query-biblstruct($v_biblStruct, 'date', '', '', '')"/></xsl:message>
+                        <xsl:message>
+                            <xsl:text>Publication year: from reference </xsl:text>
+                            <xsl:value-of select="oape:query-biblstruct($v_biblStruct, 'date', '', '', '')"/>
+                        </xsl:message>
                     </xsl:if>
                     <xsl:value-of select="oape:date-year-only(oape:query-biblstruct($v_biblStruct, 'date-onset', '', '', ''))"/>
                 </xsl:when>
@@ -2627,24 +2631,25 @@
             </xsl:variable>
             <xsl:for-each select="$v_bibls-compiled/descendant-or-self::tei:biblStruct">
                 <xsl:variable name="v_corresponding-bibl-year" select="oape:date-year-only(oape:query-biblstruct(., 'date', '', '', ''))"/>
-                <xsl:message>
-                    <xsl:text>year of reference: </xsl:text>
-                    <xsl:value-of select="$v_year-publication"/>
-                    <xsl:text> | </xsl:text>
-                    <xsl:text>year in bibliography: </xsl:text>
-                    <xsl:value-of select="$v_corresponding-bibl-year"/>
-                </xsl:message>
                 <xsl:choose>
-                    <!-- remove all corresponding biblStructs that were published after the referencing source -->
-                    <xsl:when test="$v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA' and $v_corresponding-bibl-year &gt; ($v_year-publication + $v_margin)">
-                        <xsl:if test="$p_verbose = true()">
-                            <xsl:message>
-                                <xsl:text>Found a corresponding entry for </xsl:text>
-                                <xsl:value-of select="$v_title-string"/>
-                                <xsl:text> in the authority file, but it hadn't been published yet.</xsl:text>
-                            </xsl:message>
-                        </xsl:if>
+                    <!-- compare years of publication:
+                        1. assuming we have known dates of first publication for all bibls: dates should NOT DIFFER by more than x years
+                    -->
+                    <xsl:when test="($v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA') and (floor($v_year-publication - $v_corresponding-bibl-year) &gt; $v_margin)">
+                        <xsl:message>
+                            <xsl:text>WARNING: Found a corresponding entry for </xsl:text>
+                            <xsl:value-of select="$v_title-string"/>
+                            <xsl:text> in the authority file, but it hadn't been published yet; </xsl:text>
+                            <xsl:text>year of reference: </xsl:text>
+                            <xsl:value-of select="$v_year-publication"/>
+                            <xsl:text> | </xsl:text>
+                            <xsl:text>year in bibliography: </xsl:text>
+                            <xsl:value-of select="$v_corresponding-bibl-year"/>
+                        </xsl:message>
                     </xsl:when>
+                    <!-- compare years of publication:
+                        2. the reference to be linked CANNOT have been published BEFORE the source in the authority file
+                    -->
                     <!-- our authority files contain multiple <biblStruct> for a single logical publication in the case when editors, subtitles, places of publication etc. have changed. They are tied together by @next and @prev attributes
                            - we could establish which of those is in closes temporal proximity to the current text, the references occur in 
                            - we could compile these biblStruct into a single one.
