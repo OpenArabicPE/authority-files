@@ -123,14 +123,38 @@
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- the main language comes first -->
-            <xsl:apply-templates select="tei:title[@xml:lang = current()/tei:textLang/@mainLang]">
-                <xsl:sort select="@type"/>
-                <xsl:sort select="normalize-space(.)"/>
-            </xsl:apply-templates>
-            <xsl:apply-templates select="tei:title[@xml:lang != current()/tei:textLang/@mainLang]">
-                <xsl:sort select="@type"/>
-                <xsl:sort select="normalize-space(.)"/>
-            </xsl:apply-templates>
+            <xsl:variable name="v_lang">
+                <xsl:choose>
+                    <xsl:when test="tei:textLang/@mainLang">
+                        <xsl:value-of select="tei:textLang[1]/@mainLang"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:choose>
+                <xsl:when test="$v_lang != 'NA'">
+                    <xsl:apply-templates select="tei:title[@xml:lang = $v_lang]">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="normalize-space(.)"/>
+                    </xsl:apply-templates>
+                    <xsl:apply-templates select="tei:title[@xml:lang != $v_lang]">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="normalize-space(.)"/>
+                    </xsl:apply-templates>
+                    <xsl:apply-templates select="tei:title[not(@xml:lang)]">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="normalize-space(.)"/>
+                    </xsl:apply-templates>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="tei:title">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="normalize-space(.)"/>
+                    </xsl:apply-templates>
+                </xsl:otherwise>
+            </xsl:choose>
             <!-- check for <idno> -->
             <xsl:choose>
                 <xsl:when test="tei:idno">
@@ -149,7 +173,7 @@
             <xsl:apply-templates select="tei:respStmt"/>
             <xsl:apply-templates select="tei:imprint"/>
             <xsl:apply-templates select="tei:biblScope"/>
-<!--            <xsl:apply-templates select="child::node()[not(self::tei:title | self::tei:idno)]"/>-->
+            <!--            <xsl:apply-templates select="child::node()[not(self::tei:title | self::tei:idno)]"/>-->
         </xsl:copy>
     </xsl:template>
     <xsl:template match="tei:imprint">
