@@ -2609,7 +2609,8 @@
                     <xsl:value-of select="oape:date-year-only(oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', ''))"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="year-from-date(current-date())"/>
+                    <xsl:value-of select="'NA'"/>
+<!--                    <xsl:value-of select="year-from-date(current-date())"/>-->
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
