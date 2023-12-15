@@ -17,6 +17,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc xml:lang="en">
+            <tei:change when="2023-12-11" who="#pers_TG" xml:id="d10e75" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
             <tei:change when="2023-11-14" who="#pers_TG" xml:id="d10e65" xml:lang="en">Added references to local authority file (<tei:ref
                 target="/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/gazetteer_OpenArabicPE.TEIP5.xml"
                 >/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/gazetteer_OpenArabicPE.TEIP5.xml</tei:ref>) and to GeoNames IDs to <tei:gi>placeName</tei:gi>s without such references based on  <tei:gi>place</tei:gi>s mentioned in the authority file.</tei:change>
@@ -625,7 +626,7 @@
                 </location>
             </org>
             <org xml:id="hBDK">
-                <orgName>Beyazit Kütüphanesi</orgName>
+                <orgName xml:lang="tr">Beyazit Kütüphanesi</orgName>
                 <orgName type="jaraid">BDK</orgName>
                 <idno type="jaraid">hBDK</idno>
                 <idno type="oape">7</idno>
@@ -644,15 +645,6 @@
                 </location>
                 <note>. Some holdings are currently in the process of digitization and are made availabe through the <ref target="http://dar.bibalex.org/webpages/advancedsearch.jsf"
                     xml:lang="und-Latn">Digital Assets Repository</ref>.</note>
-            </org>
-            <org xml:id="hBOSJ">
-                <orgName xml:lang="fr">Bibliothèque Orientale, Université de Saint Joseph</orgName>
-                <orgName type="jaraid">BOSJ</orgName>
-                <idno type="jaraid">hBOSJ</idno>
-                <idno type="oape">10</idno>
-                <location>
-                    <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
-                </location>
             </org>
             <org xml:id="hINA">
                 <orgName>Bibliothèque interuniversitaire des langues orientales, INALCO (Institut National des Langues et Civilisations Orientales, Paris)</orgName>
@@ -3553,6 +3545,50 @@
                     <placeName ref="geon:2528910 jaraid:place:103 oape:place:473">Tetouan</placeName>
                 </location>
             </org>
+            <listOrg>
+                <org xml:id="hBOSJ">
+                    <orgName xml:lang="fr">Bibliothèque Orientale, Université de Saint Joseph</orgName>
+                    <orgName type="jaraid">BOSJ</orgName>
+                    <orgName type="short">BO</orgName>
+                    <idno type="jaraid">hBOSJ</idno>
+                    <idno type="oape">10</idno>
+                    <location>
+                        <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+                    </location>
+                </org>
+                <org>
+                    <orgName xml:lang="fr">Bibliothèque des Sciences Humaines, Université de Saint Joseph</orgName>
+                    <orgName type="short">BSH</orgName>
+                    <idno type="oape">568</idno>
+                    <location>
+                        <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+                    </location>
+                </org>
+                <org>
+                    <orgName xml:lang="fr">Bibliothèque des Sciences Religieuses, Université de Saint Joseph</orgName>
+                    <orgName type="short">BSR</orgName>
+                    <idno type="oape">569</idno>
+                    <location>
+                        <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+                    </location>
+                </org>
+                <org>
+                    <orgName xml:lang="fr">Bibliothèque des Sciences Sociales, Université de Saint Joseph</orgName>
+                    <orgName type="short">BSS</orgName>
+                    <idno type="oape">570</idno>
+                    <location>
+                        <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+                    </location>
+                </org>
+                <org>
+                    <orgName xml:lang="fr">Université de Saint Joseph</orgName>
+                    <orgName type="short">USJ</orgName>
+                    <idno type="oape">571</idno>
+                    <location>
+                        <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+                    </location>
+                </org>
+            </listOrg>
         </listOrg>
         <listOrg>
             <head>Publishers of periodicals</head>
