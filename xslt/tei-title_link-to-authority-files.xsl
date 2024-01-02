@@ -25,7 +25,6 @@
     
     <!-- NOTE/ to do:
         - serialised bibls are compiled BUT only for the first part. All other parts are discarded upon compilation.
-        - matching by OCLC needs to be improved and check ALL OCLC IDs available in the authority file
     -->
     <!-- BUGs:
         - $p_ignore-existing-refs = true() causes an error, which I have not yet managed to track down, as this param is used in only 3 locations

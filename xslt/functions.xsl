@@ -2610,7 +2610,7 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="'NA'"/>
-<!--                    <xsl:value-of select="year-from-date(current-date())"/>-->
+                    <!--                    <xsl:value-of select="year-from-date(current-date())"/>-->
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -2664,6 +2664,10 @@
         </xsl:variable>
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
+                <!-- match based on IDs from authority files -->
+                <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'OCLC'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'OCLC']">
+                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'OCLC'] = $v_biblStruct/descendant::tei:idno[@type = 'OCLC']][1]"/>
+                </xsl:when>
                 <!-- test if there is a potential match -->
                 <xsl:when test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
                     <xsl:message>
@@ -2739,7 +2743,7 @@
                     <!-- try to use further match criteria -->
                     <xsl:choose>
                         <!-- 1. negative hits: excluding criteria -->
-                        <!-- differne places of publication -->
+                        <!-- different places of publication -->
                         <!-- This currently generates a lot of false negatives due to the construction of $v_place-publication, which pulls in the publication place of the primary source as  -->
                         <xsl:when
                             test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and $v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) != $v_place-publication]">
