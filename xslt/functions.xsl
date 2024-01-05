@@ -1457,11 +1457,11 @@
                             <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')][1]"/>
                         </xsl:when>
                         <!-- fallback to english -->
-                        <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = 'en']">
-                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = 'en'][1]"/>
+                        <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = ('en', 'fr')]">
+                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = ('en', 'fr')][1]"/>
                         </xsl:when>
-                        <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en']">
-                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en'][1]"/>
+                        <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = ('en', 'fr')]">
+                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = ('en', 'fr')][1]"/>
                         </xsl:when>
                         <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')]">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')][1]"/>
