@@ -384,7 +384,7 @@
                                 <xsl:message>
                                     <xsl:text>The persName </xsl:text>
                                     <xsl:value-of select="$p_entity-name"/>
-                                    <xsl:text>was not found in the authority file</xsl:text>
+                                    <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- quick debugging -->
                                 <!--<xsl:message><xsl:copy-of select="$v_name-marked-up"/><xsl:copy-of select="$v_name-no-addnames"/></xsl:message>-->
