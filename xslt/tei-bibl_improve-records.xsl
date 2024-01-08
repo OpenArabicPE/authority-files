@@ -23,12 +23,6 @@
     </xsl:template>
     <!-- alphabetically sort children of <listBibl> by <title> -->
     <xsl:template match="tei:listBibl[tei:biblStruct]">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_2: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:head"/>
@@ -160,7 +154,7 @@
                 <xsl:when test="tei:idno">
                     <xsl:apply-templates select="tei:idno">
                         <xsl:sort select="@type"/>
-                        <xsl:sort select="."/>
+                        <xsl:sort select="replace(., '[^\d]', '')" data-type="number"/>
                     </xsl:apply-templates>
                 </xsl:when>
                 <xsl:otherwise>

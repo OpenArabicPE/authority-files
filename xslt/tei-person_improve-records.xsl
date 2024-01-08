@@ -40,7 +40,7 @@
                 <xsl:sort select="descendant::tei:addName[@type = 'noAddName'][not(. = '')][1]"/>
                 <xsl:sort select="descendant::tei:addName[@type = 'flattened'][1]"/>
                 <xsl:sort select="tei:persName[1]"/>
-                <xsl:sort order="ascending" select="tei:idno[@type = 'VIAF'][1]"/>
+                <xsl:sort order="ascending" select="tei:idno[@type = 'VIAF'][1]" data-type="number"/>
             </xsl:apply-templates>
             <!-- listPerson -->
             <xsl:apply-templates select="tei:listPerson"/>
