@@ -17,6 +17,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc xml:lang="en">
+            <tei:change when="2024-01-25" who="#pers_TG" xml:id="d11e80" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
             <tei:change when="2023-12-11" who="#pers_TG" xml:id="d10e75" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
             <tei:change when="2023-11-14" who="#pers_TG" xml:id="d10e65" xml:lang="en">Added references to local authority file (<tei:ref
                 target="/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/gazetteer_OpenArabicPE.TEIP5.xml"
@@ -918,25 +919,6 @@
                     </address>
                 </location>
             </org>
-            <org xml:id="hDUR">
-                <orgName>Durham University Library</orgName>
-                <orgName type="jaraid">Dur</orgName>
-                <idno type="jaraid">hDUR</idno>
-                <idno type="oape">23</idno>
-                <location>
-                    <placeName ref="geon:4464368 oape:place:721">Durham</placeName>
-                    <country>United Kingdom</country>
-                </location>
-            </org>
-            <org xml:id="hDMW">
-                <orgName>Dāʾirat al-Maktaba al-Waṭaniyya, al-Urdun (Administration of National Library, Jordan)</orgName>
-                <orgName type="jaraid">DMW</orgName>
-                <idno type="jaraid">hDMW</idno>
-                <idno type="oape">28</idno>
-                <location>
-                    <placeName ref="geon:250441 jaraid:place:73 oape:place:508">Amman</placeName>
-                </location>
-            </org>
             <org source="https://ld.zdb-services.de/resource/organisations/DE-824">
                 <orgName type="short" xml:lang="de">Eichstätt UB</orgName>
                 <orgName xml:lang="de">Universitätsbibliothek Eichstätt-Ingolstadt</orgName>
@@ -1151,7 +1133,7 @@
                 </location>
             </org>
             <org xml:id="hFUI">
-                <orgName>Freie Universität Berlin, Library of the Institut für Islamwissenschaft</orgName>
+                <orgName xml:lang="de">Freie Universität Berlin, Library of the Institut für Islamwissenschaft</orgName>
                 <orgName type="jaraid">FUI</orgName>
                 <idno type="jaraid">hFUI</idno>
                 <idno type="oape">29</idno>
@@ -1160,7 +1142,7 @@
                 </location>
             </org>
             <org xml:id="hFUAS">
-                <orgName>Freie Universität Berlin, Library of the Seminar für Semitistik und Arabistik</orgName>
+                <orgName xml:lang="de">Freie Universität Berlin, Library of the Seminar für Semitistik und Arabistik</orgName>
                 <orgName type="jaraid">FUAS</orgName>
                 <idno type="jaraid">hFUAS</idno>
                 <idno type="oape">30</idno>
@@ -1236,20 +1218,9 @@
                     </address>
                 </location>
             </org>
-            <org xml:id="hHTU">
-                <orgName>Hakkı Tarık Us Collection of Beyazit State Library, Istanbul</orgName>
-                <orgName type="jaraid">HTU</orgName>
-                <idno type="jaraid">hHTU</idno>
-                <idno type="oape">31</idno>
-                <location>
-                    <placeName ref="geon:745044 jaraid:place:9 oape:place:3">Istanbul</placeName>
-                </location>
-                <note>. The collection of periodicals was digitized by the Beyazit State Library and the Tokyo University of Foreign Studies and is available <ref
-                    target="http://www.tufs.ac.jp/common/fs/asw/tur/htu/" xml:lang="und-Latn">online</ref>.</note>
-            </org>
             <org source="https://ld.zdb-services.de/resource/organisations/DE-Ha33">
                 <orgName type="short">Halle/S Franck. Stiftungen</orgName>
-                <orgName>Franckesche Stiftungen, Studienzentrum August Hermann Francke, Archiv und Bibliothek</orgName>
+                <orgName xml:lang="de">Franckesche Stiftungen, Studienzentrum August Hermann Francke, Archiv und Bibliothek</orgName>
                 <idno type="ISIL">DE-Ha33</idno>
                 <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Ha33</idno>
                 <idno type="oape">393</idno>
@@ -3235,14 +3206,82 @@
                     <placeName ref="geon:745044 jaraid:place:9 oape:place:3">Istanbul</placeName>
                 </location>
             </org>
+            <org>
+                <orgName xml:lang="en">Aberystwyth University Library</orgName>
+                <idno type="UkMaC">abr</idno>
+                <idno type="isil">GB-WlAbUW</idno>
+                <idno type="oape">573</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Aga Khan Library, London</orgName>
+                <idno type="UkMaC">iis</idno>
+                <idno type="isil">GB-UkLoJL</idno>
+                <idno type="oape">574</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Anglia Ruskin University Library</orgName>
+                <idno type="UkMaC">aru</idno>
+                <idno type="isil">GB-UkChARU</idno>
+                <idno type="oape">575</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Bangor University Library</orgName>
+                <idno type="UkMaC">ban</idno>
+                <idno type="isil">GB-WlBaU</idno>
+                <idno type="oape">576</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Birmingham City University</orgName>
+                <idno type="UkMaC">bcu</idno>
+                <idno type="isil">GB-UK-BiUCE</idno>
+                <idno type="oape">577</idno>
+            </org>
             <org xml:id="hBL">
                 <orgName xml:lang="en">British Library</orgName>
                 <orgName type="abbr">BL</orgName>
                 <idno type="jaraid">hBL</idno>
                 <idno type="oape">15</idno>
+                <idno type="UkMaC">bli</idno>
+                <idno type="isil">GB-Uk</idno>
                 <location>
                     <placeName ref="geon:2643743 oape:place:331">London</placeName>
                 </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">British Museum Library</orgName>
+                <idno type="UkMaC">brm</idno>
+                <idno type="isil">GB-UkLoBM</idno>
+                <idno type="oape">578</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">British School at Athens</orgName>
+                <idno type="UkMaC">bsa</idno>
+                <idno type="isil">GB-GR-AtBSA</idno>
+                <idno type="oape">579</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">British School at Rome Library and Archive</orgName>
+                <idno type="UkMaC">bsr</idno>
+                <idno type="isil">GB-IT-RoBS</idno>
+                <idno type="oape">580</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Brunel University London Library</orgName>
+                <idno type="UkMaC">bru</idno>
+                <idno type="isil">GB-UkUbBU</idno>
+                <idno type="oape">581</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Cardiff Metropolitan University</orgName>
+                <idno type="UkMaC">cmu</idno>
+                <idno type="isil">GB-WL-CaUWI</idno>
+                <idno type="oape">582</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Cardiff University Libraries</orgName>
+                <idno type="UkMaC">cdf</idno>
+                <idno type="isil">GB-WlCaUW</idno>
+                <idno type="oape">583</idno>
             </org>
             <org xml:id="hCRL">
                 <orgName xml:lang="en">Center for Research Libraries</orgName>
@@ -3251,6 +3290,12 @@
                 <idno type="oape">16</idno>
                 <note>. Provides access to inter-library loan of microfilms as well as digital collections. Access to the <ref target="http://catalog.crl.edu/search~S3" xml:lang="und-Latn"
                     >collection</ref> is restricted to member institutions.</note>
+            </org>
+            <org>
+                <orgName xml:lang="en">City, University of London</orgName>
+                <idno type="UkMaC">cul</idno>
+                <idno type="isil">GB-UkLoCU</idno>
+                <idno type="oape">584</idno>
             </org>
             <org xml:id="hCOL">
                 <orgName xml:lang="en">Columbia University Library</orgName>
@@ -3280,6 +3325,18 @@
                 <idno type="jaraid">hCORN</idno>
                 <idno type="oape">20</idno>
             </org>
+            <org>
+                <orgName xml:lang="en">Coventry University</orgName>
+                <idno type="UkMaC">cvn</idno>
+                <idno type="isil">GB-UkCvUL</idno>
+                <idno type="oape">585</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Directory of Open Access Journals</orgName>
+                <idno type="UkMaC">doaj</idno>
+                <idno type="isil">GB-X-DOAJ</idno>
+                <idno type="oape">586</idno>
+            </org>
             <org xml:id="hDUL">
                 <orgName xml:lang="en">Duke University Library</orgName>
                 <orgName type="jaraid">DUL</orgName>
@@ -3288,6 +3345,66 @@
                 <location>
                     <placeName ref="geon:4464368 oape:place:721">Durham, NC</placeName>
                 </location>
+            </org>
+            <org xml:id="hDUR">
+                <orgName xml:lang="en">Durham University Library</orgName>
+                <orgName xml:lang="en">Durham University Library and Collections</orgName>
+                <orgName type="jaraid">Dur</orgName>
+                <idno type="jaraid">hDUR</idno>
+                <idno type="oape">23</idno>
+                <idno type="UkMaC">dur</idno>
+                <idno type="isil">GB-UkDhU</idno>
+                <location>
+                    <placeName ref="geon:4464368 oape:place:721">Durham</placeName>
+                    <country>United Kingdom</country>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">Edinburgh Napier University</orgName>
+                <idno type="UkMaC">nap</idno>
+                <idno type="isil">GB-StEdNU</idno>
+                <idno type="oape">587</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Glasgow Caledonian University</orgName>
+                <idno type="UkMaC">gcu</idno>
+                <idno type="isil">GB-StGlGCU</idno>
+                <idno type="oape">588</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Glasgow School of Art Library</orgName>
+                <idno type="UkMaC">gsa</idno>
+                <idno type="isil">GB-StGlSA</idno>
+                <idno type="oape">589</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Goldsmiths, University of London</orgName>
+                <idno type="UkMaC">gds</idno>
+                <idno type="isil">GB-UkLoUGC</idno>
+                <idno type="oape">590</idno>
+            </org>
+            <org xml:id="hHTU">
+                <orgName xml:lang="en">Hakkı Tarık Us Collection of Beyazit State Library, Istanbul</orgName>
+                <orgName type="jaraid">HTU</orgName>
+                <idno type="jaraid">hHTU</idno>
+                <idno type="oape">31</idno>
+                <location>
+                    <placeName ref="geon:745044 jaraid:place:9 oape:place:3">Istanbul</placeName>
+                </location>
+                <note>. The collection of periodicals was digitized by the Beyazit State Library and the Tokyo University of Foreign Studies and is available <ref
+                    target="http://www.tufs.ac.jp/common/fs/asw/tur/htu/" xml:lang="und-Latn">online</ref>.</note>
+            </org>
+            <org>
+                <orgName xml:lang="en">Hathi Trust Digital Library</orgName>
+                <idno type="UkMaC">hat</idno>
+                <idno type="isil">GB-MiAaHDL</idno>
+                <idno type="oape">591</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Historical Texts</orgName>
+                <idno type="UkMaC">jht</idno>
+                <idno type="isil">GB-UkMaJCHT</idno>
+                <idno type="oape">592</idno>
             </org>
             <org xml:id="hUSEK">
                 <orgName xml:lang="fr">Université Saint-Esprit de Kaslik</orgName>
@@ -3307,6 +3424,12 @@
                 <location>
                     <placeName ref="geon:5037649 jaraid:place:135 oape:place:542">Minneapolis</placeName>
                 </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">Imperial College London Library</orgName>
+                <idno type="UkMaC">imp</idno>
+                <idno type="isil">GB-UK-LoICS</idno>
+                <idno type="oape">593</idno>
             </org>
             <org xml:id="hIO">
                 <orgName xml:lang="en">India Office Library</orgName>
@@ -3330,6 +3453,104 @@
                     </address>
                 </location>
             </org>
+            <org>
+                <orgName xml:lang="en">Institute of Advanced Legal Studies Library</orgName>
+                <orgName xml:lang="en">Senate House Library, University of London</orgName>
+                <idno type="UkMaC">ials</idno>
+                <idno type="UkMaC">lon</idno>
+                <idno type="isil">GB-UkLU</idno>
+                <idno type="oape">594</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Institute of Classical Studies Library</orgName>
+                <idno type="UkMaC">iklas</idno>
+                <idno type="isil">GB-UkLU</idno>
+                <idno type="oape">595</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Institute of Naval Medicine</orgName>
+                <idno type="UkMaC">inm</idno>
+                <idno type="isil">GB-UkGpHCL</idno>
+                <idno type="oape">596</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Keele University</orgName>
+                <idno type="UkMaC">kee</idno>
+                <idno type="isil">GB-UkKlU</idno>
+                <idno type="oape">597</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">King's College London Libraries &amp; Collections</orgName>
+                <idno type="UkMaC">kcl</idno>
+                <idno type="isil">GB-UkLU-K</idno>
+                <idno type="oape">598</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Kingston University Library</orgName>
+                <idno type="UkMaC">kgu</idno>
+                <idno type="isil">GB-UK-KuKUL</idno>
+                <idno type="oape">599</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">LSE Library</orgName>
+                <idno type="UkMaC">lse</idno>
+                <idno type="isil">GB-UkLSE</idno>
+                <idno type="oape">600</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Lancaster University</orgName>
+                <idno type="UkMaC">lan</idno>
+                <idno type="isil">GB-UkLaUL</idno>
+                <idno type="oape">601</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Leeds Libraries</orgName>
+                <idno type="UkMaC">lpl</idno>
+                <idno type="isil">GB-UkLe</idno>
+                <idno type="oape">602</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Liverpool John Moores University</orgName>
+                <idno type="UkMaC">ljmu</idno>
+                <idno type="isil">GB-UkLiJM</idno>
+                <idno type="oape">603</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">London School of Hygiene and Tropical Medicine</orgName>
+                <idno type="UkMaC">lsh</idno>
+                <idno type="isil">GB-UkLoHTM</idno>
+                <idno type="oape">604</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Manchester Metropolitan University</orgName>
+                <idno type="UkMaC">mmu</idno>
+                <idno type="isil">GB-UK-MaMUL</idno>
+                <idno type="oape">605</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">National Library of Scotland</orgName>
+                <idno type="UkMaC">nls</idno>
+                <idno type="isil">GB-StEdNL</idno>
+                <idno type="oape">606</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">National Library of Wales / Llyfrgell Genedlaethol Cymru</orgName>
+                <idno type="UkMaC">nlw</idno>
+                <idno type="isil">GB-WlAbNL</idno>
+                <idno type="oape">607</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">National Museums Scotland Library</orgName>
+                <idno type="UkMaC">nms</idno>
+                <idno type="isil">GB-StEdNML</idno>
+                <idno type="oape">608</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Natural History Museum Library</orgName>
+                <idno type="UkMaC">nhm</idno>
+                <idno type="isil">GB-UKLoNHM</idno>
+                <idno type="oape">609</idno>
+            </org>
             <org xml:id="hNYPL">
                 <orgName xml:lang="en">New York Public Library</orgName>
                 <orgName>Public Library of New York</orgName>
@@ -3346,6 +3567,18 @@
                         <country>United States of America</country>
                     </address>
                 </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">Newcastle University Libraries</orgName>
+                <idno type="UkMaC">ncl</idno>
+                <idno type="isil">GB-UkNcU</idno>
+                <idno type="oape">610</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Northumbria University Library</orgName>
+                <idno type="UkMaC">nbr</idno>
+                <idno type="isil">GB-UK-NcNUL</idno>
+                <idno type="oape">611</idno>
             </org>
             <org>
                 <orgName xml:lang="en">Northwestern University</orgName>
@@ -3375,6 +3608,18 @@
                 </location>
             </org>
             <org>
+                <orgName xml:lang="en">Open University Library</orgName>
+                <idno type="UkMaC">opn</idno>
+                <idno type="isil">GB-UkMkOU</idno>
+                <idno type="oape">612</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Oxford Brookes University</orgName>
+                <idno type="UkMaC">oxb</idno>
+                <idno type="isil">GB-UK-OxBU</idno>
+                <idno type="oape">613</idno>
+            </org>
+            <org>
                 <orgName xml:lang="en">Pennsylvania State University, Pattee Library</orgName>
                 <orgName xml:lang="en">Penn State</orgName>
                 <idno type="isil">US-pst</idno>
@@ -3386,6 +3631,140 @@
                         <country>United States of America</country>
                     </address>
                 </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">Queen Mary University of London Library</orgName>
+                <idno type="UkMaC">qmu</idno>
+                <idno type="isil">GB-UkLoUQM</idno>
+                <idno type="oape">614</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Queen's University Belfast</orgName>
+                <idno type="UkMaC">qub</idno>
+                <idno type="isil">GB-NiBfQU</idno>
+                <idno type="oape">615</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Robert Gordon University</orgName>
+                <idno type="UkMaC">rgu</idno>
+                <idno type="isil">GB-StAbRGU</idno>
+                <idno type="oape">616</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Royal Asiatic Society</orgName>
+                <idno type="UkMaC">ras</idno>
+                <idno type="isil">GB-UkLoRAS</idno>
+                <idno type="oape">617</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Royal College of Surgeons of England Library</orgName>
+                <idno type="UkMaC">rcs</idno>
+                <idno type="isil">GB-UkLRCS</idno>
+                <idno type="oape">618</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Royal Holloway, University of London</orgName>
+                <idno type="UkMaC">rhl</idno>
+                <idno type="isil">GB-UkLoRHUL</idno>
+                <idno type="oape">619</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Royal Society of Medicine</orgName>
+                <idno type="UkMaC">rsm</idno>
+                <idno type="isil">GB-UkLRSM</idno>
+                <idno type="oape">620</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">SOAS Library, University of London</orgName>
+                <idno type="UkMaC">soa</idno>
+                <idno type="isil">GB-UkLSOA</idno>
+                <idno type="oape">621</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Senate House Library, University of London</orgName>
+                <orgName xml:lang="en">Warburg Institute Library</orgName>
+                <idno type="UkMaC">lon</idno>
+                <idno type="UkMaC">warb</idno>
+                <idno type="isil">GB-UkLU</idno>
+                <idno type="oape">622</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Sheffield Hallam University Library</orgName>
+                <idno type="UkMaC">shu</idno>
+                <idno type="isil">GB-UkShHaU</idno>
+                <idno type="oape">623</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Society of Antiquaries of London Library</orgName>
+                <idno type="UkMaC">sal</idno>
+                <idno type="isil">GB-UkSAL</idno>
+                <idno type="oape">624</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Solent University</orgName>
+                <idno type="UkMaC">sol</idno>
+                <idno type="isil">GB-UkSoSU</idno>
+                <idno type="oape">625</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">The Geological Society Library</orgName>
+                <idno type="UkMaC">geo</idno>
+                <idno type="isil">GB-UkLoGS</idno>
+                <idno type="oape">626</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">The Honourable Society of the Middle Temple Library</orgName>
+                <idno type="UkMaC">mdt</idno>
+                <idno type="isil">GB-UkLoMT</idno>
+                <idno type="oape">627</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">The London Library</orgName>
+                <idno type="UkMaC">lnl</idno>
+                <idno type="isil">GB-UkLoLIB</idno>
+                <idno type="oape">628</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Trinity College Dublin Library</orgName>
+                <idno type="UkMaC">tcd</idno>
+                <idno type="isil">GB-IeDuTC</idno>
+                <idno type="oape">629</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">UCL Library Services</orgName>
+                <idno type="UkMaC">ucl</idno>
+                <idno type="isil">GB-UkLUC</idno>
+                <idno type="oape">630</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Aberdeen Libraries</orgName>
+                <idno type="UkMaC">abn</idno>
+                <idno type="isil">GB-StAbUL</idno>
+                <idno type="oape">631</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Bath Library</orgName>
+                <idno type="UkMaC">bat</idno>
+                <idno type="isil">GB-UkBaUB</idno>
+                <idno type="oape">632</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Birmingham Libraries</orgName>
+                <idno type="UkMaC">bir</idno>
+                <idno type="isil">GB-UkBU</idno>
+                <idno type="oape">633</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Bradford</orgName>
+                <idno type="UkMaC">bra</idno>
+                <idno type="isil">GB-UkBfUB</idno>
+                <idno type="oape">634</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Bristol Libraries</orgName>
+                <idno type="UkMaC">bri</idno>
+                <idno type="isil">GB-UkBrU-I</idno>
+                <idno type="oape">635</idno>
             </org>
             <org>
                 <orgName xml:lang="en">University of California</orgName>
@@ -3402,6 +3781,66 @@
                     </list> </note>
             </org>
             <org>
+                <orgName xml:lang="en">University of Cambridge Libraries</orgName>
+                <idno type="UkMaC">cam</idno>
+                <idno type="isil">GB-UkCU</idno>
+                <idno type="oape">636</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Cambridge: Trinity College</orgName>
+                <idno type="UkMaC">tcc</idno>
+                <idno type="isil">GB-UkCU-TRI</idno>
+                <idno type="oape">637</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Dundee</orgName>
+                <idno type="UkMaC">dun</idno>
+                <idno type="isil">GB-StDnUD</idno>
+                <idno type="oape">638</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of East Anglia Library</orgName>
+                <idno type="UkMaC">uea</idno>
+                <idno type="isil">GB-UkNrUEA</idno>
+                <idno type="oape">639</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Edinburgh Libraries</orgName>
+                <idno type="UkMaC">edi</idno>
+                <idno type="isil">GB-StEdU</idno>
+                <idno type="oape">640</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Essex Library &amp; Cultural Services</orgName>
+                <idno type="UkMaC">esx</idno>
+                <idno type="isil">GB-UK-CoU</idno>
+                <idno type="oape">641</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Exeter Library</orgName>
+                <idno type="UkMaC">ext</idno>
+                <idno type="isil">GB-UkExUOL</idno>
+                <idno type="oape">642</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Glasgow Library</orgName>
+                <idno type="UkMaC">gla</idno>
+                <idno type="isil">GB-StGlU</idno>
+                <idno type="oape">643</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Huddersfield Library</orgName>
+                <idno type="UkMaC">hud</idno>
+                <idno type="isil">GB-UkHuU</idno>
+                <idno type="oape">644</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Hull</orgName>
+                <idno type="UkMaC">hll</idno>
+                <idno type="isil">GB-UkHlHU</idno>
+                <idno type="oape">645</idno>
+            </org>
+            <org>
                 <orgName xml:lang="en">University of Illinois</orgName>
                 <idno type="hathi">UIU</idno>
                 <idno type="oape">413</idno>
@@ -3414,6 +3853,43 @@
                 <note type="comments"> <list>
                     <item>The MARC Org code from HathiTrust does not return a hit from the official dereferencer.</item>
                     </list> </note>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Iowa</orgName>
+                <idno type="isil">US-iau</idno>
+                <idno type="hathi">IAU</idno>
+                <idno type="oape">572</idno>
+                <location>
+                    <address>
+                        <placeName>Iowa City</placeName>
+                        <postCode>Iowa 52240</postCode>
+                        <country>United States of America</country>
+                    </address>
+                </location>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Leeds Library</orgName>
+                <idno type="UkMaC">lee</idno>
+                <idno type="isil">GB-UkLeU</idno>
+                <idno type="oape">646</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Leicester Library</orgName>
+                <idno type="UkMaC">lei</idno>
+                <idno type="isil">GB-UK-LcUL</idno>
+                <idno type="oape">647</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Liverpool Library</orgName>
+                <idno type="UkMaC">liv</idno>
+                <idno type="isil">GB-UkLiU</idno>
+                <idno type="oape">648</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Manchester Library</orgName>
+                <idno type="UkMaC">man</idno>
+                <idno type="isil">GB-UkMaJRU</idno>
+                <idno type="oape">649</idno>
             </org>
             <org>
                 <orgName xml:lang="en">University of Michigan</orgName>
@@ -3448,6 +3924,78 @@
                     </list> </note>
             </org>
             <org>
+                <orgName xml:lang="en">University of Nottingham Libraries</orgName>
+                <idno type="UkMaC">ntm</idno>
+                <idno type="isil">GB-UkNtU</idno>
+                <idno type="oape">650</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Oxford Libraries</orgName>
+                <idno type="UkMaC">oxf</idno>
+                <idno type="isil">GB-UkOxU</idno>
+                <idno type="oape">651</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Plymouth Charles Seale-Hayne Library</orgName>
+                <idno type="UkMaC">ply</idno>
+                <idno type="isil">GB-UkPlUP</idno>
+                <idno type="oape">652</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Reading Library</orgName>
+                <idno type="UkMaC">rdg</idno>
+                <idno type="isil">GB-UkReU</idno>
+                <idno type="oape">653</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Salford Library</orgName>
+                <idno type="UkMaC">sfd</idno>
+                <idno type="isil">GB-UK-SaU</idno>
+                <idno type="oape">654</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Sheffield Library</orgName>
+                <idno type="UkMaC">she</idno>
+                <idno type="isil">GB-UkShU</idno>
+                <idno type="oape">655</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of South Wales</orgName>
+                <idno type="UkMaC">usw</idno>
+                <idno type="isil">GB-WlPoUSW</idno>
+                <idno type="oape">656</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Southampton Library</orgName>
+                <idno type="UkMaC">sth</idno>
+                <idno type="isil">GB-UK-SoUHL</idno>
+                <idno type="oape">657</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of St Andrews Library</orgName>
+                <idno type="UkMaC">sta</idno>
+                <idno type="isil">GB-StSaUL</idno>
+                <idno type="oape">658</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Strathclyde Library</orgName>
+                <idno type="UkMaC">scd</idno>
+                <idno type="isil">GB-StGlUS</idno>
+                <idno type="oape">659</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Surrey</orgName>
+                <idno type="UkMaC">sur</idno>
+                <idno type="isil">GB-UK-GuUSL</idno>
+                <idno type="oape">660</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Sussex Library</orgName>
+                <idno type="UkMaC">sus</idno>
+                <idno type="isil">GB-UK-BtUSL</idno>
+                <idno type="oape">661</idno>
+            </org>
+            <org>
                 <orgName xml:lang="en">University of Texas</orgName>
                 <idno type="isil">US-txu</idno>
                 <idno type="hathi">TXU</idno>
@@ -3475,6 +4023,60 @@
                 <note type="comments"> <list>
                     <item>The MARC Org code from HathiTrust does not return a hit from the official dereferencer.</item>
                     </list> </note>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Wales Trinity Saint David</orgName>
+                <idno type="UkMaC">tsd</idno>
+                <idno type="isil">GB-WlCmTSD</idno>
+                <idno type="oape">662</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Warwick Library</orgName>
+                <idno type="UkMaC">war</idno>
+                <idno type="isil">GB-UK-CovUW</idno>
+                <idno type="oape">663</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of Westminster</orgName>
+                <idno type="UkMaC">uwm</idno>
+                <idno type="isil">GB-UkLoUW</idno>
+                <idno type="oape">664</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of York Libraries</orgName>
+                <idno type="UkMaC">yrk</idno>
+                <idno type="isil">GB-UkYoU</idno>
+                <idno type="oape">665</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">University of the Arts, London</orgName>
+                <idno type="UkMaC">ual</idno>
+                <idno type="isil">GB-UK-LoUA</idno>
+                <idno type="oape">666</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Ushaw College</orgName>
+                <idno type="UkMaC">ushaw</idno>
+                <idno type="isil">GB-UkDhU</idno>
+                <idno type="oape">667</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Victoria and Albert Museum libraries</orgName>
+                <idno type="UkMaC">vam</idno>
+                <idno type="isil">GB-UkLNAL</idno>
+                <idno type="oape">668</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Warburg Institute Library</orgName>
+                <idno type="UkMaC">warb</idno>
+                <idno type="isil">GB-UkLU</idno>
+                <idno type="oape">669</idno>
+            </org>
+            <org>
+                <orgName xml:lang="en">Wellcome Library</orgName>
+                <idno type="UkMaC">wel</idno>
+                <idno type="isil">GB-UkLW</idno>
+                <idno type="oape">670</idno>
             </org>
             <org xml:id="hDM">
                 <orgName xml:lang="ar-Latn-x-ijmes">Dayr al-Mukhlis</orgName>
@@ -3512,6 +4114,17 @@
                 <idno type="oape">418</idno>
                 <location>
                     <placeName change="#d10e65" ref="geon:170654 jaraid:place:15 oape:place:61" resp="#xslt">Damascus</placeName>
+                </location>
+            </org>
+            <org xml:id="hDMW">
+                <orgName xml:lang="ar-Latn-x-ijmes">Dāʾirat al-Maktaba al-Waṭaniyya, al-Urdun</orgName>
+                <orgName xml:lang="en">Administration of the National Library, Jordan</orgName>
+                <orgName>Dāʾirat al-Maktaba al-Waṭaniyya, al-Urdun (Administration of National Library, Jordan)</orgName>
+                <orgName type="jaraid">DMW</orgName>
+                <idno type="jaraid">hDMW</idno>
+                <idno type="oape">28</idno>
+                <location>
+                    <placeName ref="geon:250441 jaraid:place:73 oape:place:508">Amman</placeName>
                 </location>
             </org>
             <org xml:id="hDKQ">
@@ -3589,18 +4202,6 @@
                     </location>
                 </org>
             </listOrg>
-            <org>
-                <orgName xml:lang="en">University of Iowa</orgName>
-                <idno type="isil">US-iau</idno>
-                <idno type="hathi">IAU</idno>
-                <location>
-                    <address>
-                        <placeName>Iowa City</placeName>
-                        <postCode>Iowa 52240</postCode>
-                        <country>United States of America</country>
-                    </address>
-                </location>
-            </org>
         </listOrg>
         <listOrg>
             <head>Publishers of periodicals</head>
