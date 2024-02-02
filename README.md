@@ -1,7 +1,8 @@
 ---
 title: "readme: OpenArabicPE/authority-files"
 author: Till Grallert
-date: 2022-02-04
+date: 2024-02-02
+lang: en
 ---
 
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -31,7 +32,7 @@ date: 2022-02-04
     + [@LaPresseMusulmane+1909, 106]
     + [@Campos+2008+TheVoiceOf, 245]
 - [ ] wrap content in `<publisher source="oape:org:73">` originating from AUB in a `<orgName>` element
-- [ ] The holding information from Jaraid needs to become more machine-actionable:
+- [ ] The holding information from Jaraid needs to become more machine-actionable. See below for details.
     + example 1
         * we have: `<ref resp="#pAM" target="https://gpa.eastview.com/crl/mena/newspapers/msbh" xml:lang="und-Latn">online 1899-1900</ref>` 
         * we want: `<bibl><date type="onset">1899</date>-<date type="terminus">1900</date></bibl>`
