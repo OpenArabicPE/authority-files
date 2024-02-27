@@ -240,9 +240,8 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
     + `@source`: pointing to a source for the different type of source
 
 ```xml
-
-<biblStruct xml:lang="ar">
-    <monogr xml:lang="ar">
+<biblStruct>
+    <monogr>
         <!-- titles in Arabic and transcription -->
         <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
         <title level="j" type="sub" xml:lang="ar">مجلة شهرية ادبية علمية تاريخية</title>
@@ -253,18 +252,18 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
         <idno type="jid" xml:lang="ar">14</idno>
         <idno type="OCLC">472450345</idno>
         <textLang mainLang="ar"/>
-        <editor xml:lang="ar">
+        <editor>
             <!-- persNames link back to the prosopography -->
             <!-- only one is needed. Additional names could be looked up automatically -->
             <persName ref="oape:pers:227 viaf:39370998" xml:lang="ar"> <roleName type="rank" xml:lang="ar">الأب</roleName> <forename xml:lang="ar">أنستاس</forename> <forename xml:lang="ar">ماري</forename> <surname xml:lang="ar"> <addName type="nisbah" xml:lang="ar">الكرملي</addName> </surname></persName>
             <persName xml:lang="ar-Latn-x-ijmes">al-Abb Anastās Mārī al-Karamlī</persName>
         </editor>
-        <editor xml:lang="ar">
+        <editor>
             <persName change="#d3e53" ref="oape:pers:396" xml:id="persName_195.d1e5884" xml:lang="ar"> <forename xml:id="forename_224.d1e5885" xml:lang="ar">كاظم</forename> <surname xml:id="surname_195.d1e5888" xml:lang="ar"> <addName type="nisbah">الدجيلي</addName> </surname> </persName>
         </editor>
-        <imprint xml:lang="ar">
+        <imprint>
             <publisher/>
-            <pubPlace xml:lang="ar">
+            <pubPlace>
                 <!-- placeNames link back to the gazetteer -->
                 <!-- only one is needed. Additional toponyms could be looked up automatically -->
                 <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
@@ -278,6 +277,7 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
         <biblScope from="1" to="1" unit="issue"/>
         <!-- <biblScope from="505" unit="page">505</biblScope>-->
     </monogr>
+    <!-- various notes -->
     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
     <note type="param" n="p_weekdays-published">Tuesday, Friday</note>
     <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
@@ -299,8 +299,7 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
 
 One of the main purposes of Project Jarāʾid and my own efforts is to locate periodicals in collections in order to guide researchers to material and inform digitisation efforts.
 
-
-#### current encoding
+#### schema
 
 ```xml
 <note type="holdings"> 
@@ -329,6 +328,23 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                     <idno type="URI" subtype="self">http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=05C0204A80C79A91F11989B6E0AA9D48"</idno>
                 </bibl>
             </listBibl>
+        </item>
+    </list>
+</note>
+```
+
+#### current encoding
+
+```xml
+<note type="holdings"> 
+    <list>
+        <!-- each collection gets its own item -->
+        <item source="https://projectjaraid.github.io"> 
+            <!-- information on the collection is provided in the label -->
+            <label> 
+                <placeName ref="geon:2988507 oape:place:322">Paris</placeName>, 
+                <orgName ref="jaraid:org:hBNF oape:org:12" xml:lang="und-Latn">BnF</orgName> 
+            </label> 
         </item>
         <!-- weird mix of encoding: originating from very early conversions of the Jaraid data -->
         <item source="https://projectjaraid.github.io">online at <ref target="http://www.archive.org" xml:lang="und-Latn">archive.org</ref>, reprint <placeName ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="und-Latn">Beirut</placeName> </item>
