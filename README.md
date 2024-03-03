@@ -11,19 +11,20 @@ lang: en
 [![GitHub release](https://img.shields.io/github/release/openarabicpe/authority-files.svg?maxAge=2592000)](https://github.com/openarabicpe/authority-files/releases)
 ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/openarabicpe/authority-files/latest)
 
+This repository holds the authority files for three research projects in Arab Periodical Studies and on the history of Arabic periodicals until roughly 1930: Project Jarāʾid, Open Arabic Periodical Editions, and Sihafa. The aim is to provide information on all titles, publishers, and places of publication relevant for this discursive sphere, including non-Arabic titles referenced within Arabic periodicals. As far as possible, I aim at linking local data to relevant external authority files, such as the *Virtual International Authority File* ([VIAF](https://viaf.org)), the [GeoNames](https://geonames.org) gazetteer or [Wikidata](https://wikidata.org/).
+
 # locations and file names
 
-+ main repository: `OpenArabicPE/authority-files/`
-    * folder for all data: `data/`
-        * `tei/`: main folder for authority data generated within OpenArabicPE
-            - bibliography
-            - personography
-            - organizationography
-            - gazetteer
-        * `csv/`: folder for derivatives of the main `tei/` folder, serialised as CSV or TSV.
-        * `geonames/`: this folder acts as a cache for linked data from [GeoNames](https://geonames.org) in order to minimise traffic. The file naming scheme in this folder is `geon_[ID].xml`
-        * `viaf/`: this folder acts as a cache for linked data from [VIAF](https://viaf.org) in order to minimise traffic. The file naming scheme in this folder is `viaf_[ID].SRW.xml`.
-    * folder for tools: `xslt/`
+* folder for all data: `data/`
+    * `tei/`: main folder for authority data generated within OpenArabicPE
+        - bibliography
+        - personography
+        - organizationography
+        - gazetteer
+    * `csv/`: folder for derivatives of the main `tei/` folder, serialised as CSV or TSV.
+    * `geonames/`: this folder acts as a cache for linked data from [GeoNames](https://geonames.org) in order to minimise traffic. The file naming scheme in this folder is `geon_[ID].xml`
+    * `viaf/`: this folder acts as a cache for linked data from [VIAF](https://viaf.org) in order to minimise traffic. The file naming scheme in this folder is `viaf_[ID].SRW.xml`.
+* folder for tools: `xslt/`
 
 # to do
 
