@@ -27,7 +27,9 @@ This repository holds the authority files for three research projects in Arab Pe
 * folder for tools: `xslt/`
 
 # to do
+## bibliography of periodicals
 
+- [ ] add all known collaborators to Suriye
 - [ ] add sources as TEI/XML to the bibliography
     + some are encoded as `<ref type="pandoc">`
     + [@LaPresseMusulmane+1909, 106]
@@ -37,9 +39,6 @@ This repository holds the authority files for three research projects in Arab Pe
     + example 1
         * we have: `<ref resp="#pAM" target="https://gpa.eastview.com/crl/mena/newspapers/msbh" xml:lang="und-Latn">online 1899-1900</ref>` 
         * we want: `<bibl><date type="onset">1899</date>-<date type="terminus">1900</date></bibl>`
-- [ ] support full URLs in `@ref` in the XSLT linking entity names to authority files.
-    + add param whether to output private URI scheme or full URLs
-
 - [ ] ambiguous matches for referenced periodicals
     + the problem concerns important journals with minor competitors of the same name
     + references do not include spatial information
@@ -56,8 +55,11 @@ This repository holds the authority files for three research projects in Arab Pe
 - [ ] extract dates from holding data
     + dates in holding data can be used to improve our knowledge of publication histories. If a library has a copy and provides a publication date for this copy, assume that they catalogued it correctly, and add this dating information as `<date type="documented"/>` to the main entry's `<imprint/>`
 
-- [ ] `@type='noAddName'` is missing whitespace between name components in some cases
+## XSLT
 
+- [ ] support full URLs in `@ref` in the XSLT linking entity names to authority files.
+    + add param whether to output private URI scheme or full URLs
+- [ ] `@type='noAddName'` is missing whitespace between name components in some cases
 - XSLT for generating the mapping data needs to be improved (not very important to the workflow/tutorial)
 
 # stylesheets
