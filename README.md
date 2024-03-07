@@ -32,8 +32,9 @@ This repository holds the authority files for three research projects in Arab Pe
 - [x] add all known collaborators to Suriye (oape:bibl:321)
 - [ ] add sources as TEI/XML to the bibliography
     + some are encoded as `<ref type="pandoc">`
-    + [@LaPresseMusulmane+1909, 106]
-    + [@Campos+2008+TheVoiceOf, 245]
+        + [@LaPresseMusulmane+1909, 106]
+        + [@Campos+2008+TheVoiceOf, 245]
+    
 - [ ] wrap content in `<publisher source="oape:org:73">` originating from AUB in a `<orgName>` element
 - [ ] The holding information from Jaraid needs to become more machine-actionable. See below for details.
     + example 1
