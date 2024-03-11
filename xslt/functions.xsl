@@ -1295,6 +1295,16 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'url'">
+                <xsl:choose>
+                    <xsl:when test="$p_org/tei:idno[@type = 'url']">
+                        <xsl:value-of select="$p_org/tei:idno[@type = 'url'][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <!-- fallback -->
             <xsl:otherwise>
                 <xsl:message>
