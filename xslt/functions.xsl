@@ -674,6 +674,17 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'year-onset'">
+                <xsl:variable name="v_date" select="oape:query-biblstruct($p_bibl, 'date-onset', '', '', '')"/>
+                <xsl:choose>
+                    <xsl:when test="$v_date != 'NA'">
+                        <xsl:value-of select="year-from-date($v_date)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <xsl:when test="$p_output-mode = 'date-terminus'">
                 <xsl:variable name="v_date-terminus">
                     <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = 'terminus']"/>
@@ -681,6 +692,17 @@
                 <xsl:choose>
                     <xsl:when test="$v_date-terminus/descendant-or-self::tei:date/@when">
                         <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'year-terminus'">
+                <xsl:variable name="v_date" select="oape:query-biblstruct($p_bibl, 'date-terminus', '', '', '')"/>
+                <xsl:choose>
+                    <xsl:when test="$v_date != 'NA'">
+                        <xsl:value-of select="year-from-date($v_date)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -705,6 +727,26 @@
                 <xsl:choose>
                     <xsl:when test="$p_bibl/descendant::tei:editor/tei:persName">
                         <xsl:value-of select="oape:query-personography($p_bibl/descendant::tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id', '')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-editor-viaf'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:editor/tei:persName">
+                        <xsl:value-of select="oape:query-personography($p_bibl/descendant::tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id-viaf', '')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-editor-wiki'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:editor/tei:persName">
+                        <xsl:value-of select="oape:query-personography($p_bibl/descendant::tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id-wiki', '')"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
