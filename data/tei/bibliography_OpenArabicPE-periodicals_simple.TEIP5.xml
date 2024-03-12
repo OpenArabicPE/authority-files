@@ -70,7 +70,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2024-03-12" who="pers_TG" xml:id="d13e929" xml:lang="en" xmlns="http://www.loc.gov/mods/v3"
+         <change when="2024-03-12" who="pers_TG" xml:id="d12e929" xml:lang="en" xmlns="http://www.loc.gov/mods/v3"
             >Created this file through automated conversion from file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml</change>
       </revisionDesc>
    </teiHeader>
@@ -574,26 +574,24 @@
          </biblStruct>
          <biblStruct source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_26.TEIP5.xml#bibl_5.d2e4332" subtype="journal" type="periodical">
             <monogr>
-               <title level="j" xml:lang="ar">التعليم الدولية</title>
+               <title level="j" type="alt" xml:lang="ar">التعليم الدولية</title>
                <title level="j" xml:lang="ar">مجلة التعليم الدولية</title>
                <idno type="oape">366</idno>
                <textLang mainLang="fr"/>
                <imprint>
-                  <date type="documented" when="1908-03-05"/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_26.TEIP5.xml#bibl_5.d2e4332" type="documented" when="1908-03-05"/>
                </imprint>
             </monogr>
          </biblStruct>
-         <biblStruct type="periodical">
+         <biblStruct source="../../../../OpenArabicPE/journal_al-haqaiq/tei/oclc_644997575-i_6.TEIP5.xml#bibl_10" type="periodical">
             <monogr>
                <title level="j" xml:lang="fr-Arab-145">الجورنال دي كير</title>
                <idno type="oape">467</idno>
                <textLang mainLang="fr"/>
                <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../OpenArabicPE/journal_al-haqaiq/tei/oclc_644997575-i_6.TEIP5.xml#bibl_10" type="documented"
+                     when="1911-01-02" when-custom="1329-01-01"/>
+                  <pubPlace source="../../../../OpenArabicPE/journal_al-haqaiq/tei/oclc_644997575-i_6.TEIP5.xml#bibl_10"> <placeName>Cairo</placeName> </pubPlace>
                </imprint>
             </monogr>
          </biblStruct>
@@ -628,15 +626,14 @@
                </imprint>
             </monogr>
          </biblStruct>
-         <biblStruct subtype="journal" type="periodical">
+         <biblStruct source="/../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_88.TEIP5.xml#bibl_4.d2e4572" subtype="journal" type="periodical">
             <monogr>
-               <title level="j" xml:lang="ar">الصحة</title>
+               <title level="j" xml:lang="ar">مجلة الصحة</title>
                <idno type="oape">188</idno>
                <textLang mainLang="fr"/>
                <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date datingMethod="#cal_islamic" source="/../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_88.TEIP5.xml#bibl_4.d2e4572" type="documented" when="1914-03-28"
+                     when-custom="1332-05-01"/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -668,9 +665,7 @@
                <idno type="oape">476</idno>
                <textLang mainLang="und"/>
                <imprint>
-                  <date type="documented" when="1908-07-30"/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_31.TEIP5.xml#bibl_5" type="documented" when="1908-07-30"/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -678,11 +673,11 @@
             <monogr>
                <title level="j" xml:lang="ar">المجلة التونسية</title>
                <idno type="oape">233</idno>
-               <textLang mainLang="und"/>
+               <textLang mainLang="fr"/>
                <imprint>
                   <date type="documented" when="1908-09-27"/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml" type="documented"
+                     when="1909-12-14" when-custom="1327-12-01"/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -925,16 +920,14 @@
                <biblScope from="97" unit="page">الصفحة ٩٧</biblScope>
             </monogr>
          </biblStruct>
-         <biblStruct type="periodical">
+         <biblStruct source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_39.TEIP5.xml#bibl_2.d1e3667" type="periodical">
             <monogr>
                <title level="j" xml:lang="ar">مجلة الملكية</title>
+               <title level="j" xml:lang="ota">مجلة الملكية</title>
                <idno type="oape">375</idno>
+               <idno type="oape">497</idno>
                <textLang mainLang="ota"/>
-               <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
-               </imprint>
+               <imprint/>
             </monogr>
          </biblStruct>
          <biblStruct oape:frequency="monthly" source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_86.TEIP5.xml#bibl_7.d2e5064" subtype="journal" type="periodical">
@@ -962,8 +955,10 @@
                <idno type="oape">389</idno>
                <idno type="oape">390</idno>
                <idno type="oape">510</idno>
-               <textLang mainLang="fr"/>
+               <textLang mainLang="fr" source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml"/>
                <imprint>
+                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml" type="documented"
+                     when="1909-12-14" when-custom="1327-12-01"/>
                   <pubPlace>?</pubPlace>
                </imprint>
             </monogr>
@@ -2762,18 +2757,6 @@
                <imprint>
                   <date type="onset" when="1921-07-03"/>
                   <pubPlace> <placeName ref="geon:170654 jaraid:place:15 oape:place:61" xml:lang="ar">دمشق</placeName> </pubPlace>
-               </imprint>
-            </monogr>
-         </biblStruct>
-         <biblStruct type="periodical">
-            <monogr>
-               <title level="j" xml:lang="ar">اتحاد أوربا</title>
-               <idno type="oape">408</idno>
-               <textLang mainLang="ar"/>
-               <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -9975,18 +9958,6 @@
                </imprint>
             </monogr>
          </biblStruct>
-         <biblStruct type="periodical">
-            <monogr>
-               <title level="j" xml:lang="ar">التبشير</title>
-               <idno type="oape">414</idno>
-               <textLang mainLang="ar"/>
-               <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
-               </imprint>
-            </monogr>
-         </biblStruct>
          <biblStruct source="https://projectjaraid.github.io" type="periodical">
             <monogr>
                <title level="j" xml:lang="ar">التجارة</title>
@@ -10410,18 +10381,6 @@
                   <pubPlace> <placeName ref="geon:98182 oape:place:216" xml:lang="ar">بغداد</placeName> </pubPlace>
                   <publisher source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_19.TEIP5.xml#div_11.d2e1818"> <orgName ref="oape:org:546" xml:lang="ar"
                      >مطبعة الولاية</orgName> </publisher>
-               </imprint>
-            </monogr>
-         </biblStruct>
-         <biblStruct type="periodical">
-            <monogr>
-               <title level="j" xml:lang="ar">التعليم</title>
-               <idno type="oape">128</idno>
-               <textLang mainLang="ar"/>
-               <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -18741,15 +18700,14 @@
                </imprint>
             </monogr>
          </biblStruct>
-         <biblStruct type="periodical">
+         <biblStruct source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml" subtype="journal" type="periodical">
             <monogr>
                <title level="j" xml:lang="ar">الزرقاء</title>
                <idno type="oape">469</idno>
-               <textLang mainLang="ar"/>
+               <textLang mainLang="fr"/>
                <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml" type="documented"
+                     when="1909-12-14" when-custom="1327-12-01"/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -31195,15 +31153,16 @@
                </imprint>
             </monogr>
          </biblStruct>
-         <biblStruct type="periodical">
+         <biblStruct source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml" subtype="journal" type="periodical">
             <monogr>
                <title level="j" xml:lang="ar">المجلة الوردية</title>
+               <title level="j" xml:lang="ar">الوردية</title>
                <idno type="oape">237</idno>
+               <idno type="oape">279</idno>
                <textLang mainLang="ar"/>
                <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml" type="documented"
+                     when="1909-12-14" when-custom="1327-12-01"/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -40492,18 +40451,6 @@
                <imprint>
                   <date type="onset" when="1926-08-01"/>
                   <pubPlace> <placeName ref="geon:170017 oape:place:175" xml:lang="ar">حماة</placeName> </pubPlace>
-               </imprint>
-            </monogr>
-         </biblStruct>
-         <biblStruct type="periodical">
-            <monogr>
-               <title level="j" xml:lang="ar">الوردية</title>
-               <idno type="oape">279</idno>
-               <textLang mainLang="ar"/>
-               <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -51329,15 +51276,14 @@
                </imprint>
             </monogr>
          </biblStruct>
-         <biblStruct type="periodical">
+         <biblStruct source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_56.TEIP5.xml#bibl_5.d1e4649" subtype="journal" type="periodical">
             <monogr>
                <title level="j" xml:lang="ar">مجلة العلم الاجتماعي</title>
                <idno type="oape">373</idno>
-               <textLang mainLang="ar"/>
+               <textLang mainLang="fr"/>
                <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_56.TEIP5.xml#bibl_5.d1e4649" type="documented"
+                     when="1910-09-06" when-custom="1328-09-01"/>
                </imprint>
             </monogr>
          </biblStruct>
@@ -51778,18 +51724,6 @@
                </imprint>
             </monogr>
          </biblStruct>
-         <biblStruct type="periodical">
-            <monogr>
-               <title level="j" xml:lang="ota">مجلة الملكية</title>
-               <idno type="oape">497</idno>
-               <textLang mainLang="ota"/>
-               <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
-               </imprint>
-            </monogr>
-         </biblStruct>
          <biblStruct source="https://projectjaraid.github.io" subtype="journal" type="periodical">
             <monogr>
                <title level="j" xml:lang="ar">مجلة الميثاق الماسونية</title>
@@ -51876,15 +51810,14 @@
                </imprint>
             </monogr>
          </biblStruct>
-         <biblStruct type="periodical">
+         <biblStruct source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml" subtype="journal" type="periodical">
             <monogr>
                <title level="j" xml:lang="ar">مجلة انتربية</title>
                <idno type="oape">376</idno>
-               <textLang mainLang="ar"/>
+               <textLang mainLang="fr"/>
                <imprint>
-                  <date/>
-                  <pubPlace/>
-                  <publisher/>
+                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../GitHub/OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_47.TEIP5.xml" type="documented"
+                     when="1909-12-14" when-custom="1327-12-01"/>
                </imprint>
             </monogr>
          </biblStruct>
