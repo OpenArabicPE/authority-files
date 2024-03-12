@@ -30,6 +30,7 @@ This repository holds the authority files for three research projects in Arab Pe
 ## bibliography of periodicals
 
 - [x] add all known collaborators to Suriye (oape:bibl:321)
+- [ ] fix dates: `<date change="#d2e33" from="1910-02-18"/>`
 - [ ] add sources as TEI/XML to the bibliography
     + some are encoded as `<ref type="pandoc">`
         + [@LaPresseMusulmane+1909, 106]
