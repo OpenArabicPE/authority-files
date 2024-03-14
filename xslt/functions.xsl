@@ -660,7 +660,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-- this returns a node -->
+            <!-- this returns a node and all values in attritbutes have been converted to ISO -->
             <xsl:when test="$p_output-mode = 'date-onset'">
                 <xsl:variable name="v_date-onset">
                     <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = ('onset', 'official')]"/>
@@ -854,7 +854,17 @@
                 </xsl:when>
                 <xsl:when test="matches($v_temp, '^\d{4}$')">
                     <!-- latest possible date: this will prevent the originally less precise dates from taking precedent -->
-                    <xsl:attribute name="when" select="concat($v_temp, '-12-31')"/>
+                    <xsl:attribute name="when">
+                        <xsl:choose>
+                            <xsl:when test="@type = 'onset'">
+                                <xsl:value-of select="concat($v_temp, '-12-31')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="concat($v_temp, '-12-31')"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:attribute>
+                    <xsl:attribute name="cert" select="'low'"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:copy>
