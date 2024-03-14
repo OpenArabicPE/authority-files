@@ -660,14 +660,17 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <!-- this returns a node -->
             <xsl:when test="$p_output-mode = 'date-onset'">
                 <xsl:variable name="v_date-onset">
                     <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = ('onset', 'official')]"/>
+                    <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[not(@type)][@from]"/>
                     <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[not(@type)][@when]"/>
                 </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-onset/descendant-or-self::tei:date/@when">
-                        <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
+<!--                        <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
+                        <xsl:copy-of select="$v_date-onset/descendant-or-self::tei:date[@when = min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))]"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -678,7 +681,7 @@
                 <xsl:variable name="v_date" select="oape:query-biblstruct($p_bibl, 'date-onset', '', '', '')"/>
                 <xsl:choose>
                     <xsl:when test="$v_date != 'NA'">
-                        <xsl:value-of select="year-from-date($v_date)"/>
+                        <xsl:value-of select="year-from-date($v_date/self::tei:date/@when)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -688,10 +691,12 @@
             <xsl:when test="$p_output-mode = 'date-terminus'">
                 <xsl:variable name="v_date-terminus">
                     <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = 'terminus']"/>
+                    <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[not(@type)][@to]"/>
                 </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-terminus/descendant-or-self::tei:date/@when">
-                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
+<!--                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
+                        <xsl:copy-of select="$v_date-terminus/descendant-or-self::tei:date[@when = max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))]"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -702,7 +707,7 @@
                 <xsl:variable name="v_date" select="oape:query-biblstruct($p_bibl, 'date-terminus', '', '', '')"/>
                 <xsl:choose>
                     <xsl:when test="$v_date != 'NA'">
-                        <xsl:value-of select="year-from-date($v_date)"/>
+                        <xsl:value-of select="year-from-date($v_date/self::tei:date/@when)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -842,6 +847,7 @@
         </xsl:variable>
         <!-- output -->
         <xsl:copy>
+            <xsl:apply-templates select="@source | @type" mode="m_identity-transform"/>
             <xsl:choose>
                 <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
                     <xsl:attribute name="when" select="$v_temp"/>
