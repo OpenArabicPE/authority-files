@@ -4,7 +4,7 @@
 <?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns" xmlns:tei="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -70,7 +70,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
-         <change when="2024-03-12" who="pers_TG" xml:id="d12e929" xml:lang="en" xmlns="http://www.loc.gov/mods/v3"
+         <change when="2024-03-14" who="pers_TG" xml:id="d13e929" xml:lang="en" xmlns="http://www.loc.gov/mods/v3"
             >Created this file through automated conversion from file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/authority-files/data/tei/bibliography_OpenArabicPE-periodicals.TEIP5.xml</change>
       </revisionDesc>
    </teiHeader>
@@ -82,7 +82,8 @@
                <idno type="jaraid">t1r202</idno>
                <idno type="oape">713</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date notAfter="1882-04-30" notBefore="1882-04-01" type="onset"/>
                   <date type="terminus" when="1884"/>
@@ -215,7 +216,8 @@
                <idno type="jaraid">t1r126</idno>
                <idno type="oape">648</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1878"/>
                   <date type="terminus" when="1878"/>
@@ -391,18 +393,18 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥuqūq</title>
                <title level="j" xml:lang="ar">الحقوق</title>
                <idno type="jaraid">t1r2867</idno>
-               <idno type="oape">3444</idno>
                <idno type="oape">536</idno>
+               <idno type="oape">3444</idno>
                <textLang mainLang="ota" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"/>
                <textLang mainLang="ar" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"/>
                <editor source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" type="owner"> <persName ref="oape:pers:4115" xml:lang="ar">
                   <surname>اصغر</surname> <forename>معروف</forename> </persName> </editor>
                <editor source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"> <persName ref="jaraid:pers:2379 oape:pers:4181" xml:lang="ar">معروف</persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" when="1912-01-18"
-                     when-custom="1330-01-28"/>
-                  <pubPlace source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"> <placeName ref="geon:160263 oape:place:567" xml:lang="en"
-                     >Dar es Salaam</placeName> </pubPlace>
+                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" type="onset"
+                     when="1912-01-18" when-custom="1330-01-28"/>
+                  <pubPlace source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"> <placeName ref="geon:98182 oape:place:216" xml:lang="en"
+                     >Baghdad</placeName> </pubPlace>
                   <publisher source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2"> <orgName ref="oape:org:545">مطبعة الشابندر</orgName> </publisher>
                </imprint>
                <biblScope from="1" source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_8.TEIP5.xml#bibl_2" to="2" unit="issue"/>
@@ -839,8 +841,8 @@
          <biblStruct source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_7.TEIP5.xml#div_18.d1e2133" subtype="newspaper" type="periodical">
             <monogr>
                <title level="j" xml:lang="ar">عرفات</title>
-               <idno type="oape">3711</idno>
                <idno type="oape">379</idno>
+               <idno type="oape">3711</idno>
                <textLang mainLang="fr"/>
                <editor> <persName ref="oape:pers:3982" xml:lang="ar">محمودسالم</persName> </editor>
                <imprint>
@@ -1037,7 +1039,8 @@
                <idno type="oape">702</idno>
                <textLang mainLang="ar"/>
                <textLang mainLang="fr"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1881-04-08"/>
                   <date type="terminus" when="1882"/>
@@ -1054,7 +1057,8 @@
                <idno type="oape">741</idno>
                <textLang mainLang="ar"/>
                <textLang mainLang="fr"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1885-01-10"/>
                   <date type="terminus" when="1890"/>
@@ -1235,9 +1239,9 @@
                <title level="j" xml:lang="ar">المجلة الآسياوية</title>
                <title level="j" xml:lang="ar">المجلة الآسيوية</title>
                <title level="j" type="alt" xml:lang="ar">الآسياوية</title>
+               <idno type="oape">74</idno>
                <idno type="oape">231</idno>
                <idno type="oape">475</idno>
-               <idno type="oape">74</idno>
                <textLang mainLang="fr"/>
                <imprint>
                   <date type="onset" when="1822"/>
@@ -1331,8 +1335,8 @@
                <title level="j" xml:lang="ar">مجلة العالم الإسلامي</title>
                <title level="j" xml:lang="ar">مجلة العالم الاسلامي</title>
                <idno type="OCLC">1681243</idno>
-               <idno type="oape">192</idno>
                <idno type="oape">24</idno>
+               <idno type="oape">192</idno>
                <idno type="zdb">1325286-0</idno>
                <textLang mainLang="fr"/>
                <imprint>
@@ -1352,12 +1356,13 @@
                <title level="j" xml:lang="fr-Arab-145">الإيكودي باري</title>
                <title level="j" xml:lang="fr-Arab-145">الايكو</title>
                <idno type="URI">https://gallica.bnf.fr/ark:/12148/cb34429768r/date</idno>
+               <idno type="oape">98</idno>
                <idno type="oape">109</idno>
                <idno type="oape">465</idno>
-               <idno type="oape">98</idno>
                <textLang mainLang="fr"/>
                <imprint>
-                  <date from="1884" to="1944">1884-1944</date>
+                  <date type="onset" when="1884"/>
+                  <date type="terminus" when="1944"/>
                   <pubPlace> <placeName ref="geon:2988507 oape:place:322" xml:lang="fr">Paris</placeName> </pubPlace>
                </imprint>
             </monogr>
@@ -1520,8 +1525,8 @@
                <title level="j" xml:lang="ar">مستندات الترقي</title>
                <title level="j" type="alt" xml:lang="ar">مجلة مستندات الترقي</title>
                <idno type="OCLC">1000823586</idno>
-               <idno type="oape">382</idno>
                <idno type="oape">67</idno>
+               <idno type="oape">382</idno>
                <textLang mainLang="fr"/>
                <imprint>
                   <date type="onset" when="1907"/>
@@ -1831,8 +1836,8 @@
                <title level="j" xml:lang="en">The Standard</title>
                <title level="j" xml:lang="en-Arab-145">الستاندارد</title>
                <title level="j" xml:lang="en-Arab-145">الستندارد</title>
-               <idno type="OCLC">1032864255</idno>
                <idno type="OCLC">751636655</idno>
+               <idno type="OCLC">1032864255</idno>
                <idno type="oape">171</idno>
                <idno type="oape">470</idno>
                <textLang mainLang="en"/>
@@ -1846,8 +1851,8 @@
                <title level="j" xml:lang="en">Evening Standard</title>
                <title level="j" xml:lang="en-Arab-145">الستاندارد</title>
                <title level="j" xml:lang="en-Arab-145">الستندارد</title>
-               <idno type="OCLC">1032864255</idno>
                <idno type="OCLC">751636655</idno>
+               <idno type="OCLC">1032864255</idno>
                <idno type="oape">3749</idno>
                <textLang mainLang="en"/>
                <imprint>
@@ -1963,8 +1968,8 @@
                <title level="j" source="https://projectjaraid.github.io" xml:lang="ar">ابابيل</title>
                <title level="j" source="https://projectjaraid.github.io" xml:lang="ar-Latn-x-ijmes">Abābīl</title>
                <idno type="jaraid">t1r2375</idno>
-               <idno type="oape">1674</idno>
                <idno type="oape">517</idno>
+               <idno type="oape">1674</idno>
                <textLang mainLang="ar"/>
                <editor source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_12.d2e3603" type="owner"> <persName ref="jaraid:pers:1942 oape:pers:4135"
                   xml:lang="ar">حسين<addName type="khitab" xml:lang="ar">محيي الدين</addName>حبال</persName> </editor>
@@ -2064,8 +2069,8 @@
                <title level="j" source="oape:org:420" xml:lang="ar-Latn-x-dmg">Alif bāʾ</title>
                <title level="j" source="oape:org:420" type="alt" xml:lang="ar-Latn-DE">Alif bāʼ</title>
                <idno type="AUBNO">Mic-NA:000146</idno>
-               <idno type="LEAUB">b12823089</idno>
                <idno type="LEAUB">b2328089x </idno>
+               <idno type="LEAUB">b12823089</idno>
                <idno type="fid">NAHOST</idno>
                <idno type="jaraid">t1r2648</idno>
                <idno type="oape">2336</idno>
@@ -2453,7 +2458,8 @@
                <idno type="jaraid">t1r159</idno>
                <idno type="oape">684</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1880-07-17"/>
                   <date type="terminus" when="1880"/>
@@ -2526,7 +2532,8 @@
                <idno type="jaraid">t1r158</idno>
                <idno type="oape">683</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1880-06-04"/>
                   <date type="terminus" when="1880"/>
@@ -2604,7 +2611,8 @@
                <idno type="oape">731</idno>
                <textLang mainLang="ar"/>
                <textLang mainLang="fr"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date source="https://projectjaraid.github.io" type="onset" when="1881-04-08"/>
                   <date source="https://projectjaraid.github.io" type="terminus" when="1882"/>
@@ -2622,7 +2630,8 @@
                <idno type="oape">666</idno>
                <textLang mainLang="ar"/>
                <textLang mainLang="fr"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1879-03-21"/>
                   <date type="terminus" when="1879"/>
@@ -2638,7 +2647,8 @@
                <idno type="oape">639</idno>
                <textLang mainLang="ar"/>
                <textLang mainLang="arz"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1877-03-21"/>
                   <date type="terminus" when="1878-05-18"/>
@@ -3302,10 +3312,10 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Āthār</title>
                <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla ʿāmma muṣawwara</title>
                <idno type="AUBNO">Mic-NA:000117</idno>
-               <idno type="LEAUB">b12822000</idno>
                <idno type="LEAUB">b1282253x</idno>
-               <idno type="OCLC">1034551122</idno>
+               <idno type="LEAUB">b12822000</idno>
                <idno type="OCLC">792755376</idno>
+               <idno type="OCLC">1034551122</idno>
                <idno type="jaraid">t1r3134</idno>
                <idno type="oape">33</idno>
                <textLang mainLang="ar"/>
@@ -3395,8 +3405,8 @@
                <idno type="fid">NAHOST</idno>
                <idno type="jaraid">t1r2458</idno>
                <idno type="oape">2627</idno>
-               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-48.xls</idno>
                <idno type="url">https://gpa.eastview.com/crl/mena/newspapers/ahrr</idno>
+               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-48.xls</idno>
                <idno type="zdb">3062202-5</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2003 oape:pers:5108" xml:lang="ar">جبران تويني</persName> </editor>
@@ -3421,8 +3431,8 @@
                <title level="j" source="oape:org:420" xml:lang="ar-Latn-x-dmg">al-Āḥrār al-muṣawwarah</title>
                <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">usbūʿīya, adabīya, intiqādīya, fukāhīya, riwāʾīya</title>
                <idno type="AUBNO">Mic-NA:000047</idno>
-               <idno type="LEAUB">b12821226</idno>
                <idno type="LEAUB">b1282740x</idno>
+               <idno type="LEAUB">b12821226</idno>
                <idno type="OCLC">792755775</idno>
                <idno type="fid">NAHOST</idno>
                <idno type="jaraid">t1r2472</idno>
@@ -3786,10 +3796,10 @@
                <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">jarīda usbūʿiyya ʿumūmiyya</title>
                <idno type="jaraid">t1r2701</idno>
                <idno type="jaraid">t1r3197</idno>
-               <idno type="oape">1772</idno>
-               <idno type="oape">1995</idno>
                <idno type="oape">90</idno>
                <idno type="oape">91</idno>
+               <idno type="oape">1772</idno>
+               <idno type="oape">1995</idno>
                <idno type="url">https://gpa.eastview.com/crl/mena/newspapers/ikha</idno>
                <idno type="zdb">3058378-0</idno>
                <textLang mainLang="ar"/>
@@ -3813,8 +3823,8 @@
                <title level="j" xml:lang="ar">الارشاد</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Irshād</title>
                <idno type="jaraid">t1r937</idno>
-               <idno type="oape">1421</idno>
                <idno type="oape">93</idno>
+               <idno type="oape">1421</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:743 oape:pers:6417" xml:lang="ar">علي احمد<addName cert="high" type="nisbah">الجرجاوي</addName> </persName> </editor>
                <imprint>
@@ -3834,9 +3844,9 @@
                <idno type="AUBNO">Mic-NA:000485</idno>
                <idno type="LEAUB">b12826698</idno>
                <idno type="LEAUB">b13581235</idno>
+               <idno type="OCLC">42900539</idno>
                <idno type="OCLC">173830151</idno>
                <idno type="OCLC">239672380</idno>
-               <idno type="OCLC">42900539</idno>
                <idno type="OCLC">792755719</idno>
                <idno type="ht_bib_key">009012428</idno>
                <idno type="jaraid">t1r1542</idno>
@@ -3846,7 +3856,7 @@
                <editor> <persName ref="jaraid:pers:829 oape:pers:5740" xml:lang="ar"> <forename>نجيب</forename> <surname>شقرا</surname> </persName> </editor>
                <imprint>
                   <date source="oape:org:73" type="onset" when="1902"/>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date type="terminus" when="1910"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <persName>نجيب شقرا</persName> </publisher>
                </imprint>
@@ -3857,8 +3867,8 @@
                <title level="j" xml:lang="ar">الإصلاح</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Iṣlāḥ</title>
                <idno type="jaraid">t1r2411</idno>
-               <idno type="oape">2023</idno>
                <idno type="oape">95</idno>
+               <idno type="oape">2023</idno>
                <textLang mainLang="ar"/>
                <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_2083.d2e23134"> <persName ref="viaf:305214837 oape:pers:787" xml:lang="ar"> <forename xml:lang="ar"
                   >احمد</forename> <forename xml:lang="ar">حسن</forename> <surname xml:lang="ar">طبارة</surname> </persName> </editor>
@@ -4001,11 +4011,11 @@
                <idno type="AUBNO">Mic-NA:000164</idno>
                <idno type="LEAUB">b12823259</idno>
                <idno type="LEAUB">b12826686</idno>
-               <idno type="OCLC">1086411815</idno>
                <idno type="OCLC">792755718</idno>
+               <idno type="OCLC">1086411815</idno>
                <idno type="jaraid">t1r2353</idno>
-               <idno type="oape">1285</idno>
                <idno type="oape">96</idno>
+               <idno type="oape">1285</idno>
                <idno type="url">https://gpa.eastview.com/crl/mena/newspapers/aliq</idno>
                <idno type="zdb">3058404-8</idno>
                <textLang mainLang="ar"/>
@@ -4127,8 +4137,8 @@
                <idno type="OCLC">175314357</idno>
                <idno type="ht_bib_key">008884814</idno>
                <idno type="jaraid">t1r3198</idno>
-               <idno type="oape">1775</idno>
                <idno type="oape">97</idno>
+               <idno type="oape">1775</idno>
                <textLang mainLang="ar"/>
                <editor
                   source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792                   ../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_15.d2e1594 ../../../../TEI/oclc_165855925/tei/oclc_165855925-v_2.TEIP5.xml#p_4934.d2e42792"
@@ -5073,8 +5083,8 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:726 oape:pers:861" xml:lang="ar"> <forename xml:lang="ar">سليم</forename> <surname xml:lang="ar">قبعين</surname> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date type="onset" when="1924-04-01"/>
+                  <date source="oape:org:420" type="terminus" when="1933"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                </imprint>
             </monogr>
@@ -5926,23 +5936,23 @@
                <title level="j" ref="oclc:1036721166 jaraid:bibl:t1r400 oape:bibl:4" source="oape:org:417" xml:lang="ar-Latn-x-ijmes">Majallat al-Ustādh</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ustādh</title>
                <title level="j" source="oape:org:417" type="sub" xml:lang="ar-Latn-x-ijmes">jarīdah ʿilmīyah tahdhībīyah fukāhīyah</title>
-               <idno type="LCCN">2002252287</idno>
-               <idno type="LCCN">86647876 /NE</idno>
                <idno type="LCCN">sc 85006049</idno>
-               <idno type="OCLC">1036721166</idno>
-               <idno type="OCLC">13362949</idno>
+               <idno type="LCCN">86647876 /NE</idno>
+               <idno type="LCCN">2002252287</idno>
                <idno type="OCLC">1775986</idno>
+               <idno type="OCLC">13362949</idno>
                <idno type="OCLC">34569190</idno>
                <idno type="OCLC">708697455</idno>
+               <idno type="OCLC">1036721166</idno>
                <idno type="ht_bib_key">000067362</idno>
                <idno type="ht_bib_key">102083016</idno>
                <idno type="ht_bib_key">102332426</idno>
                <idno type="ht_bib_key">102753162</idno>
                <idno type="jaraid">t1r400</idno>
                <idno type="jid">106</idno>
-               <idno type="oape">3679</idno>
                <idno type="oape">4</idno>
                <idno type="oape">854</idno>
+               <idno type="oape">3679</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="viaf:72750911 jaraid:pers:150 oape:pers:962 wiki:Q56823893" xml:lang="ar"> <forename xml:lang="ar">عبد الله</forename> <surname xml:lang="ar">النديم</surname>
                   <addName type="nisbah" xml:lang="ar">الإدريسي</addName> </persName> </editor>
@@ -6166,8 +6176,7 @@
                <editor> <persName ref="jaraid:pers:2398 oape:pers:6290" xml:lang="ar"> <addName cert="high" type="theophoric">عبد الغفور</addName> <addName cert="high" type="nisbah">البدري</addName>
                   </persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="onset" when-custom="1339">2200-01-01</date>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="terminus" when-custom="1339">0001-01-01</date>
+                  <date type="onset" when="1920-09-28"/>
                   <pubPlace> <placeName ref="geon:98182 oape:place:216" xml:lang="ar">بغداد</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName>al-Istiḳlâl</orgName> </publisher>
                </imprint>
@@ -8566,8 +8575,8 @@
                <idno type="fid">NAHOST</idno>
                <idno type="jaraid">t1r2363</idno>
                <idno type="oape">514</idno>
-               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-49.xls</idno>
                <idno type="url">https://gpa.eastview.com/crl/mena/newspapers/barq</idno>
+               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-49.xls</idno>
                <idno type="zdb">3056916-3</idno>
                <textLang mainLang="ar"/>
                <editor source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_3.d2e3407 https://projectjaraid.github.io" type="owner"> <persName
@@ -9047,10 +9056,10 @@
                <title level="j" source="https://projectjaraid.github.io" xml:lang="ar-Latn-x-ijmes">al-Bashīr</title>
                <title level="j" source="oape:org:420" type="sub" xml:lang="fr">journal arabe hebdomadaire</title>
                <idno type="AUBNO">Mic-NA:000054</idno>
-               <idno type="OCLC">1034540410</idno>
                <idno type="OCLC">42878923</idno>
                <idno type="OCLC">472081984</idno>
                <idno type="OCLC">724003244</idno>
+               <idno type="OCLC">1034540410</idno>
                <idno type="ht_bib_key">009012430</idno>
                <idno type="jaraid">t1r58</idno>
                <idno type="oape">118</idno>
@@ -9674,11 +9683,11 @@
                <title level="j" source="oape:org:417" type="sub" xml:lang="ar">مجلة علمية ادبية طبية سناعية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Bayān</title>
                <title level="j" source="oape:org:417" type="sub" xml:lang="ar-Latn-x-ijmes">Majallah ʿilmīyah adabīyah ṭibbīyah sināʿīyah</title>
-               <idno type="LCCN">77228214 /NE/r852</idno>
                <idno type="LCCN">77233314</idno>
+               <idno type="LCCN">77228214 /NE/r852</idno>
+               <idno type="OCLC">5123270</idno>
                <idno type="OCLC">173830041</idno>
                <idno type="OCLC">187449541</idno>
-               <idno type="OCLC">5123270</idno>
                <idno type="OCLC">792754974</idno>
                <idno type="ht_bib_key">000548119</idno>
                <idno type="ht_bib_key">011820786</idno>
@@ -9733,8 +9742,8 @@
                <idno type="OCLC">792754976</idno>
                <idno type="ht_bib_key">012408041</idno>
                <idno type="jaraid">t1r1677</idno>
-               <idno type="oape">3450</idno>
                <idno type="oape">534</idno>
+               <idno type="oape">3450</idno>
                <idno type="zdb">2365545-8</idno>
                <textLang mainLang="ar"/>
                <editor
@@ -9744,7 +9753,7 @@
                <editor source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2"> <persName ref="jaraid:pers:1358 oape:pers:3929" xml:lang="ar">محمد<addName
                   type="nisbah" xml:lang="ar">السباعي</addName> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1911"/>
                   <date source="oape:org:420" type="terminus" when="1919"/>
                   <pubPlace source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_5.TEIP5.xml#bibl_2"> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar"
                      >القاهرة</placeName> </pubPlace>
@@ -9767,7 +9776,7 @@
                   type="nasab" xml:lang="ar"> <nameLink xml:lang="ar">بن</nameLink>بدور</addName> </persName> </editor>
                <editor source="https://projectjaraid.github.io"> <persName ref="jaraid:pers:1727 oape:pers:6249" xml:lang="ar"> <forename>عباس</forename> <surname>ابو شقرا</surname> </persName> </editor>
                <imprint>
-                  <date source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_3226.d2e26341" when="1911"/>
+                  <date source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_3226.d2e26341" type="onset" when="1911"/>
                   <pubPlace source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_3226.d2e26341"> <placeName ref="geon:5128581 oape:place:303" xml:lang="ar">نيويورك</placeName>
                   </pubPlace>
                </imprint>
@@ -10743,8 +10752,8 @@
                <title level="j" xml:lang="ar">التلميذ</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Tilmīdh</title>
                <idno type="jaraid">t1r3049</idno>
-               <idno type="oape">3428</idno>
                <idno type="oape">525</idno>
+               <idno type="oape">3428</idno>
                <textLang mainLang="ar"/>
                <imprint>
                   <date type="onset" when="1910-03-31"/>
@@ -11106,7 +11115,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:691 oape:pers:5404" xml:lang="ar">مراد فرج</persName> </editor>
                <imprint>
-                  <date calendar="#cal_jewish" datingMethod="#cal_jewish" source="oape:org:420" type="onset" when-custom="5663">2200-01-01</date>
+                  <date source="oape:org:417" type="onset" when="1901"/>
                   <date source="#hBONN" type="terminus" when="1903"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:489" xml:lang="ar-Latn-x-dmg">Maṭbaʿat Madrasat aṭ-Ṭāʾifa</orgName> </publisher>
@@ -11176,7 +11185,8 @@
                <idno type="oape">691</idno>
                <idno type="zdb">1041823-4</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1881"/>
                   <date source="oape:org:420" type="terminus" when="1894"/>
@@ -11191,7 +11201,8 @@
                <idno type="jaraid">t1r398</idno>
                <idno type="oape">839</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1892"/>
                   <pubPlace> <placeName ref="geon:2988507 oape:place:322" xml:lang="ar">باريز</placeName> </pubPlace>
@@ -11217,7 +11228,8 @@
                <idno type="zdb">1119349-9</idno>
                <textLang mainLang="ar"/>
                <textLang mainLang="fr"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date source="oape:org:420" type="onset" when="1895"/>
                   <date type="terminus" when="1899"/>
@@ -11253,8 +11265,8 @@
                <textLang mainLang="ar"/>
                <textLang mainLang="cop"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1896"/>
+                  <date type="terminus" when="1903"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher> <orgName ref="jaraid:org:50 oape:org:135" xml:lang="und-Latn">Jamʿiyyat al-Tawfīq al-Qubṭiyya al-Markaziyya</orgName> <orgName ref="jaraid:org:50 oape:org:135"
                      xml:lang="ar">جمعية التوفيق القبطية المركزية</orgName> </publisher>
@@ -12001,9 +12013,9 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jāmiʿa al-Miṣriyya</title>
                <idno type="OCLC">1034547407</idno>
                <idno type="jaraid">t1r982</idno>
+               <idno type="oape">8</idno>
                <idno type="oape">132</idno>
                <idno type="oape">3387</idno>
-               <idno type="oape">8</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:787 oape:pers:5402" xml:lang="ar">مرسي محمد</persName> </editor>
                <editor> <persName ref="jaraid:pers:788 oape:pers:4660" xml:lang="ar">احمد راشد</persName> </editor>
@@ -12671,15 +12683,15 @@
                <title level="j" source="oape:org:417" xml:lang="ar-Latn-x-ijmes">al-Janān</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jinān</title>
                <title level="j" source="oape:org:420" xml:lang="ar-Latn-x-dmg">al-Ǧinān</title>
-               <idno type="LCCN">97648052 /NE</idno>
                <idno type="LCCN">sc85006025</idno>
+               <idno type="LCCN">97648052 /NE</idno>
                <idno type="LEAUB">b12828695</idno>
                <idno type="OCLC">1681102</idno>
-               <idno type="OCLC">224771488</idno>
+               <idno type="OCLC">7565762</idno>
                <idno type="OCLC">22757559</idno>
+               <idno type="OCLC">224771488</idno>
                <idno type="OCLC">656797477</idno>
                <idno type="OCLC">672061050</idno>
-               <idno type="OCLC">7565762</idno>
                <idno type="OCLC">792755530</idno>
                <idno type="OCLC">792755914</idno>
                <idno type="OCLC">987291181</idno>
@@ -12687,12 +12699,12 @@
                <idno type="ht_bib_key">102729675</idno>
                <idno type="jaraid">t1r61</idno>
                <idno type="oape">34</idno>
-               <idno type="url">http://hdl.handle.net/2027/njp.32101007751447</idno>
-               <idno type="url">http://opacplus.bsb-muenchen.de/title/404149-5</idno>
                <idno type="url">https://eap.bl.uk/collection/EAP119-1-6</idno>
+               <idno type="url">http://opacplus.bsb-muenchen.de/title/404149-5</idno>
+               <idno type="url">http://hdl.handle.net/2027/njp.32101007751447</idno>
                <idno type="wiki">Q65563187</idno>
-               <idno type="zdb">2793557-7</idno>
                <idno type="zdb">404149-5</idno>
+               <idno type="zdb">2793557-7</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="viaf:79119650 jaraid:pers:38 oape:pers:4744 wiki:Q710866" xml:lang="ar"> <forename xml:lang="ar">بطرس</forename> <surname xml:lang="ar">البستاني</surname>
                   </persName> </editor>
@@ -12701,7 +12713,7 @@
                   </persName> </editor>
                <imprint>
                   <date source="oape:org:73" type="onset" when="1870"/>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="terminus" when="1885"/>
                   <pubPlace> <placeName ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="ar">بيروت</placeName> </pubPlace>
                   <publisher> <orgName ref="oape:org:509" xml:lang="ar">مطبعة المعارف</orgName> <orgName ref="oape:org:509" xml:lang="ar-Latn-x-ijmes">Maṭbaʿa al-Maʿārif</orgName> </publisher>
                </imprint>
@@ -12957,8 +12969,8 @@
                <title level="j" source="oape:org:420" xml:lang="ar-Latn-x-dmg">Al-Ǧawāʾib</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Jawāʾib</title>
                <idno type="AUBNO">Mic-NA:000032</idno>
-               <idno type="OCLC">1034555233</idno>
                <idno type="OCLC">695008193</idno>
+               <idno type="OCLC">1034555233</idno>
                <idno type="jaraid">t1r25</idno>
                <idno type="oape">136</idno>
                <idno type="zdb">2048915-8</idno>
@@ -12969,7 +12981,7 @@
                   >الشدياق</surname> </persName> </editor>
                <imprint>
                   <date notAfter="1860-07-31" notBefore="1860-07-01" type="onset"/>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="terminus" when="1878"/>
                   <pubPlace source="../../../../TEI/oclc_618896732/tei/oclc_618896732-div_12.TEIP5.xml ../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_3679.d2e43527"> <placeName
                      ref="geon:745044 jaraid:place:9 oape:place:3" xml:lang="ar">الأستانة</placeName> </pubPlace>
                </imprint>
@@ -13245,7 +13257,8 @@
                <idno type="jaraid">t1r184</idno>
                <idno type="oape">700</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1881-02-05"/>
                   <date type="terminus" when="1881"/>
@@ -13431,10 +13444,10 @@
                <title level="j" source="oape:org:73" type="sub" xml:lang="ar">جريدة علمية أدبية فكاهية تصدر مرة كل أسبوعين</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥadīqa</title>
                <title level="s" source="oape:org:73">Student Magazines, 1899-1934</title>
-               <idno type="AUBNO">AA:4.2.1</idno>
                <idno type="AUBNO">Mic-P:AUB:000004</idno>
-               <idno type="LEAUB">b13653611</idno>
+               <idno type="AUBNO">AA:4.2.1</idno>
                <idno type="LEAUB">b1365374x</idno>
+               <idno type="LEAUB">b13653611</idno>
                <idno type="OCLC">792756474</idno>
                <idno type="jaraid">t1r796</idno>
                <idno type="oape">1192</idno>
@@ -13749,7 +13762,7 @@
                <editor> <persName ref="jaraid:pers:2690 oape:pers:6298" xml:lang="ar"> <addName cert="high" type="theophoric">عبد الجليل</addName> <addName cert="high" type="theophoric"
                   >رزق الله</addName> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1924"/>
                   <date source="oape:org:420" type="terminus" when="1925"/>
                   <pubPlace> <placeName ref="geon:98182 oape:place:216" xml:lang="ar">بغداد</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <orgName xml:lang="ar">المطبعة العصرية</orgName> </publisher>
@@ -13853,12 +13866,12 @@
                <idno type="LCCN">sc 82006030</idno>
                <idno type="LEAUB">b12823181</idno>
                <idno type="LEAUB">b13163218</idno>
-               <idno type="OCLC">1034550210</idno>
-               <idno type="OCLC">1034555587</idno>
                <idno type="OCLC">5135881</idno>
                <idno type="OCLC">672047031</idno>
                <idno type="OCLC">792755433</idno>
                <idno type="OCLC">792756327</idno>
+               <idno type="OCLC">1034550210</idno>
+               <idno type="OCLC">1034555587</idno>
                <idno type="ht_bib_key">008883609</idno>
                <idno type="jaraid">t1r3042</idno>
                <idno type="oape">23</idno>
@@ -14263,9 +14276,9 @@
                <idno type="AUBNO">Mic-NA:000322</idno>
                <idno type="LEAUB">b12828543</idno>
                <idno type="LEAUB">b17912118</idno>
+               <idno type="OCLC">42900055</idno>
                <idno type="OCLC">145289742</idno>
                <idno type="OCLC">145393412</idno>
-               <idno type="OCLC">42900055</idno>
                <idno type="OCLC">644997575</idno>
                <idno type="OCLC">935952465</idno>
                <idno type="epub">urn:uuid:381100bcebe62d09ade63dd41b7ddd38</idno>
@@ -14279,7 +14292,7 @@
                <editor type="owner"> <persName ref="viaf:4795364 jaraid:pers:2598 oape:pers:270 wiki:Q25451311" xml:lang="ar"> <addName type="theophoric" xml:lang="ar">عبد القادر</addName> <addName
                   type="nisbah" xml:lang="ar">الاسكندراني</addName> </persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:417" type="onset" when-custom="1328">2200-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1910"/>
                   <date source="oape:org:73" type="terminus" when="1912"/>
                   <pubPlace> <placeName ref="geon:170654 jaraid:place:15 oape:place:61" xml:lang="ar">دمشق</placeName> </pubPlace>
                   <publisher> <orgName ref="oape:org:560" xml:lang="ar">شركة الحقائق</orgName> <orgName ref="oape:org:482" xml:lang="ar-Latn-x-ijmes">Sharikat al-Ḥaqāiq</orgName> </publisher>
@@ -14481,7 +14494,7 @@
                <editor> <persName ref="jaraid:pers:185 oape:pers:4560" xml:lang="ar">امين شميل</persName> </editor>
                <editor> <persName ref="jaraid:pers:186 oape:pers:3147" xml:lang="ar">ابراهيمالجمال</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date type="onset" when="1885-10-10"/>
                   <date type="terminus" when="1919"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:487" xml:lang="ar-Latn-x-dmg">Maṭbaʿat az-Zamān</orgName> </publisher>
@@ -14504,20 +14517,6 @@
                   <date type="onset" when="1890-07-13"/>
                   <date type="terminus" when="1895"/>
                   <pubPlace> <placeName ref="geon:745044 jaraid:place:9 oape:place:3" xml:lang="ar">الأستانة</placeName> </pubPlace>
-               </imprint>
-            </monogr>
-         </biblStruct>
-         <biblStruct source="https://projectjaraid.github.io" subtype="newspaper" type="periodical">
-            <monogr>
-               <title level="j" xml:lang="ar">الحقوق</title>
-               <title level="j" xml:lang="ar-Latn-x-ijmes">al-Ḥuqūq</title>
-               <idno type="jaraid">t1r2867</idno>
-               <idno type="oape">3444</idno>
-               <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:2379 oape:pers:4181" xml:lang="ar">معروف</persName> </editor>
-               <imprint>
-                  <date type="onset" when="1911-01-18"/>
-                  <pubPlace> <placeName ref="geon:98182 oape:place:216" xml:lang="ar">بغداد</placeName> </pubPlace>
                </imprint>
             </monogr>
          </biblStruct>
@@ -14632,8 +14631,8 @@
                <title level="j" source="oape:org:420" xml:lang="ar-Latn-x-dmg">al-Ḥaqīqah</title>
                <idno type="AUBNO">Mic-NA:000001</idno>
                <idno type="LEAUB">b23281625</idno>
-               <idno type="OCLC">1034550756</idno>
                <idno type="OCLC">792755177</idno>
+               <idno type="OCLC">1034550756</idno>
                <idno type="fid">NAHOST</idno>
                <idno type="jaraid">t1r2372</idno>
                <idno type="oape">30</idno>
@@ -15595,8 +15594,8 @@
                <title level="j" source="oape:org:73" type="sub" xml:lang="ar">مجلة نسائية علمية ادبية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Khidr</title>
                <idno type="AUBNO">Mic-NA:000050</idno>
-               <idno type="LEAUB">b12821251</idno>
                <idno type="LEAUB">b2327718x</idno>
+               <idno type="LEAUB">b12821251</idno>
                <idno type="jaraid">t1r3124</idno>
                <idno type="oape">2248</idno>
                <textLang mainLang="ar"/>
@@ -16842,8 +16841,8 @@
                <title level="j" source="oape:org:73" xml:lang="ar">الرائد الرسمي للجمهورية التونسية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Rāʾid al-Tūnisī</title>
                <idno type="AUBNO">Mic-NA:000273</idno>
-               <idno type="LEAUB">b12828014</idno>
                <idno type="LEAUB">b1282964x</idno>
+               <idno type="LEAUB">b12828014</idno>
                <idno type="OCLC">792755996</idno>
                <idno type="jaraid">t1r27</idno>
                <idno type="oape">583</idno>
@@ -16902,7 +16901,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:439 oape:pers:5562" xml:lang="ar">محمد<addName cert="high" type="nisbah">التونسي</addName> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date type="onset" when="1896-08-31"/>
                   <date type="terminus" when="1897"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                </imprint>
@@ -17167,8 +17166,8 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:232 oape:pers:99" xml:lang="ar">خليلزينية</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1888"/>
+                  <date type="terminus" when="1890"/>
                   <pubPlace> <placeName ref="geon:361058 oape:place:225" xml:lang="ar">الإسكندرية</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <supplied>خليل زينية</supplied> </publisher>
                </imprint>
@@ -17718,7 +17717,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:1149 oape:pers:6637" xml:lang="ar">حسين<addName cert="medium" type="nasab"> <nameLink cert="high">ابن</nameLink>عثمان</addName> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date type="onset" when="1904"/>
                   <pubPlace> <placeName ref="geon:2464470 oape:place:333" xml:lang="ar">تونس</placeName> </pubPlace>
                </imprint>
             </monogr>
@@ -18905,7 +18904,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2683 oape:pers:6282" xml:lang="ar"> <addName cert="high" type="theophoric">عبد الاحد</addName>حبوش</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1922"/>
                   <date source="oape:org:420" type="terminus" when="1923"/>
                   <pubPlace> <placeName ref="geon:98182 oape:place:216" xml:lang="ar">بغداد</placeName> </pubPlace>
                </imprint>
@@ -19097,18 +19096,18 @@
                <title level="j" source="oape:org:417" type="sub" xml:lang="ar-Latn-x-ijmes">majallah adabīyah fannīyah ʿilmīyah</title>
                <idno type="AUBNO">Mic-NA:000499</idno>
                <idno type="LCCN">78645827 /NE</idno>
-               <idno type="LCCN">80647514 /NE/r81</idno>
                <idno type="LCCN">sn 99048707</idno>
+               <idno type="LCCN">80647514 /NE/r81</idno>
                <idno type="LEAUB">b12819037</idno>
                <idno type="LEAUB">b13592725</idno>
-               <idno type="OCLC">1034545644</idno>
-               <idno type="OCLC">39807190</idno>
                <idno type="OCLC">4372176</idno>
-               <idno type="OCLC">743394407</idno>
                <idno type="OCLC">7564150</idno>
+               <idno type="OCLC">39807190</idno>
+               <idno type="OCLC">743394407</idno>
                <idno type="OCLC">792755070</idno>
-               <idno type="URI">http://shamela.ws/index.php/book/36534</idno>
+               <idno type="OCLC">1034545644</idno>
                <idno type="URI">http://waqfeya.com/book.php?bid=6507</idno>
+               <idno type="URI">http://shamela.ws/index.php/book/36534</idno>
                <idno type="ht_bib_key">009012438</idno>
                <idno type="ht_bib_key">010585628</idno>
                <idno type="ht_bib_key">100162849</idno>
@@ -19116,8 +19115,8 @@
                <idno type="jaraid">t1r1668</idno>
                <idno type="jid">40</idno>
                <idno type="oape">3</idno>
-               <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/4898494</idno>
                <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-499.xls</idno>
+               <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/4898494</idno>
                <textLang mainLang="ar"/>
                <editor source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_12.TEIP5.xml#editor_1.d2e80"> <persName ref="viaf:305214858 jaraid:pers:52 oape:pers:1159 wiki:Q12180851"
                   xml:lang="ar">انطونالجميل</persName> </editor>
@@ -19495,7 +19494,7 @@
                <editor> <persName ref="jaraid:pers:1534 oape:pers:72" xml:lang="ar"> <forename>محمد</forename> <surname cert="high">الخضر</surname> <addName type="nasab" xml:lang="ar"> <nameLink
                   xml:lang="ar">بن</nameLink>الحسين</addName> </persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1904"/>
                   <date source="oape:org:420" type="terminus" when="1905"/>
                   <pubPlace> <placeName ref="geon:2464470 oape:place:333" xml:lang="ar">تونس</placeName> </pubPlace>
                </imprint>
@@ -20743,8 +20742,8 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:1065 oape:pers:4143" xml:lang="ar">سعادة</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1913"/>
+                  <date source="oape:org:420" type="terminus" when="1919"/>
                   <pubPlace> <placeName ref="geon:347497 oape:place:229" xml:lang="ar">طنطا</placeName> </pubPlace>
                </imprint>
             </monogr>
@@ -20827,8 +20826,8 @@
                <title level="j" xml:lang="ar">الشرق</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Sharq</title>
                <idno type="jaraid">t1r2602</idno>
-               <idno type="oape">3420</idno>
                <idno type="oape">544</idno>
+               <idno type="oape">3420</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2141 oape:pers:4132" xml:lang="ar">حبيب برهوم</persName> </editor>
                <imprint>
@@ -20918,8 +20917,8 @@
                <idno type="LEAUB">b14114860</idno>
                <idno type="jaraid">t1r2475</idno>
                <idno type="oape">3625</idno>
-               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-264.xls</idno>
                <idno type="url">http://www.elsharkonline.com</idno>
+               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-264.xls</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2018 oape:pers:6292" xml:lang="ar"> <addName cert="high" type="theophoric">عبد الغني</addName>عوني<addName cert="high" type="nisbah">الكعكي</addName>
                   </persName> </editor>
@@ -20995,8 +20994,8 @@
                <title level="j" xml:lang="ar">الشرق</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Sharq</title>
                <idno type="jaraid">t1r2254</idno>
-               <idno type="oape">3651</idno>
                <idno type="oape">369</idno>
+               <idno type="oape">3651</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:1836 oape:pers:5720" xml:lang="ar">موسى كريم</persName> </editor>
                <imprint>
@@ -21610,8 +21609,8 @@
                <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">Saḥīfa ṭibbīya ǧirāḥīya ʿilmīya wa-amalīya taṣdur fi l-ḫāmis ʿašar min kull šahr</title>
                <title level="j" source="oape:org:417" type="sub" xml:lang="fr">revue arabe mensuelle de médicine</title>
                <title level="j" source="oape:org:417" type="sub" xml:lang="ar-Latn-x-ijmes">ṣaḥīfah ṭibbīyah jirāḥīyah ʿilmīyah wa-ʿamalīyah</title>
-               <idno type="OCLC">299984897</idno>
                <idno type="OCLC">5160192</idno>
+               <idno type="OCLC">299984897</idno>
                <idno type="ht_bib_key">100348549</idno>
                <idno type="jaraid">t1r271</idno>
                <idno type="oape">755</idno>
@@ -21620,8 +21619,8 @@
                <editor> <persName ref="viaf:3813100 jaraid:pers:205 oape:pers:763 wiki:Q12218372" xml:lang="ar"> <forename xml:lang="ar">شبلي</forename> <surname xml:lang="ar">شميل</surname>
                   </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1886"/>
+                  <date type="terminus" when="1888"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName>al-Muqtaṭaf</orgName> </publisher>
                </imprint>
@@ -21838,8 +21837,8 @@
                <editor> <persName ref="jaraid:pers:1658 oape:pers:6390" xml:lang="ar"> <addName cert="high" type="theophoric">عبد الحميد</addName> <addName cert="medium" type="nasab"> <nameLink
                   cert="high">ابن</nameLink>باديسي</addName> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date type="onset" when="1924"/>
+                  <date source="oape:org:420" type="terminus" when="1934"/>
                   <pubPlace> <placeName ref="geon:2501152 jaraid:place:35 oape:place:515" xml:lang="ar">قسنطينة</placeName> </pubPlace>
                   <publisher source="oape:org:417"> <orgName ref="oape:org:471">Dār al-Gharb al-Islāmī</orgName> </publisher>
                </imprint>
@@ -21940,8 +21939,8 @@
                <editor> <persName ref="jaraid:pers:235 oape:pers:5279" xml:lang="ar">منصور جاماتي</persName> </editor>
                <editor> <persName ref="jaraid:pers:236 oape:pers:4574" xml:lang="ar">اندريه بورديني</persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="onset">2200-01-01</date>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1888"/>
+                  <date source="oape:org:420" type="terminus" when="1889"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:3037656 oape:place:653" xml:lang="ar">أنجيه</placeName> </pubPlace>
                </imprint>
             </monogr>
@@ -23251,9 +23250,9 @@
                <idno type="LCCN">ne 68004216</idno>
                <idno type="LEAUB">b12818240</idno>
                <idno type="LEAUB">b14469686</idno>
-               <idno type="OCLC">1034555409</idno>
                <idno type="OCLC">1775321</idno>
                <idno type="OCLC">792754991</idno>
+               <idno type="OCLC">1034555409</idno>
                <idno type="ht_bib_key">000548118</idno>
                <idno type="jaraid">t1r651</idno>
                <idno type="oape">27</idno>
@@ -23478,11 +23477,11 @@
                <idno type="LCCN">sc82002181</idno>
                <idno type="LEAUB">b12824069</idno>
                <idno type="LEAUB">b13547860</idno>
-               <idno type="OCLC">173830042</idno>
-               <idno type="OCLC">175312393</idno>
-               <idno type="OCLC">40366905</idno>
                <idno type="OCLC">5164128</idno>
                <idno type="OCLC">5261547</idno>
+               <idno type="OCLC">40366905</idno>
+               <idno type="OCLC">173830042</idno>
+               <idno type="OCLC">175312393</idno>
                <idno type="OCLC">792756436</idno>
                <idno type="ht_bib_key">000548176</idno>
                <idno type="ht_bib_key">008885773</idno>
@@ -23493,8 +23492,8 @@
                <idno type="oape">37</idno>
                <idno type="oape">59</idno>
                <idno type="url">http://ddc.aub.edu.lb/projects/saab/S50T11v1/index.html</idno>
-               <idno type="url">http://ddc.aub.edu.lb/projects/saab/tabib-1899/html-640/033-000.html</idno>
                <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/3727821</idno>
+               <idno type="url">http://ddc.aub.edu.lb/projects/saab/tabib-1899/html-640/033-000.html</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="viaf:64154472 oape:pers:2808 wiki:Q1399375" xml:lang="ar"> <forename xml:lang="ar">ابراهيم</forename> <surname xml:lang="ar">اليازجي</surname> </persName> </editor>
                <editor> <persName ref="viaf:57953733 jaraid:pers:469 oape:pers:2817" xml:lang="ar"> <surname xml:lang="ar">زلزل</surname> </persName> </editor>
@@ -23926,12 +23925,12 @@
                <idno type="LEAUB">b1316594x</idno>
                <idno type="LEAUB">b13538147</idno>
                <idno type="OCLC">792756434</idno>
-               <idno type="jaraid">t1r2634</idno>
                <idno type="jaraid">t1r868</idno>
+               <idno type="jaraid">t1r2634</idno>
                <idno type="oape">2223</idno>
                <idno type="oape">2224</idno>
-               <idno type="url">http://sesame.library.yale.edu/fedoragsearch/ameelview?pid=agaz:9218&amp;size=1&amp;fgsquery=</idno>
                <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-194a.xls</idno>
+               <idno type="url">http://sesame.library.yale.edu/fedoragsearch/ameelview?pid=agaz:9218&amp;size=1&amp;fgsquery=</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:686 oape:pers:5651" xml:lang="ar"> <addName cert="high" type="khitab">محب الدين</addName>الختيب</persName> </editor>
                <imprint>
@@ -24091,7 +24090,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:979 oape:pers:5187" xml:lang="ar">كريم خليل ثابت</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1926"/>
                   <date source="oape:org:420" type="terminus" when="1927"/>
                   <pubPlace source="oape:org:73"> <placeName ref="geon:357994 jaraid:place:3 oape:place:417" xml:lang="ar">مصر</placeName> </pubPlace>
                </imprint>
@@ -24143,8 +24142,8 @@
             <monogr>
                <title level="j" xml:lang="ar">العالم الاسلامي</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿĀlam al-Islāmī</title>
-               <idno type="jaraid">t1r1592</idno>
                <idno type="jaraid">t1r943</idno>
+               <idno type="jaraid">t1r1592</idno>
                <idno type="oape">1428</idno>
                <idno type="oape">1431</idno>
                <textLang mainLang="ar"/>
@@ -24462,8 +24461,8 @@
                <title level="j" xml:lang="ar">العدل</title>
                <title level="j" type="sub" xml:lang="ar">جريدة علمية سياسية ادبية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-ʿAdl</title>
-               <idno type="jaraid">t1r2193</idno>
                <idno type="jaraid">t1r781</idno>
+               <idno type="jaraid">t1r2193</idno>
                <idno type="oape">1191</idno>
                <idno type="oape">1261</idno>
                <textLang mainLang="ar"/>
@@ -24729,11 +24728,11 @@
                <idno type="LCCN">77642796/NE</idno>
                <idno type="LEAUB">b12820933</idno>
                <idno type="LEAUB">b13163280</idno>
-               <idno type="OCLC">1022938052</idno>
                <idno type="OCLC">1775303</idno>
                <idno type="OCLC">3301087</idno>
                <idno type="OCLC">42900494</idno>
                <idno type="OCLC">792756331</idno>
+               <idno type="OCLC">1022938052</idno>
                <idno type="ht_bib_key">000053138</idno>
                <idno type="ht_bib_key">008882699</idno>
                <idno type="ht_bib_key">102708806</idno>
@@ -24742,10 +24741,10 @@
                <idno type="jid">278</idno>
                <idno type="oape">12</idno>
                <idno type="url">http://alerfan.org</idno>
+               <idno type="url">https://archive.org/details/Alerfaan</idno>
+               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-24.xls</idno>
                <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/structure/3361522</idno>
                <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/3361522</idno>
-               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-24.xls</idno>
-               <idno type="url">https://archive.org/details/Alerfaan</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="viaf:306137154 jaraid:pers:1663 oape:pers:2805 wiki:Q12178968" xml:lang="ar">احمد عارف<surname cert="high">الزين</surname> </persName> </editor>
                <imprint>
@@ -24846,7 +24845,7 @@
                   </persName> </editor>
                <imprint>
                   <date source="oape:org:73" type="onset" when="1910"/>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:73" type="terminus" when="1926"/>
                   <pubPlace> <placeName ref="geon:170654 jaraid:place:15 oape:place:61" xml:lang="ar">دمشق</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <persName>ماري عبده عجمي</persName> </publisher>
                </imprint>
@@ -25528,9 +25527,9 @@
                <idno type="OCLC">175310070</idno>
                <idno type="ht_bib_key">008884952</idno>
                <idno type="jaraid">t1r3300</idno>
-               <idno type="oape">3426</idno>
                <idno type="oape">46</idno>
                <idno type="oape">60</idno>
+               <idno type="oape">3426</idno>
                <textLang mainLang="ar"/>
                <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_6.TEIP5.xml#p_6160.d2e77809" type="owner"> <persName ref="viaf:283531879 jaraid:pers:2713 oape:pers:2395"
                   xml:lang="ar"> <forename xml:lang="ar">محمد</forename> <forename xml:lang="ar">علي</forename> <surname xml:lang="ar">هبة الدين</surname> </persName> </editor>
@@ -27103,8 +27102,8 @@
                <idno type="OCLC">792755005</idno>
                <idno type="jaraid">t1r1843</idno>
                <idno type="oape">2958</idno>
-               <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/7142000</idno>
                <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-169.xls</idno>
+               <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/7142000</idno>
                <idno type="url">https://nbn-resolving.org/urn:nbn:de:hbz:5:1-222676</idno>
                <idno type="urn">urn:nbn:de:hbz:5:1-222676</idno>
                <idno type="zdb">2976560-2</idno>
@@ -27376,8 +27375,8 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Funūn</title>
                <title level="j" source="oape:org:73" type="alt">مجلة الفنون</title>
                <idno type="AUBNO">Mic-NA:000002</idno>
-               <idno type="OCLC">42899901</idno>
                <idno type="OCLC">5167744</idno>
+               <idno type="OCLC">42899901</idno>
                <idno type="ht_bib_key">008886905</idno>
                <idno type="ht_bib_key">102737615</idno>
                <idno type="ht_bib_key">102748047</idno>
@@ -27871,8 +27870,8 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="viaf:38333734 jaraid:pers:980 oape:pers:375 wiki:Q6853096" xml:lang="ar"> <forename>محب الدين</forename> <surname>الخطيب</surname> </persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="onset" when-custom="1334">2200-01-01</date>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="terminus" when-custom="1343">0001-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1916"/>
+                  <date source="oape:org:73" type="terminus" when="1924"/>
                   <pubPlace> <placeName ref="geon:104515 oape:place:220" xml:lang="ar">مكة</placeName> </pubPlace>
                   <publisher> <orgName ref="jaraid:org:7 oape:org:188" xml:lang="und-Latn">official</orgName> <orgName ref="jaraid:org:7 oape:org:188" xml:lang="ar">رسمية</orgName> </publisher>
                </imprint>
@@ -28269,9 +28268,9 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Quṭr al-Miṣrī</title>
                <idno type="OCLC">175311753</idno>
                <idno type="ht_bib_key">008885881</idno>
-               <idno type="jaraid">t1r1634</idno>
                <idno type="jaraid">t1r996</idno>
                <idno type="jaraid">t1r997</idno>
+               <idno type="jaraid">t1r1634</idno>
                <idno type="oape">1578</idno>
                <idno type="oape">1579</idno>
                <idno type="oape">1580</idno>
@@ -28933,7 +28932,7 @@
                <editor> <persName ref="jaraid:pers:850 oape:pers:6048" xml:lang="ar">سليمان فوزي</persName> </editor>
                <imprint>
                   <date source="oape:org:420" type="onset" when="1921"/>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="terminus" when="1932"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:456" xml:lang="ar-Latn-x-dmg">Idārat al-Kaškūl</orgName> <orgName ref="oape:org:456" xml:lang="ar">ادارة الكشكول</orgName>
                   </publisher>
@@ -29703,10 +29702,10 @@
                <title level="j" source="oape:org:417" type="alt" xml:lang="ar-Latn-x-ijmes">al-Latāʾif</title>
                <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">Ǧarı̄da ʿilmı̄ya adabı̄ya taʾrı̄ḫı̄ya fukāhı̄ya taṣdur fi-wasaṭ kull šahr</title>
                <idno type="AUBNO">Mic-NA:000454</idno>
-               <idno type="LEAUB">b12824458</idno>
                <idno type="LEAUB">b1287405x</idno>
-               <idno type="OCLC">259814481</idno>
+               <idno type="LEAUB">b12824458</idno>
                <idno type="OCLC">42901477</idno>
+               <idno type="OCLC">259814481</idno>
                <idno type="OCLC">792755581</idno>
                <idno type="ht_bib_key">009012426</idno>
                <idno type="jaraid">t1r263</idno>
@@ -29732,8 +29731,8 @@
                <title level="j" source="oape:org:73" type="sub" xml:lang="ar">أكبر وأرخص مجلة روائية أدبية ظهرت حتى اليوم</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Laṭāʾif al-Ahliyya</title>
                <idno type="jaraid">t1r3046</idno>
-               <idno type="oape">1751</idno>
                <idno type="oape">524</idno>
+               <idno type="oape">1751</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2519 oape:pers:624" xml:lang="ar"> <forename xml:lang="ar">محمد</forename> <surname xml:lang="ar">جمال</surname> </persName> </editor>
                <editor source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#editor_20.d2e1693"> <persName ref="oape:pers:4172" xml:lang="ar">محمد جمل</persName> </editor>
@@ -29895,7 +29894,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:890 oape:pers:5622" xml:lang="ar">محمد حافظ رمضان</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1921"/>
                   <date source="oape:org:420" type="terminus" when="1925"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <orgName>الحزب الوطني</orgName> </publisher>
@@ -30076,9 +30075,9 @@
                <idno type="OCLC">802469001</idno>
                <idno type="oape">25</idno>
                <idno type="ssgn">26</idno>
+               <idno type="url">https://gpa.eastview.com/crl/mena/newspapers/muyd</idno>
                <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-325.xls</idno>
                <idno type="url">http://zefys.staatsbibliothek-berlin.de/list/title/zdb/26687665</idno>
-               <idno type="url">https://gpa.eastview.com/crl/mena/newspapers/muyd</idno>
                <idno type="zdb">1109399-7</idno>
                <idno type="zdb">2668766-5</idno>
                <idno type="zdb">3060944-6</idno>
@@ -30164,10 +30163,10 @@
                <idno type="LCCN">79641437 /NE</idno>
                <idno type="LEAUB">b12824525</idno>
                <idno type="LEAUB">b14482757</idno>
-               <idno type="OCLC">1034550157</idno>
                <idno type="OCLC">4765849</idno>
                <idno type="OCLC">792755587</idno>
                <idno type="OCLC">792756541</idno>
+               <idno type="OCLC">1034550157</idno>
                <idno type="ht_bib_key">008884794</idno>
                <idno type="jaraid">t1r3116</idno>
                <idno type="oape">474</idno>
@@ -30334,8 +30333,8 @@
                <idno type="jaraid">t1r8</idno>
                <idno type="oape">229</idno>
                <idno type="url">http://opacplus.bsb-muenchen.de/title/2581350-X</idno>
-               <idno type="zdb">2419345-8</idno>
                <idno type="zdb">2581350-X</idno>
+               <idno type="zdb">2419345-8</idno>
                <idno type="zdb">2792324-1</idno>
                <textLang mainLang="ar"/>
                <textLang mainLang="fr"/>
@@ -30665,8 +30664,8 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Majalla al-Tijāriyya al-Sūriyya al-Amīrkiyya</title>
                <title level="j" source="oape:org:73" type="alt">Commercial magazine</title>
                <idno type="AUBNO">Mic-NA:000464</idno>
-               <idno type="LEAUB">b13377334</idno>
                <idno type="LEAUB">b2206428x</idno>
+               <idno type="LEAUB">b13377334</idno>
                <idno type="jaraid">t1r2172</idno>
                <idno type="oape">2197</idno>
                <textLang mainLang="ar"/>
@@ -30796,8 +30795,8 @@
                <title level="j" xml:lang="ar">المجلة السورية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Majalla al-Sūriyya</title>
                <idno type="jaraid">t1r3051</idno>
-               <idno type="oape">3434</idno>
                <idno type="oape">526</idno>
+               <idno type="oape">3434</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2523 oape:pers:4165" xml:lang="ar">فليب يوسف تيان</persName> </editor>
                <imprint>
@@ -30877,7 +30876,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:854 oape:pers:5040" xml:lang="ar">اسكندر مكاريوس</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1925"/>
                   <date source="oape:org:420" type="terminus" when="1926"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:486" xml:lang="ar-Latn-x-dmg">al-Maṭbaʿa at-tiǧārīya al-kubrā</orgName> <orgName ref="oape:org:555" xml:lang="ar"
@@ -31103,8 +31102,8 @@
                   <surname xml:lang="ar">مطران</surname> </persName> </editor>
                <editor source="https://projectjaraid.github.io"> <persName ref="jaraid:pers:642 oape:pers:5320" xml:lang="ar">محمود مسعد</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1900"/>
+                  <date source="oape:org:420" type="terminus" when="1902"/>
                   <pubPlace source="oape:org:73"> <placeName ref="geon:357994 jaraid:place:3 oape:place:417" xml:lang="ar">مصر</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <supplied>الناشر غير محدد</supplied> </publisher>
                </imprint>
@@ -31488,9 +31487,9 @@
                <title level="j" type="sub" xml:lang="ar">جريدة ادبية اخبارية علمية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Maḥabba</title>
                <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda Adabiyya Akhbāriyya ʿIlmiyya</title>
+               <idno type="OCLC">902810773</idno>
                <idno type="OCLC">1034540719</idno>
                <idno type="OCLC">4770009847</idno>
-               <idno type="OCLC">902810773</idno>
                <idno type="jaraid">t1r750</idno>
                <idno type="oape">1145</idno>
                <textLang mainLang="ar"/>
@@ -32237,8 +32236,8 @@
                <idno type="LCCN">sc82002252</idno>
                <idno type="LEAUB">b12823703</idno>
                <idno type="LEAUB">b12826765</idno>
-               <idno type="OCLC">259924592</idno>
                <idno type="OCLC">5193914</idno>
+               <idno type="OCLC">259924592</idno>
                <idno type="OCLC">792755726</idno>
                <idno type="ht_bib_key">008886904</idno>
                <idno type="jaraid">t1r3080</idno>
@@ -32622,7 +32621,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:252 oape:pers:344" xml:lang="ar"> <forename xml:lang="ar">محمد</forename> <surname xml:lang="ar">الحسيني</surname> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1925"/>
                   <date source="oape:org:420" type="terminus" when="1927"/>
                   <pubPlace> <placeName ref="geon:98182 oape:place:216" xml:lang="ar">بغداد</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <orgName>مطبعة الآداب</orgName> </publisher>
@@ -33341,7 +33340,7 @@
                <editor> <persName ref="jaraid:pers:538 oape:pers:2810" xml:lang="ar"> <forename xml:lang="ar">لويس</forename> <surname xml:lang="ar">خليل</surname> </persName> </editor>
                <imprint>
                   <date source="https://projectjaraid.github.io" type="onset" when="1898-01-01"/>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="terminus" when="1914"/>
                   <pubPlace source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_15.TEIP5.xml#pubPlace_3.d2e1234"> <placeName ref="geon:276781 jaraid:place:2 oape:place:26"
                      xml:lang="ar">بيروت</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <orgName>آباء جامعة القديس يوسف</orgName> </publisher>
@@ -33553,8 +33552,8 @@
                <title level="j" type="sub" xml:lang="ar">جريدة سياسية تاريخية علمية ادبية صناعية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Miṣbāḥ</title>
                <idno type="AUBNO">Mic-NA:000115</idno>
-               <idno type="LEAUB">b12821986</idno>
                <idno type="LEAUB">b1282544x</idno>
+               <idno type="LEAUB">b12821986</idno>
                <idno type="OCLC">792755671</idno>
                <idno type="jaraid">t1r165</idno>
                <idno type="oape">681</idno>
@@ -34519,8 +34518,8 @@
                <title level="j" source="oape:org:420" type="sub" xml:lang="ar">[ مجلة علمية ادبية صحية تء ريخية فكاهية مصورة ; نصف شهرية ]</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Miftāḥ</title>
                <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">[maǧalla ʿilmīya adabīya ṣiḥḥīya taʾ rīḫīya fukāhīya muṣauwara ; niṣf šahrīya]</title>
-               <idno type="OCLC">259923386</idno>
                <idno type="OCLC">5183901</idno>
+               <idno type="OCLC">259923386</idno>
                <idno type="ht_bib_key">100412689</idno>
                <idno type="jaraid">t1r814</idno>
                <idno type="oape">1207</idno>
@@ -34733,12 +34732,12 @@
                <idno type="jid">107</idno>
                <idno type="oape">5</idno>
                <idno type="oape">6</idno>
-               <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/4212183</idno>
                <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-495.xls</idno>
+               <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/4212183</idno>
                <idno type="url">https://nbn-resolving.org/urn:nbn:de:hbz:5:1-77143</idno>
                <idno type="urn">urn:nbn:de:hbz:5:1-77143</idno>
-               <idno type="zdb">2823699-3</idno>
                <idno type="zdb">304192-X</idno>
+               <idno type="zdb">2823699-3</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="viaf:62958224 jaraid:pers:84 oape:pers:780 wiki:Q11002856" xml:lang="ar"> <forename xml:lang="ar">يعقوب</forename> <surname xml:lang="ar">صروف</surname>
                   </persName> </editor>
@@ -34776,12 +34775,12 @@
                <idno type="ht_bib_key">000060895</idno>
                <idno type="jid">107</idno>
                <idno type="oape">6</idno>
-               <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/4212183</idno>
                <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-495.xls</idno>
+               <idno type="url">http://digitale-sammlungen.ulb.uni-bonn.de/ulbbnioa/periodical/titleinfo/4212183</idno>
                <idno type="url">https://nbn-resolving.org/urn:nbn:de:hbz:5:1-77143</idno>
                <idno type="urn">urn:nbn:de:hbz:5:1-77143</idno>
-               <idno type="zdb">2823699-3</idno>
                <idno type="zdb">304192-X</idno>
+               <idno type="zdb">2823699-3</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="viaf:62958224 jaraid:pers:84 oape:pers:780 wiki:Q11002856" xml:lang="ar"> <forename xml:lang="ar">يعقوب</forename> <surname xml:lang="ar">صروف</surname>
                   </persName> </editor>
@@ -34877,7 +34876,7 @@
                   </persName> </editor>
                <editor source="oape:org:73"> <persName ref="jaraid:pers:1134 oape:pers:1649" xml:lang="ar">خليل ثابت</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1889"/>
                   <date source="oape:org:420" type="terminus" when="1890"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <orgName>مطبعة المقطم</orgName> </publisher>
@@ -34982,7 +34981,6 @@
                   </persName> </editor>
                <imprint>
                   <date notAfter="1924-05-31" notBefore="1924-05-01" type="onset"/>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="terminus" when-custom="1345">0001-01-01</date>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName>dâz aḥijâʿal-kutub al-ʿarabiye</orgName> </publisher>
                </imprint>
@@ -35187,8 +35185,8 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Manār</title>
                <idno type="LEAUB">b12823521</idno>
                <idno type="OCLC">783579368</idno>
-               <idno type="jaraid">t1r3028</idno>
                <idno type="jaraid">t1r813</idno>
+               <idno type="jaraid">t1r3028</idno>
                <idno type="oape">3322</idno>
                <idno type="oape">3345</idno>
                <textLang mainLang="ar"/>
@@ -35927,7 +35925,8 @@
                <idno type="jaraid">t1r193</idno>
                <idno type="oape">690</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1881"/>
                   <pubPlace> <placeName ref="geon:2988507 oape:place:322" xml:lang="ar">باريز</placeName> </pubPlace>
@@ -35945,7 +35944,8 @@
                <textLang mainLang="ota"/>
                <textLang mainLang="fa"/>
                <textLang mainLang="fr"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1899-02-15"/>
                   <date type="terminus" when="1903"/>
@@ -36082,7 +36082,6 @@
                <editor> <persName ref="jaraid:pers:974 oape:pers:4933" xml:lang="ar">ابراهيم اطفيش</persName> </editor>
                <imprint>
                   <date notAfter="1926-02-28" notBefore="1926-02-01" type="onset"/>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="terminus" when-custom="1347">0001-01-01</date>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                </imprint>
             </monogr>
@@ -36471,8 +36470,8 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Mawsūʿāt</title>
                <title level="j" source="oape:org:420" type="alt" xml:lang="ar-Latn-x-dmg">al-Mausūʾāt</title>
                <title level="j" source="oape:org:420" type="alt" xml:lang="ar-Latn-x-dmg">al-Mawsū'āt</title>
-               <idno type="OCLC">259843719</idno>
                <idno type="OCLC">42906244</idno>
+               <idno type="OCLC">259843719</idno>
                <idno type="OCLC">723514253</idno>
                <idno type="OCLC">792756356</idno>
                <idno type="ht_bib_key">009012436</idno>
@@ -36484,8 +36483,8 @@
                <editor source="oape:org:73"> <persName ref="jaraid:pers:540 oape:pers:4108" xml:lang="ar"> <forename>احمد</forename> <forename>حافظ</forename> <surname>عوض</surname> </persName> </editor>
                <editor> <persName ref="jaraid:pers:541 oape:pers:5295" xml:lang="ar">محمود<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>النصر</addName> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1898"/>
+                  <date source="oape:org:73" type="terminus" when="1899"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <persName>أحمد حافظ عوض</persName> </publisher>
                </imprint>
@@ -36932,10 +36931,10 @@
                <idno type="AUBNO">Mic-NA:000310</idno>
                <idno type="LEAUB">b12825906</idno>
                <idno type="LEAUB">b12828403</idno>
-               <idno type="OCLC">1086419117</idno>
                <idno type="OCLC">259931514</idno>
                <idno type="OCLC">792755686</idno>
                <idno type="OCLC">792755884</idno>
+               <idno type="OCLC">1086419117</idno>
                <idno type="jaraid">t1r2034</idno>
                <idno type="jaraid">t1r3040</idno>
                <idno type="oape">483</idno>
@@ -38610,8 +38609,8 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Naṣīr</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Naṣīr al-Bayrūtī</title>
                <idno type="jaraid">t1r2380</idno>
-               <idno type="oape">1752</idno>
                <idno type="oape">272</idno>
+               <idno type="oape">1752</idno>
                <textLang mainLang="ar"/>
                <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_3.TEIP5.xml#p_4079.d2e33981"> <persName ref="viaf:60135237 jaraid:pers:1974 oape:pers:936 wiki:Q12218375"
                   xml:lang="ar"> <forename xml:lang="ar">شبلي</forename> <surname xml:lang="ar">ملاط</surname> </persName> </editor>
@@ -39792,7 +39791,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:962 oape:pers:4501" xml:lang="ar">مصطفى عمر<addName cert="high" type="nisbah">الاخميمي</addName> </persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="onset" when-custom="1343">2200-01-01</date>
+                  <date type="onset" when="1925-03-12"/>
                   <date source="oape:org:420" type="terminus" when="1927-03-09"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                </imprint>
@@ -40164,8 +40163,8 @@
                <editor> <persName ref="viaf:76496271 jaraid:pers:280 oape:pers:713 wiki:Q1262212" xml:lang="ar"> <forename xml:lang="ar">جرجي</forename> <surname xml:lang="ar">زيدان</surname>
                   </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:73" type="onset" when="1892"/>
+                  <date source="oape:org:73" type="terminus" when="1985"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:73"> <supplied>دار الهلال</supplied> </publisher>
                </imprint>
@@ -40478,8 +40477,8 @@
                <idno type="OCLC">175678474</idno>
                <idno type="ht_bib_key">102739446</idno>
                <idno type="jaraid">t1r3203</idno>
-               <idno type="oape">3437</idno>
                <idno type="oape">504</idno>
+               <idno type="oape">3437</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2639 oape:pers:3282" xml:lang="ar">الخورفسقفوس<forename>جرجس</forename> <surname>شلحة</surname> </persName> </editor>
                <imprint>
@@ -40752,8 +40751,8 @@
             <monogr>
                <title level="j" xml:lang="ar">الوطنية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">al-Waṭaniyya</title>
-               <idno type="jaraid">t1r2146</idno>
                <idno type="jaraid">t1r776</idno>
+               <idno type="jaraid">t1r2146</idno>
                <idno type="oape">1175</idno>
                <idno type="oape">1176</idno>
                <textLang mainLang="ar"/>
@@ -40974,8 +40973,7 @@
                <editor source="../../../../TEI/oclc_165855925/tei/oclc_165855925-v_1.TEIP5.xml#p_714.d2e6748"> <persName ref="oape:pers:4104" xml:lang="ar">ابراهيم<addName type="theophoric"
                   xml:lang="ar">عبد الغفار</addName> <addName type="nisbah" xml:lang="ar">الدسوقي</addName> </persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="onset">2200-01-01</date>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="https://projectjaraid.github.io" type="onset" when="1828-12-03"/>
                   <pubPlace source="https://projectjaraid.github.io"> <placeName ref="geon:1146359 jaraid:place:6 oape:place:468" xml:lang="ar">بولاق</placeName> </pubPlace>
                   <publisher source="https://projectjaraid.github.io"> <orgName ref="jaraid:org:4 oape:org:170" xml:lang="und-Latn">Government</orgName> <orgName ref="jaraid:org:4 oape:org:170"
                      xml:lang="ar">الحكومة</orgName> </publisher>
@@ -42761,8 +42759,8 @@
                <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">saḥīfa sīyāsīya ʿilmīya adabīya taṣdur yaum al-iṯnain min kull usbūʿ</title>
                <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">ṣudūruhā fī yawm al-thulāthā min kull usbūʿ</title>
                <idno type="AUBNO">Mic-NA:000026</idno>
-               <idno type="OCLC">177646790</idno>
                <idno type="OCLC">30431084</idno>
+               <idno type="OCLC">177646790</idno>
                <idno type="OCLC">499946128</idno>
                <idno type="OCLC">745202659</idno>
                <idno type="OCLC">792755216</idno>
@@ -42868,8 +42866,8 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">Jabal ʿĀmil</title>
                <title level="j" type="alt" xml:lang="ar-Latn-x-ijmes">al-Jabal ʿĀmil</title>
                <idno type="jaraid">t1r2580</idno>
-               <idno type="oape">1925</idno>
                <idno type="oape">297</idno>
+               <idno type="oape">1925</idno>
                <textLang mainLang="ar"/>
                <editor source="../../../../OpenArabicPE/journal_lughat-al-arab/tei/oclc_472450345-i_9.TEIP5.xml#bibl_2" type="owner"> <persName ref="oape:pers:4111" xml:lang="ar"
                   >احمد عارفالرين</persName> </editor>
@@ -43046,7 +43044,8 @@
                <textLang mainLang="ar"/>
                <textLang mainLang="arz"/>
                <textLang mainLang="fr"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1891-01-21"/>
                   <date type="terminus" when="1899"/>
@@ -43533,8 +43532,8 @@
                <title level="j" xml:lang="ota">مصور جول</title>
                <title level="j" xml:lang="ota-Latn-x-ijmes">Cūl-i Müṣevver</title>
                <idno type="jaraid">t1r3245</idno>
-               <idno type="oape">2147</idno>
                <idno type="oape">559</idno>
+               <idno type="oape">2147</idno>
                <textLang mainLang="ota" source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304"/>
                <textLang mainLang="ar" source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_94.TEIP5.xml#bibl_5.d2e6304"/>
                <editor> <persName ref="jaraid:pers:2669 oape:pers:6654" xml:lang="ar">جمال</persName> </editor>
@@ -45002,7 +45001,8 @@
                <idno type="jaraid">t1r133</idno>
                <idno type="oape">658</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date notAfter="1878-08-31" notBefore="1878-08-01" type="onset"/>
                   <date type="terminus" when="1879"/>
@@ -45261,10 +45261,10 @@
                <idno type="ISSN">0557-5559</idno>
                <idno type="ISSN">1110-5119</idno>
                <idno type="LCCN">ne 65002371//r82</idno>
-               <idno type="LEAUB">b12821317</idno>
                <idno type="LEAUB">b1282687x</idno>
-               <idno type="OCLC">183196729</idno>
+               <idno type="LEAUB">b12821317</idno>
                <idno type="OCLC">5150439</idno>
+               <idno type="OCLC">183196729</idno>
                <idno type="OCLC">783579406</idno>
                <idno type="fid">NAHOST</idno>
                <idno type="ht_bib_key">000517365</idno>
@@ -45272,8 +45272,8 @@
                <idno type="oape">2857</idno>
                <idno type="ssgn">26</idno>
                <idno type="ssgn">6,23</idno>
-               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-56.xls</idno>
                <idno type="url">http://www.rosa-magazine.com</idno>
+               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-56.xls</idno>
                <idno type="zdb">896748-9</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:1486 oape:pers:5910" xml:lang="ar"> <forename cert="medium">روز</forename> <surname cert="medium">اليوسف</surname> </persName> </editor>
@@ -45380,7 +45380,7 @@
                <editor> <persName ref="jaraid:pers:1396 oape:pers:5041" xml:lang="ar">اسكندر شلفون</persName> </editor>
                <editor source="https://www.worldcat.org/oclc/173830155" type="owner"> <persName ref="jaraid:pers:1396 oape:pers:5041" xml:lang="ar">اسكندر شلفون</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1920"/>
                   <date source="oape:org:420" type="terminus" when="1927"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:451">Ḣindīya</orgName> </publisher>
@@ -45494,8 +45494,8 @@
                <title level="j" xml:lang="ar-Latn-x-ijmes">Rawḍat al-Maʿārif</title>
                <title level="j" xml:lang="fr">Revue de Rawdatt el-Maaref</title>
                <idno type="jaraid">t1r3038</idno>
-               <idno type="oape">3389</idno>
                <idno type="oape">492</idno>
+               <idno type="oape">3389</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2511 oape:pers:224" xml:lang="ar"> <forename xml:lang="ar">محمد</forename> <forename xml:lang="ar">علي</forename> <surname xml:lang="ar"
                   >القباني</surname> </persName> </editor>
@@ -46019,8 +46019,8 @@
                <title level="j" xml:lang="ar">مجلة أدبية فنية فكاهية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">Samīr al-Ṣibā</title>
                <idno type="jaraid">t1r3192</idno>
-               <idno type="oape">1848</idno>
                <idno type="oape">496</idno>
+               <idno type="oape">1848</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2626 oape:pers:3694" xml:lang="ar">شكريفارس</persName> </editor>
                <imprint>
@@ -47309,8 +47309,8 @@
                <title level="j" xml:lang="ar">صدى الشهباء</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">Ṣadā al-Shahbāʾ</title>
                <idno type="jaraid">t1r2706</idno>
-               <idno type="oape">1617</idno>
                <idno type="oape">493</idno>
+               <idno type="oape">1617</idno>
                <textLang mainLang="ar" source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_37.TEIP5.xml#bibl_16.d1e4506"/>
                <textLang mainLang="ota" source="../../../../OpenArabicPE/journal_al-muqtabas/tei/oclc_4770057679-i_37.TEIP5.xml#bibl_16.d1e4506"/>
                <editor type="owner"> <persName ref="jaraid:pers:2246 oape:pers:174" xml:lang="ar"> <forename xml:lang="ar">حكمت</forename> <forename>ناظم</forename> </persName> </editor>
@@ -48597,8 +48597,8 @@
                <textLang mainLang="en"/>
                <editor> <persName ref="jaraid:pers:682 oape:pers:4769" xml:lang="ar">كلاوديوس ج. لبيب</persName> </editor>
                <imprint>
-                  <date datingMethod="#cal_islamic" source="oape:org:420" type="onset" when-custom="1217">2200-01-01</date>
-                  <date datingMethod="#cal_islamic" source="oape:org:420" type="terminus" when-custom="1220">0001-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1900"/>
+                  <date source="oape:org:420" type="terminus" when="1904"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:463" xml:lang="ar-Latn-x-dmg">Ǧāmiʿat ʿAin Šams</orgName> <orgName ref="oape:org:463" xml:lang="ar">جامعة عين شمس</orgName>
                   </publisher>
@@ -48611,8 +48611,8 @@
                <title level="j" source="oape:org:73" type="sub" xml:lang="ar">جريدة علمية أدبية فكاهية</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">Ghādat al-Fikar</title>
                <title level="s" source="oape:org:73">Student Magazines, 1899-1934</title>
-               <idno type="AUBNO">AA:4.2.1</idno>
                <idno type="AUBNO">Mic-P:AUB:000001</idno>
+               <idno type="AUBNO">AA:4.2.1</idno>
                <idno type="LEAUB">b1371028x</idno>
                <idno type="LEAUB">b13710990</idno>
                <idno type="OCLC">792756479</idno>
@@ -48645,8 +48645,8 @@
                <textLang mainLang="ota"/>
                <textLang mainLang="hy"/>
                <imprint>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="onset">2200-01-01</date>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date type="onset" when="1867-09-12"/>
+                  <date type="terminus" when="1868"/>
                   <pubPlace> <placeName ref="geon:170063 oape:place:15" xml:lang="ar">حلب</placeName> </pubPlace>
                   <publisher> <orgName ref="jaraid:org:7 oape:org:188" xml:lang="und-Latn">official</orgName> <orgName ref="jaraid:org:7 oape:org:188" xml:lang="ar">رسمية</orgName> </publisher>
                </imprint>
@@ -48943,8 +48943,8 @@
                <title level="j" xml:lang="ar">فتى العرب</title>
                <title level="j" xml:lang="ar-Latn-x-ijmes">Fatā al-ʿArab</title>
                <idno type="jaraid">t1r2416</idno>
-               <idno type="oape">2055</idno>
                <idno type="oape">554</idno>
+               <idno type="oape">2055</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="viaf:37216757 jaraid:pers:1941 oape:pers:459" xml:lang="ar"> <forename xml:lang="ar">عبد الغني</forename> <surname xml:lang="ar">العريسي</surname> </persName> </editor>
                <editor> <persName ref="jaraid:pers:1966 oape:pers:4162" xml:lang="ar">فؤاد حنتس</persName> </editor>
@@ -49928,11 +49928,11 @@
                <idno type="LEAUB">b12821615</idno>
                <idno type="LEAUB">b22887271</idno>
                <idno type="OCLC">792755292</idno>
-               <idno type="jaraid">t1r2557</idno>
                <idno type="jaraid">t1r359</idno>
+               <idno type="jaraid">t1r2557</idno>
+               <idno type="oape">348</idno>
                <idno type="oape">3272</idno>
                <idno type="oape">3407</idno>
-               <idno type="oape">348</idno>
                <textLang mainLang="ar"/>
                <textLang mainLang="ota"/>
                <editor source="../../../../OpenArabicPE/journal_al-zuhur/tei/oclc_1034545644-i_13.TEIP5.xml#editor_15.d2e3654" type="owner"> <persName ref="viaf:12720446 jaraid:pers:269 oape:pers:282"
@@ -50111,8 +50111,8 @@
                <idno type="jaraid">t1r112</idno>
                <idno type="oape">349</idno>
                <idno type="ssgn">26</idno>
-               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-111.xls</idno>
                <idno type="url">https://gpa.eastview.com/crl/mena/newspapers/laah</idno>
+               <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-111.xls</idno>
                <idno type="zdb">1011548-1</idno>
                <idno type="zdb">3062446-0</idno>
                <textLang mainLang="ar"/>
@@ -50412,13 +50412,13 @@
                <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Majalla shahriyya adabiyya ʿilmiyya tārīkhiyya</title>
                <idno type="LCCN">77961019/NE</idno>
                <idno type="LCCN">78642086 /NE</idno>
-               <idno type="OCLC">1158780771</idno>
                <idno type="OCLC">4073145</idno>
                <idno type="OCLC">4341447</idno>
                <idno type="OCLC">472450345</idno>
                <idno type="OCLC">792755585</idno>
-               <idno type="URI">http://shamela.ws/index.php/book/36540</idno>
+               <idno type="OCLC">1158780771</idno>
                <idno type="URI">http://waqfeya.com/book.php?bid=6509</idno>
+               <idno type="URI">http://shamela.ws/index.php/book/36540</idno>
                <idno type="ht_bib_key">000052281</idno>
                <idno type="ht_bib_key">008883186</idno>
                <idno type="jaraid">t1r3250</idno>
@@ -50773,20 +50773,20 @@
                <title level="j" source="oape:org:417" xml:lang="ar-Latn-x-ijmes">Majallat al-aḥkām al-sharʿīyah</title>
                <title level="j" source="oape:org:420" xml:lang="ar-Latn-x-dmg">Maǧallat al-aḥkām aš-šarʿīya</title>
                <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">Maǧalla qaḍāʾīya šarʿīya ʿilmīya adabīya taṣdur marra fī muntaṣaf kull šahr ʿarabī</title>
-               <idno type="OCLC">259836567</idno>
                <idno type="OCLC">42906207</idno>
+               <idno type="OCLC">259836567</idno>
                <idno type="ht_bib_key">008889117</idno>
-               <idno type="jaraid">t1r1545</idno>
                <idno type="jaraid">t1r869</idno>
+               <idno type="jaraid">t1r1545</idno>
+               <idno type="oape">360</idno>
                <idno type="oape">1286</idno>
                <idno type="oape">1287</idno>
-               <idno type="oape">360</idno>
                <idno type="zdb">2441419-0</idno>
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:1253 oape:pers:648" xml:lang="ar"> <forename xml:lang="ar">حسن</forename> <surname xml:lang="ar">حمادة</surname> </persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1902"/>
+                  <date type="terminus" when="1916"/>
                   <pubPlace> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:516" xml:lang="ar-Latn-x-dmg">Maṭbaʿat al-Wāʿiẓ</orgName> <orgName ref="oape:org:516" xml:lang="ar">مطبعة الواعظ</orgName>
                   </publisher>
@@ -51479,8 +51479,8 @@
                <title level="j" source="oape:org:420" xml:lang="fr">Revue de l'Académie Arabe de Damas</title>
                <idno type="ISSN">0002-4031</idno>
                <idno type="LCCN">97648384 /NE</idno>
-               <idno type="OCLC">150372556</idno>
                <idno type="OCLC">37791189</idno>
+               <idno type="OCLC">150372556</idno>
                <idno type="ht_bib_key">004034984</idno>
                <idno type="jaraid">t1r3173</idno>
                <idno type="oape">2370</idno>
@@ -51687,8 +51687,7 @@
                <textLang mainLang="ar"/>
                <editor> <persName ref="jaraid:pers:2688 oape:pers:4926" xml:lang="ar">هاشم<addName cert="high" type="nisbah">السعدي</addName> </persName> </editor>
                <imprint>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="onset" when-custom="1342">2200-01-01</date>
-                  <date calendar="#cal_islamic" datingMethod="#cal_islamic" source="oape:org:420" type="terminus" when-custom="1344">0001-01-01</date>
+                  <date type="onset" when="1924-02-15"/>
                   <pubPlace> <placeName ref="geon:98182 oape:place:216" xml:lang="ar">بغداد</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <persName>Nadīm</persName> </publisher>
                </imprint>
@@ -53097,7 +53096,8 @@
                <idno type="jaraid">t1r327</idno>
                <idno type="oape">797</idno>
                <textLang mainLang="ar"/>
-               <editor> <persName ref="jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName> </persName> </editor>
+               <editor> <persName ref="viaf:24768849 jaraid:pers:87 oape:pers:5073" xml:lang="ar">سانوا<addName cert="medium" type="kunyah"> <nameLink cert="high">ابو</nameLink>نظارة</addName>
+                  </persName> </editor>
                <imprint>
                   <date type="onset" when="1889"/>
                   <pubPlace> <placeName ref="geon:2988507 oape:place:322" xml:lang="ar">باريز</placeName> </pubPlace>
@@ -53188,7 +53188,7 @@
                <idno type="zdb">269254-5</idno>
                <textLang mainLang="ar"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1923"/>
                   <date source="oape:org:420" type="terminus" when="1924"/>
                   <pubPlace> <placeName ref="geon:170654 jaraid:place:15 oape:place:61" xml:lang="ar">دمشق</placeName> </pubPlace>
                   <publisher> <orgName ref="jaraid:org:151 oape:org:180" xml:lang="und-Latn">Dāʾirat Maʿārif Dimashq</orgName> <orgName ref="jaraid:org:151 oape:org:180" xml:lang="ar"
@@ -54922,9 +54922,9 @@
                   <idno type="LCCN">sc83007801</idno>
                   <idno type="LEAUB">b13586658</idno>
                   <idno type="LEAUB">b13836924</idno>
-                  <idno type="OCLC">4771374307</idno>
                   <idno type="OCLC">5259374</idno>
                   <idno type="OCLC">792756490</idno>
+                  <idno type="OCLC">4771374307</idno>
                   <idno type="ht_bib_key">102742842</idno>
                   <idno type="jaraid">t1r742</idno>
                   <idno type="oape">3234</idno>
@@ -54960,8 +54960,8 @@
                   <idno type="LCCN">84649659</idno>
                   <idno type="OCLC">1644284</idno>
                   <idno type="OCLC">42906282</idno>
-                  <idno type="OCLC">4770057679</idno>
                   <idno type="OCLC">79440195</idno>
+                  <idno type="OCLC">4770057679</idno>
                   <idno type="aucr">07201136864</idno>
                   <idno type="ht_bib_key">008882293</idno>
                   <idno type="ht_bib_key">102043258</idno>
@@ -54991,8 +54991,8 @@
                   <idno type="LCCN">84649659</idno>
                   <idno type="OCLC">1644284</idno>
                   <idno type="OCLC">42906282</idno>
-                  <idno type="OCLC">4770057679</idno>
                   <idno type="OCLC">79440195</idno>
+                  <idno type="OCLC">4770057679</idno>
                   <idno type="aucr">07201136864</idno>
                   <idno type="ht_bib_key">008882293</idno>
                   <idno type="ht_bib_key">102043258</idno>
@@ -55044,19 +55044,19 @@
                   <idno type="AUBNO">Mic-NA:000136</idno>
                   <idno type="AUBNO">Mic-NA:000144</idno>
                   <idno type="LEAUB">b23568987</idno>
-                  <idno type="OCLC">1034542938</idno>
                   <idno type="OCLC">792756309</idno>
+                  <idno type="OCLC">1034542938</idno>
                   <idno type="eap">EAP119/1/20/1</idno>
                   <idno type="jaraid">t1r2620</idno>
                   <idno type="oape">52</idno>
-                  <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=7596;r=29795</idno>
                   <idno type="url">http://ulib.aub.edu.lb/micmissings/mic-na-136.xls</idno>
+                  <idno type="url">http://eap.bl.uk/database/overview_item.a4d?catId=7596;r=29795</idno>
                   <idno type="zdb">2803442-9</idno>
                   <textLang mainLang="ar"/>
                   <editor> <persName ref="viaf:160786315 jaraid:pers:2155 oape:pers:460" xml:lang="ar"> <forename xml:lang="ar">شكري</forename> <surname xml:lang="ar">العسلي</surname> </persName> </editor>
                   <editor> <persName ref="viaf:32272677 oape:pers:878 wiki:Q3123742" xml:lang="ar"> <surname xml:lang="ar">كرد علي</surname> </persName> </editor>
                   <imprint>
-                     <date source="oape:org:420" type="onset">2200-01-01</date>
+                     <date source="oape:org:73" type="onset" when="1913"/>
                      <date source="oape:org:73" type="terminus" when="1914"/>
                      <pubPlace> <placeName ref="geon:170654 jaraid:place:15 oape:place:61" xml:lang="ar">دمشق</placeName> </pubPlace>
                      <publisher source="oape:org:73"> <supplied>محمد كرد علي</supplied> </publisher>
@@ -55074,8 +55074,8 @@
                   <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                   <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
                   <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">ǧarīda yaumīya sīyāsīya iqtiṣādīya iǧtimāʿīya</title>
-                  <idno type="OCLC">1034546909</idno>
                   <idno type="OCLC">70845599</idno>
+                  <idno type="OCLC">1034546909</idno>
                   <idno type="aub">Mic-Na:142-1</idno>
                   <idno type="eap">EAP119/1/19</idno>
                   <idno type="oape">51</idno>
@@ -55101,8 +55101,8 @@
                   <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                   <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
                   <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">ǧarīda yaumīya sīyāsīya iqtiṣādīya iǧtimāʿīya</title>
-                  <idno type="OCLC">1034546909</idno>
                   <idno type="OCLC">70845599</idno>
+                  <idno type="OCLC">1034546909</idno>
                   <idno type="aub">Mic-Na:142-1</idno>
                   <idno type="eap">EAP119/1/19</idno>
                   <idno type="oape">53</idno>
@@ -55129,8 +55129,8 @@
                   <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                   <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
                   <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">ǧarīda yaumīya sīyāsīya iqtiṣādīya iǧtimāʿīya</title>
-                  <idno type="OCLC">1034546909</idno>
                   <idno type="OCLC">70845599</idno>
+                  <idno type="OCLC">1034546909</idno>
                   <idno type="aub">Mic-Na:142-1</idno>
                   <idno type="eap">EAP119/1/19</idno>
                   <idno type="oape">54</idno>
@@ -55156,8 +55156,8 @@
                   <title level="j" xml:lang="ar-Latn-x-ijmes">al-Muqtabas</title>
                   <title level="j" type="sub" xml:lang="ar-Latn-x-ijmes">Jarīda yawmiyya siyāsiyya iqtiṣādiyya ijtimāʿiyya</title>
                   <title level="j" source="oape:org:420" type="sub" xml:lang="ar-Latn-x-dmg">ǧarīda yaumīya sīyāsīya iqtiṣādīya iǧtimāʿīya</title>
-                  <idno type="OCLC">1034546909</idno>
                   <idno type="OCLC">70845599</idno>
+                  <idno type="OCLC">1034546909</idno>
                   <idno type="aub">Mic-Na:142-1</idno>
                   <idno type="eap">EAP119/1/19</idno>
                   <idno type="jaraid">t1r2590</idno>
@@ -55166,7 +55166,7 @@
                   <textLang mainLang="ar"/>
                   <editor> <persName ref="viaf:32272677 oape:pers:878 wiki:Q3123742" xml:lang="ar"> <surname xml:lang="ar">كرد علي</surname> </persName> </editor>
                   <imprint>
-                     <date source="oape:org:420" type="onset">2200-01-01</date>
+                     <date source="oape:org:420" type="onset" when="1908"/>
                      <date type="terminus" when="1909-12-03"/>
                      <pubPlace> <placeName ref="geon:170654 jaraid:place:15 oape:place:61" xml:lang="ar">دمشق</placeName> </pubPlace>
                      <publisher> <orgName ref="oape:org:512" xml:lang="ar-Latn-x-ijmes">Maṭbaʿat al-Muqtabas</orgName> <orgName ref="oape:org:512" xml:lang="ar">مطبعة المقتبس</orgName> </publisher>
@@ -55205,7 +55205,7 @@
                   <editor source="https://projectjaraid.github.io"> <persName ref="jaraid:pers:81 oape:pers:609" xml:lang="ar"> <forename xml:lang="ar">سليم</forename> <surname xml:lang="ar"
                      >تقلا</surname> </persName> </editor>
                   <imprint>
-                     <date calendar="#cal_islamic" source="oape:org:420" type="onset">2200-01-01</date>
+                     <date source="oape:org:420" type="onset" when="1876"/>
                      <date source="oape:org:420" type="terminus" when="1896"/>
                      <pubPlace source="https://projectjaraid.github.io"> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                      <publisher source="oape:org:420"> <orgName>Dār al-Ahrām</orgName> </publisher>
@@ -55460,8 +55460,8 @@
                <title level="j" xml:lang="fr-Arab-145">الأنثروبوس</title>
                <title level="j" xml:lang="fr-Arab-145">الانثربوس</title>
                <idno type="oape">108</idno>
-               <idno type="oape">3849</idno>
                <idno type="oape">464</idno>
+               <idno type="oape">3849</idno>
                <textLang mainLang="fr"/>
                <imprint>
                   <date type="documented" when="1908-02-04"/>
@@ -55542,7 +55542,7 @@
                <idno type="zdb">2387719-4</idno>
                <textLang mainLang="ar" source="oape:org:420"/>
                <imprint>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1897"/>
                   <date source="oape:org:420" type="terminus" when="1897"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:1146359 jaraid:place:6 oape:place:468" xml:lang="ar">بولاق</placeName> </pubPlace>
                </imprint>
@@ -55570,8 +55570,8 @@
                <title level="j" source="oape:org:420" xml:lang="en">Comité bulletins</title>
                <idno type="OCLC">643735473</idno>
                <idno type="oape">3771</idno>
-               <idno type="url">http://www.bibliothek.uni-regensburg.de/ezeit/?2102392</idno>
                <idno type="url">http://www.islamic-art.org/comitte/comite.asp</idno>
+               <idno type="url">http://www.bibliothek.uni-regensburg.de/ezeit/?2102392</idno>
                <idno type="zdb">2102392-X</idno>
                <textLang mainLang="fr" source="oape:org:420"/>
                <textLang mainLang="ar" source="oape:org:420"/>
@@ -55701,7 +55701,7 @@
                <idno type="zdb">1124294-2</idno>
                <textLang mainLang="fa" source="oape:org:420"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1917"/>
                   <date source="oape:org:420" type="terminus" when="1918"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:112931 oape:place:300" xml:lang="en">Tehran</placeName> </pubPlace>
                </imprint>
@@ -55763,9 +55763,7 @@
                <idno type="oape">3769</idno>
                <idno type="zdb">2594836-2</idno>
                <textLang mainLang="ota" source="oape:org:420"/>
-               <imprint>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="onset">2200-01-01</date>
-               </imprint>
+               <imprint/>
             </monogr>
          </biblStruct>
          <biblStruct source="oape:org:420">
@@ -55856,8 +55854,8 @@
                <textLang mainLang="en" source="oape:org:420"/>
                <textLang mainLang="ar" source="oape:org:420"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1921"/>
+                  <date source="oape:org:420" type="terminus" when="1934"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:293397 oape:place:712" xml:lang="en">Tel Aviv</placeName> </pubPlace>
                </imprint>
             </monogr>
@@ -55923,8 +55921,8 @@
                <textLang mainLang="la" source="oape:org:420"/>
                <textLang mainLang="ar" source="oape:org:420"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1904"/>
+                  <date source="oape:org:420" type="terminus" when="1971"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:2643743 oape:place:331" xml:lang="en">London</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName>Gov.Print</orgName> </publisher>
                </imprint>
@@ -56008,8 +56006,6 @@
                <textLang mainLang="en" source="oape:org:420"/>
                <textLang mainLang="ar" source="oape:org:420"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
-                  <date source="oape:org:420" type="terminus">0001-01-01</date>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="en">Cairo</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:452" xml:lang="en">Government Press</orgName> </publisher>
                </imprint>
@@ -56040,7 +56036,7 @@
                <textLang mainLang="ar" source="oape:org:420"/>
                <editor source="oape:org:420" type="publisher"> <persName ref="oape:pers:6828" xml:lang="ar-Latn-x-ijmes">Abū-Saʿīd al-ʿArabī</persName> </editor>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1916"/>
                   <date source="oape:org:420" type="terminus" when="1917"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:1298824 oape:place:710" xml:lang="en">Rangoon</placeName> </pubPlace>
                </imprint>
@@ -56090,7 +56086,7 @@
                <idno type="zdb">779899-4</idno>
                <textLang mainLang="ar" source="oape:org:420"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1925"/>
                   <date source="oape:org:420" type="terminus" when="1929"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:170654 jaraid:place:15 oape:place:61" xml:lang="ar">دمشق</placeName> </pubPlace>
                </imprint>
@@ -56343,7 +56339,6 @@
                <textLang mainLang="ar" source="oape:org:420"/>
                <textLang mainLang="fr" source="oape:org:420"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName>Inst</orgName> </publisher>
                </imprint>
@@ -56471,7 +56466,7 @@
                <idno type="zdb">2951182-3</idno>
                <textLang mainLang="ota" source="oape:org:420"/>
                <imprint>
-                  <date calendar="#cal_islamic" source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1886"/>
                   <date source="oape:org:420" type="terminus" when="1887"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:745044 jaraid:place:9 oape:place:3" xml:lang="en">Istanbul</placeName> </pubPlace>
                </imprint>
@@ -56485,7 +56480,7 @@
                <idno type="zdb">1185010-3</idno>
                <textLang mainLang="ar" source="oape:org:420"/>
                <imprint>
-                  <date source="oape:org:420" type="onset">2200-01-01</date>
+                  <date source="oape:org:420" type="onset" when="1867"/>
                   <date source="oape:org:420" type="terminus" when="1868"/>
                   <pubPlace source="oape:org:420"> <placeName ref="geon:360630 jaraid:place:1 oape:place:226" xml:lang="ar">القاهرة</placeName> </pubPlace>
                   <publisher source="oape:org:420"> <orgName ref="oape:org:503" xml:lang="ar-Latn-x-dmg">al-Maṭbaʿa al-ʿāmira</orgName> <orgName ref="oape:org:503" xml:lang="ar"
