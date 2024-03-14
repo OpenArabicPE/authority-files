@@ -670,7 +670,7 @@
                 <xsl:choose>
                     <xsl:when test="$v_date-onset/descendant-or-self::tei:date/@when">
 <!--                        <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
-                        <xsl:copy-of select="$v_date-onset/descendant-or-self::tei:date[@when = min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))]"/>
+                        <xsl:copy-of select="$v_date-onset/descendant-or-self::tei:date[@when = min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))][1]"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -696,7 +696,7 @@
                 <xsl:choose>
                     <xsl:when test="$v_date-terminus/descendant-or-self::tei:date/@when">
 <!--                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
-                        <xsl:copy-of select="$v_date-terminus/descendant-or-self::tei:date[@when = max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))]"/>
+                        <xsl:copy-of select="$v_date-terminus/descendant-or-self::tei:date[@when = max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))][1]"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -851,6 +851,9 @@
             <xsl:choose>
                 <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
                     <xsl:attribute name="when" select="$v_temp"/>
+                    <xsl:if test="not(@when)">
+                        <xsl:attribute name="cert" select="'medium'"/>
+                    </xsl:if>
                 </xsl:when>
                 <xsl:when test="matches($v_temp, '^\d{4}$')">
                     <!-- latest possible date: this will prevent the originally less precise dates from taking precedent -->
