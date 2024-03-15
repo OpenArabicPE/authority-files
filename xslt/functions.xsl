@@ -547,8 +547,14 @@
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'OCLC']">
                         <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = 'OCLC'][1])"/>
                     </xsl:when>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'wiki']">
+                        <xsl:value-of select="concat('wiki:', $p_bibl/descendant::tei:idno[@type = 'wiki'][1])"/>
+                    </xsl:when>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'DOI']">
+                        <xsl:value-of select="concat('DOI:', $p_bibl/descendant::tei:idno[@type = 'DOI'][1])"/>
+                    </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_local-authority]">
-                        <xsl:value-of select="concat($p_local-authority, ':', $p_bibl/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                        <xsl:value-of select="concat($p_local-authority, ':bibl:', $p_bibl/descendant::tei:idno[@type = $p_local-authority][1])"/>
                     </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:idno">
                         <xsl:value-of select="concat($p_bibl/descendant::tei:idno[1]/@type, ':', $p_bibl/descendant::tei:idno[1])"/>
@@ -563,6 +569,9 @@
             </xsl:when>
             <xsl:when test="$p_output-mode = ('id-oclc', 'oclc')">
                 <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = 'OCLC'][1]"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = ('id-wiki', 'wiki')">
+                <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = 'wiki'][1]"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
