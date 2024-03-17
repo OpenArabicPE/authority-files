@@ -2103,7 +2103,7 @@
                             <placeName n="1" source="#org_geon" type="alt">Ḥumṣ</placeName>
                             <placeName n="2" source="#org_geon" type="alt">Ḥimṣ</placeName>
                             <placeName xml:lang="en">Homs</placeName>
-                            <placeName source="#org_geon" type="alt" xml:lang="ar">Ḩimş</placeName>
+                            <placeName source="#org_geon" type="alt" xml:lang="ar-Latn">Ḩimş</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="ar">حمص</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="ar">مدينة حمص</placeName>
                             <placeName source="#org_geon" type="alt" xml:lang="fr">Homs</placeName>
@@ -2910,34 +2910,31 @@
                         <idno type="geon">272847</idno>
                         <idno type="oape">523</idno>
                     </place>
-                    <place type="HLL" xml:id="place_551">
+                    <place xml:id="place_551">
                         <placeName xml:lang="ar-Latn-x-ijmes">Bayt al-Dīn</placeName>
                         <placeName change="#d2e154" xml:lang="ar">بيت الدين</placeName>
-                        <location source="#org_geon">
-                            <geo>33.69417, 35.58083</geo>
-                        </location>
                         <idno type="jaraid">19</idno>
-                        <idno type="geon">276771</idno>
+                        <!-- <idno type="geon">276771</idno> -->
                         <idno type="oape">551</idno>
                     </place>
-                    <place type="LCTY" xml:id="place_557">
+                    <place xml:id="place_557">
                         <placeName xml:lang="ar-Latn-x-ijmes">al-Maḥmūdiyya</placeName>
                         <placeName change="#d2e154" xml:lang="ar">المحمودية</placeName>
-                        <location source="#org_geon">
+                        <!-- <location source="#org_geon">
                             <geo>33.54, 35.37056</geo>
-                        </location>
+                        </location> -->
                         <idno type="jaraid">114</idno>
-                        <idno type="geon">6272181</idno>
+                        <!-- <idno type="geon">6272181</idno> -->
                         <idno type="oape">557</idno>
                     </place>
-                    <place type="LCTY" xml:id="place_558">
+                    <place xml:id="place_558">
                         <placeName xml:lang="ar-Latn-x-ijmes">Barqa</placeName>
                         <placeName change="#d2e154" xml:lang="ar">برقة</placeName>
-                        <location source="#org_geon">
+                        <!-- <location source="#org_geon">
                             <geo>36.1456, 36.49291</geo>
-                        </location>
+                        </location> -->
                         <idno type="jaraid">93</idno>
-                        <idno type="geon">11554090</idno>
+                        <!-- <idno type="geon">11554090</idno> -->
                         <idno type="oape">558</idno>
                     </place>
                     <place type="MT" xml:id="place_560">
@@ -3078,10 +3075,7 @@
                     <placeName xml:lang="ar">الكاظمية</placeName>
                     <placeName xml:lang="ar-Latn-x-ijmes">al-Kāẓimiyya</placeName>
                     <placeName xml:lang="en">Kazimiyya</placeName>
-                    <location source="#org_geon">
-                        <geo>37.18879, 42.23989</geo>
-                    </location>
-                    <idno type="geon">447476</idno>
+                    <idno type="geon">99172</idno>
                     <idno type="oape">374</idno>
                     <idno type="jaraid">200</idno>
                 </place>
@@ -4785,12 +4779,9 @@
                 </place>
                 <place type="town" xml:id="place_501">
                     <placeName xml:lang="ar-Latn-x-ijmes">Ṭahṭā</placeName>
-                    <placeName change="#d2e154" xml:lang="ar">طهطى</placeName>
-                    <location source="#org_geon">
-                        <geo>27.96017, 61.82161</geo>
-                    </location>
+                    <placeName change="#d2e154" xml:lang="ar">طهطا</placeName>
                     <idno type="jaraid">89</idno>
-                    <idno type="geon">8685944</idno>
+                    <idno type="geon" resp="#pers_TG">347634</idno>
                     <idno type="oape">501</idno>
                 </place>
             </listPlace>
@@ -7669,7 +7660,9 @@
         <listPlace>
             <head xml:lang="en">Imported from Project Jarāʾid</head>
             <place type="county" xml:id="place_418">
+                <!-- This should probably be Madras in India -->
                 <placeName>Madras</placeName>
+                <placeName>Chennai</placeName>
                 <location source="#org_geon">
                     <geo>18.29112, -77.44875</geo>
                 </location>
@@ -7701,11 +7694,11 @@
                 <placeName xml:lang="en">Campos</placeName>
                 <placeName source="#org_geon" type="alt" xml:lang="de">Campos</placeName>
                 <placeName source="#org_geon" type="alt" xml:lang="tr">Campos</placeName>
-                <location source="#org_geon">
+                <!-- <location source="#org_geon">
                     <geo>39.43099, 3.01935</geo>
-                </location>
+                </location> -->
                 <idno type="jaraid">144</idno>
-                <idno type="geon">2520403</idno>
+                <idno type="geon" resp="#pers_TG">3448636</idno>
                 <idno type="oape">426</idno>
             </place>
             <place type="town" xml:id="place_427">
@@ -7925,12 +7918,9 @@
             </place>
             <place type="town" xml:id="place_498">
                 <placeName xml:lang="ar-Latn-x-ijmes">Ṣalīmā</placeName>
-                <placeName change="#d2e154" xml:lang="ar">صليمى</placeName>
-                <location source="#org_geon">
-                    <geo>34.25322, 62.49299</geo>
-                </location>
+                <placeName change="#d2e154" xml:lang="ar">صليما</placeName>
                 <idno type="jaraid">167</idno>
-                <idno type="geon">1127822</idno>
+                <idno type="geon" resp="#pers_TG">268262</idno>
                 <idno type="oape">498</idno>
             </place>
             <place type="town" xml:id="place_502">
@@ -8023,12 +8013,9 @@
             </place>
             <place type="town" xml:id="place_534">
                 <placeName xml:lang="ar-Latn-x-ijmes">Mukallā</placeName>
-                <placeName change="#d2e154" xml:lang="ar">مكلى</placeName>
-                <location source="#org_geon">
-                    <geo>33.28261, 67.15723</geo>
-                </location>
+                <placeName change="#d2e154" xml:lang="ar">المكلا</placeName>
                 <idno type="jaraid">208</idno>
-                <idno type="geon">1450486</idno>
+                <idno type="geon" resp="#pers_TG">78754</idno>
                 <idno type="oape">534</idno>
             </place>
             <place type="town" xml:id="place_535">
@@ -8123,13 +8110,10 @@
                 <idno type="geon">2479536</idno>
                 <idno type="oape">549</idno>
             </place>
-            <place type="AREA" xml:id="place_550">
+            <place xml:id="place_550">
                 <placeName xml:lang="en">Oliveira</placeName>
-                <location source="#org_geon">
-                    <geo>-5.78333, -42.75</geo>
-                </location>
                 <idno type="jaraid">147</idno>
-                <idno type="geon">3393531</idno>
+                <idno type="geon" resp="#pers_TG">3455908</idno>
                 <idno type="oape">550</idno>
             </place>
             <place type="HLLS" xml:id="place_552">
