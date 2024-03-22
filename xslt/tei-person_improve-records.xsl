@@ -221,6 +221,10 @@
                         <xsl:element name="occupation">
                             <xsl:attribute name="resp" select="'#xslt'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <!-- add source of information -->
+                            <xsl:if test="$v_bibl/@source">
+                                <xsl:apply-templates select="$v_bibl/@source" mode="m_identity-transform"/>
+                            </xsl:if>
                             <xsl:attribute name="xml:lang" select="'en'"/>
                             <xsl:text>Editor of </xsl:text>
                             <xsl:copy-of select="oape:query-biblstruct($v_bibl, 'title-tei', 'ar', '', $p_local-authority)"/>
