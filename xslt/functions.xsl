@@ -613,6 +613,10 @@
                     <xsl:when test="($p_output-language = 'ar') and ($v_monogr/tei:title[contains(@xml:lang, '-Arab-')])">
                         <xsl:value-of select="normalize-space($v_monogr[tei:title[contains(@xml:lang, '-Arab-')]][1]/tei:title[contains(@xml:lang, '-Arab-')][1])"/>
                     </xsl:when>
+                    <!-- support transcriptions between scripts -->
+                    <xsl:when test="$v_monogr/tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))]">
+                        <xsl:value-of select="normalize-space($v_monogr[tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))]][1]/tei:title[contains(@xml:lang,concat('-', $p_output-language, '-'))][1])"/>
+                    </xsl:when>
                     <!-- fallback to main language of publication -->
                     <xsl:when test="$v_monogr/tei:title[@xml:lang = $v_mainLang]">
                         <xsl:value-of select="normalize-space($v_monogr[tei:title[@xml:lang = $v_mainLang]][1]/tei:title[@xml:lang = $v_mainLang][1])"/>
@@ -1535,6 +1539,9 @@
                         <!-- possible transcriptions into other script -->
                         <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Arab-')])">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Arab-')][1]"/>
+                        </xsl:when>
+                        <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')])">
+                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')][1]"/>
                         </xsl:when>
                         <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')])">
                             <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')][1]"/>
