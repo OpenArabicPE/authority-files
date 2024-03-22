@@ -582,6 +582,9 @@
                                 <xsl:if test="current-grouping-key() = 'OCLC'">
                                     <xsl:value-of select="concat('oclc:', .)"/>
                                 </xsl:if>
+                                <xsl:if test="current-grouping-key() = $p_acronym-wikidata">
+                                    <xsl:value-of select="concat('wiki:', .)"/>
+                                </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
                                     <xsl:value-of select="concat('oape:bibl:', .)"/>
                                 </xsl:if>
