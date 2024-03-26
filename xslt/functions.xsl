@@ -662,6 +662,18 @@
                 </xsl:variable>
                 <xsl:value-of select="$v_otherLangs"/>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'langs'">
+                <xsl:for-each-group select="$v_monogr/tei:textLang/@mainLang" group-by=".">
+                    <xsl:element name="lang">
+                        <xsl:value-of select="current-grouping-key()"/>
+                    </xsl:element>
+                </xsl:for-each-group>
+                <xsl:for-each-group select="tokenize($v_monogr/tei:textLang/@otherLangs, ' ')" group-by=".">
+                    <xsl:element name="lang">
+                        <xsl:value-of select="current-grouping-key()"/>
+                    </xsl:element>
+                </xsl:for-each-group>
+            </xsl:when>
             <!-- return date           -->
             <xsl:when test="$p_output-mode = 'date'">
                 <xsl:choose>
