@@ -547,8 +547,8 @@
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'OCLC']">
                         <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = 'OCLC'][1])"/>
                     </xsl:when>
-                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'wiki']">
-                        <xsl:value-of select="concat('wiki:', $p_bibl/descendant::tei:idno[@type = 'wiki'][1])"/>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="concat('wiki:', $p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata][1])"/>
                     </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'DOI']">
                         <xsl:value-of select="concat('DOI:', $p_bibl/descendant::tei:idno[@type = 'DOI'][1])"/>
@@ -567,11 +567,18 @@
             <xsl:when test="$p_output-mode = ('id-local', $p_local-authority)">
                 <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = $p_local-authority][1]"/>
             </xsl:when>
-            <xsl:when test="$p_output-mode = ('id-oclc', 'oclc')">
+            <xsl:when test="$p_output-mode = ('id-oclc', 'oclc') and $p_bibl/descendant::tei:idno[@type = 'OCLC']">
                 <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = 'OCLC'][1]"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = ('id-wiki', 'wiki')">
-                <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = 'wiki'][1]"/>
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
@@ -615,7 +622,9 @@
                     </xsl:when>
                     <!-- support transcriptions between scripts -->
                     <xsl:when test="$v_monogr/tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))]">
-                        <xsl:value-of select="normalize-space($v_monogr[tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))]][1]/tei:title[contains(@xml:lang,concat('-', $p_output-language, '-'))][1])"/>
+                        <xsl:value-of
+                            select="normalize-space($v_monogr[tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))]][1]/tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))][1])"
+                        />
                     </xsl:when>
                     <!-- fallback to main language of publication -->
                     <xsl:when test="$v_monogr/tei:title[@xml:lang = $v_mainLang]">
@@ -685,7 +694,7 @@
                 </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-onset/descendant-or-self::tei:date/@when">
-<!--                        <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
+                        <!--                        <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
                         <xsl:copy-of select="$v_date-onset/descendant-or-self::tei:date[@when = min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))][1]"/>
                     </xsl:when>
                     <xsl:otherwise>
@@ -711,7 +720,7 @@
                 </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-terminus/descendant-or-self::tei:date/@when">
-<!--                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
+                        <!--                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
                         <xsl:copy-of select="$v_date-terminus/descendant-or-self::tei:date[@when = max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))][1]"/>
                     </xsl:when>
                     <xsl:otherwise>
@@ -863,7 +872,7 @@
         </xsl:variable>
         <!-- output -->
         <xsl:copy>
-            <xsl:apply-templates select="@source | @type" mode="m_identity-transform"/>
+            <xsl:apply-templates mode="m_identity-transform" select="@source | @type"/>
             <xsl:choose>
                 <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
                     <xsl:attribute name="when" select="$v_temp"/>
@@ -1540,11 +1549,14 @@
                         <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Arab-')])">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Arab-')][1]"/>
                         </xsl:when>
+                        <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')])">
+                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')][1]"/>
+                        </xsl:when>
                         <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')])">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')][1]"/>
                         </xsl:when>
-                        <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')])">
-                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')][1]"/>
+                         <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')])">
+                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')][1]"/>
                         </xsl:when>
                         <!-- fallback to english -->
                         <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = ('en', 'fr')]">
