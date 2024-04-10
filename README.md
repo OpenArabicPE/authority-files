@@ -340,6 +340,8 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
 
 #### current encoding
 
+- [ ] find and mark-up dates
+
 ```xml
 <note type="holdings"> 
     <list>
