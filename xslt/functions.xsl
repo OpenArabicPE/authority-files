@@ -1299,6 +1299,16 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-isil'">
+                <xsl:choose>
+                    <xsl:when test="$p_org/tei:idno[@type = 'isil']">
+                        <xsl:value-of select="$p_org/tei:idno[@type = 'isil'][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:idno[not(@type = 'URI')]">
@@ -1309,7 +1319,7 @@
                                     <xsl:value-of select="concat('viaf:', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = $p_acronym-wikidata">
-                                    <xsl:value-of select="concat('wiki:', current-group()[1])"/>
+                                    <xsl:value-of select="concat($p_acronym-wikidata, ':', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
                                     <xsl:value-of select="concat('oape:org:', current-group()[1])"/>
