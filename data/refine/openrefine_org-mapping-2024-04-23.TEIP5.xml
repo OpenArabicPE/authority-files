@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Mapping of OAPE IDs to Wikidata QIDs: personography</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+       <listOrg>
+    <org>
+        <orgName>Atatürk Kitapliği, Istanbul</orgName>
+        <idno type="wiki">Q28836336</idno>
+    </org>
+    <org>
+        <orgName>Bayerische Staatsbibliothek, München</orgName>
+        <idno type="wiki">Q256507</idno>
+    </org>
+    <org>
+        <orgName>Bibliothèque interuniversitaire des langues orientales, INALCO (Institut National des Langues et Civilisations Orientales, Paris)</orgName>
+        <idno type="wiki">Q1430113</idno>
+    </org>
+    <org>
+        <orgName>Bibliothèque Orientale, Université de Saint Joseph</orgName>
+        <idno type="wiki">Q15556320</idno>
+    </org>
+    <org>
+        <orgName>Cornell University Library, Cornell University</orgName>
+        <idno type="wiki">Q5171572</idno>
+    </org>
+    <org>
+        <orgName>Freie Universität Berlin, Library of the Institut für Islamwissenschaft</orgName>
+        <idno type="wiki">Q2496344</idno>
+    </org>
+    <org>
+        <orgName>Institute of Oriental Manuscripts, Russian Academy of Sciences</orgName>
+        <idno type="wiki">Q3648060</idno>
+    </org>
+    <org>
+        <orgName>Kew Library, Royal Botanic Gardens, Kew</orgName>
+        <idno type="wiki">Q55125794</idno>
+    </org>
+    <org>
+        <orgName>Maktabt al-Jāmiʿa al-Urduniyya, ʿAmmān, Jordan</orgName>
+        <idno type="wiki">Q20424780</idno>
+    </org>
+    <org>
+        <orgName>Millet (Yazma Eser) Kütüphanesi, Istanbul</orgName>
+        <idno type="wiki">Q6585222</idno>
+    </org>
+    <org>
+        <orgName>Moise A. Khayrallah Center for Lebanese Diaspora Studies, NC State University</orgName>
+        <idno type="wiki">Q22095741</idno>
+    </org>
+    <org>
+        <orgName>Muʾassasat al-Maḥfūẓāt al-Waṭaniyya, Beirut (Centre des Archives Nationales)</orgName>
+        <idno type="wiki">Q16256913</idno>
+    </org>
+    <org>
+        <orgName>Near East School of Theology / Maktabat Kulliyyat al-Lāhu­t li'l-Sharq al-Adnā, Beirut</orgName>
+        <idno type="wiki">Q1973138</idno>
+    </org>
+    <org>
+        <orgName>Staatsbibliothek zu Berlin, Preußischer Kulturbesitz, Berlin</orgName>
+        <idno type="wiki">Q170109</idno>
+    </org>
+    <org>
+        <orgName>Stanford University, Hoover Library</orgName>
+        <idno type="wiki">Q5898813</idno>
+    </org>
+    <org>
+        <orgName>Süleymaniye Kütüphanesi, Istanbul</orgName>
+        <idno type="wiki">Q4086354</idno>
+    </org>
+    <org>
+        <orgName>Ansbach HS</orgName>
+        <idno type="wiki">Q14540723</idno>
+    </org>
+    <org>
+        <orgName>Arquivo Público do Estado de São Paulo</orgName>
+        <idno type="wiki">Q9630401</idno>
+    </org>
+    <org>
+        <orgName>Augsburg HSB</orgName>
+        <idno type="wiki">Q28738324</idno>
+    </org>
+    <org>
+        <orgName>Augsburg SuStB</orgName>
+        <idno type="wiki">Q2324633</idno>
+    </org>
+    <org>
+        <orgName>Augsburg UB</orgName>
+        <idno type="wiki">Q2496283</idno>
+    </org>
+    <org>
+        <orgName>Bamberg UB</orgName>
+        <idno type="wiki">Q23786596</idno>
+    </org>
+    <org>
+        <orgName>Bayreuth UB</orgName>
+        <idno type="wiki">Q1367678</idno>
+    </org>
+    <org>
+        <orgName>Beirut Orient-Institut</orgName>
+        <idno type="wiki">Q2030483</idno>
+    </org>
+    <org>
+        <orgName>Berlin AdW Bib</orgName>
+        <idno type="wiki">Q28738864</idno>
+    </org>
+    <org>
+        <orgName>Berlin HTW</orgName>
+        <idno type="wiki">Q28739452</idno>
+    </org>
+    <org>
+        <orgName>Berlin IAI</orgName>
+        <idno type="wiki">Q28737641</idno>
+    </org>
+    <org>
+        <orgName>Berlin Orient-Inst.</orgName>
+        <idno type="wiki">Q28783594</idno>
+    </org>
+    <org>
+        <orgName>Berlin SBB Haus Potsdamer Str</orgName>
+        <idno type="wiki">Q1675021</idno>
+    </org>
+    <org>
+        <orgName>Berlin SBB Haus Unter d.Linden</orgName>
+        <idno type="wiki">Q2324837</idno>
+    </org>
+    <org>
+        <orgName>Berlin SBB Zeitungsabteilung</orgName>
+        <idno type="wiki">Q28777973</idno>
+    </org>
+    <org>
+        <orgName>Berlin UBFU Campusbibliothek</orgName>
+        <idno type="wiki">Q2496344</idno>
+    </org>
+    <org>
+        <orgName>Berlin UBFU Sozialwiss. Bibl.</orgName>
+        <idno type="wiki">Q65099871</idno>
+    </org>
+    <org>
+        <orgName>Berlin UBHU Grimm-Zentrum</orgName>
+        <idno type="wiki">Q1407819</idno>
+    </org>
+    <org>
+        <orgName>Berlin ZLB</orgName>
+        <idno type="wiki">Q189928</idno>
+    </org>
+    <org>
+        <orgName>Beyazit Kütüphanesi</orgName>
+        <idno type="wiki">Q6099217</idno>
+    </org>
+    <org>
+        <orgName>Bibliothèque national de France</orgName>
+        <idno type="wiki">Q193563</idno>
+    </org>
+    <org>
+        <orgName>Bibliothèque nationale d'Algerie</orgName>
+        <idno type="wiki">Q2901476</idno>
+    </org>
+    <org>
+        <orgName>Bodleian Library</orgName>
+        <idno type="wiki">Q82133</idno>
+    </org>
+    <org>
+        <orgName>Bonn F.-Ebert-Stiftung Bib.</orgName>
+        <idno type="wiki">Q856483</idno>
+    </org>
+    <org>
+        <orgName>Braunschweig HAUM</orgName>
+        <idno type="wiki">Q28737675</idno>
+    </org>
+    <org>
+        <orgName>Braunschweig UB</orgName>
+        <idno type="wiki">Q2496287</idno>
+    </org>
+    <org>
+        <orgName>British Library</orgName>
+        <idno type="wiki">Q23308</idno>
+    </org>
+    <org>
+        <orgName>Center for Research Libraries</orgName>
+        <idno type="wiki">Q5059850</idno>
+    </org>
+    <org>
+        <orgName>Centre d'Études Alexandrines</orgName>
+        <idno type="wiki">Q2945179</idno>
+    </org>
+    <org>
+        <orgName>Clausthal-Z. UB</orgName>
+        <idno type="wiki">Q28733437</idno>
+    </org>
+    <org>
+        <orgName>Cornell University</orgName>
+        <idno type="wiki">Q5171572</idno>
+    </org>
+    <org>
+        <orgName>Cottbus UB Cottbus-Senftenberg</orgName>
+        <idno type="wiki">Q28738242</idno>
+    </org>
+    <org>
+        <orgName>Duke University Library</orgName>
+        <idno type="wiki">Q5312898</idno>
+    </org>
+    <org>
+        <orgName>Durham University Library</orgName>
+        <idno type="wiki">Q5316583</idno>
+    </org>
+    <org>
+        <orgName>Egyptian National Library</orgName>
+        <idno type="wiki">Q2778411</idno>
+    </org>
+    <org>
+        <orgName>Eichstätt UB</orgName>
+        <idno type="wiki">Q22694379</idno>
+    </org>
+    <org>
+        <orgName>Erfurt FH</orgName>
+        <idno type="wiki">Q28738387</idno>
+    </org>
+    <org>
+        <orgName>Erlangen-Nürnberg UB</orgName>
+        <idno type="wiki">Q15979678</idno>
+    </org>
+    <org>
+        <orgName>Florenz Kunsthist. Inst.</orgName>
+        <idno type="wiki">Q17622734</idno>
+    </org>
+    <org>
+        <orgName>Frankfurt/M Theol.HS</orgName>
+        <idno type="wiki">Q28738325</idno>
+    </org>
+    <org>
+        <orgName>Frankfurt/M UAS</orgName>
+        <idno type="wiki">Q28733494</idno>
+    </org>
+    <org>
+        <orgName>Frankfurt/M UB/ZB</orgName>
+        <idno type="wiki">Q875587</idno>
+    </org>
+    <org>
+        <orgName>Frankfurt/O UB</orgName>
+        <idno type="wiki">Q28738288</idno>
+    </org>
+    <org>
+        <orgName>Gießen UB</orgName>
+        <idno type="wiki">Q28733453</idno>
+    </org>
+    <org>
+        <orgName>Gotha FB</orgName>
+        <idno type="wiki">Q28738121</idno>
+    </org>
+    <org>
+        <orgName>Greifswald UB</orgName>
+        <idno type="wiki">Q2496314</idno>
+    </org>
+    <org>
+        <orgName>Göttingen SUB</orgName>
+        <idno type="wiki">Q564783</idno>
+    </org>
+    <org>
+        <orgName>Halle/S Franck. Stiftungen</orgName>
+        <idno type="wiki">Q856479</idno>
+    </org>
+    <org>
+        <orgName>Halle/S UuLB</orgName>
+        <idno type="wiki">Q1600777</idno>
+    </org>
+    <org>
+        <orgName>Hamburg Commerzbibliothek</orgName>
+        <idno type="wiki">Q1115445</idno>
+    </org>
+    <org>
+        <orgName>Hamburg MPI IntPrivatrecht</orgName>
+        <idno type="wiki">Q28720148</idno>
+    </org>
+    <org>
+        <orgName>Hamburg Mus.am Rothenbaum</orgName>
+        <idno type="wiki">Q28737660</idno>
+    </org>
+    <org>
+        <orgName>Hamburg SUB</orgName>
+        <idno type="wiki">Q2324644</idno>
+    </org>
+    <org>
+        <orgName>Hamburg TUHH</orgName>
+        <idno type="wiki">Q2496355</idno>
+    </org>
+    <org>
+        <orgName>Hamburg ZBW</orgName>
+        <idno type="wiki">Q317179</idno>
+    </org>
+    <org>
+        <orgName>Heidelberg MPI Völkerrecht</orgName>
+        <idno type="wiki">Q28720146</idno>
+    </org>
+    <org>
+        <orgName>Heidelberg UB</orgName>
+        <idno type="wiki">Q880794</idno>
+    </org>
+    <org>
+        <orgName>Hof HS</orgName>
+        <idno type="wiki">Q28738358</idno>
+    </org>
+    <org>
+        <orgName>Holy Spirit University of Kaslik Library</orgName>
+        <idno type="wiki">Q1310333</idno>
+    </org>
+    <org>
+        <orgName>Indiana University</orgName>
+        <idno type="wiki">Q58241552</idno>
+    </org>
+    <org>
+        <orgName>Ingolstadt THI</orgName>
+        <idno type="wiki">Q28733693</idno>
+    </org>
+    <org>
+        <orgName>Institut du Monde Arabe</orgName>
+        <idno type="wiki">Q100594626</idno>
+    </org>
+    <org>
+        <orgName>Institut Egyptien</orgName>
+        <idno type="wiki">Q1232190</idno>
+    </org>
+    <org>
+        <orgName>Internet Archive</orgName>
+        <idno type="wiki">Q461</idno>
+    </org>
+    <org>
+        <orgName>Iraq Museum</orgName>
+        <idno type="wiki">Q521251</idno>
+    </org>
+    <org>
+        <orgName>Iraqi National Library and Archives</orgName>
+        <idno type="wiki">Q620902</idno>
+    </org>
+    <org>
+        <orgName>Istanbul Üniversitesi Merkez Kütüphanesi</orgName>
+        <idno type="wiki">Q6046191</idno>
+    </org>
+    <org>
+        <orgName>İslamci Dergiler Projesi</orgName>
+        <idno type="wiki">Q119556056</idno>
+    </org>
+    <org>
+        <orgName>Jena ThULB</orgName>
+        <idno type="wiki">Q1255096</idno>
+    </org>
+    <org>
+        <orgName>Karlsruhe KIT-Bibliothek</orgName>
+        <idno type="wiki">Q1718711</idno>
+    </org>
+    <org>
+        <orgName>Kiel UB</orgName>
+        <idno type="wiki">Q2496307</idno>
+    </org>
+    <org>
+        <orgName>Kiel ZBW</orgName>
+        <idno type="wiki">Q317179</idno>
+    </org>
+    <org>
+        <orgName>Konstanz Universität KIM</orgName>
+        <idno type="wiki">Q37979269</idno>
+    </org>
+    <org>
+        <orgName>Köln USB</orgName>
+        <idno type="wiki">Q2496260</idno>
+    </org>
+    <org>
+        <orgName>Köthen HSB HSA</orgName>
+        <idno type="wiki">Q28738009</idno>
+    </org>
+    <org>
+        <orgName>League of Nations Archives</orgName>
+        <idno type="wiki">Q27481090</idno>
+    </org>
+    <org>
+        <orgName>Lebanese National Library</orgName>
+        <idno type="wiki">Q2901488</idno>
+    </org>
+    <org>
+        <orgName>Leipzig DNB</orgName>
+        <idno type="wiki">Q28657233</idno>
+    </org>
+    <org>
+        <orgName>Leipzig Museum für Völkerkunde</orgName>
+        <idno type="wiki">Q28738678</idno>
+    </org>
+    <org>
+        <orgName>Leipzig UB</orgName>
+        <idno type="wiki">Q872896</idno>
+    </org>
+    <org>
+        <orgName>Libraries of Harvard University</orgName>
+        <idno type="wiki">Q3232931</idno>
+    </org>
+    <org>
+        <orgName>Libraries of the University of Cambridge</orgName>
+        <idno type="wiki">Q1028334</idno>
+    </org>
+    <org>
+        <orgName>Library of Cairo University</orgName>
+        <idno type="wiki">Q13142275</idno>
+    </org>
+    <org>
+        <orgName>Library of Congress</orgName>
+        <idno type="wiki">Q131454</idno>
+    </org>
+    <org>
+        <orgName>Library of Tübingen University</orgName>
+        <idno type="wiki">Q2496347</idno>
+    </org>
+    <org>
+        <orgName>Lüneburg Leuphana Universität</orgName>
+        <idno type="wiki">Q28733501</idno>
+    </org>
+    <org>
+        <orgName>Magdeburg FHB</orgName>
+        <idno type="wiki">Q28738394</idno>
+    </org>
+    <org>
+        <orgName>Mannheim UB</orgName>
+        <idno type="wiki">Q2496322</idno>
+    </org>
+    <org>
+        <orgName>Marburg UB</orgName>
+        <idno type="wiki">Q2496324</idno>
+    </org>
+    <org>
+        <orgName>Merseburg HSB</orgName>
+        <idno type="wiki">Q28738302</idno>
+    </org>
+    <org>
+        <orgName>Metten Benediktinerabtei</orgName>
+        <idno type="wiki">Q1776378</idno>
+    </org>
+    <org>
+        <orgName>München Bayer. Akad. d. Wiss.</orgName>
+        <idno type="wiki">Q28738695</idno>
+    </org>
+    <org>
+        <orgName>München BSB</orgName>
+        <idno type="wiki">Q256507</idno>
+    </org>
+    <org>
+        <orgName>München IfZ</orgName>
+        <idno type="wiki">Q28737871</idno>
+    </org>
+    <org>
+        <orgName>München UB LMU</orgName>
+        <idno type="wiki">Q2496326</idno>
+    </org>
+    <org>
+        <orgName>München UBTU</orgName>
+        <idno type="wiki">Q1612500</idno>
+    </org>
+    <org>
+        <orgName>München ZI Kunstgeschichte</orgName>
+        <idno type="wiki">Q28739428</idno>
+    </org>
+    <org>
+        <orgName>Münster ULB</orgName>
+        <idno type="wiki">Q2496255</idno>
+    </org>
+    <org>
+        <orgName>National Library of Israel</orgName>
+        <idno type="wiki">Q188915</idno>
+    </org>
+    <org>
+        <orgName>Neubiberg UniBundeswehr</orgName>
+        <idno type="wiki">Q1565517</idno>
+    </org>
+    <org>
+        <orgName>Neuburg/Donau SB</orgName>
+        <idno type="wiki">Q2324315</idno>
+    </org>
+    <org>
+        <orgName>New York Public Library</orgName>
+        <idno type="wiki">Q219555</idno>
+    </org>
+    <org>
+        <orgName>Nürnberg THB</orgName>
+        <idno type="wiki">Q24422295</idno>
+    </org>
+    <org>
+        <orgName>Ohio State University</orgName>
+        <idno type="wiki">Q65070444</idno>
+    </org>
+    <org>
+        <orgName>Orient-Institut Beirut</orgName>
+        <idno type="wiki">Q2030483</idno>
+    </org>
+    <org>
+        <orgName>Paris DFK</orgName>
+        <idno type="wiki">Q28739317</idno>
+    </org>
+    <org>
+        <orgName>Passau UB</orgName>
+        <idno type="wiki">Q23786561</idno>
+    </org>
+    <org>
+        <orgName>Periodical collections at the al-Aqṣā Mosque Library in East Jerusalem</orgName>
+        <idno type="wiki">Q22684743</idno>
+    </org>
+    <org>
+        <orgName>Potsdam UB</orgName>
+        <idno type="wiki">Q827220</idno>
+    </org>
+    <org>
+        <orgName>Princeton University</orgName>
+        <idno type="wiki">Q3297681</idno>
+    </org>
+    <org>
+        <orgName>Regensburg OTHBR</orgName>
+        <idno type="wiki">Q28737875</idno>
+    </org>
+    <org>
+        <orgName>Regensburg SB</orgName>
+        <idno type="wiki">Q2324325</idno>
+    </org>
+    <org>
+        <orgName>Regensburg UB</orgName>
+        <idno type="wiki">Q2496330</idno>
+    </org>
+    <org>
+        <orgName>Rom Bibliotheca Hertziana MPI</orgName>
+        <idno type="wiki">Q339759</idno>
+    </org>
+    <org>
+        <orgName>Rosenheim THSB</orgName>
+        <idno type="wiki">Q28734000</idno>
+    </org>
+    <org>
+        <orgName>Rostock UB</orgName>
+        <idno type="wiki">Q1504057</idno>
+    </org>
+    <org>
+        <orgName>Stendal FHB</orgName>
+        <idno type="wiki">Q28738396</idno>
+    </org>
+    <org>
+        <orgName>Strausberg ZInfoABw</orgName>
+        <idno type="wiki">Q28738040</idno>
+    </org>
+    <org>
+        <orgName>Stuttgart WLB</orgName>
+        <idno type="wiki">Q317950</idno>
+    </org>
+    <org>
+        <orgName>The Library of the American University in Beirut</orgName>
+        <idno type="wiki">Q124855340</idno>
+    </org>
+    <org>
+        <orgName>The Library of the American University in Cairo</orgName>
+        <idno type="wiki">Q469476</idno>
+    </org>
+    <org>
+        <orgName>Trier UB</orgName>
+        <idno type="wiki">Q28733448</idno>
+    </org>
+    <org>
+        <orgName>Tübingen UB</orgName>
+        <idno type="wiki">Q2496347</idno>
+    </org>
+    <org>
+        <orgName>Tübingen Wilhelmsstift</orgName>
+        <idno type="wiki">Q1783538</idno>
+    </org>
+    <org>
+        <orgName>University of Baghdad</orgName>
+        <idno type="wiki">Q550376</idno>
+    </org>
+    <org>
+        <orgName>University of California</orgName>
+        <idno type="wiki">Q168756</idno>
+    </org>
+    <org>
+        <orgName>University of Haifa</orgName>
+        <idno type="wiki">Q591115</idno>
+    </org>
+    <org>
+        <orgName>University of Illinois</orgName>
+        <idno type="wiki">Q22096046</idno>
+    </org>
+    <org>
+        <orgName>University of Michigan</orgName>
+        <idno type="wiki">Q7895764</idno>
+    </org>
+    <org>
+        <orgName>University of Minnesota</orgName>
+        <idno type="wiki">Q7895799</idno>
+    </org>
+    <org>
+        <orgName>University of Pennsylvania Libraries</orgName>
+        <idno type="wiki">Q18572874</idno>
+    </org>
+    <org>
+        <orgName>University of Texas</orgName>
+        <idno type="wiki">Q57940931</idno>
+    </org>
+    <org>
+        <orgName>University of Virginia</orgName>
+        <idno type="wiki">Q213439</idno>
+    </org>
+    <org>
+        <orgName>University of Washington Library</orgName>
+        <idno type="wiki">Q7896575</idno>
+    </org>
+    <org>
+        <orgName>Vechta UB</orgName>
+        <idno type="wiki">Q2496340</idno>
+    </org>
+    <org>
+        <orgName>Wien Univ. HB</orgName>
+        <idno type="wiki">Q1478417</idno>
+    </org>
+    <org>
+        <orgName>Wien Öster. Akad. Wiss.</orgName>
+        <idno type="wiki">Q15792707</idno>
+    </org>
+    <org>
+        <orgName>Witzenhausen DITSL</orgName>
+        <idno type="wiki">Q28737691</idno>
+    </org>
+    <org>
+        <orgName>Würzburg UB</orgName>
+        <idno type="wiki">Q1247229</idno>
+    </org>
+    <org>
+        <orgName>Yale University Libraries</orgName>
+        <idno type="wiki">Q2583293</idno>
+    </org>
+    <org>
+        <orgName>ZMO</orgName>
+        <idno type="wiki">Q28738341</idno>
+    </org>
+</listOrg>
+</standOff>
+</TEI>
