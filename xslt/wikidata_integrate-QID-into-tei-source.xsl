@@ -34,6 +34,19 @@
             <xsl:apply-templates select="tei:note"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="tei:place">
+        <xsl:variable name="v_corresp-QID" select="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:placeName = current()/tei:placeName]"/>
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="tei:placeName"/>
+            <xsl:apply-templates select="tei:location"/>
+            <xsl:apply-templates select="tei:idno"/>
+            <xsl:if test="$v_corresp-QID != '' and not(parent::node()/tei:idno[@type = $p_acronym-wikidata] = $v_corresp-QID)">
+                <xsl:copy-of select="$v_corresp-QID"/>
+            </xsl:if>
+            <xsl:apply-templates select="tei:note"/>
+        </xsl:copy>
+    </xsl:template>
     <!-- read data from file -->
-    <xsl:variable name="v_QIDs" select="doc('../data/refine/openrefine_org-mapping-2024-04-23.TEIP5.xml')/descendant::tei:standOff"/>
+    <xsl:variable name="v_QIDs" select="doc('../data/OpenRefine/mappings/openrefine_place-mapping-2024-03-19.TEIP5.xml')/descendant::tei:standOff"/>
 </xsl:stylesheet>
