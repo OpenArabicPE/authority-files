@@ -998,6 +998,10 @@
                     <xsl:when test="$p_place/descendant::tei:idno[@type = $p_acronym-geonames]">
                         <xsl:value-of select="concat($p_acronym-geonames, ':', $p_place/descendant::tei:idno[@type = $p_acronym-geonames][1])"/>
                     </xsl:when>
+                    <!-- Wikidata -->
+                    <xsl:when test="$p_place/tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="concat('wiki:', $p_place/tei:idno[@type = $p_acronym-wikidata][1])"/>
+                    </xsl:when>
                     <xsl:when test="$p_place/descendant::tei:idno[@type = $p_local-authority]">
                         <xsl:value-of select="concat($p_local-authority, ':', $p_place/descendant::tei:idno[@type = $p_local-authority][1])"/>
                     </xsl:when>
@@ -1032,6 +1036,16 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-wiki'">
+                <xsl:choose>
+                    <xsl:when test="$p_place/tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="$p_place/tei:idno[@type = $p_acronym-wikidata][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <xsl:when test="$p_output-mode = 'url-geon'">
                 <xsl:variable name="v_id" select="oape:query-place($p_place, 'id-geon', '', '')"/>
                 <xsl:choose>
@@ -1051,6 +1065,9 @@
                                 <xsl:sort order="ascending" select="@type"/>
                                 <xsl:if test="current-grouping-key() = $p_acronym-geonames">
                                     <xsl:value-of select="concat($p_acronym-geonames, ':', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = $p_acronym-wikidata">
+                                    <xsl:value-of select="concat($p_acronym-wikidata, ':', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
                                     <xsl:value-of select="concat('oape:place:', current-group()[1])"/>
