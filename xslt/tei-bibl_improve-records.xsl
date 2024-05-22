@@ -22,20 +22,14 @@
         </xsl:copy>
     </xsl:template>
     <!-- alphabetically sort children of <listBibl> by <title> -->
-    <xsl:template match="tei:listBibl" name="t_2">
-        <xsl:if test="$p_verbose = true()">
-            <xsl:message>
-                <xsl:text>t_2: </xsl:text>
-                <xsl:value-of select="@xml:id"/>
-            </xsl:message>
-        </xsl:if>
+    <xsl:template match="tei:listBibl[tei:biblStruct]">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="tei:head"/>
             <xsl:apply-templates select="tei:biblStruct">
                 <!-- sorting can be much improved -->
-                <!-- titles -->
-                <xsl:sort order="ascending" select="tei:monogr[1]/tei:title[@xml:lang = 'ar'][1]"/>
+                <!-- titles: based on lang -->
+                <xsl:sort order="ascending" select="tei:monogr[1]/tei:title[@xml:lang = current()/tei:monogr/tei:textLang[@mainLang][1]/@mainLang][1]"/>
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:title[1]"/>
                 <!-- locations -->
                 <xsl:sort order="ascending" select="tei:monogr[1]/tei:imprint[1]/tei:pubPlace[1]/tei:placeName[@ref][1]/@ref"/>
@@ -47,59 +41,72 @@
             <xsl:apply-templates select="tei:listBibl"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="tei:listBibl[tei:bibl]">
+        <xsl:copy>
+            <xsl:apply-templates select="@* | node()"/>
+        </xsl:copy>
+    </xsl:template>
     <xsl:template match="tei:biblStruct">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- add @subtype based on the Jaraid ID -->
-            <xsl:variable name="v_subtype">
-                <xsl:variable name="v_id" select="number(replace(descendant::tei:idno[@type = 'jaraid'][1], 't\dr(\d+)$', '$1'))"/>
-                <xsl:choose>
-                    <xsl:when test="870 &lt;= $v_id and $v_id &lt;= 1533">
-                        <xsl:text>newspaper</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="1534  &lt;= $v_id and $v_id &lt;= 2029">
-                        <xsl:text>journal</xsl:text>
-                    </xsl:when>
-                     <xsl:when test="2035 &lt;= $v_id and $v_id &lt;= 2083">
-                        <xsl:text>newspaper</xsl:text>
-                    </xsl:when>
-                     <xsl:when test="2084  &lt;= $v_id and $v_id &lt;= 2097">
-                        <xsl:text>journal</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="2098 &lt;= $v_id and $v_id &lt;= 2163">
-                        <xsl:text>newspaper</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="2164 &lt;= $v_id and $v_id &lt;= 2192">
-                        <xsl:text>journal</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="2193 &lt;= $v_id and $v_id &lt;= 2318">
-                        <xsl:text>newspaper</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="2319 &lt;= $v_id and $v_id &lt;= 2348">
-                        <xsl:text>journal</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="2349 &lt;= $v_id and $v_id &lt;= 3024">
-                        <xsl:text>newspaper</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="3025 &lt;= $v_id and $v_id &lt;= 3323">
-                        <xsl:text>journal</xsl:text>
-                    </xsl:when>
-                    <!-- based on the subtitle -->
-                    <xsl:when test="contains(tei:monogr[1]/tei:title[@type = 'sub'][@xml:lang = 'ar'][1], 'مجلة')">
-                        <xsl:text>journal</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="contains(tei:monogr[1]/tei:title[@type = 'sub'][@xml:lang = 'ar'][1], 'جريدة')">
-                        <xsl:text>newspaper</xsl:text>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:text>NA</xsl:text>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:variable>
-            <xsl:if test="$v_subtype != 'NA' and not(@subtype)">
-                <xsl:attribute name="subtype" select="$v_subtype"/>
+            <xsl:if test="not(@subtype)">
+                <xsl:variable name="v_subtype">
+                    <xsl:variable name="v_id" select="number(replace(descendant::tei:idno[@type = 'jaraid'][1], 't\dr(\d+)$', '$1'))"/>
+                    <xsl:choose>
+                        <xsl:when test="870 &lt;= $v_id and $v_id &lt;= 1533">
+                            <xsl:text>newspaper</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="1534 &lt;= $v_id and $v_id &lt;= 2029">
+                            <xsl:text>journal</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="2035 &lt;= $v_id and $v_id &lt;= 2083">
+                            <xsl:text>newspaper</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="2084 &lt;= $v_id and $v_id &lt;= 2097">
+                            <xsl:text>journal</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="2098 &lt;= $v_id and $v_id &lt;= 2163">
+                            <xsl:text>newspaper</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="2164 &lt;= $v_id and $v_id &lt;= 2192">
+                            <xsl:text>journal</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="2193 &lt;= $v_id and $v_id &lt;= 2318">
+                            <xsl:text>newspaper</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="2319 &lt;= $v_id and $v_id &lt;= 2348">
+                            <xsl:text>journal</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="2349 &lt;= $v_id and $v_id &lt;= 3024">
+                            <xsl:text>newspaper</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="3025 &lt;= $v_id and $v_id &lt;= 3323">
+                            <xsl:text>journal</xsl:text>
+                        </xsl:when>
+                        <!-- based on the subtitle -->
+                        <xsl:when test="contains(tei:monogr[1]/tei:title[@type = 'sub'][@xml:lang = 'ar'][1], 'مجلة')">
+                            <xsl:text>journal</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="contains(tei:monogr[1]/tei:title[@type = 'sub'][@xml:lang = 'ar'][1], 'جريدة')">
+                            <xsl:text>newspaper</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>NA</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                <xsl:if test="$v_subtype != 'NA'">
+                    <xsl:attribute name="subtype" select="$v_subtype"/>
+                </xsl:if>
             </xsl:if>
-            <xsl:apply-templates select="node()"/>
+            <!-- potentially sort the children -->
+            <!--<xsl:apply-templates select="node()"/>-->
+            <!-- monogr -->
+            <xsl:apply-templates select="tei:monogr"/>
+            <xsl:apply-templates select="tei:note">
+                <xsl:sort select="@type"/>
+            </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="tei:monogr">
@@ -109,17 +116,71 @@
 -->
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="tei:title"/>
+            <!-- the main language comes first -->
+            <xsl:variable name="v_lang">
+                <xsl:choose>
+                    <xsl:when test="tei:textLang/@mainLang">
+                        <xsl:value-of select="tei:textLang[1]/@mainLang"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:choose>
+                <xsl:when test="$v_lang != 'NA'">
+                    <xsl:apply-templates select="tei:title[@xml:lang = $v_lang]">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="normalize-space(.)"/>
+                    </xsl:apply-templates>
+                    <xsl:apply-templates select="tei:title[@xml:lang != $v_lang]">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="normalize-space(.)"/>
+                    </xsl:apply-templates>
+                    <xsl:apply-templates select="tei:title[not(@xml:lang)]">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="normalize-space(.)"/>
+                    </xsl:apply-templates>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="tei:title">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="normalize-space(.)"/>
+                    </xsl:apply-templates>
+                </xsl:otherwise>
+            </xsl:choose>
             <!-- check for <idno> -->
             <xsl:choose>
                 <xsl:when test="tei:idno">
-                    <xsl:apply-templates select="tei:idno"/>
+                    <xsl:apply-templates select="tei:idno">
+                        <xsl:sort select="@type"/>
+                        <xsl:sort select="replace(., '[^\d]', '')" data-type="number"/>
+                    </xsl:apply-templates>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:call-template name="t_generate-oape-id"/>
                 </xsl:otherwise>
             </xsl:choose>
-            <xsl:apply-templates select="child::node()[not(self::tei:title | self::tei:idno)]"/>
+            <!-- textLang -->
+            <xsl:apply-templates select="tei:textLang"/>
+            <xsl:apply-templates select="tei:editor | tei:author"/>
+            <xsl:apply-templates select="tei:respStmt"/>
+            <xsl:apply-templates select="tei:imprint"/>
+            <xsl:apply-templates select="tei:biblScope"/>
+            <!--            <xsl:apply-templates select="child::node()[not(self::tei:title | self::tei:idno)]"/>-->
+        </xsl:copy>
+    </xsl:template>
+    <xsl:template match="tei:imprint">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates select="tei:pubPlace">
+                <xsl:sort select="tei:placeName[@ref][1]/@ref"/>
+            </xsl:apply-templates>
+            <xsl:apply-templates select="tei:publisher"/>
+            <xsl:apply-templates select="tei:date">
+                <xsl:sort select="@type"/>
+                <xsl:sort select="@when"/>
+            </xsl:apply-templates>
         </xsl:copy>
     </xsl:template>
     <!-- mode to generate OpenArabicPE IDs -->

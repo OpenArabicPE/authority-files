@@ -40,7 +40,7 @@
                 <xsl:sort select="descendant::tei:addName[@type = 'noAddName'][not(. = '')][1]"/>
                 <xsl:sort select="descendant::tei:addName[@type = 'flattened'][1]"/>
                 <xsl:sort select="tei:persName[1]"/>
-                <xsl:sort order="ascending" select="tei:idno[@type = 'VIAF'][1]"/>
+                <xsl:sort order="ascending" select="tei:idno[@type = 'VIAF'][1]" data-type="number"/>
             </xsl:apply-templates>
             <!-- listPerson -->
             <xsl:apply-templates select="tei:listPerson"/>
@@ -221,6 +221,10 @@
                         <xsl:element name="occupation">
                             <xsl:attribute name="resp" select="'#xslt'"/>
                             <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                            <!-- add source of information -->
+                            <xsl:if test="$v_bibl/@source">
+                                <xsl:apply-templates select="$v_bibl/@source" mode="m_identity-transform"/>
+                            </xsl:if>
                             <xsl:attribute name="xml:lang" select="'en'"/>
                             <xsl:text>Editor of </xsl:text>
                             <xsl:copy-of select="oape:query-biblstruct($v_bibl, 'title-tei', 'ar', '', $p_local-authority)"/>

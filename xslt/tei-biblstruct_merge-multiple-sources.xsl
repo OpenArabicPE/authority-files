@@ -22,6 +22,7 @@
        - sorting of idno
            - the content is alphanumeric but pure numbers should be sorted as such, i.e. 90 before 100
       - pubPlaces without placeName/@ref are omitted
+      - some publishers go missing
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
@@ -369,7 +370,16 @@
                     </xsl:call-template>
                 </xsl:for-each-group>
                 <!-- editors -->
-                <xsl:for-each-group group-by="element()/@ref" select="$v_combined-monogr/tei:editor">
+                <xsl:for-each-group group-by="element()/@ref" select="$v_combined-monogr/tei:editor[element()/@ref]">
+                    <xsl:call-template name="t_merge-groups">
+                        <xsl:with-param name="p_current-group" select="current-group()"/>
+                        <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                        <!-- cover persName children -->
+                        <!-- note: persNames might have a lot of mark-up that will thus be omitted -->
+                        <xsl:with-param name="p_depth-of-merging" select="4"/>
+                    </xsl:call-template>
+                </xsl:for-each-group>
+                <xsl:for-each-group group-by="element()" select="$v_combined-monogr/tei:editor[not(element()/@ref)]">
                     <xsl:call-template name="t_merge-groups">
                         <xsl:with-param name="p_current-group" select="current-group()"/>
                         <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
@@ -390,7 +400,15 @@
                 <xsl:copy select="$v_combined-monogr/tei:imprint[1]">
                     <xsl:copy-of select="oape:merge-attributes($p_source/tei:monogr/tei:imprint, $p_target/tei:monogr/tei:imprint)"/>
                     <!-- pubPlace -->
-                    <xsl:for-each-group group-by="tei:placeName/@ref" select="$v_combined-imprint/tei:pubPlace">
+                    <xsl:for-each-group group-by="tei:placeName/@ref" select="$v_combined-imprint/tei:pubPlace[element()/@ref]">
+                        <xsl:call-template name="t_merge-groups">
+                            <xsl:with-param name="p_current-group" select="current-group()"/>
+                            <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                            <!-- cover placeName children -->
+                            <xsl:with-param name="p_depth-of-merging" select="1"/>
+                        </xsl:call-template>
+                    </xsl:for-each-group>
+                    <xsl:for-each-group group-by="element()" select="$v_combined-imprint/tei:pubPlace[not(element()/@ref)]">
                         <xsl:call-template name="t_merge-groups">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                             <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
@@ -399,12 +417,20 @@
                         </xsl:call-template>
                     </xsl:for-each-group>
                     <!-- publisher -->
-                    <xsl:for-each-group group-by="element()/@ref" select="$v_combined-imprint/tei:publisher">
+                    <xsl:for-each-group group-by="element()/@ref" select="$v_combined-imprint/tei:publisher[element()/@ref]">
                         <xsl:call-template name="t_merge-groups">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                             <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
                             <!-- cover orgName children -->
-                            <xsl:with-param name="p_depth-of-merging" select="1"/>
+                            <xsl:with-param name="p_depth-of-merging" select="4"/>
+                        </xsl:call-template>
+                    </xsl:for-each-group>
+                     <xsl:for-each-group group-by="element()" select="$v_combined-imprint/tei:publisher[not(element()/@ref)]">
+                        <xsl:call-template name="t_merge-groups">
+                            <xsl:with-param name="p_current-group" select="current-group()"/>
+                            <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
+                            <!-- cover orgName children -->
+                            <xsl:with-param name="p_depth-of-merging" select="4"/>
                         </xsl:call-template>
                     </xsl:for-each-group>
                     <!-- date -->

@@ -1,7 +1,8 @@
 ---
 title: "readme: OpenArabicPE/authority-files"
 author: Till Grallert
-date: 2022-02-04
+date: 2024-02-02
+lang: en
 ---
 
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -10,34 +11,36 @@ date: 2022-02-04
 [![GitHub release](https://img.shields.io/github/release/openarabicpe/authority-files.svg?maxAge=2592000)](https://github.com/openarabicpe/authority-files/releases)
 ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/openarabicpe/authority-files/latest)
 
+This repository holds the authority files for three research projects in Arab Periodical Studies and on the history of Arabic periodicals until roughly 1930: Project Jarāʾid, Open Arabic Periodical Editions, and Sihafa. The aim is to provide information on all titles, publishers, and places of publication relevant for this discursive sphere, including non-Arabic titles referenced within Arabic periodicals. As far as possible, I aim at linking local data to relevant external authority files, such as the *Virtual International Authority File* ([VIAF](https://viaf.org)), the [GeoNames](https://geonames.org) gazetteer or [Wikidata](https://wikidata.org/).
+
 # locations and file names
 
-+ main repository: `OpenArabicPE/authority-files/`
-    * folder for all data: `data/`
-        * `tei/`: main folder for authority data generated within OpenArabicPE
-            - bibliography
-            - personography
-            - organizationography
-            - gazetteer
-        * `csv/`: folder for derivatives of the main `tei/` folder, serialised as CSV or TSV.
-        * `geonames/`: this folder acts as a cache for linked data from [GeoNames](https://geonames.org) in order to minimise traffic. The file naming scheme in this folder is `geon_[ID].xml`
-        * `viaf/`: this folder acts as a cache for linked data from [VIAF](https://viaf.org) in order to minimise traffic. The file naming scheme in this folder is `viaf_[ID].SRW.xml`.
-    * folder for tools: `xslt/`
+* folder for all data: `data/`
+    * `tei/`: main folder for authority data generated within OpenArabicPE
+        - bibliography
+        - personography
+        - organizationography
+        - gazetteer
+    * `csv/`: folder for derivatives of the main `tei/` folder, serialised as CSV or TSV.
+    * `geonames/`: this folder acts as a cache for linked data from [GeoNames](https://geonames.org) in order to minimise traffic. The file naming scheme in this folder is `geon_[ID].xml`
+    * `viaf/`: this folder acts as a cache for linked data from [VIAF](https://viaf.org) in order to minimise traffic. The file naming scheme in this folder is `viaf_[ID].SRW.xml`.
+* folder for tools: `xslt/`
 
 # to do
+## bibliography of periodicals
 
+- [x] add all known collaborators to Suriye (oape:bibl:321)
+- [ ] fix dates: `<date change="#d2e33" from="1910-02-18"/>`
 - [ ] add sources as TEI/XML to the bibliography
     + some are encoded as `<ref type="pandoc">`
-    + [@LaPresseMusulmane+1909, 106]
-    + [@Campos+2008+TheVoiceOf, 245]
+        + [@LaPresseMusulmane+1909, 106]
+        + [@Campos+2008+TheVoiceOf, 245]
+    
 - [ ] wrap content in `<publisher source="oape:org:73">` originating from AUB in a `<orgName>` element
-- [ ] The holding information from Jaraid needs to become more machine-actionable:
+- [ ] The holding information from Jaraid needs to become more machine-actionable. See below for details.
     + example 1
         * we have: `<ref resp="#pAM" target="https://gpa.eastview.com/crl/mena/newspapers/msbh" xml:lang="und-Latn">online 1899-1900</ref>` 
         * we want: `<bibl><date type="onset">1899</date>-<date type="terminus">1900</date></bibl>`
-- [ ] support full URLs in `@ref` in the XSLT linking entity names to authority files.
-    + add param whether to output private URI scheme or full URLs
-
 - [ ] ambiguous matches for referenced periodicals
     + the problem concerns important journals with minor competitors of the same name
     + references do not include spatial information
@@ -54,8 +57,11 @@ date: 2022-02-04
 - [ ] extract dates from holding data
     + dates in holding data can be used to improve our knowledge of publication histories. If a library has a copy and provides a publication date for this copy, assume that they catalogued it correctly, and add this dating information as `<date type="documented"/>` to the main entry's `<imprint/>`
 
-- [ ] `@type='noAddName'` is missing whitespace between name components in some cases
+## XSLT
 
+- [ ] support full URLs in `@ref` in the XSLT linking entity names to authority files.
+    + add param whether to output private URI scheme or full URLs
+- [ ] `@type='noAddName'` is missing whitespace between name components in some cases
 - XSLT for generating the mapping data needs to be improved (not very important to the workflow/tutorial)
 
 # stylesheets
@@ -239,9 +245,8 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
     + `@source`: pointing to a source for the different type of source
 
 ```xml
-
-<biblStruct xml:lang="ar">
-    <monogr xml:lang="ar">
+<biblStruct>
+    <monogr>
         <!-- titles in Arabic and transcription -->
         <title corresp="sakhrit:jid:14" level="j" xml:lang="ar">لغة العرب</title>
         <title level="j" type="sub" xml:lang="ar">مجلة شهرية ادبية علمية تاريخية</title>
@@ -252,18 +257,18 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
         <idno type="jid" xml:lang="ar">14</idno>
         <idno type="OCLC">472450345</idno>
         <textLang mainLang="ar"/>
-        <editor xml:lang="ar">
+        <editor>
             <!-- persNames link back to the prosopography -->
             <!-- only one is needed. Additional names could be looked up automatically -->
             <persName ref="oape:pers:227 viaf:39370998" xml:lang="ar"> <roleName type="rank" xml:lang="ar">الأب</roleName> <forename xml:lang="ar">أنستاس</forename> <forename xml:lang="ar">ماري</forename> <surname xml:lang="ar"> <addName type="nisbah" xml:lang="ar">الكرملي</addName> </surname></persName>
             <persName xml:lang="ar-Latn-x-ijmes">al-Abb Anastās Mārī al-Karamlī</persName>
         </editor>
-        <editor xml:lang="ar">
+        <editor>
             <persName change="#d3e53" ref="oape:pers:396" xml:id="persName_195.d1e5884" xml:lang="ar"> <forename xml:id="forename_224.d1e5885" xml:lang="ar">كاظم</forename> <surname xml:id="surname_195.d1e5888" xml:lang="ar"> <addName type="nisbah">الدجيلي</addName> </surname> </persName>
         </editor>
-        <imprint xml:lang="ar">
+        <imprint>
             <publisher/>
-            <pubPlace xml:lang="ar">
+            <pubPlace>
                 <!-- placeNames link back to the gazetteer -->
                 <!-- only one is needed. Additional toponyms could be looked up automatically -->
                 <placeName change="#d5e42" ref="oape:place:216 geon:98182" xml:lang="ar">بغداد</placeName>
@@ -277,6 +282,7 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
         <biblScope from="1" to="1" unit="issue"/>
         <!-- <biblScope from="505" unit="page">505</biblScope>-->
     </monogr>
+    <!-- various notes -->
     <!-- $p_weekdays-published contains a comma-separated list of weekdays in English -->
     <note type="param" n="p_weekdays-published">Tuesday, Friday</note>
     <!--  $p_step sets incremental steps for the input to be iterated upon. Values are:
@@ -298,8 +304,7 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
 
 One of the main purposes of Project Jarāʾid and my own efforts is to locate periodicals in collections in order to guide researchers to material and inform digitisation efforts.
 
-
-#### current encoding
+#### schema
 
 ```xml
 <note type="holdings"> 
@@ -328,6 +333,25 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
                     <idno type="URI" subtype="self">http://ima.bibalex.org/IMA/presentation/periodic/list.jsf?pid=05C0204A80C79A91F11989B6E0AA9D48"</idno>
                 </bibl>
             </listBibl>
+        </item>
+    </list>
+</note>
+```
+
+#### current encoding
+
+- [ ] find and mark-up dates
+
+```xml
+<note type="holdings"> 
+    <list>
+        <!-- each collection gets its own item -->
+        <item source="https://projectjaraid.github.io"> 
+            <!-- information on the collection is provided in the label -->
+            <label> 
+                <placeName ref="geon:2988507 oape:place:322">Paris</placeName>, 
+                <orgName ref="jaraid:org:hBNF oape:org:12" xml:lang="und-Latn">BnF</orgName> 
+            </label> 
         </item>
         <!-- weird mix of encoding: originating from very early conversions of the Jaraid data -->
         <item source="https://projectjaraid.github.io">online at <ref target="http://www.archive.org" xml:lang="und-Latn">archive.org</ref>, reprint <placeName ref="geon:276781 jaraid:place:2 oape:place:26" xml:lang="und-Latn">Beirut</placeName> </item>

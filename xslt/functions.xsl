@@ -384,7 +384,7 @@
                                 <xsl:message>
                                     <xsl:text>The persName </xsl:text>
                                     <xsl:value-of select="$p_entity-name"/>
-                                    <xsl:text>was not found in the authority file</xsl:text>
+                                    <xsl:text> was not found in the authority file</xsl:text>
                                 </xsl:message>
                                 <!-- quick debugging -->
                                 <!--<xsl:message><xsl:copy-of select="$v_name-marked-up"/><xsl:copy-of select="$v_name-no-addnames"/></xsl:message>-->
@@ -547,8 +547,14 @@
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'OCLC']">
                         <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = 'OCLC'][1])"/>
                     </xsl:when>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="concat('wiki:', $p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata][1])"/>
+                    </xsl:when>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'DOI']">
+                        <xsl:value-of select="concat('DOI:', $p_bibl/descendant::tei:idno[@type = 'DOI'][1])"/>
+                    </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_local-authority]">
-                        <xsl:value-of select="concat($p_local-authority, ':', $p_bibl/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                        <xsl:value-of select="concat($p_local-authority, ':bibl:', $p_bibl/descendant::tei:idno[@type = $p_local-authority][1])"/>
                     </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:idno">
                         <xsl:value-of select="concat($p_bibl/descendant::tei:idno[1]/@type, ':', $p_bibl/descendant::tei:idno[1])"/>
@@ -561,8 +567,18 @@
             <xsl:when test="$p_output-mode = ('id-local', $p_local-authority)">
                 <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = $p_local-authority][1]"/>
             </xsl:when>
-            <xsl:when test="$p_output-mode = ('id-oclc', 'oclc')">
+            <xsl:when test="$p_output-mode = ('id-oclc', 'oclc') and $p_bibl/descendant::tei:idno[@type = 'OCLC']">
                 <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = 'OCLC'][1]"/>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = ('id-wiki', 'wiki')">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
@@ -572,6 +588,9 @@
                                 <xsl:sort order="ascending" select="current-grouping-key()"/>
                                 <xsl:if test="current-grouping-key() = 'OCLC'">
                                     <xsl:value-of select="concat('oclc:', .)"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = $p_acronym-wikidata">
+                                    <xsl:value-of select="concat('wiki:', .)"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
                                     <xsl:value-of select="concat('oape:bibl:', .)"/>
@@ -600,6 +619,12 @@
                     <!-- possible transcriptions into other script -->
                     <xsl:when test="($p_output-language = 'ar') and ($v_monogr/tei:title[contains(@xml:lang, '-Arab-')])">
                         <xsl:value-of select="normalize-space($v_monogr[tei:title[contains(@xml:lang, '-Arab-')]][1]/tei:title[contains(@xml:lang, '-Arab-')][1])"/>
+                    </xsl:when>
+                    <!-- support transcriptions between scripts -->
+                    <xsl:when test="$v_monogr/tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))]">
+                        <xsl:value-of
+                            select="normalize-space($v_monogr[tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))]][1]/tei:title[contains(@xml:lang, concat('-', $p_output-language, '-'))][1])"
+                        />
                     </xsl:when>
                     <!-- fallback to main language of publication -->
                     <xsl:when test="$v_monogr/tei:title[@xml:lang = $v_mainLang]">
@@ -637,6 +662,18 @@
                 </xsl:variable>
                 <xsl:value-of select="$v_otherLangs"/>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'langs'">
+                <xsl:for-each-group select="$v_monogr/tei:textLang/@mainLang" group-by=".">
+                    <xsl:element name="lang">
+                        <xsl:value-of select="current-grouping-key()"/>
+                    </xsl:element>
+                </xsl:for-each-group>
+                <xsl:for-each-group select="tokenize($v_monogr/tei:textLang/@otherLangs, ' ')" group-by=".">
+                    <xsl:element name="lang">
+                        <xsl:value-of select="current-grouping-key()"/>
+                    </xsl:element>
+                </xsl:for-each-group>
+            </xsl:when>
             <!-- return date           -->
             <xsl:when test="$p_output-mode = 'date'">
                 <xsl:choose>
@@ -660,14 +697,28 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <!-- this returns a node and all values in attritbutes have been converted to ISO -->
             <xsl:when test="$p_output-mode = 'date-onset'">
                 <xsl:variable name="v_date-onset">
                     <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = ('onset', 'official')]"/>
+                    <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[not(@type)][@from]"/>
                     <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[not(@type)][@when]"/>
                 </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-onset/descendant-or-self::tei:date/@when">
-                        <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
+                        <!--                        <xsl:value-of select="min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
+                        <xsl:copy-of select="$v_date-onset/descendant-or-self::tei:date[@when = min($v_date-onset/descendant-or-self::tei:date[@when]/@when/xs:date(.))][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'year-onset'">
+                <xsl:variable name="v_date" select="oape:query-biblstruct($p_bibl, 'date-onset', '', '', '')"/>
+                <xsl:choose>
+                    <xsl:when test="$v_date != 'NA'">
+                        <xsl:value-of select="year-from-date($v_date/self::tei:date/@when)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -677,10 +728,23 @@
             <xsl:when test="$p_output-mode = 'date-terminus'">
                 <xsl:variable name="v_date-terminus">
                     <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[@type = 'terminus']"/>
+                    <xsl:apply-templates mode="m_iso" select="$v_monogr/tei:imprint/tei:date[not(@type)][@to]"/>
                 </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$v_date-terminus/descendant-or-self::tei:date/@when">
-                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>
+                        <!--                        <xsl:value-of select="max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))"/>-->
+                        <xsl:copy-of select="$v_date-terminus/descendant-or-self::tei:date[@when = max($v_date-terminus/descendant-or-self::tei:date[@when]/@when/xs:date(.))][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'year-terminus'">
+                <xsl:variable name="v_date" select="oape:query-biblstruct($p_bibl, 'date-terminus', '', '', '')"/>
+                <xsl:choose>
+                    <xsl:when test="$v_date != 'NA'">
+                        <xsl:value-of select="year-from-date($v_date/self::tei:date/@when)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -705,6 +769,26 @@
                 <xsl:choose>
                     <xsl:when test="$p_bibl/descendant::tei:editor/tei:persName">
                         <xsl:value-of select="oape:query-personography($p_bibl/descendant::tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id', '')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-editor-viaf'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:editor/tei:persName">
+                        <xsl:value-of select="oape:query-personography($p_bibl/descendant::tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id-viaf', '')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-editor-wiki'">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:editor/tei:persName">
+                        <xsl:value-of select="oape:query-personography($p_bibl/descendant::tei:editor[tei:persName][1]/tei:persName[1], $v_personography, $p_local-authority, 'id-wiki', '')"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -800,13 +884,27 @@
         </xsl:variable>
         <!-- output -->
         <xsl:copy>
+            <xsl:apply-templates mode="m_identity-transform" select="@source | @type"/>
             <xsl:choose>
                 <xsl:when test="matches($v_temp, '^\d{4}-\d{2}-\d{2}$')">
                     <xsl:attribute name="when" select="$v_temp"/>
+                    <xsl:if test="not(@when)">
+                        <xsl:attribute name="cert" select="'medium'"/>
+                    </xsl:if>
                 </xsl:when>
                 <xsl:when test="matches($v_temp, '^\d{4}$')">
                     <!-- latest possible date: this will prevent the originally less precise dates from taking precedent -->
-                    <xsl:attribute name="when" select="concat($v_temp, '-12-31')"/>
+                    <xsl:attribute name="when">
+                        <xsl:choose>
+                            <xsl:when test="@type = 'onset'">
+                                <xsl:value-of select="concat($v_temp, '-12-31')"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="concat($v_temp, '-12-31')"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:attribute>
+                    <xsl:attribute name="cert" select="'low'"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:copy>
@@ -900,6 +998,10 @@
                     <xsl:when test="$p_place/descendant::tei:idno[@type = $p_acronym-geonames]">
                         <xsl:value-of select="concat($p_acronym-geonames, ':', $p_place/descendant::tei:idno[@type = $p_acronym-geonames][1])"/>
                     </xsl:when>
+                    <!-- Wikidata -->
+                    <xsl:when test="$p_place/tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="concat('wiki:', $p_place/tei:idno[@type = $p_acronym-wikidata][1])"/>
+                    </xsl:when>
                     <xsl:when test="$p_place/descendant::tei:idno[@type = $p_local-authority]">
                         <xsl:value-of select="concat($p_local-authority, ':', $p_place/descendant::tei:idno[@type = $p_local-authority][1])"/>
                     </xsl:when>
@@ -934,6 +1036,16 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-wiki'">
+                <xsl:choose>
+                    <xsl:when test="$p_place/tei:idno[@type = $p_acronym-wikidata]">
+                        <xsl:value-of select="$p_place/tei:idno[@type = $p_acronym-wikidata][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <xsl:when test="$p_output-mode = 'url-geon'">
                 <xsl:variable name="v_id" select="oape:query-place($p_place, 'id-geon', '', '')"/>
                 <xsl:choose>
@@ -953,6 +1065,9 @@
                                 <xsl:sort order="ascending" select="@type"/>
                                 <xsl:if test="current-grouping-key() = $p_acronym-geonames">
                                     <xsl:value-of select="concat($p_acronym-geonames, ':', current-group()[1])"/>
+                                </xsl:if>
+                                <xsl:if test="current-grouping-key() = $p_acronym-wikidata">
+                                    <xsl:value-of select="concat($p_acronym-wikidata, ':', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
                                     <xsl:value-of select="concat('oape:place:', current-group()[1])"/>
@@ -1201,6 +1316,16 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = 'id-isil'">
+                <xsl:choose>
+                    <xsl:when test="$p_org/tei:idno[@type = 'isil']">
+                        <xsl:value-of select="$p_org/tei:idno[@type = 'isil'][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
                     <xsl:when test="$p_org/tei:idno[not(@type = 'URI')]">
@@ -1211,7 +1336,7 @@
                                     <xsl:value-of select="concat('viaf:', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = $p_acronym-wikidata">
-                                    <xsl:value-of select="concat('wiki:', current-group()[1])"/>
+                                    <xsl:value-of select="concat($p_acronym-wikidata, ':', current-group()[1])"/>
                                 </xsl:if>
                                 <xsl:if test="current-grouping-key() = 'oape'">
                                     <xsl:value-of select="concat('oape:org:', current-group()[1])"/>
@@ -1250,6 +1375,16 @@
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="normalize-space($p_org/tei:orgName[1])"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = 'url'">
+                <xsl:choose>
+                    <xsl:when test="$p_org/tei:idno[@type = 'url']">
+                        <xsl:value-of select="$p_org/tei:idno[@type = 'url'][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
@@ -1456,12 +1591,18 @@
                         <xsl:when test="($p_output-language = 'ar') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')])">
                             <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Arab-')][1]"/>
                         </xsl:when>
-                        <!-- fallback to english -->
-                        <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = 'en']">
-                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = 'en'][1]"/>
+                        <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')])">
+                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')][1]"/>
                         </xsl:when>
-                        <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en']">
-                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = 'en'][1]"/>
+                         <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')])">
+                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')][1]"/>
+                        </xsl:when>
+                        <!-- fallback to english -->
+                        <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = ('en', 'fr')]">
+                            <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][@xml:lang = ('en', 'fr')][1]"/>
+                        </xsl:when>
+                        <xsl:when test="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = ('en', 'fr')]">
+                            <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][@xml:lang = ('en', 'fr')][1]"/>
                         </xsl:when>
                         <xsl:when test="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')]">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')][1]"/>
@@ -2588,7 +2729,8 @@
                 </xsl:choose>
             </xsl:if>
         </xsl:variable>
-        <xsl:variable name="v_margin" select="1"/>
+        <!-- legitimate difference between years of publication -->
+        <xsl:variable name="v_margin" select="2"/>
         <!-- select a year, the reference to be linked was made in -->
         <!-- somehow this does not return the correct dates -->
         <xsl:variable name="v_year-publication">
@@ -2596,7 +2738,10 @@
                 <!-- check if the input bibl has a date -->
                 <xsl:when test="$v_biblStruct//tei:imprint/tei:date[@when | @notAfter | @notBefore]">
                     <xsl:if test="$p_debug = true()">
-                        <xsl:message><xsl:text>Publication year: from reference </xsl:text><xsl:value-of select="oape:query-biblstruct($v_biblStruct, 'date', '', '', '')"/></xsl:message>
+                        <xsl:message>
+                            <xsl:text>Publication year: from reference </xsl:text>
+                            <xsl:value-of select="oape:query-biblstruct($v_biblStruct, 'date', '', '', '')"/>
+                        </xsl:message>
                     </xsl:if>
                     <xsl:value-of select="oape:date-year-only(oape:query-biblstruct($v_biblStruct, 'date-onset', '', '', ''))"/>
                 </xsl:when>
@@ -2605,7 +2750,8 @@
                     <xsl:value-of select="oape:date-year-only(oape:query-biblstruct($p_title/ancestor::tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', ''))"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:value-of select="year-from-date(current-date())"/>
+                    <xsl:value-of select="'NA'"/>
+                    <!--                    <xsl:value-of select="year-from-date(current-date())"/>-->
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -2627,24 +2773,25 @@
             </xsl:variable>
             <xsl:for-each select="$v_bibls-compiled/descendant-or-self::tei:biblStruct">
                 <xsl:variable name="v_corresponding-bibl-year" select="oape:date-year-only(oape:query-biblstruct(., 'date', '', '', ''))"/>
-                <xsl:message>
-                    <xsl:text>year of reference: </xsl:text>
-                    <xsl:value-of select="$v_year-publication"/>
-                    <xsl:text> | </xsl:text>
-                    <xsl:text>year in bibliography: </xsl:text>
-                    <xsl:value-of select="$v_corresponding-bibl-year"/>
-                </xsl:message>
                 <xsl:choose>
-                    <!-- remove all corresponding biblStructs that were published after the referencing source -->
-                    <xsl:when test="$v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA' and $v_corresponding-bibl-year &gt; ($v_year-publication + $v_margin)">
-                        <xsl:if test="$p_verbose = true()">
-                            <xsl:message>
-                                <xsl:text>Found a corresponding entry for </xsl:text>
-                                <xsl:value-of select="$v_title-string"/>
-                                <xsl:text> in the authority file, but it hadn't been published yet.</xsl:text>
-                            </xsl:message>
-                        </xsl:if>
+                    <!-- compare years of publication:
+                        1. assuming we have known dates of first publication for all bibls: dates should NOT DIFFER by more than x years
+                    -->
+                    <xsl:when test="($v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA') and (floor($v_year-publication - $v_corresponding-bibl-year) &gt; $v_margin)">
+                        <xsl:message>
+                            <xsl:text>WARNING: Found a corresponding entry for </xsl:text>
+                            <xsl:value-of select="$v_title-string"/>
+                            <xsl:text> in the authority file, but it hadn't been published yet; </xsl:text>
+                            <xsl:text>year of reference: </xsl:text>
+                            <xsl:value-of select="$v_year-publication"/>
+                            <xsl:text> | </xsl:text>
+                            <xsl:text>year in bibliography: </xsl:text>
+                            <xsl:value-of select="$v_corresponding-bibl-year"/>
+                        </xsl:message>
                     </xsl:when>
+                    <!-- compare years of publication:
+                        2. the reference to be linked CANNOT have been published BEFORE the source in the authority file
+                    -->
                     <!-- our authority files contain multiple <biblStruct> for a single logical publication in the case when editors, subtitles, places of publication etc. have changed. They are tied together by @next and @prev attributes
                            - we could establish which of those is in closes temporal proximity to the current text, the references occur in 
                            - we could compile these biblStruct into a single one.
@@ -2658,6 +2805,10 @@
         </xsl:variable>
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
+                <!-- match based on IDs from authority files -->
+                <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'OCLC'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'OCLC']">
+                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'OCLC'] = $v_biblStruct/descendant::tei:idno[@type = 'OCLC']][1]"/>
+                </xsl:when>
                 <!-- test if there is a potential match -->
                 <xsl:when test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
                     <xsl:message>
@@ -2733,7 +2884,7 @@
                     <!-- try to use further match criteria -->
                     <xsl:choose>
                         <!-- 1. negative hits: excluding criteria -->
-                        <!-- differne places of publication -->
+                        <!-- different places of publication -->
                         <!-- This currently generates a lot of false negatives due to the construction of $v_place-publication, which pulls in the publication place of the primary source as  -->
                         <xsl:when
                             test="$v_place-publication != 'NA' and count($v_corresponding-bibls/descendant-or-self::tei:biblStruct) = 1 and $v_corresponding-bibls/descendant-or-self::tei:biblStruct[oape:query-biblstruct(., 'id-location', '', $v_gazetteer, $p_local-authority) != $v_place-publication]">
