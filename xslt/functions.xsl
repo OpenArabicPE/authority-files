@@ -194,6 +194,9 @@
                         <xsl:when test="contains($v_ref, 'geonames.org')">
                             <xsl:value-of select="$p_acronym-geonames"/>
                         </xsl:when>
+                        <xsl:when test="contains($v_ref, concat($p_acronym-wikidata, ':'))">
+                            <xsl:value-of select="$p_acronym-wikidata"/>
+                        </xsl:when>
                         <xsl:when test="contains($v_ref, 'oclc:')">
                             <xsl:text>OCLC</xsl:text>
                         </xsl:when>
@@ -223,6 +226,9 @@
                         </xsl:when>
                         <xsl:when test="matches($v_ref, 'geonames.org/\d+')">
                             <xsl:value-of select="replace($v_ref, '.*geonames.org/(\d+).*', '$1')"/>
+                        </xsl:when>
+                        <xsl:when test="contains($v_ref, concat($p_acronym-wikidata, ':'))">
+                            <xsl:value-of select="replace($v_ref, concat('.*', $p_acronym-wikidata, ':(Q\d+).*'), '$1')"/>
                         </xsl:when>
                         <xsl:when test="contains($v_ref, 'oclc:')">
                             <xsl:value-of select="replace($v_ref, '.*oclc:(\d+).*', '$1')"/>
