@@ -6,7 +6,7 @@ WITH {
   WHERE {
    ?periodical wdt:P31/wdt:P279* wd:Q1002697 ;
        wdt:P407/wdt:P279* wd:Q13955 .
-    OPTIONAL {?periodical (wdt:P571 | wdt:P580) ?dateOnset}
+    ?periodical (wdt:P571 | wdt:P580) ?dateOnset.
     FILTER( YEAR(?dateOnset) < 1930).
     }
   LIMIT 4000
