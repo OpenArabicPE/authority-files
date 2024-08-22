@@ -10,11 +10,12 @@
     <xsl:include href="../../oxygen-project/OpenArabicPE_parameters.xsl"/>
     <!-- variables for OpenArabicPE IDs -->
     <xsl:variable name="v_oape-id-count" select="count(//tei:monogr/tei:idno[@type = 'oape'])"/>
+    <xsl:param name="p_oape-id-default" select="0"/>
     <xsl:variable name="v_oape-id-highest" select="
             if ($v_oape-id-count gt 0) then
                 (max(//tei:monogr/tei:idno[@type = 'oape']))
             else
-                (0)"/>
+                ($p_oape-id-default)"/>
     <!-- identity transform -->
     <xsl:template match="@* | node()">
         <xsl:copy>
