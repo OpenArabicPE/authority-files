@@ -198,5 +198,7 @@
     <xsl:param name="p_string-match" select="'([إ|أ|آ])'"/>
     <xsl:param name="p_string-replace" select="'ا'"/>
     <xsl:param name="p_string-harakat" select="'([ِ|ُ|ٓ|ٰ|ْ|ٌ|ٍ|ً|ّ|َ])'"/>
+    <xsl:variable name="v_string-transcribe-arabic-unicode" select="'ṯḥḫǧǧḏšṣḍṭẓġḳâāāáûūūîī'"/>
+    <xsl:variable name="v_string-transcribe-arabic-ascii" select="'thhggdssdtygkaaaauuuuu'"/>
 
 </xsl:stylesheet>
