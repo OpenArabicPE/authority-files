@@ -74,7 +74,7 @@
                 <tei:ref target="{$p_url-bibliography}" xml:lang="en">
                     <xsl:value-of select="$p_url-bibliography"/>
                 </tei:ref>
-                <xsl:text>) and to OCLC (WorldCat) IDs to </xsl:text>
+                <xsl:text>) and other available IDs to </xsl:text>
                 <tei:gi xml:lang="en">titles</tei:gi>
                 <xsl:text>s without such references based on  </xsl:text>
                 <tei:gi xml:lang="en">biblStruct</tei:gi>

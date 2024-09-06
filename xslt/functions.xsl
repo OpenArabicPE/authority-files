@@ -2763,7 +2763,9 @@
         </xsl:variable>
         <!-- step 1: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
         <!-- possible results: none, one, multiple -->
-        <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
+        <!-- check if one could go through $v_biblStruct -->
+       <!-- <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>-->
+         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file( $v_biblStruct//tei:monogr/tei:title[1], $p_local-authority, $p_bibliography)"/>
         <!-- step 2: filter by publication date  -->
         <xsl:variable name="v_corresponding-bibls">
             <xsl:message>
@@ -2811,10 +2813,49 @@
         </xsl:variable>
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
-                <!-- match based on IDs from authority files -->
+                <!-- match based on IDs from authority files: the list is currently hard coded -->
+                <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]">
+                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = $p_acronym-wikidata] = $v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]][1]"/>
+                    <xsl:message>
+                        <xsl:text>Found a match based on Wikidata ID</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <!-- worldcat -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'OCLC'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'OCLC']">
                     <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'OCLC'] = $v_biblStruct/descendant::tei:idno[@type = 'OCLC']][1]"/>
+                    <xsl:message>
+                        <xsl:text>Found a match based on Worldcat ID</xsl:text>
+                    </xsl:message>
                 </xsl:when>
+                 <!-- LCCN -->
+                <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'LCCN'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'LCCN']">
+                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'LCCN'] = $v_biblStruct/descendant::tei:idno[@type = 'LCCN']][1]"/>
+                    <xsl:message>
+                        <xsl:text>Found a match based on Library of Congress ID</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <!-- Hathi -->
+                <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'ht_bib_key'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'ht_bib_key']">
+                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'ht_bib_key'] = $v_biblStruct/descendant::tei:idno[@type = 'ht_bib_key']][1]"/>
+                    <xsl:message>
+                        <xsl:text>Found a match based on HathiTrust ID</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <!-- DOI -->
+                <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'DOI'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'DOI']">
+                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'DOI'] = $v_biblStruct/descendant::tei:idno[@type = 'DOI']][1]"/>
+                    <xsl:message>
+                        <xsl:text>Found a match based on DOI ID</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <!-- ZDB -->
+                <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'zdb'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'zdb']">
+                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'zdb'] = $v_biblStruct/descendant::tei:idno[@type = 'zdb']][1]"/>
+                    <xsl:message>
+                        <xsl:text>Found a match based on ZDB ID</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+
                 <!-- test if there is a potential match -->
                 <xsl:when test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
                     <xsl:message>
@@ -3551,6 +3592,9 @@
             <xsl:element name="title">
                 <xsl:attribute name="level" select="'j'"/>
                 <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
+                <!--<xsl:if test="$p_title">
+                    <xsl:apply-templates select="$p_title/@*" mode="m_copy-from-source"/>
+                </xsl:if>-->
                 <!-- this will remove toponyms from the title. They need to be added after the title -->
                 <xsl:value-of select="normalize-space($p_title)"/>
             </xsl:element>
@@ -3565,8 +3609,8 @@
                 </xsl:element>
             </xsl:if>
         </xsl:element>
-        <!-- add trailing whitespace -->
-        <xsl:text> </xsl:text>
+        <!-- add trailing whitespace: why? -->
+<!--        <xsl:text> </xsl:text>-->
     </xsl:template>
     <!-- why do we need this function here -->
     <xsl:template match="tei:bibl" mode="m_bibl-to-biblStruct">
