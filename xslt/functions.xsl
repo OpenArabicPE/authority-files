@@ -2763,9 +2763,10 @@
         </xsl:variable>
         <!-- step 1: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
         <!-- possible results: none, one, multiple -->
-        <!-- check if one could go through $v_biblStruct -->
-       <!-- <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>-->
-         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file( $v_biblStruct//tei:monogr/tei:title[1], $p_local-authority, $p_bibliography)"/>
+        <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
+        <!-- NOTE: when the input links to an entity NOT FOUND in the authority, this link should probably be retained -->
+        <!-- check if one could go through $v_biblStruct: works -->
+<!--         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file( $v_biblStruct//tei:monogr/tei:title[1], $p_local-authority, $p_bibliography)"/>-->
         <!-- step 2: filter by publication date  -->
         <xsl:variable name="v_corresponding-bibls">
             <xsl:message>
@@ -3158,8 +3159,14 @@
                 <xsl:element name="title">
                     <xsl:apply-templates mode="m_identity-transform" select="$p_title/@*"/>
                     <xsl:attribute name="change" select="concat('#', $p_id-change)"/>
-                    <xsl:attribute name="ref" select="'NA'"/>
-                    <xsl:attribute name="resp" select="'#xslt'"/>
+                    <!-- no corresponding bibl is found, but the original should be retained -->
+                    <xsl:choose>
+                        <xsl:when test="$v_resp = 'ref_manual'"/>
+                        <xsl:otherwise>
+                            <xsl:attribute name="ref" select="'NA'"/>
+                            <xsl:attribute name="resp" select="'#xslt'"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:apply-templates mode="m_identity-transform" select="$p_title/node()"/>
                 </xsl:element>
             </xsl:when>
