@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -46,6 +42,8 @@
          </editorialDecl>
       </encodingDesc>
       <revisionDesc>
+         <tei:change when="2024-09-19" who="#pers_TG" xml:id="d11e212" xml:lang="en"
+            >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <change when="2024-04-26" who="#pers_TG" xml:lang="en">Added Wikidata IDs for most publication places of periodicals</change>
          <change when="2024-01-30" who="#pers_TG" xml:id="d11e208" xml:lang="en"
             >Added toponyms for the index of periodicals published by Erol Baykal. Improved <gi>place</gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</change>
@@ -2666,6 +2664,26 @@
             </listPlace>
             <listPlace type="district">
                <head>Mount Lebanon</head>
+               <place xml:id="place_557">
+                  <placeName xml:lang="ar-Latn-x-ijmes">al-Maḥmūdiyya</placeName>
+                  <placeName change="#d2e154" xml:lang="ar">المحمودية</placeName>
+                  <idno type="jaraid">114</idno>
+                  <idno type="oape">557</idno>
+                  <idno type="wiki">Q1938572</idno>
+               </place>
+               <place xml:id="place_558">
+                  <placeName xml:lang="ar-Latn-x-ijmes">Barqa</placeName>
+                  <placeName change="#d2e154" xml:lang="ar">برقة</placeName>
+                  <idno type="jaraid">93</idno>
+                  <idno type="oape">558</idno>
+                  <idno type="wiki">Q16123487</idno>
+               </place>
+               <place xml:id="place_551">
+                  <placeName xml:lang="ar-Latn-x-ijmes">Bayt al-Dīn</placeName>
+                  <placeName change="#d2e154" xml:lang="ar">بيت الدين</placeName>
+                  <idno type="jaraid">19</idno>
+                  <idno type="oape">551</idno>
+               </place>
                <place xml:id="place_615">
                   <placeName xml:lang="ar-Latn-x-ijmes">Zighartā</placeName>
                   <placeName change="#d2e154" xml:lang="ar">زغرتا</placeName>
@@ -2970,26 +2988,6 @@
                   <idno type="geon">272847</idno>
                   <idno type="oape">523</idno>
                   <idno type="wiki">Q3195896</idno>
-               </place>
-               <place xml:id="place_551">
-                  <placeName xml:lang="ar-Latn-x-ijmes">Bayt al-Dīn</placeName>
-                  <placeName change="#d2e154" xml:lang="ar">بيت الدين</placeName>
-                  <idno type="jaraid">19</idno>
-                  <idno type="oape">551</idno>
-               </place>
-               <place xml:id="place_557">
-                  <placeName xml:lang="ar-Latn-x-ijmes">al-Maḥmūdiyya</placeName>
-                  <placeName change="#d2e154" xml:lang="ar">المحمودية</placeName>
-                  <idno type="jaraid">114</idno>
-                  <idno type="oape">557</idno>
-                  <idno type="wiki">Q1938572</idno>
-               </place>
-               <place xml:id="place_558">
-                  <placeName xml:lang="ar-Latn-x-ijmes">Barqa</placeName>
-                  <placeName change="#d2e154" xml:lang="ar">برقة</placeName>
-                  <idno type="jaraid">93</idno>
-                  <idno type="oape">558</idno>
-                  <idno type="wiki">Q16123487</idno>
                </place>
                <place type="MT" xml:id="place_560">
                   <placeName xml:lang="ar-Latn-x-ijmes">Burummānā</placeName>
@@ -4347,25 +4345,6 @@
             <idno type="geon">2623032</idno>
             <idno type="oape">279</idno>
          </place>
-         <listPlace>
-            <place type="country" xml:id="place_280">
-               <placeName xml:lang="ar">الصين</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="en">China</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Chine</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">China</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="tr">Çin Halk Cumhuriyeti</placeName>
-               <location>
-                  <geo>35, 105</geo>
-               </location>
-               <idno type="url">http://en.wikipedia.org/wiki/China</idno>
-               <idno type="geon">1814991</idno>
-               <idno type="oape">280</idno>
-            </place>
-            <place>
-               <placeName xml:lang="en">Bejing</placeName>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_15-i_10.TEIP5.xml#" xml:lang="ar">بكين</placeName>
-            </place>
-         </listPlace>
          <place type="country" xml:id="place_415">
             <placeName xml:lang="en">Kuwait</placeName>
             <placeName xml:lang="ar">الكويت</placeName>
@@ -4488,6 +4467,26 @@
             <idno type="geon">11904140</idno>
             <idno type="oape">274</idno>
          </place>
+         <listPlace>
+            <place xml:id="place_837">
+               <placeName xml:lang="en">Beijing</placeName>
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_15-i_10.TEIP5.xml#" xml:lang="ar">بكين</placeName>
+               <idno type="oape">837</idno>
+            </place>
+            <place type="country" xml:id="place_280">
+               <placeName xml:lang="ar">الصين</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="en">China</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="fr">Chine</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="de">China</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="tr">Çin Halk Cumhuriyeti</placeName>
+               <location>
+                  <geo>35, 105</geo>
+               </location>
+               <idno type="url">http://en.wikipedia.org/wiki/China</idno>
+               <idno type="geon">1814991</idno>
+               <idno type="oape">280</idno>
+            </place>
+         </listPlace>
          <listPlace>
             <place type="country" xml:id="place_282">
                <placeName xml:lang="ar">اليونان</placeName>
@@ -4721,6 +4720,11 @@
          </listPlace>
          <listPlace type="country">
             <head>India</head>
+            <place xml:id="place_838">
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_44.TEIP5.xml#" xml:lang="ar">أمرتسر</placeName>
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_14-i_2.TEIP5.xml#" xml:lang="ar">أمر تسر</placeName>
+               <idno type="oape">838</idno>
+            </place>
             <place type="country" xml:id="place_293">
                <placeName xml:lang="ar">الهند</placeName>
                <placeName xml:lang="ar">بلاد الهند</placeName>
@@ -4735,6 +4739,19 @@
                <idno type="geon">1269750</idno>
                <idno type="oape">293</idno>
                <idno type="wiki">Q668</idno>
+            </place>
+            <place type="county" xml:id="place_419">
+               <placeName xml:lang="en">Punjab</placeName>
+               <placeName xml:lang="ar">بانجاب</placeName>
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_1.TEIP5.xml#" xml:lang="ar">بنجاب</placeName>
+               <location source="#org_geon">
+                  <geo>30.85, 72.31667</geo>
+               </location>
+               <idno type="jaraid">237</idno>
+               <idno type="url">https://en.wikipedia.org/wiki/Punjab,_Pakistan</idno>
+               <idno type="geon">1167710</idno>
+               <idno type="oape">419</idno>
+               <idno type="wiki">Q4478</idno>
             </place>
             <place type="county" xml:id="place_423">
                <placeName xml:lang="ar-Latn-x-ijmes">Bombay</placeName>
@@ -4753,6 +4770,23 @@
                <idno type="geon">1275339</idno>
                <idno type="oape">423</idno>
                <idno type="wiki">Q1156</idno>
+            </place>
+            <place type="town" xml:id="place_477">
+               <placeName xml:lang="ar-Latn-x-ijmes">Ḥaydarābād</placeName>
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_11-i_12.TEIP5.xml#" xml:lang="ar">حيدر أباد</placeName>
+               <placeName change="#d2e154" xml:lang="ar">حيدراباد</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="en">Hyderābād</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="fr">Hyderâbâd</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="de">Hyderabad</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="tr">Haydarabad</placeName>
+               <location source="#org_geon">
+                  <geo>25.39242, 68.37366</geo>
+               </location>
+               <idno type="jaraid">43</idno>
+               <idno type="url">https://en.wikipedia.org/wiki/Hyderabad%2C_Sindh</idno>
+               <idno type="geon">1176734</idno>
+               <idno type="oape">477</idno>
+               <idno type="wiki">Q1640079</idno>
             </place>
             <place type="town" xml:id="place_480">
                <placeName xml:lang="en">Delhi</placeName>
@@ -4799,55 +4833,6 @@
                <idno type="oape">524</idno>
                <idno type="wiki">Q1348</idno>
             </place>
-            <place type="town" xml:id="place_294">
-               <placeName xml:lang="en">Lucknow</placeName>
-               <placeName xml:lang="ar">مدينة لكنأو</placeName>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_12-i_1.TEIP5.xml#" xml:lang="ar">لكنؤ</placeName>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_33-i_10.TEIP5.xml#" xml:lang="ar">لكنهؤ</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Lucknow</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">Lucknow</placeName>
-               <location source="#org_geon">
-                  <geo>26.83928, 80.92313</geo>
-               </location>
-               <idno type="url">http://en.wikipedia.org/wiki/Lucknow</idno>
-               <idno type="geon">1264733</idno>
-               <idno type="oape">294</idno>
-               <idno type="wiki">Q47916</idno>
-            </place>
-            <place>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_44.TEIP5.xml#" xml:lang="ar">أمرتسر</placeName>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_14-i_2.TEIP5.xml#" xml:lang="ar">أمر تسر</placeName>
-            </place>
-            <place type="county" xml:id="place_419">
-               <placeName xml:lang="en">Punjab</placeName>
-               <placeName xml:lang="ar">بانجاب</placeName>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_1.TEIP5.xml#" xml:lang="ar">بنجاب</placeName>
-               <location source="#org_geon">
-                  <geo>30.85, 72.31667</geo>
-               </location>
-               <idno type="jaraid">237</idno>
-               <idno type="url">https://en.wikipedia.org/wiki/Punjab,_Pakistan</idno>
-               <idno type="geon">1167710</idno>
-               <idno type="oape">419</idno>
-               <idno type="wiki">Q4478</idno>
-            </place>
-            <place type="town" xml:id="place_477">
-               <placeName xml:lang="ar-Latn-x-ijmes">Ḥaydarābād</placeName>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_11-i_12.TEIP5.xml#" xml:lang="ar">حيدر أباد</placeName>
-               <placeName change="#d2e154" xml:lang="ar">حيدراباد</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="en">Hyderābād</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Hyderâbâd</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">Hyderabad</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="tr">Haydarabad</placeName>
-               <location source="#org_geon">
-                  <geo>25.39242, 68.37366</geo>
-               </location>
-               <idno type="jaraid">43</idno>
-               <idno type="url">https://en.wikipedia.org/wiki/Hyderabad%2C_Sindh</idno>
-               <idno type="geon">1176734</idno>
-               <idno type="oape">477</idno>
-               <idno type="wiki">Q1640079</idno>
-            </place>
             <place type="town" xml:id="place_527">
                <placeName xml:lang="en">Lahore</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="ar">لاهور</placeName>
@@ -4863,6 +4848,21 @@
                <idno type="geon">1172451</idno>
                <idno type="oape">527</idno>
                <idno type="wiki">Q11739</idno>
+            </place>
+            <place type="town" xml:id="place_294">
+               <placeName xml:lang="en">Lucknow</placeName>
+               <placeName xml:lang="ar">مدينة لكنأو</placeName>
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_12-i_1.TEIP5.xml#" xml:lang="ar">لكنؤ</placeName>
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_33-i_10.TEIP5.xml#" xml:lang="ar">لكنهؤ</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="fr">Lucknow</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="de">Lucknow</placeName>
+               <location source="#org_geon">
+                  <geo>26.83928, 80.92313</geo>
+               </location>
+               <idno type="url">http://en.wikipedia.org/wiki/Lucknow</idno>
+               <idno type="geon">1264733</idno>
+               <idno type="oape">294</idno>
+               <idno type="wiki">Q47916</idno>
             </place>
          </listPlace>
          <listPlace type="country">
@@ -5452,9 +5452,10 @@
             </listPlace>
             <listPlace type="state">
                <head>Pennsylvania</head>
-               <place>
+               <place xml:id="place_839">
                   <placeName xml:lang="en">Pennsylvania</placeName>
                   <placeName xml:lang="ar">بنسلفانيا</placeName>
+                  <idno type="oape">839</idno>
                </place>
                <place type="town" xml:id="place_315">
                   <placeName xml:lang="ar">فيلادلفيا</placeName>
@@ -5748,6 +5749,11 @@
          </listPlace>
          <listPlace type="country">
             <head>Italy</head>
+            <place xml:id="place_840">
+               <placeName xml:lang="en">Cyprus</placeName>
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_2-i_22.TEIP5.xml#" xml:lang="ar">قبرص</placeName>
+               <idno type="oape">840</idno>
+            </place>
             <place type="country" xml:id="place_324">
                <placeName xml:lang="ar">إيطاليا</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="en">Italy</placeName>
@@ -5862,13 +5868,14 @@
                <idno type="oape">555</idno>
                <idno type="wiki">Q3856</idno>
             </place>
-            <place>
-               <placeName xml:lang="en">Cyprus</placeName>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_2-i_22.TEIP5.xml#" xml:lang="ar">قبرص</placeName>
-            </place>
          </listPlace>
          <listPlace type="country">
             <head>UK</head>
+            <place xml:id="place_841">
+               <placeName xml:lang="en">Liverpool</placeName>
+               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_23.TEIP5.xml#">لفربول</placeName>
+               <idno type="oape">841</idno>
+            </place>
             <place type="country" xml:id="place_327">
                <placeName xml:lang="ar">إنكلترا</placeName>
                <placeName xml:lang="ar">انكلترا</placeName>
@@ -5947,10 +5954,6 @@
                <idno type="geon">2643743</idno>
                <idno type="oape">331</idno>
                <idno type="wiki">Q84</idno>
-            </place>
-            <place>
-               <placeName xml:lang="en">Liverpool</placeName>
-               <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_23.TEIP5.xml#">لفربول</placeName>
             </place>
          </listPlace>
          <listPlace type="country">
@@ -7887,27 +7890,12 @@
       </listPlace>
       <listPlace>
          <head xml:lang="en">Imported from Project Jarāʾid</head>
-         <place type="town" xml:id="place_418">
-            <placeName xml:lang="en">Madras</placeName>
-            <placeName>Chennai</placeName>
-            <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_20.TEIP5.xml#" xml:lang="ar">مدراس</placeName>
-            <location source="#org_geon">
-               <geo>18.29112, -77.44875</geo>
-            </location>
-            <idno type="jaraid">74</idno>
-            <idno type="geon">11495534</idno>
-            <idno type="oape">418</idno>
-            <idno type="wiki">Q1352</idno>
-         </place>
-         <place type="town" xml:id="place_422">
-            <placeName xml:lang="en">Saint Lawrence</placeName>
-            <location source="#org_geon">
-               <geo>36.04861, 14.19778</geo>
-            </location>
-            <idno type="jaraid">239</idno>
-            <idno type="url">https://en.wikipedia.org/wiki/San_Lawrenz</idno>
-            <idno type="geon">8299749</idno>
-            <idno type="oape">422</idno>
+         <place xml:id="place_550">
+            <placeName xml:lang="en">Oliveira</placeName>
+            <idno type="jaraid">147</idno>
+            <idno resp="#pers_TG" type="geon">3455908</idno>
+            <idno type="oape">550</idno>
+            <idno type="wiki">Q1754812</idno>
          </place>
          <place type="county" xml:id="place_420">
             <placeName xml:lang="en">Santiago del Estero</placeName>
@@ -7967,6 +7955,16 @@
             <idno type="oape">430</idno>
             <idno type="wiki">Q377601</idno>
          </place>
+         <place type="town" xml:id="place_422">
+            <placeName xml:lang="en">Saint Lawrence</placeName>
+            <location source="#org_geon">
+               <geo>36.04861, 14.19778</geo>
+            </location>
+            <idno type="jaraid">239</idno>
+            <idno type="url">https://en.wikipedia.org/wiki/San_Lawrenz</idno>
+            <idno type="geon">8299749</idno>
+            <idno type="oape">422</idno>
+         </place>
          <place type="town" xml:id="place_432">
             <placeName xml:lang="en">San Pedro de Macoris</placeName>
             <placeName source="#org_geon" type="alt" xml:lang="de">San Pedro de Macorís</placeName>
@@ -8001,6 +7999,13 @@
             <idno type="geon">166829</idno>
             <idno type="oape">449</idno>
             <idno type="wiki">Q12193418</idno>
+         </place>
+         <place type="town" xml:id="place_534">
+            <placeName xml:lang="ar-Latn-x-ijmes">Mukallā</placeName>
+            <placeName change="#d2e154" xml:lang="ar">المكلا</placeName>
+            <idno type="jaraid">208</idno>
+            <idno resp="#pers_TG" type="geon">78754</idno>
+            <idno type="oape">534</idno>
          </place>
          <place type="town" xml:id="place_456">
             <placeName xml:lang="ar-Latn-x-ijmes">Biskra</placeName>
@@ -8250,6 +8255,18 @@
             <idno type="geon">3467865</idno>
             <idno type="oape">519</idno>
          </place>
+         <place type="town" xml:id="place_418">
+            <placeName xml:lang="en">Madras</placeName>
+            <placeName>Chennai</placeName>
+            <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_20.TEIP5.xml#" xml:lang="ar">مدراس</placeName>
+            <location source="#org_geon">
+               <geo>18.29112, -77.44875</geo>
+            </location>
+            <idno type="jaraid">74</idno>
+            <idno type="geon">11495534</idno>
+            <idno type="oape">418</idno>
+            <idno type="wiki">Q1352</idno>
+         </place>
          <place type="town" xml:id="place_530">
             <placeName xml:lang="en">Zanzibar</placeName>
             <placeName source="#org_geon" type="alt" xml:lang="ar">مدينة زنجبار</placeName>
@@ -8261,13 +8278,6 @@
             <idno type="geon">148730</idno>
             <idno type="oape">530</idno>
             <idno type="wiki">Q2222874</idno>
-         </place>
-         <place type="town" xml:id="place_534">
-            <placeName xml:lang="ar-Latn-x-ijmes">Mukallā</placeName>
-            <placeName change="#d2e154" xml:lang="ar">المكلا</placeName>
-            <idno type="jaraid">208</idno>
-            <idno resp="#pers_TG" type="geon">78754</idno>
-            <idno type="oape">534</idno>
          </place>
          <place type="town" xml:id="place_535">
             <placeName xml:lang="ar-Latn-x-ijmes">Malawī</placeName>
@@ -8367,13 +8377,6 @@
             <idno type="geon">2479536</idno>
             <idno type="oape">549</idno>
             <idno type="wiki">Q2292517</idno>
-         </place>
-         <place xml:id="place_550">
-            <placeName xml:lang="en">Oliveira</placeName>
-            <idno type="jaraid">147</idno>
-            <idno resp="#pers_TG" type="geon">3455908</idno>
-            <idno type="oape">550</idno>
-            <idno type="wiki">Q1754812</idno>
          </place>
          <place type="HLLS" xml:id="place_552">
             <placeName xml:lang="ar-Latn-x-ijmes">Jabla</placeName>
@@ -9118,21 +9121,6 @@
             <placeName>Dobruga</placeName>
             <idno type="oape">801</idno>
          </place>
-         <place type="town" xml:id="place_807">
-            <placeName>Ioannina</placeName>
-            <placeName>Ionnina</placeName>
-            <placeName>Yanya</placeName>
-            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ioannina</tei:placeName>
-            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Ioannina</tei:placeName>
-            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ioannina</tei:placeName>
-            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Yanya</tei:placeName>
-            <tei:location source="#org_geon">
-               <tei:geo>39.66486, 20.85189</tei:geo>
-            </tei:location>
-            <idno type="oape">807</idno>
-            <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Ioannina</tei:idno>
-            <tei:idno resp="#xslt" type="geon">261779</tei:idno>
-         </place>
          <place xml:id="place_810">
             <placeName>Kalei Sultaniye</placeName>
             <idno type="oape">810</idno>
@@ -9140,6 +9128,16 @@
          <place xml:id="place_817">
             <placeName>Mameretülaziz</placeName>
             <idno type="oape">817</idno>
+         </place>
+         <place xml:id="place_842">
+            <placeName xml:lang="en">Lagos</placeName>
+            <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_20.TEIP5.xml#">لاغوس</placeName>
+            <idno type="oape">842</idno>
+         </place>
+         <place xml:id="place_843">
+            <placeName xml:lang="fr">Lausanne</placeName>
+            <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_24-i_9.TEIP5.xml#" xml:lang="ar">لوزان</placeName>
+            <idno type="oape">843</idno>
          </place>
          <place type="country" xml:id="place_806">
             <placeName>Hersegovina</placeName>
@@ -9217,6 +9215,21 @@
             <idno subtype="about" type="url">https://en.wikipedia.org/wiki/S%C3%B6ke</idno>
             <idno resp="#xslt" type="geon">300399</idno>
             <idno type="oape">832</idno>
+         </place>
+         <place type="town" xml:id="place_807">
+            <placeName>Ioannina</placeName>
+            <placeName>Ionnina</placeName>
+            <placeName>Yanya</placeName>
+            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ioannina</tei:placeName>
+            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Ioannina</tei:placeName>
+            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ioannina</tei:placeName>
+            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Yanya</tei:placeName>
+            <tei:location source="#org_geon">
+               <tei:geo>39.66486, 20.85189</tei:geo>
+            </tei:location>
+            <idno type="oape">807</idno>
+            <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Ioannina</tei:idno>
+            <tei:idno resp="#xslt" type="geon">261779</tei:idno>
          </place>
          <place type="town" xml:id="place_822">
             <placeName source="#org_geon" type="alt" xml:lang="en">Nazilli</placeName>
@@ -9380,14 +9393,6 @@
             <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Crete</idno>
             <idno resp="#xslt" type="geon">258764</idno>
             <idno type="oape">799</idno>
-         </place>
-         <place>
-            <placeName xml:lang="en">Lagos</placeName>
-            <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_1-i_20.TEIP5.xml#">لاغوس</placeName>
-         </place>
-         <place>
-            <placeName xml:lang="fr">Lausanne</placeName>
-            <placeName source="file:/Users/Shared/BachUni/BachBibliothek/GitHub/OpenArabicPE/journal_al-manar/tei/oclc_1588981-v_24-i_9.TEIP5.xml#" xml:lang="ar">لوزان</placeName>
          </place>
       </listPlace>
    </standOff>
