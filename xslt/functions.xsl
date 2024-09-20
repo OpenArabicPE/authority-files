@@ -2705,24 +2705,27 @@
         </xsl:if>
         <xsl:variable name="v_title-string" select="normalize-space($v_title)"/>
         <!-- some messages for providing feedback to the user -->
+        <xsl:variable name="v_string-pipe" select="' | '"/>
         <xsl:variable name="v_message-success">
-            <xsl:text>SUCCESS: "</xsl:text>
-            <xsl:value-of select="$v_title-string"/>
-            <xsl:text>" was linked to the authority file.</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>SUCCESS</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:text>linked to the authority file.</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
         </xsl:variable>
         <xsl:variable name="v_message-warning">
-            <xsl:text>WARNING: "</xsl:text>
-            <xsl:value-of select="$v_title-string"/>
-            <xsl:text>" at </xsl:text>
-            <xsl:value-of select="$v_url-source"/>
-            <xsl:text> could not be linked to the authority file due to ambiguous matches.</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>WARNING</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:text>could not be linked to the authority file due to ambiguous matches.</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
         </xsl:variable>
         <xsl:variable name="v_message-failure">
-            <xsl:text>FAILURE: "</xsl:text>
-            <xsl:value-of select="$v_title-string"/>
-            <xsl:text>" at </xsl:text>
-            <xsl:value-of select="$v_url-source"/>
-            <xsl:text> could not be found in the authority file.</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>FAILURE</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:text>could not be found in the authority file.</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
             <xsl:if test="$p_verbose = true()">
                 <xsl:text> Add </xsl:text>
                 <xsl:choose>
@@ -2733,6 +2736,7 @@
                         <xsl:apply-templates mode="m_copy-from-source" select="$p_title"/>
                     </xsl:otherwise>
                 </xsl:choose>
+                <xsl:value-of select="$v_string-pipe"/>
             </xsl:if>
         </xsl:variable>
         <!-- legitimate difference between years of publication -->
@@ -2785,22 +2789,24 @@
                 <xsl:choose>
                     <!-- compare years of publication:
                         1. assuming we have known dates of first publication for all bibls: dates should NOT DIFFER by more than x years
-                    -->
-                    <xsl:when test="($v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA') and (floor($v_year-publication - $v_corresponding-bibl-year) &gt; $v_margin)">
-                        <xsl:message>
-                            <xsl:text>WARNING: Found a corresponding entry for </xsl:text>
-                            <xsl:value-of select="$v_title-string"/>
-                            <xsl:text> in the authority file, but it hadn't been published yet; </xsl:text>
-                            <xsl:text>year of reference: </xsl:text>
-                            <xsl:value-of select="$v_year-publication"/>
-                            <xsl:text> | </xsl:text>
-                            <xsl:text>year in bibliography: </xsl:text>
-                            <xsl:value-of select="$v_corresponding-bibl-year"/>
-                        </xsl:message>
-                    </xsl:when>
-                    <!-- compare years of publication:
                         2. the reference to be linked CANNOT have been published BEFORE the source in the authority file
                     -->
+                    <xsl:when test="($v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA') and 
+                         ($v_year-publication lt $v_corresponding-bibl-year) and
+                        (floor($v_year-publication - $v_corresponding-bibl-year) &gt; $v_margin)">
+                        <xsl:message>
+                            <xsl:value-of select="$v_string-pipe"/>
+                            <xsl:text>WARNING</xsl:text>
+                            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+                            <xsl:text>Found a corresponding entry in the authority file, but it hadn't been published yet. </xsl:text>
+                            <xsl:text>Year of reference: </xsl:text>
+                            <xsl:value-of select="$v_year-publication"/>
+                            <xsl:text>, year in bibliography: </xsl:text>
+                            <xsl:value-of select="$v_corresponding-bibl-year"/>
+                            <xsl:value-of select="$v_string-pipe"/>
+                        </xsl:message>
+                    </xsl:when>
+                    
                     <!-- our authority files contain multiple <biblStruct> for a single logical publication in the case when editors, subtitles, places of publication etc. have changed. They are tied together by @next and @prev attributes
                            - we could establish which of those is in closes temporal proximity to the current text, the references occur in 
                            - we could compile these biblStruct into a single one.
@@ -2856,7 +2862,6 @@
                         <xsl:text>Found a match based on ZDB ID</xsl:text>
                     </xsl:message>
                 </xsl:when>
-
                 <!-- test if there is a potential match -->
                 <xsl:when test="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
                     <xsl:message>
@@ -3056,14 +3061,18 @@
                             <xsl:message>
                                 <xsl:choose>
                                     <xsl:when test="$p_link-matches-based-on-title-only = true()">
-                                        <xsl:text>SUCCESS: A weak match for "</xsl:text>
-                                        <xsl:value-of select="$v_title-string"/>
-                                        <xsl:text>" was linked to the authority file.</xsl:text>
+                                        <xsl:value-of select="$v_string-pipe"/>
+                                        <xsl:text>SUCCESS</xsl:text>
+                                        <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+                                        <xsl:text>Weak match. linked to the authority file.</xsl:text>
+                                        <xsl:value-of select="$v_string-pipe"/>
                                     </xsl:when>
                                     <xsl:when test="$p_link-matches-based-on-title-only = false()">
-                                        <xsl:text>WARNING: A weak match for "</xsl:text>
-                                        <xsl:value-of select="$v_title-string"/>
-                                        <xsl:text>" was not linked to the authority file.</xsl:text>
+                                        <xsl:value-of select="$v_string-pipe"/>
+                                        <xsl:text>WARNING</xsl:text>
+                                        <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+                                        <xsl:text>Weak match. not linked to the authority file.</xsl:text>
+                                        <xsl:value-of select="$v_string-pipe"/>
                                     </xsl:when>
                                 </xsl:choose>
                             </xsl:message>
