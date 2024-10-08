@@ -2,7 +2,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:oape="https://openarabicpe.github.io/ns">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -21,7 +21,7 @@
          <div xml:id="div1">
             <head>Bibliographic items</head>
             <p><listBibl>
-               <head></head>
+               <head/>
                <biblStruct source="wiki:Q127415079 ../../../../Sihafa/sihafa_data/bibliographic-data/baykal/baykal.TEIP5.xml#bibl_81.d3e2836" type="periodical">
                   <monogr>
                      <!-- this link should be retained -->
@@ -45,8 +45,21 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-            </listBibl>
-               <listBibl>
+               <biblStruct oape:frequency="daily" source="wiki:Q127415079 ../../../../Sihafa/sihafa_data/bibliographic-data/baykal/baykal.TEIP5.xml#bibl_2454.d3e83909" type="periodical">
+                  <monogr>
+                     <title level="j" xml:lang="ota">يكي تصوير أفكار</title>
+                     <title level="j" xml:lang="ota-Latn-x-ijmes">Yeñī Taṣvīr-i Efkār</title>
+                     <title level="j" xml:lang="ota-Latn-TR">(Yeni) Tasviri Efkar</title>
+                     <textLang mainLang="ota">TR</textLang>
+                     <idno type="wiki">Q128276916</idno>
+                     <editor> <persName xml:lang="tr">Ebuziyya Tevfik</persName> </editor>
+                     <imprint>
+                        <date cert="high" notAfter="1909-05-31" notBefore="1909-05-01" type="official">5/1909 (Publication)</date>
+                        <pubPlace> <placeName ref="geon:745044 jaraid:place:9 oape:place:3 wiki:Q406" resp="#xslt">Istanbul</placeName> </pubPlace>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               </listBibl> <listBibl>
                <biblStruct>
                   <monogr>
                      <title change="#d11e71" level="j" ref="oape:bibl:2603" resp="#pers_TG" xml:lang="ar-Latn-x-ijmes">al-Shihāb</title>
