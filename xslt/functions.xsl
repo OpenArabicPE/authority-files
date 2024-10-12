@@ -1366,23 +1366,32 @@
                 </xsl:choose>
             </xsl:when>
             <!-- return name in selected language -->
-            <xsl:when test="$p_output-mode = 'name'">
+            <xsl:when test="$p_output-mode = 'name-tei'">
                 <xsl:choose>
-                    <xsl:when test="$p_org/tei:orgName[@xml:lang = $p_output-language]">
-                        <xsl:value-of select="normalize-space($p_org/tei:orgName[@xml:lang = $p_output-language][1])"/>
+                    <xsl:when test="$p_org/tei:orgName[not(@type = 'short')][@xml:lang = $p_output-language]">
+                        <xsl:copy-of select="$p_org/tei:orgName[not(@type = 'short')][@xml:lang = $p_output-language][1]"/>
                     </xsl:when>
                     <!-- possible transcriptions into other script -->
                     <xsl:when test="($p_output-language = 'ar') and ($p_org/tei:orgName[contains(@xml:lang, '-Arab-')])">
-                        <xsl:value-of select="normalize-space($p_org/tei:orgName[contains(@xml:lang, '-Arab-')][1])"/>
+                        <xsl:copy-of select="$p_org/tei:orgName[contains(@xml:lang, '-Arab-')][1]"/>
                     </xsl:when>
                     <!-- fallback to english -->
+                    <xsl:when test="$p_org/tei:orgName[not(@type = 'short')][@xml:lang = 'en']">
+                        <xsl:copy-of select="$p_org/tei:orgName[not(@type = 'short')][@xml:lang = 'en'][1]"/>
+                    </xsl:when>
                     <xsl:when test="$p_org/tei:orgName[@xml:lang = 'en']">
-                        <xsl:value-of select="normalize-space($p_org/tei:orgName[@xml:lang = 'en'][1])"/>
+                        <xsl:copy-of select="$p_org/tei:orgName[@xml:lang = 'en'][1]"/>
+                    </xsl:when>
+                    <xsl:when test="$p_org/tei:orgName[not(@type = 'short')]">
+                        <xsl:copy-of select="$p_org/tei:orgName[not(@type = 'short')][1]"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:value-of select="normalize-space($p_org/tei:orgName[1])"/>
+                        <xsl:copy-of select="$p_org/tei:orgName[1]"/>
                     </xsl:otherwise>
                 </xsl:choose>
+            </xsl:when>
+             <xsl:when test="$p_output-mode = 'name'">
+                 <xsl:value-of select="normalize-space(oape:query-org($p_org, 'name-tei', $p_output-language, $p_local-authority))"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'url'">
                 <xsl:choose>
