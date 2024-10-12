@@ -61,7 +61,7 @@
             </location>
          </org>
          <org xml:id="hAPESP">
-            <orgName>Arquivo Público do Estado de São Paulo</orgName>
+            <orgName xml:lang="po">Arquivo Público do Estado de São Paulo</orgName>
             <orgName type="jaraid">APESP</orgName>
             <idno type="jaraid">hAPESP</idno>
             <idno type="oape">1</idno>
@@ -71,7 +71,8 @@
             </location>
          </org>
          <org xml:id="hAH">
-            <orgName>Arshīf ʿĀmm al-Ḥukūma, Tunis</orgName>
+            <orgName xml:lang="ar-Latn-x-ijmes">Arshīf ʿĀmm al-Ḥukūma</orgName>
+            <orgName xml:lang="ar">ارشيف عام الحكومة</orgName>
             <orgName type="jaraid">AʿH</orgName>
             <idno type="jaraid">hAH</idno>
             <idno type="oape">2</idno>
@@ -80,13 +81,15 @@
             </location>
          </org>
          <org xml:id="hAKID">
-            <orgName>Atatürk Kitapliği, Digital Collection (available only at computers in the AKI), Istanbul</orgName>
+            <orgName>Atatürk Kitapliği, Digital Collection</orgName>
             <orgName type="jaraid">AKID</orgName>
             <idno type="jaraid">hAKID</idno>
             <idno type="oape">3</idno>
+            <idno type="wiki">Q28836336</idno>
             <location>
                <placeName ref="geon:745044 jaraid:place:9 oape:place:3">Istanbul</placeName>
             </location>
+            <note type="comments">available only at computers in the AKI</note>
          </org>
          <org xml:id="hAKI">
             <orgName>Atatürk Kitapliği, Istanbul</orgName>
@@ -99,7 +102,8 @@
             </location>
          </org>
          <org xml:id="hAEK">
-            <orgName>Atıf Effendi (Yazma Eser) Kütüphanesi, Istanbul</orgName>
+            <orgName xml:lang="tr">Atıf Effendi Kütüphanesi</orgName>
+            <orgName xml:lang="tr">Atıf Effendi (Yazma Eser) Kütüphanesi</orgName>
             <orgName type="jaraid">AEK</orgName>
             <idno type="jaraid">hAEK</idno>
             <idno type="oape">5</idno>
@@ -283,6 +287,7 @@
             <idno type="isil">DE-B479</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-B479</idno>
             <idno type="oape">297</idno>
+            <idno type="wiki">Q28733477</idno>
             <location>
                <geo>52.43086, 13.29988</geo>
                <address xml:lang="de">
@@ -313,7 +318,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-B66">
             <orgName type="short">Berlin Ges.f. Erdkunde</orgName>
             <orgName>Gesellschaft für Erdkunde zu Berlin, Bibliothek</orgName>
-            <idno type="ISIL">DE-B66</idno>
+            <idno type="isil">DE-B66</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-B66</idno>
             <idno type="oape">401</idno>
             <location>
@@ -373,7 +378,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-B1539">
             <orgName type="short">Berlin Jüdisches Museum</orgName>
             <orgName>Jüdisches Museum Berlin, Bibliothek</orgName>
-            <idno type="ISIL">DE-B1539</idno>
+            <idno type="isil">DE-B1539</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-B1539</idno>
             <idno type="oape">389</idno>
             <location>
@@ -468,7 +473,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-B11f">
             <orgName type="short">Berlin SMB Ägypt. Museum</orgName>
             <orgName>Staatliche Museen zu Berlin, Preußischer Kulturbesitz, Ägyptisches Museum und Papyrussammlung, Bibliothek</orgName>
-            <idno type="ISIL">DE-B11f</idno>
+            <idno type="isil">DE-B11f</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-B11f</idno>
             <idno type="oape">402</idno>
             <location>
@@ -499,7 +504,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-188-808">
             <orgName type="short">Berlin UBFU FB Rechtswiss.</orgName>
             <orgName>Freie Universität Berlin, Bibliothek des Fachbereichs Rechtswissenschaft</orgName>
-            <idno type="ISIL">DE-188-808</idno>
+            <idno type="isil">DE-188-808</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-188-808</idno>
             <idno type="oape">404</idno>
             <location>
@@ -623,7 +628,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-83">
             <orgName type="short">Berlin UBTU</orgName>
             <orgName>TU Berlin, Universitätsbibliothek</orgName>
-            <idno type="ISIL">DE-83</idno>
+            <idno type="isil">DE-83</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-83</idno>
             <idno type="oape">399</idno>
             <location>
@@ -744,7 +749,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-294">
             <orgName type="short">Bochum UB</orgName>
             <orgName>Ruhr-Universität Bochum, Universitätsbibliothek</orgName>
-            <idno type="ISIL">DE-294</idno>
+            <idno type="isil">DE-294</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-294</idno>
             <idno type="oape">400</idno>
             <location>
@@ -819,16 +824,16 @@
                   <placeName ref="geon:2946447 oape:place:659">Bonn</placeName>
                </address>
             </location>
-                <org xml:id="hBONN">
-                    <orgName>Translatio, Universität Bonn, Germany</orgName>
-                    <orgName type="jaraid">Bonn</orgName>
-                    <idno type="jaraid">hBONN</idno>
-                    <idno type="oape">75</idno>
-                    <location>
-                        <placeName ref="geon:2946447 oape:place:659">Bonn</placeName>
-                    </location>
-                    <note>Holdings are constantly digitized and made publicly available <ref target="http://www.translatio.uni-bonn.de" xml:lang="und-Latn">online</ref>.</note>
-                </org>
+            <org xml:id="hBONN">
+               <orgName>Translatio, Universität Bonn, Germany</orgName>
+               <orgName type="jaraid">Bonn</orgName>
+               <idno type="jaraid">hBONN</idno>
+               <idno type="oape">75</idno>
+               <location>
+                  <placeName ref="geon:2946447 oape:place:659">Bonn</placeName>
+               </location>
+               <note>Holdings are constantly digitized and made publicly available <ref target="http://www.translatio.uni-bonn.de" xml:lang="und-Latn">online</ref>.</note>
+            </org>
          </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-Bs75">
             <orgName type="short" xml:lang="de">Braunschweig HAUM</orgName>
@@ -1274,7 +1279,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-Ha33">
             <orgName type="short">Halle/S Franck. Stiftungen</orgName>
             <orgName xml:lang="de">Franckesche Stiftungen, Studienzentrum August Hermann Francke, Archiv und Bibliothek</orgName>
-            <idno type="ISIL">DE-Ha33</idno>
+            <idno type="isil">DE-Ha33</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Ha33</idno>
             <idno type="oape">393</idno>
             <idno type="wiki">Q856479</idno>
@@ -1361,7 +1366,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-H221">
             <orgName type="short">Hamburg GIGA Afr/As/Nahost/Lat</orgName>
             <orgName>German Institute for Global and Area Studies, Bibliothek</orgName>
-            <idno type="ISIL">DE-H221</idno>
+            <idno type="isil">DE-H221</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-H221</idno>
             <idno type="oape">405</idno>
             <location>
@@ -1381,7 +1386,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-H8">
             <orgName type="short">Hamburg Geograph.Gesellschaft</orgName>
             <orgName>Geographische Gesellschaft in Hamburg, Bibliothek</orgName>
-            <idno type="ISIL">DE-H8</idno>
+            <idno type="isil">DE-H8</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-H8</idno>
             <idno type="oape">396</idno>
             <location>
@@ -1396,7 +1401,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-18-57">
             <orgName type="short">Hamburg Inst. Geographie</orgName>
             <orgName>Universität Hamburg, Institut für Geographie, Bibliothek</orgName>
-            <idno type="ISIL">DE-18-57</idno>
+            <idno type="isil">DE-18-57</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-18-57</idno>
             <idno type="oape">395</idno>
             <location>
@@ -1490,7 +1495,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-18-304">
             <orgName type="short">Hamburg ZB Recht</orgName>
             <orgName>Universität Hamburg, Zentralbibliothek Recht</orgName>
-            <idno type="ISIL">DE-18-304</idno>
+            <idno type="isil">DE-18-304</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-18-304</idno>
             <idno type="oape">388</idno>
             <location>
@@ -1525,7 +1530,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-35">
             <orgName type="short">Hannover GWLB</orgName>
             <orgName>Gottfried Wilhelm Leibniz Bibliothek - Niedersächsische Landesbibliothek</orgName>
-            <idno type="ISIL">DE-35</idno>
+            <idno type="isil">DE-35</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-35</idno>
             <idno type="oape">385</idno>
             <location>
@@ -1739,7 +1744,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-Y11">
             <orgName type="short">Istanbul Orient-Institut</orgName>
             <orgName>Orient-Institut Istanbul</orgName>
-            <idno type="ISIL">DE-Y11</idno>
+            <idno type="isil">DE-Y11</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Y11</idno>
             <idno type="OCLCsymbol">TROII</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/TROII</idno>
@@ -1842,7 +1847,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-8-51b">
             <orgName type="short">Kiel UB FB Orientalistik</orgName>
             <orgName>Universitätsbibliothek Kiel, Fachbibliothek am Seminar für Orientalistik</orgName>
-            <idno type="ISIL">DE-8-51b</idno>
+            <idno type="isil">DE-8-51b</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-8-51b</idno>
             <idno type="oape">563</idno>
             <location>
@@ -1908,7 +1913,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-38-517">
             <orgName type="short">Köln Geograph. Inst.</orgName>
             <orgName>Universität Köln, Geographisches Institut, Bibliothek</orgName>
-            <idno type="ISIL">DE-38-517</idno>
+            <idno type="isil">DE-38-517</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-38-517</idno>
             <idno type="oape">398</idno>
             <location>
@@ -1944,7 +1949,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-38M">
             <orgName type="short">Köln ZB MED</orgName>
             <orgName>Deutsche Zentralbibliothek für Medizin - Informationszentrum Lebenswissenschaften, Köln</orgName>
-            <idno type="ISIL">DE-38M</idno>
+            <idno type="isil">DE-38M</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-38M</idno>
             <idno type="oape">387</idno>
             <location>
@@ -1994,7 +1999,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-101a">
             <orgName type="short">Leipzig DNB</orgName>
             <orgName>Deutsche Nationalbibliothek Leipzig</orgName>
-            <idno type="ISIL">DE-101a</idno>
+            <idno type="isil">DE-101a</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-101a</idno>
             <idno type="oape">386</idno>
             <idno type="wiki">Q28657233</idno>
@@ -2010,7 +2015,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-185">
             <orgName type="short">Leipzig IfL, GZB</orgName>
             <orgName>Leibniz-Institut für Länderkunde, Geographische Zentralbibliothek</orgName>
-            <idno type="ISIL">DE-185</idno>
+            <idno type="isil">DE-185</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-185</idno>
             <idno type="oape">403</idno>
             <location>
@@ -2155,7 +2160,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-77-080">
             <orgName type="short">Mainz, Bestand Turkologie</orgName>
             <orgName>Universität Mainz, Zentralbibliothek, Bestand Turkologie</orgName>
-            <idno type="ISIL">DE-77-080</idno>
+            <idno type="isil">DE-77-080</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-77-080</idno>
             <idno type="oape">391</idno>
             <location>
@@ -2386,7 +2391,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-M100">
             <orgName type="short">München Bayer. Akad. d. Wiss.</orgName>
             <orgName>Bayerische Akademie der Wissenschaften, Bibliothek</orgName>
-            <idno type="ISIL">DE-M100</idno>
+            <idno type="isil">DE-M100</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-M100</idno>
             <idno type="oape">394</idno>
             <idno type="wiki">Q28738695</idno>
@@ -2852,7 +2857,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-291-336">
             <orgName type="short">Saarbrücken FR Orientalistik</orgName>
             <orgName>Universität des Saarlandes, Fachrichtung Orientalistik, Bibliothek</orgName>
-            <idno type="ISIL">DE-291-336</idno>
+            <idno type="isil">DE-291-336</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-291-336</idno>
             <idno type="oape">392</idno>
             <location>
@@ -2940,7 +2945,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-287">
             <orgName type="short">Strausberg ZInfoABw</orgName>
             <orgName>Zentrum Informationsarbeit Bundeswehr, Bibliothek</orgName>
-            <idno type="ISIL">DE-287</idno>
+            <idno type="isil">DE-287</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-287</idno>
             <idno type="OCLCsymbol">DEFAB</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DEFAB</idno>
@@ -2958,7 +2963,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-212">
             <orgName type="short">Stuttgart Auslandsbeziehungen</orgName>
             <orgName>Institut für Auslandsbeziehungen, Bibliothek</orgName>
-            <idno type="ISIL">DE-212</idno>
+            <idno type="isil">DE-212</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-212</idno>
             <idno type="oape">419</idno>
             <location>
@@ -3058,7 +3063,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-21-42">
             <orgName type="short">Tübingen Asien-Orient Islamw.</orgName>
             <orgName>Asien-Orient-Institut, Abteilung für Orient und Islamwissenschaft, Bibliothek</orgName>
-            <idno type="ISIL">DE-21-42</idno>
+            <idno type="isil">DE-21-42</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-21-42</idno>
             <idno type="oape">390</idno>
             <location>
@@ -3073,7 +3078,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-21-17">
             <orgName type="short">Tübingen Geogr. Inst.</orgName>
             <orgName>Universität Tübingen, Geographisches Institut, Bibliothek</orgName>
-            <idno type="ISIL">DE-21-17</idno>
+            <idno type="isil">DE-21-17</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-21-17</idno>
             <idno type="oape">397</idno>
             <location>
@@ -3238,7 +3243,7 @@
          <org source="https://ld.zdb-services.de/resource/organisations/DE-Wi1">
             <orgName type="short">Wiesbaden HauptstaatsarchBibl</orgName>
             <orgName>Hessisches Hauptstaatsarchiv, Bibliothek</orgName>
-            <idno type="ISIL">DE-Wi1</idno>
+            <idno type="isil">DE-Wi1</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Wi1</idno>
             <idno type="oape">564</idno>
             <location>
@@ -4285,15 +4290,15 @@
             <location>
                <placeName ref="geon:360630 jaraid:place:1 oape:place:226">Cairo</placeName>
             </location>
-                <org xml:id="hDKQM">
-                    <orgName>Dār al-Kutub al-Qawmiyya Microfilm Collection</orgName>
-                    <orgName type="jaraid">DKQM</orgName>
-                    <idno type="jaraid">hDKQM</idno>
-                    <idno type="oape">25</idno>
-                    <location>
-                        <placeName ref="geon:360630 jaraid:place:1 oape:place:226">Cairo</placeName>
-                    </location>
-                </org>
+            <org xml:id="hDKQM">
+               <orgName>Dār al-Kutub al-Qawmiyya Microfilm Collection</orgName>
+               <orgName type="jaraid">DKQM</orgName>
+               <idno type="jaraid">hDKQM</idno>
+               <idno type="oape">25</idno>
+               <location>
+                  <placeName ref="geon:360630 jaraid:place:1 oape:place:226">Cairo</placeName>
+               </location>
+            </org>
          </org>
          <org xml:id="hTET">
             <orgName xml:lang="fr">Bibliothèque nationale du Royaume du Maroc</orgName>
