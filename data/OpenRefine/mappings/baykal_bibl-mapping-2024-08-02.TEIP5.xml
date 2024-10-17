@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Mapping of Wikidata QIDs to temp IDs: Baykal's index</title>
+            </titleStmt>
+            <publicationStmt>
+                <p>Publication Information</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listBibl>
+<bibl><title level="j">Füyuzat</title> <idno type="wiki">Q12839650</idno> <idno>temp_d14e10590</idno> </bibl>
+<bibl><title level="j">Kadın</title> <idno type="wiki">Q125629507</idno> <idno>temp_d14e19410</idno> </bibl>
+<bibl><title level="j">Kadınlar Dunyası</title> <idno type="wiki">Q20471214</idno> <idno>temp_d14e19527</idno> </bibl>
+<bibl><title level="j">Kadınlık</title> <idno type="wiki">Q125629563</idno> <idno>oape_3790</idno> </bibl>
+<bibl><title level="j">Karagöz</title> <idno type="wiki">Q125629510</idno> <idno>oape_342</idno> </bibl>
+<bibl><title level="j">Kevkeb-i Osmani</title> <idno type="wiki">Q124970192</idno> <idno>temp_d14e20940</idno> </bibl>
+<bibl><title level="j">Küçük Mecmua</title> <idno type="wiki">Q31192513</idno> <idno>temp_d14e21517</idno> </bibl>
+<bibl><title level="j">Medrese-i Fünun</title> <idno type="wiki">Q124974680</idno> <idno>oape_720</idno> </bibl>
+<bibl><title level="j">Sabah</title> <idno type="wiki">Q125629485</idno> <idno>temp_d14e32227</idno> </bibl>
+<bibl><title level="j">Şehbal</title> <idno type="wiki">Q6008839</idno> <idno>temp_d14e33277</idno> </bibl>
+<bibl><title level="j">Servet-i Fünun</title> <idno type="wiki">Q125629452</idno> <idno>temp_d14e33731</idno> </bibl>
+<bibl><title level="j">Sırat-ı Mustakim</title> <idno type="wiki">Q125629487</idno> <idno>temp_d14e34352</idno> </bibl>
+<bibl><title level="j">Takvim-i Vekayi</title> <idno type="wiki">Q4450146</idno> <idno>temp_d14e35207</idno> </bibl>
+<bibl><title level="j">Tasavvuf</title> <idno type="wiki">Q125629448</idno> <idno>temp_d14e35656</idno> </bibl>
+<bibl><title level="j">Tasvir-i Efkar</title> <idno type="wiki">Q6058687</idno> <idno>temp_d14e35705</idno> </bibl>
+<bibl><title level="j">Vatan</title> <idno type="wiki">Q56872111</idno> <idno>temp_d14e38451</idno> </bibl>
+<bibl><title level="j">Zaman</title> <idno type="wiki">Q125629473</idno> <idno>temp_d14e39952</idno> </bibl>
+<bibl><title level="j">11 Temmuz 1324</title> <idno type="wiki">Q128275593</idno> <idno>temp_d14e124</idno> </bibl>
+<bibl><title level="j">Adalet</title> <idno type="wiki">Q128275595</idno> <idno>temp_d14e220</idno> </bibl>
+<bibl><title level="j">Adana Mıntıkası Maarif Mecmuası</title> <idno type="wiki">Q128275598</idno> <idno>temp_d14e277</idno> </bibl>
+<bibl><title level="j">Adl</title> <idno type="wiki">Q128275600</idno> <idno>temp_d14e325</idno> </bibl>
+<bibl><title level="j">Adl ü İhsan</title> <idno type="wiki">Q128275603</idno> <idno>temp_d14e373</idno> </bibl>
+<bibl><title level="j">Afak</title> <idno type="wiki">Q128275606</idno> <idno>temp_d14e431</idno> </bibl>
+<bibl><title level="j">Afiyet</title> <idno type="wiki">Q128275609</idno> <idno>temp_d14e488</idno> </bibl>
+<bibl><title level="j">Afyon Karahisarʾda Nur</title> <idno type="wiki">Q128275611</idno> <idno>temp_d14e548</idno> </bibl>
+<bibl><title level="j">Agah Basurcu</title> <idno type="wiki">Q128275614</idno> <idno>temp_d14e605</idno> </bibl>
+<bibl><title level="j">Ahali</title> <idno type="wiki">Q128275620</idno> <idno>temp_d14e659</idno> </bibl>
+<bibl><title level="j">Aile</title> <idno type="wiki">Q128275623</idno> <idno>temp_d14e707</idno> </bibl>
+<bibl><title level="j">Akbaba</title> <idno type="wiki">Q128275627</idno> <idno>temp_d14e762</idno> </bibl>
+<bibl><title level="j">(Musavver) Akıl</title> <idno type="wiki">Q128275629</idno> <idno>temp_d14e810</idno> </bibl>
+<bibl><title level="j">Aklın Hakimiyeti</title> <idno type="wiki">Q128275634</idno> <idno>temp_d14e891</idno> </bibl>
+<bibl><title level="j">Aks-ı Seda (yahut Anadolu Sesleri)</title> <idno type="wiki">Q128275635</idno> <idno>temp_d14e939</idno> </bibl>
+<bibl><title level="j">(Musavver) Akşam Şimendüferi</title> <idno type="wiki">Q128275638</idno> <idno>temp_d14e1017</idno> </bibl>
+<bibl><title level="j">Alafranga</title> <idno type="wiki">Q128275641</idno> <idno>temp_d14e1074</idno> </bibl>
+<bibl><title level="j">Altın Yaprak</title> <idno type="wiki">Q128275644</idno> <idno>temp_d14e1132</idno> </bibl>
+<bibl><title level="j">Altın Yurt</title> <idno type="wiki">Q128275648</idno> <idno>temp_d14e1180</idno> </bibl>
+<bibl><title level="j">Amed-i Sevda</title> <idno type="wiki">Q128275651</idno> <idno>temp_d14e1243</idno> </bibl>
+<bibl><title level="j">Anadolu</title> <idno type="wiki">Q128275654</idno> <idno>temp_d14e1342</idno> </bibl>
+<bibl><title level="j">Anadolu Duygusu</title> <idno type="wiki">Q128275656</idno> <idno>temp_d14e1417</idno> </bibl>
+<bibl><title level="j">Anadolu Terbiye Mecmuası</title> <idno type="wiki">Q128275659</idno> <idno>temp_d14e1477</idno> </bibl>
+<bibl><title level="j">Ankara</title> <idno type="wiki">Q128275662</idno> <idno>temp_d14e1526</idno> </bibl>
+<bibl><title level="j">Arda</title> <idno type="wiki">Q128275665</idno> <idno>temp_d14e1570</idno> </bibl>
+<bibl><title level="j">Arkadaş</title> <idno type="wiki">Q128275668</idno> <idno>temp_d14e1618</idno> </bibl>
+<bibl><title level="j">Arkadaş</title> <idno type="wiki">Q128275671</idno> <idno>temp_d14e1675</idno> </bibl>
+<bibl><title level="j">Arkadaş</title> <idno type="wiki">Q128275675</idno> <idno>temp_d14e1735</idno> </bibl>
+<bibl><title level="j">Artistik Sine</title> <idno type="wiki">Q128275678</idno> <idno>temp_d14e1783</idno> </bibl>
+<bibl><title level="j">Asar</title> <idno type="wiki">Q128275681</idno> <idno>temp_d14e1832</idno> </bibl>
+<bibl><title level="j">Aşıyan</title> <idno type="wiki">Q128275685</idno> <idno>temp_d14e1880</idno> </bibl>
+<bibl><title level="j">Asker</title> <idno type="wiki">Q128275689</idno> <idno>temp_d14e1973</idno> </bibl>
+<bibl><title level="j">Asker Hocasi</title> <idno type="wiki">Q128275691</idno> <idno>temp_d14e2054</idno> </bibl>
+<bibl><title level="j">Asri Hafta</title> <idno type="wiki">Q128275693</idno> <idno>temp_d14e2102</idno> </bibl>
+<bibl><title level="j">Asri Türkiye Mecmuası</title> <idno type="wiki">Q128275696</idno> <idno>temp_d14e2150</idno> </bibl>
+<bibl><title level="j">Ateş</title> <idno type="wiki">Q128275699</idno> <idno>temp_d14e2199</idno> </bibl>
+<bibl><title level="j">Aydede</title> <idno type="wiki">Q128275703</idno> <idno>temp_d14e2247</idno> </bibl>
+<bibl><title level="j">Aydın</title> <idno type="wiki">Q128275706</idno> <idno>temp_d14e2316</idno> </bibl>
+<bibl><title level="j">Ayın Tarihi</title> <idno type="wiki">Q128275709</idno> <idno>temp_d14e2354</idno> </bibl>
+<bibl><title level="j">Ayine</title> <idno type="wiki">Q128275712</idno> <idno>temp_d14e2402</idno> </bibl>
+<bibl><title level="j">Ayine</title> <idno type="wiki">Q128275716</idno> <idno>temp_d14e2459</idno> </bibl>
+<bibl><title level="j">Aylık Mecmua</title> <idno type="wiki">Q128275718</idno> <idno>temp_d14e2517</idno> </bibl>
+<bibl><title level="j">Ayntab Haberleri</title> <idno type="wiki">Q128275720</idno> <idno>temp_d14e2565</idno> </bibl>
+<bibl><title level="j">Ayvalık</title> <idno type="wiki">Q128275723</idno> <idno>temp_d14e2613</idno> </bibl>
+<bibl><title level="j">Azad</title> <idno type="wiki">Q128275726</idno> <idno>temp_d14e2661</idno> </bibl>
+<bibl><title level="j">Azhar-ı Ramazan</title> <idno type="wiki">Q128275730</idno> <idno>temp_d14e2709</idno> </bibl>
+<bibl><title level="j">Baba Himmet</title> <idno type="wiki">Q128275733</idno> <idno>temp_d14e2757</idno> </bibl>
+<bibl><title level="j">Bahçe</title> <idno type="wiki">Q128275736</idno> <idno>temp_d14e2806</idno> </bibl>
+<bibl><title level="j">Bahçivan</title> <idno type="wiki">Q128275739</idno> <idno>temp_d14e2854</idno> </bibl>
+<bibl><title level="j">Balkan</title> <idno type="wiki">Q128275743</idno> <idno>temp_d14e2902</idno> </bibl>
+<bibl><title level="j">Barika</title> <idno type="wiki">Q128275745</idno> <idno>temp_d14e2950</idno> </bibl>
+<bibl><title level="j">Barika-ı İrşat</title> <idno type="wiki">Q128275747</idno> <idno>temp_d14e3025</idno> </bibl>
+<bibl><title level="j">Basurcu Agah</title> <idno type="wiki">Q128275750</idno> <idno>temp_d14e3112</idno> </bibl>
+<bibl><title level="j">Bedreka-ı Selamet</title> <idno type="wiki">Q128275753</idno> <idno>temp_d14e3161</idno> </bibl>
+<bibl><title level="j">Besa</title> <idno type="wiki">Q128275757</idno> <idno>temp_d14e3209</idno> </bibl>
+<bibl><title level="j">Beşer ve Tabiat</title> <idno type="wiki">Q128275760</idno> <idno>temp_d14e3299</idno> </bibl>
+<bibl><title level="j">Beyanülhak</title> <idno type="wiki">Q128275762</idno> <idno>temp_d14e3347</idno> </bibl>
+<bibl><title level="j">Beyoğlu</title> <idno type="wiki">Q128275764</idno> <idno>temp_d14e3437</idno> </bibl>
+<bibl><title level="j">Bilgi Yurdu Işığı</title> <idno type="wiki">Q128275767</idno> <idno>temp_d14e3494</idno> </bibl>
+<bibl><title level="j">Birlik</title> <idno type="wiki">Q128275769</idno> <idno>temp_d14e3552</idno> </bibl>
+<bibl><title level="j">Bizim Mecmua</title> <idno type="wiki">Q128275770</idno> <idno>temp_d14e3615</idno> </bibl>
+<bibl><title level="j">Boşboğaz ile Gülabi</title> <idno type="wiki">Q128275772</idno> <idno>temp_d14e3672</idno> </bibl>
+<bibl><title level="j">Bosna</title> <idno type="wiki">Q128275777</idno> <idno>temp_d14e3753</idno> </bibl>
+<bibl><title level="j">Bursa Mecmuası</title> <idno type="wiki">Q128275782</idno> <idno>temp_d14e3846</idno> </bibl>
+<bibl><title level="j">Büyük Duygu</title> <idno type="wiki">Q128275785</idno> <idno>temp_d14e3894</idno> </bibl>
+<bibl><title level="j">Büyük Mecmua</title> <idno type="wiki">Q128275788</idno> <idno>temp_d14e3943</idno> </bibl>
+<bibl><title level="j">Çağlayan</title> <idno type="wiki">Q128275793</idno> <idno>temp_d14e4000</idno> </bibl>
+<bibl><title level="j">Çan Çan</title> <idno type="wiki">Q128275797</idno> <idno>temp_d14e4048</idno> </bibl>
+<bibl><title level="j">Çanakkale Muallimler Birliği</title> <idno type="wiki">Q128275799</idno> <idno>temp_d14e4096</idno> </bibl>
+<bibl><title level="j">Çankaya</title> <idno type="wiki">Q128275800</idno> <idno>temp_d14e4159</idno> </bibl>
+<bibl><title level="j">Çankırıʾda İnce Geliş</title> <idno type="wiki">Q128275803</idno> <idno>temp_d14e4207</idno> </bibl>
+<bibl><title level="j">Çanta</title> <idno type="wiki">Q128275806</idno> <idno>temp_d14e4256</idno> </bibl>
+<bibl><title level="j">Çapkın</title> <idno type="wiki">Q128275812</idno> <idno>temp_d14e4304</idno> </bibl>
+<bibl><title level="j">Çaylak</title> <idno type="wiki">Q128275815</idno> <idno>temp_d14e4403</idno> </bibl>
+<bibl><title level="j">(Musavver) Cellat</title> <idno type="wiki">Q128275818</idno> <idno>temp_d14e4451</idno> </bibl>
+<bibl><title level="j">Cem</title> <idno type="wiki">Q128275823</idno> <idno>temp_d14e4505</idno> </bibl>
+<bibl><title level="j">Ceride</title> <idno type="wiki">Q128275826</idno> <idno>temp_d14e4553</idno> </bibl>
+<bibl><title level="j">Ceride-i Baytariye</title> <idno type="wiki">Q128275828</idno> <idno>temp_d14e4635</idno> </bibl>
+<bibl><title level="j">Ceride-i Felesfiye</title> <idno type="wiki">Q128275830</idno> <idno>temp_d14e4683</idno> </bibl>
+<bibl><title level="j">Ceridet ül-Hakayık</title> <idno type="wiki">Q128275832</idno> <idno>temp_d14e4731</idno> </bibl>
+<bibl><title level="j">Ceride-i Havadis</title> <idno type="wiki">Q128275834</idno> <idno>temp_d14e4779</idno> </bibl>
+<bibl><title level="j">Ceride-i İlmiye</title> <idno type="wiki">Q128275840</idno> <idno>temp_d14e4827</idno> </bibl>
+<bibl><title level="j">Ceride-i Muhakeme</title> <idno type="wiki">Q128275843</idno> <idno>temp_d14e4884</idno> </bibl>
+<bibl><title level="j">Ceride-i Resmiye</title> <idno type="wiki">Q128275846</idno> <idno>temp_d14e4942</idno> </bibl>
+<bibl><title level="j">Ceride-i Rüsumiye</title> <idno type="wiki">Q128275852</idno> <idno>temp_d14e4999</idno> </bibl>
+<bibl><title level="j">Ceride-i Şikayet</title> <idno type="wiki">Q128275855</idno> <idno>temp_d14e5089</idno> </bibl>
+<bibl><title level="j">Ceride-i Sufiye</title> <idno type="wiki">Q128275857</idno> <idno>temp_d14e5137</idno> </bibl>
+<bibl><title level="j">Ceride-i Ticaret</title> <idno type="wiki">Q128275858</idno> <idno>temp_d14e5242</idno> </bibl>
+<bibl><title level="j">Ceride-i Vakfiye</title> <idno type="wiki">Q128275860</idno> <idno>temp_d14e5290</idno> </bibl>
+<bibl><title level="j">Cezair-i Bahr-ı Sefid</title> <idno type="wiki">Q128275862</idno> <idno>temp_d14e5387</idno> </bibl>
+<bibl><title level="j">Çiçek</title> <idno type="wiki">Q128275868</idno> <idno>temp_d14e5428</idno> </bibl>
+<bibl><title level="j">Cici</title> <idno type="wiki">Q128275870</idno> <idno>temp_d14e5476</idno> </bibl>
+<bibl><title level="j">Cidal</title> <idno type="wiki">Q128275874</idno> <idno>temp_d14e5524</idno> </bibl>
+<bibl><title level="j">Çiftci</title> <idno type="wiki">Q128275878</idno> <idno>temp_d14e5578</idno> </bibl>
+<bibl><title level="j">Çiftciler Derneği mecmuası</title> <idno type="wiki">Q128275879</idno> <idno>temp_d14e5677</idno> </bibl>
+<bibl><title level="j">Cihan</title> <idno type="wiki">Q128275881</idno> <idno>temp_d14e5726</idno> </bibl>
+<bibl><title level="j">Cihan</title> <idno type="wiki">Q128275882</idno> <idno>temp_d14e5807</idno> </bibl>
+<bibl><title level="j">Musavver Cihan</title> <idno type="wiki">Q128275883</idno> <idno>temp_d14e5855</idno> </bibl>
+<bibl><title level="j">Çimdik</title> <idno type="wiki">Q128275884</idno> <idno>temp_d14e5903</idno> </bibl>
+<bibl><title level="j">Cingöz</title> <idno type="wiki">Q128275887</idno> <idno>temp_d14e5960</idno> </bibl>
+<bibl><title level="j">Çıngırak</title> <idno type="wiki">Q128275890</idno> <idno>temp_d14e6044</idno> </bibl>
+<bibl><title level="j">Çıngıraklı Tatar</title> <idno type="wiki">Q128275892</idno> <idno>temp_d14e6105</idno> </bibl>
+<bibl><title level="j">Çırak Mektepleri Mecmuası</title> <idno type="wiki">Q128275895</idno> <idno>temp_d14e6153</idno> </bibl>
+<bibl><title level="j">Çocuk Bahçesi</title> <idno type="wiki">Q128275897</idno> <idno>temp_d14e6210</idno> </bibl>
+<bibl><title level="j">Çocuk Dünyası</title> <idno type="wiki">Q128275899</idno> <idno>temp_d14e6267</idno> </bibl>
+<bibl><title level="j">Çocuk Dünyası</title> <idno type="wiki">Q128275900</idno> <idno>temp_d14e6315</idno> </bibl>
+<bibl><title level="j">Çocuk Duygusu</title> <idno type="wiki">Q128275901</idno> <idno>temp_d14e6372</idno> </bibl>
+<bibl><title level="j">Çocuklar Alemi</title> <idno type="wiki">Q128275902</idno> <idno>temp_d14e6433</idno> </bibl>
+<bibl><title level="j">Çocuklara Arkadaş</title> <idno type="wiki">Q128275905</idno> <idno>temp_d14e6490</idno> </bibl>
+<bibl><title level="j">Çocuklara Kıraat</title> <idno type="wiki">Q128275908</idno> <idno>temp_d14e6547</idno> </bibl>
+<bibl><title level="j">Cocuklara Mahsus Gazete</title> <idno type="wiki">Q128275910</idno> <idno>temp_d14e6604</idno> </bibl>
+<bibl><title level="j">Çolpan</title> <idno type="wiki">Q128275913</idno> <idno>temp_d14e6661</idno> </bibl>
+<bibl><title level="j">Coşkun Kalender</title> <idno type="wiki">Q128275915</idno> <idno>temp_d14e6724</idno> </bibl>
+<bibl><title level="j">Curcuna</title> <idno type="wiki">Q128275917</idno> <idno>temp_d14e6791</idno> </bibl>
+<bibl><title level="j">Cüzdan</title> <idno type="wiki">Q128275918</idno> <idno>temp_d14e6881</idno> </bibl>
+<bibl><title level="j">Dalkavuk</title> <idno type="wiki">Q128275919</idno> <idno>temp_d14e6929</idno> </bibl>
+<bibl><title level="j">Dar ül-Elhan</title> <idno type="wiki">Q128275921</idno> <idno>temp_d14e7010</idno> </bibl>
+<bibl><title level="j">Darüşşafaka</title> <idno type="wiki">Q128275925</idno> <idno>temp_d14e7058</idno> </bibl>
+<bibl><title level="j">Davul</title> <idno type="wiki">Q128275927</idno> <idno>temp_d14e7148</idno> </bibl>
+<bibl><title level="j">Deccal!</title> <idno type="wiki">Q128275929</idno> <idno>temp_d14e7236</idno> </bibl>
+<bibl><title level="j">Demet</title> <idno type="wiki">Q128275932</idno> <idno>temp_d14e7284</idno> </bibl>
+<bibl><title level="j">Demiryolları Mecmuası</title> <idno type="wiki">Q128275934</idno> <idno>temp_d14e7380</idno> </bibl>
+<bibl><title level="j">Dertli</title> <idno type="wiki">Q128275936</idno> <idno>temp_d14e7428</idno> </bibl>
+<bibl><title level="j">Dertli ile Garip</title> <idno type="wiki">Q128275937</idno> <idno>temp_d14e7476</idno> </bibl>
+<bibl><title level="j">(Musavver) Devri Cedit</title> <idno type="wiki">Q128275938</idno> <idno>temp_d14e7533</idno> </bibl>
+<bibl><title level="j">Diken</title> <idno type="wiki">Q128275940</idno> <idno>temp_d14e7597</idno> </bibl>
+<bibl><title level="j">Dilek</title> <idno type="wiki">Q128275942</idno> <idno>temp_d14e7645</idno> </bibl>
+<bibl><title level="j">Dilek</title> <idno type="wiki">Q128275945</idno> <idno>temp_d14e7699</idno> </bibl>
+<bibl><title level="j">Diyane</title> <idno type="wiki">Q128275946</idno> <idno>temp_d14e7753</idno> </bibl>
+<bibl><title level="j">Diyarbekir</title> <idno type="wiki">Q128275947</idno> <idno>temp_d14e7810</idno> </bibl>
+<bibl><title level="j">Dobruca Sedasi</title> <idno type="wiki">Q128275949</idno> <idno>temp_d14e7851</idno> </bibl>
+<bibl><title level="j">Doğru söz</title> <idno type="wiki">Q128275951</idno> <idno>temp_d14e7906</idno> </bibl>
+<bibl><title level="j">Doğu</title> <idno type="wiki">Q128275953</idno> <idno>temp_d14e7954</idno> </bibl>
+<bibl><title level="j">Doğu</title> <idno type="wiki">Q128275956</idno> <idno>temp_d14e8008</idno> </bibl>
+<bibl><title level="j">Dolap</title> <idno type="wiki">Q128275958</idno> <idno>temp_d14e8065</idno> </bibl>
+<bibl><title level="j">Düşünce</title> <idno type="wiki">Q128275960</idno> <idno>temp_d14e8113</idno> </bibl>
+<bibl><title level="j">Düşünce</title> <idno type="wiki">Q128275963</idno> <idno>temp_d14e8170</idno> </bibl>
+<bibl><title level="j">Düşünceler</title> <idno type="wiki">Q128275964</idno> <idno>temp_d14e8219</idno> </bibl>
+<bibl><title level="j">Duygu ve Düşünce</title> <idno type="wiki">Q128275965</idno> <idno>temp_d14e8267</idno> </bibl>
+<bibl><title level="j">Ecnebi Matbuat Hulasası</title> <idno type="wiki">Q128275967</idno> <idno>temp_d14e8327</idno> </bibl>
+<bibl><title level="j">Eczacı</title> <idno type="wiki">Q128275969</idno> <idno>temp_d14e8375</idno> </bibl>
+<bibl><title level="j">(Musavver) Edep</title> <idno type="wiki">Q128275971</idno> <idno>temp_d14e8432</idno> </bibl>
+<bibl><title level="j">Edirne</title> <idno type="wiki">Q128275973</idno> <idno>temp_d14e8534</idno> </bibl>
+<bibl><title level="j">Eftap</title> <idno type="wiki">Q128275976</idno> <idno>temp_d14e8576</idno> </bibl>
+<bibl><title level="j">Ekinci</title> <idno type="wiki">Q128275979</idno> <idno>temp_d14e8669</idno> </bibl>
+<bibl><title level="j">(Musavver) Emel</title> <idno type="wiki">Q128275981</idno> <idno>temp_d14e8726</idno> </bibl>
+<bibl><title level="j">Emel Mecmuası</title> <idno type="wiki">Q128275982</idno> <idno>temp_d14e8813</idno> </bibl>
+<bibl><title level="j">Emniyet</title> <idno type="wiki">Q128275984</idno> <idno>temp_d14e8876</idno> </bibl>
+<bibl><title level="j">Envar-ı Hürriyet</title> <idno type="wiki">Q128275986</idno> <idno>temp_d14e8933</idno> </bibl>
+<bibl><title level="j">Envar-ı Şarkiye</title> <idno type="wiki">Q128275988</idno> <idno>temp_d14e9033</idno> </bibl>
+<bibl><title level="j">Envar-ı Ulum</title> <idno type="wiki">Q128275990</idno> <idno>temp_d14e9074</idno> </bibl>
+<bibl><title level="j">Envar-ı Zeka</title> <idno type="wiki">Q128275992</idno> <idno>temp_d14e9161</idno> </bibl>
+<bibl><title level="j">(Musavver) Erganun</title> <idno type="wiki">Q128275994</idno> <idno>temp_d14e9209</idno> </bibl>
+<bibl><title level="j">Erkekler Dünyası</title> <idno type="wiki">Q128275997</idno> <idno>temp_d14e9257</idno> </bibl>
+<bibl><title level="j">Eşek</title> <idno type="wiki">Q128276000</idno> <idno>temp_d14e9314</idno> </bibl>
+<bibl><title level="j">(Musavver) Eşref</title> <idno type="wiki">Q128276001</idno> <idno>temp_d14e9363</idno> </bibl>
+<bibl><title level="j">Etfal</title> <idno type="wiki">Q128276002</idno> <idno>temp_d14e9450</idno> </bibl>
+<bibl><title level="j">Ev Hocası</title> <idno type="wiki">Q128276004</idno> <idno>temp_d14e9498</idno> </bibl>
+<bibl><title level="j">Ezan</title> <idno type="wiki">Q128276006</idno> <idno>temp_d14e9561</idno> </bibl>
+<bibl><title level="j">Ezop</title> <idno type="wiki">Q128276008</idno> <idno>temp_d14e9609</idno> </bibl>
+<bibl><title level="j">Fağfur</title> <idno type="wiki">Q128276010</idno> <idno>temp_d14e9669</idno> </bibl>
+<bibl><title level="j">Falaka</title> <idno type="wiki">Q128276012</idno> <idno>temp_d14e9718</idno> </bibl>
+<bibl><title level="j">Fazilet</title> <idno type="wiki">Q128276015</idno> <idno>temp_d14e9784</idno> </bibl>
+<bibl><title level="j">Felsefe-ı Musiki</title> <idno type="wiki">Q128276019</idno> <idno>temp_d14e9880</idno> </bibl>
+<bibl><title level="j">Felsefe ve İctimaiyat Mecmuası</title> <idno type="wiki">Q128276020</idno> <idno>temp_d14e9928</idno> </bibl>
+<bibl><title level="j">Fen</title> <idno type="wiki">Q128276021</idno> <idno>temp_d14e9976</idno> </bibl>
+<bibl><title level="j">Fen Kıtatı Mecmuası</title> <idno type="wiki">Q128276024</idno> <idno>temp_d14e10024</idno> </bibl>
+<bibl><title level="j">(Musavver) Fen ve Edep</title> <idno type="wiki">Q128276026</idno> <idno>temp_d14e10073</idno> </bibl>
+<bibl><title level="j">Ferda</title> <idno type="wiki">Q128276028</idno> <idno>temp_d14e10121</idno> </bibl>
+<bibl><title level="j">Fevaid</title> <idno type="wiki">Q128276030</idno> <idno>temp_d14e10178</idno> </bibl>
+<bibl><title level="j">Feyz</title> <idno type="wiki">Q128276032</idno> <idno>temp_d14e10235</idno> </bibl>
+<bibl><title level="j">Fikirler</title> <idno type="wiki">Q128276035</idno> <idno>temp_d14e10322</idno> </bibl>
+<bibl><title level="j">Firuze</title> <idno type="wiki">Q128276038</idno> <idno>temp_d14e10385</idno> </bibl>
+<bibl><title level="j">Fünun</title> <idno type="wiki">Q128276040</idno> <idno>temp_d14e10443</idno> </bibl>
+<bibl><title level="j">Füyuzat</title> <idno type="wiki">Q128276041</idno> <idno>temp_d14e10491</idno> </bibl>
+<bibl><title level="j">Gamlı</title> <idno type="wiki">Q128276043</idno> <idno>temp_d14e10638</idno> </bibl>
+<bibl><title level="j">Gayret</title> <idno type="wiki">Q128276045</idno> <idno>temp_d14e10698</idno> </bibl>
+<bibl><title level="j">Gazete</title> <idno type="wiki">Q128276047</idno> <idno>temp_d14e10746</idno> </bibl>
+<bibl><title level="j">Gece Kuşu</title> <idno type="wiki">Q128276049</idno> <idno>temp_d14e10810</idno> </bibl>
+<bibl><title level="j">Genç Anadolu</title> <idno type="wiki">Q128276052</idno> <idno>temp_d14e10858</idno> </bibl>
+<bibl><title level="j">Genç Kadın</title> <idno type="wiki">Q128276055</idno> <idno>temp_d14e10912</idno> </bibl>
+<bibl><title level="j">Genç Kalemler</title> <idno type="wiki">Q128276058</idno> <idno>temp_d14e10960</idno> </bibl>
+<bibl><title level="j">Genç kimyager</title> <idno type="wiki">Q128276059</idno> <idno>temp_d14e11008</idno> </bibl>
+<bibl><title level="j">Genç Mektepliler</title> <idno type="wiki">Q128276060</idno> <idno>temp_d14e11056</idno> </bibl>
+<bibl><title level="j">Genç Sanatkar</title> <idno type="wiki">Q128276062</idno> <idno>temp_d14e11114</idno> </bibl>
+<bibl><title level="j">Genç Tabip</title> <idno type="wiki">Q128276064</idno> <idno>temp_d14e11171</idno> </bibl>
+<bibl><title level="j">Genç Yolcular</title> <idno type="wiki">Q128276066</idno> <idno>temp_d14e11228</idno> </bibl>
+<bibl><title level="j">Gencine-i Edep</title> <idno type="wiki">Q128276068</idno> <idno>temp_d14e11276</idno> </bibl>
+<bibl><title level="j">Gençler Derneği</title> <idno type="wiki">Q128276070</idno> <idno>temp_d14e11339</idno> </bibl>
+<bibl><title level="j">Gençler Dünyasi</title> <idno type="wiki">Q128276073</idno> <idno>temp_d14e11396</idno> </bibl>
+<bibl><title level="j">Gençlik</title> <idno type="wiki">Q128276076</idno> <idno>temp_d14e11454</idno> </bibl>
+<bibl><title level="j">Gençlik</title> <idno type="wiki">Q128276077</idno> <idno>temp_d14e11511</idno> </bibl>
+<bibl><title level="j">Gençlik Duygusu</title> <idno type="wiki">Q128276078</idno> <idno>temp_d14e11568</idno> </bibl>
+<bibl><title level="j">Geveze</title> <idno type="wiki">Q128276081</idno> <idno>temp_d14e11628</idno> </bibl>
+<bibl><title level="j">Geveze</title> <idno type="wiki">Q128276083</idno> <idno>temp_d14e11715</idno> </bibl>
+<bibl><title level="j">Girit</title> <idno type="wiki">Q128276085</idno> <idno>temp_d14e11763</idno> </bibl>
+<bibl><title level="j">Gol Mecmuası</title> <idno type="wiki">Q128276087</idno> <idno>temp_d14e11805</idno> </bibl>
+<bibl><title level="j">Gölge</title> <idno type="wiki">Q128276089</idno> <idno>temp_d14e11853</idno> </bibl>
+<bibl><title level="j">Gramafon</title> <idno type="wiki">Q128276092</idno> <idno>temp_d14e11907</idno> </bibl>
+<bibl><title level="j">Güleryüz</title> <idno type="wiki">Q128276095</idno> <idno>temp_d14e11991</idno> </bibl>
+<bibl><title level="j">Gülistan</title> <idno type="wiki">Q128276097</idno> <idno>temp_d14e12039</idno> </bibl>
+<bibl><title level="j">Gülizar</title> <idno type="wiki">Q128276098</idno> <idno>temp_d14e12096</idno> </bibl>
+<bibl><title level="j">Gülşen</title> <idno type="wiki">Q128276100</idno> <idno>temp_d14e12151</idno> </bibl>
+<bibl><title level="j">Gülşen-i Edeb</title> <idno type="wiki">Q128276102</idno> <idno>temp_d14e12199</idno> </bibl>
+<bibl><title level="j">Gümrük Mecmuası</title> <idno type="wiki">Q128276104</idno> <idno>temp_d14e12247</idno> </bibl>
+<bibl><title level="j">Gündoğuşu</title> <idno type="wiki">Q128276106</idno> <idno>temp_d14e12295</idno> </bibl>
+<bibl><title level="j">Güneş</title> <idno type="wiki">Q128276108</idno> <idno>temp_d14e12343</idno> </bibl>
+<bibl><title level="j">Güneş</title> <idno type="wiki">Q128276111</idno> <idno>temp_d14e12391</idno> </bibl>
+<bibl><title level="j">Gürbüz Turk Çocuğu</title> <idno type="wiki">Q128276113</idno> <idno>temp_d14e12440</idno> </bibl>
+<bibl><title level="j">Guvaze</title> <idno type="wiki">Q128276115</idno> <idno>temp_d14e12497</idno> </bibl>
+<bibl><title level="j">Güzel Saruhan</title> <idno type="wiki">Q128276116</idno> <idno>temp_d14e12545</idno> </bibl>
+<bibl><title level="j">Haber</title> <idno type="wiki">Q128276118</idno> <idno>temp_d14e12593</idno> </bibl>
+<bibl><title level="j">Hacıvat</title> <idno type="wiki">Q128276120</idno> <idno>temp_d14e12641</idno> </bibl>
+<bibl><title level="j">Hadika</title> <idno type="wiki">Q128276122</idno> <idno>temp_d14e12728</idno> </bibl>
+<bibl><title level="j">Hadisat-ı Hukukiye ve Tarihiye</title> <idno type="wiki">Q128276124</idno> <idno>temp_d14e12777</idno> </bibl>
+<bibl><title level="j">Hafta</title> <idno type="wiki">Q128276126</idno> <idno>temp_d14e12825</idno> </bibl>
+<bibl><title level="j">Haftada Bir Gün</title> <idno type="wiki">Q128276131</idno> <idno>temp_d14e12873</idno> </bibl>
+<bibl><title level="j">Haftalık Mecmua</title> <idno type="wiki">Q128276133</idno> <idno>temp_d14e12921</idno> </bibl>
+<bibl><title level="j">Haftalık Serbest İzmir</title> <idno type="wiki">Q128276135</idno> <idno>temp_d14e12969</idno> </bibl>
+<bibl><title level="j">Haftalık Yeni Gazete</title> <idno type="wiki">Q128276136</idno> <idno>temp_d14e13017</idno> </bibl>
+<bibl><title level="j">Haftalık Resimli Gazetemiz</title> <idno type="wiki">Q128276138</idno> <idno>temp_d14e13066</idno> </bibl>
+<bibl><title level="j">Haftalık Resimli İstanbul</title> <idno type="wiki">Q128276140</idno> <idno>temp_d14e13123</idno> </bibl>
+<bibl><title level="j">Hak</title> <idno type="wiki">Q128276142</idno> <idno>temp_d14e13186</idno> </bibl>
+<bibl><title level="j">Hak yolu</title> <idno type="wiki">Q128276144</idno> <idno>temp_d14e13249</idno> </bibl>
+<bibl><title level="j">Hakayık-i Tarihiye ve Siyasiye</title> <idno type="wiki">Q128276146</idno> <idno>temp_d14e13297</idno> </bibl>
+<bibl><title level="j">Hakayık ül-Vekayi</title> <idno type="wiki">Q128276148</idno> <idno>temp_d14e13360</idno> </bibl>
+<bibl><title level="j">Hale</title> <idno type="wiki">Q128276151</idno> <idno>temp_d14e13409</idno> </bibl>
+<bibl><title level="j">Halk Bilgisi Mecmuası</title> <idno type="wiki">Q128276154</idno> <idno>temp_d14e13457</idno> </bibl>
+<bibl><title level="j">Halk Gazetesi</title> <idno type="wiki">Q128276155</idno> <idno>temp_d14e13505</idno> </bibl>
+<bibl><title level="j">Halka Doğru</title> <idno type="wiki">Q128276157</idno> <idno>temp_d14e13553</idno> </bibl>
+<bibl><title level="j">Halka Doğru Mecmuası</title> <idno type="wiki">Q128276159</idno> <idno>temp_d14e13601</idno> </bibl>
+<bibl><title level="j">Hamiyet</title> <idno type="wiki">Q128276161</idno> <idno>temp_d14e13655</idno> </bibl>
+<bibl><title level="j">Hande</title> <idno type="wiki">Q128276163</idno> <idno>temp_d14e13695</idno> </bibl>
+<bibl><title level="j">Hanım</title> <idno type="wiki">Q128276165</idno> <idno>temp_d14e13752</idno> </bibl>
+<bibl><title level="j">Hanımlara Mahsus Gazete</title> <idno type="wiki">Q128276168</idno> <idno>temp_d14e13812</idno> </bibl>
+<bibl><title level="j">Harb Melulları Mecmuası</title> <idno type="wiki">Q128276170</idno> <idno>temp_d14e13860</idno> </bibl>
+<bibl><title level="j">Harp Mecmuası</title> <idno type="wiki">Q128276173</idno> <idno>temp_d14e13920</idno> </bibl>
+<bibl><title level="j">Haver</title> <idno type="wiki">Q128276174</idno> <idno>temp_d14e13968</idno> </bibl>
+<bibl><title level="j">Hayal</title> <idno type="wiki">Q128276176</idno> <idno>temp_d14e14017</idno> </bibl>
+<bibl><title level="j">Hayal-ı Cedit</title> <idno type="wiki">Q128276179</idno> <idno>temp_d14e14065</idno> </bibl>
+<bibl><title level="j">Hayat Hazineleri</title> <idno type="wiki">Q128276181</idno> <idno>temp_d14e14113</idno> </bibl>
+<bibl><title level="j">Hayr ül-Kelam</title> <idno type="wiki">Q128276183</idno> <idno>temp_d14e14161</idno> </bibl>
+<bibl><title level="j">Hazine-i Evrak</title> <idno type="wiki">Q128276185</idno> <idno>temp_d14e14209</idno> </bibl>
+<bibl><title level="j">Hazine-i Fünun</title> <idno type="wiki">Q128276187</idno> <idno>temp_d14e14257</idno> </bibl>
+<bibl><title level="j">Hekim</title> <idno type="wiki">Q128276190</idno> <idno>temp_d14e14306</idno> </bibl>
+<bibl><title level="j">Hemşeri</title> <idno type="wiki">Q128276192</idno> <idno>temp_d14e14363</idno> </bibl>
+<bibl><title level="j">Hikaye ve Roman gazetesi</title> <idno type="wiki">Q128276193</idno> <idno>temp_d14e14426</idno> </bibl>
+<bibl><title level="j">Hilal</title> <idno type="wiki">Q128276195</idno> <idno>temp_d14e14474</idno> </bibl>
+<bibl><title level="j">Hilal-ı Ahzar</title> <idno type="wiki">Q128276197</idno> <idno>temp_d14e14573</idno> </bibl>
+<bibl><title level="j">Hizmet-i Umumiye</title> <idno type="wiki">Q128276199</idno> <idno>temp_d14e14621</idno> </bibl>
+<bibl><title level="j">Hifz ül-Sıhha</title> <idno type="wiki">Q128276201</idno> <idno>temp_d14e14670</idno> </bibl>
+<bibl><title level="j">Hıyaban</title> <idno type="wiki">Q128275156</idno> <idno>temp_d14e14718</idno> </bibl>
+<bibl><title level="j">Hıyaban</title> <idno type="wiki">Q128275160</idno> <idno>temp_d14e14766</idno> </bibl>
+<bibl><title level="j">Hokkabaz</title> <idno type="wiki">Q128276204</idno> <idno>temp_d14e14823</idno> </bibl>
+<bibl><title level="j">,temp_d14e14823</title> <idno type="wiki">Q128276204</idno> <idno>temp_d14e14823</idno> </bibl>
+<bibl><title level="j">Hüdavendigar</title> <idno type="wiki">Q128276205</idno> <idno>temp_d14e14932</idno> </bibl>
+<bibl><title level="j">Hukuk Bilgileri Mecmuası</title> <idno type="wiki">Q128276208</idno> <idno>temp_d14e15003</idno> </bibl>
+<bibl><title level="j">(Musavver) Hukukı Etfal</title> <idno type="wiki">Q128276210</idno> <idno>temp_d14e15061</idno> </bibl>
+<bibl><title level="j">Hukuk Mecmuası</title> <idno type="wiki">Q128276211</idno> <idno>temp_d14e15109</idno> </bibl>
+<bibl><title level="j">Hukuk-ı Umumiye</title> <idno type="wiki">Q128276214</idno> <idno>temp_d14e15166</idno> </bibl>
+<bibl><title level="j">Hukuk-ı Umumiye</title> <idno type="wiki">Q128276216</idno> <idno>temp_d14e15244</idno> </bibl>
+<bibl><title level="j">Hulasat ül-Efkar</title> <idno type="wiki">Q128276218</idno> <idno>temp_d14e15334</idno> </bibl>
+<bibl><title level="j">Hür Çocuk</title> <idno type="wiki">Q128276220</idno> <idno>temp_d14e15382</idno> </bibl>
+<bibl><title level="j">Hür Türkiye</title> <idno type="wiki">Q128276222</idno> <idno>temp_d14e15443</idno> </bibl>
+<bibl><title level="j">Hürriyet</title> <idno type="wiki">Q128276225</idno> <idno>temp_d14e15500</idno> </bibl>
+<bibl><title level="j">Hürriyet</title> <idno type="wiki">Q128276227</idno> <idno>temp_d14e15581</idno> </bibl>
+<bibl><title level="j">Hürriyet</title> <idno type="wiki">Q128276229</idno> <idno>temp_d14e15629</idno> </bibl>
+<bibl><title level="j">Hürriyet-i Fikriye</title> <idno type="wiki">Q128276230</idno> <idno>temp_d14e15686</idno> </bibl>
+<bibl><title level="j">Hüsn ü Şiir</title> <idno type="wiki">Q128276233</idno> <idno>temp_d14e15743</idno> </bibl>
+<bibl><title level="j">İbret</title> <idno type="wiki">Q128276235</idno> <idno>temp_d14e15807</idno> </bibl>
+<bibl><title level="j">İbretnüma-ı Dünya</title> <idno type="wiki">Q128276237</idno> <idno>temp_d14e15855</idno> </bibl>
+<bibl><title level="j">İçtihat</title> <idno type="wiki">Q128276239</idno> <idno>temp_d14e15903</idno> </bibl>
+<bibl><title level="j">İctimaat Mecmuası</title> <idno type="wiki">Q128276241</idno> <idno>temp_d14e15966</idno> </bibl>
+<bibl><title level="j">İdare</title> <idno type="wiki">Q128276244</idno> <idno>temp_d14e16014</idno> </bibl>
+<bibl><title level="j">İdman</title> <idno type="wiki">Q128276247</idno> <idno>temp_d14e16062</idno> </bibl>
+<bibl><title level="j">İdrak</title> <idno type="wiki">Q128276250</idno> <idno>temp_d14e16120</idno> </bibl>
+<bibl><title level="j">İfham</title> <idno type="wiki">Q128276251</idno> <idno>temp_d14e16168</idno> </bibl>
+<bibl><title level="j">İhtiyat Zabıtları Postası</title> <idno type="wiki">Q128276253</idno> <idno>temp_d14e16216</idno> </bibl>
+<bibl><title level="j">İkramiyeli Ziraat Gazetesi</title> <idno type="wiki">Q128276255</idno> <idno>temp_d14e16264</idno> </bibl>
+<bibl><title level="j">İktisadiyat Mecmuası</title> <idno type="wiki">Q128276257</idno> <idno>temp_d14e16327</idno> </bibl>
+<bibl><title level="j">İktisat Bülteni</title> <idno type="wiki">Q128276259</idno> <idno>temp_d14e16375</idno> </bibl>
+<bibl><title level="j">İleri</title> <idno type="wiki">Q128276262</idno> <idno>temp_d14e16424</idno> </bibl>
+<bibl><title level="j">İlhan</title> <idno type="wiki">Q128276263</idno> <idno>temp_d14e16472</idno> </bibl>
+<bibl><title level="j">İlk Terbiye ve Tedrisat Mecmuası</title> <idno type="wiki">Q128276266</idno> <idno>temp_d14e16529</idno> </bibl>
+<bibl><title level="j">İlm-i Hukuk ve Mukayese-i Kavanin Mecmuası</title> <idno type="wiki">Q128276271</idno> <idno>temp_d14e16586</idno> </bibl>
+<bibl><title level="j">İmtiyaz</title> <idno type="wiki">Q128276276</idno> <idno>temp_d14e16643</idno> </bibl>
+<bibl><title level="j">İncili Çavuş</title> <idno type="wiki">Q128276280</idno> <idno>temp_d14e16721</idno> </bibl>
+<bibl><title level="j">İnkılap-ı Edebi</title> <idno type="wiki">Q128276282</idno> <idno>temp_d14e16806</idno> </bibl>
+<bibl><title level="j">İnkılap</title> <idno type="wiki">Q128276284</idno> <idno>temp_d14e16854</idno> </bibl>
+<bibl><title level="j">İnsaf</title> <idno type="wiki">Q128276286</idno> <idno>temp_d14e16959</idno> </bibl>
+<bibl><title level="j">İnsaniyet</title> <idno type="wiki">Q128276290</idno> <idno>temp_d14e17040</idno> </bibl>
+<bibl><title level="j">İnsaniyet</title> <idno type="wiki">Q128276292</idno> <idno>temp_d14e17097</idno> </bibl>
+<bibl><title level="j">İntibah</title> <idno type="wiki">Q128276295</idno> <idno>temp_d14e17154</idno> </bibl>
+<bibl><title level="j">İntikam</title> <idno type="wiki">Q128276297</idno> <idno>temp_d14e17212</idno> </bibl>
+<bibl><title level="j">İrade-i Milliye</title> <idno type="wiki">Q128276298</idno> <idno>temp_d14e17260</idno> </bibl>
+<bibl><title level="j">İrşad ül-Müslimin</title> <idno type="wiki">Q128276300</idno> <idno>temp_d14e17314</idno> </bibl>
+<bibl><title level="j">İrtika</title> <idno type="wiki">Q128276302</idno> <idno>temp_d14e17362</idno> </bibl>
+<bibl><title level="j">Işık</title> <idno type="wiki">Q128276305</idno> <idno>temp_d14e17427</idno> </bibl>
+<bibl><title level="j">Işık</title> <idno type="wiki">Q128276310</idno> <idno>temp_d14e17475</idno> </bibl>
+<bibl><title level="j">İşkodra</title> <idno type="wiki">Q128276312</idno> <idno>temp_d14e17524</idno> </bibl>
+<bibl><title level="j">el-İslam</title> <idno type="wiki">Q128276314</idno> <idno>temp_d14e17562</idno> </bibl>
+<bibl><title level="j">İslam Dünyası</title> <idno type="wiki">Q128276316</idno> <idno>temp_d14e17619</idno> </bibl>
+<bibl><title level="j">İslam Mecmuası</title> <idno type="wiki">Q128276317</idno> <idno>temp_d14e17667</idno> </bibl>
+<bibl><title level="j">(Musavver) İslam Salon Mecmuası</title> <idno type="wiki">Q128276318</idno> <idno>temp_d14e17715</idno> </bibl>
+<bibl><title level="j">İslam ve Ulum</title> <idno type="wiki">Q128276321</idno> <idno>temp_d14e17772</idno> </bibl>
+<bibl><title level="j">İspiritizma</title> <idno type="wiki">Q128276323</idno> <idno>temp_d14e17857</idno> </bibl>
+<bibl><title level="j">İstanbul</title> <idno type="wiki">Q128276325</idno> <idno>temp_d14e17905</idno> </bibl>
+<bibl><title level="j">İstanbul Belediye Mecmuası</title> <idno type="wiki">Q128276327</idno> <idno>temp_d14e17953</idno> </bibl>
+<bibl><title level="j">İstanbul Emraz-ı Cildiye ve Efrenciye Ce-miyeti</title> <idno type="wiki">Q128276331</idno> <idno>temp_d14e18001</idno> </bibl>
+<bibl><title level="j">İstanbul Vilayet Gazetesi</title> <idno type="wiki">Q128276333</idno> <idno>temp_d14e18058</idno> </bibl>
+<bibl><title level="j">İstikbal</title> <idno type="wiki">Q128276335</idno> <idno>temp_d14e18106</idno> </bibl>
+<bibl><title level="j">İştirak</title> <idno type="wiki">Q128276336</idno> <idno>temp_d14e18155</idno> </bibl>
+<bibl><title level="j">İstişare</title> <idno type="wiki">Q128276337</idno> <idno>temp_d14e18203</idno> </bibl>
+<bibl><title level="j">İtidal</title> <idno type="wiki">Q128276339</idno> <idno>temp_d14e18296</idno> </bibl>
+<bibl><title level="j">İtila</title> <idno type="wiki">Q128276341</idno> <idno>temp_d14e18386</idno> </bibl>
+<bibl><title level="j">İtilaf</title> <idno type="wiki">Q128276343</idno> <idno>temp_d14e18434</idno> </bibl>
+<bibl><title level="j">İttifak</title> <idno type="wiki">Q128276345</idno> <idno>temp_d14e18488</idno> </bibl>
+<bibl><title level="j">İttihad-ı Anasır</title> <idno type="wiki">Q128276349</idno> <idno>temp_d14e18588</idno> </bibl>
+<bibl><title level="j">İttihat</title> <idno type="wiki">Q128276352</idno> <idno>temp_d14e18798</idno> </bibl>
+<bibl><title level="j">,temp_d14e18798</title> <idno type="wiki">Q128276352</idno> <idno>temp_d14e18798</idno> </bibl>
+<bibl><title level="j">İttihat ve Terakki</title> <idno type="wiki">Q128276353</idno> <idno>temp_d14e18901</idno> </bibl>
+<bibl><title level="j">İzdivaç</title> <idno type="wiki">Q128276354</idno> <idno>temp_d14e18970</idno> </bibl>
+<bibl><title level="j">İzmir</title> <idno type="wiki">Q128276356</idno> <idno>temp_d14e19019</idno> </bibl>
+<bibl><title level="j">İzmir</title> <idno type="wiki">Q128276358</idno> <idno>temp_d14e19067</idno> </bibl>
+<bibl><title level="j">İzmir İdman Mecmuası</title> <idno type="wiki">Q128276360</idno> <idno>temp_d14e19115</idno> </bibl>
+<bibl><title level="j">Jale</title> <idno type="wiki">Q128276362</idno> <idno>temp_d14e19169</idno> </bibl>
+<bibl><title level="j">Jandarma Mecmuası</title> <idno type="wiki">Q128276364</idno> <idno>temp_d14e19232</idno> </bibl>
+<bibl><title level="j">Jin</title> <idno type="wiki">Q128276368</idno> <idno>temp_d14e19280</idno> </bibl>
+<bibl><title level="j">Kadın</title> <idno type="wiki">Q128276371</idno> <idno>temp_d14e19329</idno> </bibl>
+<bibl><title level="j">Kadınlar Alemi</title> <idno type="wiki">Q128276372</idno> <idno>temp_d14e19467</idno> </bibl>
+<bibl><title level="j">Kadınlar Saltanatı</title> <idno type="wiki">Q128276373</idno> <idno>temp_d14e19584</idno> </bibl>
+<bibl><title level="j">Kahkaha</title> <idno type="wiki">Q128276375</idno> <idno>temp_d14e19693</idno> </bibl>
+<bibl><title level="j">Kahkaha</title> <idno type="wiki">Q128276376</idno> <idno>temp_d14e19741</idno> </bibl>
+<bibl><title level="j">Kainat</title> <idno type="wiki">Q128276378</idno> <idno>temp_d14e19798</idno> </bibl>
+<bibl><title level="j">Kalem</title> <idno type="wiki">Q128276380</idno> <idno>temp_d14e19906</idno> </bibl>
+<bibl><title level="j">Kanat</title> <idno type="wiki">Q128276383</idno> <idno>temp_d14e19993</idno> </bibl>
+<bibl><title level="j">Kanun-ı Esasi</title> <idno type="wiki">Q128276386</idno> <idno>temp_d14e20041</idno> </bibl>
+<bibl><title level="j">Kaplan</title> <idno type="wiki">Q128276390</idno> <idno>temp_d14e20090</idno> </bibl>
+<bibl><title level="j">Kara Sinan</title> <idno type="wiki">Q128276391</idno> <idno>temp_d14e20138</idno> </bibl>
+<bibl><title level="j">Kara Sinan</title> <idno type="wiki">Q128276392</idno> <idno>temp_d14e20186</idno> </bibl>
+<bibl><title level="j">Kardeş Sesi</title> <idno type="wiki">Q128276394</idno> <idno>temp_d14e20321</idno> </bibl>
+<bibl><title level="j">Karikatür</title> <idno type="wiki">Q128276396</idno> <idno>temp_d14e20387</idno> </bibl>
+<bibl><title level="j">Karikatür</title> <idno type="wiki">Q128276398</idno> <idno>temp_d14e20436</idno> </bibl>
+<bibl><title level="j">Karnaval</title> <idno type="wiki">Q128276400</idno> <idno>temp_d14e20484</idno> </bibl>
+<bibl><title level="j">Kartal</title> <idno type="wiki">Q128276402</idno> <idno>temp_d14e20547</idno> </bibl>
+<bibl><title level="j">Kassa</title> <idno type="wiki">Q128276405</idno> <idno>temp_d14e20634</idno> </bibl>
+<bibl><title level="j">Kastamonu</title> <idno type="wiki">Q128276408</idno> <idno>temp_d14e20682</idno> </bibl>
+<bibl><title level="j">Kehkeşan</title> <idno type="wiki">Q128276409</idno> <idno>temp_d14e20720</idno> </bibl>
+<bibl><title level="j">Kelebek</title> <idno type="wiki">Q128276411</idno> <idno>temp_d14e20784</idno> </bibl>
+<bibl><title level="j">Kelime-i Tayyibe</title> <idno type="wiki">Q128276412</idno> <idno>temp_d14e20832</idno> </bibl>
+<bibl><title level="j">Kemalat</title> <idno type="wiki">Q128276414</idno> <idno>temp_d14e20880</idno> </bibl>
+<bibl><title level="j">Kevkeb ül-Ulum</title> <idno type="wiki">Q128276416</idno> <idno>temp_d14e20988</idno> </bibl>
+<bibl><title level="j">Kibar</title> <idno type="wiki">Q128276418</idno> <idno>temp_d14e21036</idno> </bibl>
+<bibl><title level="j">Kırım Mecmuası</title> <idno type="wiki">Q128276420</idno> <idno>temp_d14e21085</idno> </bibl>
+<bibl><title level="j">Kızılırmak</title> <idno type="wiki">Q128276423</idno> <idno>temp_d14e21133</idno> </bibl>
+<bibl><title level="j">Konya</title> <idno type="wiki">Q128276426</idno> <idno>temp_d14e21187</idno> </bibl>
+<bibl><title level="j">Kosova</title> <idno type="wiki">Q128276427</idno> <idno>temp_d14e21228</idno> </bibl>
+<bibl><title level="j">Köy</title> <idno type="wiki">Q128276429</idno> <idno>temp_d14e21269</idno> </bibl>
+<bibl><title level="j">Köy hocasi</title> <idno type="wiki">Q128276430</idno> <idno>temp_d14e21317</idno> </bibl>
+<bibl><title level="j">Köylü</title> <idno type="wiki">Q128276432</idno> <idno>temp_d14e21366</idno> </bibl>
+<bibl><title level="j">,temp_d14e21366</title> <idno type="wiki">Q128276432</idno> <idno>temp_d14e21366</idno> </bibl>
+<bibl><title level="j">(Musavver) Küçük Gazete</title> <idno type="wiki">Q128276434</idno> <idno>temp_d14e21469</idno> </bibl>
+<bibl><title level="j">(Musavver) Küçük Osmanlı</title> <idno type="wiki">Q128276436</idno> <idno>temp_d14e21565</idno> </bibl>
+<bibl><title level="j">Kukuruk</title> <idno type="wiki">Q128276438</idno> <idno>temp_d14e21628</idno> </bibl>
+<bibl><title level="j">Kürsi-i Milel</title> <idno type="wiki">Q128276441</idno> <idno>temp_d14e21709</idno> </bibl>
+<bibl><title level="j">Kürt Teavün ve Terakki Gazetesi</title> <idno type="wiki">Q128276445</idno> <idno>temp_d14e21758</idno> </bibl>
+<bibl><title level="j">Kurtuluş Yolu</title> <idno type="wiki">Q128276446</idno> <idno>temp_d14e21845</idno> </bibl>
+<bibl><title level="j">Lak Lak</title> <idno type="wiki">Q128276448</idno> <idno>temp_d14e21902</idno> </bibl>
+<bibl><title level="j">Lala</title> <idno type="wiki">Q128276449</idno> <idno>temp_d14e21977</idno> </bibl>
+<bibl><title level="j">Latife</title> <idno type="wiki">Q128276451</idno> <idno>temp_d14e22025</idno> </bibl>
+<bibl><title level="j">Lemʾa</title> <idno type="wiki">Q128276454</idno> <idno>temp_d14e22073</idno> </bibl>
+<bibl><title level="j">Letaif-i Asar</title> <idno type="wiki">Q128276455</idno> <idno>temp_d14e22122</idno> </bibl>
+<bibl><title level="j">Liman</title> <idno type="wiki">Q128276458</idno> <idno>temp_d14e22170</idno> </bibl>
+<bibl><title level="j">Maarif</title> <idno type="wiki">Q128276460</idno> <idno>temp_d14e22218</idno> </bibl>
+<bibl><title level="j">Maarif-i Umumi Mecmuası</title> <idno type="wiki">Q128276463</idno> <idno>temp_d14e22266</idno> </bibl>
+<bibl><title level="j">Maarif Vekaleti Mecmuası</title> <idno type="wiki">Q128276464</idno> <idno>temp_d14e22314</idno> </bibl>
+<bibl><title level="j">Maç</title> <idno type="wiki">Q128276466</idno> <idno>temp_d14e22362</idno> </bibl>
+<bibl><title level="j">Mahasin</title> <idno type="wiki">Q128276467</idno> <idno>temp_d14e22420</idno> </bibl>
+<bibl><title level="j">(Musavver) Mahasin</title> <idno type="wiki">Q128276469</idno> <idno>temp_d14e22513</idno> </bibl>
+<bibl><title level="j">Mahfil</title> <idno type="wiki">Q128276471</idno> <idno>temp_d14e22561</idno> </bibl>
+<bibl><title level="j">Makes-i Efkar-ı Askeriye</title> <idno type="wiki">Q128276473</idno> <idno>temp_d14e22609</idno> </bibl>
+<bibl><title level="j">Malum</title> <idno type="wiki">Q128276475</idno> <idno>temp_d14e22672</idno> </bibl>
+<bibl><title level="j">Malumat</title> <idno type="wiki">Q128276478</idno> <idno>temp_d14e22720</idno> </bibl>
+<bibl><title level="j">Malumat</title> <idno type="wiki">Q128276481</idno> <idno>temp_d14e22778</idno> </bibl>
+<bibl><title level="j">(Musavver) Malumat</title> <idno type="wiki">Q128276482</idno> <idno>temp_d14e22826</idno> </bibl>
+<bibl><title level="j">Malumat-ı Mütenevviya</title> <idno type="wiki">Q128276484</idno> <idno>temp_d14e22874</idno> </bibl>
+<bibl><title level="j">Mameretülaziz</title> <idno type="wiki">Q128276485</idno> <idno>temp_d14e22922</idno> </bibl>
+<bibl><title level="j">Manastır</title> <idno type="wiki">Q128276487</idno> <idno>temp_d14e22960</idno> </bibl>
+<bibl><title level="j">Manisa Yeni Yurt</title> <idno type="wiki">Q128276489</idno> <idno>temp_d14e22998</idno> </bibl>
+<bibl><title level="j">Manzara</title> <idno type="wiki">Q128276491</idno> <idno>temp_d14e23053</idno> </bibl>
+<bibl><title level="j">Marifet</title> <idno type="wiki">Q128276493</idno> <idno>temp_d14e23101</idno> </bibl>
+<bibl><title level="j">Matbaacılık ve Kitapçılık</title> <idno type="wiki">Q128276495</idno> <idno>temp_d14e23149</idno> </bibl>
+<bibl><title level="j">(Musavver) Mecmua</title> <idno type="wiki">Q128276499</idno> <idno>temp_d14e23197</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Asar</title> <idno type="wiki">Q128276500</idno> <idno>temp_d14e23260</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Ebüzziya</title> <idno type="wiki">Q128276502</idno> <idno>temp_d14e23308</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Fünun</title> <idno type="wiki">Q128276504</idno> <idno>temp_d14e23357</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Fünun-ı Baytariye</title> <idno type="wiki">Q128276506</idno> <idno>temp_d14e23405</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Havadis</title> <idno type="wiki">Q128276508</idno> <idno>temp_d14e23489</idno> </bibl>
+<bibl><title level="j">Mecmua-ı İbretnüma</title> <idno type="wiki">Q128276509</idno> <idno>temp_d14e23529</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Kemal</title> <idno type="wiki">Q128276511</idno> <idno>temp_d14e23586</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Maarif</title> <idno type="wiki">Q128276513</idno> <idno>temp_d14e23634</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Muallim</title> <idno type="wiki">Q128276516</idno> <idno>temp_d14e23683</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Nevresdigan</title> <idno type="wiki">Q128276518</idno> <idno>temp_d14e23731</idno> </bibl>
+<bibl><title level="j">Mecmua-ı Ruhi</title> <idno type="wiki">Q128276520</idno> <idno>temp_d14e23788</idno> </bibl>
+<bibl><title level="j">Meddah</title> <idno type="wiki">Q128276522</idno> <idno>temp_d14e23836</idno> </bibl>
+<bibl><title level="j">el-Medrese</title> <idno type="wiki">Q128276524</idno> <idno>temp_d14e23884</idno> </bibl>
+<bibl><title level="j">Medrese-i Hukuk</title> <idno type="wiki">Q128276526</idno> <idno>temp_d14e24026</idno> </bibl>
+<bibl><title level="j">Medrese İtikatları</title> <idno type="wiki">Q128276528</idno> <idno>temp_d14e24074</idno> </bibl>
+<bibl><title level="j">Mekarim ül-Ahlak</title> <idno type="wiki">Q128276529</idno> <idno>temp_d14e24122</idno> </bibl>
+<bibl><title level="j">Mektep Müzesi</title> <idno type="wiki">Q128276531</idno> <idno>temp_d14e24197</idno> </bibl>
+<bibl><title level="j">Mektepli</title> <idno type="wiki">Q128277896</idno> <idno>temp_d14e24245</idno> </bibl>
+<bibl><title level="j">Memalik-i Mahruse</title> <idno type="wiki">Q128276535</idno> <idno>temp_d14e24305</idno> </bibl>
+<bibl><title level="j">Menekşe</title> <idno type="wiki">Q128276537</idno> <idno>temp_d14e24354</idno> </bibl>
+<bibl><title level="j">Merakli Gazete</title> <idno type="wiki">Q128276539</idno> <idno>temp_d14e24402</idno> </bibl>
+<bibl><title level="j">Meram</title> <idno type="wiki">Q128276541</idno> <idno>temp_d14e24450</idno> </bibl>
+<bibl><title level="j">(Musavver) Meşahiri Alem</title> <idno type="wiki">Q128276543</idno> <idno>temp_d14e24537</idno> </bibl>
+<bibl><title level="j">Meşale</title> <idno type="wiki">Q128276545</idno> <idno>temp_d14e24585</idno> </bibl>
+<bibl><title level="j">Meşhir (Musavver)</title> <idno type="wiki">Q128276547</idno> <idno>temp_d14e24633</idno> </bibl>
+<bibl><title level="j">Meslek</title> <idno type="wiki">Q128276548</idno> <idno>temp_d14e24718</idno> </bibl>
+<bibl><title level="j">Metin</title> <idno type="wiki">Q128276551</idno> <idno>temp_d14e24766</idno> </bibl>
+<bibl><title level="j">Meziyet</title> <idno type="wiki">Q128276553</idno> <idno>temp_d14e24829</idno> </bibl>
+<bibl><title level="j">Mezra-ı Maarif</title> <idno type="wiki">Q128276555</idno> <idno>temp_d14e24913</idno> </bibl>
+<bibl><title level="j">Mihrap</title> <idno type="wiki">Q128276557</idno> <idno>temp_d14e24961</idno> </bibl>
+<bibl><title level="j">Mihver ül-Ulum</title> <idno type="wiki">Q128276559</idno> <idno>temp_d14e25009</idno> </bibl>
+<bibl><title level="j">Mikyas-ı Şeriat</title> <idno type="wiki">Q128276561</idno> <idno>temp_d14e25058</idno> </bibl>
+<bibl><title level="j">Millet</title> <idno type="wiki">Q128276563</idno> <idno>temp_d14e25139</idno> </bibl>
+<bibl><title level="j">Milli Gaye</title> <idno type="wiki">Q128276565</idno> <idno>temp_d14e25235</idno> </bibl>
+<bibl><title level="j">Milli Mecmua</title> <idno type="wiki">Q128276566</idno> <idno>temp_d14e25283</idno> </bibl>
+<bibl><title level="j">Milli Mefkure</title> <idno type="wiki">Q128276569</idno> <idno>temp_d14e25340</idno> </bibl>
+<bibl><title level="j">Milli Talim ve Terbiye Mecmuası</title> <idno type="wiki">Q128276571</idno> <idno>temp_d14e25394</idno> </bibl>
+<bibl><title level="j">Milli Tetebbular Mecmuası</title> <idno type="wiki">Q128276573</idno> <idno>temp_d14e25443</idno> </bibl>
+<bibl><title level="j">Milli Yol</title> <idno type="wiki">Q128276576</idno> <idno>temp_d14e25491</idno> </bibl>
+<bibl><title level="j">Milliyet</title> <idno type="wiki">Q128276578</idno> <idno>temp_d14e25545</idno> </bibl>
+<bibl><title level="j">Minber</title> <idno type="wiki">Q128276580</idno> <idno>temp_d14e25593</idno> </bibl>
+<bibl><title level="j">Mirat</title> <idno type="wiki">Q128276582</idno> <idno>temp_d14e25641</idno> </bibl>
+<bibl><title level="j">Mirat-ı Alem</title> <idno type="wiki">Q128276584</idno> <idno>temp_d14e25689</idno> </bibl>
+<bibl><title level="j">Mirat-ı Alem</title> <idno type="wiki">Q128276586</idno> <idno>temp_d14e25768</idno> </bibl>
+<bibl><title level="j">Mirat-ı Maarif</title> <idno type="wiki">Q128276588</idno> <idno>temp_d14e25816</idno> </bibl>
+<bibl><title level="j">el-Mirşat</title> <idno type="wiki">Q128276590</idno> <idno>temp_d14e25897</idno> </bibl>
+<bibl><title level="j">Misbah</title> <idno type="wiki">Q128276592</idno> <idno>temp_d14e25945</idno> </bibl>
+<bibl><title level="j">Mizan</title> <idno type="wiki">Q128276594</idno> <idno>temp_d14e26008</idno> </bibl>
+<bibl><title level="j">Muahede</title> <idno type="wiki">Q128276596</idno> <idno>temp_d14e26089</idno> </bibl>
+<bibl><title level="j">Muallim</title> <idno type="wiki">Q128276598</idno> <idno>temp_d14e26138</idno> </bibl>
+<bibl><title level="j">Muallim</title> <idno type="wiki">Q128276600</idno> <idno>temp_d14e26234</idno> </bibl>
+<bibl><title level="j">Muallim</title> <idno type="wiki">Q128276602</idno> <idno>temp_d14e26282</idno> </bibl>
+<bibl><title level="j">Muallimler Birligi</title> <idno type="wiki">Q128276604</idno> <idno>temp_d14e26339</idno> </bibl>
+<bibl><title level="j">Muallimler Birligi</title> <idno type="wiki">Q128276606</idno> <idno>temp_d14e26396</idno> </bibl>
+<bibl><title level="j">Muallimler Mecmuası</title> <idno type="wiki">Q128276609</idno> <idno>temp_d14e26453</idno> </bibl>
+<bibl><title level="j">Mubahis</title> <idno type="wiki">Q128276611</idno> <idno>temp_d14e26511</idno> </bibl>
+<bibl><title level="j">Müdafaa-ı Hukuk-ı Vatan</title> <idno type="wiki">Q128276614</idno> <idno>temp_d14e26559</idno> </bibl>
+<bibl><title level="j">Müddei-i Umumi</title> <idno type="wiki">Q128276616</idno> <idno>temp_d14e26655</idno> </bibl>
+<bibl><title level="j">Müdhika</title> <idno type="wiki">Q128276618</idno> <idno>temp_d14e26718</idno> </bibl>
+<bibl><title level="j">Muğlaʾda Akyol</title> <idno type="wiki">Q128276620</idno> <idno>temp_d14e26766</idno> </bibl>
+<bibl><title level="j">Muhacir</title> <idno type="wiki">Q128276622</idno> <idno>temp_d14e26814</idno> </bibl>
+<bibl><title level="j">Muhaderat</title> <idno type="wiki">Q128276624</idno> <idno>temp_d14e26878</idno> </bibl>
+<bibl><title level="j">Muhamat</title> <idno type="wiki">Q128276626</idno> <idno>temp_d14e26926</idno> </bibl>
+<bibl><title level="j">Muharrir</title> <idno type="wiki">Q128276628</idno> <idno>temp_d14e26983</idno> </bibl>
+<bibl><title level="j">Muhbir</title> <idno type="wiki">Q128276630</idno> <idno>temp_d14e27031</idno> </bibl>
+<bibl><title level="j">(Musavver) Muhbir</title> <idno type="wiki">Q128276632</idno> <idno>temp_d14e27054</idno> </bibl>
+<bibl><title level="j">Mühendis Mektebi Mecmuası</title> <idno type="wiki">Q128276634</idno> <idno>temp_d14e27147</idno> </bibl>
+<bibl><title level="j">Muhibban</title> <idno type="wiki">Q128276636</idno> <idno>temp_d14e27205</idno> </bibl>
+<bibl><title level="j">Muhip</title> <idno type="wiki">Q128276638</idno> <idno>temp_d14e27292</idno> </bibl>
+<bibl><title level="j">Muhit</title> <idno type="wiki">Q128276640</idno> <idno>temp_d14e27315</idno> </bibl>
+<bibl><title level="j">Muhit</title> <idno type="wiki">Q128276642</idno> <idno>temp_d14e27411</idno> </bibl>
+<bibl><title level="j">Muhit</title> <idno type="wiki">Q128276644</idno> <idno>temp_d14e27459</idno> </bibl>
+<bibl><title level="j">(Musavver) Muhit</title> <idno type="wiki">Q128276646</idno> <idno>temp_d14e27507</idno> </bibl>
+<bibl><title level="j">Muhit-i Mesai</title> <idno type="wiki">Q128276648</idno> <idno>temp_d14e27604</idno> </bibl>
+<bibl><title level="j">Müjde</title> <idno type="wiki">Q128276650</idno> <idno>temp_d14e27652</idno> </bibl>
+<bibl><title level="j">Muktebis</title> <idno type="wiki">Q128276652</idno> <idno>temp_d14e27748</idno> </bibl>
+<bibl><title level="j">Mülkiye</title> <idno type="wiki">Q128276654</idno> <idno>temp_d14e27796</idno> </bibl>
+<bibl><title level="j">Münebbih</title> <idno type="wiki">Q128276656</idno> <idno>temp_d14e27874</idno> </bibl>
+<bibl><title level="j">Musul</title> <idno type="wiki">Q128276658</idno> <idno>temp_d14e27928</idno> </bibl>
+<bibl><title level="j">Mütalaa</title> <idno type="wiki">Q128276660</idno> <idno>temp_d14e27967</idno> </bibl>
+<bibl><title level="j">Mütalaa</title> <idno type="wiki">Q128276662</idno> <idno>temp_d14e28024</idno> </bibl>
+<bibl><title level="j">Mütalaa-ı Salon</title> <idno type="wiki">Q128276664</idno> <idno>temp_d14e28072</idno> </bibl>
+<bibl><title level="j">Müteferrika</title> <idno type="wiki">Q128276666</idno> <idno>temp_d14e28120</idno> </bibl>
+<bibl><title level="j">Muvaffakiyet-i Milliye</title> <idno type="wiki">Q128276668</idno> <idno>temp_d14e28168</idno> </bibl>
+<bibl><title level="j">Muzaffer</title> <idno type="wiki">Q128276671</idno> <idno>temp_d14e28216</idno> </bibl>
+<bibl><title level="j">Nabi</title> <idno type="wiki">Q128276673</idno> <idno>temp_d14e28313</idno> </bibl>
+<bibl><title level="j">Nahl-ı Emel</title> <idno type="wiki">Q128276675</idno> <idno>temp_d14e28379</idno> </bibl>
+<bibl><title level="j">Nasih</title> <idno type="wiki">Q128276677</idno> <idno>temp_d14e28427</idno> </bibl>
+<bibl><title level="j">Nasrettin Hoca</title> <idno type="wiki">Q128276679</idno> <idno>temp_d14e28475</idno> </bibl>
+<bibl><title level="j">Nasrettin Hoca</title> <idno type="wiki">Q128276681</idno> <idno>temp_d14e28556</idno> </bibl>
+<bibl><title level="j">Nasrettin Hoca</title> <idno type="wiki">Q128276683</idno> <idno>temp_d14e28604</idno> </bibl>
+<bibl><title level="j">(Musavver) Necatı Millet</title> <idno type="wiki">Q128276685</idno> <idno>temp_d14e28653</idno> </bibl>
+<bibl><title level="j">Necm-i Ati</title> <idno type="wiki">Q128276687</idno> <idno>temp_d14e28737</idno> </bibl>
+<bibl><title level="j">Necm-i Terakki</title> <idno type="wiki">Q128276689</idno> <idno>temp_d14e28800</idno> </bibl>
+<bibl><title level="j">Nedim</title> <idno type="wiki">Q128276691</idno> <idno>temp_d14e28884</idno> </bibl>
+<bibl><title level="j">Nekregu ile Pişekar</title> <idno type="wiki">Q128276693</idno> <idno>temp_d14e28932</idno> </bibl>
+<bibl><title level="j">Neretva</title> <idno type="wiki">Q128276695</idno> <idno>temp_d14e29013</idno> </bibl>
+<bibl><title level="j">Neşter</title> <idno type="wiki">Q128276697</idno> <idno>temp_d14e29055</idno> </bibl>
+<bibl><title level="j">Neva (Yahut Seda-ı Ermeniyan)</title> <idno type="wiki">Q128276699</idno> <idno>temp_d14e29121</idno> </bibl>
+<bibl><title level="j">Nevruz</title> <idno type="wiki">Q128276701</idno> <idno>temp_d14e29178</idno> </bibl>
+<bibl><title level="j">Nevsal-ı Afiyet</title> <idno type="wiki">Q128276703</idno> <idno>temp_d14e29226</idno> </bibl>
+<bibl><title level="j">Nevsal-ı Asır</title> <idno type="wiki">Q128276705</idno> <idno>temp_d14e29274</idno> </bibl>
+<bibl><title level="j">Nevsal-ı Askeri</title> <idno type="wiki">Q128276707</idno> <idno>temp_d14e29322</idno> </bibl>
+<bibl><title level="j">Nevsal-ı Baytari</title> <idno type="wiki">Q128276709</idno> <idno>temp_d14e29371</idno> </bibl>
+<bibl><title level="j">Nevsal-ı Malumat</title> <idno type="wiki">Q128276711</idno> <idno>temp_d14e29419</idno> </bibl>
+<bibl><title level="j">Nevsal-ı Osmani</title> <idno type="wiki">Q128276713</idno> <idno>temp_d14e29476</idno> </bibl>
+<bibl><title level="j">Nevsal-ı Ragib</title> <idno type="wiki">Q128276715</idno> <idno>temp_d14e29524</idno> </bibl>
+<bibl><title level="j">Nilüfer</title> <idno type="wiki">Q128276717</idno> <idno>temp_d14e29572</idno> </bibl>
+<bibl><title level="j">Nokta</title> <idno type="wiki">Q128276719</idno> <idno>temp_d14e29620</idno> </bibl>
+<bibl><title level="j">Nümune-i Terakki</title> <idno type="wiki">Q128276721</idno> <idno>temp_d14e29669</idno> </bibl>
+<bibl><title level="j">Ocak</title> <idno type="wiki">Q128276723</idno> <idno>temp_d14e29717</idno> </bibl>
+<bibl><title level="j">Ordu Neşideleri</title> <idno type="wiki">Q128276726</idno> <idno>temp_d14e29771</idno> </bibl>
+<bibl><title level="j">Osmanlı</title> <idno type="wiki">Q128276728</idno> <idno>temp_d14e29819</idno> </bibl>
+<bibl><title level="j">Osmanlı</title> <idno type="wiki">Q128276730</idno> <idno>temp_d14e29867</idno> </bibl>
+<bibl><title level="j">Osmanlı Askeri</title> <idno type="wiki">Q128276732</idno> <idno>temp_d14e29915</idno> </bibl>
+<bibl><title level="j">Osmanlı Mühendis ve Mimar Cemiyeti Mecmuası</title> <idno type="wiki">Q128276734</idno> <idno>temp_d14e30006</idno> </bibl>
+<bibl><title level="j">Özdilek</title> <idno type="wiki">Q128276736</idno> <idno>temp_d14e30069</idno> </bibl>
+<bibl><title level="j">(Musavver) Papağan</title> <idno type="wiki">Q128276738</idno> <idno>temp_d14e30129</idno> </bibl>
+<bibl><title level="j">Payidar</title> <idno type="wiki">Q128276740</idno> <idno>temp_d14e30225</idno> </bibl>
+<bibl><title level="j">Perde</title> <idno type="wiki">Q128276742</idno> <idno>temp_d14e30273</idno> </bibl>
+<bibl><title level="j">Pervin</title> <idno type="wiki">Q128276744</idno> <idno>temp_d14e30321</idno> </bibl>
+<bibl><title level="j">Peyam</title> <idno type="wiki">Q128276746</idno> <idno>temp_d14e30385</idno> </bibl>
+<bibl><title level="j">Pinti</title> <idno type="wiki">Q128276748</idno> <idno>temp_d14e30433</idno> </bibl>
+<bibl><title level="j">Piyano</title> <idno type="wiki">Q128276750</idno> <idno>temp_d14e30487</idno> </bibl>
+<bibl><title level="j">Pınar</title> <idno type="wiki">Q128276752</idno> <idno>temp_d14e30547</idno> </bibl>
+<bibl><title level="j">Polis</title> <idno type="wiki">Q128276754</idno> <idno>temp_d14e30595</idno> </bibl>
+<bibl><title level="j">Prizren</title> <idno type="wiki">Q128276756</idno> <idno>temp_d14e30643</idno> </bibl>
+<bibl><title level="j">Pul Mecmuası</title> <idno type="wiki">Q128276758</idno> <idno>temp_d14e30685</idno> </bibl>
+<bibl><title level="j">Püsküllü bela</title> <idno type="wiki">Q128276760</idno> <idno>temp_d14e30733</idno> </bibl>
+<bibl><title level="j">Ramazan</title> <idno type="wiki">Q128276762</idno> <idno>temp_d14e30826</idno> </bibl>
+<bibl><title level="j">Ramazan</title> <idno type="wiki">Q128276764</idno> <idno>temp_d14e30907</idno> </bibl>
+<bibl><title level="j">Rehber-i Konya</title> <idno type="wiki">Q128276766</idno> <idno>temp_d14e30955</idno> </bibl>
+<bibl><title level="j">Rehber-i Saadet</title> <idno type="wiki">Q128276768</idno> <idno>temp_d14e31003</idno> </bibl>
+<bibl><title level="j">Rehber-i Ticaret</title> <idno type="wiki">Q128276770</idno> <idno>temp_d14e31094</idno> </bibl>
+<bibl><title level="j">Resimli Dünya</title> <idno type="wiki">Q128276772</idno> <idno>temp_d14e31142</idno> </bibl>
+<bibl><title level="j">Resimli Dünya</title> <idno type="wiki">Q128276774</idno> <idno>temp_d14e31202</idno> </bibl>
+<bibl><title level="j">Resimli Gazete</title> <idno type="wiki">Q128276776</idno> <idno>temp_d14e31259</idno> </bibl>
+<bibl><title level="j">Resimli Gazete</title> <idno type="wiki">Q128276778</idno> <idno>temp_d14e31307</idno> </bibl>
+<bibl><title level="j">Resimli Hafta</title> <idno type="wiki">Q128276780</idno> <idno>temp_d14e31364</idno> </bibl>
+<bibl><title level="j">Resimli Hikaye</title> <idno type="wiki">Q128276782</idno> <idno>temp_d14e31413</idno> </bibl>
+<bibl><title level="j">Resimli Kitap</title> <idno type="wiki">Q128276784</idno> <idno>temp_d14e31461</idno> </bibl>
+<bibl><title level="j">Resimli Mecmua</title> <idno type="wiki">Q128276787</idno> <idno>temp_d14e31539</idno> </bibl>
+<bibl><title level="j">Resimli Mektep Alemi</title> <idno type="wiki">Q128276789</idno> <idno>temp_d14e31596</idno> </bibl>
+<bibl><title level="j">Resimli Roman Mecmuası</title> <idno type="wiki">Q128276791</idno> <idno>temp_d14e31653</idno> </bibl>
+<bibl><title level="j">Resimli Yıl</title> <idno type="wiki">Q128276793</idno> <idno>temp_d14e31737</idno> </bibl>
+<bibl><title level="j">Resimli Yurt</title> <idno type="wiki">Q128276795</idno> <idno>temp_d14e31786</idno> </bibl>
+<bibl><title level="j">Risale-i Hafi</title> <idno type="wiki">Q128276797</idno> <idno>temp_d14e31843</idno> </bibl>
+<bibl><title level="j">Risale-i Mevkute-i Bahriye</title> <idno type="wiki">Q128276799</idno> <idno>temp_d14e31891</idno> </bibl>
+<bibl><title level="j">Riyaziyat</title> <idno type="wiki">Q128276801</idno> <idno>temp_d14e31948</idno> </bibl>
+<bibl><title level="j">Rubab</title> <idno type="wiki">Q128276803</idno> <idno>temp_d14e31996</idno> </bibl>
+<bibl><title level="j">Ruj-i Kürt</title> <idno type="wiki">Q128276805</idno> <idno>temp_d14e32053</idno> </bibl>
+<bibl><title level="j">Rumeli</title> <idno type="wiki">Q128276807</idno> <idno>temp_d14e32111</idno> </bibl>
+<bibl><title level="j">Saadet</title> <idno type="wiki">Q128276809</idno> <idno>temp_d14e32179</idno> </bibl>
+<bibl><title level="j">Sabah</title> <idno type="wiki">Q128276811</idno> <idno>temp_d14e32275</idno> </bibl>
+<bibl><title level="j">Safa</title> <idno type="wiki">Q128276813</idno> <idno>temp_d14e32323</idno> </bibl>
+<bibl><title level="j">(Musavver) Şahika</title> <idno type="wiki">Q128276815</idno> <idno>temp_d14e32371</idno> </bibl>
+<bibl><title level="j">Saika</title> <idno type="wiki">Q128276817</idno> <idno>temp_d14e32420</idno> </bibl>
+<bibl><title level="j">Şakacı</title> <idno type="wiki">Q128276819</idno> <idno>temp_d14e32498</idno> </bibl>
+<bibl><title level="j">Salon</title> <idno type="wiki">Q128276821</idno> <idno>temp_d14e32579</idno> </bibl>
+<bibl><title level="j">Sanayi Rehberi</title> <idno type="wiki">Q128276823</idno> <idno>temp_d14e32627</idno> </bibl>
+<bibl><title level="j">Şark ve Kürdistan</title> <idno type="wiki">Q128276825</idno> <idno>temp_d14e32684</idno> </bibl>
+<bibl><title level="j">Say</title> <idno type="wiki">Q128276827</idno> <idno>temp_d14e32747</idno> </bibl>
+<bibl><title level="j">Say-ü Emel</title> <idno type="wiki">Q128276829</idno> <idno>temp_d14e32796</idno> </bibl>
+<bibl><title level="j">Sebat</title> <idno type="wiki">Q128276831</idno> <idno>temp_d14e32844</idno> </bibl>
+<bibl><title level="j">(Musavver) Şebbab</title> <idno type="wiki">Q128276833</idno> <idno>temp_d14e32892</idno> </bibl>
+<bibl><title level="j">Sebilürreşad</title> <idno type="wiki">Q128276835</idno> <idno>temp_d14e32958</idno> </bibl>
+<bibl><title level="j">Seda-ı Hak</title> <idno type="wiki">Q128276837</idno> <idno>temp_d14e33042</idno> </bibl>
+<bibl><title level="j">Seda-ı Mazlum</title> <idno type="wiki">Q128276839</idno> <idno>temp_d14e33138</idno> </bibl>
+<bibl><title level="j">Seda-ı Millet</title> <idno type="wiki">Q128276841</idno> <idno>temp_d14e33220</idno> </bibl>
+<bibl><title level="j">Selamet-i Umumiye</title> <idno type="wiki">Q128276844</idno> <idno>temp_d14e33376</idno> </bibl>
+<bibl><title level="j">Selanik</title> <idno type="wiki">Q128276846</idno> <idno>temp_d14e33424</idno> </bibl>
+<bibl><title level="j">,temp_d14e33424</title> <idno type="wiki">Q128276846</idno> <idno>temp_d14e33424</idno> </bibl>
+<bibl><title level="j">Serbest Fikir</title> <idno type="wiki">Q128276848</idno> <idno>temp_d14e33472</idno> </bibl>
+<bibl><title level="j">Serbest İzmir</title> <idno type="wiki">Q128276850</idno> <idno>temp_d14e33520</idno> </bibl>
+<bibl><title level="j">Serbesti</title> <idno type="wiki">Q128276852</idno> <idno>temp_d14e33584</idno> </bibl>
+<bibl><title level="j">Servet</title> <idno type="wiki">Q128276854</idno> <idno>temp_d14e33674</idno> </bibl>
+<bibl><title level="j">Sevimli Mecmua</title> <idno type="wiki">Q128276856</idno> <idno>temp_d14e33779</idno> </bibl>
+<bibl><title level="j">(Musavver) Seyf ve Kalem</title> <idno type="wiki">Q128276858</idno> <idno>temp_d14e33836</idno> </bibl>
+<bibl><title level="j">Seyhan</title> <idno type="wiki">Q128276860</idno> <idno>temp_d14e33923</idno> </bibl>
+<bibl><title level="j">Şiir ve Tefekkür</title> <idno type="wiki">Q128276863</idno> <idno>temp_d14e33965</idno> </bibl>
+<bibl><title level="j">Silah</title> <idno type="wiki">Q128276865</idno> <idno>temp_d14e34022</idno> </bibl>
+<bibl><title level="j">Sinema Mihveri</title> <idno type="wiki">Q128276866</idno> <idno>temp_d14e34079</idno> </bibl>
+<bibl><title level="j">Siper-i Saika-ı Hürriyet</title> <idno type="wiki">Q128276868</idno> <idno>temp_d14e34127</idno> </bibl>
+<bibl><title level="j">Sirac</title> <idno type="wiki">Q128276870</idno> <idno>temp_d14e34217</idno> </bibl>
+<bibl><title level="j">Sivas</title> <idno type="wiki">Q128276872</idno> <idno>temp_d14e34265</idno> </bibl>
+<bibl><title level="j">Siyah Gül</title> <idno type="wiki">Q128276874</idno> <idno>temp_d14e34304</idno> </bibl>
+<bibl><title level="j">Sokak Maarifesi</title> <idno type="wiki">Q128276876</idno> <idno>temp_d14e34442</idno> </bibl>
+<bibl><title level="j">Son Haber</title> <idno type="wiki">Q128276878</idno> <idno>temp_d14e34490</idno> </bibl>
+<bibl><title level="j">Son Havadis Gazetesi</title> <idno type="wiki">Q128276880</idno> <idno>temp_d14e34538</idno> </bibl>
+<bibl><title level="j">Son Saat</title> <idno type="wiki">Q128276883</idno> <idno>temp_d14e34601</idno> </bibl>
+<bibl><title level="j">Sosyalist</title> <idno type="wiki">Q128276884</idno> <idno>temp_d14e34659</idno> </bibl>
+<bibl><title level="j">Spor Alemi</title> <idno type="wiki">Q128276886</idno> <idno>temp_d14e34716</idno> </bibl>
+<bibl><title level="j">Sudi</title> <idno type="wiki">Q128276888</idno> <idno>temp_d14e34764</idno> </bibl>
+<bibl><title level="j">Şura-ı Ümmet</title> <idno type="wiki">Q128276890</idno> <idno>temp_d14e34821</idno> </bibl>
+<bibl><title level="j">Süs</title> <idno type="wiki">Q128276892</idno> <idno>temp_d14e34912</idno> </bibl>
+<bibl><title level="j">Şuun-ı Hukukiye</title> <idno type="wiki">Q128276895</idno> <idno>temp_d14e34969</idno> </bibl>
+<bibl><title level="j">Tabiyat</title> <idno type="wiki">Q128276897</idno> <idno>temp_d14e35054</idno> </bibl>
+<bibl><title level="j">Tabiyat Alemi</title> <idno type="wiki">Q128276898</idno> <idno>temp_d14e35102</idno> </bibl>
+<bibl><title level="j">Takip ve Tenkit</title> <idno type="wiki">Q128276901</idno> <idno>temp_d14e35159</idno> </bibl>
+<bibl><title level="j">Talebe</title> <idno type="wiki">Q128276903</idno> <idno>temp_d14e35271</idno> </bibl>
+<bibl><title level="j">Tan</title> <idno type="wiki">Q128276904</idno> <idno>temp_d14e35328</idno> </bibl>
+<bibl><title level="j">Tanin</title> <idno type="wiki">Q128276906</idno> <idno>temp_d14e35377</idno> </bibl>
+<bibl><title level="j">Tarif-i Muslimin</title> <idno type="wiki">Q128276908</idno> <idno>temp_d14e35455</idno> </bibl>
+<bibl><title level="j">Tarih ve Edebiyat</title> <idno type="wiki">Q128276910</idno> <idno>temp_d14e35503</idno> </bibl>
+<bibl><title level="j">Tarik</title> <idno type="wiki">Q128276912</idno> <idno>temp_d14e35551</idno> </bibl>
+<bibl><title level="j">Tarla ve Bahçe</title> <idno type="wiki">Q128276915</idno> <idno>temp_d14e35599</idno> </bibl>
+<bibl><title level="j">يكي تصوير أفكار</title> <idno type="wiki">Q128276916</idno> <idno>temp_d14e35753</idno> </bibl>
+<bibl><title level="j">,temp_d14e35753</title> <idno type="wiki">Q128276916</idno> <idno>temp_d14e35753</idno> </bibl>
+<bibl><title level="j">Tavus</title> <idno type="wiki">Q128276919</idno> <idno>temp_d14e35841</idno> </bibl>
+<bibl><title level="j">Teavün-i Aklam</title> <idno type="wiki">Q128276921</idno> <idno>temp_d14e35898</idno> </bibl>
+<bibl><title level="j">Tebabet Alemi</title> <idno type="wiki">Q128276922</idno> <idno>temp_d14e35946</idno> </bibl>
+<bibl><title level="j">Tebabet-ı Hazıra</title> <idno type="wiki">Q128276924</idno> <idno>temp_d14e36003</idno> </bibl>
+<bibl><title level="j">Teceddüt</title> <idno type="wiki">Q128276926</idno> <idno>temp_d14e36058</idno> </bibl>
+<bibl><title level="j">Tecelli</title> <idno type="wiki">Q128276928</idno> <idno>temp_d14e36106</idno> </bibl>
+<bibl><title level="j">Tedrisat Mecmuası</title> <idno type="wiki">Q128276930</idno> <idno>temp_d14e36163</idno> </bibl>
+<bibl><title level="j">Telsiz</title> <idno type="wiki">Q128276933</idno> <idno>temp_d14e36226</idno> </bibl>
+<bibl><title level="j">Tenkit</title> <idno type="wiki">Q128276934</idno> <idno>temp_d14e36274</idno> </bibl>
+<bibl><title level="j">(Musavver) Terakki</title> <idno type="wiki">Q128276937</idno> <idno>temp_d14e36331</idno> </bibl>
+<bibl><title level="j">Terakki</title> <idno type="wiki">Q128276938</idno> <idno>temp_d14e36380</idno> </bibl>
+<bibl><title level="j">Terakki</title> <idno type="wiki">Q128276940</idno> <idno>temp_d14e36428</idno> </bibl>
+<bibl><title level="j">Terakki</title> <idno type="wiki">Q128276942</idno> <idno>temp_d14e36485</idno> </bibl>
+<bibl><title level="j">Terakki-i Muhadderat</title> <idno type="wiki">Q128276945</idno> <idno>temp_d14e36533</idno> </bibl>
+<bibl><title level="j">Terbiye ve Oyun</title> <idno type="wiki">Q128276947</idno> <idno>temp_d14e36590</idno> </bibl>
+<bibl><title level="j">Tetebbu</title> <idno type="wiki">Q128276949</idno> <idno>temp_d14e36647</idno> </bibl>
+<bibl><title level="j">Ticaret ve Ziraat Nezareti - Halkali Zi-raat Mektebi Aliyesi Mecmuası</title> <idno type="wiki">Q128276952</idno> <idno>temp_d14e36705</idno> </bibl>
+<bibl><title level="j">Tiraj</title> <idno type="wiki">Q128276953</idno> <idno>temp_d14e36753</idno> </bibl>
+<bibl><title level="j">Tiraje</title> <idno type="wiki">Q128276958</idno> <idno>temp_d14e36807</idno> </bibl>
+<bibl><title level="j">Tiyatro</title> <idno type="wiki">Q128276960</idno> <idno>temp_d14e36864</idno> </bibl>
+<bibl><title level="j">Tiyatro ve Musiki</title> <idno type="wiki">Q128276961</idno> <idno>temp_d14e36912</idno> </bibl>
+<bibl><title level="j">Tok Söz</title> <idno type="wiki">Q128276964</idno> <idno>temp_d14e36960</idno> </bibl>
+<bibl><title level="j">Tonguç</title> <idno type="wiki">Q128276966</idno> <idno>temp_d14e37009</idno> </bibl>
+<bibl><title level="j">Tosyaʾda Dilek</title> <idno type="wiki">Q128276968</idno> <idno>temp_d14e37096</idno> </bibl>
+<bibl><title level="j">Trabzon</title> <idno type="wiki">Q128276970</idno> <idno>temp_d14e37153</idno> </bibl>
+<bibl><title level="j">Tulu</title> <idno type="wiki">Q128276973</idno> <idno>temp_d14e37194</idno> </bibl>
+<bibl><title level="j">Tuna</title> <idno type="wiki">Q128276974</idno> <idno>temp_d14e37242</idno> </bibl>
+<bibl><title level="j">Türk Duygusu</title> <idno type="wiki">Q128276977</idno> <idno>temp_d14e37313</idno> </bibl>
+<bibl><title level="j">Türk Sözü</title> <idno type="wiki">Q128276979</idno> <idno>temp_d14e37362</idno> </bibl>
+<bibl><title level="j">Türk Ticaret-i Hariciye Gazetesi</title> <idno type="wiki">Q128276980</idno> <idno>temp_d14e37410</idno> </bibl>
+<bibl><title level="j">Türk Yavrusu</title> <idno type="wiki">Q128276982</idno> <idno>temp_d14e37458</idno> </bibl>
+<bibl><title level="j">Türk Yurdu</title> <idno type="wiki">Q128276984</idno> <idno>temp_d14e37506</idno> </bibl>
+<bibl><title level="j">(Musavver) Türkistan</title> <idno type="wiki">Q128276986</idno> <idno>temp_d14e37554</idno> </bibl>
+<bibl><title level="j">Türkistan</title> <idno type="wiki">Q128276988</idno> <idno>temp_d14e37602</idno> </bibl>
+<bibl><title level="j">Türkiye</title> <idno type="wiki">Q128276990</idno> <idno>temp_d14e37651</idno> </bibl>
+<bibl><title level="j">Türkiye Bilgi Demeti</title> <idno type="wiki">Q128276992</idno> <idno>temp_d14e37699</idno> </bibl>
+<bibl><title level="j">Ufk-ı Ati</title> <idno type="wiki">Q128276995</idno> <idno>temp_d14e37747</idno> </bibl>
+<bibl><title level="j">Ulum-ı İktisadiye</title> <idno type="wiki">Q128276998</idno> <idno>temp_d14e37804</idno> </bibl>
+<bibl><title level="j">Ümit</title> <idno type="wiki">Q128276999</idno> <idno>temp_d14e37867</idno> </bibl>
+<bibl><title level="j">Umman</title> <idno type="wiki">Q128277001</idno> <idno>temp_d14e37915</idno> </bibl>
+<bibl><title level="j">Umman</title> <idno type="wiki">Q128277003</idno> <idno>temp_d14e38000</idno> </bibl>
+<bibl><title level="j">Ümmet</title> <idno type="wiki">Q128277005</idno> <idno>temp_d14e38057</idno> </bibl>
+<bibl><title level="j">Umran</title> <idno type="wiki">Q128277007</idno> <idno>temp_d14e38105</idno> </bibl>
+<bibl><title level="j">Utarid</title> <idno type="wiki">Q128277009</idno> <idno>temp_d14e38153</idno> </bibl>
+<bibl><title level="j">Utarid</title> <idno type="wiki">Q128277011</idno> <idno>temp_d14e38201</idno> </bibl>
+<bibl><title level="j">Vahdet</title> <idno type="wiki">Q128277014</idno> <idno>temp_d14e38249</idno> </bibl>
+<bibl><title level="j">Vakit</title> <idno type="wiki">Q128277016</idno> <idno>temp_d14e38298</idno> </bibl>
+<bibl><title level="j">Vakit</title> <idno type="wiki">Q128277017</idno> <idno>temp_d14e38346</idno> </bibl>
+<bibl><title level="j">Vakit yahut Murebbe-i Muhadderat</title> <idno type="wiki">Q128277019</idno> <idno>temp_d14e38394</idno> </bibl>
+<bibl><title level="j">Vazife</title> <idno type="wiki">Q128277021</idno> <idno>temp_d14e38499</idno> </bibl>
+<bibl><title level="j">Verem Mecmuası</title> <idno type="wiki">Q128277023</idno> <idno>temp_d14e38547</idno> </bibl>
+<bibl><title level="j">Vergi ve Arazi Mecmuası</title> <idno type="wiki">Q128277025</idno> <idno>temp_d14e38605</idno> </bibl>
+<bibl><title level="j">Volkan</title> <idno type="wiki">Q128277027</idno> <idno>temp_d14e38662</idno> </bibl>
+<bibl><title level="j">Yadigar</title> <idno type="wiki">Q128277029</idno> <idno>temp_d14e38746</idno> </bibl>
+<bibl><title level="j">Yanya</title> <idno type="wiki">Q128277032</idno> <idno>temp_d14e38794</idno> </bibl>
+<bibl><title level="j">Yaprak</title> <idno type="wiki">Q128277034</idno> <idno>temp_d14e38835</idno> </bibl>
+<bibl><title level="j">Yeni Avrupa</title> <idno type="wiki">Q128277035</idno> <idno>temp_d14e38892</idno> </bibl>
+<bibl><title level="j">Yeni Dünya</title> <idno type="wiki">Q128277037</idno> <idno>temp_d14e38941</idno> </bibl>
+<bibl><title level="j">Yeni Fikir</title> <idno type="wiki">Q128277039</idno> <idno>temp_d14e38998</idno> </bibl>
+<bibl><title level="j">Yeni Fikir</title> <idno type="wiki">Q128277041</idno> <idno>temp_d14e39046</idno> </bibl>
+<bibl><title level="j">Yeni Gazete</title> <idno type="wiki">Q128277043</idno> <idno>temp_d14e39094</idno> </bibl>
+<bibl><title level="j">Yeni Kafkasya</title> <idno type="wiki">Q128277045</idno> <idno>temp_d14e39142</idno> </bibl>
+<bibl><title level="j">Yeni Kalem</title> <idno type="wiki">Q128277047</idno> <idno>temp_d14e39190</idno> </bibl>
+<bibl><title level="j">Yeni Kitap</title> <idno type="wiki">Q128277050</idno> <idno>temp_d14e39239</idno> </bibl>
+<bibl><title level="j">Yeni Mektep</title> <idno type="wiki">Q128277053</idno> <idno>temp_d14e39287</idno> </bibl>
+<bibl><title level="j">Yeni Muhit ül-Maarif gazetesi</title> <idno type="wiki">Q128277054</idno> <idno>temp_d14e39341</idno> </bibl>
+<bibl><title level="j">Yeni Müjde</title> <idno type="wiki">Q128277056</idno> <idno>temp_d14e39389</idno> </bibl>
+<bibl><title level="j">Yeni Nesil</title> <idno type="wiki">Q128277058</idno> <idno>temp_d14e39437</idno> </bibl>
+<bibl><title level="j">Yeni Sene</title> <idno type="wiki">Q128277060</idno> <idno>temp_d14e39494</idno> </bibl>
+<bibl><title level="j">Yeni Ses</title> <idno type="wiki">Q128277062</idno> <idno>temp_d14e39543</idno> </bibl>
+<bibl><title level="j">Yeni Türk</title> <idno type="wiki">Q128277064</idno> <idno>temp_d14e39591</idno> </bibl>
+<bibl><title level="j">Yeni Türkiye</title> <idno type="wiki">Q128277066</idno> <idno>temp_d14e39639</idno> </bibl>
+<bibl><title level="j">Yeni Vakit</title> <idno type="wiki">Q128277069</idno> <idno>temp_d14e39687</idno> </bibl>
+<bibl><title level="j">Yeni Ziraat Gazetesi</title> <idno type="wiki">Q128277071</idno> <idno>temp_d14e39741</idno> </bibl>
+<bibl><title level="j">Yıldız</title> <idno type="wiki">Q128277072</idno> <idno>temp_d14e39789</idno> </bibl>
+<bibl><title level="j">Yuha</title> <idno type="wiki">Q128277074</idno> <idno>temp_d14e39850</idno> </bibl>
+<bibl><title level="j">Yurt</title> <idno type="wiki">Q128277076</idno> <idno>temp_d14e39898</idno> </bibl>
+<bibl><title level="j">زمان</title> <idno type="wiki">Q128277078</idno> <idno>temp_d14e40039</idno> </bibl>
+<bibl><title level="j">Zeka</title> <idno type="wiki">Q128277080</idno> <idno>temp_d14e40090</idno> </bibl>
+<bibl><title level="j">Zerrat</title> <idno type="wiki">Q128277082</idno> <idno>temp_d14e40150</idno> </bibl>
+<bibl><title level="j">Zevzek</title> <idno type="wiki">Q128277084</idno> <idno>temp_d14e40199</idno> </bibl>
+<bibl><title level="j">Zeybek</title> <idno type="wiki">Q128277086</idno> <idno>temp_d14e40283</idno> </bibl>
+<bibl><title level="j">Ziraat Gazetesi</title> <idno type="wiki">Q128277089</idno> <idno>temp_d14e40337</idno> </bibl>
+<bibl><title level="j">Ziraat ve Sanat Tercume-i Fünun Odalari</title> <idno type="wiki">Q128277092</idno> <idno>temp_d14e40394</idno> </bibl>
+<bibl><title level="j">Ziya</title> <idno type="wiki">Q128277093</idno> <idno>temp_d14e40442</idno> </bibl>
+<bibl><title level="j">Zıpır (Bahçeʾnin Mizahi İlavesi)</title> <idno type="wiki">Q128277095</idno> <idno>temp_d14e40490</idno> </bibl>
+<bibl><title level="j">Zuhur</title> <idno type="wiki">Q128277097</idno> <idno>temp_d14e40548</idno> </bibl>
+<bibl><title level="j">Zuhur gazetesi</title> <idno type="wiki">Q128277099</idno> <idno>temp_d14e40596</idno> </bibl>
+<bibl><title level="j">Zuhuri</title> <idno type="wiki">Q128277101</idno> <idno>temp_d14e40653</idno> </bibl>
+<bibl><title level="j">Zümrüt Anka</title> <idno type="wiki">Q128277103</idno> <idno>temp_d14e40737</idno> </bibl>
+</listBibl>
+</standOff>
+</TEI>
