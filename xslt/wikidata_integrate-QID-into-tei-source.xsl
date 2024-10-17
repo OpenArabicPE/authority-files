@@ -3,6 +3,8 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.wikidata.org/">
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
     <xsl:import href="parameters.xsl"/>
+    <!-- read data from file -->
+    <xsl:variable name="v_QIDs" select="doc('../data/OpenRefine/mappings/openrefine_org-mapping-2024-10-17.TEIP5.xml')/descendant::tei:standOff"/>
     <!-- identity transform -->
     <xsl:template match="node() | @*">
         <xsl:copy>
@@ -42,8 +44,7 @@
             <xsl:if test="$v_corresp-QID != '' and not(parent::node()/tei:idno[@type = $p_acronym-wikidata] = $v_corresp-QID)">
                 <xsl:copy-of select="$v_corresp-QID"/>
             </xsl:if>
-            <xsl:apply-templates select="tei:location"/>
-            <xsl:apply-templates select="tei:note"/>
+            <xsl:apply-templates select="tei:location | tei:note | tei:org"/>
         </xsl:copy>
     </xsl:template>
     <xsl:template match="tei:place">
@@ -59,6 +60,4 @@
             <xsl:apply-templates select="tei:note"/>
         </xsl:copy>
     </xsl:template>
-    <!-- read data from file -->
-    <xsl:variable name="v_QIDs" select="doc('../data/OpenRefine/mappings/baykal_bibl-mapping-2024-08-02.TEIP5.xml')/descendant::tei:standOff"/>
 </xsl:stylesheet>
