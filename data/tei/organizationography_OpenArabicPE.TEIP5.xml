@@ -195,16 +195,6 @@
                </address>
             </location>
          </org>
-         <org type="library" xml:id="hBS">
-            <orgName>Bayerische Staatsbibliothek, München</orgName>
-            <orgName type="jaraid">BS</orgName>
-            <idno type="jaraid">hBS</idno>
-            <idno type="oape">6</idno>
-            <idno type="wiki">Q256507</idno>
-            <location>
-               <placeName ref="geon:2867714 oape:place:690">Munich</placeName>
-            </location>
-         </org>
          <org type="library" source="https://ld.zdb-services.de/resource/organisations/DE-703">
             <orgName type="short" xml:lang="de">Bayreuth UB</orgName>
             <orgName xml:lang="de">Universitätsbibliothek Bayreuth</orgName>
@@ -2438,11 +2428,14 @@
                <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
             </location>
          </org>
-         <org type="library" source="https://ld.zdb-services.de/resource/organisations/DE-12">
+         <org type="library" source="https://ld.zdb-services.de/resource/organisations/DE-12" xml:id="hBS">
             <orgName type="short" xml:lang="de">München BSB</orgName>
             <orgName xml:lang="de">Bayerische Staatsbibliothek</orgName>
             <idno type="isil">DE-12</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-12</idno>
+            <orgName type="jaraid">BS</orgName>
+            <idno type="jaraid">hBS</idno>
+            <idno type="oape">6</idno>
             <idno type="oape">262</idno>
             <idno type="wiki">Q256507</idno>
             <location>
