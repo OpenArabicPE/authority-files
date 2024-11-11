@@ -550,9 +550,6 @@
             <!-- return IDs -->
             <xsl:when test="$p_output-mode = 'id'">
                 <xsl:choose>
-                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'OCLC']">
-                        <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = 'OCLC'][1])"/>
-                    </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata]">
                         <xsl:value-of select="concat('wiki:', $p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata][1])"/>
                     </xsl:when>
@@ -561,6 +558,10 @@
                     </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_local-authority]">
                         <xsl:value-of select="concat($p_local-authority, ':bibl:', $p_bibl/descendant::tei:idno[@type = $p_local-authority][1])"/>
+                    </xsl:when>
+                    <!-- OCLC: items have far too many IDs to make them really useful for identification -->
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'OCLC']">
+                        <xsl:value-of select="concat('oclc:', $p_bibl/descendant::tei:idno[@type = 'OCLC'][1])"/>
                     </xsl:when>
                     <xsl:when test="$p_bibl/descendant::tei:idno">
                         <xsl:value-of select="concat($p_bibl/descendant::tei:idno[1]/@type, ':', $p_bibl/descendant::tei:idno[1])"/>
