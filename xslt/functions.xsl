@@ -524,8 +524,9 @@
         <!-- languages -->
         <xsl:variable name="v_mainLang">
             <xsl:choose>
+                <!-- return the first main lang -->
                 <xsl:when test="$v_monogr/tei:textLang/@mainLang">
-                    <xsl:value-of select="$v_monogr[tei:textLang/@mainLang][1]/tei:textLang/@mainLang"/>
+                    <xsl:value-of select="$v_monogr[tei:textLang/@mainLang][1]/tei:textLang[1]/@mainLang"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="'NA'"/>
@@ -622,6 +623,13 @@
                 <xsl:choose>
                     <xsl:when test="$v_monogr/tei:title[@xml:lang = $p_output-language]">
                         <xsl:value-of select="normalize-space($v_monogr[tei:title[@xml:lang = $p_output-language]][1]/tei:title[@xml:lang = $p_output-language][1])"/>
+                    </xsl:when>
+                    <!-- possible transcriptions into other script -->
+                    <!-- type of transcription provided in p_output-language -->
+                    <xsl:when test="$v_monogr/tei:title[matches(@xml:lang, concat($v_mainLang, '-', $p_output-language))]">
+                        <xsl:value-of
+                            select="normalize-space($v_monogr[1]/tei:title[matches(@xml:lang, concat($v_mainLang, '-', $p_output-language))][1])"
+                        />
                     </xsl:when>
                     <!-- possible transcriptions into other script -->
                     <xsl:when test="($p_output-language = 'ar') and ($v_monogr/tei:title[contains(@xml:lang, '-Arab-')])">
