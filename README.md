@@ -31,10 +31,13 @@ This repository holds the authority files for three research projects in Arab Pe
 
 - [x] add all known collaborators to Suriye (oape:bibl:321)
 - [ ] fix dates: `<date change="#d2e33" from="1910-02-18"/>`
-- [ ] add sources as TEI/XML to the bibliography
-    + some are encoded as `<ref type="pandoc">`
-        + [@LaPresseMusulmane+1909, 106]
-        + [@Campos+2008+TheVoiceOf, 245]
+- [x] add sources as TEI/XML to the bibliography
+    + [ ] some references to these sources are encoded as `<ref type="pandoc">`. This needs some sort of resolving. 
+        + ideas:
+            + move the content of the `<ref>` to `@source` on the containing `<biblStruct>`
+        + cases:
+            + [@LaPresseMusulmane+1909, 106]
+            + [@Campos+2008+TheVoiceOf, 245]
     
 - [ ] wrap content in `<publisher source="oape:org:73">` originating from AUB in a `<orgName>` element
 - [ ] The holding information from Jaraid needs to become more machine-actionable. See below for details.
@@ -59,6 +62,8 @@ This repository holds the authority files for three research projects in Arab Pe
 
 ## XSLT
 
+- [ ] `oape:query-bibliography()` rightfully tries to find data in a central bibliography and utilises `oape:get-entity-from-authority-file` to do so. 
+    - in some cases, when the authority file is not explicitly referenced in `@ref`, it might be better to just use local information from the `<bibl>` the function was called on
 - [ ] support full URLs in `@ref` in the XSLT linking entity names to authority files.
     + add param whether to output private URI scheme or full URLs
 - [ ] `@type='noAddName'` is missing whitespace between name components in some cases
