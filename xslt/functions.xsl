@@ -336,9 +336,11 @@
             </xsl:when>
             <!-- check if the string is found in the authority file -->
             <xsl:otherwise>
-                <xsl:if test="$p_debug = true()">
+                <xsl:if test="($p_debug, $p_verbose) = true()">
                     <xsl:message>
-                        <xsl:text>The input carries no @ref attribute or the value is 'NA'</xsl:text>
+                        <xsl:text>The input (</xsl:text>
+                        <xsl:value-of select="$p_entity-name"/>
+                        <xsl:text>) carries no @ref attribute or the value is 'NA'</xsl:text>
                     </xsl:message>
                 </xsl:if>
                 <!-- this fails for nested entities -->
@@ -432,8 +434,18 @@
                         </xsl:choose>
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'bibl'">
+                        <xsl:if test="$p_verbose = true()">
+                            <xsl:message>
+                                <xsl:text>Looking for a matching title in the bibliography</xsl:text>
+                            </xsl:message>
+                        </xsl:if>
                         <xsl:choose>
                             <xsl:when test="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                                <xsl:if test="$p_verbose = true()">
+                                    <xsl:message>
+                                        <xsl:text>Returning a match solely based on the title</xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
                                 <!-- problem: this should return more than one match!!!!! -->
                                 <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]]"/>
                             </xsl:when>
