@@ -334,8 +334,8 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-- keep NA if a parameter says so -->
-            <xsl:when test="($v_ref = 'NA') and ($p_ignore-existing-refs = false())">
+            <!-- keep NA if it has been manually set -->
+            <xsl:when test="($v_ref = 'NA') and ($v_resp = 'ref_manual')">
                 <xsl:value-of select="'NA'"/>
             </xsl:when>
             <!-- check if the string is found in the authority file -->
