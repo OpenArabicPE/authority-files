@@ -135,7 +135,7 @@ XSLT to copy data from biblio-biographic dictionaries, such as Zirikli to the bi
 
 1. [x] created original bibliography through gathering all `<biblStruct>` for periodicals from all OpenArabicPE editions, merging information from Project Jarāʾid, and library catalogues (ZDB, HathiTrust, AUB).
     - extracting all referenced publications can be done with multiple stylesheets
-        - `convert_tei-to-bibliographic-data/xslt/convert_tei-to-biblstruct_bibl.xsl`: extracts all <bibl> and <listBibl> into a new file with a <standOff> element
+        - `convert_tei-to-bibliographic-data/xslt/convert_tei-to-biblstruct_bibl.xsl`: extracts all <title>, <bibl>, and <listBibl> into a new file with a <standOff> element and two <listBibl>s. One for linked bibliographic entries and one for new/unlinked ones.
 2. enrich bibliography
     - the most urgently needed information are all potential contributors to be then tested with stylometry
     - automatically with information found in full text editions of Zirikli and Sarkīs

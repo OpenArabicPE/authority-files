@@ -21,7 +21,7 @@
         <xsl:apply-templates select="descendant::tei:text/tei:body"/>
     </xsl:template>
     <xsl:template match="tei:body">
-       <xsl:element name="tei:listBibl">
+       <xsl:element name="listBibl">
            <xsl:attribute name="source" select="$v_file-name"/>
             <xsl:apply-templates select="descendant::tei:title[not(ancestor::tei:bibl)] | descendant::tei:bibl">
                 <xsl:sort select="@ref" order="descending"/>
@@ -30,7 +30,7 @@
     </xsl:template>
     
     <xsl:template match="tei:title[not(ancestor::tei:bibl)]">
-        <xsl:element name="tei:bibl">
+        <xsl:element name="bibl">
             <!-- point back to source -->
             <xsl:attribute name="source" select="concat($v_file-name, '#', @xml:id)"/>
             <xsl:copy>
@@ -44,7 +44,7 @@
             <xsl:apply-templates select="@*"/>
             <xsl:attribute name="source" select="concat($v_file-name, '#', @xml:id)"/>
             <xsl:apply-templates select="node()"/>
-            <xsl:if test="matches(@ref,'\w+:\d+')">
+           <!-- <xsl:if test="matches(@ref,'\w+:\d+')">
                 <xsl:element name="tei:idno">
                     <xsl:attribute name="type" select="replace(@ref,'(\w+):\d+','$1')"/>
                     <xsl:value-of select="replace(@ref,'\w+:(\d+)','$1')"/>
@@ -55,7 +55,7 @@
                     <xsl:attribute name="type" select="replace(tei:title/@ref,'(\w+):\d+','$1')"/>
                     <xsl:value-of select="replace(tei:title/@ref,'\w+:(\d+)','$1')"/>
                 </xsl:element>
-            </xsl:if>
+            </xsl:if>-->
             <!-- unite bibls linked with @next attribute -->
             <xsl:if test="starts-with(@next,'#')">
                 <xsl:variable name="v_id-next-part" select="substring-after(@next,'#')"/>
