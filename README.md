@@ -31,10 +31,13 @@ This repository holds the authority files for three research projects in Arab Pe
 
 - [x] add all known collaborators to Suriye (oape:bibl:321)
 - [ ] fix dates: `<date change="#d2e33" from="1910-02-18"/>`
-- [ ] add sources as TEI/XML to the bibliography
-    + some are encoded as `<ref type="pandoc">`
-        + [@LaPresseMusulmane+1909, 106]
-        + [@Campos+2008+TheVoiceOf, 245]
+- [x] add sources as TEI/XML to the bibliography
+    + [ ] some references to these sources are encoded as `<ref type="pandoc">`. This needs some sort of resolving. 
+        + ideas:
+            + move the content of the `<ref>` to `@source` on the containing `<biblStruct>`
+        + cases:
+            + [@LaPresseMusulmane+1909, 106]
+            + [@Campos+2008+TheVoiceOf, 245]
     
 - [ ] wrap content in `<publisher source="oape:org:73">` originating from AUB in a `<orgName>` element
 - [ ] The holding information from Jaraid needs to become more machine-actionable. See below for details.
@@ -59,6 +62,8 @@ This repository holds the authority files for three research projects in Arab Pe
 
 ## XSLT
 
+- [ ] `oape:query-bibliography()` rightfully tries to find data in a central bibliography and utilises `oape:get-entity-from-authority-file` to do so. 
+    - in some cases, when the authority file is not explicitly referenced in `@ref`, it might be better to just use local information from the `<bibl>` the function was called on
 - [ ] support full URLs in `@ref` in the XSLT linking entity names to authority files.
     + add param whether to output private URI scheme or full URLs
 - [ ] `@type='noAddName'` is missing whitespace between name components in some cases
@@ -129,6 +134,8 @@ XSLT to copy data from biblio-biographic dictionaries, such as Zirikli to the bi
 ## bibliography of periodicals
 
 1. [x] created original bibliography through gathering all `<biblStruct>` for periodicals from all OpenArabicPE editions, merging information from Project Jarāʾid, and library catalogues (ZDB, HathiTrust, AUB).
+    - extracting all referenced publications can be done with multiple stylesheets
+        - `convert_tei-to-bibliographic-data/xslt/convert_tei-to-biblstruct_bibl.xsl`: extracts all <title>, <bibl>, and <listBibl> into a new file with a <standOff> element and two <listBibl>s. One for linked bibliographic entries and one for new/unlinked ones.
 2. enrich bibliography
     - the most urgently needed information are all potential contributors to be then tested with stylometry
     - automatically with information found in full text editions of Zirikli and Sarkīs
@@ -225,17 +232,7 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
     + "journal": everything that is called *majalla* in Arabic
     + "newspaper": everything that is called *jarīda* in Arabic
 
-- changes in editorship etc.: Many periodicals underwent various changes in editorship, title, frequency etc. these can be encoded as multiple `<monogr>` children of `<biblStruct>`. The sequence is already established by the structure of the XML and there is currently no need for explicit linking with `@next` and `@prev`.
-- contributors
-    + the main contributors are encoded as `<editor>`, which can carry a `@type` attribute
-        * `@type`
-            - "owner": The owner-cum-editor, commonly referred to as *ṣāḥib*.
-            - "publisher": The publisher-cum-editor, commonly referred to as *munshiʾ*.
-            - "editor": Implicitly assumed type of all editors, used for all of the following:
-                + *mudīr masʾūl* (responsible director)
-                + *raʾis al-taḥrīr* (editor-in-chief)
-                + *mudīr al-taḥrīr* (managing editor)
-                + *muḥarrir* (editor)
+- changes in editorship etc.: Many periodicals underwent various changes in editorship, title, frequency etc. these can be encoded as multiple `<monogr>` children of `<biblStruct>`. The sequence needs to be explicitly marked-up with `@next` and `@prev` pointing to identifiers or @xml:ids.
 - dating: `<date>` can carry a `@type` attribute to differentiate different dating information
     + `@type`
         * untyped: this data pertains to the volume and issue numbers provided in `<biblScope>`
@@ -243,6 +240,50 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
         * "terminus": date of last publication
         * "documented": date this periodical has been mentioned in another source
     + `@source`: pointing to a source for the different type of source
+
+### contributors
+
+As a general rule of thumb it makes a lot of sense to encode contributors with `<respStmt>`.
+
+#### editors
+
+the main contributors are encoded as `<editor>`, which can carry a `@type` attribute. Unfortunately, due to historical encoding practices, I have not consequently encoded the necessary information to differentiate between types of editors.
+
+* `@type`
+    - "owner": The owner-cum-editor, commonly referred to as *ṣāḥib*.
+    - "publisher": The publisher-cum-editor, commonly referred to as *munshiʾ*.
+    - "editor": Implicitly assumed type of all editors, used for all of the following:
+        + *mudīr masʾūl* (responsible director)
+        + *raʾis al-taḥrīr* (editor-in-chief)
+        + *mudīr al-taḥrīr* (managing editor)
+        + *muḥarrir* (editor)
+
+#### contributors
+
+Other personell somehow involved with a publication is encoded using `<respStmt>` with relevant and typed `<resp>` children.
+
+```xml
+<respStmt source="https://doi.org/10.2143/BIOR.63.3.2017973">
+    <resp>correspondent in <placeName>Berlin</placeName></resp>
+    <persName xml:lang="ar">زكي كرام</persName>
+</respStmt>
+```
+
+Note that `<respStmt>` is not a member of `att.typed`. Classification schemes can be linked through `resp/@ref`. 
+Some `<resp>` have been created through conversion from MARCXML (tag 700, subfield 4). These are not necessarily governed by a formal classification scheme. Schemes are not linked either.
+
+```xml
+<marc:datafield ind1="1" ind2=" " tag="700">
+    <marc:subfield code="6">880-03</marc:subfield>
+    <marc:subfield code="a">الرافعي، امين،</marc:subfield>
+    <marc:subfield code="e">مالك. </marc:subfield>
+    <marc:subfield code="4">own.</marc:subfield>
+</marc:datafield>
+```
+
+`<resp>rel</resp>` has been created to encode unclassified relationships upon conversion from MARCXML.
+
+### examples
 
 ```xml
 <biblStruct>
@@ -303,6 +344,8 @@ Each publication is encoded as a `<biblStruct>` with a type attribute (even thou
 ### Holding information
 
 One of the main purposes of Project Jarāʾid and my own efforts is to locate periodicals in collections in order to guide researchers to material and inform digitisation efforts.
+
+Holdings are encoded as a `<note type="holdings">` child of the main `<biblStruct>`. The note contains a `<list>` with one `<item>` per holding institutions. Individual copies are encoded as a `<listBibl>`.
 
 #### schema
 
@@ -467,6 +510,42 @@ One of the main purposes of Project Jarāʾid and my own efforts is to locate pe
     </list> 
 </note>
 ```
+
+## events in the life cycle of a periodical
+
+Similar to holding information, life-cycle events of a periodical are encoded as a `<note>` of `@type="events"`. Events are then organised as a `<listEvent>`. 
+The attribute `@status="proposed"` on `<biblStruct>` and `<monogr>` allows to designate unpublished titles for which people submitted a permit.
+
+### events
+
+Information on events was designed add-hoc for my research on censorship, which made use of event classes as encoded by Donald Cioeta.
+
+
+```xml
+<event source="@thamarat+1042, 2" subtype="S" type="censorship" when="1895-08-26">
+    <label>S</label>
+    <desc>
+       <date type="documented" when="1895-08-26">1895-08-26</date>
+   </desc>
+   <note type="comments">For errors, perhaps because of a slip of the pen</note>
+   <listBibl>
+       <bibl type="pandoc">@thamarat+1042, 2</bibl>
+   </listBibl>
+</event>
+```
+
+#### classification
+
+Classification is done through a combination of `@type` and `@subtype`.
+
+- `@type`:
+    - "censorship": super-class of the classification employed by Donald Cioeta
+    - "lifeCycle": super-class for my additional classes
+- `@subtype`: sub-classes
+
+#### dating
+
+Dating is done through the relevant attributes on `<event>` itself or with a proper `<date>` node as child of the `<desc>`.
 
 ## encoding the source of bits of information
 ### `@source`

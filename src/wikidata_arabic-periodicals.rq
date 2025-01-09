@@ -1,0 +1,22 @@
+SELECT DISTINCT
+(?periodical AS ?item) (?periodicalLabel AS ?itemLabel)
+WITH {
+  SELECT DISTINCT
+    ?periodical
+  WHERE {
+   ?periodical wdt:P31/wdt:P279* wd:Q1002697 ;
+       wdt:P407/wdt:P279* wd:Q13955 .
+    ?periodical (wdt:P571 | wdt:P580) ?dateOnset.
+    FILTER( YEAR(?dateOnset) < 1930).
+    }
+  LIMIT 4000
+  } as %periodicals
+WHERE {
+    INCLUDE %periodicals
+    SERVICE wikibase:label {
+        bd:serviceParam wikibase:language "ar, en, [AUTO_LANGUAGE]".
+        ?periodical rdfs:label ?periodicalLabel .
+    }
+}
+ORDER BY ?itemLabel
+LIMIT 5000
