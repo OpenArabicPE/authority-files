@@ -93,7 +93,8 @@
             <xsl:apply-templates mode="m_bibl-to-biblStruct" select="$v_bibl/descendant-or-self::tei:bibl"/>
         </xsl:if>
         <!-- find all <biblStruct> in the curent file and add @change, @source -->
-        <xsl:apply-templates mode="m_copy-from-source" select="/descendant::tei:biblStruct[tei:monogr/tei:title/@ref[. != 'NA']][ancestor::tei:standOff or ancestor::tei:text]">
+        <xsl:apply-templates mode="m_copy-from-source" select="/descendant::tei:biblStruct[ancestor::tei:standOff or ancestor::tei:text]">
+            <!-- <xsl:apply-templates mode="m_copy-from-source" select="/descendant::tei:biblStruct[tei:monogr/tei:title/@ref[. != 'NA']][ancestor::tei:standOff or ancestor::tei:text]"> -->
             <!-- 5 seems a good choice to reduce the polution of notes with documentary attributes -->
             <xsl:with-param name="p_depth-of-documentation" select="5"/>
         </xsl:apply-templates>
@@ -103,17 +104,33 @@
         <xsl:apply-templates mode="m_bibl-to-id" select="$v_bibls-source/tei:biblStruct"/>
     </xsl:variable>
     <xsl:template match="tei:biblStruct" mode="m_bibl-to-id">
+        <!-- always look IDs up in the authority file, to make sure that biblStruct are correctly grouped! -->
         <xsl:choose>
+            <!-- linked through idno: still better to look them up! -->
+            <xsl:when test="tei:monogr/tei:idno[@type = $p_local-authority]">
+                <xsl:variable name="v_title-temp">
+                    <tei:title ref="{concat($p_local-authority, ':bibl:',tei:monogr/tei:idno[@type = $p_local-authority][1])}"/>
+                </xsl:variable>
+<!--                <xsl:value-of select="oape:query-biblstruct(., 'id', '', $v_gazetteer, $p_local-authority)"/>-->
+                <xsl:value-of select="oape:query-bibliography($v_title-temp/tei:title, $v_bibliography, '', $p_local-authority, 'id', '')"/>
+            </xsl:when>
+            <xsl:when test="tei:monogr/tei:idno[@type = $p_acronym-wikidata]">
+                <xsl:variable name="v_title-temp">
+                    <tei:title ref="{concat($p_acronym-wikidata, ':',tei:monogr/tei:idno[@type = $p_acronym-wikidata][1])}"/>
+                </xsl:variable>
+                <xsl:value-of select="oape:query-bibliography($v_title-temp/tei:title, $v_bibliography, '', $p_local-authority, 'id', '')"/>
+            </xsl:when>
+            <!-- linked through @ref -->
             <xsl:when test="tei:monogr/tei:title/@ref != 'NA'">
                 <xsl:value-of select="oape:query-bibliography(tei:monogr/tei:title[@ref != 'NA'][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
-                <xsl:if test="position() != last()">
-                    <xsl:text>,</xsl:text>
-                </xsl:if>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>INFO: found biblStruct not linked to the authority file</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
+        <xsl:if test="position() != last()">
+            <xsl:text>,</xsl:text>
+        </xsl:if>
     </xsl:template>
     <xsl:template match="node() | @*" mode="m_copy-from-source">
         <xsl:param name="p_depth-of-documentation" select="1"/>
@@ -244,44 +261,47 @@
             </xsl:when>
             <!-- check if the target is also mentioned in the source file -->
             <xsl:when test="matches($v_bibls-source-ids, concat($v_id-target, '(,|$)'))">
-                <xsl:message>
-                    <xsl:text>SUCCESS: The source contains data with the ID "</xsl:text>
-                    <xsl:value-of select="$v_id-target"/>
-                    <xsl:text>" to update the target</xsl:text>
-                </xsl:message>
                 <!-- get the source: this should only every return a single biblStruct -->
                 <!-- BUT  the source file could hold multiple biblStruct nodes pointing to the same biblStruct in the target -->
                 <xsl:variable name="v_source">
-                    <xsl:for-each select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref != 'NA']">
+                    <xsl:for-each
+                        select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title/@ref != 'NA' or tei:monogr/tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]]">
                         <!-- this function call is computationally expensive as it is invoked every time a match has been found in the source file -->
                         <xsl:variable name="v_id-source" select="oape:query-bibliography(tei:monogr/tei:title[@ref != 'NA'][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
+                        <xsl:variable name="v_id-source">
+                            <xsl:choose>
+                                <!-- linked through idno -->
+                                <xsl:when test="tei:monogr/tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]">
+                                    <xsl:value-of select="oape:query-biblstruct(., 'id', '', $v_gazetteer, $p_local-authority)"/>
+                                </xsl:when>
+                                <!-- linked through @ref -->
+                                <xsl:when test="tei:monogr/tei:title/@ref != 'NA'">
+                                    <xsl:value-of select="oape:query-bibliography(tei:monogr/tei:title[@ref != 'NA'][1], $v_bibliography, '', $p_local-authority, 'id', '')"/>
+                                </xsl:when>
+                            </xsl:choose>
+                        </xsl:variable>
                         <!-- match based on IDs -->
                         <xsl:if test="$v_id-source = $v_id-target">
                             <xsl:apply-templates mode="m_identity-transform" select="."/>
                         </xsl:if>
                     </xsl:for-each>
                 </xsl:variable>
-                <xsl:variable name="v_source-compiled">
-                    <xsl:choose>
-                        <xsl:when test="count($v_source/tei:biblStruct) = 2">
-                            <xsl:copy-of select="oape:merge-biblStruct($v_source/tei:biblStruct[2], $v_source/tei:biblStruct[1])"/>
-                        </xsl:when>
-                        <xsl:when test="count($v_source/tei:biblStruct) > 2">
-                            <xsl:message>
-                                <xsl:text>WARNING: The source contains more than two biblStruct for updating the target ID "</xsl:text>
-                                <xsl:value-of select="$v_id-target"/>
-                                <xsl:text>". Currently, only the FIRST TWO will be used.</xsl:text>
-                            </xsl:message>
-                            <xsl:copy-of select="oape:merge-biblStruct($v_source/tei:biblStruct[2], $v_source/tei:biblStruct[1])"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:copy-of select="$v_source/tei:biblStruct"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
+                <!--<xsl:variable name="v_source-compiled">
+                    <xsl:call-template name="t_merge-biblstructs">
+                        <xsl:with-param name="p_biblstructs" select="$v_source"/>
+                    </xsl:call-template>
                 </xsl:variable>
-                <!--                <xsl:copy-of select="oape:merge-nodes-2($v_source/descendant-or-self::tei:biblStruct, $v_target)"/>-->
-                <!-- TO DO: I currently only use the first biblStruct from the source -->
-                <xsl:copy-of select="oape:merge-biblStruct($v_source-compiled/tei:biblStruct, $v_target)"/>
+                <xsl:apply-templates select="oape:merge-2-biblStruct($v_source-compiled/tei:biblStruct, $v_target)" mode="m_post-process"/>-->
+                <xsl:variable name="v_target-source-compiled">
+                    <xsl:copy-of select="$v_target"/>
+                    <xsl:copy-of select="$v_source"/>
+                </xsl:variable>
+                <xsl:copy-of select="oape:merge-biblStructs($v_target-source-compiled)"/>
+                <xsl:message>
+                    <xsl:text>SUCCESS: The target was updated with data for "</xsl:text>
+                    <xsl:value-of select="$v_id-target"/>
+                    <xsl:text>" from the source</xsl:text>
+                </xsl:message>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:if test="$p_debug = true()">
@@ -294,7 +314,65 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:function name="oape:merge-biblStruct">
+    <xsl:function name="oape:merge-biblStructs">
+        <!-- assume a sorted input of multiple biblstructs -->
+        <xsl:param name="p_biblstructs" as="node()"/>
+        <xsl:variable name="v_count" select="count($p_biblstructs/descendant-or-self::tei:biblStruct)"/>
+        <xsl:if test="$p_debug = true()">
+            <xsl:message>
+                <xsl:text>There are </xsl:text>
+                <xsl:value-of select="$v_count"/>
+                <xsl:text> biblStruct to be merged</xsl:text>
+            </xsl:message>
+        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="$v_count = 1">
+                <xsl:copy-of select="$p_biblstructs"/>
+            </xsl:when>
+            <xsl:when test="$v_count = 2">
+                <xsl:apply-templates mode="m_post-process" select="oape:merge-2-biblStruct($p_biblstructs/descendant-or-self::tei:biblStruct[2], $p_biblstructs/descendant-or-self::tei:biblStruct[1])"
+                />
+            </xsl:when>
+            <xsl:when test="$v_count > 2">
+                <!-- merge the first two  -->
+                <xsl:variable name="v_merged">
+                    <xsl:apply-templates mode="m_post-process"
+                        select="oape:merge-2-biblStruct($p_biblstructs/descendant-or-self::tei:biblStruct[2], $p_biblstructs/descendant-or-self::tei:biblStruct[1])"/>
+                </xsl:variable>
+                <!-- combine the merged and the remaining biblStructs -->
+                <xsl:variable name="v_remaining">
+                    <xsl:copy-of select="$v_merged"/>
+                    <xsl:copy-of select="$p_biblstructs/descendant-or-self::tei:biblStruct[position() > 2]"/>
+                </xsl:variable>
+                <!-- call this template again -->
+                <xsl:copy-of select="oape:merge-biblStructs($v_remaining)"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:template match="node() | @*" mode="m_post-process">
+        <xsl:copy>
+            <xsl:apply-templates mode="m_post-process" select="@* | node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <!-- remove attributes in post processing -->
+    <xsl:template match="tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]/@source | tei:imprint/@source | tei:monogr/@source | tei:note/@source | node()[@xml:lang][empty(.)]/@xml:lang" mode="m_post-process" priority="10"/>
+    <xsl:template match="@source[parent::node()/@source]" priority="9"/>
+    <!-- try and unify overboarding source information -->
+    <xsl:template mode="m_post-process" match="@source">
+        <xsl:attribute name="source">
+            <xsl:for-each select="tokenize(., '\s+')">
+                <xsl:sort select="."/>
+                <xsl:value-of select="."/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="tei:title/text()" mode="m_post-process">
+        <xsl:value-of select="normalize-space(.)"/>
+    </xsl:template>
+    <xsl:function name="oape:merge-2-biblStruct">
         <xsl:param as="node()" name="p_source"/>
         <xsl:param as="node()" name="p_target"/>
         <!-- combine source and target -->
@@ -425,7 +503,7 @@
                             <xsl:with-param name="p_depth-of-merging" select="4"/>
                         </xsl:call-template>
                     </xsl:for-each-group>
-                     <xsl:for-each-group group-by="element()" select="$v_combined-imprint/tei:publisher[not(element()/@ref)]">
+                    <xsl:for-each-group group-by="element()" select="$v_combined-imprint/tei:publisher[not(element()/@ref)]">
                         <xsl:call-template name="t_merge-groups">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                             <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
@@ -521,7 +599,7 @@
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                             <xsl:with-param name="p_current-grouping-key" select="current-grouping-key()"/>
                             <xsl:with-param name="p_grouping-key-is-attribute-value" select="false()"/>
-                            <!-- decrease the depth of merging with increading progress -->
+                            <!-- decrease the depth of merging with increasing progress -->
                             <xsl:with-param name="p_depth-of-merging" select="$p_depth-of-merging - 1"/>
                         </xsl:call-template>
                     </xsl:for-each-group>
@@ -668,9 +746,10 @@
                     <xsl:text>Entries from </xsl:text>
                     <xsl:value-of select="$v_name-file"/>
                 </xsl:element>
-<!--                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>-->
+                <!--                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[not(tei:monogr/tei:title/@ref)]"/>-->
                 <!-- this condition will leas to many false positives -->
-                <xsl:apply-templates mode="m_copy-from-source" select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title[@ref = 'NA'][not(parent::tei:monogr/tei:title/@ref != 'NA')]]"/>
+                <xsl:apply-templates mode="m_copy-from-source"
+                    select="$v_bibls-source/descendant-or-self::tei:biblStruct[tei:monogr/tei:title[@ref = 'NA'][not(parent::tei:monogr/tei:title/@ref != 'NA')]]"/>
             </xsl:element>
         </xsl:copy>
     </xsl:template>
