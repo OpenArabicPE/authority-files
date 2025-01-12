@@ -317,7 +317,7 @@
                             <!-- even though the input claims that there is an entry in the authority file, there isn't -->
                             <xsl:otherwise>
                                 <xsl:message>
-                                    <xsl:text>There is no biblStruct with the </xsl:text>
+                                    <xsl:text>FAILURE: There is no biblStruct with the </xsl:text>
                                     <xsl:value-of select="$v_authority"/>
                                     <xsl:text>-ID </xsl:text>
                                     <xsl:value-of select="$v_idno"/>
@@ -2614,7 +2614,7 @@
             <xsl:when test="$v_corresponding-person = 'NA'">
                 <!--                <xsl:if test="$p_verbose = true()">-->
                 <xsl:message>
-                    <xsl:text> The input "</xsl:text>
+                    <xsl:text>FAILURE: The input "</xsl:text>
                     <xsl:value-of select="normalize-space($p_persname)"/>
                     <xsl:text>" was not found in authority file.</xsl:text>
                 </xsl:message>
