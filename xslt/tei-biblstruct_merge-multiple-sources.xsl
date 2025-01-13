@@ -476,7 +476,7 @@
                 <xsl:for-each-group group-by="@type" select="$v_combined-monogr/tei:idno">
                     <!-- this should match the established sort order -->
                     <xsl:sort select="current-grouping-key()"/>
-                    <xsl:sort select="replace(current-group(), '[^\d]', '')" data-type="number"/>
+                    <xsl:sort select="replace(current-group()[1], '[^\d]', '')" data-type="number"/>
                     <xsl:call-template name="t_merge-groups-by-text">
                         <xsl:with-param name="p_current-group" select="current-group()"/>
                     </xsl:call-template>
