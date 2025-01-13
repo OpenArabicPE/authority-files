@@ -19,10 +19,14 @@
         - this stylesheet failes on biblStruct in the target file with multiple monogr children
             - these multiple monogr children are all merged into one ...
             - therefore such biblStruct are not included in the merging process
-       - sorting of idno
-           - the content is alphanumeric but pure numbers should be sorted as such, i.e. 90 before 100
       - pubPlaces without placeName/@ref are omitted
       - some publishers go missing
+    -->
+    <!-- to dos: post-processing
+        - [x] @resp: group values
+        - [x] title/@ref: remove
+        - [ ] @source: remove less specific references to a file
+        - [x] sorting of idno: the content is alphanumeric but pure numbers should be sorted as such, i.e. 90 before 100
     -->
     <!-- NOTE 
         - that all biblStruct in the target file must have a local <idno> 
@@ -367,10 +371,12 @@
         </xsl:copy>
     </xsl:template>
     <!-- remove attributes in post processing -->
-    <xsl:template match="tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]/@source | tei:imprint/@source | tei:monogr/@source | tei:note/@source | node()[@xml:lang][empty(.)]/@xml:lang"
+    <xsl:template
+        match="tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]/@source | tei:imprint/@source | tei:monogr/@source | tei:note/@source | node()[@xml:lang][empty(.)]/@xml:lang | tei:title[@level = 'j']/@ref | node()[ancestor::tei:persName/@source]/@source"
         mode="m_post-process" priority="10"/>
     <xsl:template match="@source[parent::node()/@source]" priority="9"/>
     <!-- try and unify overboarding source information -->
+    <!-- clean: ending in '#' -->
     <xsl:template mode="m_post-process" match="@source">
         <xsl:attribute name="source">
             <xsl:for-each select="tokenize(., '\s+')">
@@ -380,6 +386,28 @@
                     <xsl:text> </xsl:text>
                 </xsl:if>
             </xsl:for-each>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template mode="m_post-process" match="@resp">
+        <xsl:attribute name="resp">
+            <xsl:for-each-group select="tokenize(., '\s+')" group-by=".">
+                <xsl:sort select="current-grouping-key()"/>
+                <xsl:value-of select="current-grouping-key()"/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each-group>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template mode="m_post-process" match="@change">
+        <xsl:attribute name="change">
+            <xsl:for-each-group select="tokenize(., '\s+')" group-by=".">
+                <xsl:sort select="current-grouping-key()"/>
+                <xsl:value-of select="current-grouping-key()"/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each-group>
         </xsl:attribute>
     </xsl:template>
     <xsl:template match="tei:title/text()" mode="m_post-process">
@@ -446,7 +474,9 @@
                 </xsl:merge>-->
                 <!-- idno -->
                 <xsl:for-each-group group-by="@type" select="$v_combined-monogr/tei:idno">
+                    <!-- this should match the established sort order -->
                     <xsl:sort select="current-grouping-key()"/>
+                    <xsl:sort select="replace(current-group(), '[^\d]', '')" data-type="number"/>
                     <xsl:call-template name="t_merge-groups-by-text">
                         <xsl:with-param name="p_current-group" select="current-group()"/>
                     </xsl:call-template>
