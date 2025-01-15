@@ -365,54 +365,7 @@
             </xsl:when>
         </xsl:choose>
     </xsl:function>
-    <xsl:template match="node() | @*" mode="m_post-process">
-        <xsl:copy>
-            <xsl:apply-templates mode="m_post-process" select="@* | node()"/>
-        </xsl:copy>
-    </xsl:template>
-    <!-- remove attributes in post processing -->
-    <xsl:template
-        match="tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]/@source | tei:imprint/@source | tei:monogr/@source | tei:note/@source | node()[@xml:lang][empty(.)]/@xml:lang | tei:title[@level = 'j']/@ref | node()[ancestor::tei:persName/@source]/@source"
-        mode="m_post-process" priority="10"/>
-    <xsl:template match="@source[parent::node()/@source]" priority="9"/>
-    <!-- try and unify overboarding source information -->
-    <!-- clean: ending in '#' -->
-    <xsl:template mode="m_post-process" match="@source">
-        <xsl:attribute name="source">
-            <xsl:for-each select="tokenize(., '\s+')">
-                <xsl:sort select="."/>
-                <xsl:value-of select="."/>
-                <xsl:if test="position() != last()">
-                    <xsl:text> </xsl:text>
-                </xsl:if>
-            </xsl:for-each>
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template mode="m_post-process" match="@resp">
-        <xsl:attribute name="resp">
-            <xsl:for-each-group select="tokenize(., '\s+')" group-by=".">
-                <xsl:sort select="current-grouping-key()"/>
-                <xsl:value-of select="current-grouping-key()"/>
-                <xsl:if test="position() != last()">
-                    <xsl:text> </xsl:text>
-                </xsl:if>
-            </xsl:for-each-group>
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template mode="m_post-process" match="@change">
-        <xsl:attribute name="change">
-            <xsl:for-each-group select="tokenize(., '\s+')" group-by=".">
-                <xsl:sort select="current-grouping-key()"/>
-                <xsl:value-of select="current-grouping-key()"/>
-                <xsl:if test="position() != last()">
-                    <xsl:text> </xsl:text>
-                </xsl:if>
-            </xsl:for-each-group>
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="tei:title/text()" mode="m_post-process">
-        <xsl:value-of select="normalize-space(.)"/>
-    </xsl:template>
+    
     <xsl:function name="oape:merge-2-biblStruct">
         <xsl:param as="node()" name="p_source"/>
         <xsl:param as="node()" name="p_target"/>
@@ -557,8 +510,10 @@
                     <!-- date -->
                     <!-- NOTE: there are 200+ dates without @type in the target -->
                     <xsl:for-each-group group-by="@type" select="$v_combined-imprint/tei:date[@type]">
-                        <xsl:sort select="current-group()[@when][1]/@when"/>
+                        <!-- sort by type -->
                         <xsl:sort select="current-grouping-key()"/>
+                        <!-- sort by date -->
+                        <xsl:sort select="current-group()[@when][1]/@when"/>
                         <xsl:call-template name="t_merge-groups-attr.datable">
                             <xsl:with-param name="p_current-group" select="current-group()"/>
                         </xsl:call-template>

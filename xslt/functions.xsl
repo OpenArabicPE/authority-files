@@ -4066,4 +4066,56 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <!-- post-processing -->
+    <xsl:template match="node() | @*" mode="m_post-process">
+        <xsl:copy>
+            <xsl:apply-templates mode="m_post-process" select="@* | node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <!-- remove attributes in post processing -->
+    <xsl:template
+        match="tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]/@source |  node()[@xml:lang][empty(.)]/@xml:lang | tei:monogr/tei:title[@level = 'j']/@ref[not('NA')] | node()[ancestor::tei:persName/@source]/@source"
+        mode="m_post-process" priority="10"/>
+    <xsl:template match="tei:imprint/@source | tei:monogr/@source | tei:note/@source" mode="m_off" priority="10"/>
+    <xsl:template match="tei:imprint[@source = node()/@source]/@source" mode="m_post-process" priority="10"/>
+    <xsl:template match="tei:pubPlace[@source = node()/@source]/@source" mode="m_post-process" priority="10"/>
+<!--    <xsl:template match="@source[. = parent::node()/parent::node()/@source]" mode="m_post-process" priority="9"/>-->
+    <!-- try and unify overboarding source information -->
+    <!-- clean: ending in '#' -->
+    <xsl:template mode="m_post-process" match="@source">
+        <xsl:attribute name="source">
+            <xsl:for-each select="tokenize(., '\s+')">
+                <xsl:sort select="."/>
+                <xsl:value-of select="."/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template mode="m_post-process" match="@resp">
+        <xsl:attribute name="resp">
+            <xsl:for-each-group select="tokenize(., '\s+')" group-by=".">
+                <xsl:sort select="current-grouping-key()"/>
+                <xsl:value-of select="current-grouping-key()"/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each-group>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template mode="m_post-process" match="@change">
+        <xsl:attribute name="change">
+            <xsl:for-each-group select="tokenize(., '\s+')" group-by=".">
+<!--                <xsl:sort select="current-grouping-key()"/>-->
+                <xsl:value-of select="current-grouping-key()"/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each-group>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="tei:title/text()" mode="m_post-process">
+        <xsl:value-of select="normalize-space(.)"/>
+    </xsl:template>
 </xsl:stylesheet>
