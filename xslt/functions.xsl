@@ -643,9 +643,7 @@
                     <!-- possible transcriptions into other script -->
                     <!-- type of transcription provided in p_output-language -->
                     <xsl:when test="$v_monogr/tei:title[matches(@xml:lang, concat($v_mainLang, '-', $p_output-language))]">
-                        <xsl:value-of
-                            select="normalize-space($v_monogr[1]/tei:title[matches(@xml:lang, concat($v_mainLang, '-', $p_output-language))][1])"
-                        />
+                        <xsl:value-of select="normalize-space($v_monogr[1]/tei:title[matches(@xml:lang, concat($v_mainLang, '-', $p_output-language))][1])"/>
                     </xsl:when>
                     <!-- possible transcriptions into other script -->
                     <xsl:when test="($p_output-language = 'ar') and ($v_monogr/tei:title[contains(@xml:lang, '-Arab-')])">
@@ -694,12 +692,12 @@
                 <xsl:value-of select="$v_otherLangs"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'langs'">
-                <xsl:for-each-group select="$v_monogr/tei:textLang/@mainLang" group-by=".">
+                <xsl:for-each-group group-by="." select="$v_monogr/tei:textLang/@mainLang">
                     <xsl:element name="lang">
                         <xsl:value-of select="current-grouping-key()"/>
                     </xsl:element>
                 </xsl:for-each-group>
-                <xsl:for-each-group select="tokenize($v_monogr/tei:textLang/@otherLangs, ' ')" group-by=".">
+                <xsl:for-each-group group-by="." select="tokenize($v_monogr/tei:textLang/@otherLangs, ' ')">
                     <xsl:element name="lang">
                         <xsl:value-of select="current-grouping-key()"/>
                     </xsl:element>
@@ -1415,8 +1413,8 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-             <xsl:when test="$p_output-mode = 'name'">
-                 <xsl:value-of select="normalize-space(oape:query-org($p_org, 'name-tei', $p_output-language, $p_local-authority))"/>
+            <xsl:when test="$p_output-mode = 'name'">
+                <xsl:value-of select="normalize-space(oape:query-org($p_org, 'name-tei', $p_output-language, $p_local-authority))"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'url'">
                 <xsl:choose>
@@ -1634,7 +1632,7 @@
                         <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')])">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')][1]"/>
                         </xsl:when>
-                         <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')])">
+                        <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')])">
                             <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')][1]"/>
                         </xsl:when>
                         <!-- fallback to english -->
@@ -2618,6 +2616,23 @@
                     <xsl:value-of select="normalize-space($p_persname)"/>
                     <xsl:text>" was not found in authority file.</xsl:text>
                 </xsl:message>
+                <xsl:variable name="v_person">
+                    <xsl:variable name="v_persName">
+                        <xsl:apply-templates mode="m_copy-from-source" select="$p_persname"/>
+                    </xsl:variable>
+                    <person>
+                        <persName>
+                            <!-- add attributes -->
+                            <xsl:apply-templates mode="m_copy-from-source" select="$v_persName/tei:persName/@*"/>
+                            <!-- add mark-up -->
+                            <xsl:copy-of select="oape:string-mark-up-names($p_persname, $p_id-change)"/>
+                        </persName>
+                    </person>
+                </xsl:variable>
+                <xsl:message terminate="yes">
+                    <xsl:text>Add </xsl:text>
+                    <xsl:copy-of select="$v_person"/>
+                </xsl:message>
                 <!--</xsl:if>-->
                 <xsl:copy select="$p_persname">
                     <xsl:attribute name="ref" select="'NA'"/>
@@ -2804,7 +2819,7 @@
         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
         <!-- NOTE: when the input links to an entity NOT FOUND in the authority, this link should probably be retained -->
         <!-- check if one could go through $v_biblStruct: works -->
-<!--         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file( $v_biblStruct//tei:monogr/tei:title[1], $p_local-authority, $p_bibliography)"/>-->
+        <!--         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file( $v_biblStruct//tei:monogr/tei:title[1], $p_local-authority, $p_bibliography)"/>-->
         <!-- step 2: filter by publication date  -->
         <xsl:variable name="v_corresponding-bibls">
             <xsl:message>
@@ -2825,9 +2840,8 @@
                         1. assuming we have known dates of first publication for all bibls: dates should NOT DIFFER by more than x years
                         2. the reference to be linked CANNOT have been published BEFORE the source in the authority file
                     -->
-                    <xsl:when test="($v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA') and 
-                         ($v_year-publication lt $v_corresponding-bibl-year) and
-                        (floor($v_year-publication - $v_corresponding-bibl-year) &gt; $v_margin)">
+                    <xsl:when
+                        test="($v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA') and ($v_year-publication lt $v_corresponding-bibl-year) and (floor($v_year-publication - $v_corresponding-bibl-year) &gt; $v_margin)">
                         <xsl:message>
                             <xsl:value-of select="$v_string-pipe"/>
                             <xsl:text>WARNING</xsl:text>
@@ -2840,7 +2854,6 @@
                             <xsl:value-of select="$v_string-pipe"/>
                         </xsl:message>
                     </xsl:when>
-                    
                     <!-- our authority files contain multiple <biblStruct> for a single logical publication in the case when editors, subtitles, places of publication etc. have changed. They are tied together by @next and @prev attributes
                            - we could establish which of those is in closes temporal proximity to the current text, the references occur in 
                            - we could compile these biblStruct into a single one.
@@ -2856,7 +2869,8 @@
             <xsl:choose>
                 <!-- match based on IDs from authority files: the list is currently hard coded -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]">
-                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = $p_acronym-wikidata] = $v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]][1]"/>
+                    <xsl:copy-of
+                        select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = $p_acronym-wikidata] = $v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]][1]"/>
                     <xsl:message>
                         <xsl:text>Found a match based on Wikidata ID</xsl:text>
                     </xsl:message>
@@ -2868,7 +2882,7 @@
                         <xsl:text>Found a match based on Worldcat ID</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                 <!-- LCCN -->
+                <!-- LCCN -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'LCCN'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'LCCN']">
                     <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'LCCN'] = $v_biblStruct/descendant::tei:idno[@type = 'LCCN']][1]"/>
                     <xsl:message>
@@ -3660,7 +3674,7 @@
             </xsl:if>
         </xsl:element>
         <!-- add trailing whitespace: why? -->
-<!--        <xsl:text> </xsl:text>-->
+        <!--        <xsl:text> </xsl:text>-->
     </xsl:template>
     <!-- why do we need this function here -->
     <xsl:template match="tei:bibl" mode="m_bibl-to-biblStruct">
@@ -4074,15 +4088,15 @@
     </xsl:template>
     <!-- remove attributes in post processing -->
     <xsl:template
-        match="tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]/@source |  node()[@xml:lang][empty(.)]/@xml:lang | tei:monogr/tei:title[@level = 'j']/@ref[not('NA')] | node()[ancestor::tei:persName/@source]/@source"
+        match="tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]/@source | node()[@xml:lang][empty(.)]/@xml:lang | tei:monogr/tei:title[@level = 'j']/@ref[not('NA')] | node()[ancestor::tei:persName/@source]/@source"
         mode="m_post-process" priority="10"/>
     <xsl:template match="tei:imprint/@source | tei:monogr/@source | tei:note/@source" mode="m_off" priority="10"/>
     <xsl:template match="tei:imprint[@source = node()/@source]/@source" mode="m_post-process" priority="10"/>
     <xsl:template match="tei:pubPlace[@source = node()/@source]/@source" mode="m_post-process" priority="10"/>
-<!--    <xsl:template match="@source[. = parent::node()/parent::node()/@source]" mode="m_post-process" priority="9"/>-->
+    <!--    <xsl:template match="@source[. = parent::node()/parent::node()/@source]" mode="m_post-process" priority="9"/>-->
     <!-- try and unify overboarding source information -->
     <!-- clean: ending in '#' -->
-    <xsl:template mode="m_post-process" match="@source">
+    <xsl:template match="@source" mode="m_post-process">
         <xsl:attribute name="source">
             <xsl:for-each select="tokenize(., '\s+')">
                 <xsl:sort select="."/>
@@ -4093,9 +4107,9 @@
             </xsl:for-each>
         </xsl:attribute>
     </xsl:template>
-    <xsl:template mode="m_post-process" match="@resp">
+    <xsl:template match="@resp" mode="m_post-process">
         <xsl:attribute name="resp">
-            <xsl:for-each-group select="tokenize(., '\s+')" group-by=".">
+            <xsl:for-each-group group-by="." select="tokenize(., '\s+')">
                 <xsl:sort select="current-grouping-key()"/>
                 <xsl:value-of select="current-grouping-key()"/>
                 <xsl:if test="position() != last()">
@@ -4104,10 +4118,10 @@
             </xsl:for-each-group>
         </xsl:attribute>
     </xsl:template>
-    <xsl:template mode="m_post-process" match="@change">
+    <xsl:template match="@change" mode="m_post-process">
         <xsl:attribute name="change">
-            <xsl:for-each-group select="tokenize(., '\s+')" group-by=".">
-<!--                <xsl:sort select="current-grouping-key()"/>-->
+            <xsl:for-each-group group-by="." select="tokenize(., '\s+')">
+                <!--                <xsl:sort select="current-grouping-key()"/>-->
                 <xsl:value-of select="current-grouping-key()"/>
                 <xsl:if test="position() != last()">
                     <xsl:text> </xsl:text>
