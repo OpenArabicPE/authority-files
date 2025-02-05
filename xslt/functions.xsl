@@ -1774,6 +1774,49 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <!-- this function takes a number of tei:date nodes as input and returns an ISO string -->
+    <xsl:function name="oape:dates-get-maxima">
+        <xsl:param name="p_dates"/>
+        <xsl:param name="p_maximum" as="xs:string"/>
+        <xsl:variable name="v_dates-jd">
+            <xsl:for-each select="$p_dates/self::tei:date">
+                <xsl:variable name="v_date-maximum">
+                    <xsl:if test="$p_maximum = 'onset'">
+                        <xsl:value-of select="oape:date-get-onset(.)"/>
+                    </xsl:if>
+                    <xsl:if test="$p_maximum = 'terminus'">
+                        <xsl:value-of select="oape:date-get-terminus(.)"/>
+                    </xsl:if>
+                </xsl:variable>
+                <xsl:variable name="v_date-normalised">
+                    <xsl:if test="$p_maximum = 'onset'">
+                        <xsl:value-of select="if(matches($v_date-maximum, '\d{4}-\d{2}-\d{2}')) then($v_date-maximum) else(concat($v_date-maximum, '-01-01'))"/>
+                    </xsl:if>
+                    <xsl:if test="$p_maximum = 'terminus'">
+                        <xsl:value-of select="if(matches($v_date-maximum, '\d{4}-\d{2}-\d{2}')) then($v_date-maximum) else(concat($v_date-maximum, '-12-31'))"/>
+                    </xsl:if>
+                </xsl:variable>
+                <xsl:copy>
+                    <xsl:value-of select="oape:date-convert-date-to-julian-day($v_date-normalised, '#cal_gregorian')"/>
+                </xsl:copy>
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="$p_maximum = 'onset'">
+                <xsl:value-of select="oape:date-convert-julian-day-to-date(min($v_dates-jd/tei:date), '#cal_gregorian')"/>
+            </xsl:when>
+            <xsl:when test="$p_maximum = 'terminus'">
+                <xsl:value-of select="oape:date-convert-julian-day-to-date(max($v_dates-jd/tei:date), '#cal_gregorian')"/>
+            </xsl:when>
+            <!-- faulty param -->
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>The value of $p_maximum must be either "onset" or "terminus"</xsl:text>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+        
+    </xsl:function>
     <!-- this function returns the first node in a series of nodes linked with @prev  -->
     <xsl:function name="oape:find-first-part">
         <xsl:param as="node()" name="p_node"/>
@@ -2629,7 +2672,7 @@
                         </persName>
                     </person>
                 </xsl:variable>
-                <xsl:message terminate="yes">
+                <xsl:message terminate="no">
                     <xsl:text>Add </xsl:text>
                     <xsl:copy-of select="$v_person"/>
                 </xsl:message>
