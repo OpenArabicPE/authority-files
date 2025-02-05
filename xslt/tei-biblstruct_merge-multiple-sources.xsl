@@ -35,6 +35,8 @@
     -->
     <xsl:import href="functions.xsl"/>
     <xsl:param name="p_include-bibl" select="false()"/>
+    <xsl:param name="p_merge-bibl" select="true()"/>
+    <xsl:param name="p_merge-holdings" select="true()"/>
     <!-- define the target -->
     <xsl:variable name="v_bibliography-target">
         <xsl:choose>
@@ -332,7 +334,7 @@
     </xsl:template>
     <xsl:function name="oape:merge-biblStructs">
         <!-- assume a sorted input of multiple biblstructs -->
-        <xsl:param name="p_biblstructs" as="node()"/>
+        <xsl:param as="node()" name="p_biblstructs"/>
         <xsl:variable name="v_count" select="count($p_biblstructs/descendant-or-self::tei:biblStruct)"/>
         <!--        <xsl:if test="$p_debug = true()">-->
         <xsl:message>
@@ -365,21 +367,25 @@
             </xsl:when>
         </xsl:choose>
     </xsl:function>
-    
     <xsl:function name="oape:merge-2-biblStruct">
         <xsl:param as="node()" name="p_source"/>
         <xsl:param as="node()" name="p_target"/>
         <!-- combine source and target -->
         <xsl:variable name="v_combined-monogr">
             <xsl:copy-of select="$p_target/tei:monogr/element()"/>
-            <xsl:copy-of select="$p_source/tei:monogr/element()"/>
+            <xsl:if test="$p_merge-bibl = true()">
+                <xsl:copy-of select="$p_source/tei:monogr/element()"/>
+            </xsl:if>
         </xsl:variable>
         <xsl:variable name="v_combined-imprint">
             <xsl:copy-of select="$v_combined-monogr/tei:imprint/element()"/>
         </xsl:variable>
         <xsl:variable name="v_combined-note">
             <xsl:copy-of select="$p_target/tei:note"/>
-            <xsl:copy-of select="$p_source/tei:note"/>
+            <xsl:copy-of select="$p_source/tei:note[not(@type = 'holdings')]"/>
+            <xsl:if test="$p_merge-holdings = true()">
+                <xsl:copy-of select="$p_source/tei:note[@type = 'holdings']"/>
+            </xsl:if>
         </xsl:variable>
         <xsl:copy select="$p_target">
             <!-- merge attributes -->
@@ -429,7 +435,7 @@
                 <xsl:for-each-group group-by="@type" select="$v_combined-monogr/tei:idno">
                     <!-- this should match the established sort order -->
                     <xsl:sort select="current-grouping-key()"/>
-                    <xsl:sort select="replace(current-group()[1], '[^\d]', '')" data-type="number"/>
+                    <xsl:sort data-type="number" select="replace(current-group()[1], '[^\d]', '')"/>
                     <xsl:call-template name="t_merge-groups-by-text">
                         <xsl:with-param name="p_current-group" select="current-group()"/>
                     </xsl:call-template>
