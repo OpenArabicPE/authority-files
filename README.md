@@ -99,7 +99,9 @@ This repository holds the authority files for three research projects in Arab Pe
 
 ## bibliography
 
-- `tei-biblstruct_merge-multiple-sources.xsl`: Stylesheet to merge `<bibl>` and `<biblStruct>` from source files into the bibliography based on the `tei:title/@ref` values. 
+- `tei-biblstruct_merge-multiple-sources.xsl`: Stylesheet to merge `<bibl>` and `<biblStruct>` from source files into the bibliography based on the `tei:title/@ref` values.
+    - This works best when one first runs `convert_tei-to-bibliographic-data/xslt/convert_tei-to-biblstruct_bibl.xsl`
+    - run general improvements afterwards and make sure that the sources section doesn't get botched
 
 
 XSLT to copy data from biblio-biographic dictionaries, such as Zirikli to the bibliography
