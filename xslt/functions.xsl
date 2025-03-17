@@ -57,6 +57,18 @@
         </xsl:variable>
         <xsl:value-of select="oape:string-remove-harakat($v_output)"/>
     </xsl:function>
+    <!-- this utilises 1:1 replacements -->
+    <xsl:function name="oape:string-normalise-latin">
+        <xsl:param name="p_input"/>
+        <xsl:variable name="v_alphabet-ascii" select="'aaabccddefggghhhiiiijkklmnoopqrsssstttuuuvwxyzz'"/>
+        <xsl:variable name="v_alphabet-latin" select="'aäâbcçdḍefgğġhḥḫiîıİjkḳlmnoöpqrsšşṣṭṯtuüûvwxyzẓ'"/>
+        <xsl:value-of select="translate(lower-case($p_input), $v_alphabet-latin, $v_alphabet-ascii)"/>
+    </xsl:function>
+    <xsl:function name="oape:string-normalise-all">
+        <xsl:param name="p_input"/>
+        <xsl:value-of select="normalize-space(oape:string-normalise-arabic(oape:string-normalise-latin($p_input)))"/>
+    </xsl:function>
+
     <xsl:function name="oape:string-remove-characters">
         <xsl:param as="xs:string" name="p_input"/>
         <xsl:param name="p_string-match"/>
@@ -348,7 +360,8 @@
                     </xsl:message>
                 </xsl:if>
                 <!-- this fails for nested entities -->
-                <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-arabic(string($p_entity-name)))"/>
+                <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-all(string($p_entity-name)))"/>
+                <!-- TO DO: normalise Latin-script to ASCII by removing all diacritics etc.-->
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
                         <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity-name, '', $v_id-change)"/>
@@ -368,13 +381,13 @@
                         <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, '', $v_id-change)"/>
                         <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, '', $v_id-change)"/>
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:person/tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                            <xsl:when test="$p_authority-file//tei:person/tei:persName[oape:string-normalise-all(.) = $v_name-normalised]">
                                 <xsl:if test="$p_debug = true()">
                                     <xsl:message>
                                         <xsl:text>The normalised name is found in the personography</xsl:text>
                                     </xsl:message>
                                 </xsl:if>
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName[oape:string-normalise-all(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flattened]">
                                 <xsl:if test="$p_debug = true()">
@@ -407,8 +420,8 @@
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'org'">
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:org/tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:org[tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
+                            <xsl:when test="$p_authority-file//tei:org/tei:orgName[oape:string-normalise-all(.) = $v_name-normalised]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:org[tei:orgName[oape:string-normalise-all(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
@@ -423,8 +436,8 @@
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'place'">
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:place[tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
+                            <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-all(.) = $v_name-normalised]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:place[tei:placeName[oape:string-normalise-all(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
@@ -444,14 +457,14 @@
                             </xsl:message>
                         </xsl:if>
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-all(.) = $v_name-normalised]">
                                 <xsl:if test="$p_verbose = true()">
                                     <xsl:message>
                                         <xsl:text>Returning a match solely based on the title</xsl:text>
                                     </xsl:message>
                                 </xsl:if>
                                 <!-- problem: this should return more than one match!!!!! -->
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]]"/>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title[oape:string-normalise-all(.) = $v_name-normalised]]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
@@ -2350,7 +2363,7 @@
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
         <!-- flatened version of the persName without non-word characters -->
-        <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-arabic($p_placename))"/>
+        <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-all($p_placename))"/>
         <!-- this can potentially return multiple places if the toponym matches to multiple places -->
         <xsl:variable name="v_corresponding-place">
             <xsl:choose>
@@ -2363,11 +2376,11 @@
                     <xsl:copy-of select="oape:get-entity-from-authority-file($p_placename, $p_local-authority, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
-                <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-all(.) = $v_name-normalised]">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>The normalised input has been found in the authority file</xsl:message>
                     </xsl:if>
-                    <xsl:copy-of select="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]/parent::tei:place"/>
+                    <xsl:copy-of select="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-all(.) = $v_name-normalised]/parent::tei:place"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="$p_verbose = true()">
@@ -2442,7 +2455,7 @@
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
         <!-- flatened version of the persName without non-word characters -->
-        <xsl:variable name="v_name-normalised" select="lower-case(normalize-space(oape:string-normalise-arabic($p_orgname)))"/>
+        <xsl:variable name="v_name-normalised" select="oape:string-normalise-all($p_orgname)"/>
         <!-- this can potentially return multiple places if the toponym matches to multiple places -->
         <xsl:variable name="v_corresponding-org">
             <xsl:choose>
@@ -2455,11 +2468,11 @@
                     <xsl:copy-of select="oape:get-entity-from-authority-file($p_orgname, $p_local-authority, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
-                <xsl:when test="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-arabic(.)) = $v_name-normalised]">
+                <xsl:when test="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-all(.)) = $v_name-normalised]">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>The normalised input has been found in the authority file</xsl:message>
                     </xsl:if>
-                    <xsl:copy-of select="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-arabic(.)) = $v_name-normalised]/parent::tei:org"/>
+                    <xsl:copy-of select="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-all(.)) = $v_name-normalised]/parent::tei:org"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="$p_verbose = true()">
