@@ -1,1 +1,65 @@
-{"name":"jaraid_periodical-pubPlace","schema":{"entityEdits":[{"type":"wbitemeditexpr","subject":{"type":"wbentityvariable","columnName":"item - xml:id"},"statementGroups":[{"property":{"type":"wbpropconstant","pid":"P291","label":"place of publication","datatype":"wikibase-item"},"statements":[{"value":{"type":"wbentityvariable","columnName":"item - P291 - string"},"qualifiers":[],"references":[{"snaks":[{"prop":{"type":"wbpropconstant","pid":"P248","label":"stated in","datatype":"wikibase-item"},"value":{"type":"wbentityvariable","columnName":"item - P291 - P248"}}]}],"mode":"add_or_merge","mergingStrategy":{"type":"snak","valueMatcher":{"type":"lax"}}}]}],"nameDescs":[]}],"siteIri":"http://www.wikidata.org/entity/","entityTypeSiteIRI":{"item":"http://www.wikidata.org/entity/","property":"http://www.wikidata.org/entity/"},"mediaWikiApiEndpoint":"https://www.wikidata.org/w/api.php"}}
+{
+    "name": "jaraid_periodical-pubPlace",
+    "schema": {
+        "entityEdits": [
+            {
+                "nameDescs": [],
+                "statementGroups": [
+                    {
+                        "property": {
+                            "datatype": "wikibase-item",
+                            "label": "place of publication",
+                            "pid": "P291",
+                            "type": "wbpropconstant"
+                        },
+                        "statements": [
+                            {
+                                "mergingStrategy": {
+                                    "type": "snak",
+                                    "valueMatcher": {
+                                        "type": "lax"
+                                    }
+                                },
+                                "mode": "add_or_merge",
+                                "qualifiers": [],
+                                "references": [
+                                    {
+                                        "snaks": [
+                                            {
+                                                "prop": {
+                                                    "datatype": "wikibase-item",
+                                                    "label": "stated in",
+                                                    "pid": "P248",
+                                                    "type": "wbpropconstant"
+                                                },
+                                                "value": {
+                                                    "columnName": "item - P291 - P248",
+                                                    "type": "wbentityvariable"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "value": {
+                                    "columnName": "item - P291 - string",
+                                    "type": "wbentityvariable"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "subject": {
+                    "columnName": "item - xml:id",
+                    "type": "wbentityvariable"
+                },
+                "type": "wbitemeditexpr"
+            }
+        ],
+        "entityTypeSiteIRI": {
+            "item": "http://www.wikidata.org/entity/",
+            "property": "http://www.wikidata.org/entity/"
+        },
+        "mediaWikiApiEndpoint": "https://www.wikidata.org/w/api.php",
+        "siteIri": "http://www.wikidata.org/entity/"
+    }
+}
