@@ -1,1 +1,90 @@
-{"name":"jaraid_periodical_holdings","schema":{"entityEdits":[{"type":"wbitemeditexpr","subject":{"type":"wbentityvariable","columnName":"item - xml:id"},"statementGroups":[{"property":{"type":"wbpropconstant","pid":"P195","label":"collection","datatype":"wikibase-item"},"statements":[{"value":{"type":"wbentityvariable","columnName":"item - P195 - QItem"},"qualifiers":[{"prop":{"type":"wbpropconstant","pid":"P217","label":"inventory number","datatype":"string"},"value":{"type":"wbstringvariable","columnName":"item - P195 - P217 - string"}},{"prop":{"type":"wbpropconstant","pid":"P953","label":"full work available at URL","datatype":"url"},"value":{"type":"wbstringvariable","columnName":"item - P195 - P953 - string"}}],"references":[{"snaks":[{"prop":{"type":"wbpropconstant","pid":"P854","label":"reference URL","datatype":"url"},"value":{"type":"wbstringvariable","columnName":"item - P195 - P854"}}]}],"mode":"add_or_merge","mergingStrategy":{"type":"snak","valueMatcher":{"type":"lax"}}}]}],"nameDescs":[]}],"siteIri":"http://www.wikidata.org/entity/","entityTypeSiteIRI":{"item":"http://www.wikidata.org/entity/","property":"http://www.wikidata.org/entity/"},"mediaWikiApiEndpoint":"https://www.wikidata.org/w/api.php"}}
+{
+    "name": "jaraid_periodical-holdings",
+    "schema": {
+        "entityEdits": [
+            {
+                "nameDescs": [],
+                "statementGroups": [
+                    {
+                        "property": {
+                            "datatype": "wikibase-item",
+                            "label": "collection",
+                            "pid": "P195",
+                            "type": "wbpropconstant"
+                        },
+                        "statements": [
+                            {
+                                "mergingStrategy": {
+                                    "type": "snak",
+                                    "valueMatcher": {
+                                        "type": "lax"
+                                    }
+                                },
+                                "mode": "add_or_merge",
+                                "qualifiers": [
+                                    {
+                                        "prop": {
+                                            "datatype": "string",
+                                            "label": "inventory number",
+                                            "pid": "P217",
+                                            "type": "wbpropconstant"
+                                        },
+                                        "value": {
+                                            "columnName": "item - P195 - P217 - string",
+                                            "type": "wbstringvariable"
+                                        }
+                                    },
+                                    {
+                                        "prop": {
+                                            "datatype": "url",
+                                            "label": "full work available at URL",
+                                            "pid": "P953",
+                                            "type": "wbpropconstant"
+                                        },
+                                        "value": {
+                                            "columnName": "item - P195 - P953 - string",
+                                            "type": "wbstringvariable"
+                                        }
+                                    }
+                                ],
+                                "references": [
+                                    {
+                                        "snaks": [
+                                            {
+                                                "prop": {
+                                                    "datatype": "url",
+                                                    "label": "reference URL",
+                                                    "pid": "P854",
+                                                    "type": "wbpropconstant"
+                                                },
+                                                "value": {
+                                                    "columnName": "item - P195 - P854",
+                                                    "type": "wbstringvariable"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "value": {
+                                    "columnName": "item - P195 - QItem",
+                                    "type": "wbentityvariable"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "subject": {
+                    "columnName": "item - xml:id",
+                    "type": "wbentityvariable"
+                },
+                "type": "wbitemeditexpr"
+            }
+        ],
+        "entityTypeSiteIRI": {
+            "item": "http://www.wikidata.org/entity/",
+            "property": "http://www.wikidata.org/entity/"
+        },
+        "mediaWikiApiEndpoint": "https://www.wikidata.org/w/api.php",
+        "siteIri": "http://www.wikidata.org/entity/"
+    }
+}
