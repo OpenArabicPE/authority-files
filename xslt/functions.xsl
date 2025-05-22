@@ -886,6 +886,21 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <!-- provide output for volume and issues -->
+            <xsl:when test="$p_output-mode = ('volume', 'issue')">
+                <xsl:choose>
+                    <xsl:when test="$v_monogr/tei:biblScope[@unit = $p_output-mode]">
+                        <xsl:value-of select="$v_monogr/tei:biblScope[@unit = $p_output-mode]/@from"/>
+                        <xsl:if test="$v_monogr/tei:biblScope[@unit = $p_output-mode][@from lt @to]">
+                            <xsl:text>-</xsl:text>
+                            <xsl:value-of select="$v_monogr/tei:biblScope[@unit = $p_output-mode]/@to"/>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <!-- count known holdings -->
             <xsl:when test="$p_output-mode = 'holdings'">
                 <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item)"/>
@@ -949,7 +964,8 @@
                     <xsl:attribute name="when">
                         <xsl:choose>
                             <xsl:when test="@type = 'onset'">
-                                <xsl:value-of select="concat($v_temp, '-12-31')"/>
+                                <!-- for some applications it seems preferable to set this to -12-31, but I forgot which -->
+                                <xsl:value-of select="concat($v_temp, '-01-01')"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="concat($v_temp, '-12-31')"/>
