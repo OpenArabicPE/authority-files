@@ -617,6 +617,16 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <xsl:when test="$p_output-mode = ('id-hathi', 'ht_bib_key')">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'ht_bib_key']">
+                        <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = 'ht_bib_key'][1]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <xsl:when test="$p_output-mode = 'tei-ref'">
                 <xsl:choose>
                     <xsl:when test="$p_bibl/descendant::tei:idno[not(@type = 'URI')]">
