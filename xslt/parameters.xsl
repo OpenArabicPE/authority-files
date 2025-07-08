@@ -31,6 +31,7 @@
     <xsl:param name="p_url-resolve-geonames" select="'https://geonames.org/'"/>
     <xsl:param name="p_url-resolve-jid" select="'https://archive.alsharekh.org/magazineYears/'"/>
     <xsl:param name="p_url-resolve-oclc" select="'https://worldcat.org/oclc/'"/>
+    <xsl:param name="p_url-resolve-nloi_periodicals" select="'https://www.nli.org.il/he/journals/NNL-Journals'"/>
     <xsl:param name="p_url-resolve-hathi" select="'https://catalog.hathitrust.org/Record/'"/>
     <xsl:param name="p_url-resolve-shamela" select="'http://shamela.ws/index.php/book/'"/>
     <xsl:param name="p_url-resolve-zdb" select="'https://ld.zdb-services.de/resource/'"/>
