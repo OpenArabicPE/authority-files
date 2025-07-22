@@ -68,7 +68,6 @@
         <xsl:param name="p_input"/>
         <xsl:value-of select="normalize-space(oape:string-normalise-arabic(oape:string-normalise-latin($p_input)))"/>
     </xsl:function>
-
     <xsl:function name="oape:string-remove-characters">
         <xsl:param as="xs:string" name="p_input"/>
         <xsl:param name="p_string-match"/>
@@ -123,16 +122,7 @@
         <!--        <xsl:if test="$p_entity-name/@ref or $p_entity-name != ''">-->
         <!-- this is a rather ridiculous hack, but I don't need change IDs in the context of this function -->
         <xsl:variable name="v_id-change" select="'a1'"/>
-        <xsl:variable name="v_ref">
-            <xsl:choose>
-                <xsl:when test="$p_entity-name/@ref">
-                    <xsl:value-of select="$p_entity-name/@ref"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:text>NA</xsl:text>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
+        <!-- establish the entity type -->
         <xsl:variable name="v_entity-type">
             <xsl:choose>
                 <xsl:when test="local-name($p_entity-name) = 'persName'">
@@ -144,7 +134,7 @@
                 <xsl:when test="local-name($p_entity-name) = 'placeName'">
                     <xsl:text>place</xsl:text>
                 </xsl:when>
-                <xsl:when test="local-name($p_entity-name) = 'title'">
+                <xsl:when test="local-name($p_entity-name) = ('title', 'bibl', 'biblStruct')">
                     <xsl:text>bibl</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
@@ -153,6 +143,17 @@
                         <xsl:value-of select="name($p_entity-name)"/>
                         <xsl:text>) cannot be looked up</xsl:text>
                     </xsl:message>
+                    <xsl:text>NA</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <!-- get the value of the @ref attribute or 'NA' -->
+        <xsl:variable name="v_ref">
+            <xsl:choose>
+                <xsl:when test="$p_entity-name/@ref">
+                    <xsl:value-of select="$p_entity-name/@ref"/>
+                </xsl:when>
+                <xsl:otherwise>
                     <xsl:text>NA</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
@@ -185,6 +186,7 @@
         <xsl:choose>
             <!-- check if the entity already links to an authority file by means of the @ref attribute -->
             <xsl:when test="not($v_ref = 'NA') and ($p_ignore-existing-refs = false() or $v_resp = 'ref_manual')">
+                <!-- establish the authority -->
                 <xsl:variable name="v_authority">
                     <!-- order matters here: while our local IDs must be unique, we can have multiple entries pointing to the same ID in an external reference file -->
                     <xsl:choose>
@@ -257,6 +259,7 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
+                <!-- use authority and ID to pull the corresponding entity from the authority -->
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
                         <xsl:choose>
@@ -457,6 +460,15 @@
                             </xsl:message>
                         </xsl:if>
                         <xsl:choose>
+                            <!-- find items with matching ID in authority file -->
+                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct[descendant::tei:idno/text() = $p_entity-name/descendant::tei:idno/text()]">
+                                <xsl:variable name="v_idnos" select="$p_entity-name/descendant::tei:idno"/>
+                                <xsl:message>
+                                    <xsl:text>Returning match based on IDs</xsl:text>
+                                </xsl:message>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[descendant::tei:idno[text() = $v_idnos[@type = ./@type]/text()]]"/>
+                            </xsl:when>
+                            <!-- find string matches for titles: this doesn't work at all -->
                             <xsl:when test="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-all(.) = $v_name-normalised]">
                                 <xsl:if test="$p_verbose = true()">
                                     <xsl:message>
@@ -2853,12 +2865,9 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <!-- step 1: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
+        <!-- step 1b: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
         <!-- possible results: none, one, multiple -->
-        <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
         <!-- NOTE: when the input links to an entity NOT FOUND in the authority, this link should probably be retained -->
-        <!-- check if one could go through $v_biblStruct: works -->
-        <!--         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file( $v_biblStruct//tei:monogr/tei:title[1], $p_local-authority, $p_bibliography)"/>-->
         <!-- step 2: filter by publication date  -->
         <xsl:variable name="v_corresponding-bibls">
             <xsl:message>
@@ -2866,6 +2875,20 @@
                 <xsl:value-of select="$v_title-string"/>
                 <xsl:text>" in the authority file</xsl:text>
             </xsl:message>
+            <xsl:variable name="v_corresponding-bibls">
+                <!-- 1: check if we can match based on any ID -->
+                <xsl:variable name="v_bibl" select="oape:get-entity-from-authority-file($v_biblStruct/descendant-or-self::tei:biblStruct, $p_local-authority, $p_bibliography)"/>
+                <!-- 2: get matches based on title -->
+                <xsl:variable name="v_title" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
+                <xsl:choose>
+                    <xsl:when test="$v_bibl != 'NA'">
+                        <xsl:copy-of select="$v_bibl"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:copy-of select="$v_title"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
             <xsl:variable name="v_bibls-compiled">
                 <xsl:for-each select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
                     <!-- this line causes trouble if the input uses a private URI scheme in @next and @prev as my authority files do -->
@@ -2906,6 +2929,16 @@
         </xsl:variable>
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
+                <!-- match based on IDs -->
+                <xsl:when test="$p_bibliography/descendant::tei:biblStruct[descendant::tei:idno[text() = $v_biblStruct/descendant::tei:idno[@type = ./@type]/text()]]">
+                    <xsl:message>
+                        <xsl:text>Found a match based on IDs</xsl:text>
+                    </xsl:message>
+                    <xsl:copy-of select="$p_bibliography/descendant::tei:biblStruct[descendant::tei:idno[text() = $v_biblStruct/descendant::tei:idno[@type = ./@type]/text()]]"/>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
+                    </xsl:message>
+                </xsl:when>
                 <!-- match based on IDs from authority files: the list is currently hard coded -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]">
                     <xsl:copy-of
