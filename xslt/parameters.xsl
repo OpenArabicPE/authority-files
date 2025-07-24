@@ -55,7 +55,7 @@
                 <xsl:value-of select="'https://github.com/'"/>
             </xsl:when>
             <xsl:when test="$p_github-action = false()">
-                <xsl:value-of select="'/Users/Shared/BachUni/BachBibliothek/GitHub/'"/>
+                <xsl:value-of select="'file:/Users/Shared/BachUni/BachBibliothek/GitHub/'"/>
             </xsl:when>
         </xsl:choose>
     </xsl:param>
@@ -201,5 +201,6 @@
     <xsl:param name="p_string-harakat" select="'([ِ|ُ|ٓ|ٰ|ْ|ٌ|ٍ|ً|ّ|َ])'"/>
     <xsl:variable name="v_string-transcribe-arabic-unicode" select="'ṯḥḫǧǧḏšṣḍṭẓġḳâāāáûūūîī'"/>
     <xsl:variable name="v_string-transcribe-arabic-ascii" select="'thhggdssdtygkaaaauuuuu'"/>
+    <xsl:variable name="v_string-pipe" select="' | '"/>
 
 </xsl:stylesheet>
