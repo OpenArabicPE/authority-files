@@ -1790,7 +1790,7 @@
             <xsl:otherwise>
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>date: no machine-readible onset found</xsl:text>
+                        <xsl:text>date: no machine-readible onset found </xsl:text><xsl:copy-of select="$p_date"/>
                     </xsl:message>
                 </xsl:if>
             </xsl:otherwise>
@@ -2804,41 +2804,6 @@
             </xsl:message>
         </xsl:if>
         <xsl:variable name="v_title-string" select="normalize-space($v_title)"/>
-        <!-- some messages for providing feedback to the user -->
-        <xsl:variable name="v_string-pipe" select="' | '"/>
-        <xsl:variable name="v_message-success">
-            <xsl:value-of select="$v_string-pipe"/>
-            <xsl:text>SUCCESS</xsl:text>
-            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
-            <xsl:text>linked to the authority file.</xsl:text>
-            <xsl:value-of select="$v_string-pipe"/>
-        </xsl:variable>
-        <xsl:variable name="v_message-warning">
-            <xsl:value-of select="$v_string-pipe"/>
-            <xsl:text>WARNING</xsl:text>
-            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
-            <xsl:text>could not be linked to the authority file due to ambiguous matches.</xsl:text>
-            <xsl:value-of select="$v_string-pipe"/>
-        </xsl:variable>
-        <xsl:variable name="v_message-failure">
-            <xsl:value-of select="$v_string-pipe"/>
-            <xsl:text>FAILURE</xsl:text>
-            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
-            <xsl:text>could not be found in the authority file.</xsl:text>
-            <xsl:value-of select="$v_string-pipe"/>
-            <xsl:if test="$p_verbose = true()">
-                <xsl:text> Add </xsl:text>
-                <xsl:choose>
-                    <xsl:when test="$v_biblStruct != 'NA'">
-                        <xsl:copy-of select="$v_biblStruct"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:apply-templates mode="m_copy-from-source" select="$p_title"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-                <xsl:value-of select="$v_string-pipe"/>
-            </xsl:if>
-        </xsl:variable>
         <!-- legitimate difference between years of publication -->
         <xsl:variable name="v_margin" select="2"/>
         <!-- select a year, the reference to be linked was made in -->
@@ -2926,6 +2891,41 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:for-each>
+        </xsl:variable>
+         <!-- some messages for providing feedback to the user -->
+        <xsl:variable name="v_message-success">
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>SUCCESS</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:text>linked</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+        </xsl:variable>
+        <xsl:variable name="v_message-warning">
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>WARNING</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:value-of select="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct)"/>
+            <xsl:text>ambiguous matches</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+        </xsl:variable>
+        <xsl:variable name="v_message-failure">
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>FAILURE</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:text>not found</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:if test="$p_verbose = true()">
+                <xsl:text> Add </xsl:text>
+                <xsl:choose>
+                    <xsl:when test="$v_biblStruct != 'NA'">
+                        <xsl:copy-of select="$v_biblStruct"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates mode="m_copy-from-source" select="$p_title"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:value-of select="$v_string-pipe"/>
+            </xsl:if>
         </xsl:variable>
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
