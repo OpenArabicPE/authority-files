@@ -22,8 +22,24 @@
             <head>Bibliographic items</head>
             <p><listBibl>
                <head/>
-               <bibl type="periodical" subtype="newspaper">(<title level="j" change="#d11e367" ref="NA" resp="#xslt">أوقيانوس</title>)
- جريدة <textLang mainLang="fa">فارسية</textLang> تصدر في <pubPlace><placeName ref="geon:112931 oape:place:300 wiki:Q3616" resp="#xslt" change="#d11e346"
+               <biblStruct type="periodical">
+                  <monogr>
+                     <title level="j" xml:lang="ar">اليرموك</title>
+                     <idno type="IsJJNL">001794617NNL01-Aleph</idno>
+                     <idno type="OCLC">242990623</idno>
+                     <!--                     <idno type="wiki">Q65228501</idno>-->
+                     <idno type="wiki">Q65228502</idno>
+                     <idno source="https://www.nli.org.il/" type="record">990017946170205171</idno>
+                     <textLang mainLang="ar"/>
+                     <imprint>
+                        <pubPlace> <placeName change="#d11e26" ref="geon:294801 oape:place:35 wiki:Q41621" resp="#xslt" xml:lang="ar">حيفا</placeName> </pubPlace>
+                        <publisher> <orgName xml:lang="ar">المطبعة الاهلية التجارية</orgName> </publisher>
+                        <date type="onset" when="1924" xml:lang="ar">١٩٢٤-</date>
+                     </imprint>
+                  </monogr>
+               </biblStruct>
+               <bibl subtype="newspaper" type="periodical">(<title change="#d11e367" level="j" ref="NA" resp="#xslt">أوقيانوس</title>)
+ جريدة <textLang mainLang="fa">فارسية</textLang> تصدر في <pubPlace><placeName change="#d11e346" ref="geon:112931 oape:place:300 wiki:Q3616" resp="#xslt"
                   >طهران</placeName></pubPlace> تحت مراقبة <editor><persName>ميرزا عبد الرحيم آلهي</persName></editor>، وقيمة
  اشتراكها 15 فرنكًا.</bibl>
                <biblStruct source="wiki:Q127415079 ../../../../Sihafa/sihafa_data/bibliographic-data/baykal/baykal.TEIP5.xml#bibl_81.d3e2836" type="periodical">
@@ -49,7 +65,7 @@
                      </imprint>
                   </monogr>
                </biblStruct>
-               <biblStruct oape:frequency="daily" source="wiki:Q127415079 ../../../../Sihafa/sihafa_data/bibliographic-data/baykal/baykal.TEIP5.xml#bibl_2454.d3e83909" type="periodical">
+               <!--<biblStruct oape:frequency="daily" source="wiki:Q127415079 ../../../../Sihafa/sihafa_data/bibliographic-data/baykal/baykal.TEIP5.xml#bibl_2454.d3e83909" type="periodical">
                   <monogr>
                      <title level="j" xml:lang="ota">يكي تصوير أفكار</title>
                      <title level="j" xml:lang="ota-Latn-x-ijmes">Yeñī Taṣvīr-i Efkār</title>
@@ -105,7 +121,7 @@
                         <date when="1924">1924</date>
                      </imprint>
                   </monogr>
-               </biblStruct>
+               </biblStruct>-->
                </listBibl></p>
             <p xml:lang="ar">و<bibl change="#d2e150" subtype="journal" type="periodical">مجلة <title change="#d10e163" level="j" ref="NA" resp="#xslt"
                >الأحد</title></bibl> (البيروتية) 24 حزيران 1962 ومن هو في سورية 2: 432.(2) سركيس 1636 ومعجم المؤلفين العراقيين 1: 106 وهو فيه (أديب بن محمد) </p>
