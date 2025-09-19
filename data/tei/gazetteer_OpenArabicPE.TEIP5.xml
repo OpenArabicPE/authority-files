@@ -42,6 +42,8 @@
          </editorialDecl>
       </encodingDesc>
       <revisionDesc>
+         <tei:change when="2025-09-19" who="#pers_TG" xml:id="d11e217" xml:lang="en"
+            >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <tei:change when="2024-09-19" who="#pers_TG" xml:id="d11e212" xml:lang="en"
             >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <change when="2024-04-26" who="#pers_TG" xml:lang="en">Added Wikidata IDs for most publication places of periodicals</change>
@@ -86,6 +88,28 @@
    <standOff>
       <listPlace>
          <head>Ottoman Empire</head>
+         <listPlace type="province">
+            <place type="province" xml:id="place_817">
+               <placeName xml:lang="ota-Latn-TR">Vilayet-i Ma'mûretü'l-Aziz</placeName>
+               <placeName xml:lang="ota"/>
+               <placeName>Mameretülaziz</placeName>
+               <placeName xml:lang="ota-Latn-TR">Ma'mûretü'l-Aziz</placeName>
+               <idno type="oape">817</idno>
+               <idno type="wiki">Q1356647</idno>
+            </place>
+            <place type="town" xml:id="place_397">
+               <placeName xml:lang="ar">خربوط</placeName>
+               <placeName>Harput</placeName>
+               <placeName xml:lang="tr">Elazığ</placeName>
+               <location source="#org_geon">
+                  <geo>36.9031, 43.90387</geo>
+               </location>
+               <idno type="geon">97385</idno>
+               <idno type="oape">397</idno>
+               <idno type="oape">804</idno>
+               <idno type="wiki">Q174060</idno>
+            </place>
+         </listPlace>
          <place type="country" xml:id="place_1">
             <placeName xml:lang="en">Ottoman Empire</placeName>
             <placeName xml:lang="ar">الولايات العثمانية</placeName>
@@ -781,7 +805,8 @@
                </place>
                <place type="town" xml:id="place_22">
                   <placeName xml:lang="en">Adana</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="ar">أضنة</placeName>
+                  <placeName source="#org_geon" xml:lang="ar">أضنة</placeName>
+                  <placeName type="alt" xml:lang="ar">اطنة</placeName>
                   <placeName source="#org_geon" type="alt" xml:lang="fr">Adana</placeName>
                   <placeName source="#org_geon" type="alt" xml:lang="de">Adana</placeName>
                   <placeName source="#org_geon" type="alt" xml:lang="tr">Adana</placeName>
@@ -791,6 +816,7 @@
                   <idno type="url">http://en.wikipedia.org/wiki/Adana</idno>
                   <idno type="geon">325363</idno>
                   <idno type="oape">22</idno>
+                  <idno type="oape">384</idno>
                </place>
                <place type="town" xml:id="place_451">
                   <placeName xml:lang="ar-Latn-x-ijmes">Anṭākiya</placeName>
@@ -890,8 +916,8 @@
                   <placeName xml:lang="en">Aleih</placeName>
                   <placeName xml:lang="ar">عاليه</placeName>
                   <placeName xml:lang="ar">عليه</placeName>
-                  <placeName xml:lang="ar-Latn-x-ijmes" type="alt">Madīna ʿĀliyya</placeName>
-                  <placeName change="#d2e154" xml:lang="ar" type="alt">مدينة عالية</placeName>
+                  <placeName type="alt" xml:lang="ar-Latn-x-ijmes">Madīna ʿĀliyya</placeName>
+                  <placeName change="#d2e154" type="alt" xml:lang="ar">مدينة عالية</placeName>
                   <location>
                      <geo>33.810086, 35.603245</geo>
                   </location>
@@ -2686,6 +2712,7 @@
                <place xml:id="place_551">
                   <placeName xml:lang="ar-Latn-x-ijmes">Bayt al-Dīn</placeName>
                   <placeName change="#d2e154" xml:lang="ar">بيت الدين</placeName>
+                  <placeName xml:lang="ota">بتدين</placeName>
                   <idno type="jaraid">19</idno>
                   <idno type="oape">551</idno>
                </place>
@@ -3886,6 +3913,35 @@
                <placeName xml:lang="ar">الروم أيلي</placeName>
                <idno type="oape">234</idno>
             </place>
+            <place type="town" xml:id="place_808">
+               <placeName>Iskodra</placeName>
+               <placeName xml:lang="ota">اشقودره</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="fr">Shkodër</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="de">Shkodra</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="tr">İşkodra</placeName>
+               <location source="#org_geon">
+                  <geo>42.06828, 19.51258</geo>
+               </location>
+               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Shkod%C3%ABr</idno>
+               <idno resp="#xslt" type="geon">3184081</idno>
+               <idno type="oape">808</idno>
+            </place>
+            <place type="town" xml:id="place_807">
+               <placeName>Ioannina</placeName>
+               <placeName>Ionnina</placeName>
+               <placeName xml:lang="tr">Yanya</placeName>
+               <placeName xml:lang="ota">يانيه</placeName>
+               <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ioannina</tei:placeName>
+               <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Ioannina</tei:placeName>
+               <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ioannina</tei:placeName>
+               <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Yanya</tei:placeName>
+               <tei:location source="#org_geon">
+                  <tei:geo>39.66486, 20.85189</tei:geo>
+               </tei:location>
+               <idno type="oape">807</idno>
+               <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Ioannina</tei:idno>
+               <tei:idno resp="#xslt" type="geon">261779</tei:idno>
+            </place>
             <place type="town" xml:id="place_235">
                <placeName xml:lang="ar">ادرنة</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="en">Edirne</placeName>
@@ -3898,6 +3954,17 @@
                <idno type="url">http://en.wikipedia.org/wiki/Edirne</idno>
                <idno type="geon">747712</idno>
                <idno type="oape">235</idno>
+            </place>
+            <place type="town" xml:id="place_824">
+               <placeName source="#org_geon" type="alt" xml:lang="ar">بريزرن</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="en">Prizren</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="de">Prizren</placeName>
+               <location source="#org_geon">
+                  <geo>42.21389, 20.73972</geo>
+               </location>
+               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Prizren</idno>
+               <idno resp="#xslt" type="geon">786712</idno>
+               <idno type="oape">824</idno>
             </place>
             <place type="town" xml:id="place_236">
                <placeName xml:lang="en">Salonica</placeName>
@@ -3913,16 +3980,53 @@
                <idno type="oape">236</idno>
                <idno type="wiki">Q17151</idno>
             </place>
-            <place type="town" xml:id="place_237">
-               <placeName xml:lang="ar">مناستر</placeName>
-               <placeName xml:lang="ar">منشستر</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="tr">Gökçekent</placeName>
-               <location source="#org_geon">
-                  <geo>36.54468, 32.84385</geo>
-               </location>
-               <idno type="geon">324603</idno>
-               <idno type="oape">237</idno>
-            </place>
+            <listPlace>
+               <place type="province" xml:id="place_844">
+                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Manastır</placeName>
+                  <placeName xml:lang="ota">ولايت مناستر</placeName>
+                  <idno type="oape">844</idno>
+               </place>
+               <place type="town" xml:id="place_794">
+                  <placeName xml:lang="tr">Manastır</placeName>
+                  <placeName xml:lang="ota">مناستر</placeName>
+                  <placeName xml:lang="ar">منشستر</placeName>
+                  <placeName>Bitola</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="ar">بيتولا</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="en">Bitola</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="fr">Bitola</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="de">Bitola</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="tr">Manastır</placeName>
+                  <location source="#org_geon">
+                     <geo>41.03143, 21.33474</geo>
+                  </location>
+                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Bitola</idno>
+                  <idno resp="#xslt" type="geon">792578</idno>
+                  <idno type="oape">794</idno>
+                  <idno type="oape">237</idno>
+               </place>
+            </listPlace>
+            <listPlace>
+               <place type="province" xml:id="place_845">
+                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Kosova</placeName>
+                  <placeName xml:lang="ota">ولايت قوصوه</placeName>
+                  <idno type="wiki">Q168501</idno>
+                  <idno type="oape">845</idno>
+               </place>
+               <place type="town" xml:id="place_831">
+                  <placeName xml:lang="en">Skopje</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="ar">إسكوبية</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="en">Skopje</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="fr">Skopje</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="de">Skopje</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="tr">Üsküp</placeName>
+                  <location source="#org_geon">
+                     <geo>41.99646, 21.43141</geo>
+                  </location>
+                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Skopje</idno>
+                  <idno resp="#xslt" type="geon">785842</idno>
+                  <idno type="oape">831</idno>
+               </place>
+            </listPlace>
          </listPlace>
          <listPlace type="region">
             <head>Anatolia</head>
@@ -4118,34 +4222,49 @@
                <idno resp="#xslt" type="geon">300619</idno>
                <idno type="oape">830</idno>
             </place>
-            <place type="town" xml:id="place_833">
-               <placeName>Trabzon</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="ar">طرابزون</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="en">Trabzon</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Trabzon</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">Trabzon</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="tr">Trabzon</placeName>
-               <location source="#org_geon">
-                  <geo>41.005, 39.72694</geo>
-               </location>
-               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Trabzon</idno>
-               <idno resp="#xslt" type="geon">738648</idno>
-               <idno type="oape">833</idno>
-            </place>
-            <place type="town" xml:id="place_811">
-               <placeName>Kastamonu</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="ar">قسطموني</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="en">Kastamonu</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Kastamonu</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">Kastamonu</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="tr">Kastamonu</placeName>
-               <location source="#org_geon">
-                  <geo>41.37805, 33.77528</geo>
-               </location>
-               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Kastamonu</idno>
-               <idno resp="#xslt" type="geon">743882</idno>
-               <idno type="oape">811</idno>
-            </place>
+            <listPlace type="province">
+               <place type="province">
+                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Trabzon</placeName>
+                  <placeName xml:lang="ota">طربزون ولايتي</placeName>
+               </place>
+               <place type="town" xml:id="place_833">
+                  <placeName>Trabzon</placeName>
+                  <placeName source="oape:org:10" xml:lang="ota">طربزون</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="ar">طرابزون</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="en">Trabzon</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="fr">Trabzon</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="de">Trabzon</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="tr">Trabzon</placeName>
+                  <location source="#org_geon">
+                     <geo>41.005, 39.72694</geo>
+                  </location>
+                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Trabzon</idno>
+                  <idno resp="#xslt" type="geon">738648</idno>
+                  <idno type="oape">833</idno>
+               </place>
+            </listPlace>
+            <listPlace type="province">
+               <place>
+                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Kastamonu</placeName>
+                  <placeName xml:lang="ota">قسطموني ولايتي</placeName>
+                  <idno type="wiki">Q1164593</idno>
+               </place>
+               <place type="town" xml:id="place_811">
+                  <placeName>Kastamonu</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="ar">قسطموني</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="en">Kastamonu</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="fr">Kastamonu</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="de">Kastamonu</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="tr">Kastamonu</placeName>
+                  <location source="#org_geon">
+                     <geo>41.37805, 33.77528</geo>
+                  </location>
+                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Kastamonu</idno>
+                  <idno resp="#xslt" type="geon">743882</idno>
+                  <idno type="oape">811</idno>
+                  <idno type="wiki">Q155915</idno>
+               </place>
+            </listPlace>
             <place type="town" xml:id="place_812">
                <placeName>Kavala</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="ar">قولة</placeName>
@@ -4203,12 +4322,26 @@
                <idno type="oape">834</idno>
             </place>
          </listPlace>
+         <listPlace type="province">
+            <place type="province" xml:id="place_846">
+               <placeName>Cezayiri Bahri Sefid</placeName>
+               <placeName xml:lang="ota-Latn-TR">Cezair-i Bahr-i Sefid</placeName>
+               <idno type="oape">846</idno>
+            </place>
+            <place type="town" xml:id="place_791">
+               <placeName xml:lang="en">Rhodes</placeName>
+               <placeName>Rhodos</placeName>
+               <placeName xml:lang="ar">ردوس</placeName>
+               <location source="#org_geon">
+                  <geo>36.433333, 28.216667</geo>
+               </location>
+               <idno resp="#xslt" type="geon">400666</idno>
+               <idno type="oape">791</idno>
+               <idno type="wiki">Q188731</idno>
+            </place>
+         </listPlace>
       </listPlace>
       <listPlace>
-         <place xml:id="place_384">
-            <placeName xml:lang="ar">اطنة</placeName>
-            <idno type="oape">384</idno>
-         </place>
          <place xml:id="place_385">
             <placeName xml:lang="ar">الترنسفال</placeName>
             <idno type="oape">385</idno>
@@ -4258,14 +4391,6 @@
             <idno type="oape">387</idno>
             <idno type="url">https://en.wikipedia.org/wiki/Senegal</idno>
             <idno type="geon">2245662</idno>
-         </place>
-         <place type="town" xml:id="place_397">
-            <placeName xml:lang="ar">خربوط</placeName>
-            <location source="#org_geon">
-               <geo>36.9031, 43.90387</geo>
-            </location>
-            <idno type="geon">97385</idno>
-            <idno type="oape">397</idno>
          </place>
          <place type="ISL" xml:id="place_404">
             <placeName>Madagascar</placeName>
@@ -4935,6 +5060,12 @@
                <idno type="url">http://en.wikipedia.org/wiki/Iran</idno>
                <idno type="geon">130758</idno>
                <idno type="oape">299</idno>
+            </place>
+            <place type="town" xml:id="place_847">
+               <placeName xml:lang="fa">تبريز</placeName>
+               <placeName xml:lang="en">Tabriz</placeName>
+               <idno type="wiki">Q80053</idno>
+               <idno type="oape">847</idno>
             </place>
             <place type="town" xml:id="place_495">
                <placeName xml:lang="en">Shiraz</placeName>
@@ -9113,10 +9244,6 @@
             <placeName>Burj Hudayda</placeName>
             <idno type="oape">795</idno>
          </place>
-         <place xml:id="place_797">
-            <placeName>Cezayiri Bahri Sefid</placeName>
-            <idno type="oape">797</idno>
-         </place>
          <place xml:id="place_801">
             <placeName>Dobruga</placeName>
             <idno type="oape">801</idno>
@@ -9124,10 +9251,6 @@
          <place xml:id="place_810">
             <placeName>Kalei Sultaniye</placeName>
             <idno type="oape">810</idno>
-         </place>
-         <place xml:id="place_817">
-            <placeName>Mameretülaziz</placeName>
-            <idno type="oape">817</idno>
          </place>
          <place xml:id="place_842">
             <placeName xml:lang="en">Lagos</placeName>
@@ -9167,15 +9290,6 @@
             <idno resp="#xslt" type="geon">831053</idno>
             <idno type="oape">815</idno>
          </place>
-         <place type="county" xml:id="place_804">
-            <placeName>Harput</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="tr">Harput Bucağı</placeName>
-            <location source="#org_geon">
-               <geo>38.70501, 39.25128</geo>
-            </location>
-            <idno resp="#xslt" type="geon">8694369</idno>
-            <idno type="oape">804</idno>
-         </place>
          <place type="county" xml:id="place_793">
             <placeName>Bergama</placeName>
             <placeName source="#org_geon" type="alt" xml:lang="en">Bergama District</placeName>
@@ -9186,19 +9300,6 @@
             <idno resp="#xslt" type="geon">7732716</idno>
             <idno type="oape">793</idno>
          </place>
-         <place type="town" xml:id="place_808">
-            <placeName>Iskodra</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="fr">Shkodër</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="de">Shkodra</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="tr">İşkodra</placeName>
-            <location source="#org_geon">
-               <geo>42.06828, 19.51258</geo>
-            </location>
-            <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Shkod%C3%ABr</idno>
-            <idno resp="#xslt" type="geon">3184081</idno>
-            <idno type="oape">808</idno>
-         </place>
-
          <place type="town" xml:id="place_832">
             <placeName>Söke</placeName>
             <location source="#org_geon">
@@ -9208,20 +9309,25 @@
             <idno resp="#xslt" type="geon">300399</idno>
             <idno type="oape">832</idno>
          </place>
-         <place type="town" xml:id="place_807">
-            <placeName>Ioannina</placeName>
-            <placeName>Ionnina</placeName>
-            <placeName>Yanya</placeName>
-            <tei:placeName source="#org_geon" type="alt" xml:lang="en">Ioannina</tei:placeName>
-            <tei:placeName source="#org_geon" type="alt" xml:lang="fr">Ioannina</tei:placeName>
-            <tei:placeName source="#org_geon" type="alt" xml:lang="de">Ioannina</tei:placeName>
-            <tei:placeName source="#org_geon" type="alt" xml:lang="tr">Yanya</tei:placeName>
-            <tei:location source="#org_geon">
-               <tei:geo>39.66486, 20.85189</tei:geo>
-            </tei:location>
-            <idno type="oape">807</idno>
-            <tei:idno subtype="about" type="url">https://en.wikipedia.org/wiki/Ioannina</tei:idno>
-            <tei:idno resp="#xslt" type="geon">261779</tei:idno>
+         <place type="town" xml:id="place_826">
+            <placeName>Safed</placeName>
+            <location source="#org_geon">
+               <geo>32.965833, 35.498333</geo>
+            </location>
+            <idno resp="#xslt" type="geon">293100</idno>
+            <idno type="oape">826</idno>
+            <idno type="wiki">Q188336</idno>
+         </place>
+         <place type="town" xml:id="place_820">
+            <placeName xml:lang="en">Mytilene</placeName>
+            <placeName type="alt" xml:lang="tr">Midilli</placeName>
+            <placeName type="alt" xml:lang="tr">Metelin</placeName>
+            <location source="#org_geon">
+               <geo>39.1047, 26.5536</geo>
+            </location>
+            <idno resp="#xslt" type="geon">765005</idno>
+            <idno type="oape">820</idno>
+            <idno type="wiki">Q189059</idno>
          </place>
          <place type="town" xml:id="place_822">
             <placeName source="#org_geon" type="alt" xml:lang="en">Nazilli</placeName>
@@ -9233,30 +9339,15 @@
             <idno resp="#xslt" type="geon">303873</idno>
             <idno type="oape">822</idno>
          </place>
-         <place type="town" xml:id="place_831">
-            <placeName>Skopje</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="ar">إسكوبية</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="en">Skopje</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="fr">Skopje</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="de">Skopje</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="tr">Üsküp</placeName>
+         <place type="town" xml:id="place_829">
+            <placeName xml:lang="en">Samos</placeName>
+            <placeName>Sisam</placeName>
             <location source="#org_geon">
-               <geo>41.99646, 21.43141</geo>
+               <geo>37.758056, 26.974444</geo>
             </location>
-            <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Skopje</idno>
-            <idno resp="#xslt" type="geon">785842</idno>
-            <idno type="oape">831</idno>
-         </place>
-         <place type="town" xml:id="place_824">
-            <placeName source="#org_geon" type="alt" xml:lang="ar">بريزرن</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="en">Prizren</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="de">Prizren</placeName>
-            <location source="#org_geon">
-               <geo>42.21389, 20.73972</geo>
-            </location>
-            <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Prizren</idno>
-            <idno resp="#xslt" type="geon">786712</idno>
-            <idno type="oape">824</idno>
+            <idno resp="#pers_TG" type="geon">254115</idno>
+            <idno type="oape">829</idno>
+            <idno type="wiki">Q1018150</idno>
          </place>
          <place type="town" xml:id="place_823">
             <placeName source="#org_geon" type="alt" xml:lang="ar">بلوفديف</placeName>
@@ -9270,20 +9361,6 @@
             <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Plovdiv</idno>
             <idno resp="#xslt" type="geon">728193</idno>
             <idno type="oape">823</idno>
-         </place>
-         <place type="town" xml:id="place_794">
-            <placeName>Bitola</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="ar">بيتولا</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="en">Bitola</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="fr">Bitola</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="de">Bitola</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="tr">Manastır</placeName>
-            <location source="#org_geon">
-               <geo>41.03143, 21.33474</geo>
-            </location>
-            <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Bitola</idno>
-            <idno resp="#xslt" type="geon">792578</idno>
-            <idno type="oape">794</idno>
          </place>
          <place type="town" xml:id="place_802">
             <placeName>Drama</placeName>
@@ -9312,17 +9389,6 @@
             <idno resp="#xslt" type="geon">727523</idno>
             <idno type="oape">825</idno>
          </place>
-         <place type="town" xml:id="place_791">
-            <placeName xml:lang="en">Rhodes</placeName>
-            <placeName>Rhodos</placeName>
-            <placeName xml:lang="ar">ردوس</placeName>
-            <location source="#org_geon">
-               <geo>36.433333, 28.216667</geo>
-            </location>
-            <idno resp="#xslt" type="geon">400666</idno>
-            <idno type="oape">791</idno>
-            <idno type="wiki">Q188731</idno>
-         </place>
          <place type="ISL" xml:id="place_798">
             <placeName>Chios</placeName>
             <placeName source="#org_geon" type="alt" xml:lang="en">Chios</placeName>
@@ -9348,17 +9414,6 @@
             <idno resp="#xslt" type="geon">258466</idno>
             <idno type="oape">821</idno>
          </place>
-         <place type="town" xml:id="place_820">
-            <placeName xml:lang="en">Mytilene</placeName>
-            <placeName xml:lang="tr" type="alt">Midilli</placeName>
-            <placeName xml:lang="tr" type="alt">Metelin</placeName>
-            <location source="#org_geon">
-               <geo>39.1047, 26.5536</geo>
-            </location>
-            <idno resp="#xslt" type="geon">765005</idno>
-            <idno type="oape">820</idno>
-            <idno type="wiki">Q189059</idno>
-         </place>
          <place type="ISL" xml:id="place_828">
             <placeName>Scyros</placeName>
             <placeName source="#org_geon" type="alt" xml:lang="en">Skyros</placeName>
@@ -9370,25 +9425,6 @@
             <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Skyros</idno>
             <idno resp="#xslt" type="geon">253613</idno>
             <idno type="oape">828</idno>
-         </place>
-         <place type="town" xml:id="place_829">
-            <placeName xml:lang="en">Samos</placeName>
-            <placeName>Sisam</placeName>
-            <location source="#org_geon">
-               <geo>37.758056, 26.974444</geo>
-            </location>
-            <idno resp="#pers_TG" type="geon">254115</idno>
-            <idno type="oape">829</idno>
-            <idno type="wiki">Q1018150</idno>
-         </place>
-         <place type="town" xml:id="place_826">
-            <placeName>Safed</placeName>
-            <location source="#org_geon">
-               <geo>32.965833, 35.498333</geo>
-            </location>
-            <idno resp="#xslt" type="geon">293100</idno>
-            <idno type="oape">826</idno>
-            <idno type="wiki">Q188336</idno>
          </place>
          <place type="RGN" xml:id="place_799">
             <placeName>Crete</placeName>
