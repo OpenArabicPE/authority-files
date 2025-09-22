@@ -42,6 +42,8 @@
          </editorialDecl>
       </encodingDesc>
       <revisionDesc>
+         <tei:change when="2025-09-22" who="#pers_TG" xml:id="d11e222" xml:lang="en"
+            >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <tei:change when="2025-09-19" who="#pers_TG" xml:id="d11e217" xml:lang="en"
             >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <tei:change when="2024-09-19" who="#pers_TG" xml:id="d11e212" xml:lang="en"
@@ -88,6 +90,18 @@
    <standOff>
       <listPlace>
          <head>Ottoman Empire</head>
+         <place type="country" xml:id="place_1">
+            <placeName xml:lang="en">Ottoman Empire</placeName>
+            <placeName xml:lang="ar">الولايات العثمانية</placeName>
+            <placeName xml:lang="ar">البلاد العثمانية</placeName>
+            <placeName xml:lang="ar">الدولة العثمانية</placeName>
+            <placeName xml:lang="ar">المملكة العثمانية</placeName>
+            <placeName type="alt" xml:lang="en">Turkey</placeName>
+            <location source="#org_geon">
+               <geo>39, 35</geo>
+            </location>
+            <idno type="oape">1</idno>
+         </place>
          <listPlace type="province">
             <place type="province" xml:id="place_817">
                <placeName xml:lang="ota-Latn-TR">Vilayet-i Ma'mûretü'l-Aziz</placeName>
@@ -110,18 +124,6 @@
                <idno type="wiki">Q174060</idno>
             </place>
          </listPlace>
-         <place type="country" xml:id="place_1">
-            <placeName xml:lang="en">Ottoman Empire</placeName>
-            <placeName xml:lang="ar">الولايات العثمانية</placeName>
-            <placeName xml:lang="ar">البلاد العثمانية</placeName>
-            <placeName xml:lang="ar">الدولة العثمانية</placeName>
-            <placeName xml:lang="ar">المملكة العثمانية</placeName>
-            <placeName type="alt" xml:lang="en">Turkey</placeName>
-            <location source="#org_geon">
-               <geo>39, 35</geo>
-            </location>
-            <idno type="oape">1</idno>
-         </place>
          <listPlace type="town">
             <head>Istanbul</head>
             <place xml:id="place_2">
@@ -3346,6 +3348,7 @@
             <head>Libya</head>
             <place type="ST" xml:id="place_222">
                <placeName xml:lang="ar">طرابلس الغرب</placeName>
+               <placeName xml:lang="ota">طرابلس غرب</placeName>
                <placeName xml:lang="ar-Latn-x-ijmes">Ṭarāblus al-Gharb</placeName>
                <placeName xml:lang="ar-Latn-x-dmg">Ṭarābulus al-Ġarb</placeName>
                <placeName xml:lang="ar-Latn-x-ijmes">Ṭarābulus al-Gharb</placeName>
@@ -3891,7 +3894,8 @@
             </place>
             <place type="town" xml:id="place_499">
                <placeName xml:lang="en">Sanaa</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="ar">صنعاء</placeName>
+               <placeName source="#org_geon" xml:lang="ar">صنعاء</placeName>
+               <placeName xml:lang="ota">صنعا</placeName>
                <placeName xml:lang="ar-Latn-x-ijmes">Ṣanʿāʾ</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="fr">Sanaa</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="de">Sanaa</placeName>
@@ -4135,20 +4139,6 @@
                <idno resp="#xslt" type="geon">322165</idno>
                <idno type="oape">792</idno>
             </place>
-            <place type="town" xml:id="place_796">
-               <placeName>Bursa</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="ar">بورصة</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="en">Bursa</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Bursa</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">Bursa</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="tr">Bursa</placeName>
-               <location source="#org_geon">
-                  <geo>40.19559, 29.06013</geo>
-               </location>
-               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Bursa</idno>
-               <idno resp="#xslt" type="geon">750269</idno>
-               <idno type="oape">796</idno>
-            </place>
             <place type="town" xml:id="place_836">
                <placeName>Çanakkale</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="ar">جاناكالي</placeName>
@@ -4222,49 +4212,6 @@
                <idno resp="#xslt" type="geon">300619</idno>
                <idno type="oape">830</idno>
             </place>
-            <listPlace type="province">
-               <place type="province">
-                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Trabzon</placeName>
-                  <placeName xml:lang="ota">طربزون ولايتي</placeName>
-               </place>
-               <place type="town" xml:id="place_833">
-                  <placeName>Trabzon</placeName>
-                  <placeName source="oape:org:10" xml:lang="ota">طربزون</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="ar">طرابزون</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="en">Trabzon</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="fr">Trabzon</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="de">Trabzon</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="tr">Trabzon</placeName>
-                  <location source="#org_geon">
-                     <geo>41.005, 39.72694</geo>
-                  </location>
-                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Trabzon</idno>
-                  <idno resp="#xslt" type="geon">738648</idno>
-                  <idno type="oape">833</idno>
-               </place>
-            </listPlace>
-            <listPlace type="province">
-               <place>
-                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Kastamonu</placeName>
-                  <placeName xml:lang="ota">قسطموني ولايتي</placeName>
-                  <idno type="wiki">Q1164593</idno>
-               </place>
-               <place type="town" xml:id="place_811">
-                  <placeName>Kastamonu</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="ar">قسطموني</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="en">Kastamonu</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="fr">Kastamonu</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="de">Kastamonu</placeName>
-                  <placeName source="#org_geon" type="alt" xml:lang="tr">Kastamonu</placeName>
-                  <location source="#org_geon">
-                     <geo>41.37805, 33.77528</geo>
-                  </location>
-                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Kastamonu</idno>
-                  <idno resp="#xslt" type="geon">743882</idno>
-                  <idno type="oape">811</idno>
-                  <idno type="wiki">Q155915</idno>
-               </place>
-            </listPlace>
             <place type="town" xml:id="place_812">
                <placeName>Kavala</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="ar">قولة</placeName>
@@ -4321,6 +4268,75 @@
                <idno resp="#xslt" type="geon">298117</idno>
                <idno type="oape">834</idno>
             </place>
+            <listPlace type="province">
+               <place type="province" xml:id="place_848">
+                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Trabzon</placeName>
+                  <placeName xml:lang="ota">طربزون ولايتي</placeName>
+                  <idno type="oape">848</idno>
+               </place>
+               <place type="town" xml:id="place_833">
+                  <placeName>Trabzon</placeName>
+                  <placeName source="oape:org:10" xml:lang="ota">طربزون</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="ar">طرابزون</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="en">Trabzon</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="fr">Trabzon</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="de">Trabzon</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="tr">Trabzon</placeName>
+                  <location source="#org_geon">
+                     <geo>41.005, 39.72694</geo>
+                  </location>
+                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Trabzon</idno>
+                  <idno resp="#xslt" type="geon">738648</idno>
+                  <idno type="oape">833</idno>
+               </place>
+            </listPlace>
+            <listPlace type="province">
+               <place xml:id="place_849">
+                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Kastamonu</placeName>
+                  <placeName xml:lang="ota">قسطموني ولايتي</placeName>
+                  <idno type="wiki">Q1164593</idno>
+                  <idno type="oape">849</idno>
+               </place>
+               <place type="town" xml:id="place_811">
+                  <placeName>Kastamonu</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="ar">قسطموني</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="en">Kastamonu</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="fr">Kastamonu</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="de">Kastamonu</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="tr">Kastamonu</placeName>
+                  <location source="#org_geon">
+                     <geo>41.37805, 33.77528</geo>
+                  </location>
+                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Kastamonu</idno>
+                  <idno resp="#xslt" type="geon">743882</idno>
+                  <idno type="oape">811</idno>
+                  <idno type="wiki">Q155915</idno>
+               </place>
+            </listPlace>
+            <listPlace type="province">
+               <place type="province" xml:id="place_850">
+                  <placeName xml:lang="ota-Latn-TR">Vilayet-i Hüdavendigâr</placeName>
+                  <placeName xml:lang="ota">خداوندكار ولايتي</placeName>
+                  <placeName xml:lang="ota">ولايت خداوندگار</placeName>
+                  <idno type="wiki">Q3928674</idno>
+                  <idno type="oape">850</idno>
+               </place>
+               <place type="town" xml:id="place_796">
+                  <placeName>Bursa</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="ar">بورصة</placeName>
+                  <placeName source="oape:org:10" xml:lang="ota">بروسه</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="en">Bursa</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="fr">Bursa</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="de">Bursa</placeName>
+                  <placeName source="#org_geon" type="alt" xml:lang="tr">Bursa</placeName>
+                  <location source="#org_geon">
+                     <geo>40.19559, 29.06013</geo>
+                  </location>
+                  <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Bursa</idno>
+                  <idno resp="#xslt" type="geon">750269</idno>
+                  <idno type="oape">796</idno>
+               </place>
+            </listPlace>
          </listPlace>
          <listPlace type="province">
             <place type="province" xml:id="place_846">
@@ -9251,6 +9267,16 @@
          <place xml:id="place_810">
             <placeName>Kalei Sultaniye</placeName>
             <idno type="oape">810</idno>
+         </place>
+         <place xml:id="place_851">
+            <placeName source="oape:org:31" xml:lang="tr">Bosna</placeName>
+            <placeName source="oape:org:31" xml:lang="ota">بوسنة</placeName>
+            <idno type="oape">851</idno>
+         </place>
+         <place xml:id="place_852">
+            <placeName source="oape:org:31" xml:lang="tr">Tuna</placeName>
+            <placeName source="oape:org:31" xml:lang="ota">طونه</placeName>
+            <idno type="oape">852</idno>
          </place>
          <place xml:id="place_842">
             <placeName xml:lang="en">Lagos</placeName>
