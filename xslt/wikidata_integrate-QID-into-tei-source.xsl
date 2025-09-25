@@ -4,7 +4,7 @@
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
     <xsl:import href="parameters.xsl"/>
     <!-- read data from file -->
-    <xsl:variable name="v_QIDs" select="doc('../data/OpenRefine/mappings/openrefine_place-mapping-2025-09-22.TEIP5.xml')/descendant::tei:standOff"/>
+    <xsl:variable name="v_QIDs" select="doc('../data/OpenRefine/mappings/wafa_bibl-mapping-2025-09-23.TEIP5.xml')/descendant::tei:standOff"/>
     <!-- identity transform -->
     <xsl:template match="node() | @*">
         <xsl:copy>
@@ -23,6 +23,7 @@
             </xsl:element>
         </xsl:if>
     </xsl:template>
+    <!-- matching over local IDs -->
     <xsl:template match="tei:idno[@type = $p_local-authority]">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
@@ -35,6 +36,20 @@
             </xsl:copy>
         </xsl:if>
     </xsl:template>
+    <!--<xsl:template match="tei:monogr">
+        <xsl:variable name="v_corresp-QID">
+            <xsl:choose>
+                <!-\- matching geonames ID -\->
+                <xsl:when test="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:idno[@type = $p_acronym-geonames] = current()/tei:idno[@type = $p_acronym-geonames]]">
+                    <xsl:copy-of select="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:idno[@type = $p_acronym-geonames] = current()/tei:idno[@type = $p_acronym-geonames]]"/>
+                </xsl:when>
+                <!-\- matching toponyms -\->
+                <xsl:when test="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:placeName = current()/tei:placeName]">
+                    <xsl:copy-of select="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:placeName = current()/tei:placeName]"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+    </xsl:template>-->
     <xsl:template match="tei:org">
         <xsl:variable name="v_corresp-QID" select="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:org/tei:orgName = current()/tei:orgName]"/>
         <xsl:copy>
@@ -50,13 +65,13 @@
     <xsl:template match="tei:place">
         <xsl:variable name="v_corresp-QID">
             <xsl:choose>
-                <!-- matching toponyms -->
-                <xsl:when test="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:placeName = current()/tei:placeName]">
-                    <xsl:copy-of select="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:placeName = current()/tei:placeName]"/>
-                </xsl:when>
                 <!-- matching geonames ID -->
                 <xsl:when test="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:idno[@type = $p_acronym-geonames] = current()/tei:idno[@type = $p_acronym-geonames]]">
                     <xsl:copy-of select="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:idno[@type = $p_acronym-geonames] = current()/tei:idno[@type = $p_acronym-geonames]]"/>
+                </xsl:when>
+                <!-- matching toponyms -->
+                <xsl:when test="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:placeName = current()/tei:placeName]">
+                    <xsl:copy-of select="$v_QIDs/descendant::tei:idno[@type = $p_acronym-wikidata][parent::tei:place/tei:placeName = current()/tei:placeName]"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
