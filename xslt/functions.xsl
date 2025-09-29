@@ -2930,7 +2930,8 @@
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
                 <!-- match based on IDs -->
-                <xsl:when test="$p_bibliography/descendant::tei:biblStruct[descendant::tei:idno[text() = $v_biblStruct/descendant::tei:idno[@type = ./@type]/text()]]">
+                <!-- The XPath is wrong. we look for IDs of matching types and values -->
+               <!-- <xsl:when test="$p_bibliography/descendant::tei:biblStruct[descendant::tei:idno[text() = $v_biblStruct/descendant::tei:idno[@type = ]/text()]]">
                     <xsl:message>
                         <xsl:text>Found a match based on IDs</xsl:text>
                     </xsl:message>
@@ -2938,13 +2939,16 @@
                     <xsl:message>
                         <xsl:copy-of select="$v_message-success"/>
                     </xsl:message>
-                </xsl:when>
+                </xsl:when>-->
                 <!-- match based on IDs from authority files: the list is currently hard coded -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]">
                     <xsl:copy-of
                         select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = $p_acronym-wikidata] = $v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]][1]"/>
                     <xsl:message>
                         <xsl:text>Found a match based on Wikidata ID</xsl:text>
+                    </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
                     </xsl:message>
                 </xsl:when>
                 <!-- worldcat -->
@@ -2953,12 +2957,18 @@
                     <xsl:message>
                         <xsl:text>Found a match based on Worldcat ID</xsl:text>
                     </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
+                    </xsl:message>
                 </xsl:when>
                 <!-- LCCN -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'LCCN'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'LCCN']">
                     <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'LCCN'] = $v_biblStruct/descendant::tei:idno[@type = 'LCCN']][1]"/>
                     <xsl:message>
                         <xsl:text>Found a match based on Library of Congress ID</xsl:text>
+                    </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
                     </xsl:message>
                 </xsl:when>
                 <!-- Hathi -->
@@ -2967,6 +2977,9 @@
                     <xsl:message>
                         <xsl:text>Found a match based on HathiTrust ID</xsl:text>
                     </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
+                    </xsl:message>
                 </xsl:when>
                 <!-- DOI -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'DOI'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'DOI']">
@@ -2974,12 +2987,18 @@
                     <xsl:message>
                         <xsl:text>Found a match based on DOI ID</xsl:text>
                     </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
+                    </xsl:message>
                 </xsl:when>
                 <!-- ZDB -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'zdb'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'zdb']">
                     <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'zdb'] = $v_biblStruct/descendant::tei:idno[@type = 'zdb']][1]"/>
                     <xsl:message>
                         <xsl:text>Found a match based on ZDB ID</xsl:text>
+                    </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
                     </xsl:message>
                 </xsl:when>
                 <!-- test if there is a potential match -->
