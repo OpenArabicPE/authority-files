@@ -1243,7 +1243,7 @@
         <xsl:choose>
             <!-- test for @ref pointing to auhority files -->
             <xsl:when test="$v_org != 'NA'">
-                <xsl:copy-of select="oape:query-org($v_org, $p_output-mode, $p_output-language, $p_local-authority)"/>
+                <xsl:copy-of select="oape:query-org($v_org[1], $p_output-mode, $p_output-language, $p_local-authority)"/>
             </xsl:when>
             <!-- return original input toponym if nothing else is fond -->
             <xsl:when test="$p_output-mode = 'name'">
