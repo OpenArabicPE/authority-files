@@ -621,8 +621,13 @@
             </xsl:when>
             <xsl:when test="$p_output-mode = ('id-wiki', 'wiki')">
                 <xsl:choose>
+                    <!-- explicit ID -->
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata]">
                         <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata][1]"/>
+                    </xsl:when>
+                    <!-- ref on title -->
+                    <xsl:when test="$p_bibl/descendant::tei:title[matches(@ref, concat($p_acronym-wikidata, ':Q\d+'))]">
+                        <xsl:value-of select="replace($p_bibl/descendant::tei:title[matches(@ref, concat($p_acronym-wikidata, ':Q\d+'))][1]/@ref, concat('^.*', $p_acronym-wikidata, ':(Q\d+).*$'), '$1')"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
