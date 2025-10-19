@@ -17,6 +17,12 @@
     -->
     <xsl:output encoding="UTF-8" exclude-result-prefixes="#all" indent="no" method="xml" omit-xml-declaration="no"/>
     <xsl:import href="functions.xsl"/>
+    <!-- establish the publication date of the input file -->
+    <xsl:variable name="v_year-publication" select="
+            if (/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct) then
+                (oape:date-year-only(oape:query-biblstruct(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', '')))
+            else
+                (2020)"/>
     <!-- identity transform -->
     <xsl:template match="node() | @*">
         <xsl:copy>
@@ -35,13 +41,10 @@
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <xsl:variable name="v_year-publication" select="
-            if (/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct) then
-                (oape:date-year-only(oape:query-biblstruct(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct[1], 'date', '', '', '')))
-            else
-                (2020)"/>
+    <!-- the linking is done on tei:title notes, but the function called here compiles bibl and biblStruct elments -->
     <xsl:template match="tei:title[ancestor::tei:text | ancestor::tei:standOff][@level = 'j'][not(@type = 'sub')]" priority="10">
         <xsl:copy-of select="oape:link-title-to-authority-file(., $p_local-authority, $v_bibliography)"/>
+<!--        <xsl:copy-of select="oape:get-entity-from-authority-file(., $p_local-authority, $v_bibliography)"/>-->
     </xsl:template>
     <!-- document the changes to source file -->
     <xsl:template match="tei:revisionDesc">

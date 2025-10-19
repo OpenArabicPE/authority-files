@@ -853,6 +853,7 @@
                <orgName type="jaraid">Bonn</orgName>
                <idno type="jaraid">hBONN</idno>
                <idno type="oape">75</idno>
+               <idno type="url">http://www.translatio.uni-bonn.de</idno>
                <location>
                   <placeName ref="geon:2946447 oape:place:659">Bonn</placeName>
                </location>
@@ -2243,10 +2244,12 @@
             </location>
          </org>
          <org type="library" xml:id="hAYN">
-            <orgName>Maktabat Sāmī al-ʿAyntābī, Aleppo </orgName>
+            <orgName>Maktabat Sāmī al-ʿAyntābī, Aleppo</orgName>
+            <orgName xml:lang="ar">مكتبة سامي العينتابي</orgName>
             <orgName type="jaraid">Ayn</orgName>
             <idno type="jaraid">hAYN</idno>
             <idno type="oape">49</idno>
+            <idno type="wiki">Q135448792</idno>
             <location>
                <placeName ref="geon:170063 oape:place:15">Aleppo</placeName>
             </location>
@@ -2621,7 +2624,7 @@
             </location>
          </org>
          <org type="library" xml:id="hNLI">
-            <orgName>National Library of Israel</orgName>
+            <orgName xml:lang="en">National Library of Israel</orgName>
             <orgName type="jaraid">NLoI</orgName>
             <idno type="jaraid">hNLI</idno>
             <idno type="oape">60</idno>
@@ -2772,6 +2775,15 @@
             </location>
             <note>. The collection was digitized by the "Endangered Archives Program" of the British Library and is available <ref target="http://eap.bl.uk/database/overview_project.a4d?projID=EAP119"
                xml:lang="und-Latn">online</ref>.</note>
+         </org>
+         <org>
+            <orgName xml:lang="en">Endangered Archives Program</orgName>
+            <orgName>EAP</orgName>
+            <idno type="url">http://eap.bl.uk/</idno>
+            <idno type="wiki">Q67654737</idno>
+            <location>
+               <placeName>London</placeName>
+            </location>
          </org>
          <org type="library" xml:id="hPN">
             <orgName>Perpustakaan Nasional - Indonasian National Library</orgName>
@@ -3644,6 +3656,7 @@
             <idno type="jaraid">hHTU</idno>
             <idno type="oape">31</idno>
             <idno type="wiki">Q130548587</idno>
+            <idno type="url">http://www.tufs.ac.jp/common/fs/asw/tur/htu/</idno>
             <location>
                <placeName ref="geon:745044 jaraid:place:9 oape:place:3">Istanbul</placeName>
             </location>
@@ -4485,6 +4498,7 @@
                <idno type="jaraid">hBOSJ</idno>
                <idno type="oape">10</idno>
                <idno type="wiki">Q15556320</idno>
+               <idno type="url">https://librarycatalog.usj.edu.lb/</idno>
                <location>
                   <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
                </location>
@@ -4526,9 +4540,47 @@
                </location>
             </org>
          </listOrg>
+         <org>
+            <orgName xml:lang="en">Institute for Palestine Studies</orgName>
+            <orgName xml:lang="ar">مؤسسة الدراسات الفلسطينية</orgName>
+            <idno type="oape">671</idno>
+            <idno type="wiki">Q2917333</idno>
+            <location>
+                  <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+               </location>
+         </org>
+         <org>
+            <orgName xml:lang="en">The Palestinian Museum</orgName>
+            <orgName xml:lang="ar">المتحف الفلسطيني</orgName>
+            <idno type="wiki">Q18211128</idno>
+            <location>
+                  <placeName ref="wiki:Q212381">Bir Zeit</placeName>
+               </location>
+         </org>
+         <org>
+            <orgName xml:lang="en">The Palestinian Museum Digital Archive</orgName>
+            <orgName xml:lang="ar">ارشيف المتحف الفلسطيني الرقمي</orgName>
+            <idno type="wiki">Q20392699</idno>
+            <location>
+                  <placeName ref="wiki:Q212381">Bir Zeit</placeName>
+               </location>
+         </org>
       </listOrg>
       <listOrg>
          <head>Publishers of periodicals</head>
+         <org xml:id="person_6115">
+            <orgName xml:id="persName_6115.1" xml:lang="ar-Latn-x-ijmes">Wizārat al-Zirāʿa al-Miṣriyya</orgName>
+            <orgName corresp="#persName_6115.1" type="flattened" xml:id="persName_6115.1.1" xml:lang="ar-Latn-x-ijmes">WizāratalZirāʿaalMiṣriyya</orgName>
+            <orgName change="#d2e154" xml:id="persName_6115.2" xml:lang="ar">وزارة الزراعة المصرية</orgName>
+            <orgName corresp="#persName_6115.2" type="flattened" xml:id="persName_6115.2.1" xml:lang="ar">وزارةالزراعةالمصرية</orgName>
+            <!-- <idno type="jaraid">1522</idno>
+            <idno type="oape">6115</idno> -->
+            <idno type="wiki">Q125159214</idno>
+            <occupation change="#d10e909" resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of <title level="j"
+               ref="jaraid:bibl:t1r1867 oape:bibl:3064 wiki:Q124973244" xml:lang="ar">النشرة الشهرية للشؤون البيطرية</title> </occupation>
+            <occupation change="#d10e909" resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of <title level="j"
+               ref="jaraid:bibl:t1r1893 oape:bibl:3199 wiki:Q124973949" xml:lang="ar">صحيفة التعاون</title> </occupation>
+         </org>
          <org>
             <orgName xml:lang="und-Latn"> <persName ref="jaraid:pers:477" xml:lang="fr">Eugène Clavel</persName> and Co</orgName>
             <idno type="jaraid">243</idno>
@@ -6230,8 +6282,24 @@
             <orgName xml:lang="ar">اليازجي اند زلزل</orgName>
             <idno type="oape">538</idno>
          </org>
+         <org xml:id="org_5805">
+            <orgName xml:id="persName_5805.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muhandisīn al-Miṣriyyīn</orgName>
+            <orgName change="#d2e154" xml:id="persName_5805.2" xml:lang="ar">نقابة المهندسين المصريين</orgName>
+            <idno type="wiki">Q125158988</idno>
+         </org>
+         <org xml:id="org_5806">
+            <orgName xml:id="persName_5806.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muḥāmīn al-Ahliyya</orgName>
+            <orgName change="#d2e154" xml:id="persName_5806.2" xml:lang="ar">نقابة المحامين الاهلية</orgName>
+            <idno type="wiki">Q125158989</idno>
+         </org>
+         <org xml:id="org_5807">
+            <orgName xml:id="persName_5807.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muḥāmīn al-Sharʿiyya</orgName>
+            <orgName change="#d2e154" xml:id="persName_5807.2" xml:lang="ar">نقابة المحامين الشرعية</orgName>
+            <idno type="wiki">Q125158990</idno>
+         </org>
       </listOrg>
       <listOrg change="#d2e28640 #d2e85573" xml:id="listOrg_1.d2e27706" xml:lang="ar">
+         <head>other organisations</head>
          <org change="#d2e85573" xml:id="org_1" xml:lang="ar">
             <orgName change="#d2e28640" xml:id="orgName_13.d2e27710" xml:lang="en"> <persName change="#d2e85573" corresp="#person_5.d1e290" xml:id="persName_5899.d2e27712" xml:lang="en"
                >Ṭāhir al-Jazāʾirī</persName>'s first circle</orgName>

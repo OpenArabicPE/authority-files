@@ -24,7 +24,7 @@
     </xsl:template>
     <xsl:template match="@change | @xml:id" mode="m_update"/>
     <!-- transform holding information to msDesc -->
-    <xsl:template match="tei:item[not(descendant::tei:bibl)]" mode="m_update">
+    <xsl:template match="tei:item" mode="m_update">
         <msDesc>
             <!-- @ana pointing to the main biblStruct -->
             <xsl:attribute name="ana" select="oape:query-biblstruct(ancestor::tei:biblStruct[1], 'id', '', '', $p_local-authority)"/>
@@ -44,45 +44,47 @@
                     <xsl:value-of select="$v_text"/>
                 </xsl:message>-->
                 <msContents>
-                    <msItem>
-                        <bibl>
-                            <!-- @ana pointing to the main biblStruct -->
-                            <xsl:attribute name="ana" select="oape:query-biblstruct(ancestor::tei:biblStruct[1], 'id', '', '', $p_local-authority)"/>
-                            <xsl:value-of select="normalize-space($v_text)"/>
-                        </bibl>
-                    </msItem>
+                    <xsl:if test="not(descendant::tei:bibl)">
+                        <msItem>
+                            <bibl>
+                                <!-- @ana pointing to the main biblStruct -->
+                                <xsl:attribute name="ana" select="oape:query-biblstruct(ancestor::tei:biblStruct[1], 'id', '', '', $p_local-authority)"/>
+                                <xsl:value-of select="normalize-space($v_text)"/>
+                            </bibl>
+                        </msItem>
+                    </xsl:if>
+                    <!-- group descendant bibls by classmark -->
+                    <xsl:for-each-group group-by="tei:idno[@type = 'classmark']" select="descendant::tei:bibl[tei:idno[@type = 'classmark']]">
+                        <msItem>
+                            <xsl:apply-templates mode="m_update" select="current-group()"/>
+                        </msItem>
+                    </xsl:for-each-group>
+                    <xsl:for-each select="descendant::tei:bibl[not(tei:idno[@type = 'classmark'])]">
+                        <msItem>
+                            <xsl:apply-templates mode="m_update" select="."/>
+                        </msItem>
+                    </xsl:for-each>
                 </msContents>
             </xsl:if>
         </msDesc>
     </xsl:template>
-    <xsl:template match="tei:item[descendant::tei:bibl] | tei:ab[descendant::tei:bibl]" mode="m_update">
-        <xsl:apply-templates mode="m_update" select="descendant::tei:bibl"/>
-    </xsl:template>
+    <!--<xsl:template match="tei:item[descendant::tei:bibl] | tei:ab[descendant::tei:bibl]" mode="m_update">
+        <xsl:apply-templates mode="m_update" select="descendant::tei:bibl[not(tei:idno[@type = 'classmark'])]"/>
+    </xsl:template>-->
     <xsl:template match="tei:bibl" mode="m_update">
-        <msDesc>
+        <!--<xsl:if test="tei:date | tei:biblScope">-->
+        <!--<msContents>
+                    <msItem>-->
+        <!-- reproduce the bibl -->
+        <xsl:copy>
             <!-- @ana pointing to the main biblStruct -->
             <xsl:attribute name="ana" select="oape:query-biblstruct(ancestor::tei:biblStruct[1], 'id', '', '', $p_local-authority)"/>
-            <!-- holding institution -->
-            <msIdentifier>
-                <xsl:variable name="v_item" select="ancestor::tei:item[1]"/>
-                <xsl:apply-templates mode="m_update" select="$v_item/tei:label/tei:placeName"/>
-                <institution>
-                    <xsl:apply-templates mode="m_update" select="$v_item/tei:label/tei:orgName"/>
-                </institution>
-                <xsl:apply-templates mode="m_update" select="tei:idno"/>
-            </msIdentifier>
-            <xsl:if test="tei:date | tei:biblScope">
-                <msContents>
-                    <msItem>
-                        <bibl>
-                            <!-- @ana pointing to the main biblStruct -->
-                            <xsl:attribute name="ana" select="oape:query-biblstruct(ancestor::tei:biblStruct[1], 'id', '', '', $p_local-authority)"/>
-                            <xsl:apply-templates mode="m_update" select="tei:date | tei:biblScope"/>
-                        </bibl>
-                    </msItem>
-                </msContents>
-            </xsl:if>
-        </msDesc>
+            <!--                            <xsl:apply-templates mode="m_update" select="tei:date | tei:biblScope"/>-->
+            <xsl:apply-templates mode="m_update" select="node()"/>
+        </xsl:copy>
+        <!--</msItem>
+                </msContents>-->
+        <!--</xsl:if>-->
     </xsl:template>
     <xsl:template match="tei:idno[@type = 'classmark']" mode="m_update">
         <xsl:copy>

@@ -59,6 +59,7 @@ This repository holds the authority files for three research projects in Arab Pe
     + example: `مجلة <title level="j" ref="oape:bibl:46" xml:lang="ar">العلم في القرن العشرين</title>`
 - [ ] extract dates from holding data
     + dates in holding data can be used to improve our knowledge of publication histories. If a library has a copy and provides a publication date for this copy, assume that they catalogued it correctly, and add this dating information as `<date type="documented"/>` to the main entry's `<imprint/>`
+- [/] WDL links are dead as the project came to an end: `https://www.wdl.org/en/`
 
 ## XSLT
 
@@ -98,7 +99,9 @@ This repository holds the authority files for three research projects in Arab Pe
 
 ## bibliography
 
-- `tei-biblstruct_merge-multiple-sources.xsl`: Stylesheet to merge `<bibl>` and `<biblStruct>` from source files into the bibliography based on the `tei:title/@ref` values. 
+- `tei-biblstruct_merge-multiple-sources.xsl`: Stylesheet to merge `<bibl>` and `<biblStruct>` from source files into the bibliography based on the `tei:title/@ref` values.
+    - This works best when one first runs `convert_tei-to-bibliographic-data/xslt/convert_tei-to-biblstruct_bibl.xsl`
+    - run general improvements afterwards and make sure that the sources section doesn't get botched
 
 
 XSLT to copy data from biblio-biographic dictionaries, such as Zirikli to the bibliography

@@ -57,6 +57,17 @@
         </xsl:variable>
         <xsl:value-of select="oape:string-remove-harakat($v_output)"/>
     </xsl:function>
+    <!-- this utilises 1:1 replacements -->
+    <xsl:function name="oape:string-normalise-latin">
+        <xsl:param name="p_input"/>
+        <xsl:variable name="v_alphabet-ascii" select="'aaabccddefggghhhiiiijkklmnoopqrsssstttuuuvwxyzz'"/>
+        <xsl:variable name="v_alphabet-latin" select="'aäâbcçdḍefgğġhḥḫiîıİjkḳlmnoöpqrsšşṣṭṯtuüûvwxyzẓ'"/>
+        <xsl:value-of select="translate(lower-case($p_input), $v_alphabet-latin, $v_alphabet-ascii)"/>
+    </xsl:function>
+    <xsl:function name="oape:string-normalise-all">
+        <xsl:param name="p_input"/>
+        <xsl:value-of select="normalize-space(oape:string-normalise-arabic(oape:string-normalise-latin($p_input)))"/>
+    </xsl:function>
     <xsl:function name="oape:string-remove-characters">
         <xsl:param as="xs:string" name="p_input"/>
         <xsl:param name="p_string-match"/>
@@ -111,16 +122,7 @@
         <!--        <xsl:if test="$p_entity-name/@ref or $p_entity-name != ''">-->
         <!-- this is a rather ridiculous hack, but I don't need change IDs in the context of this function -->
         <xsl:variable name="v_id-change" select="'a1'"/>
-        <xsl:variable name="v_ref">
-            <xsl:choose>
-                <xsl:when test="$p_entity-name/@ref">
-                    <xsl:value-of select="$p_entity-name/@ref"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:text>NA</xsl:text>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
+        <!-- establish the entity type -->
         <xsl:variable name="v_entity-type">
             <xsl:choose>
                 <xsl:when test="local-name($p_entity-name) = 'persName'">
@@ -132,7 +134,7 @@
                 <xsl:when test="local-name($p_entity-name) = 'placeName'">
                     <xsl:text>place</xsl:text>
                 </xsl:when>
-                <xsl:when test="local-name($p_entity-name) = 'title'">
+                <xsl:when test="local-name($p_entity-name) = ('title', 'bibl', 'biblStruct')">
                     <xsl:text>bibl</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
@@ -141,6 +143,17 @@
                         <xsl:value-of select="name($p_entity-name)"/>
                         <xsl:text>) cannot be looked up</xsl:text>
                     </xsl:message>
+                    <xsl:text>NA</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <!-- get the value of the @ref attribute or 'NA' -->
+        <xsl:variable name="v_ref">
+            <xsl:choose>
+                <xsl:when test="$p_entity-name/@ref">
+                    <xsl:value-of select="$p_entity-name/@ref"/>
+                </xsl:when>
+                <xsl:otherwise>
                     <xsl:text>NA</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
@@ -173,6 +186,7 @@
         <xsl:choose>
             <!-- check if the entity already links to an authority file by means of the @ref attribute -->
             <xsl:when test="not($v_ref = 'NA') and ($p_ignore-existing-refs = false() or $v_resp = 'ref_manual')">
+                <!-- establish the authority -->
                 <xsl:variable name="v_authority">
                     <!-- order matters here: while our local IDs must be unique, we can have multiple entries pointing to the same ID in an external reference file -->
                     <xsl:choose>
@@ -245,6 +259,7 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
+                <!-- use authority and ID to pull the corresponding entity from the authority -->
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
                         <xsl:choose>
@@ -317,7 +332,7 @@
                             <!-- even though the input claims that there is an entry in the authority file, there isn't -->
                             <xsl:otherwise>
                                 <xsl:message>
-                                    <xsl:text>There is no biblStruct with the </xsl:text>
+                                    <xsl:text>FAILURE: There is no biblStruct with the </xsl:text>
                                     <xsl:value-of select="$v_authority"/>
                                     <xsl:text>-ID </xsl:text>
                                     <xsl:value-of select="$v_idno"/>
@@ -348,7 +363,8 @@
                     </xsl:message>
                 </xsl:if>
                 <!-- this fails for nested entities -->
-                <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-arabic(string($p_entity-name)))"/>
+                <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-all(string($p_entity-name)))"/>
+                <!-- TO DO: normalise Latin-script to ASCII by removing all diacritics etc.-->
                 <xsl:choose>
                     <xsl:when test="$v_entity-type = 'pers'">
                         <xsl:variable name="v_name-flattened" select="oape:name-flattened($p_entity-name, '', $v_id-change)"/>
@@ -368,13 +384,13 @@
                         <xsl:variable name="v_name-no-addnames" select="oape:name-remove-addnames($v_name-marked-up, '', $v_id-change)"/>
                         <xsl:variable name="v_name-no-addnames-flattened" select="oape:name-flattened($v_name-no-addnames, '', $v_id-change)"/>
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:person/tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                            <xsl:when test="$p_authority-file//tei:person/tei:persName[oape:string-normalise-all(.) = $v_name-normalised]">
                                 <xsl:if test="$p_debug = true()">
                                     <xsl:message>
                                         <xsl:text>The normalised name is found in the personography</xsl:text>
                                     </xsl:message>
                                 </xsl:if>
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:person[tei:persName[oape:string-normalise-all(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:when test="$p_authority-file//tei:person[tei:persName = $v_name-flattened]">
                                 <xsl:if test="$p_debug = true()">
@@ -407,8 +423,8 @@
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'org'">
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:org/tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:org[tei:orgName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
+                            <xsl:when test="$p_authority-file//tei:org/tei:orgName[oape:string-normalise-all(.) = $v_name-normalised]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:org[tei:orgName[oape:string-normalise-all(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
@@ -423,8 +439,8 @@
                     </xsl:when>
                     <xsl:when test="$v_entity-type = 'place'">
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]">
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:place[tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]][1]"/>
+                            <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-all(.) = $v_name-normalised]">
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:place[tei:placeName[oape:string-normalise-all(.) = $v_name-normalised]][1]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>
@@ -444,14 +460,23 @@
                             </xsl:message>
                         </xsl:if>
                         <xsl:choose>
-                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                            <!-- find items with matching ID in authority file -->
+                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct[descendant::tei:idno/text() = $p_entity-name/descendant::tei:idno/text()]">
+                                <xsl:variable name="v_idnos" select="$p_entity-name/descendant::tei:idno"/>
+                                <xsl:message>
+                                    <xsl:text>Returning match based on IDs</xsl:text>
+                                </xsl:message>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[descendant::tei:idno[text() = $v_idnos[@type = ./@type]/text()]]"/>
+                            </xsl:when>
+                            <!-- find string matches for titles: this doesn't work at all -->
+                            <xsl:when test="$p_authority-file/descendant::tei:biblStruct/tei:monogr/tei:title[oape:string-normalise-all(.) = $v_name-normalised]">
                                 <xsl:if test="$p_verbose = true()">
                                     <xsl:message>
                                         <xsl:text>Returning a match solely based on the title</xsl:text>
                                     </xsl:message>
                                 </xsl:if>
                                 <!-- problem: this should return more than one match!!!!! -->
-                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title[oape:string-normalise-arabic(.) = $v_name-normalised]]"/>
+                                <xsl:copy-of select="$p_authority-file/descendant::tei:biblStruct[tei:monogr/tei:title[oape:string-normalise-all(.) = $v_name-normalised]]"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <!-- one cannot use a boolean value if the default result is non-boolean -->
@@ -596,8 +621,23 @@
             </xsl:when>
             <xsl:when test="$p_output-mode = ('id-wiki', 'wiki')">
                 <xsl:choose>
+                    <!-- explicit ID -->
                     <xsl:when test="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata]">
                         <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = $p_acronym-wikidata][1]"/>
+                    </xsl:when>
+                    <!-- ref on title -->
+                    <xsl:when test="$p_bibl/descendant::tei:title[matches(@ref, concat($p_acronym-wikidata, ':Q\d+'))]">
+                        <xsl:value-of select="replace($p_bibl/descendant::tei:title[matches(@ref, concat($p_acronym-wikidata, ':Q\d+'))][1]/@ref, concat('^.*', $p_acronym-wikidata, ':(Q\d+).*$'), '$1')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$p_output-mode = ('id-hathi', 'ht_bib_key')">
+                <xsl:choose>
+                    <xsl:when test="$p_bibl/descendant::tei:idno[@type = 'ht_bib_key']">
+                        <xsl:value-of select="$p_bibl/descendant::tei:idno[@type = 'ht_bib_key'][1]"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="'NA'"/>
@@ -643,9 +683,7 @@
                     <!-- possible transcriptions into other script -->
                     <!-- type of transcription provided in p_output-language -->
                     <xsl:when test="$v_monogr/tei:title[matches(@xml:lang, concat($v_mainLang, '-', $p_output-language))]">
-                        <xsl:value-of
-                            select="normalize-space($v_monogr[1]/tei:title[matches(@xml:lang, concat($v_mainLang, '-', $p_output-language))][1])"
-                        />
+                        <xsl:value-of select="normalize-space($v_monogr[1]/tei:title[matches(@xml:lang, concat($v_mainLang, '-', $p_output-language))][1])"/>
                     </xsl:when>
                     <!-- possible transcriptions into other script -->
                     <xsl:when test="($p_output-language = 'ar') and ($v_monogr/tei:title[contains(@xml:lang, '-Arab-')])">
@@ -694,12 +732,12 @@
                 <xsl:value-of select="$v_otherLangs"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'langs'">
-                <xsl:for-each-group select="$v_monogr/tei:textLang/@mainLang" group-by=".">
+                <xsl:for-each-group group-by="." select="$v_monogr/tei:textLang/@mainLang">
                     <xsl:element name="lang">
                         <xsl:value-of select="current-grouping-key()"/>
                     </xsl:element>
                 </xsl:for-each-group>
-                <xsl:for-each-group select="tokenize($v_monogr/tei:textLang/@otherLangs, ' ')" group-by=".">
+                <xsl:for-each-group group-by="." select="tokenize($v_monogr/tei:textLang/@otherLangs, ' ')">
                     <xsl:element name="lang">
                         <xsl:value-of select="current-grouping-key()"/>
                     </xsl:element>
@@ -865,6 +903,21 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
+            <!-- provide output for volume and issues -->
+            <xsl:when test="$p_output-mode = ('volume', 'issue')">
+                <xsl:choose>
+                    <xsl:when test="$v_monogr/tei:biblScope[@unit = $p_output-mode]">
+                        <xsl:value-of select="$v_monogr/tei:biblScope[@unit = $p_output-mode]/@from"/>
+                        <xsl:if test="$v_monogr/tei:biblScope[@unit = $p_output-mode][@from lt @to]">
+                            <xsl:text>-</xsl:text>
+                            <xsl:value-of select="$v_monogr/tei:biblScope[@unit = $p_output-mode]/@to"/>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="'NA'"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
             <!-- count known holdings -->
             <xsl:when test="$p_output-mode = 'holdings'">
                 <xsl:value-of select="count($p_bibl/tei:note[@type = 'holdings']/tei:list/tei:item)"/>
@@ -928,7 +981,8 @@
                     <xsl:attribute name="when">
                         <xsl:choose>
                             <xsl:when test="@type = 'onset'">
-                                <xsl:value-of select="concat($v_temp, '-12-31')"/>
+                                <!-- for some applications it seems preferable to set this to -12-31, but I forgot which -->
+                                <xsl:value-of select="concat($v_temp, '-01-01')"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="concat($v_temp, '-12-31')"/>
@@ -1194,7 +1248,7 @@
         <xsl:choose>
             <!-- test for @ref pointing to auhority files -->
             <xsl:when test="$v_org != 'NA'">
-                <xsl:copy-of select="oape:query-org($v_org, $p_output-mode, $p_output-language, $p_local-authority)"/>
+                <xsl:copy-of select="oape:query-org($v_org[1], $p_output-mode, $p_output-language, $p_local-authority)"/>
             </xsl:when>
             <!-- return original input toponym if nothing else is fond -->
             <xsl:when test="$p_output-mode = 'name'">
@@ -1415,8 +1469,8 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-             <xsl:when test="$p_output-mode = 'name'">
-                 <xsl:value-of select="normalize-space(oape:query-org($p_org, 'name-tei', $p_output-language, $p_local-authority))"/>
+            <xsl:when test="$p_output-mode = 'name'">
+                <xsl:value-of select="normalize-space(oape:query-org($p_org, 'name-tei', $p_output-language, $p_local-authority))"/>
             </xsl:when>
             <xsl:when test="$p_output-mode = 'url'">
                 <xsl:choose>
@@ -1634,7 +1688,7 @@
                         <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')])">
                             <xsl:copy-of select="$p_person/tei:persName[@type = 'noAddName'][contains(@xml:lang, '-Latn-')][1]"/>
                         </xsl:when>
-                         <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')])">
+                        <xsl:when test="($p_output-language = 'en') and ($p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')])">
                             <xsl:copy-of select="$p_person/tei:persName[not(@type = 'flattened')][contains(@xml:lang, '-Latn-')][1]"/>
                         </xsl:when>
                         <!-- fallback to english -->
@@ -1741,7 +1795,7 @@
             <xsl:otherwise>
                 <xsl:if test="$p_verbose = true()">
                     <xsl:message>
-                        <xsl:text>date: no machine-readible onset found</xsl:text>
+                        <xsl:text>date: no machine-readible onset found </xsl:text><xsl:copy-of select="$p_date"/>
                     </xsl:message>
                 </xsl:if>
             </xsl:otherwise>
@@ -2352,7 +2406,7 @@
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
         <!-- flatened version of the persName without non-word characters -->
-        <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-arabic($p_placename))"/>
+        <xsl:variable name="v_name-normalised" select="normalize-space(oape:string-normalise-all($p_placename))"/>
         <!-- this can potentially return multiple places if the toponym matches to multiple places -->
         <xsl:variable name="v_corresponding-place">
             <xsl:choose>
@@ -2365,11 +2419,11 @@
                     <xsl:copy-of select="oape:get-entity-from-authority-file($p_placename, $p_local-authority, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
-                <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]">
+                <xsl:when test="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-all(.) = $v_name-normalised]">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>The normalised input has been found in the authority file</xsl:message>
                     </xsl:if>
-                    <xsl:copy-of select="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-arabic(.) = $v_name-normalised]/parent::tei:place"/>
+                    <xsl:copy-of select="$p_authority-file//tei:place/tei:placeName[oape:string-normalise-all(.) = $v_name-normalised]/parent::tei:place"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="$p_verbose = true()">
@@ -2444,7 +2498,7 @@
         <xsl:param as="xs:string" name="p_local-authority"/>
         <xsl:param name="p_authority-file"/>
         <!-- flatened version of the persName without non-word characters -->
-        <xsl:variable name="v_name-normalised" select="lower-case(normalize-space(oape:string-normalise-arabic($p_orgname)))"/>
+        <xsl:variable name="v_name-normalised" select="oape:string-normalise-all($p_orgname)"/>
         <!-- this can potentially return multiple places if the toponym matches to multiple places -->
         <xsl:variable name="v_corresponding-org">
             <xsl:choose>
@@ -2457,11 +2511,11 @@
                     <xsl:copy-of select="oape:get-entity-from-authority-file($p_orgname, $p_local-authority, $p_authority-file)"/>
                 </xsl:when>
                 <!-- test if the name is found in the authority file -->
-                <xsl:when test="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-arabic(.)) = $v_name-normalised]">
+                <xsl:when test="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-all(.)) = $v_name-normalised]">
                     <xsl:if test="$p_verbose = true()">
                         <xsl:message>The normalised input has been found in the authority file</xsl:message>
                     </xsl:if>
-                    <xsl:copy-of select="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-arabic(.)) = $v_name-normalised]/parent::tei:org"/>
+                    <xsl:copy-of select="$p_authority-file//tei:org/tei:orgName[lower-case(oape:string-normalise-all(.)) = $v_name-normalised]/parent::tei:org"/>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:if test="$p_verbose = true()">
@@ -2614,9 +2668,26 @@
             <xsl:when test="$v_corresponding-person = 'NA'">
                 <!--                <xsl:if test="$p_verbose = true()">-->
                 <xsl:message>
-                    <xsl:text> The input "</xsl:text>
+                    <xsl:text>FAILURE: The input "</xsl:text>
                     <xsl:value-of select="normalize-space($p_persname)"/>
                     <xsl:text>" was not found in authority file.</xsl:text>
+                </xsl:message>
+                <xsl:variable name="v_person">
+                    <xsl:variable name="v_persName">
+                        <xsl:apply-templates mode="m_copy-from-source" select="$p_persname"/>
+                    </xsl:variable>
+                    <person>
+                        <persName>
+                            <!-- add attributes -->
+                            <xsl:apply-templates mode="m_copy-from-source" select="$v_persName/tei:persName/@*"/>
+                            <!-- add mark-up -->
+                            <xsl:copy-of select="oape:string-mark-up-names($p_persname, $p_id-change)"/>
+                        </persName>
+                    </person>
+                </xsl:variable>
+                <xsl:message terminate="no">
+                    <xsl:text>Add </xsl:text>
+                    <xsl:copy-of select="$v_person"/>
                 </xsl:message>
                 <!--</xsl:if>-->
                 <xsl:copy select="$p_persname">
@@ -2738,41 +2809,6 @@
             </xsl:message>
         </xsl:if>
         <xsl:variable name="v_title-string" select="normalize-space($v_title)"/>
-        <!-- some messages for providing feedback to the user -->
-        <xsl:variable name="v_string-pipe" select="' | '"/>
-        <xsl:variable name="v_message-success">
-            <xsl:value-of select="$v_string-pipe"/>
-            <xsl:text>SUCCESS</xsl:text>
-            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
-            <xsl:text>linked to the authority file.</xsl:text>
-            <xsl:value-of select="$v_string-pipe"/>
-        </xsl:variable>
-        <xsl:variable name="v_message-warning">
-            <xsl:value-of select="$v_string-pipe"/>
-            <xsl:text>WARNING</xsl:text>
-            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
-            <xsl:text>could not be linked to the authority file due to ambiguous matches.</xsl:text>
-            <xsl:value-of select="$v_string-pipe"/>
-        </xsl:variable>
-        <xsl:variable name="v_message-failure">
-            <xsl:value-of select="$v_string-pipe"/>
-            <xsl:text>FAILURE</xsl:text>
-            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
-            <xsl:text>could not be found in the authority file.</xsl:text>
-            <xsl:value-of select="$v_string-pipe"/>
-            <xsl:if test="$p_verbose = true()">
-                <xsl:text> Add </xsl:text>
-                <xsl:choose>
-                    <xsl:when test="$v_biblStruct != 'NA'">
-                        <xsl:copy-of select="$v_biblStruct"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:apply-templates mode="m_copy-from-source" select="$p_title"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-                <xsl:value-of select="$v_string-pipe"/>
-            </xsl:if>
-        </xsl:variable>
         <!-- legitimate difference between years of publication -->
         <xsl:variable name="v_margin" select="2"/>
         <!-- select a year, the reference to be linked was made in -->
@@ -2799,12 +2835,9 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <!-- step 1: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
+        <!-- step 1b: try to find the title in the authority file: currently either based on IDs in @ref or the title itself. If nothing is found the function returns 'NA' -->
         <!-- possible results: none, one, multiple -->
-        <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
         <!-- NOTE: when the input links to an entity NOT FOUND in the authority, this link should probably be retained -->
-        <!-- check if one could go through $v_biblStruct: works -->
-<!--         <xsl:variable name="v_corresponding-bibls" select="oape:get-entity-from-authority-file( $v_biblStruct//tei:monogr/tei:title[1], $p_local-authority, $p_bibliography)"/>-->
         <!-- step 2: filter by publication date  -->
         <xsl:variable name="v_corresponding-bibls">
             <xsl:message>
@@ -2812,6 +2845,20 @@
                 <xsl:value-of select="$v_title-string"/>
                 <xsl:text>" in the authority file</xsl:text>
             </xsl:message>
+            <xsl:variable name="v_corresponding-bibls">
+                <!-- 1: check if we can match based on any ID -->
+                <xsl:variable name="v_bibl" select="oape:get-entity-from-authority-file($v_biblStruct/descendant-or-self::tei:biblStruct, $p_local-authority, $p_bibliography)"/>
+                <!-- 2: get matches based on title -->
+                <xsl:variable name="v_title" select="oape:get-entity-from-authority-file($v_title/descendant-or-self::tei:title, $p_local-authority, $p_bibliography)"/>
+                <xsl:choose>
+                    <xsl:when test="$v_bibl != 'NA'">
+                        <xsl:copy-of select="$v_bibl"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:copy-of select="$v_title"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
             <xsl:variable name="v_bibls-compiled">
                 <xsl:for-each select="$v_corresponding-bibls/descendant-or-self::tei:biblStruct">
                     <!-- this line causes trouble if the input uses a private URI scheme in @next and @prev as my authority files do -->
@@ -2825,9 +2872,8 @@
                         1. assuming we have known dates of first publication for all bibls: dates should NOT DIFFER by more than x years
                         2. the reference to be linked CANNOT have been published BEFORE the source in the authority file
                     -->
-                    <xsl:when test="($v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA') and 
-                         ($v_year-publication lt $v_corresponding-bibl-year) and
-                        (floor($v_year-publication - $v_corresponding-bibl-year) &gt; $v_margin)">
+                    <xsl:when
+                        test="($v_corresponding-bibl-year != 'NA' and $v_year-publication != 'NA') and ($v_year-publication lt $v_corresponding-bibl-year) and (floor($v_year-publication - $v_corresponding-bibl-year) &gt; $v_margin)">
                         <xsl:message>
                             <xsl:value-of select="$v_string-pipe"/>
                             <xsl:text>WARNING</xsl:text>
@@ -2840,7 +2886,6 @@
                             <xsl:value-of select="$v_string-pipe"/>
                         </xsl:message>
                     </xsl:when>
-                    
                     <!-- our authority files contain multiple <biblStruct> for a single logical publication in the case when editors, subtitles, places of publication etc. have changed. They are tied together by @next and @prev attributes
                            - we could establish which of those is in closes temporal proximity to the current text, the references occur in 
                            - we could compile these biblStruct into a single one.
@@ -2852,13 +2897,63 @@
                 </xsl:choose>
             </xsl:for-each>
         </xsl:variable>
+         <!-- some messages for providing feedback to the user -->
+        <xsl:variable name="v_message-success">
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>SUCCESS</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:text>linked</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+        </xsl:variable>
+        <xsl:variable name="v_message-warning">
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>WARNING</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:value-of select="count($v_corresponding-bibls/descendant-or-self::tei:biblStruct)"/>
+            <xsl:text>ambiguous matches</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+        </xsl:variable>
+        <xsl:variable name="v_message-failure">
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:text>FAILURE</xsl:text>
+            <xsl:value-of select="concat($v_string-pipe, $v_title-string, $v_string-pipe, $v_url-source, $v_string-pipe)"/>
+            <xsl:text>not found</xsl:text>
+            <xsl:value-of select="$v_string-pipe"/>
+            <xsl:if test="$p_verbose = true()">
+                <xsl:text> Add </xsl:text>
+                <xsl:choose>
+                    <xsl:when test="$v_biblStruct != 'NA'">
+                        <xsl:copy-of select="$v_biblStruct"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates mode="m_copy-from-source" select="$p_title"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:value-of select="$v_string-pipe"/>
+            </xsl:if>
+        </xsl:variable>
         <xsl:variable name="v_corresponding-bibl">
             <xsl:choose>
+                <!-- match based on IDs -->
+                <!-- The XPath is wrong. we look for IDs of matching types and values -->
+               <!-- <xsl:when test="$p_bibliography/descendant::tei:biblStruct[descendant::tei:idno[text() = $v_biblStruct/descendant::tei:idno[@type = ]/text()]]">
+                    <xsl:message>
+                        <xsl:text>Found a match based on IDs</xsl:text>
+                    </xsl:message>
+                    <xsl:copy-of select="$p_bibliography/descendant::tei:biblStruct[descendant::tei:idno[text() = $v_biblStruct/descendant::tei:idno[@type = ./@type]/text()]]"/>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
+                    </xsl:message>
+                </xsl:when>-->
                 <!-- match based on IDs from authority files: the list is currently hard coded -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]">
-                    <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = $p_acronym-wikidata] = $v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]][1]"/>
+                    <xsl:copy-of
+                        select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = $p_acronym-wikidata] = $v_biblStruct/descendant::tei:idno[@type = $p_acronym-wikidata]][1]"/>
                     <xsl:message>
                         <xsl:text>Found a match based on Wikidata ID</xsl:text>
+                    </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
                     </xsl:message>
                 </xsl:when>
                 <!-- worldcat -->
@@ -2867,12 +2962,18 @@
                     <xsl:message>
                         <xsl:text>Found a match based on Worldcat ID</xsl:text>
                     </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
+                    </xsl:message>
                 </xsl:when>
-                 <!-- LCCN -->
+                <!-- LCCN -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'LCCN'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'LCCN']">
                     <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'LCCN'] = $v_biblStruct/descendant::tei:idno[@type = 'LCCN']][1]"/>
                     <xsl:message>
                         <xsl:text>Found a match based on Library of Congress ID</xsl:text>
+                    </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
                     </xsl:message>
                 </xsl:when>
                 <!-- Hathi -->
@@ -2881,6 +2982,9 @@
                     <xsl:message>
                         <xsl:text>Found a match based on HathiTrust ID</xsl:text>
                     </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
+                    </xsl:message>
                 </xsl:when>
                 <!-- DOI -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'DOI'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'DOI']">
@@ -2888,12 +2992,18 @@
                     <xsl:message>
                         <xsl:text>Found a match based on DOI ID</xsl:text>
                     </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
+                    </xsl:message>
                 </xsl:when>
                 <!-- ZDB -->
                 <xsl:when test="$v_biblStruct/descendant::tei:idno[@type = 'zdb'] = $p_bibliography/descendant::tei:biblStruct/descendant::tei:idno[@type = 'zdb']">
                     <xsl:copy-of select="$p_bibliography/descendant-or-self::tei:biblStruct[descendant::tei:idno[@type = 'zdb'] = $v_biblStruct/descendant::tei:idno[@type = 'zdb']][1]"/>
                     <xsl:message>
                         <xsl:text>Found a match based on ZDB ID</xsl:text>
+                    </xsl:message>
+                    <xsl:message>
+                        <xsl:copy-of select="$v_message-success"/>
                     </xsl:message>
                 </xsl:when>
                 <!-- test if there is a potential match -->
@@ -3660,7 +3770,7 @@
             </xsl:if>
         </xsl:element>
         <!-- add trailing whitespace: why? -->
-<!--        <xsl:text> </xsl:text>-->
+        <!--        <xsl:text> </xsl:text>-->
     </xsl:template>
     <!-- why do we need this function here -->
     <xsl:template match="tei:bibl" mode="m_bibl-to-biblStruct">
@@ -4066,4 +4176,56 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+    <!-- post-processing -->
+    <xsl:template match="node() | @*" mode="m_post-process">
+        <xsl:copy>
+            <xsl:apply-templates mode="m_post-process" select="@* | node()"/>
+        </xsl:copy>
+    </xsl:template>
+    <!-- remove attributes in post processing -->
+    <xsl:template
+        match="tei:idno[@type = ($p_local-authority, $p_acronym-wikidata)]/@source | node()[@xml:lang][empty(.)]/@xml:lang | tei:monogr/tei:title[@level = 'j']/@ref[not('NA')] | node()[ancestor::tei:persName/@source]/@source"
+        mode="m_post-process" priority="10"/>
+    <xsl:template match="tei:imprint/@source | tei:monogr/@source | tei:note/@source" mode="m_off" priority="10"/>
+    <xsl:template match="tei:imprint[@source = node()/@source]/@source" mode="m_post-process" priority="10"/>
+    <xsl:template match="tei:pubPlace[@source = node()/@source]/@source" mode="m_post-process" priority="10"/>
+    <!--    <xsl:template match="@source[. = parent::node()/parent::node()/@source]" mode="m_post-process" priority="9"/>-->
+    <!-- try and unify overboarding source information -->
+    <!-- clean: ending in '#' -->
+    <xsl:template match="@source" mode="m_post-process">
+        <xsl:attribute name="source">
+            <xsl:for-each select="tokenize(., '\s+')">
+                <xsl:sort select="."/>
+                <xsl:value-of select="."/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@resp" mode="m_post-process">
+        <xsl:attribute name="resp">
+            <xsl:for-each-group group-by="." select="tokenize(., '\s+')">
+                <xsl:sort select="current-grouping-key()"/>
+                <xsl:value-of select="current-grouping-key()"/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each-group>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@change" mode="m_post-process">
+        <xsl:attribute name="change">
+            <xsl:for-each-group group-by="." select="tokenize(., '\s+')">
+                <!--                <xsl:sort select="current-grouping-key()"/>-->
+                <xsl:value-of select="current-grouping-key()"/>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each-group>
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="tei:title/text()" mode="m_post-process">
+        <xsl:value-of select="normalize-space(.)"/>
+    </xsl:template>
 </xsl:stylesheet>
