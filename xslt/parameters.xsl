@@ -38,6 +38,7 @@
     <xsl:param name="p_url-resolve-zenodo" select="'https://zenodo.org/records/'"/>
     <xsl:param name="p_url-resolve-aub" select="'https://libcat.aub.edu.lb/record='"/>
     <xsl:param name="p_url-resolve-ia" select="'https://archive.org/details/'"/>
+    <xsl:param name="p_url-resolve-usek" select="'https://sierra.usek.edu.lb/record='"/>
     <!-- files -->
     <xsl:param name="p_url-nyms" select="'../data/tei/nymlist.TEIP5.xml'"/>
     <xsl:variable name="v_file-nyms" select="doc($p_url-nyms)"/>
