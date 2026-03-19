@@ -41,7 +41,7 @@
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
-    <!-- the linking is done on tei:title notes, but the function called here compiles bibl and biblStruct elments -->
+    <!-- the linking is done on tei:title nodes, but the function called here compiles bibl and biblStruct elments -->
     <xsl:template match="tei:title[ancestor::tei:text | ancestor::tei:standOff][@level = 'j'][not(@type = 'sub')]" priority="10">
         <xsl:copy-of select="oape:link-title-to-authority-file(., $p_local-authority, $v_bibliography)"/>
 <!--        <xsl:copy-of select="oape:get-entity-from-authority-file(., $p_local-authority, $v_bibliography)"/>-->
