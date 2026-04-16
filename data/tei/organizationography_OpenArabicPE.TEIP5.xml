@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="/BachUni/BachBibliothek/GitHub/OpenArabicPE/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"   schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="/BachUni/BachBibliothek/GitHub/OpenArabicPE/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"   schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -22,6 +17,7 @@
          </sourceDesc>
       </fileDesc>
       <revisionDesc xml:lang="en">
+         <tei:change when="2026-04-16" who="#pers_TG" xml:id="d11e85" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
          <tei:change when="2024-01-25" who="#pers_TG" xml:id="d11e80" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
          <tei:change when="2023-12-11" who="#pers_TG" xml:id="d10e75" xml:lang="en">Improved <tei:gi>org</tei:gi> nodes by adding IDs.</tei:change>
          <tei:change when="2023-11-14" who="#pers_TG" xml:id="d10e65" xml:lang="en">Added references to local authority file (<tei:ref
@@ -40,17 +36,6 @@
    <standOff>
       <listOrg type="holdings">
          <head>Holding Institutions</head>
-         <org type="library">
-            <orgName type="short" xml:lang="de">Mainz, Bestand Turkologie</orgName>
-            <orgName xml:lang="de">Universität Mainz, Bereichsbibliothek Philosophicum/ Standort Turkologie</orgName>
-            <idno type="isil">DE-77-080</idno>
-         </org>
-         <org type="digitalLibrary">
-            <orgName>Internet Archive</orgName>
-            <idno type="url">https://archive.org/</idno>
-            <idno type="oape">440</idno>
-            <idno type="wiki">Q461</idno>
-         </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-1102" type="library">
             <orgName type="short" xml:lang="de">Ansbach HS</orgName>
             <orgName xml:lang="de">Hochschulbibliothek Ansbach</orgName>
@@ -79,17 +64,6 @@
             <idno type="wiki">Q9630401</idno>
             <location>
                <placeName ref="geon:3448439 jaraid:place:49 oape:place:364">São Paulo</placeName>
-            </location>
-         </org>
-         <org type="archive" xml:id="hAH">
-            <orgName xml:lang="ar-Latn-x-ijmes">Arshīf ʿĀmm al-Ḥukūma</orgName>
-            <orgName xml:lang="ar">ارشيف عام الحكومة</orgName>
-            <orgName type="jaraid">AʿH</orgName>
-            <idno type="jaraid">hAH</idno>
-            <idno type="oape">2</idno>
-            <idno type="wiki">Q130548540</idno>
-            <location>
-               <placeName ref="geon:2464470 oape:place:333">Tunis</placeName>
             </location>
          </org>
          <org type="library" xml:id="hAKID">
@@ -217,29 +191,6 @@
                <address xml:lang="de">
                   <postCode>95440</postCode>
                   <placeName ref="geon:2951825 oape:place:657">Bayreuth</placeName>
-               </address>
-            </location>
-         </org>
-         <org source="https://ld.zdb-services.de/resource/organisations/DE-Y9" type="researchInstitute" xml:id="hOIB">
-            <orgName xml:lang="de">Orient-Institut Beirut</orgName>
-            <orgName type="jaraid">OIB</orgName>
-            <idno type="jaraid">hOIB</idno>
-            <idno type="isil">DE-Y9</idno>
-            <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Y9</idno>
-            <idno type="oape">62</idno>
-            <idno type="oape">266</idno>
-            <idno type="wiki">Q2030483</idno>
-            <location>
-               <geo>33.89339, 35.49683</geo>
-               <address xml:lang="de">
-                  <street>Rue Hussein Beyhum</street>
-                  <postCode>2988</postCode>
-                  <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
-               </address>
-               <address xml:lang="de">
-                  <street>Zokak el-Blat, Rue Hussein Beyhum</street>
-                  <postCode>P.O.B. 11-2988</postCode>
-                  <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
                </address>
             </location>
          </org>
@@ -717,17 +668,6 @@
                <placeName ref="geon:2988507 oape:place:322">Paris</placeName>
             </location>
          </org>
-         <org type="library" xml:id="hBNA">
-            <orgName xml:lang="fr">Bibliothèque nationale d'Algerie</orgName>
-            <orgName xml:lang="ar">المكتبة الوطنية الجزائرية</orgName>
-            <orgName type="jaraid">BnA</orgName>
-            <idno type="jaraid">hBNA</idno>
-            <idno type="oape">13</idno>
-            <idno type="wiki">Q2901476</idno>
-            <location>
-               <placeName ref="geon:2507480 jaraid:place:7 oape:place:437">Algiers</placeName>
-            </location>
-         </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-Bm3" type="library">
             <orgName type="short" xml:lang="de">Bochum BdRuhrgebiets</orgName>
             <orgName xml:lang="de">Bibliothek des Ruhrgebiets</orgName>
@@ -782,20 +722,6 @@
                   <postCode>44780</postCode>
                   <placeName ref="geon:2947416 oape:place:658">Bochum</placeName>
                </address>
-            </location>
-         </org>
-         <org type="library" xml:id="hBOD">
-            <orgName>Bodleian Library</orgName>
-            <orgName xml:lang="en">University of Oxford Libraries</orgName>
-            <orgName type="jaraid">Bod</orgName>
-            <idno type="jaraid">hBOD</idno>
-            <idno type="oape">14</idno>
-            <idno type="UkMaC">oxf</idno>
-            <idno type="isil">GB-UkOxU</idno>
-            <idno type="oape">651</idno>
-            <idno type="wiki">Q82133</idno>
-            <location>
-               <placeName ref="geon:2640729 oape:place:328">Oxford</placeName>
             </location>
          </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-Bo133" type="library">
@@ -1616,17 +1542,6 @@
                </address>
             </location>
          </org>
-         <org type="digitalLibrary" xml:id="hathi">
-            <orgName>HathiTrust</orgName>
-            <orgName xml:lang="en">Hathi Trust Digital Library</orgName>
-            <idno type="UkMaC">hat</idno>
-            <idno type="isil">US-miaahdl</idno>
-            <idno type="oape">417</idno>
-            <idno type="wiki">Q3128305</idno>
-            <idno type="isil">GB-MiAaHDL</idno>
-            <idno type="oape">591</idno>
-            <idno type="url">https://www.hathitrust.org/</idno>
-         </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-16-14" type="library">
             <orgName type="short" xml:lang="de">Heidelberg Inst PrivWschftsrec</orgName>
             <orgName xml:lang="de">Institut für ausländisches und internationales Privat- und Wirtschaftsrecht der Universität, Bibliothek</orgName>
@@ -1770,6 +1685,12 @@
             <location>
                <placeName ref="geon:498817 oape:place:355">St. Petersburg</placeName>
             </location>
+         </org>
+         <org type="digitalLibrary">
+            <orgName>Internet Archive</orgName>
+            <idno type="url">https://archive.org/</idno>
+            <idno type="oape">440</idno>
+            <idno type="wiki">Q461</idno>
          </org>
          <org type="museum" xml:id="hIM">
             <orgName>Iraq Museum</orgName>
@@ -2131,21 +2052,6 @@
                </address>
             </location>
          </org>
-         <org type="library" xml:id="hCAM">
-            <orgName xml:lang="en">University of Cambridge Libraries</orgName>
-            <orgName>Libraries of the University of Cambridge</orgName>
-            <orgName type="jaraid">Cam</orgName>
-            <idno type="jaraid">hCAM</idno>
-            <idno type="oape">44</idno>
-            <idno type="UkMaC">cam</idno>
-            <idno type="isil">GB-UkCU</idno>
-            <idno type="oape">636</idno>
-            <idno type="wiki">Q1028334</idno>
-            <location>
-               <placeName change="#d10e37" ref="geon:2653941 oape:place:737" resp="#xslt">Cambridge</placeName>
-               <country>United Kingdom</country>
-            </location>
-         </org>
          <org type="library" xml:id="hCU">
             <orgName>Library of Cairo University</orgName>
             <orgName type="jaraid">CU</orgName>
@@ -2219,6 +2125,12 @@
                </address>
             </location>
          </org>
+         <org type="library">
+            <orgName type="short" xml:lang="de">Mainz, Bestand Turkologie</orgName>
+            <orgName xml:lang="de">Universität Mainz, Bereichsbibliothek Philosophicum/ Standort Turkologie</orgName>
+            <idno type="isil">DE-77-080</idno>
+            <idno type="oape">672</idno>
+         </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-77-080" type="library">
             <orgName type="short">Mainz, Bestand Turkologie</orgName>
             <orgName>Universität Mainz, Zentralbibliothek, Bestand Turkologie</orgName>
@@ -2242,17 +2154,6 @@
             <idno type="oape">48</idno>
             <location>
                <placeName ref="geon:360630 jaraid:place:1 oape:place:226">Cairo</placeName>
-            </location>
-         </org>
-         <org type="library" xml:id="hAYN">
-            <orgName>Maktabat Sāmī al-ʿAyntābī, Aleppo</orgName>
-            <orgName xml:lang="ar">مكتبة سامي العينتابي</orgName>
-            <orgName type="jaraid">Ayn</orgName>
-            <idno type="jaraid">hAYN</idno>
-            <idno type="oape">49</idno>
-            <idno type="wiki">Q135448792</idno>
-            <location>
-               <placeName ref="geon:170063 oape:place:15">Aleppo</placeName>
             </location>
          </org>
          <org type="library" xml:id="hMB">
@@ -2426,23 +2327,12 @@
                <placeName ref="geon:361058 oape:place:225">Alexandria</placeName>
             </location>
          </org>
-         <org type="archive" xml:id="hMMWB">
-            <orgName xml:lang="ar-Latn-x-ijmes">Muʾassasat al-Maḥfūẓāt al-Waṭaniyya</orgName>
-            <orgName xml:lang="fr">Centre des Archives Nationales</orgName>
-            <orgName type="jaraid">MMWB</orgName>
-            <idno type="jaraid">hMMWB</idno>
-            <idno type="oape">59</idno>
-            <idno type="wiki">Q16256913</idno>
-            <location>
-               <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
-            </location>
-         </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-12" type="library" xml:id="hBS">
             <orgName type="short" xml:lang="de">München BSB</orgName>
             <orgName xml:lang="de">Bayerische Staatsbibliothek</orgName>
+            <orgName type="jaraid">BS</orgName>
             <idno type="isil">DE-12</idno>
             <idno type="url">http://ld.zdb-services.de/data/organisations/DE-12</idno>
-            <orgName type="jaraid">BS</orgName>
             <idno type="jaraid">hBS</idno>
             <idno type="oape">6</idno>
             <idno type="oape">262</idno>
@@ -2624,30 +2514,6 @@
                </address>
             </location>
          </org>
-         <org type="library" xml:id="hNLI">
-            <orgName xml:lang="en">National Library of Israel</orgName>
-            <orgName type="jaraid">NLoI</orgName>
-            <idno type="jaraid">hNLI</idno>
-            <idno type="oape">60</idno>
-            <idno type="url">https://web.nli.org.il/</idno>
-            <idno type="wiki">Q188915</idno>
-            <location>
-               <placeName ref="geon:281184 oape:place:6">Jerusalem</placeName>
-            </location>
-            <note> Their collection of Ottoman and mandate Arabic Palestinian newspapers are digitalized in a dedicated website: <ref
-               target="https://web.nli.org.il/sites/nlis/en/jrayed/Pages/all-titles.aspx" xml:lang="und-Latn">Jrayed - Arabic Newspaper Archive of Ottoman and Mandatory Palestine</ref> </note>
-         </org>
-         <org type="library" xml:id="hNEST">
-            <orgName xml:lang="en">Near East School of Theology, Library</orgName>
-            <orgName xml:lang="ar-Latn-x-ijmes">Maktabat Kulliyyat al-Lāhut li'l-Sharq al-Adnā</orgName>
-            <orgName type="jaraid">NEST</orgName>
-            <idno type="jaraid">hNEST</idno>
-            <idno type="oape">61</idno>
-            <idno type="wiki">Q1973138</idno>
-            <location>
-               <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
-            </location>
-         </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-706" type="library">
             <orgName type="short" xml:lang="de">Neubiberg UniBundeswehr</orgName>
             <orgName xml:lang="de">Universität der Bundeswehr München, Universitätsbibliothek</orgName>
@@ -2709,6 +2575,29 @@
                </address>
             </location>
          </org>
+         <org source="https://ld.zdb-services.de/resource/organisations/DE-Y9" type="researchInstitute" xml:id="hOIB">
+            <orgName xml:lang="de">Orient-Institut Beirut</orgName>
+            <orgName type="jaraid">OIB</orgName>
+            <idno type="jaraid">hOIB</idno>
+            <idno type="isil">DE-Y9</idno>
+            <idno type="url">http://ld.zdb-services.de/data/organisations/DE-Y9</idno>
+            <idno type="oape">62</idno>
+            <idno type="oape">266</idno>
+            <idno type="wiki">Q2030483</idno>
+            <location>
+               <geo>33.89339, 35.49683</geo>
+               <address xml:lang="de">
+                  <street>Rue Hussein Beyhum</street>
+                  <postCode>2988</postCode>
+                  <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+               </address>
+               <address xml:lang="de">
+                  <street>Zokak el-Blat, Rue Hussein Beyhum</street>
+                  <postCode>P.O.B. 11-2988</postCode>
+                  <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+               </address>
+            </location>
+         </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-466" type="library">
             <orgName type="short" xml:lang="de">Paderborn UB</orgName>
             <orgName xml:lang="de">Universitätsbibliothek Paderborn</orgName>
@@ -2763,27 +2652,6 @@
                   <postCode>94030</postCode>
                   <placeName ref="geon:2855328 oape:place:695">Passau</placeName>
                </address>
-            </location>
-         </org>
-         <org type="library" xml:id="hEAP119">
-            <orgName xml:lang="en">al-Aqṣā Mosque Library</orgName>
-            <orgName type="jaraid">Aqṣā</orgName>
-            <idno type="jaraid">hEAP119</idno>
-            <idno type="oape">63</idno>
-            <idno type="wiki">Q22684743</idno>
-            <location>
-               <placeName ref="geon:281184 oape:place:6">Jerusalem</placeName>
-            </location>
-            <note>. The collection was digitized by the "Endangered Archives Program" of the British Library and is available <ref target="http://eap.bl.uk/database/overview_project.a4d?projID=EAP119"
-               xml:lang="und-Latn">online</ref>.</note>
-         </org>
-         <org>
-            <orgName xml:lang="en">Endangered Archives Program</orgName>
-            <orgName>EAP</orgName>
-            <idno type="url">http://eap.bl.uk/</idno>
-            <idno type="wiki">Q67654737</idno>
-            <location>
-               <placeName>London</placeName>
             </location>
          </org>
          <org type="library" xml:id="hPN">
@@ -2974,36 +2842,6 @@
                </address>
             </location>
          </org>
-         <org type="digitalLibrary">
-            <orgName>Sakhrit</orgName>
-            <orgName xml:lang="ar">ارشيف الشارخ للمجلات الأدبية والثقافية العربية</orgName>
-            <idno type="oape">421</idno>
-            <idno type="wiki">Q106389280</idno>
-         </org>
-         <org type="library" xml:id="hSOAS">
-            <orgName xml:lang="en">School of Oriental and African Studies Library, University of London</orgName>
-            <orgName xml:lang="en">School of Oriental and African Studies Library</orgName>
-            <orgName type="jaraid">SOAS</orgName>
-            <idno type="jaraid">hSOAS</idno>
-            <idno type="UkMaC">soa</idno>
-            <idno type="isil">GB-UkLSOA</idno>
-            <idno type="oape">67</idno>
-            <idno type="wiki">Q130548577</idno>
-            <idno type="oape">621</idno>
-            <location>
-               <placeName ref="geon:2643743 oape:place:331">London</placeName>
-            </location>
-         </org>
-         <org type="library" xml:id="hSPL">
-            <orgName xml:lang="en">St. Petersburg University Library, Russia</orgName>
-            <orgName type="jaraid">StPL</orgName>
-            <idno type="jaraid">hSPL</idno>
-            <idno type="oape">68</idno>
-            <idno type="wiki">Q65131034</idno>
-            <location>
-               <placeName ref="geon:498817 oape:place:355">St. Petersburg</placeName>
-            </location>
-         </org>
          <org type="library" xml:id="hSBB">
             <orgName xml:lang="de">Staatsbibliothek zu Berlin, Preußischer Kulturbesitz, Berlin</orgName>
             <orgName type="jaraid">SBB</orgName>
@@ -3012,16 +2850,6 @@
             <idno type="wiki">Q170109</idno>
             <location>
                <placeName ref="geon:2950159 oape:place:343">Berlin</placeName>
-            </location>
-         </org>
-         <org type="library" xml:id="hSTAN">
-            <orgName xml:lang="en">Stanford University, Hoover Library</orgName>
-            <orgName type="jaraid">Stan</orgName>
-            <idno type="jaraid">hSTAN</idno>
-            <idno type="oape">70</idno>
-            <idno type="wiki">Q5898813</idno>
-            <location>
-               <placeName ref="geon:5398563 oape:place:716">Stanford</placeName>
             </location>
          </org>
          <org source="https://ld.zdb-services.de/resource/organisations/DE-552" type="library">
@@ -3189,30 +3017,6 @@
                <address>
                   <street>Rümelinstr. 19/23</street>
                   <postCode>72070</postCode>
-                  <placeName ref="geon:2820860 oape:place:702">Tübingen</placeName>
-               </address>
-            </location>
-         </org>
-         <org source="https://ld.zdb-services.de/resource/organisations/DE-21" type="library">
-            <orgName type="short" xml:lang="de">Tübingen UB</orgName>
-            <orgName xml:lang="de">Universitätsbibliothek der Eberhard Karls Universität</orgName>
-            <orgName xml:lang="en">Library of Tübingen University</orgName>
-            <orgName type="jaraid">TUB</orgName>
-            <idno type="isil">DE-21</idno>
-            <idno type="url">http://ld.zdb-services.de/data/organisations/DE-21</idno>
-            <idno type="jaraid">hTUB</idno>
-            <idno type="oape">47</idno>
-            <idno type="oape">290</idno>
-            <idno type="wiki">Q2496347</idno>
-            <location>
-               <geo>48.52492, 9.06162</geo>
-               <address xml:lang="de">
-                  <street>Wilhelmstr. 32</street>
-                  <postCode>72074</postCode>
-                  <placeName ref="geon:2820860 oape:place:702">Tübingen</placeName>
-               </address>
-               <address xml:lang="de">
-                  <postCode>72016</postCode>
                   <placeName ref="geon:2820860 oape:place:702">Tübingen</placeName>
                </address>
             </location>
@@ -3431,18 +3235,6 @@
                </address>
             </location>
          </org>
-         <org type="library" xml:id="hZAH">
-            <orgName>al-Maktaba al-Ẓāhiriyya, Damascus</orgName>
-            <orgName xml:lang="ar-Latn-x-ijmes">Dār al-Kutub al-Waṭaniyya al-Ẓāhiriyya</orgName>
-            <orgName type="jaraid">Zāh</orgName>
-            <idno type="jaraid">hZAH</idno>
-            <idno type="oape">83</idno>
-            <idno type="oape">418</idno>
-            <idno type="wiki">Q618436</idno>
-            <location>
-               <placeName ref="geon:170654 jaraid:place:15 oape:place:61">Damascus</placeName>
-            </location>
-         </org>
          <org xml:id="hIDP">
             <orgName xml:lang="tr">İslamci Dergiler Projesi</orgName>
             <orgName type="jaraid">IDP</orgName>
@@ -3631,6 +3423,16 @@
             <idno type="oape">587</idno>
             <idno type="wiki">Q1277357</idno>
          </org>
+         <org>
+            <orgName xml:lang="en">Endangered Archives Program</orgName>
+            <orgName>EAP</orgName>
+            <idno type="url">http://eap.bl.uk/</idno>
+            <idno type="wiki">Q67654737</idno>
+            <idno type="oape">673</idno>
+            <location>
+               <placeName>London</placeName>
+            </location>
+         </org>
          <org type="university">
             <orgName xml:lang="en">Glasgow Caledonian University</orgName>
             <idno type="UkMaC">gcu</idno>
@@ -3664,6 +3466,17 @@
             </location>
             <note>. The collection of periodicals was digitized by the Beyazit State Library and the Tokyo University of Foreign Studies and is available <ref
                target="http://www.tufs.ac.jp/common/fs/asw/tur/htu/" xml:lang="und-Latn">online</ref>.</note>
+         </org>
+         <org type="digitalLibrary" xml:id="hathi">
+            <orgName>HathiTrust</orgName>
+            <orgName xml:lang="en">Hathi Trust Digital Library</orgName>
+            <idno type="UkMaC">hat</idno>
+            <idno type="isil">US-miaahdl</idno>
+            <idno type="oape">417</idno>
+            <idno type="wiki">Q3128305</idno>
+            <idno type="isil">GB-MiAaHDL</idno>
+            <idno type="oape">591</idno>
+            <idno type="url">https://www.hathitrust.org/</idno>
          </org>
          <org>
             <orgName xml:lang="en">Historical Texts</orgName>
@@ -3789,6 +3602,30 @@
             <idno type="oape">602</idno>
             <idno type="wiki">Q122984419</idno>
          </org>
+         <org source="https://ld.zdb-services.de/resource/organisations/DE-21" type="library">
+            <orgName type="short" xml:lang="de">Tübingen UB</orgName>
+            <orgName xml:lang="de">Universitätsbibliothek der Eberhard Karls Universität</orgName>
+            <orgName xml:lang="en">Library of Tübingen University</orgName>
+            <orgName type="jaraid">TUB</orgName>
+            <idno type="isil">DE-21</idno>
+            <idno type="url">http://ld.zdb-services.de/data/organisations/DE-21</idno>
+            <idno type="jaraid">hTUB</idno>
+            <idno type="oape">47</idno>
+            <idno type="oape">290</idno>
+            <idno type="wiki">Q2496347</idno>
+            <location>
+               <geo>48.52492, 9.06162</geo>
+               <address xml:lang="de">
+                  <street>Wilhelmstr. 32</street>
+                  <postCode>72074</postCode>
+                  <placeName ref="geon:2820860 oape:place:702">Tübingen</placeName>
+               </address>
+               <address xml:lang="de">
+                  <postCode>72016</postCode>
+                  <placeName ref="geon:2820860 oape:place:702">Tübingen</placeName>
+               </address>
+            </location>
+         </org>
          <org type="university">
             <orgName xml:lang="en">Liverpool John Moores University</orgName>
             <idno type="UkMaC">ljmu</idno>
@@ -3809,6 +3646,19 @@
             <idno type="isil">GB-UK-MaMUL</idno>
             <idno type="oape">605</idno>
             <idno type="wiki">Q1888771</idno>
+         </org>
+         <org type="library" xml:id="hNLI">
+            <orgName xml:lang="en">National Library of Israel</orgName>
+            <orgName type="jaraid">NLoI</orgName>
+            <idno type="jaraid">hNLI</idno>
+            <idno type="oape">60</idno>
+            <idno type="url">https://web.nli.org.il/</idno>
+            <idno type="wiki">Q188915</idno>
+            <location>
+               <placeName ref="geon:281184 oape:place:6">Jerusalem</placeName>
+            </location>
+            <note> Their collection of Ottoman and mandate Arabic Palestinian newspapers are digitalized in a dedicated website: <ref
+               target="https://web.nli.org.il/sites/nlis/en/jrayed/Pages/all-titles.aspx" xml:lang="und-Latn">Jrayed - Arabic Newspaper Archive of Ottoman and Mandatory Palestine</ref> </note>
          </org>
          <org type="library">
             <orgName xml:lang="en">National Library of Scotland</orgName>
@@ -3976,6 +3826,20 @@
             <idno type="oape">620</idno>
             <idno type="wiki">Q3446034</idno>
          </org>
+         <org type="library" xml:id="hSOAS">
+            <orgName xml:lang="en">School of Oriental and African Studies Library, University of London</orgName>
+            <orgName xml:lang="en">School of Oriental and African Studies Library</orgName>
+            <orgName type="jaraid">SOAS</orgName>
+            <idno type="jaraid">hSOAS</idno>
+            <idno type="UkMaC">soa</idno>
+            <idno type="isil">GB-UkLSOA</idno>
+            <idno type="oape">67</idno>
+            <idno type="wiki">Q130548577</idno>
+            <idno type="oape">621</idno>
+            <location>
+               <placeName ref="geon:2643743 oape:place:331">London</placeName>
+            </location>
+         </org>
          <org type="library">
             <orgName xml:lang="en">Senate House Library, University of London</orgName>
             <orgName xml:lang="en">Warburg Institute Library</orgName>
@@ -4005,6 +3869,26 @@
             <idno type="isil">GB-UkSoSU</idno>
             <idno type="oape">625</idno>
             <idno type="wiki">Q2065695</idno>
+         </org>
+         <org type="library" xml:id="hSPL">
+            <orgName xml:lang="en">St. Petersburg University Library, Russia</orgName>
+            <orgName type="jaraid">StPL</orgName>
+            <idno type="jaraid">hSPL</idno>
+            <idno type="oape">68</idno>
+            <idno type="wiki">Q65131034</idno>
+            <location>
+               <placeName ref="geon:498817 oape:place:355">St. Petersburg</placeName>
+            </location>
+         </org>
+         <org type="library" xml:id="hSTAN">
+            <orgName xml:lang="en">Stanford University, Hoover Library</orgName>
+            <orgName type="jaraid">Stan</orgName>
+            <idno type="jaraid">hSTAN</idno>
+            <idno type="oape">70</idno>
+            <idno type="wiki">Q5898813</idno>
+            <location>
+               <placeName ref="geon:5398563 oape:place:716">Stanford</placeName>
+            </location>
          </org>
          <org type="library">
             <orgName xml:lang="en">The Geological Society Library</orgName>
@@ -4091,12 +3975,36 @@
                <item>The MARC Org code from HathiTrust does not return a hit from the official dereferencer. Clicking on an item revealed that this might be UCLA</item>
                </list> </note>
          </org>
+         <org type="library" xml:id="hCAM">
+            <orgName xml:lang="en">University of Cambridge Libraries</orgName>
+            <orgName>Libraries of the University of Cambridge</orgName>
+            <orgName type="jaraid">Cam</orgName>
+            <idno type="jaraid">hCAM</idno>
+            <idno type="oape">44</idno>
+            <idno type="UkMaC">cam</idno>
+            <idno type="isil">GB-UkCU</idno>
+            <idno type="oape">636</idno>
+            <idno type="wiki">Q1028334</idno>
+            <location>
+               <placeName change="#d10e37" ref="geon:2653941 oape:place:737" resp="#xslt">Cambridge</placeName>
+               <country>United Kingdom</country>
+            </location>
+         </org>
          <org type="university">
             <orgName xml:lang="en">University of Cambridge: Trinity College</orgName>
             <idno type="UkMaC">tcc</idno>
             <idno type="isil">GB-UkCU-TRI</idno>
             <idno type="oape">637</idno>
             <idno type="wiki">Q332342</idno>
+         </org>
+         <org>
+            <orgName xml:lang="en">University of Chicago Library</orgName>
+            <idno type="isil">ICU</idno>
+            <idno type="wiki">Q7895259</idno>
+            <idno type="oape">676</idno>
+            <location>
+               <placeName>Chicago</placeName>
+            </location>
          </org>
          <org type="university">
             <orgName xml:lang="en">University of Dundee</orgName>
@@ -4251,6 +4159,20 @@
             <idno type="isil">GB-UkNtU</idno>
             <idno type="oape">650</idno>
             <idno type="wiki">Q123079321</idno>
+         </org>
+         <org type="library" xml:id="hBOD">
+            <orgName>Bodleian Library</orgName>
+            <orgName xml:lang="en">University of Oxford Libraries</orgName>
+            <orgName type="jaraid">Bod</orgName>
+            <idno type="jaraid">hBOD</idno>
+            <idno type="oape">14</idno>
+            <idno type="UkMaC">oxf</idno>
+            <idno type="isil">GB-UkOxU</idno>
+            <idno type="oape">651</idno>
+            <idno type="wiki">Q82133</idno>
+            <location>
+               <placeName ref="geon:2640729 oape:place:328">Oxford</placeName>
+            </location>
          </org>
          <org type="library">
             <orgName xml:lang="en">University of Plymouth Charles Seale-Hayne Library</orgName>
@@ -4415,6 +4337,18 @@
             <idno type="oape">670</idno>
             <idno type="wiki">Q7981192</idno>
          </org>
+         <org type="library" xml:id="hEAP119">
+            <orgName xml:lang="en">al-Aqṣā Mosque Library</orgName>
+            <orgName type="jaraid">Aqṣā</orgName>
+            <idno type="jaraid">hEAP119</idno>
+            <idno type="oape">63</idno>
+            <idno type="wiki">Q22684743</idno>
+            <location>
+               <placeName ref="geon:281184 oape:place:6">Jerusalem</placeName>
+            </location>
+            <note>. The collection was digitized by the "Endangered Archives Program" of the British Library and is available <ref target="http://eap.bl.uk/database/overview_project.a4d?projID=EAP119"
+               xml:lang="und-Latn">online</ref>.</note>
+         </org>
          <org xml:id="hDM">
             <orgName xml:lang="ar-Latn-x-ijmes">Dayr al-Mukhlis</orgName>
             <orgName type="jaraid">Dayr al-Mukh</orgName>
@@ -4422,20 +4356,6 @@
             <idno type="oape">21</idno>
             <location>
                <placeName ref="oape:place:741">Dayr al-Mukhlis</placeName>
-            </location>
-         </org>
-         <org xml:id="hDKWT">
-            <orgName xml:lang="ar-Latn-x-ijmes">Dār al-Kutub al-Waṭaniyya</orgName>
-            <orgName xml:lang="ar">دار الكتب الوطنية</orgName>
-            <orgName xml:lang="fr">Bibliothèque Nationale de Tunisie</orgName>
-            <orgName type="jaraid">DKWT</orgName>
-            <idno type="jaraid">hDKWT</idno>
-            <idno type="oape">27</idno>
-            <idno type="wiki">Q606065</idno>
-            <idno type="wiki">Q130548619</idno>
-            <idno type="url">https://www.bibliotheque.nat.tn</idno>
-            <location>
-               <placeName ref="geon:2464470 oape:place:333">Tunis</placeName>
             </location>
          </org>
          <org type="library" xml:id="hDKW">
@@ -4452,6 +4372,18 @@
                <item>closed and its collections moved</item>
                </list> </note>
          </org>
+         <org type="library" xml:id="hZAH">
+            <orgName>al-Maktaba al-Ẓāhiriyya, Damascus</orgName>
+            <orgName xml:lang="ar-Latn-x-ijmes">Dār al-Kutub al-Waṭaniyya al-Ẓāhiriyya</orgName>
+            <orgName type="jaraid">Zāh</orgName>
+            <idno type="jaraid">hZAH</idno>
+            <idno type="oape">83</idno>
+            <idno type="oape">418</idno>
+            <idno type="wiki">Q618436</idno>
+            <location>
+               <placeName ref="geon:170654 jaraid:place:15 oape:place:61">Damascus</placeName>
+            </location>
+         </org>
          <org type="library" xml:id="hDMW">
             <orgName xml:lang="ar-Latn-x-ijmes">Dāʾirat al-Maktaba al-Waṭaniyya, al-Urdun</orgName>
             <orgName xml:lang="en">Administration of the National Library, Jordan</orgName>
@@ -4462,6 +4394,28 @@
             <idno type="wiki">Q6974152</idno>
             <location>
                <placeName ref="geon:250441 jaraid:place:73 oape:place:508">Amman</placeName>
+            </location>
+         </org>
+         <org type="library" xml:id="hNEST">
+            <orgName xml:lang="en">Near East School of Theology, Library</orgName>
+            <orgName xml:lang="ar-Latn-x-ijmes">Maktabat Kulliyyat al-Lāhut li'l-Sharq al-Adnā</orgName>
+            <orgName type="jaraid">NEST</orgName>
+            <idno type="jaraid">hNEST</idno>
+            <idno type="oape">61</idno>
+            <idno type="wiki">Q1973138</idno>
+            <location>
+               <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+            </location>
+         </org>
+         <org type="archive" xml:id="hMMWB">
+            <orgName xml:lang="ar-Latn-x-ijmes">Muʾassasat al-Maḥfūẓāt al-Waṭaniyya</orgName>
+            <orgName xml:lang="fr">Centre des Archives Nationales</orgName>
+            <orgName type="jaraid">MMWB</orgName>
+            <idno type="jaraid">hMMWB</idno>
+            <idno type="oape">59</idno>
+            <idno type="wiki">Q16256913</idno>
+            <location>
+               <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
             </location>
          </org>
          <org type="library" xml:id="hDKQ">
@@ -4484,6 +4438,75 @@
                </location>
             </org>
          </org>
+         <org type="digitalLibrary">
+            <orgName>Sakhrit</orgName>
+            <orgName xml:lang="ar">ارشيف الشارخ للمجلات الأدبية والثقافية العربية</orgName>
+            <idno type="oape">421</idno>
+            <idno type="wiki">Q106389280</idno>
+         </org>
+         <org>
+            <orgName xml:lang="en">The Palestinian Museum Digital Archive</orgName>
+            <orgName xml:lang="ar">ارشيف المتحف الفلسطيني الرقمي</orgName>
+            <idno type="wiki">Q20392699</idno>
+            <idno type="oape">675</idno>
+            <location>
+               <placeName ref="wiki:Q212381">Bir Zeit</placeName>
+            </location>
+         </org>
+         <org type="archive" xml:id="hAH">
+            <orgName xml:lang="ar-Latn-x-ijmes">Arshīf ʿĀmm al-Ḥukūma</orgName>
+            <orgName xml:lang="ar">ارشيف عام الحكومة</orgName>
+            <orgName type="jaraid">AʿH</orgName>
+            <idno type="jaraid">hAH</idno>
+            <idno type="oape">2</idno>
+            <idno type="wiki">Q130548540</idno>
+            <location>
+               <placeName ref="geon:2464470 oape:place:333">Tunis</placeName>
+            </location>
+         </org>
+         <org xml:id="hDKWT">
+            <orgName xml:lang="ar-Latn-x-ijmes">Dār al-Kutub al-Waṭaniyya</orgName>
+            <orgName xml:lang="ar">دار الكتب الوطنية</orgName>
+            <orgName xml:lang="fr">Bibliothèque Nationale de Tunisie</orgName>
+            <orgName type="jaraid">DKWT</orgName>
+            <idno type="jaraid">hDKWT</idno>
+            <idno type="oape">27</idno>
+            <idno type="wiki">Q606065</idno>
+            <idno type="wiki">Q130548619</idno>
+            <idno type="url">https://www.bibliotheque.nat.tn</idno>
+            <location>
+               <placeName ref="geon:2464470 oape:place:333">Tunis</placeName>
+            </location>
+         </org>
+         <org>
+            <orgName xml:lang="en">Institute for Palestine Studies</orgName>
+            <orgName xml:lang="ar">مؤسسة الدراسات الفلسطينية</orgName>
+            <idno type="oape">671</idno>
+            <idno type="wiki">Q2917333</idno>
+            <location>
+               <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
+            </location>
+         </org>
+         <org>
+            <orgName xml:lang="en">The Palestinian Museum</orgName>
+            <orgName xml:lang="ar">المتحف الفلسطيني</orgName>
+            <idno type="wiki">Q18211128</idno>
+            <idno type="oape">674</idno>
+            <location>
+               <placeName ref="wiki:Q212381">Bir Zeit</placeName>
+            </location>
+         </org>
+         <org type="library" xml:id="hBNA">
+            <orgName xml:lang="fr">Bibliothèque nationale d'Algerie</orgName>
+            <orgName xml:lang="ar">المكتبة الوطنية الجزائرية</orgName>
+            <orgName type="jaraid">BnA</orgName>
+            <idno type="jaraid">hBNA</idno>
+            <idno type="oape">13</idno>
+            <idno type="wiki">Q2901476</idno>
+            <location>
+               <placeName ref="geon:2507480 jaraid:place:7 oape:place:437">Algiers</placeName>
+            </location>
+         </org>
          <org type="library" xml:id="hTET">
             <orgName xml:lang="fr">Bibliothèque nationale du Royaume du Maroc</orgName>
             <orgName xml:lang="ar">المكتبة الوطنية للمملكة المغربية</orgName>
@@ -4495,6 +4518,17 @@
             <location>
                <geo>34.008333, -6.8425</geo>
                <placeName ref="geon:2528910 jaraid:place:103 oape:place:473">Tetouan</placeName>
+            </location>
+         </org>
+         <org type="library" xml:id="hAYN">
+            <orgName>Maktabat Sāmī al-ʿAyntābī, Aleppo</orgName>
+            <orgName xml:lang="ar">مكتبة سامي العينتابي</orgName>
+            <orgName type="jaraid">Ayn</orgName>
+            <idno type="jaraid">hAYN</idno>
+            <idno type="oape">49</idno>
+            <idno type="wiki">Q135448792</idno>
+            <location>
+               <placeName ref="geon:170063 oape:place:15">Aleppo</placeName>
             </location>
          </org>
          <listOrg>
@@ -4548,55 +4582,9 @@
                </location>
             </org>
          </listOrg>
-         <org>
-            <orgName xml:lang="en">Institute for Palestine Studies</orgName>
-            <orgName xml:lang="ar">مؤسسة الدراسات الفلسطينية</orgName>
-            <idno type="oape">671</idno>
-            <idno type="wiki">Q2917333</idno>
-            <location>
-               <placeName ref="geon:276781 jaraid:place:2 oape:place:26">Beirut</placeName>
-            </location>
-         </org>
-         <org>
-            <orgName xml:lang="en">The Palestinian Museum</orgName>
-            <orgName xml:lang="ar">المتحف الفلسطيني</orgName>
-            <idno type="wiki">Q18211128</idno>
-            <location>
-               <placeName ref="wiki:Q212381">Bir Zeit</placeName>
-            </location>
-         </org>
-         <org>
-            <orgName xml:lang="en">The Palestinian Museum Digital Archive</orgName>
-            <orgName xml:lang="ar">ارشيف المتحف الفلسطيني الرقمي</orgName>
-            <idno type="wiki">Q20392699</idno>
-            <location>
-               <placeName ref="wiki:Q212381">Bir Zeit</placeName>
-            </location>
-         </org>
-         <org>
-            <orgName xml:lang="en">University of Chicago Library</orgName>
-            <idno type="isil">ICU</idno>
-            <idno type="wiki">Q7895259</idno>
-            <location>
-               <placeName>Chicago</placeName>
-            </location>
-         </org>
       </listOrg>
       <listOrg>
          <head>Publishers of periodicals</head>
-         <org xml:id="person_6115">
-            <orgName xml:id="persName_6115.1" xml:lang="ar-Latn-x-ijmes">Wizārat al-Zirāʿa al-Miṣriyya</orgName>
-            <orgName corresp="#persName_6115.1" type="flattened" xml:id="persName_6115.1.1" xml:lang="ar-Latn-x-ijmes">WizāratalZirāʿaalMiṣriyya</orgName>
-            <orgName change="#d2e154" xml:id="persName_6115.2" xml:lang="ar">وزارة الزراعة المصرية</orgName>
-            <orgName corresp="#persName_6115.2" type="flattened" xml:id="persName_6115.2.1" xml:lang="ar">وزارةالزراعةالمصرية</orgName>
-            <!-- <idno type="jaraid">1522</idno>
-            <idno type="oape">6115</idno> -->
-            <idno type="wiki">Q125159214</idno>
-            <occupation change="#d10e909" resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of <title level="j"
-               ref="jaraid:bibl:t1r1867 oape:bibl:3064 wiki:Q124973244" xml:lang="ar">النشرة الشهرية للشؤون البيطرية</title> </occupation>
-            <occupation change="#d10e909" resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of <title level="j"
-               ref="jaraid:bibl:t1r1893 oape:bibl:3199 wiki:Q124973949" xml:lang="ar">صحيفة التعاون</title> </occupation>
-         </org>
          <org>
             <orgName xml:lang="und-Latn"> <persName ref="jaraid:pers:477" xml:lang="fr">Eugène Clavel</persName> and Co</orgName>
             <idno type="jaraid">243</idno>
@@ -4723,7 +4711,7 @@
             <idno type="oape">552</idno>
          </org>
          <org>
-            <orgName>مطبعة <title level="j">العرفان</title> </orgName>
+            <orgName>مطبعة <title level="j">العرفان</title></orgName>
             <idno type="oape">549</idno>
          </org>
          <org>
@@ -5436,7 +5424,7 @@
             <orgName xml:lang="ar-Latn-x-dmg">Dār al-Hilāl</orgName>
             <orgName xml:lang="ar">دار الهلال</orgName>
             <orgName>مطبعة
-            <title level="j" xml:lang="ar">الهلال</title> </orgName>
+            <title level="j" xml:lang="ar">الهلال</title></orgName>
             <idno type="oape">476</idno>
          </org>
          <org>
@@ -5986,7 +5974,7 @@
             <idno type="oape">509</idno>
          </org>
          <org>
-            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat <title level="j">al-Mufīd</title> </orgName>
+            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat <title level="j">al-Mufīd</title></orgName>
             <orgName xml:lang="ar">مطبعة المفيد</orgName>
             <idno type="oape">510</idno>
          </org>
@@ -5996,18 +5984,18 @@
             <idno type="oape">511</idno>
          </org>
          <org>
-            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa <title level="j">al-Muqtabas</title> </orgName>
-            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat <title level="j">al-Muqtabas</title> </orgName>
+            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿa <title level="j">al-Muqtabas</title></orgName>
+            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat <title level="j">al-Muqtabas</title></orgName>
             <orgName xml:lang="ar">مطبعة المقتبس</orgName>
             <idno type="oape">512</idno>
          </org>
          <org>
-            <orgName xml:lang="ar-Latn-x-dmg">Maṭbaʿat <title level="j">al-Muqtaṭaf</title> </orgName>
+            <orgName xml:lang="ar-Latn-x-dmg">Maṭbaʿat <title level="j">al-Muqtaṭaf</title></orgName>
             <orgName xml:lang="ar">مطبعة المقتطف</orgName>
             <idno type="oape">513</idno>
          </org>
          <org>
-            <orgName xml:lang="ar-Latn-x-dmg">Maṭbaʿat <title level="j">al-Muqaṭṭam</title> </orgName>
+            <orgName xml:lang="ar-Latn-x-dmg">Maṭbaʿat <title level="j">al-Muqaṭṭam</title></orgName>
             <orgName xml:lang="ar">مطبعة المقطم</orgName>
             <idno type="oape">514</idno>
          </org>
@@ -6043,16 +6031,16 @@
          <org>
             <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat Jarīdat al-Hudá al-Yawmīyah</orgName>
             <orgName xml:lang="ar">مطبعة جريدة الهدى اليومية</orgName>
-            <orgName xml:lang="ar">مطبعة <title level="j" xml:lang="ar">الهدى</title> </orgName>
+            <orgName xml:lang="ar">مطبعة <title level="j" xml:lang="ar">الهدى</title></orgName>
             <idno type="oape">520</idno>
          </org>
          <org>
-            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat Jarīdat <title level="j">Ḥadīqat al-Akhbār</title> </orgName>
+            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat Jarīdat <title level="j">Ḥadīqat al-Akhbār</title></orgName>
             <orgName xml:lang="ar">مطبعة جريدة حديقة الاخبار</orgName>
             <idno type="oape">521</idno>
          </org>
          <org>
-            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat Jarīdat <title level="j">Ḥimṣ</title> </orgName>
+            <orgName xml:lang="ar-Latn-x-ijmes">Maṭbaʿat Jarīdat <title level="j">Ḥimṣ</title></orgName>
             <orgName xml:lang="ar">مطبعة جريدة حمص</orgName>
             <idno type="oape">522</idno>
          </org>
@@ -6229,6 +6217,24 @@
             <idno type="jaraid">157</idno>
             <idno type="oape">251</idno>
          </org>
+         <org xml:id="org_5806">
+            <orgName xml:id="persName_5806.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muḥāmīn al-Ahliyya</orgName>
+            <orgName change="#d2e154" xml:id="persName_5806.2" xml:lang="ar">نقابة المحامين الاهلية</orgName>
+            <idno type="wiki">Q125158989</idno>
+            <idno type="oape">679</idno>
+         </org>
+         <org xml:id="org_5807">
+            <orgName xml:id="persName_5807.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muḥāmīn al-Sharʿiyya</orgName>
+            <orgName change="#d2e154" xml:id="persName_5807.2" xml:lang="ar">نقابة المحامين الشرعية</orgName>
+            <idno type="wiki">Q125158990</idno>
+            <idno type="oape">680</idno>
+         </org>
+         <org xml:id="org_5805">
+            <orgName xml:id="persName_5805.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muhandisīn al-Miṣriyyīn</orgName>
+            <orgName change="#d2e154" xml:id="persName_5805.2" xml:lang="ar">نقابة المهندسين المصريين</orgName>
+            <idno type="wiki">Q125158988</idno>
+            <idno type="oape">678</idno>
+         </org>
          <org>
             <orgName xml:lang="ar-Latn-x-ijmes">Nikābat ʿUmmāl al-Maṭābiʿ</orgName>
             <orgName change="#d2e154" xml:lang="ar">نكابة عمال المطابع</orgName>
@@ -6287,6 +6293,20 @@
             <idno type="jaraid">173</idno>
             <idno type="oape">256</idno>
          </org>
+         <org xml:id="person_6115">
+            <orgName xml:id="persName_6115.1" xml:lang="ar-Latn-x-ijmes">Wizārat al-Zirāʿa al-Miṣriyya</orgName>
+            <orgName corresp="#persName_6115.1" type="flattened" xml:id="persName_6115.1.1" xml:lang="ar-Latn-x-ijmes">WizāratalZirāʿaalMiṣriyya</orgName>
+            <orgName change="#d2e154" xml:id="persName_6115.2" xml:lang="ar">وزارة الزراعة المصرية</orgName>
+            <orgName corresp="#persName_6115.2" type="flattened" xml:id="persName_6115.2.1" xml:lang="ar">وزارةالزراعةالمصرية</orgName>
+            <idno type="wiki">Q125159214</idno>
+            <idno type="oape">677</idno>
+            <!-- <idno type="jaraid">1522</idno>
+            <idno type="oape">6115</idno> -->
+            <occupation change="#d10e909" resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of <title level="j"
+               ref="jaraid:bibl:t1r1867 oape:bibl:3064 wiki:Q124973244" xml:lang="ar">النشرة الشهرية للشؤون البيطرية</title> </occupation>
+            <occupation change="#d10e909" resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of <title level="j"
+               ref="jaraid:bibl:t1r1893 oape:bibl:3199 wiki:Q124973949" xml:lang="ar">صحيفة التعاون</title> </occupation>
+         </org>
          <org>
             <orgName xml:lang="ar-Latn-x-ijmes">Wizārat al-Maʿārif al-Faransiyya</orgName>
             <orgName change="#d2e154" xml:lang="ar">وزارة المعارف الفرنسية</orgName>
@@ -6298,20 +6318,294 @@
             <orgName xml:lang="ar">اليازجي اند زلزل</orgName>
             <idno type="oape">538</idno>
          </org>
-         <org xml:id="org_5805">
-            <orgName xml:id="persName_5805.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muhandisīn al-Miṣriyyīn</orgName>
-            <orgName change="#d2e154" xml:id="persName_5805.2" xml:lang="ar">نقابة المهندسين المصريين</orgName>
-            <idno type="wiki">Q125158988</idno>
+      </listOrg>
+      <listOrg>
+         <head>entities that were originally encoded as persons</head>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-Kulliyya</orgName>
+            <orgName xml:lang="ar">ادارة الكلية</orgName>
+            <idno type="wiki">Q125160641</idno>
+            <idno type="oape">711</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1976 oape:bibl:3076 wiki:Q124974233"
+               xml:lang="ar">كلية اسيوط</title> </occupation>
          </org>
-         <org xml:id="org_5806">
-            <orgName xml:id="persName_5806.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muḥāmīn al-Ahliyya</orgName>
-            <orgName change="#d2e154" xml:id="persName_5806.2" xml:lang="ar">نقابة المحامين الاهلية</orgName>
-            <idno type="wiki">Q125158989</idno>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-Madrasa</orgName>
+            <orgName xml:lang="ar">ادارة المدرسة</orgName>
+            <idno type="wiki">Q125160651</idno>
+            <idno type="oape">712</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1987 oape:bibl:3009 wiki:Q124974665"
+               xml:lang="ar">مجلة مدرسة بني سويف الثانوية</title> </occupation>
          </org>
-         <org xml:id="org_5807">
-            <orgName xml:id="persName_5807.1" xml:lang="ar-Latn-x-ijmes">Niqābat al-Muḥāmīn al-Sharʿiyya</orgName>
-            <orgName change="#d2e154" xml:id="persName_5807.2" xml:lang="ar">نقابة المحامين الشرعية</orgName>
-            <idno type="wiki">Q125158990</idno>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-madrasa</orgName>
+            <orgName xml:lang="ar">ادارة المدرسة</orgName>
+            <idno type="wiki">Q125160652</idno>
+            <idno type="oape">713</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1760 oape:bibl:2522 wiki:Q124974625"
+               xml:lang="ar">مجلة المدرسة الثانوية الملكية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Idārat al-Maṣāliḥ al-Iqtiṣādiyya al-Ahliyya</orgName>
+            <orgName xml:lang="ar">ادارة المصالح الاقتصادية الله لية</orgName>
+            <idno type="wiki">Q125158391</idno>
+            <idno type="oape">684</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r2019 oape:bibl:2067 wiki:Q124970260"
+               xml:lang="ar">ارشادات للفلاحة</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Idārat Kulliyyat al-Ḥuqūq</orgName>
+            <orgName xml:lang="ar">ادارة كلية الحقوق</orgName>
+            <idno type="wiki">Q125158389</idno>
+            <idno type="oape">682</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1839 oape:bibl:2938 wiki:Q124974661"
+               xml:lang="ar">مجلة كلية الحقوق</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Idārat Majallat al-Laṭāʾif al-Muṣawwara</orgName>
+            <orgName xml:lang="ar">ادارة مجلة اللطائف المصورة</orgName>
+            <idno type="wiki">Q125158390</idno>
+            <idno type="oape">683</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io oape:org:420 wiki:Q124857769" xml:lang="en">Editor of<title level="j"
+               ref="oclc:642980305 jaraid:bibl:t1r1187 oape:bibl:2792 wiki:Q124972034" xml:lang="ar">العروسة</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Aṭibbāʾ Madrasat al-Ṭibb</orgName>
+            <orgName xml:lang="ar">اطباء مدرسة الطب</orgName>
+            <idno type="wiki">Q125158174</idno>
+            <idno type="oape">681</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io oape:org:420 wiki:Q124857769" xml:lang="en">Editor of<title level="j"
+               ref="jaraid:bibl:t1r1710 oape:bibl:2162 wiki:Q124972442" xml:lang="ar">المجلة الطبية المصرية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">al-Jāmiʿa al-Amīrkiyya</orgName>
+            <orgName xml:lang="ar">الجامعة الاميركية</orgName>
+            <idno type="oape">707</idno>
+            <!-- this is an organzation -->
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Arbāb al-Amlāk al-ʿAqqāriyya</orgName>
+            <orgName xml:lang="ar">جمعية ارباب الاملاك العقارية</orgName>
+            <idno type="wiki">Q125158467</idno>
+            <idno type="oape">685</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1676 oape:bibl:1884 wiki:Q124972445"
+               xml:lang="ar">المجلة العربية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Ittiḥād al-Qibṭiyya al-Khayriyya</orgName>
+            <orgName xml:lang="ar">جمعية الاتحاد القبطية الخيرية</orgName>
+            <idno type="wiki">Q125158470</idno>
+            <idno type="oape">688</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1925 oape:bibl:1682 wiki:Q124971979"
+               xml:lang="ar">العائلة القبطية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Irshād al-Islāmī</orgName>
+            <orgName xml:lang="ar">جمعية الارشاد الاسلامي</orgName>
+            <idno type="wiki">Q125159922</idno>
+            <idno type="oape">704</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1927 oape:bibl:1737 wiki:Q124970424"
+               xml:lang="ar">الارشاد الاسلامي</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Ḥayāt</orgName>
+            <orgName xml:lang="ar">جمعية الحياة</orgName>
+            <idno type="wiki">Q125160516</idno>
+            <idno type="oape">709</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1652 oape:bibl:1671 wiki:Q124974643"
+               xml:lang="ar">مجلة جمعية الحياة</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Rābiṭa al-Sharqiyya</orgName>
+            <orgName xml:lang="ar">جمعية الرابطة الشرقية</orgName>
+            <idno type="wiki">Q125158474</idno>
+            <idno type="oape">692</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io oape:org:73 wiki:Q124857769" xml:lang="en">Editor of<title level="j"
+               ref="oclc:792755689 jaraid:bibl:t1r1879 oape:bibl:3136 wiki:Q124971259" xml:lang="ar">الرابطة الشرقية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Sanīya al-Khayriyya</orgName>
+            <orgName xml:lang="ar">الجمعية السنيية الخيرية</orgName>
+            <idno type="wiki">Q125159330</idno>
+            <idno type="oape">700</idno>
+            <!-- this is an organization -->
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1948 oape:bibl:2874 wiki:Q124972493"
+               xml:lang="ar">المحكمة الاسلامية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Shūrā al-ʿUthmānī</orgName>
+            <orgName xml:lang="ar">جمعية الشورى العثماني</orgName>
+            <idno type="wiki">Q125160166</idno>
+            <idno type="oape">705</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r972 oape:bibl:1514 wiki:Q124971849"
+               xml:lang="ar">الشورى العثماني</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Ṣināʿāt bi-l-Quṭr al-Miṣrī</orgName>
+            <orgName xml:lang="ar">جمعية الصناعات للقطر المصري</orgName>
+            <idno type="wiki">Q125160302</idno>
+            <idno type="oape">706</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io oape:org:420 oape:org:417 wiki:Q124857769" xml:lang="en">Editor of<title level="j"
+               ref="oclc:6360286 jaraid:bibl:t1r1800 oape:bibl:2779 wiki:Q124974733" xml:lang="ar">مصر الصناعة</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Ṣayādala</orgName>
+            <orgName xml:lang="ar">جمعية الصيادلة</orgName>
+            <idno type="wiki">Q125160595</idno>
+            <idno type="oape">710</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1719 oape:bibl:2282 wiki:Q124971299"
+               xml:lang="ar">الرسالة الصيدلية المصرية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-ʿIlmiyya li-l-Ṭalba</orgName>
+            <orgName xml:lang="ar">الجمعية العلمية للطلبة</orgName>
+            <idno type="wiki">Q125159334</idno>
+            <idno type="oape">703</idno>
+            <!-- this is an organization -->
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1874 oape:bibl:3655 wiki:Q124970758"
+               xml:lang="ar">التلميذ</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Fūtūghrāfiyya al-Miṣriyya</orgName>
+            <orgName xml:lang="ar">الجمعية الفوتوغرافية المصرية</orgName>
+            <idno type="wiki">Q125159329</idno>
+            <idno type="oape">699</idno>
+            <!-- this is an organization -->
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1689 oape:bibl:2021 wiki:Q124972210"
+               xml:lang="ar">الفنون الجميلة</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Maḥabba al-Islāmiyya</orgName>
+            <orgName xml:lang="ar">جمعية المحبة الاسلامية</orgName>
+            <idno type="wiki">Q125158472</idno>
+            <idno type="oape">690</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r2070 oape:bibl:2106 wiki:Q124972484"
+               xml:lang="ar">المحبة الاسلامية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Malājiʾ al-ʿAbbāsiyya</orgName>
+            <orgName xml:lang="ar">جمعية الملاجء العباسية</orgName>
+            <idno type="wiki">Q125158471</idno>
+            <idno type="oape">689</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1904 oape:bibl:1238 wiki:Q124974633"
+               xml:lang="ar">مجلة الملاجىء العباسية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Nashāʾa al-Sūriyya al-Urthudhuksiyya</orgName>
+            <orgName xml:lang="ar">جمعية النشاة السورية الارثذكسية</orgName>
+            <idno type="wiki">Q125158473</idno>
+            <idno type="oape">691</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1539 oape:bibl:1257 wiki:Q124972336"
+               xml:lang="ar">الكنيسة الارثوذكسية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Widādiyya li-Muʿallimī al-Lugha al-ʿArabiyya</orgName>
+            <orgName xml:lang="ar">الجمعية الودادية المعلمي اللغة العربية</orgName>
+            <idno type="wiki">Q125159332</idno>
+            <idno type="oape">702</idno>
+            <!-- this is an organization -->
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r2020 oape:bibl:2305 wiki:Q124974318"
+               xml:lang="ar">مجلة التعليم العربي</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">al-Jamʿiyya al-Waṭaniyya al-Miṣriyya</orgName>
+            <orgName xml:lang="ar">الجمعية الوطنية المصرية</orgName>
+            <idno type="wiki">Q125159331</idno>
+            <idno type="oape">701</idno>
+            <!-- this is an organization -->
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r2059 oape:bibl:2189 wiki:Q124969171"
+               xml:lang="ar">القصاص</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat al-Īmān al-Qubṭiyya al-Markaziyya</orgName>
+            <orgName xml:lang="ar">جمعية اليمان القبطية المركزية</orgName>
+            <idno type="wiki">Q125158476</idno>
+            <idno type="oape">693</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1650 oape:bibl:1663 wiki:Q124974303"
+               xml:lang="ar">مجلة الإيمان الشهرية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Ḥifẓ al-ʿUhūd</orgName>
+            <orgName xml:lang="ar">جمعية حفظ العهود</orgName>
+            <idno type="wiki">Q125158477</idno>
+            <idno type="oape">694</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1265 oape:bibl:1436 wiki:Q124972709"
+               xml:lang="ar">المساعد</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Filāḥat al-Basātīn</orgName>
+            <orgName xml:lang="ar">جمعية فلاحة البساتين</orgName>
+            <idno type="wiki">Q125158468</idno>
+            <idno type="oape">686</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1700 oape:bibl:2116 wiki:Q124974659"
+               xml:lang="ar">مجلة فلاحة البساتين</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Jamʿiyyat Maḥāmid al-Akhlāq</orgName>
+            <orgName xml:lang="ar">جمعية محامد الاخلاق</orgName>
+            <idno type="wiki">Q125158469</idno>
+            <idno type="oape">687</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1920 oape:bibl:1530 wiki:Q124971909"
+               xml:lang="ar">الصراط</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Kharrījū al-Jāmiʿa al-Miṣriyya</orgName>
+            <orgName xml:lang="ar">خريجو الجامعة المصرية</orgName>
+            <idno type="wiki">Q125158568</idno>
+            <idno type="oape">695</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1762 oape:bibl:3585 wiki:Q124970842"
+               xml:lang="ar">الجامعة المصرية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Kharījū Madrasat al-Zirāʿa bi-l-Jīza</orgName>
+            <orgName xml:lang="ar">خريجو مدرسة الزراعة اللجيز</orgName>
+            <idno type="wiki">Q125158569</idno>
+            <idno type="oape">696</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io oape:org:417 wiki:Q124857769" xml:lang="en">Editor of<title level="j"
+               ref="oclc:9530888 jaraid:bibl:t1r1722 oape:bibl:2321 wiki:Q124972196" xml:lang="ar">الفلاحة</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="en">Students in the school</orgName>
+            <orgName xml:lang="ar">طلاب المدرسة</orgName>
+            <idno type="wiki">Q125160653</idno>
+            <idno type="oape">714</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1844 oape:bibl:2982 wiki:Q124974663"
+               xml:lang="ar">مجلة مدرسة الاقباط الكبرى</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Ṭalbat al-Madrasa</orgName>
+            <orgName xml:lang="ar">طلبة المدرسة</orgName>
+            <idno type="wiki">Q125160654</idno>
+            <idno type="oape">715</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1981 oape:bibl:2637 wiki:Q124973954"
+               xml:lang="ar">صحيفة مدرسة المنصورة الثانوية</title> </occupation>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1962 oape:bibl:2127 wiki:Q124973955"
+               xml:lang="ar">صحيفة مدرسة طنطا الثانوية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Madrasat Aswān</orgName>
+            <orgName xml:lang="ar">مدرسة اسوان</orgName>
+            <idno type="wiki">Q125158614</idno>
+            <idno type="oape">697</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r2010 oape:bibl:3183 wiki:Q124974624"
+               xml:lang="ar">مجلة المدرسة</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">al-Madrasa al-Tawfīqiyya</orgName>
+            <orgName xml:lang="ar">المدرسة التوفيقية</orgName>
+            <idno type="wiki">Q125160481</idno>
+            <idno type="oape">708</idno>
+            <!-- this is an organization -->
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1763 oape:bibl:2624 wiki:Q124973951"
+               xml:lang="ar">صحيفة التوفيقية</title> </occupation>
+         </org>
+         <org>
+            <orgName xml:lang="ar-Latn-x-ijmes">Madrasat Raqqī al-Maʿārif al-Thānawiyya</orgName>
+            <orgName xml:lang="ar">مدرسة رقي المعارف الثانوية</orgName>
+            <idno type="wiki">Q125158615</idno>
+            <idno type="oape">698</idno>
+            <occupation resp="#xslt" source="https://projectjaraid.github.io wiki:Q124857769" xml:lang="en">Editor of<title level="j" ref="jaraid:bibl:t1r1888 oape:bibl:3176 wiki:Q124973853"
+               xml:lang="ar">رقي المعارف</title> </occupation>
          </org>
       </listOrg>
       <listOrg change="#d2e28640 #d2e85573" xml:id="listOrg_1.d2e27706" xml:lang="ar">
