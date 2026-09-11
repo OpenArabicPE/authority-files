@@ -3,8 +3,9 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xpath-default-namespace="http://www.wikidata.org/">
     <xsl:output encoding="UTF-8" indent="yes" method="xml" omit-xml-declaration="no" version="1.0"/>
     <xsl:import href="parameters.xsl"/>
+    <xsl:param name="p_local-authority" select="'jid'"/>
     <!-- read data from file -->
-    <xsl:variable name="v_QIDs" select="doc('../data/OpenRefine/mappings/wafa_bibl-mapping-2025-09-23.TEIP5.xml')/descendant::tei:standOff"/>
+    <xsl:variable name="v_QIDs" select="doc('/Users/Shared/BachUni/BachBibliothek/GitHub/Sihafa/data_sakhrit/master/temp/sakhrit_bibl-mapping-jid-to-qid.TEIP5.xml')/descendant::tei:standOff"/>
     <!-- identity transform -->
     <xsl:template match="node() | @*">
         <xsl:copy>

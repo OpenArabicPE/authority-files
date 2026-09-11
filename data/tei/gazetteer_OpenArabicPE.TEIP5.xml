@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-model href="https://openarabicpe.github.io/OpenArabicPE_ODD/schema/tei_periodical.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><?xml-stylesheet type="text/xsl" href="../../boilerplate/xslt/teibp_parameters.xsl"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:tei="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -46,6 +42,8 @@
          </editorialDecl>
       </encodingDesc>
       <revisionDesc>
+         <tei:change when="2026-09-11" who="#pers_TG" xml:id="d11e227" xml:lang="en"
+            >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <tei:change when="2025-09-22" who="#pers_TG" xml:id="d11e222" xml:lang="en"
             >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <tei:change when="2025-09-19" who="#pers_TG" xml:id="d11e217" xml:lang="en"
@@ -2628,6 +2626,7 @@
                   </location>
                   <idno type="geon">6254930</idno>
                   <idno type="oape">202</idno>
+                  <idno type="wiki">Q219060</idno>
                </place>
                <place type="town" xml:id="place_378">
                   <placeName xml:lang="ar">الخليل</placeName>
@@ -3091,6 +3090,7 @@
                <idno type="url">http://en.wikipedia.org/wiki/Mesopotamia</idno>
                <idno type="geon">99237</idno>
                <idno type="oape">209</idno>
+               <idno type="wiki">Q796</idno>
             </place>
             <place type="province" xml:id="place_210">
                <placeName type="simple">Basra</placeName>
@@ -3930,6 +3930,7 @@
                <idno type="url">http://en.wikipedia.org/wiki/Yemen</idno>
                <idno type="geon">69543</idno>
                <idno type="oape">233</idno>
+               <idno type="wiki">Q805</idno>
             </place>
             <place type="town" xml:id="place_499">
                <placeName xml:lang="en">Sanaa</placeName>
@@ -5145,6 +5146,7 @@
                <idno type="url">http://en.wikipedia.org/wiki/Iran</idno>
                <idno type="geon">130758</idno>
                <idno type="oape">299</idno>
+               <idno type="wiki">Q794</idno>
             </place>
             <place type="town" xml:id="place_847">
                <placeName xml:lang="fa">تبريز</placeName>
@@ -6124,31 +6126,6 @@
                <idno type="geon">2635167</idno>
                <idno type="oape">327</idno>
             </place>
-            <place type="town" xml:id="place_737">
-               <placeName source="#org_geon" type="alt" xml:lang="ar">كامبريدج</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="en">Cambridge</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Cambridge</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">Cambridge</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="tr">Cambridge</placeName>
-               <location source="#org_geon">
-                  <geo>52.2, 0.11667</geo>
-               </location>
-               <idno resp="#pers_TG" type="geon">2653941</idno>
-               <idno type="oape">737</idno>
-            </place>
-            <place type="town" xml:id="place_775">
-               <placeName>Colchester</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="ar">كولشيستر</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="en">Colchester</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Colchester</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">Colchester</placeName>
-               <location source="#org_geon">
-                  <geo>51.88921, 0.90421</geo>
-               </location>
-               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Colchester</idno>
-               <idno resp="#xslt" type="geon">2652618</idno>
-               <idno type="oape">775</idno>
-            </place>
             <place type="town" xml:id="place_328">
                <placeName xml:lang="ar">اكسفورد</placeName>
                <placeName xml:lang="ar">أكسفورد</placeName>
@@ -6173,6 +6150,31 @@
                <idno type="url">http://en.wikipedia.org/wiki/Glasgow</idno>
                <idno type="geon">2648579</idno>
                <idno type="oape">329</idno>
+            </place>
+            <place type="town" xml:id="place_737">
+               <placeName source="#org_geon" type="alt" xml:lang="ar">كامبريدج</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="en">Cambridge</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="fr">Cambridge</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="de">Cambridge</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="tr">Cambridge</placeName>
+               <location source="#org_geon">
+                  <geo>52.2, 0.11667</geo>
+               </location>
+               <idno resp="#pers_TG" type="geon">2653941</idno>
+               <idno type="oape">737</idno>
+            </place>
+            <place type="town" xml:id="place_775">
+               <placeName>Colchester</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="ar">كولشيستر</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="en">Colchester</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="fr">Colchester</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="de">Colchester</placeName>
+               <location source="#org_geon">
+                  <geo>51.88921, 0.90421</geo>
+               </location>
+               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Colchester</idno>
+               <idno resp="#xslt" type="geon">2652618</idno>
+               <idno type="oape">775</idno>
             </place>
             <place type="town" xml:id="place_330">
                <placeName xml:lang="en-Arab-145">لانكاستر</placeName>
@@ -6324,6 +6326,7 @@
                <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Morocco</idno>
                <idno resp="#xslt" type="geon">2542007</idno>
                <idno type="oape">760</idno>
+               <idno type="wiki">Q1028</idno>
             </place>
             <place type="country" xml:id="place_337">
                <placeName xml:lang="ar">مملكة مراكش</placeName>
@@ -6946,6 +6949,20 @@
                <idno type="geon">2807184</idno>
                <idno type="oape">704</idno>
             </place>
+            <place type="town" xml:id="place_771">
+               <placeName>Wiesbaden</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="ar">فيسبادن</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="en">Wiesbaden</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="fr">Wiesbaden</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="de">Wiesbaden</placeName>
+               <placeName source="#org_geon" type="alt" xml:lang="tr">Wiesbaden</placeName>
+               <location source="#org_geon">
+                  <geo>50.08258, 8.24932</geo>
+               </location>
+               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Wiesbaden</idno>
+               <idno resp="#xslt" type="geon">2809346</idno>
+               <idno type="oape">771</idno>
+            </place>
             <place type="town" xml:id="place_682">
                <placeName xml:lang="de">Köln</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="ar">قلونية</placeName>
@@ -7232,20 +7249,6 @@
                </location>
                <idno type="geon">2895044</idno>
                <idno type="oape">678</idno>
-            </place>
-            <place type="town" xml:id="place_771">
-               <placeName>Wiesbaden</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="ar">فيسبادن</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="en">Wiesbaden</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="fr">Wiesbaden</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="de">Wiesbaden</placeName>
-               <placeName source="#org_geon" type="alt" xml:lang="tr">Wiesbaden</placeName>
-               <location source="#org_geon">
-                  <geo>50.08258, 8.24932</geo>
-               </location>
-               <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Wiesbaden</idno>
-               <idno resp="#xslt" type="geon">2809346</idno>
-               <idno type="oape">771</idno>
             </place>
          </listPlace>
          <listPlace type="country">
@@ -7854,6 +7857,7 @@
                <idno type="url">https://en.wikipedia.org/wiki/Jordan</idno>
                <idno type="geon">248816</idno>
                <idno type="oape">611</idno>
+               <idno type="wiki">Q810</idno>
             </place>
          </listPlace>
          <listPlace type="country">
@@ -8129,6 +8133,7 @@
             <idno type="oape">622</idno>
             <idno type="url">https://en.wikipedia.org/wiki/Levant</idno>
             <idno type="geon">305104</idno>
+            <idno type="wiki">Q858</idno>
          </place>
          <place type="SCH" xml:id="place_242">
             <placeName xml:lang="ar"> <geogFeat xml:lang="ar">ضفاف</geogFeat> <geogName xml:lang="ar">النيل</geogName> </placeName>
