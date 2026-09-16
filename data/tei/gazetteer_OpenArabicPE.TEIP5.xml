@@ -42,6 +42,8 @@
          </editorialDecl>
       </encodingDesc>
       <revisionDesc>
+         <tei:change when="2026-09-11" who="#pers_TG" xml:id="d11e232" xml:lang="en"
+            >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <tei:change when="2026-09-11" who="#pers_TG" xml:id="d11e227" xml:lang="en"
             >Improved <tei:gi>place</tei:gi> nodes with GeoNames data, querying GeoNames for IDs (if already available) and toponyms, and adding alternative names, IDs, and geo-coded locations.</tei:change>
          <tei:change when="2025-09-22" who="#pers_TG" xml:id="d11e222" xml:lang="en"
@@ -6107,6 +6109,7 @@
             <place type="country" xml:id="place_327">
                <placeName xml:lang="ar">إنكلترا</placeName>
                <placeName xml:lang="ar">انكلترا</placeName>
+               <placeName resp="#xslt">إنجلترا</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="en">Britain</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="en">Great Britain</placeName>
                <placeName source="#org_geon" type="alt" xml:lang="en">UK</placeName>
@@ -6125,6 +6128,7 @@
                </location>
                <idno type="geon">2635167</idno>
                <idno type="oape">327</idno>
+               <idno type="wiki">Q145</idno>
             </place>
             <place type="town" xml:id="place_328">
                <placeName xml:lang="ar">اكسفورد</placeName>
@@ -8183,6 +8187,26 @@
             <idno type="oape">550</idno>
             <idno type="wiki">Q1754812</idno>
          </place>
+         <place type="country" xml:id="place_853">
+            <placeName ref="wiki:Q1016" resp="#xslt">ليبيا</placeName>
+            <idno type="wiki">Q1016</idno>
+            <idno type="oape">853</idno>
+         </place>
+         <place type="country" xml:id="place_854">
+            <placeName ref="wiki:Q398" resp="#xslt">البحرين</placeName>
+            <idno type="wiki">Q398</idno>
+            <idno type="oape">854</idno>
+         </place>
+         <place type="country" xml:id="place_855">
+            <placeName ref="wiki:Q851" resp="#xslt">السعودية</placeName>
+            <idno type="wiki">Q851</idno>
+            <idno type="oape">855</idno>
+         </place>
+         <place type="country" xml:id="place_856">
+            <placeName ref="wiki:Q878" resp="#xslt">الإمارات</placeName>
+            <idno type="wiki">Q878</idno>
+            <idno type="oape">856</idno>
+         </place>
          <place type="county" xml:id="place_420">
             <placeName xml:lang="en">Santiago del Estero</placeName>
             <location source="#org_geon">
@@ -8801,6 +8825,12 @@
             <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Oman</idno>
             <idno resp="#xslt" type="geon">286963</idno>
             <idno type="oape">751</idno>
+         </place>
+         <place type="country" xml:id="place_857">
+            <placeName ref="wiki:Q846" xml:lang="ar">قطر</placeName>
+            <placeName ref="wiki:Q846" xml:lang="en">Qatar</placeName>
+            <idno type="wiki">Q846</idno>
+            <idno type="oape">857</idno>
          </place>
          <place type="country" xml:id="place_752">
             <placeName resp="#xslt" xml:lang="ar">كويت</placeName>
@@ -9457,17 +9487,6 @@
             <idno type="oape">826</idno>
             <idno type="wiki">Q188336</idno>
          </place>
-         <place type="town" xml:id="place_820">
-            <placeName xml:lang="en">Mytilene</placeName>
-            <placeName type="alt" xml:lang="tr">Midilli</placeName>
-            <placeName type="alt" xml:lang="tr">Metelin</placeName>
-            <location source="#org_geon">
-               <geo>39.1047, 26.5536</geo>
-            </location>
-            <idno resp="#xslt" type="geon">765005</idno>
-            <idno type="oape">820</idno>
-            <idno type="wiki">Q189059</idno>
-         </place>
          <place type="town" xml:id="place_822">
             <placeName source="#org_geon" type="alt" xml:lang="en">Nazilli</placeName>
             <placeName source="#org_geon" type="alt" xml:lang="tr">Nazilli</placeName>
@@ -9543,18 +9562,6 @@
             <idno resp="#xslt" type="geon">259972</idno>
             <idno type="oape">798</idno>
          </place>
-         <place type="ISL" xml:id="place_821">
-            <placeName source="#org_geon" type="alt" xml:lang="en">Lesbos Island</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="fr">Lesbos</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="de">Lesbos</placeName>
-            <placeName source="#org_geon" type="alt" xml:lang="tr">Midilli Adası</placeName>
-            <location source="#org_geon">
-               <geo>39.20353, 26.27655</geo>
-            </location>
-            <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Lesbos</idno>
-            <idno resp="#xslt" type="geon">258466</idno>
-            <idno type="oape">821</idno>
-         </place>
          <place type="ISL" xml:id="place_828">
             <placeName>Scyros</placeName>
             <placeName source="#org_geon" type="alt" xml:lang="en">Skyros</placeName>
@@ -9578,6 +9585,31 @@
             <idno resp="#xslt" type="geon">258764</idno>
             <idno type="oape">799</idno>
             <idno type="wiki">Q34374</idno>
+         </place>
+      </listPlace>
+      <listPlace>
+         <place type="town" xml:id="place_820">
+            <placeName xml:lang="en">Mytilene</placeName>
+            <placeName type="alt" xml:lang="tr">Midilli</placeName>
+            <placeName type="alt" xml:lang="tr">Metelin</placeName>
+            <location source="#org_geon">
+               <geo>39.1047, 26.5536</geo>
+            </location>
+            <idno resp="#xslt" type="geon">765005</idno>
+            <idno type="oape">820</idno>
+            <idno type="wiki">Q189059</idno>
+         </place>
+         <place type="ISL" xml:id="place_821">
+            <placeName source="#org_geon" type="alt" xml:lang="en">Lesbos Island</placeName>
+            <placeName source="#org_geon" type="alt" xml:lang="fr">Lesbos</placeName>
+            <placeName source="#org_geon" type="alt" xml:lang="de">Lesbos</placeName>
+            <placeName source="#org_geon" type="alt" xml:lang="tr">Midilli Adası</placeName>
+            <location source="#org_geon">
+               <geo>39.20353, 26.27655</geo>
+            </location>
+            <idno subtype="about" type="url">https://en.wikipedia.org/wiki/Lesbos</idno>
+            <idno resp="#xslt" type="geon">258466</idno>
+            <idno type="oape">821</idno>
          </place>
       </listPlace>
    </standOff>
